@@ -1,0 +1,72 @@
+2021-01-05 (TUESDAY) - EMOTET EPOCH 2 INFECTION WITH TRICKBOT GTAG MOR10
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1346860361274822658
+
+INFORMATION FROM EMAIL DISTRIBUTING EMOTET:
+
+- Received: from new.dtco-qatar[.]com (unknown [66.84.9[.]24])
+- Date: Tue, 05 Jan 2021 12:08:03 -0300
+- From: "[spoofed sender name]" <shijithkj.acct@darwish.net[.]qa>
+- To: "[recipient's name]" <[recipient's email address]>
+- Subject: Weekly data roundup
+- Attachment file name: Form.doc
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+WORD MACRO RETRIEVING EMOTET DLL:
+
+- 173.254.250[.]226 port 443 (HTTPS) - fathekarim[.]com - GET /images/jiC/
+
+EMOTET POST-INFECTION TRAFFIC:
+
+- 90.160.138[.]175 port 80 - 90.160.138[.]175 - POST /[string of alpha-numeric characters with or without backslashes]
+- 167.99.105[.]11 port 8080 - 167.99.105[.]11:8080 - POST /[string of alpha-numeric characters with or without backslashes]
+- NOTE: Saw several HTTP POST requests to the above IP addresses.
+
+TRICKBOT POST-INFECTION TRAFFIC:
+
+- port 443 - api.ipify[.]org - HTTPS traffic (IP address check, not inherently malicious)
+- 102.164.208[.]44 port 449 - HTTPS traffic
+- 103.220.47[.]220 port 447 - HTTPS traffic
+- 110.39.160[.]66 port 447 - HTTPS traffic
+- 186.47.209[.]222 port 443 - 186.47.209[.]222:443 - POST /mor10/[ASCII string that includes host info]/83/
+- 186.47.209[.]222 port 443 - 186.47.209[.]222:443 - POST /mor10/[ASCII string that includes host info]/81/
+- 186.47.209[.]222 port 443 - 186.47.209[.]222:443 - POST /mor10/[ASCII string that includes host info]/90
+
+URLS USED BY TRICKBOT'S PROPAGATION MODULES TO RETRIEVE ADDITIONAL TRICKBOT EXE FILES:
+
+- 192.119.162[.]87 port 80 - 192.119.162[.]87 - GET /images/saved.png
+- 192.119.162[.]87 port 80 - 192.119.162[.]87 - GET /images/mingup.png
+
+MALWARE FROM THIS INFECTION:
+
+- SHA256 hash: fa67e7f709be28273b80782e6576f2e93ec9a1018626c3907d55e005fe12cf0d
+- File size: 176,027 bytes
+- File name: Form.doc
+- File description: Email attachment, Word doc with macros for Emotet epoch 2
+
+- SHA256 hash: bf56974a6feb0bb55e1a0064c4a9124f29e0fe5bca6b10fd5b7fa287b712eadb
+- File size: 195,072 bytes
+- File location: hxxps://fathekarim[.]com/images/jiC/
+- File location: C:\Users\[username]\
+- File location: C:\Users\[username]\AppData\Local\Ckninfwzsiyqxydc\ialkquzoobkioba.czi
+- File description: Windows DLL for Emotet epoch 2 retreived by macro from above Word doc
+- Run method: rundll32.exe [filename],Control_RunDLL
+
+- SHA256 hash: f57ec5263ab7f3191cfd364dd364e694f93769b691514d3a2e39e6812471e80e
+- File size: 602,112 bytes
+- File location: C:\Users\[username]\AppData\Local\Ckninfwzsiyqxydc\kripbnjh.exe
+- File location: C:\Users\[username]\AppData\newyearTV5382453440\ kripbnjh.exe
+- File description: Windows EXE for Trickbot gtag mor10
+
+- SHA256 hash: 59e1711d6e4323da2dc22cdee30ba8876def991f6e476f29a0d3f983368ab461
+- File size: 434,304 bytes
+- File location: hxxp://192.119.162[.]87/images/mingup.png
+- File description: Windows EXE retrieved by Trickbot-infected host for Trickbot gtag lib5
+
+- SHA256 hash: ed8dea5381a7f6c78108a04344dc73d5669690b7ecfe6e44b2c61687a2306785
+- File size: 442,496 bytes
+- File location: hxxp://192.119.162[.]87/images/saved.png
+- File description: Windows EXE retrieved by Trickbot-infected host for Trickbot gtag tot5
