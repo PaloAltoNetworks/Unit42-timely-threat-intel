@@ -1,0 +1,145 @@
+2020-11-23 (MONDAY) - MALSPAM PUSHING DRIDEX USES SMOKELOADER
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1328425382140387328
+
+CHAIN OF EVENTS:
+
+- malspam --> Excel spreadsheet attachment --> enable macros --> SmokeLoader EXE --> SmokeLoader C2 traffic --> Dridex installer DLL --> Dridex C2 traffic --> 64-bit Dridex DLL files persistent on infected Windows host --> webshell activity
+
+NOTES:
+
+- We saw five HTTPS requests for EXE files during our text run of the spreadsheet. Four of these appear to be Dridex installer EXEs (same hash), and one was an EXE for SmokeLoader.
+
+- Later during the infection, we saw SMTP traffic and an HTTP webshell from TCP traffic over 81.17.23[.]125 port 443.
+
+EMAIL HEADERS FROM EXAMPLE:
+
+Received: from [213.24.167.60] (mail.cntr-nrs.gosnadzor.ru [213.24.167.60])
+	by [removed]; Mon, 23 Nov 2020 16:12:55 +0000
+Received: from [13.78.207.167] (helo=bqrr.mjtdwd.CH1FE75.corp.docusign.net)
+	by  with esmtpa (Exim 4.86)
+	(envelope-from glissandos@CH3FE62.corp.docusign.net)
+	id dcB5B7Ae for [removed]; Mon, 23 Nov 2020 19:12:58 +0300
+Received: from ([121.146.210.72]) by  with SMTP id ctcshldtkh4xpzq.6.20201123191258; 
+	Mon, 23 Nov 2020 19:12:58 +0300
+To: [removed]
+Subject: Please DocuSign: Invoice_Payment Form $1,880.00
+From: "Eddy Bates via DocuSign" <dse_NA3@docusign.net>
+Date: Mon, 23 Nov 2020 19:12:58 +0300
+X-Priority: 3
+Thread-Index: UHhFJy8RScplWgkVbb0xgPHLTNRjN==
+
+EXCEL SPREADSHEET ATTACHED TO MALSPAM:
+
+- SHA256 hash: 5d4fdf219371a9d83d31b7e21cd1103b309f124e36dc1a4790e052efe760990f
+- File size: 53,181 bytes
+- File name: Invoice_Payment Form_502131.xlsm
+- File description: Excel spreadsheet with macro for SmokeLoader or Dridex
+
+AT LEAST 31 POSSIBLE URLS CAUSED BY EXCEL MACRO:
+
+- hxxps://0124logistics[.]com/q4zdbbs.pdf
+- hxxps://aatif-fortios[.]pt/rjzsh0og.zip
+- hxxps://alpaylar[.]com[.]tr/lw0367.zip
+- hxxps://beaute-relaxation-beziers[.]fr/ujo14z.zip
+- hxxps://brisbanepoolbuilders[.]com.au/rmf9ppah5.zip
+- hxxps://bugexpert[.]com/nvo9ig49.zip
+- hxxps://cacsnetwork[.]co[.]in/b6f3nsxp.rar
+- hxxps://ccp-pakistan[.]org[.]pk/kg2v1l.pdf
+- hxxps://celinehjeily[.]com/vxga40l0.rar
+- hxxps://cpsirx[.]com/b824vo9.pdf
+- hxxps://dasin-obchudek[.]cz/v6pyyrt.rar
+- hxxps://dextro-energy[.]com.mx/ycqm488g6.pdf
+- hxxps://forums.ebprospectors[.]com/qu0lwj5zu.pdf
+- hxxps://kikitrading.co.za/eop9y4.pdf
+- hxxps://maxtinbox[.]com/jj5uqx4l.zip
+- hxxps://mkvs[.]org[.]in/nis768.rar
+- hxxps://obsession[.]hu/dfvtnjoan.rar
+- hxxps://planeal[.]com/yzci5a0r.rar
+- hxxps://previousquestionpapers[.]com/m5nzq0b.zip
+- hxxps://server89[.]com/ilpbywafi.txt
+- hxxps://tallerdeveleria[.]es/ep7kbqmzu.rar
+- hxxps://tecelagemsaogeraldo[.]com.br/ycs2phe.rar
+- hxxps://tennismendrisio[.]ch/azmx20h9.zip
+- hxxps://thachvietstone[.]com/ybev8i1r4.rar
+- hxxps://thubanconsultants[.]com/dwj64w.pdf
+- hxxps://triple-me[.]com/itjc6bz.pdf
+- hxxps://whatmomsthink[.]com/lvnbvto7m.pdf
+- hxxps://www.activoinmobiliario[.]mx/nffvfo88s.rar
+- hxxps://www.cible-energy[.]com/k8ev67og.zip
+- hxxps://www.genregis[.]com/qnniyolg.txt
+- hxxps://www.orich[.]com.tw/eunhej7vx.txt
+
+INITIAL MALWARE AFTER ENABLING MACROS:
+
+- SHA256 hash: 014f37edfd2c8c498009a71d529838477459cb643ebdb35bf176a41ad7681035
+- File size: 221,184 bytes
+- File location: C:\Users\[username]\IjkPol\jagelph.exe
+- File location: C:\Users\[username]\IjkPol\nrbiebve.exe
+- File location: C:\Users\[username]\IjkPol\rnykx.exe
+- File location: C:\Users\[username]\IjkPol\whiyiazy.exe
+- File description: Retreived by spreadsheet macro - Windows EXEs to install Dridex
+
+- SHA256 hash: 4b1f2c18b149fd0e878c362ffba50bb553d7bea93a795b33e398d032dc0b7663
+- File size: 368,640 bytes
+- File location: C:\Users\[username]\IjkPol\jfpxgtwp.exe
+- File location: C:\Users\[username]\AppData\Roaming\tcrersr
+- File description: Retrieved by spreadsheet macro - Windows EXE for SmokeLoader
+
+FOLLOW-UP MALWARE FROM SMOKELOADER:
+
+- SHA256 hash: 4b1f2c18b149fd0e878c362ffba50bb553d7bea93a795b33e398d032dc0b7663
+- File size: 363,520 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\8C7D.dll
+- File description: Retrieved by SmokeLoader - installer DLL for Dridex
+
+64-BIT DLL FILES RETRIEVED BY DRIDEX INSTALLER:
+
+- SHA256 hash: fa872f351115061b74d3abf410b0c559ea3f24bec3993e9d2d25d73f3a9fab49
+- File size: 928,256 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Adobe\Acrobat\DC\Collab\tNs6DcJ\XmlLite.dll
+- File description: 64-bit Dridex DLL file (1 of 3)
+- Note: Loaded by copy of legitimate system file printfilterpipelinesvc.exe in the same directory
+
+- SHA256 hash: adf2a2a7d9d00ae8876d2f6545cde9a10faf2a44786029a3fa01b6873cc74757
+- File size: 928,768 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Spelling\en-US\CGbW\VERSION.dll
+- File description: 64-bit Dridex DLL file (2 of 3)
+- Note: Loaded by copy of legitimate system file ie4ushowIE.exe in the same directory
+
+- SHA256 hash: 745d5479a4494eef784f5c5ef0cb9acb4199f02c9a7890b1d294c18c83fe1705
+- File size: 1,210,880 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Office\16.0\f313ca8f\Proofing\xHJ\DUI70.dll
+- File description: 64-bit Dridex DLL file (3 of 3)
+- Note: Loaded by copy of legitimate system file LicensingUI.exe in the same directory
+
+INITIAL TRAFFIC SEEN AFTER ENABLING MACROS:
+
+- port 443 (HTTPS) - cacsnetwork[.]co[.]in - GET /b6f3nsxp.rar
+- port 443 (HTTPS) - tennismendrisio[.]ch - GET /azmx20h9.zip
+- port 443 (HTTPS) - planeal[.]com - GET /yzci5a0r.rar
+- port 443 (HTTPS) - whatmomsthink[.]com - GET /lvnbvto7m.pdf
+- port 443 (HTTPS) - forums[.]ebprospectors[.]com - GET /qu0lwj5zu.pdf
+
+SMOKELOADER C2 TRAFFIC:
+
+- 170.106.35[.]220 port 80 - penodux[.]com - POST /xsmkld/index.php
+  
+DRIDEX C2 TRAFFIC:
+
+- 175.126.167[.]148 port 443
+- 192.159.142[.]162 port 443
+- 173.249.20[.]233 port 8043
+- 109.169.24[.]37 port 453
+- 162.241.204[.]233 port 4443
+
+- 66.70.214[.]70 port 443 - attempted TCP connections (not successful)
+- 188.165.24[.]85 port 25 - attempted TCP connections (not successful)
+
+WEBSHELL TRAFFIC:
+
+- port 80 - curlmyip.net - GET /
+- 81.17.23[.]125 port 443 - SMTP traffic for mail.shitmail.com and HTTP traffic for webshell
+- 81.17.23[.]125 port 443 - [infected host's IP] port 61932 - 81.17.23[.]125:17627 - GET /
