@@ -1,4 +1,4 @@
-2021-03-19 (FRIDAY): 
+2021-03-19 (FRIDAY): IOC UPDATE TO UNIT 42 REPORT ON MIRAI VARIANT
 
 TWEET:
 
@@ -6,7 +6,7 @@ TWEET:
 
 NOTES: 
 
-- We are now observing the Mirai variant from our recent report (see below reference) attempting to exploit CVE-2021-22986, an
+- From our recent report (see below reference) we are now observing the Mirai variant attempting to exploit CVE-2021-22986, an
   unauthenticated RCE in F5 BIG-IP & BIG-IQ products, and CVE-2020-28188.
 
 - Samples listed below are still live at the time of writing.
