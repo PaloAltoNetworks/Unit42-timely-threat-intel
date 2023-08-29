@@ -1,0 +1,72 @@
+2020-08-20 (THURSDAY) - EMOTET INFECTION WITH QAKBOT AS FOLLOW-UP MALWARE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1296856111027494912
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 86d480ab25fee4635d9de621cfd8f3866e047465bfbc8afeac4bfe33591c7190 
+- File size: 242,942 bytes
+- File location: hxxp://paul-und-emily[.]de/blog/open_array/tUt1_OpVNbKhn_q36ctikkw81lp_mq3vd9mjul6/tI0cwIlzN8b2_ogoxe6np72H/
+- File name: doc 2020_08_20.doc
+- File description: Word doc with macros for Emotet seen on 2020-08-20
+- Note: The URL for this Word doc has been reported by @Cryptolaemus1 as from Emotet's epoch1 botnet
+
+- SHA256 hash: 386d56837ebe037b8c49363dea452fceff53a9cef8840bd52c6d5777db1ba3d0 
+- File size: 790,528 bytes
+- File location: hxxps://ywqzz[.]com/wp-includes/U/
+- File location: C:\Users\[username]\AppData\Loocal\d3d11on12\mscpxl32.exe
+- File description: Emotet EXE retrieved by macro from the above Word doc on 2020-08-20
+- Note: The URL for this EXE has been reported by @Cryptolaemus1 as from Emotet's epoch1 botnet
+
+- SHA256 hash: 95de158e9b4302b8381dd9fab6da6977d6c2d1ad646720a66a9c8add4135a4d8 
+- File size: 1,743,376 bytes
+- File location: C:\Users\[username]\AppData\Loocal\d3d11on12\MbaeApiab2.exe
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Ouoenqud\qyomfwmn.exe
+- File description: Qakbot EXE retreived by an Emotet-infected Windows host on 2020-08-20
+
+- SHA256 hash: c54e473c4191e712df1e31663ed678e2167d40f0f4ace5ef8bbe8ea1a4eabcfd 
+- File size: 2,162,192 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Ouoenqud\qyomfwmn.exe
+- File description: Updated Qakbot EXE persistent on an infected Windows host on 2020-08-20
+
+START TIME OF THE INFECTION:
+
+- 2020-08-20 15:43:59 UTC
+
+EMOTET INFECTION TRAFFIC:
+
+- 81.169.145[.]72 port 80 - paul-und-emily[.]de - GET /blog/open_array/tUt1_OpVNbKhn_q36ctikkw81lp_mq3vd9mjul6/tI0cwIlzN8b2_ogoxe6np72H/
+- 103.43.160[.]8 port 443 (HTTPS) - ywqzz[.]com - GET /wp-includes/U/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /vlYDouH/cnwhomD1SVr8aETKgGy/sAUN/pkHzCPSUqhh0G/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /DkQmXvNy/
+- 45.55.82[.]2 port 8080 - 45.55.82[.]2:8080 - POST /TgsnLIh/6hyI012qL8sHPu/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /45gZ/
+- 45.55.82[.]2 port 8080 - 45.55.82[.]2:8080 - POST /f2TWXJ9Z/J30H/YHew3zpKl/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /cvq1/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /I6BWNUr8Yp4KpWiH/A0CzRupgVt2KCd/S10qddVx/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /APS6f51u4vOYY2c/syP7A/XlqMWEnKlmk/SlNIpR0UMU/0j6YoqrMsVtd6w/QWHGpNFKv/
+- 45.55.82[.]2 port 8080 - 45.55.82[.]2:8080 - POST /zjIsmPqsllNk3/La1BojXmQlVUq/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /nws2tIqgKalQv/DR2qvj09oz/FiFoPmqwDlMSqVE/bNmE3Pmopd4xm/L7fZNYRbgKxzc0g4/biesrF3vsbji/
+- 45.55.82[.]2 port 8080 - 45.55.82[.]2:8080 - POST /zidX80h0B/rAIkQjLqdKN/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /gbhdWmK2wtAs5/3K97YFalInP0K9t6Ol/vNaOseFd/M4rHH81bH4X/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /fjbrkHtCwqs/VjMjJw4EK/OYmChIzlkDOGj3CZtJu/MownDe2laYCERX/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /CT7JN7HL6k6BDW9yVhT/lLkWzc/ko7NgtwIn1w/kpnyF/
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /dbPm8WQKMEcXUsQ8U5/
+- 45.55.82[.]2 port 8080 - 45.55.82[.]2:8080 - POST /9HkSteMOl0kdVhoOUE
+- 45.55.82[.]2 port 8080 - 45.55.82[.]2:8080 - POST /uUgKCjD21Supniolh
+- 65.36.62[.]20 port 80 - 65.36.62[.]20 - POST /n51yJd7OPy/S6KmTSHYfiDNXfrQu/dOz7vsowOt8tIAG/dnKxy4bl/Lly7dA/
+
+QAKBOT INFECTION TRAFFIC:
+
+- 141.158.47[.]123 port 443 - HTTPS/SSL/TLS traffic
+- 98.219.77[.]197 port 443 - HTTPS/SSL/TLS traffic
+- port 443 - cdn.speedof[.]me - HTTPS/SSL/TLS traffic (not inherently malicious on its own)
+- 89.105.198[.]119 port 80 - a.strandsglobal[.]com - GET /redir_chrome.html
+- 89.105.198[.]119 port 80 - a.strandsglobal[.]com - GET /redir_ie.html
+- 49.233.122[.]131 port 443 - attempted TCP connections, unsuccessful
+- 86.182.234[.]245 port 2222 - attempted TCP connections, unsuccessful
+- 200.75.136[.]78 port 443 - attempted TCP connections, unsuccessful
+- 47.138.204[.]170 port 443 - attempted TCP connections, unsuccessful
+- 54.36.108[.]120 port 65400 - TCP traffic
