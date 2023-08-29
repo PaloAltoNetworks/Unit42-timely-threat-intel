@@ -1,0 +1,102 @@
+2020-10-01 (THURSDAY) - MALSPAM PUSHES FORMBOOK MALWARE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1312126230309740544
+
+MALSPAM HEADERS:
+
+- Received: from brigitte.ocmsysteme.com ([198.100.150.117]) by [removed] for [removed; 
+	Thu, 01 Oct 2020 16:56:09 +0900 (KST)
+- Received: from [176.111.173.23] ([176.111.173.23])
+	(authenticated bits=0)
+	by brigitte.ocmsysteme.com (8.14.4/8.14.4) with ESMTP id 0916RZFr014158
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO)
+	for [removed]; Thu, 1 Oct 2020 01:29:41 -0500
+- Subject: Re:Request for Payment Confirmation
+- From: Accounts<info2@ocmsysteme.com>
+- Date: Thu, 01 Oct 2020 07:55:59 -0700
+- Reply-To: accounts@ocmsysteme.com
+- Message-Id: <202010010629.0916RZFr014158@brigitte.ocmsysteme.com>
+- Content-Type: multipart/mixed; boundary="===============0284238796=="
+- MIME-Version: 1.0
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: f37ab1cc65b5b4de19b9607f16f9613430db9e4263487bceb5a197d509ff0370
+- File size: 18,961 bytes
+- File name: HSJlk89290.doc
+- File description: attachment from malspam, Word doc with macros for Formbook
+
+- SHA256 hash: 0538ad6e3f92ea13a5a3dadb18e807ce26097bbfd2f473e873a514b6dbbe8f5d
+- File size: 440,832 bytes
+- File location: hxxps://meriashqipsndaae[.]com/OTQEy1Oiq28lv3Y.exe
+- File location: C:\Users\[username]\AppData\Roaming\g5f91.exe
+- File location: C:\Users\[username]\AppData\Roaming\tfPErTSwFfzBj.exe
+- File location: C:\Program Files (x86)\Roaming\Fdjxtcvl\jt6hzlavpvhchk0.exe
+- File description: malware EXE for Formbook
+
+OTHER FILES CREATED DURING THE INFECTION:
+
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlog.ini
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlogim.jpg
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlogc.ini
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlogg.ini
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlogi.ini
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlogt.ini
+- C:\Users\[username]\AppData\Roaming\1PR88P8S\1PRlogv.ini
+
+- NOTE: All of the above files were text files, except the .jpg file, which
+  was a screenshot of the infected user's desktop.
+
+INFECTION TRAFFIC:
+
+WORD MACRO RETRIEVES FORMBOOK EXE:
+
+- port 443 (HTTPS) - meriashqipsndaae[.]com - GET /OTQEy1Oiq28lv3Y.exe
+
+FORMBOOK POST-INFECTION TRAFFIC:
+
+- port 80 - www.717cary[.]com - GET /ajr/?[long string]
+- port 80 - www.717cary[.]com - POST /ajr/
+- port 80 - www.anunaysrivastava[.]com - GET /ajr/?[long string]
+- port 80 - www.armstrongramps[.]com - GET /ajr/?[long string]
+- port 80 - www.bootlegmask[.]com - GET /ajr/?[long string]
+- port 80 - www.cgv-so[.]com - GET /ajr/?[long string]
+- port 80 - www.claricitywealthplanning[.]net - GET /ajr/?[long string]
+- port 80 - www.claricitywealthplanning[.]net - POST /ajr/
+- port 80 - www.csbaoxing[.]com - GET /ajr/?[long string]
+- port 80 - www.csbaoxing[.]com - POST /ajr/
+- port 80 - www.dannisconfessions[.]com - GET /ajr/?[long string]
+- port 80 - www.dannisconfessions[.]com - POST /ajr/
+- port 80 - www.easyloop[.]email - GET /ajr/?[long string]
+- port 80 - www.easyloop[.]email - POST /ajr/
+- port 80 - www.ehrbar2012[.]com - GET /ajr/?[long string]
+- port 80 - www.ehrbar2012[.]com - POST /ajr/
+- port 80 - www.elevatedqueensnc[.]com - GET /ajr/?[long string]
+- port 80 - www.elevatedqueensnc[.]com - POST /ajr/
+- port 80 - www.entrepreneur-de-demain[.]com - GET /ajr/?[long string]
+- port 80 - www.firestarterelectronics[.]com - GET /ajr/?[long string]
+- port 80 - www.firestarterelectronics[.]com - POST /ajr/
+- port 80 - www.firewoodlogsbristol[.]com - GET /ajr/?[long string]
+- port 80 - www.kayarihats[.]com - GET /ajr/?[long string]
+- port 80 - www.misspinkk[.]com - GET /ajr/?[long string]
+- port 80 - www.misspinkk[.]com - POST /ajr/
+- port 80 - www.myworldgay[.]com - GET /ajr/?[long string]
+- port 80 - www.psm-gen[.]com - GET /ajr/?[long string]
+- port 80 - www.psm-gen[.]com - POST /ajr/
+- port 80 - www.readingbythewindow[.]com - GET /ajr/?[long string]
+- port 80 - www.readingbythewindow[.]com - POST /ajr/
+- port 80 - www.sporkedmissoula[.]com - GET /ajr/?[long string]
+- port 80 - www.sporkedmissoula[.]com - POST /ajr/
+- port 80 - www.tapchiotoxemay[.]net - GET /ajr/?[long string]
+- port 80 - www.tapchiotoxemay[.]net - POST /ajr/
+- port 80 - www.tdhudsonfarms[.]com - GET /ajr/?[long string]
+- port 80 - www.theduneco.net - GET /ajr/?[long string]
+- port 80 - www.usarmedforcesforbiden[.]com - GET /ajr/?[long string]
+- port 80 - www.usarmedforcesforbiden[.]com - POST /ajr/
+- port 80 - www.virtualinspectiontraining[.]com - GET /ajr/?[long string]
+
+- DNS query for www.janet-lorenz[.]com  (response: No such name)
+- DNS query for www.piao[.]mobi  (response: No such name)
+- DNS query for www.pricemanmmi[.]com  (response: No such name)
