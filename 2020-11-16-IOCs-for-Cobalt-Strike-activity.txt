@@ -1,0 +1,30 @@
+2020-11-16 (MONDAY) - XLSX SPREADSHEET PUSHES COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1328425382140387328
+
+NOTES:
+
+- We've seen this spreadsheet template normally push Qakbot until mid-November 2020, when it started pushing other families of malware instead of Qakbot.
+- Since mid-November 2020, we've occasionally seen this spreadsheet template push SmokeLoader or Cobalt Strike malware.
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 4af251feed5a80976f897a0749147b74ec92ad90695eea87eeb21f83a41cff7f
+- File size: 366,296 bytes
+- File name: Document11355.xlsb
+- File description: XLSX file with macros for Cobalt Strike
+
+- SHA256 hash: c81cbf497e7427936c0f15290fe4a1648c8fc10c249d3b97e67897bd1e2808b6
+- File size: 237,568 bytes
+- File location: hxxp://99promo[.]com/ds/161120.gif
+- File location: C:\1b3SX\iD93\tor.exe
+- File description: Windows executable file (EXE) for Cobalt Strike
+
+INFECTION TRAFFIC:
+
+- 35.209.123[.]121 port 80 - 99promo[.]com - GET /ds/161120.gif
+- 185.99.133[.]180 port 80 - 185.99.133[.]180 - GET /IE9CompatViewList.xml
+- 185.99.133[.]180 port 80 - 185.99.133[.]180 - POST /submit.php?id=12345678 
+- NOTE: 1245678 in the above line replaces an 8-digit identification number for the infected Windows host
