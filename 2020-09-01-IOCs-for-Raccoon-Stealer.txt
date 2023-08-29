@@ -1,0 +1,36 @@
+2020-09-01 (TUESDAY) - RACCOON STEALER ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1301238990348091392
+
+EMAIL INFO:
+
+- Date: Wed, 2 Sep 2020 00:48:48 +0800 (HKT)
+- Received: from mail.grandco.com.hk ([223.255.188.26])
+- From: <sales.international@grandco.com.hk>
+- Subject: Purchase Order
+- Message-ID: <956139821.4117.1598978928194.JavaMail.root@mail.grandco.com.hk>
+- Attachment: Purchase Order.xlsx
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 2ed32602e42ca10c7b505a3581ddb0dbbe0f3e19a6e8a63e6ff0a7325ca54a3b
+- File size: 573,197 bytes
+- File name: Purchase Order.xlsx
+- File description: Excel spreadsheet with CVE-2017-11882 exploit for Raccoon Stealer
+
+- SHA256 hash: c91e2df02ad2c8ccadc96054bceee4422382caa62d443e2633a003e4ce5c7476
+- File size: 507,904 bytes
+- File location: hxxp://boyama.medyanef[.]com/vendor/league/fractal/files/c7f6e7.exe
+- File location: C:\Users\[username]\AppData\Roaming\RichX.com
+- File description: Windows executable (EXE) file for Raccoon Stealer
+
+INFECTION TRAFFIC:
+
+- 93.113.63[.]58 port 80 - boyama[.]medyanef[.]com - GET /vendor/league/fractal/files/c7f6e7.exe
+- 195.201.225[.]248 port 443 - telete[.]in - HTTPS traffic
+- 34.89.241[.]53 port 80 - 34.89.241[.]53 - POST /gate/log.php
+- 34.89.241[.]53 port 80 - 34.89.241[.]53 - GET /gate/sqlite3.dll 
+- 34.89.241[.]53 port 80 - 34.89.241[.]53 - GET /gate/libs.zip
+- 34.89.241[.]53 port 80 - 34.89.241[.]53 - POST /file_handler4/file.php?hash=[hash string and other parameters]
