@@ -1,0 +1,72 @@
+2020-11-05 (THURSDAY) - MALSPAM PUSHING HANCITOR WITH FICKER STEALER
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1324815102630121474
+
+DATA FROM 5 EMAIL EXAMPLES:
+
+- Date: Thu, 05 Nov 2020 17:00:06 +0000
+- Date: Thu, 05 Nov 2020 17:10:35 +0000
+- Date: Thu, 05 Nov 2020 17:55:53 +0000
+- Date: Thu, 05 Nov 2020 16:43:48 +0000
+- Date: Thu, 05 Nov 2020 18:35:05 +0000
+- Date: Thu, 05 Nov 2020 18:35:18 +0000
+
+- Received: from ithelpinc[.]org ([202.212.14[.]56])
+- Received: from ithelpinc[.]org ([24.247.141[.]190])
+- Received: from ithelpinc[.]org ([76.108.208[.]220])
+- Received: from ithelpinc[.]org ([91.183.51[.]218]) 
+- Received: from ithelpinc[.]org ([95.43.129[.]130])
+
+- From: "DocuSign Electronic Signature and Invoice Service" <da@ithelpinc.org>
+- From: "DocuSign Electronic Signature and Invoice Service" <iljroqi@ithelpinc.org>
+- From: "DocuSign Signature and Invoice Service" <tbwoazl@ithelpinc.org>
+- From: "DocuSign Signature and Invoice Service" <pwknylr@ithelpinc.org>
+- From: "DocuSign Electronic Signature " <wd@ithelpinc.org>
+
+LINKS FROM THE EMAILS:
+
+- hxxps://docs.google[.]com/document/d/e/2PACX-1vS9eYBTxfr5CxwRCgbj4pTgB8lYGoJmX5OCd3sC9FWqvH4lSeF9xB9jCEyORQ-5Zq2p9wKzANWKhDJC/pub
+- hxxps://docs.google[.]com/document/d/e/2PACX-1vSbGqFLcGVhFotIYWaVVVa10mQzpa3K-ZvHiIgmXuXlBNn30VsrifoFCbJiATr59q1N2GW_Ql2Qekft/pub
+- hxxps://docs.google[.]com/document/d/e/2PACX-1vTw6IC-OOkyMoyGFzz8a3vHzMOt7SjXENwp7MRU9t6E1ksTa4453G8cZP9h_WMiqqqoHrOrt5x31vNl/pub
+- hxxps://docs.google[.]com/document/d/e/2PACX-1vTmbkS2yR03U4Ai05mEEPk6VmzE-WvPDSJevHXVSJIvF4IBseobfEhlTgX90xdKM01WbMEnbH5TpmKw/pub
+- hxxps://docs.google[.]com/document/d/e/2PACX-1vTDw0DsSLMSPUztBwnF5RfHDG43G00uIjp5xKT_4dpXZXIxuy0CXN3muPla1t07cmDEHROvgpoNck9u/pub
+
+REDIRECT URLS FROM THE ABOVE GOOGLE DOCS PAGES TO DOWNLOAD WORD DOC FOR HANCITOR:
+
+- hxxps://ideas.bizbrio[.]com/phone.php
+- hxxps://rishtiindia[.]com/count.php
+- hxxps://pixellanestudios[.]com/permission.php
+- hxxps://crazydeal101[.]com/play.php
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 9d8cb1204c8357152aec8acbf14092de7edd88189eaa6f9cfb8b9b8dbff001e8
+- File size: 375,261 bytes
+- File name: 1105_748543.doc
+- File description: Word doc with macro for Hancitor malware
+
+- SHA256 hash: 09b3c97457d3ad02204f2da76d1f9f4dadc681bcb32b0a58469461df2f7bd6b7
+- File size: 314,368 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Templates\calc.dll
+- File description: DLL file for Hancitor
+- File run method: rundll32.exe calc.dll,Start
+
+- SHA256 hash: 9bdbb8dde9ad9be8d9303df1697e13a0f846cca95bc9e41d513c1f5f2a7a37b3
+- File size: 272,910 bytes
+- File location: hxxp://ithelpstaffing[.]com/f4n.exe
+- File description: follow-up malware, Ficker Stealer
+
+HANCITOR INFECTION TRAFFIC:
+
+- port 80 - api.ipify.org - GET /
+- 193.47.35[.]27 port 80 - albilverde[.]com - POST /7/forum.php
+- 5.187.5[.]246 port 80 - fabickng[.]ru - POST /7/forum.php
+- 179.43.160[.]81 port 80 - fineladiver[.]ru - POST /7/forum.php
+
+FICKER STEALER INFECTION TRAFFIC:
+
+- 47.254.169[.]130 port 80 - ithelpstaffing[.]com - GET /f4n.exe
+- port 80 - api.ipify.org - GET /?format=xml
+- 62.76.40[.]132 port 80 - cussoricti[.]com - TCP traffic (not HTTP)
