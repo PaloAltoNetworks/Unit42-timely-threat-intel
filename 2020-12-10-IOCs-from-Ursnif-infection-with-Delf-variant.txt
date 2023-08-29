@@ -1,0 +1,54 @@
+2020-12-10 (THURSDAY) - EXCEL MACRO PUSHES URSNIF (GOZI/IFSB) WITH DELF VARIANT
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1337455387637846022
+
+NOTES:
+
+- This is part of a long-running campaign that has used email attachments to distribute various families of malware.
+- The attached Word or Excel documents use a resume theme, and they have macros designed to infect a vulnerable Windows host.
+- In recent weeks, Excel spreadsheets from this campaign pushed IcedID malware.
+- This week, the spreadsheets are pushing Ursnif (Gozi/ISFB) malware.
+- In this example, the follow-up malware is an information stealer, possibly from the Delf malware family.
+- For more information about Ursnif/Gozi/ISFB, see: https://malpedia.caad.fkie.fraunhofer.de/details/win.gozi
+- For more information about Delf, see: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Delf&threatId=17696
+
+PCAP OF TRAFFIC FROM THIS INFECTION:
+
+- https://github.com/pan-unit42/tweets/blob/master/2020-12-10-Ursnif-infection-with-Delf-variant.pcap.zip
+
+DATE/TIME FOR START OF THE INFECTION:
+
+- 2020-12-10 (Thursday) at 00:19 UTC
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 34c9a837ae0797151f8d3f6472ec03a1c309e773a35a0a4d6cf912dc952c4ad5
+- File size: 245,490 bytes
+- File name: myResume_345.xlsb
+- File description: Excel spreadsheet with macro for Ursnif (Gozi/ISFB)
+
+- SHA256 hash: ebdcae44c2a97e9b43045e79ebffc4b0db3fb92387a99e4432be3c03d51664a1
+- File size: 317,448 bytes
+- File location: hxxp://205.185.113[.]20/files/1.dll
+- File location: C:\yXPLXnD\YMVsnRT\LlwqJGc.dll
+- File description: DLL file for Ursnif (Gozi/ISFB)
+- Run method: rundll32.exe [filename],DllRegisterServer
+
+- SHA256 hash: b2cc1c54c3bbde2a7c0c0a32396bc6dba4d327d7a83278f478dce2f59d6751ef
+- File size: 700,416 bytes
+- File location: hxxp://162.0.224[.]165/server.rar  [sent as encoded data, decrypted on victim host]
+- File location: C:\Users\[username]\AppData\Local\Temp\18531984.exe
+- File description: Delf malware variant
+
+INFECTION TRAFFIC:
+
+- 205.185.113[.]20 port 80 - 205.185.113[.]20 - GET /SYrgg8Ts
+- 205.185.113[.]20 port 80 - 205.185.113[.]20 - GET /files/1.dll
+- 37.120.222[.]107 port 80 - booloolo2[.]com - GET /images/[long base64 string with underscores and slashes].avi
+- 162.0.224[.]165 port 80 - 162.0.224[.]165 - GET /grab32.rar 
+- 162.0.224[.]165 port 80 - 162.0.224[.]165 - GET /grab64.rar
+- 193.239.84[.]250 port 443 - HTTPS traffic
+- 162.0.224[.]165 port 80 - 162.0.224[.]165 - GET /server.rar
+- 79.110.52[.]28 port 15497 - TCP traffic caused by Delf variant
