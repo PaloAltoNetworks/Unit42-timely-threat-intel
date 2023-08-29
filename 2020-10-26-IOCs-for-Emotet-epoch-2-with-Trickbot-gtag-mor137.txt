@@ -1,0 +1,26 @@
+2020-10-26 (MONDAY) - MALWARE FROM EMOTET EPOCH 2 INFECTION WITH TRICKBOT GTAG MOR137
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1320847745155059712
+
+MALWARE FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 8d1691f2c09cc9372b30697a8e5c5ea2d7377673195c7eefc1fdb44e727332a3
+- File size: 182,784 bytes
+- File location: hxxp://worldkhobor[.]com/wp-admin/l/
+- File name: FILE_JKO_100120_WGF_102620.doc
+- File description: Word doc with macros for Emotet (Epoch 2)
+
+- SHA256 hash: ea85a6c527fc7174b1b953e6d5b2a617e79703ad1fa1db9f4ba131e0a477a544
+- File size: 180,224 bytes
+- File location: hxxps://needhelp[.]gr/wp-includes/Qlpz/
+- File location: C:\Users\[username]\Uflw5pa\W18vpk2\Nfd9nts.exe
+- File location: C:\Users\[username]\AppData\Local\SyncHost\subst.exe
+- File description: Emotet EXE (Epoch 2)
+
+- SHA256 hash: 58c4bea082b2f44f0beab5356ae2bc9bc73c3f13ab0491861bc2ba24690da103
+- File size: 806,912 bytes
+- File location: C:\Users\[username]\AppData\Local\SyncHost\sfc8b4.exe
+- File location: C:\Users\[username]\AppData\Roaming\Identities1159371911\sfc8b4.exe
+- File description: Trickbot gtag mor137 retrieved by Emotet-infected host
