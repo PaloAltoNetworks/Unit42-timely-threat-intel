@@ -1,0 +1,93 @@
+2020-12-02 (WEDNESDAY) - ASTAROTH (GUILDMA) MALWARE FROM PORTUGUESE LANGUAGE MALSPAM 
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1328425382140387328
+
+NOTES:
+
+- Astaroth (also known as Guildma and other names) is a long-running malware family that originally
+  targeted Brazil but now also targets other areas.
+
+- For a list of articles on Astaroth, see: https://malpedia.caad.fkie.fraunhofer.de/details/win.astaroth
+
+- 2020-11-24 activity related to this: https://twitter.com/huntingneo/status/1331346995487903745
+
+EMAIL HEADERS: 
+
+- Received: from geral01.pravalerx.net (geral01.pravalerx.net [91.211.245.89])
+- Subject: 
+- From: Evelyn Castro <evelyn3635@geral01.pravalerx.net>
+- Date: Wed, 02 Dec 2020 04:33:05 -0300
+
+ORIGINAL MESSAGE:
+
+Segue anexo o meu currículo completo para a sua avaliação. 
+Desde já agradeço a oportunidade e me coloco à disposição para outras informações.
+
+Caso não aceitem currículo por email , teria como me orientar onde devo deixar o currículo??
+Obrigado.
+
+MESSAGE TRANSLATED TO ENGLISH:
+
+Attached is my complete curriculum for your evaluation.
+I thank you for the opportunity and make myself available for further information.
+
+If they do not accept a resume by email, would I be able to orient myself where I should leave the resume ??
+Thanks.
+
+LINK IN THE EMAIL:
+
+- hxxp://vfiawe.tronects[.]net/9QE05CAP5PL1L8P1B9864U6QKC90Q/5975TRMAAMV/Curriculo86352445
+
+TRAFFIC FROM LINK IN THE EMAIL:
+
+- 172.67.217[.]180 port 80 - vfiawe.tronects[.]net - GET /9QE05CAP5PL1L8P1B9864U6QKC90Q/5975TRMAAMV/Curriculo86352445
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /tag.php?tag=%3Cscript%20src=%22https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/
+                            jquery.min.js%22%3E%3C/script%3E%3Cscript%20type=%22text/javascript%22%20src=%22http://vfiawe.tronects[.]net/
+                            jquery.min.php%22%3E%3C/script%3E?%3Cscript%3EIf
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /style.css
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /jquery.accessible-news-slider.css
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /fancybox/jquery.fancybox-1.2.6.css
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /fancybox/jquery.fancybox-1.2.6.pack.js
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /js/scrolltopcontrol.js
+- 172.67.217[.]180 port 80 - vfiawe.tronects[.]net - GET /jquery.min.php
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /img/logo-400.png
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /img/holz.jpg
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /img/sprites-nav.png
+- 172.67.217[.]180 port 80 - vfiawe.tronects[.]net - GET /SCRLRRM/MBKKRBXNQ/Diretorio_Digital946z64y64
+- 172.67.217[.]180 port 80 - vfiawe.tronects[.]net - GET /favicon.ico
+
+POST-INFECTION TRAFFIC
+
+- 104.28.12[.]177 port 80 - t3oomr.piajq6b3uptu[.]be - GET /?1/
+- 104.31.79[.]202 port 443 - wra60.aojjse1r7bwl[.]re Client Hello
+
+DOWNLOADED ZIP ARCHIVE AND EXTRACTED FILES (READ SHA256 HASH - FILE NAME):
+
+- fce6f3c7d39bdb5ca245775b406844ca9f2b434bb404b69862dcbf8d34c0b991 - Diretorio_Digital946892.zip
+- 557f8a24b3e2d9bb6a0526d21610788fbe52f15542572f8f4cad0daddea63808 - Diretorio_Digital94655..z
+- f0ba0bd9560279cf07a022b10a3cc323d07dd9195ea4ab6ceab4ce409830dbed - Diretorio_Digital94655.lnk
+
+LOCATION OF MALWARE/ARTIFACTS ON AN INFECTED WINDOWS HOST:
+
+- C:\Users\Public\go
+- C:\Users\Public\kq
+- C:\Users\Public\WBW.js
+- C:\Users\Public\Downloads\VIF31072827218G/log32.dll
+- C:\Users\Public\Downloads\VIF31072827218G/log33.dll
+- C:\Users\Public\Downloads\VIF31072827218G/r1.log
+- C:\Users\Public\Downloads\VIF31072827218G/svchost.exe (copy of legitimate system file)
+- C:\Users\Public\Downloads\VIF31072827218G/win.dll
+
+SHA256 HASHES FOR THE ARTIFACTS:
+
+- 2e4f01a046edf5300a898c5f9f8dc35a3050a92f0c802da36391d09dc5f1f98b - kq
+- a5ad0a1d1eee90841de6e7d8d8a8edc5586cfd2ae2634b6fdc51efff09458ff4 - go
+- a2ba33e9abc6dbf93e0975fcc946a9836a76c768d25aa7842f411cd08eb678ea - WBW.js
+
+- b1193a0b8606f4746b3c9b1f2e2420525fb58aa72fda0eb8a3d7ac54f4b76c74 - log32.dll
+- ce8e44f01e70a9616511394ede14c9bd5922d848ef761b0a413de324ae5ca66d - log33.dll
+- eacecfd138a122d8ba4038da8364e9d2ebcff76cad7c6db7d2cc7cc0fb08b7d4 - r1.log
+- 412a6b755b2029126d46e7469854add3faa850f5a4700dd1e078fcc536ca418a - svchost.exe
+- e6f2f01099d1d71e86cc2ff5650f556983d5524dc0fbe13634b4c8dda8b6fa77 - win.dll
