@@ -1,0 +1,116 @@
+2020-12-14 (MONDAY) - QAKBOT (QBOT) ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1338648242372960257
+
+NOTES:
+
+- Indicators of Compromise (IOCs) listed below are only a small sample from Qakbot activity seen on Monday 2020-12-14.
+
+DATE/TIMES FROM BATCH OF 14 MALSPAM EXAMPLES:
+
+- Date: Mon, 14 Dec 2020 17:10:12 +0000
+- Date: Mon, 14 Dec 2020 17:10:13 +0000
+- Date: Mon, 14 Dec 2020 17:10:14 +0000
+- Date: Mon, 14 Dec 2020 17:10:15 +0000
+- Date: Mon, 14 Dec 2020 17:10:17 +0000
+- Date: Mon, 14 Dec 2020 17:10:18 +0000
+- Date: Mon, 14 Dec 2020 17:10:19 +0000
+- Date: Mon, 14 Dec 2020 17:10:46 +0000
+- Date: Mon, 14 Dec 2020 17:10:48 +0000
+- Date: Mon, 14 Dec 2020 17:10:53 +0000
+
+SERVERS SENDING THE MALSPAM:
+
+- Received: from gateway31.websitewelcome.com (192.185.144.80)
+- Received: from mail.alcvietnam.com (125.234.98.190)
+- Received: from p3plsmtpa06-02.prod.phx3.secureserver.net (173.201.192.103)
+- Received: from p3plsmtpa07-05.prod.phx3.secureserver.net (173.201.192.234)
+- Received: from p3plsmtpa09-09.prod.phx3.secureserver.net (173.201.193.238)
+- Received: from p3plsmtpa11-01.prod.phx3.secureserver.net (68.178.252.102)
+- Received: from p3plsmtpa11-02.prod.phx3.secureserver.net (68.178.252.103)
+- Received: from p3plsmtpa11-10.prod.phx3.secureserver.net (68.178.252.111)
+- Received: from relay-005-12.anc24.com (183.110.224.36)
+- Received: from sg2plout10-01.prod.sin2.secureserver.net (182.50.145.4)
+- Received: from smtp.smtpout.orange.fr (80.12.242.125)
+- Received: from smtpcmd15186.aruba.it (62.149.156.186)
+- Received: from xpcp19006.xpress.com.mx (165.227.190.143)
+
+MALSPAM SENDING ADDRESSES:
+
+- From: "[spoofed recipient name]" <atencionaclientes@purifika.com>
+- From: "[spoofed recipient name]" <gestione.ordini@alcasil.com>
+- From: "[spoofed recipient name]" <info@tonksmasonry.com>
+- From: "[spoofed recipient name]" <jhlee@isung.com>
+- From: "[spoofed recipient name]" <joe@hudmonconst.com>
+- From: "[spoofed recipient name]" <legal@sygntech.com>
+- From: "[spoofed recipient name]" <orders@schipperkerescue.net>
+- From: "[spoofed recipient name]" <proveedores@cremeriallamas.com>
+- From: "[spoofed recipient name]" <rgordon@cbmja.com>
+- From: "[spoofed recipient name]" <sandrine.miquel@wanadoo.fr>
+- From: "[spoofed recipient name]" <support@signsnmoretx.com>
+- From: "[spoofed recipient name]" <victoria@gteny.com>
+- From: "[spoofed recipient name]" <vupt@alcvietnam.com>
+- From: "[spoofed recipient name]" <wasim@mirdifphysiorehab.com>
+
+MALSPAM ATTACHMENTS:
+
+- 5dc910d65097e4521d46f01a9a06ad5aeca9d053345491a848f871ba90c3b487  Document_18109801-Copy.zip
+- da32bb66eb9f61f263ba2e8d68cbca5453a4ddf06d0d0394e2232b766d27924e  Document_368711669-Copy.zip
+- 31e8ef953a4574034c7c3d1096b33457027e70b4d4b1ae5ada5bba3f3742f0ad  Document_479047798-Copy.zip
+- ae196a5057c52c4ba188ea945a720cecdec640f16c4c5afe44f266433fcf94da  Document_843742912-Copy.zip
+- 76a1f3975090ba53d4a67a88e7733210808eaff0f3771c46136ea77ee9b6ad52  Document_910794570-Copy.zip
+- fe123546ad6631ee37fef3e06128699dbe107ae4851c5f385c248f43ee79ee4b  Document_958382897-Copy.zip
+- d80cad4912e6cf72558acc8ee4ccbf010026ebc2ec3f582d2fac872e7a6f84e7  Document_983273360-Copy.zip
+- dc32f1b91b20fbea9ce3a7c7b832b6bf797ceab3c301205864e9a99a806df839  Document_1028174287-Copy.zip
+- 1535c5dba2754c8bf9796326282f0d9ee22ce5c822fcdb4103f901839d159d00  Document_1220028396-Copy.zip
+- 69a132d435bb6c9280e8866befe5c05f109b05e03d7f254840b61593c5f3993f  Document_1322270413-Copy.zip
+- 4c7421738b4c0923bed5f44d004f651a323158c941a56e1e43fbf93717388fc9  Document_1422093597-Copy.zip
+- 45964e556914a24bc56944d29f2f8a5aae68a6bb24ebbeaa46dadc5e3487b428  Document_2044269698-Copy.zip
+- eacd173dca307ebd3ae22852ae4f2e7c98a1475f002b0f0afd2afc54bc28af1c  Document_2082849359-Copy.zip
+- 5f15805f0cbac316f0947b3532fddf1ba0dcc3bd7e7e99f9f2f71a58f47a31bd  Document_2115321399-Copy.zip
+
+EXTRACTED EXCEL SPREADSHEETS:
+
+- 625eeb7698b4d1b73f8e7d965a29581efce41a6093c4fe51e0337ea9a770bea4  Document_18109801-Copy.xls
+- 82d0b5b83d9fa55b57bdcd92f636e48ac7c44303a366be96279d6402bab34257  Document_368711669-Copy.xls
+- 0c4034bf7b98e53f49641428ac3413cf8407d1f10cf423fcce0970b2c38207d1  Document_479047798-Copy.xls
+- 0057f9ee790729ef29715ac27d5129aa90b0fbf72a2160b67cd13c2608daa364  Document_843742912-Copy.xls
+- e847997f0901714a38c9e484a895db2fac80cb34634db3c8ab769d593c6b2a11  Document_910794570-Copy.xls
+- 8e109db3ca2895277f1c854b248d2dd8b605b3c5c0a37540754ac974b29360bd  Document_958382897-Copy.xls
+- bb86b8d034ba6e5a3ede0a2c1056ddb735fe6a8cadc930e848d2f8072cfc38e4  Document_983273360-Copy.xls
+- 586bd4e1f5f41569b260ce6cc6b5243bee2209c35915d1a3050cf4196c6133eb  Document_1028174287-Copy.xls
+- 84f1237656d4ce2d7e895b5dc1fc139362ff9d621c3ae043004893ed44a3b68d  Document_1220028396-Copy.xls
+- ca48398300658adbe9bb2c06cea43501aa2c0d3ab14c6c838b9286008a4ceba3  Document_1322270413-Copy.xls
+- ea4f55c3e25d39aa2966644bd7a5bc38e93d36438d53d0887215ba34fb024d6c  Document_1422093597-Copy.xls
+- 3eefa9f1e1e38dddb63bd3c41ccfa32a618e56150645e4c0c2ebd3fe2a956b9f  Document_2044269698-Copy.xls
+- d0cbd7a60391818e8efe5c48002c3b5267aa2e9869890868e206dc9b12201b43  Document_2082849359-Copy.xls
+- 7b1a017438faf8389c27eef81092adb00ea72e21381234e91f3105c381ec66bc  Document_2115321399-Copy.xls
+
+URL GENERATED WHEN ENABLING MACROS ON THE ABOVE EXCEL SPREADSHEETS:
+
+- hxxp://kangaroo.techonext[.]com/spywwafea/5555555555.jpg
+
+MALWARE RETRIVED FROM THE ABOVE URL:
+
+- SHA256 hash: 5663904ac0902cf42a9f562733ef43e83d8faed39443634412bf6083304f819e
+- File size: 228,864 bytes
+- File location: hxxp://kangaroo.techonext[.]com/spywwafea/5555555555.jpg
+- File location: C:\IntelCompany\JIOLAS.RRTTOOKK
+- File description: DLL file for Qakbot
+- Run method: rundll32.exe C:\IntelCompany\JIOLAS.RRTTOOKK,DllRegisterServer
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- 43.225.55[.]204 port 80 - kangaroo.techonext[.]com - GET /spywwafea/5555555555.jpg
+- 78.97.3[.]6 port 443 - attempted TCP connections (not successful)
+- 197.49.240[.]8 port 995 - HTTPS/SSL/TLS traffic
+- 125.239.152[.]76 port 995 - HTTPS/SSL/TLS traffic
+- port 443 - www.openssl.org - HTTPS traffic, connectivity check
+- 54.36.108[.]120 port 65400 - TCP traffic
+- port 443 - api.ipify.org - HTTPS traffic, IP address check
+- various IP addresses over various email-related ports - connectivity/banner checks
+- 92.154.83[.]96 port 2087 - attempted TCP connections (not successful)
+- 92.154.83[.]96 port 2078 - attempted TCP connections (not successful)
+- 42.201.228[.]106 port 995 - attempted TCP connections (not successful)
