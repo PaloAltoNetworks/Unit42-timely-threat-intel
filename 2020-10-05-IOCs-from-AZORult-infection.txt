@@ -1,0 +1,69 @@
+2020-10-05 (MONDAY) - MALSPAM WITH XLS ATTACHMENT PUSHES AZORULT MALWARE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1313545578803011595
+
+EMAIL HEADERS:
+
+Return-Path: <neeltravels@infoclub.com.np>
+Authentication-Results: [removed]; iprev=pass policy.iprev="203.78.160.41"; spf=neutral
+  smtp.mailfrom="neeltravels@infoclub.com.np" smtp.helo="mx2.info.com.np"; dkim=none
+  (message not signed) header.d=none; dmarc=none (p=nil; dis=none) header.from=infoclub.com.np
+Received: from [203.78.160.41] ([203.78.160.41:42046] helo=mx2.info.com.np)
+	by [removed] (envelope-from <neeltravels@infoclub.com.np>)
+	[removed] ; Mon, 05 Oct 2020 10:21:53 -0400
+Received: from localhost (localhost [127.0.0.1])
+	by mx2.info.com.np (Postfix) with ESMTP id 9D004C010EEDA;
+	Mon,  5 Oct 2020 20:05:27 +0545 (+0545)
+Received: from mx2.info.com.np ([127.0.0.1])
+	by localhost (mx2.info.com.np [127.0.0.1]) (amavisd-new, port 10032)
+	with ESMTP id NxFAiUUDPfZM; Mon,  5 Oct 2020 20:05:26 +0545 (+0545)
+Received: from localhost (localhost [127.0.0.1])
+	by mx2.info.com.np (Postfix) with ESMTP id B3A6BC01205B7;
+	Mon,  5 Oct 2020 20:05:25 +0545 (+0545)
+Received: from mx2.info.com.np ([127.0.0.1])
+	by localhost (mx2.info.com.np [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id 2Hz7ajN5BfmV; Mon,  5 Oct 2020 20:05:25 +0545 (+0545)
+Received: from mx2.info.com.np (mx2.info.com.np [203.78.160.41])
+	by mx2.info.com.np (Postfix) with ESMTP id B1E23C010EED6;
+	Mon,  5 Oct 2020 20:05:23 +0545 (+0545)
+Date: Mon, 5 Oct 2020 20:05:23 +0545 (NPT)
+From: neeltravels@infoclub.com.np
+Message-ID: <335140558.5692.1601907623511.JavaMail.zimbra@infoclub.com.np>
+In-Reply-To: <1021474505.5156.1601907307814.JavaMail.zimbra@infoclub.com.np>
+Subject: Order confirmation
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_5684_151580814.1601907623466"
+X-Mailer: Zimbra 8.6.0_GA_1153 (ZimbraWebClient - FF81 (Win)/8.6.0_GA_1153)
+Thread-Topic: Order confirmation
+Thread-Index: 2VBCTeFcpKsqezW/qovDHEXVLMew2cAVOyZvAX/6jocf2g0v5XT0r/qLX4VEbQbMwFb9VbHuNr30
+
+Attachment name: 0617773.xls
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 024512629393c80c1434eb25694c9f1e65d813cd3c273c6d97572ec62d8ad655
+- File size: 462848 bytes
+- File name: 0617773.xls
+- File description: Excel spreadsheet with macro for AZORult malware
+
+- SHA256 hash: b2fe9bcc932ea65ec98318fd983e862172123cab111e728d97c23258749521c7
+- File size: 308,736 bytes
+- File location: hxxp://192.236.178[.]80/7z/0617773.jpg
+- File location: C:\Users\Public\whpfwkrul.exe  (initial location)
+- File location: C:\Users\[username]\chrmo.exe  (persistent location)
+- File description: Windows EXE for AZORult
+
+MALWARE PERSISTENCE (REGISTRY UPDATE):
+
+- Registry key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+- Value name: nspj
+- Value type: REG_SZ
+- Value data: C:\WINDOWS\system32\pcalua.exe -a C:\Users\[username]\chrmo.exe
+
+INFECTION TRAFFIC:
+
+- 192.236.178[.]80 port 80 - 192.236.178[.]80 - GET/7z/0617773.jpg
+- 198.50.160[.]198 port 80 - books.myscriptcase[.]com - POST /index.php
