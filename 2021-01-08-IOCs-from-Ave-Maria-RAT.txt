@@ -1,0 +1,45 @@
+2021-01-08 (FRIDAY) - EXAMPLE OF AVE MARIA RAT FROM MALICIOUS SPAM
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1347638732900495366
+
+NOTE: 
+
+- For more information about Remote Access Tool (RAT) malware called Ave Maria, see:
+  https://team-cymru.com/blog/2019/07/25/unmasking-ave_maria/
+
+EMAIL HEADERS:
+
+Received: from [45.15.143.212] (port=62972 helo=mediplusmedikal.com)
+	by [information removed] (envelope-from <satis@mediplusmedikal.com>)
+	id 1kxcBL-002VfA-PI for [information removed]; Thu, 07 Jan 2021 13:47:02 -0700
+From: Tonia Kins  <satis@mediplusmedikal.com>
+Subject: RE: Re:Fw: Telex Release #06012020.xls
+Date: 07 Jan 2021 21:46:41 +0100
+Message-ID: <20210107214641.DDA47117FE9E2265@mediplusmedikal.com>
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 07a877cc1499b20ae7bcaf0200f2576a100754fa661e391f36cbb95aa58a75b9
+- File size: 122,880 bytes
+- File name: Telex#06012020.xls
+- File description: Email attachment, an Excel spreadsheet with macro for Ave Maria RAT
+
+- SHA256 hash: 0d036e60f241fa89c4662fdaad193a5a7a372677a436b0e91cec8e96d4b7c7a6
+- File size: 453,227 bytes
+- File location: hxxp://lankarecipes[.]com/mages.jpg
+- File description: Text file for Powershell script retreived by Excel macro
+
+- SHA256 hash: 504e0489472d6107d56d6d4f88600200b055bd97c3158ef1c9a54ea38074351a
+- File size: 339,293 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\Test3.jpg
+- File description: Windows EXE for Ave Maria RAT
+
+TRAFFIC TO RETRIEVE POWERSHELL SCRIPT:
+
+- 192.185.236[.]165 port 80 - lankarecipes[.]com - GET /mages.jpg
+
+POST-INFECTION C2 TRAFFIC:
+
+- 37.46.150[.]86 port 5200 - encoded or encrypted TCP traffic (not HTTPS/SSL/TLS)
