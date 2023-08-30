@@ -1,0 +1,108 @@
+2021-03-01 (MONDAY) - ICEDID (BOKBOT) WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1366517634079072256
+
+CHAIN OF EVENTS:
+
+malspam --> attached ZIP archive --> extracted Excel file --> enable macros --> initial DLL retreived --> 
+follow-up binary retreived --> IcedID C2 activity --> Cobalt Strike in AD environment
+
+NOTES:
+
+- This is from a spreadsheet using the same template that was also pushing Qakbot today.
+
+- This list covers two infection runs. The first run happened in an Active Directory (AD) environment. 
+  The second run was on a stand-alone host. Only the first run saw Cobalt Strike as follow-up activity. 
+  The second run saw IcedID command and control (C2) with no follow-up activity from other malware.
+
+MALWARE COMMON TO BOTH INFECTION RUNS:
+
+- SHA256 hash: f983be9d613d636731beba91e404fda55467350aa963ca3896fc1995f12c708d
+- File size: 87,552 bytes
+- File name: document-2073999746.xls
+- File description: Excel spreadsheet with malicious macro
+
+- SHA256 hash: da0921c1e416b3734272dfa619f88c8cd32e9816cdcbeeb81d9e2b2e8a95af4c
+- File size: 3,528,360 bytes
+- File location: hxxp://rlvq27rmjej02sfvb[.]com/fedara.gif
+- File location: C:\Users\[username]\IEUDLK.CJF
+- File description: DLL retreived by Excel macro to install IcedID
+- Run method: rundll32.exe [filename],DllRegisterServer
+
+- SHA256 hash: 45b6349ee9d53278f350b59d4a2a28890bbe9f9de6565453db4c085bb5875865
+- File size: 341,002 bytes
+- File location: C:\Users\[username]\AppData\Roaming\TalentMan\license.dat  (1st run)
+- File location: C:\Users\[username]\AppData\Roaming\VisitLeader\license.dat  (2nd run)
+- File description: Encoded or encrypted data file used for IcedID infection
+
+INITIAL TRAFFIC COMMON TO BOTH INFECTION RUNS:
+
+- 8.209.64[.]96 port 80 - rlvq27rmjej02sfvb[.]com - GET /fedara.gif
+- port 443 - aws.amazon[.]com - HTTPS traffic, not inherently malicious
+- 206.189.10[.]247 port 80 berxion9[.]online - GET /
+
+--------------------------------
+1ST RUN MALWARE (AD ENVIRONMENT):
+--------------------------------
+
+- SHA256 hash: 92a9833857288910df920d075dd9bc4d922d52af207d5952184a65237ecd65bf
+- File size: 4,681,728 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\wolf-x64.dat
+- File description: Initial IcedID DLL
+- Run method: rundll32.exe "C:\Users\[username]\AppData\Local\Temp\wolf-x64.dat",update /i:"TalentMan\license.dat"
+
+- SHA256 hash: 48532db641ed61a1e144de0a390081afc0fd791a9c3aef758dd214f78c468157
+- File size: 4,681,728 bytes
+- File location: C:\Users\[username]\AppData\Local\Ovicpu\[username]\Juubwe64.dll
+- File description: IcedID persistent on the infected Windows host through scheduled task
+- Run method: rundll32.exe "C:\Users\[username]\AppData\Local\Ovicpu\[username]\Juubwe64.dll",update /i:"TalentMan\license.dat"
+
+1ST RUN ICEDID C2 TRAFFIC:
+
+- 159.203.6[.]195 port 443 - wellernaft[.]top - IcedID C2 traffic
+- 159.203.6[.]195 port 443 - reworktopper[.]top - IcedID C2 traffic
+
+OTHER DOMAINS HOSTED ON THE SAME IP ADDRESS:
+
+- 159.203.6[.]195 port 443 - awerityubfer[.]club
+- 159.203.6[.]195 port 443 - cleantheplace[.]top
+
+1ST RUN COBALT STRIKE ACTIVITY:
+
+- 94.158.244[.]89 port 8888 - asurecloud[.]tech - HTTPS/SSL/TLS traffic
+- 94.158.244[.]89 port 8888 - no domain name - HTTPS/SSL/TLS traffic
+- 94.158.244[.]89 port 8080 - download.windowsupdate.com - GET /wp/clients/wssysk.cab
+- 94.158.244[.]89 port 8080 - download.windowsupdate.com - GET /c/msdownload/update/others/2021/01/158963_
+- 94.158.244[.]89 port 8080 - download.windowsupdate.com - POST /c/msdownload/update/others/2021/01/158963_?update_id=
+
+-----------------------------------------
+2ND RUN MALWARE (STAND-ALONE ENVIRONMENT):
+-----------------------------------------
+
+- SHA256 hash: 7051f30a6b9c7826f017faf69fe52c6e28c71af1ef5e1dbaae9c6f8a885019a7
+- File size: 4,722,688 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\vessel-x64.dat
+- File description: Initial IcedID DLL
+- Run method: rundll32.exe "C:\Users\[username]\AppData\Local\Temp\vessel-x64.dat",update /i:"VisitLeader\license.dat"
+
+- SHA256 hash: 48532db641ed61a1e144de0a390081afc0fd791a9c3aef758dd214f78c468157
+- File size: 4,722,688 bytes
+- File location: C:\Users\[username]\AppData\Local\ederis2\aqze64\Ximaci4.dll
+- File description: IcedID persistent on the infected Windows host through scheduled task
+- Run method: rundll32.exe "C:\Users\[username]\AppData\Local\ederis2\aqze64\Ximaci4.dll",update /i:"VisitLeader\license.dat"
+
+2ND RUN ICEDID C2 TRAFFIC:
+
+- 64.227.119[.]213 port 443 - pexxota[.]space - IcedID C2 traffic
+- 64.227.119[.]213 port 443 - shrapnell[.]space - IcedID C2 traffic
+
+OTHER DOMAINS HOSTED ON THE SAME IP ADDRESS:
+
+- 64.227.119[.]213 port 443 - artilleryin[.]online
+- 64.227.119[.]213 port 443 - bowepripos[.]uno
+- 64.227.119[.]213 port 443 - caliberunity[.]club
+- 64.227.119[.]213 port 443 - kastellira3[.]space
+- 64.227.119[.]213 port 443 - snproti[.]cyou
+- 64.227.119[.]213 port 443 - timerework[.]fun
