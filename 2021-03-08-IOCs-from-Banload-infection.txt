@@ -1,0 +1,63 @@
+2021-03-08 (MONDAY) - BANLOAD MALWARE FROM NFS-e THEMED MALSPAM
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1369043270429466634
+
+EMAIL HEADERS:
+
+Received: from contato06.notascentral[.]com ([13.75.169[.]12]) by [removed] for [removed];
+	Mon, 08 Mar 2021 14:47:29 +0000 (UTC)
+Received: from [127.0.0.1] (contato06 [127.0.0.1])
+	by contato06.notascentral[.]com (Postfix) with ESMTP id C8FFA425DA
+	for [recipient's email address]; Mon,  8 Mar 2021 14:44:57 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary="===============4604171671619042800=="
+Subject: Nota Fiscal de Servicos Eletronica - NFS-e No. 202125368583 emitida
+From: Prefeitura Do Recife <info@contato06.notascentral[.]com>
+To: [recipient's email address]
+Date: Mon,  8 Mar 2021 14:44:57 +0000 (UTC)
+
+LINK FROM THE EMAIL:
+
+- hxxps://arquivomes03.brazilsouth.cloudapp.azure[.]com/?usuario=[recipient's email address]
+
+MALICIOUS FILES:
+
+- SHA256 hash: 500015fe83d96b841d401a5d48287d3a164ec90d0810498af4d3b9ac73b67cda
+- File size: 130,522 bytes
+- File name: Arquivo-dig ZBVS WDNCNR HNUBHBAM BJRPHYLTYZ .zip
+- File description: ZIP archive containing Banload malware installer, downloaded from link in the email.
+- NOTE: This is a different name and file hash each download
+
+- SHA256 hash: f364525bd719aefacb0453cb9eb8814d8c67b87ce0928aed13196936115f9280
+- File size: 274,432 bytes
+- File name: digital.-.online C∩RWROI┐A∩┐┐┐┐M╜∩╜┐╜X╜╜A╜S┐OYW╜┐N∩YMA┐T∩╜Z∩A∩╜CHZA.msi
+- File description: Installer for Banload malware
+
+- SHA256 hash: 53f76e3e31e07b39ec05c845666339930f7b8e37b9c07ed62dab10b2a30323d3
+- File size: 4,410,880 bytes
+- File name: C:\[various directory paths]\imgengine.dll
+- File description: Banload malware DLL named "imgengine.dll" and loaded by legitimate file DiscSoftBusServicePro.exe
+
+NON-MALICIOUS FILES ASSOCIATED WITH THIS INFECTION:
+
+- SHA256 hash: ee38171c75dbb5c3cde877ec28d8cca9eec2ca3277eea9250e03bd90b1125d6f
+- File size: 1,970,368 bytes
+- File name: C:\[various directory paths\[random name].exe
+- File description: Copy DiscSoftBusServicePro.exe, a legitimate EXE that's part of  DAEMON Tools Pro software
+- NOTE: This file is used to load any DLL named imgengine.dll.
+
+- SHA256 hash: 1c7d5e42ff3bc5e1a0ecd01fa68633dc67515b3a06e660fcd2d22d6ea436a6f1
+- File size: 51,232 bytes
+- File name: C:\[various directory paths]\sptdintf.dll
+- File description: A legitimate DLL file also loaded by DiscSoftBusServicePro.exe
+
+TRAFFIC FROM AN INFECTION: 
+
+- hxxps://arquivomes03.brazilsouth.cloudapp.azure[.]com/?usuario=[recipient's email address]
+- hxxps://arquivomes03.brazilsouth.cloudapp.azure[.]com/index_1/
+- hxxps://casaprodutosportal[.]net/hintro/hilos.gif
+- hxxps://shonitrohifi[.]com/hiroshi/rihappy.php
+- hxxps://docs.google[.]com/document/d/1D_TTlVEZzJILrMcnt5CP_WNlo5yXWZVbFDYwXT24NHI/edit
+- hxxps://hirotrindade.webcindario[.]com/soremb/especial
