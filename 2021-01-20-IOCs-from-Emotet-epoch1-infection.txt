@@ -1,0 +1,78 @@
+2021-01-20 (WEDNESDAY) - EMOTET (EPOCH 1 BOTNET) INFECTION ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1352020352004730880
+
+CHAIN OF EVENTS:
+
+- malspam --> password-protected ZIP archive --> Word doc --> enable macros --> Emotet --> Trickbot and spambot activity
+
+EMAIL HEADERS:
+
+Received: from svrinterweb.ministeriopublico.gob.ni (svrinterweb.ministeriopublico.gob.ni. [200.85.167.254])
+	by [recipient's mail server] with ESMTPS id v16si557563vsm.41.2021.01.20.07.21.32
+	for <[recipient's email address]>
+	(version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+	Wed, 20 Jan 2021 07:21:33 -0800 (PST)
+Received: from [10.0.0.15] (unknown [190.166.119.159])
+	by svrinterweb.ministeriopublico.gob.ni (Postfix) with ESMTPSA id 8A7041984993
+	for <[recipient's email address]>; Wed, 20 Jan 2021 09:21:24 -0600 (CST)
+Date: Wed, 20 Jan 2021 11:21:26 -0400
+From: "[spoofed sender name]" <vcordero@ministeriopublico.gob.ni>
+To: "[Recipient's name]" <[recipient's email address]>
+Subject: Re: Re: [subject line info removed]
+MIME-Version: 1.0
+Attachment filename: AN143221 200121.zip
+
+MALWARE:
+
+- SHA256 hash: 6b7d3ba4c4f52dddaaa9416e03d81f1ce974a10443c1b15f8651aa869d938e58
+- File size: 162,304 bytes
+- File name: AN143221 200121.zip
+- File description: password-protected ZIP archive attached to email
+- File note: Password for ZIP attachment is 4432
+
+- SHA256 hash: 1376ccfbd0ddc8fbd523d646b424e2436d96e7a7dbebf71d16ac4e54cef4624d
+- File size: 162,304 bytes
+- File name: AN143221 200121.doc
+- File description: Word doc with macro for Emotet (epoch 1 botnet)
+
+- SHA256 hash: b5abacf24ae5aa96016c09f71a78d0121fff396d6154740eab622c4751e1764f
+- File size: 356,696 bytes
+- File location: hxxp://senbiaojita[.]com/wp-admin/iDlsc/
+- File location: C:\users\[username]\Ijzffo8\Y77J.dll\Y77J.dll
+- File location: C:\users\[username]\Local\Aibevs\jbcss.nfg
+- File description: malware DLL for Emotet from its epoch 1 botnet
+- Run method: rundll32.exe [filename],DUabvWmG
+- Run method note: ASCII string for DLL entry point can be any string of characters.
+
+- SHA256 hash: 97aa05fceef261ee4ca00025a69280b8f9843ba6531a48ee543eed1f37af8c27
+- File size: 1,288,944 bytes
+- File location: hxxp://149.56.80[.]23/images/picture.png
+- File location: C:\Users\[username]\AppData\Roaming\Comboboot7559513311\jbcss.exe
+- File description: Trickbot EXE, gtag mor1
+- Run method: Scheduled task using launcher.bat to run Trickbot EXE
+
+EMOTET TRAFFIC:
+
+- 125.65.108[.]71 port 80 - senbiaojita[.]com GET /wp-admin/iDlsc/
+- 181.10.46[.]92 port 80 - 181.10.46[.]92 - various HTTP POST requests
+- 206.189.232[.]2 port 8080 - 206.189.232[.]2:8080 - various HTTP POST requests
+- 37.187.195[.]209 port 443 - 37.187.195[.]209:443 - various HTTP POST requests
+- 165.22.93[.]5 port 8080 - 165.22.93[.]5:8080 - various HTTP POST requests
+- various mail server IP addresses - various SMTP ports - spambot traffic'
+- various IP addresses - TCP ports 80, 443, 8080, etc - attempted TCP connections
+
+TRICKBOT TRAFFIC:
+
+- 83.151.14[.]13 port 443 - HTTPS traffic
+- 107.191.61[.]39 port 443 - HTTPS traffic
+- 195.123.240[.]236 port 447 - HTTPS traffic
+- port 443 - ident[.]me - HTTPS traffic (connectivity check by infected windows host)
+- 149.56.80[.]23 port 80 - 149.56.80.23 GET /images/picture.png
+- 190.106.105[.]50 port 80 - 190.106.105[.]50 - POST /mor1/[ASCII string with host idenfiers]/81/
+- 190.152.2[.]86 port 80 - 190.152.2[.]86 - POST /mor1/[ASCII string with host idenfiers]/81/
+- 190.106.105[.]50 port 80 - 190.106.105[.]50 - POST /mor1/[ASCII string with host idenfiers]/90
+- 190.152.2[.]86 port 80 - 190.152.2[.]86 - POST /mor1/[ASCII string with host idenfiers]/90
+- Various IP addresses -  TCP ports 443 or 447 - attempted TCP connections
