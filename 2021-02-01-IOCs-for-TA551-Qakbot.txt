@@ -1,0 +1,111 @@
+2021-02-01 (MONDAY) - TA551 (SHATHAK) WORD DOCS WITH MACROS FOR QAKBOT:
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1356615375136432130
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> installer DLL for Qakbot -->
+  Qakbot infection activity
+
+NOTES:
+
+- Word docs that are approximately 77.4 to 77.8 kB drop an .hta file that retrieves the installer DLL after macros are enabled.
+  These installer DLLs use a .tmp file extension, and the .hta file is deleted after the installer DLL is retreived.
+- Word docs that are approximately 98.1 to 90.0 kB use a copy of MSHTA.exe renamed "xml.com" to retrieve the installer DLL after
+  macros are enabled (these installer DLLs use a .jpg file extension). No .hta files are involved for these infections.
+
+SELECTED EMAIL HEADER LINES FROM AN EXAMPLE OF TA551 MALSPAM RECEIVED MONDAY 2021-02-01:
+
+Received: from mailproxy6.neonova.net ([137.118.40.136])
+          by [recipient's mail server] for <[information removed]@gmail.com>;
+          Mon, 01 Feb 2021 05:33:55 -0800
+Received: from localhost (ip-64-21-243-139.far.ideaone.net [64.21.243.139])
+	(Authenticated sender: dgorgen@diodecom.net)
+	by mailproxy6.neonova.net (Postfix) with ESMTPA id 1444561399D
+	for <[information removed]@gmail.com>; Mon,  1 Feb 2021 08:33:35 -0500 (EST)
+Date: Mon, 1 Feb 2021 13:33:27 +0000
+To: [information removed]@gmail.com
+From: [information removed]@[information removed]
+Subject: Re: [information removed]
+Message-ID: <74c04b59b714d0adf29d1aa7f0a40501@127.0.0.1>
+X-Mailer: Apple Mail
+
+ATTACHMENT FROM THE ABOVE MALSPAM EXAMPLE:
+
+- SHA256 hash: eb778fb8b148283a974722ef6061fb635a645d34482c7a4e404070739913c1cc
+- File size: 76,462 bytes
+- File name: request.zip
+- File description: Password-protected zip archive, password: 1636312
+
+14 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 26bfde370bc7a5c4103e36eb9f9100098ca765b7e8a4626670909394544b0d4e  bid.02.01.2021.doc
+- eb757faa0f6c3f2850e9b41180ed7074d2c16e06e90903e9d42ed84a9f4a2936  deed contract-02.01.2021.doc
+- 5b729ea665fa8c4ee7d64a33f8037ddcd0cd67e018362b8faef0fb385a8cef7f  direct,02.01.2021.doc
+- 41cb719e8e63ea65cba5c11f8e3b67366f4a82be10e04b0edac93ef252131ee4  facts-02.21.doc
+- 034ebeaf49fcce885c4a12263654c40ebc7f5b9f101853dba07c26a519ed92fd  figures_02.21.doc
+- 8b554ed79aef862f7073f93b6f67a8dea8368098c1d951365317de3803acae66  files 02.21.doc
+- b98765a92ce3b969aea493581d07f58b76d186f3f6c33f82d5a2bcff9a0e5884  files.02.01.2021.doc
+- a703ba3e56304e8a8f0bce8886fabcece70384dbd3e39ddfff7a05c843713d92  intelligence-02.21.doc
+- b4244b8176058da9ac776ed7b30cb129b058b1d4d882e67bcd8950dd052b1ee4  legal agreement.02.01.2021.doc
+- 2c05fd924ae513dff3b01f711a895dc00012a0e0d8c9a9597b87909c47042ffc  legal agreement.02.21.doc
+- a8e05882220ef7e0b55eef3048c1e79ea607e1aba5fafb6431b4e94fc75724e6  order.02.21.doc
+- 8152d17fb6a2f359c70a51b140b601b428d4e26b19e35cc222bed815787a11bb  require-02.21.doc
+- 0c9bf697ea913a97283d559bdd59fe83fef51a5038797dbfc9a8a7835f2968d6  specifics_02.01.2021.doc
+- e604d957f6bc4ee372e7a82b7e6efc013d7766fb34cd7fd1ef91725a39214ab3  statistics-02.01.2021.doc
+- 565d3ae890b5fad611a958335f431373a3fa83936776805ac3601db5193bdd82  statistics_02.01.2021.doc
+
+AT LEAST 7 DOMAINS HOSTING THE INSTALLER DLL:
+
+- 91.194.11[.]79 - 3crouch1[.]com
+- 45.133.216[.]231 - 3phone5[.]com
+- 185.234.247[.]179 - 54cquality1[.]com
+- 45.133.216[.]232 - 8bench2[.]com
+- 45.150.67[.]196 - 98magnet3[.]com
+- 45.133.216[.]85 - a8stand4[.]com
+- 91.194.11[.]78 - e48cereal4[.]com
+
+EXAMPLES OF URLS FOR INSTALLER DLL:
+
+- hxxp://54cquality1[.]com/assets/4469c74df9d04868f7e10df82/60147d037f06b01c0c63a60aaf862/svlah14?xvf=575ba0&mk=5e07edc9a0&cgtv=cff96e
+- hxxp://3phone5[.]com/assets/12affb3f83e6b/5581bef40c7/5b0f647ba9853082d35c2/svlah10?cjbb=0729291227500f&gzsvk=1159e1b25&kz=d53c66ad2b8a428
+- hxxp://3phone5[.]com/assets/1990b76c67f2a5a02d4af/ec27eff5ae773f93170c49cbb79b55611b562f317a6a5eb5a977/svlah12?fz=1611da&nzwi=bbe3f3cb&pptfc=fde5a4b04a2e94a&srcg=9a97dce1&fq=2a1d36374b&ff=d17edb7a6e71709e6
+- hxxp://8bench2[.]com/assets/a49a23e335b7b6dc6ea6/e2a6/178d02a5df81e63c6/svlah8?o_zk=d3a7c8fbc15f63&rkz=aff06fea8&mzj=24d0bc49&mt=db44a69dba74fefc6&zdhq=fd86e39ba455
+- hxxp://a8stand4[.]com/assets/3ca3bef4e3df05171403435913160a5581a792b98/ae67/076/242da2bc2835d822344802b6e2/svlah6?op=0d4dbfdae8f&la=ee8fc9102702b9&vy_=5cf4a59a135&bzggv=d33e2d97
+- hxxp://98magnet3[.]com/assets/2f778f97c/65bed8df414d0ba5f3708268b730b14/be1/09816ec5dff56ca/0c2d0ec1eddd7/svlah6?sy=615fe3fb5719e&kvb=e1671c2b080d5ab&dyxx=93f00f737c9d05&gq=d5478c2827
+- hxxp://98magnet3[.]com/assets/5fd68c25787b1f/7b0c0d8b1174abdb83f7e1ebd82a2/bbd86b94f28d7fa3134693c3/svlah4?lxb=574af6&prz=80a59a5&dy=56da5e7a47afced2&xjyq=98e671926661a8
+- hxxp://e48cereal4[.]com/assets/7a6db49e2d5/922d/ba4c4/4039b9f3e0110d50bbd7/svlah7?ta=6b8586b&dswa=fc512a2a6b0298d&wfxgq=dfffb12e943754
+- hxxp://e48cereal4[.]com/assets/bc49edf17fa03357bdc6c9f34dad54e85a5fe10c09fc2/svlah8?vndo=2bd8afadc6&fh=8f35da6d4cb&adb=6e022dc098cbbfce&dezm=8359c3297ef7a&jlr=b9b2a6add
+- hxxp://3crouch1[.]com/assets/a/7fd42c11078fb1915c0e78dd/766278fe1a5839c85eadbc774596740bad6/60d92/svlah12?nsyr=8c3daf4&xobyq=b48fd6b5bc5a23a&xxqc=09b17bb0847f457a
+
+10 EXAMPLES OF INSTALLER DLLS:
+
+- 060fd250d8ef9ae8a143790cbd787ac09516c58ba60eda57aa68b412d58ef2cd
+- 193aec32263c77c4fc8f595ee6d1be0b0bd39441ecc76e1c56667ebd8e9d765f  
+- 3a3c6a24c92122aed7b59bbf11bb4dd3336f8d8c4cac465019b378c413115b4b
+- 56b00ad268437ab13a1f697139503ae499204e0057acc002768c1f69db25a049
+- adb88494e762ab691988b60a10c6b7f8cf3c921f878a189e9a468ee4cf059820
+- b26fc49a0c4e6d016dd81d948aecd9f7e7c46ffbd7beefe5b9cf1a4f621a3ce3  
+- b7898a7da2fd73de6494cabb18090115e5a966a667478cfd55ab75d305dc3109
+- e2f918cc280e13a42b676094f818b747c8a6d99222b4adab44f4b8ed1f34e0c0
+- f3feb8d547565871d9fbc105082bbc6d50466a9fb2e3da5131d267010c48ad86
+- f540357d1b588091c99f739171e8846fb604a5ee0f9a3dd776f5584c023cb4a3
+
+EXAMPLES OF LOCATION FOR THE INSTALLER DLL FILES:
+
+- C:\ProgramData\12842.jpg
+- C:\ProgramData\21254.jpg
+- C:\ProgramData\27867.jpg
+- C:\ProgramData\59612.jpg
+- C:\ProgramData\a2t7KN.tmp
+- C:\ProgramData\a37tH8.tmp
+- C:\ProgramData\aGdS0r.tmp
+- C:\ProgramData\aSziC.tmp
+- C:\ProgramData\avYth.tmp
+- C:\ProgramData\ayYdz.tmp
+
+DLL RUN METHOD:
+
+- regsvr32.exe [filename]
