@@ -1,0 +1,57 @@
+2021-01-11 (MONDAY) - DRIDEX INFECTION WITH WEBSHELL TRAFFIC
+
+UNIT 42 REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1348736525467602948
+  -- Note: The tweet has a typo in the date listed in the text.
+
+ORIGINAL REFERENCES:
+
+- https://twitter.com/JAMESWT_MHT/status/1348655938216087553
+- https://twitter.com/58_158_177_102/status/1348649830344581122
+- https://twitter.com/reecdeep/status/1348649270174478336
+
+HEADERS FROM EXAMPLE OF EMAIL DISTRIBUTING DRIDEX
+
+Received: from exchange.millepiedi.net (unknown [93.145.111.74])
+ by [recipient's email server] (Postfix) with ESMTP id 908DB500802
+ for <[recipient's email address]>; Mon, 11 Jan 2021 16:25:08 +0100 (CET)
+Received: from [90.110.38.175] (account
+ silveringe19@CHR1PR1EX72.chrobinson.com HELO
+ pnmmtcyqojjwaq.lrbgmdgxrtay.host)
+ by exchange.millepiedi.net (Postfix)
+ with ESMTPA id 42163DbB for [recipient's email address];
+ Mon, 11 Jan 2021 16:25:07 +0100
+Received: from [192.141.1.76] (account silveringe19@CHR1PR1EX72.chrobinson.com
+ HELO mrfnciscl.cyrugjzysixn.biz) by exchange.millepiedi.net (Postfix)
+ with esmtpa id 221eCDdA for [recipient's email address];
+ Mon, 11 Jan 2021 16:25:07 +0100
+Date: Mon, 11 Jan 2021 16:25:07 +0100
+Message-ID: <dCde.8B0F.b28289aeA8.CB7fD@eokixevvun.dztyrz.info>
+From: <customerservice@freightquote.com>
+To: [recipient's email address]
+Subject: Freightquote Invoice
+Attachment name: INV3856501643-20210111381234.xlsm
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: a463f9a8842a5c947abaa2bff1b621835ff35f65f9d3272bf1fa5197df9f07d0
+- File size: 42,039 byte
+- File name: INV9261221402-20210111302151.xlsm
+- File description: Email attachment, an Excel file with macro for Dridex
+
+- SHA256 hash: 3997bf3cf7485ae768f7a23aaa9004f73b0594550611138906821f9b4dc9bce7
+- File size: 318,976 bytes
+- File location: hxxp://www.sustaino2[.]com/q0ig4v.rar
+- File location: C:\Users\[username]\AppData\Local\Temp\uyqpshep.dll
+- File description: Excample of DLL called by Excel macro to install Dridex
+- Run method: regsvr32.exe -s [filename].
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- 43.255.154[.]9 port 80 - www.sustaino2[.]com - GET /q0ig4v.rar (Dridex DLL)
+- 77.220.64[.]37 port 443 - HTTPS C2 traffic causeed by Dridex
+- 23.95.132[.]44 port 443 - HTTPS C2 traffic causeed by Dridex
+- 151.80.241[.]109 port 443 - 151.80.241[.]109:2953 - GET / (webshell traffic)
+
+NOTE: An example of the webshell can be downloaded from: https://app.any.run/tasks/00c67973-c98b-49d0-bf33-c1f4da3d4078
