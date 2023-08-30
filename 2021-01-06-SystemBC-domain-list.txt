@@ -1,0 +1,39 @@
+2021-01-06 (WEDNESDAY): SYSTEMBC DOMAINS
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1346948168395739139
+
+NOTES:
+
+- This is a list of additional domains related to SystemBC backdoor activity originally reported
+  last month by Sophos at: https://news.sophos.com/en-us/2020/12/16/systembc/
+
+- A fresh VT sample less than 48 hours old as of this writing uses some of these domains:
+  -- https://www.virustotal.com/gui/file/756da357013f85f7b9c9c31846e1228f575ad0f84712e194711877632254bb82
+
+LIST OF DOMAINS RELATED TO RECENT SYSTEMBC BACKDOOR ACTIVITY:
+
+26asdcgd[.]com
+adsblog179[.]xyz
+xadsblog279[.]xyz
+fgksdstat14tp[.]xyz
+gmstar23[.]xyz
+fgkmailserv19fd[.]xyz
+psxadvexmail19mn[.]xyz
+mxblogs19[.]xyz
+adxspace147[.]xyz
+rzazmrserv194[.]xyz
+pzlkxadvert475[.]xyz
+scgsdstat14tp[.]xyz
+gmstar23[.]xyz
+dec15coma[.]com
+dump17alertos[.]com
+knzmtxserv437[.]xyz
+servx278x[.]xyz
+admex175x[.]xyz
+dec15coma[.]xyz
+pqrmailadvert15dx[.]xyz
+swxmailserv19fd[.]xyz
+blogspex25[.]xyz
+advert127ds[.]xyz
