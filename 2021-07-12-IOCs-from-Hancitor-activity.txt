@@ -1,0 +1,169 @@
+2021-07-12 (MONDAY) - HANCITOR (CHANITOR/MAN1/MOSKALVZAPOE/TA511) ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1414964102309552135
+
+DATA FROM 20 MALSPAM EXAMPLES:
+
+19 SENDING IP ADDRESSES USING SPOOFED DOMAIN NAME:
+
+- Received: from convertuid.com ([43.128.105.214])
+- Received: from convertuid.com ([45.248.84.19])
+- Received: from convertuid.com ([46.173.205.194])
+- Received: from convertuid.com ([61.231.156.8])
+- Received: from convertuid.com ([88.7.254.144])
+- Received: from convertuid.com ([88.12.57.72])
+- Received: from convertuid.com ([91.90.176.250])
+- Received: from convertuid.com ([82.81.111.233])
+- Received: from convertuid.com ([92.177.111.98])
+- Received: from convertuid.com ([98.189.198.251])
+- Received: from convertuid.com ([103.142.191.248])
+- Received: from convertuid.com ([103.214.146.63])
+- Received: from convertuid.com ([107.15.74.101])
+- Received: from convertuid.com ([114.241.109.197])
+- Received: from convertuid.com ([123.171.14.52])
+- Received: from convertuid.com ([173.82.64.61])
+- Received: from convertuid.com ([189.39.36.221])
+- Received: from convertuid.com ([198.15.119.68])
+- Received: from convertuid.com ([212.139.18.30])
+
+20 SPOOFED SENDING ADDRESSES
+
+- From: "DocuSign Electronic Signature  Service" <okeifu@convertuid.com>
+- From: "DocuSign Electronic Signature  Service" <tehkc@convertuid.com>
+- From: "DocuSign Electronic Signature  Service" <vyusiie@convertuid.com>
+- From: "DocuSign Electronic Signature " <bi@convertuid.com>
+- From: "DocuSign Electronic Signature " <h@convertuid.com>
+- From: "DocuSign Electronic Signature " <keymwtu@convertuid.com>
+- From: "DocuSign Electronic Signature " <yz@convertuid.com>
+- From: "DocuSign Electronic Signature and Invoice Service" <donaotl@convertuid.com>
+- From: "DocuSign Electronic Signature and Invoice Service" <hautar@convertuid.com>
+- From: "DocuSign Electronic Signature and Invoice" <ilgoouo@convertuid.com>
+- From: "DocuSign Electronic Signature and Invoice" <jev@convertuid.com>
+- From: "DocuSign Signature  Service" <mvalijo@convertuid.com>
+- From: "DocuSign Signature " <dqoe@convertuid.com>
+- From: "DocuSign Signature " <ijbyxuq@convertuid.com>
+- From: "DocuSign Signature " <jiwda@convertuid.com>
+- From: "DocuSign Signature " <olyixo@convertuid.com>
+- From: "DocuSign Signature " <oxyaoj@convertuid.com>
+- From: "DocuSign Signature and Invoice Service" <uptyqym@convertuid.com>
+- From: "DocuSign Signature and Invoice" <jodacub@convertuid.com>
+- From: "DocuSign Signature and Invoice" <oculoz@convertuid.com>
+
+10 DIFFERENT SUBJECT LINES:
+
+- Subject: You got invoice from DocuSign Electronic Signature Service
+- Subject: You got invoice from DocuSign Service
+- Subject: You got invoice from DocuSign Signature Service
+- Subject: You got notification from DocuSign Electronic Service
+- Subject: You got notification from DocuSign Signature Service
+- Subject: You received invoice from DocuSign Electronic Service
+- Subject: You received invoice from DocuSign Electronic Signature Service
+- Subject: You received notification from DocuSign Electronic Service
+- Subject: You received notification from DocuSign Service
+- Subject: You received notification from DocuSign Signature Service
+
+20 FEEDPROXY LINKS FROM THE MESSAGE TEXT:
+
+- hxxp://feedproxy.google[.]com/~r/aamzrouwzqw/~3/OIhl8zukDU4/jobber.php
+- hxxp://feedproxy.google[.]com/~r/aofdoxjeqea/~3/iuK0EQr0s50/adding.php
+- hxxp://feedproxy.google[.]com/~r/bgizyfo/~3/My1gbwbdQxM/autobiography.php
+- hxxp://feedproxy.google[.]com/~r/ddmdrwopkh/~3/n3v8VgU-6JI/electro.php
+- hxxp://feedproxy.google[.]com/~r/dlyzzl/~3/08yRj-vKY0g/bomber.php
+- hxxp://feedproxy.google[.]com/~r/ghebljiz/~3/fejWuMiBjQs/bouncer.php
+- hxxp://feedproxy.google[.]com/~r/jwswdkj/~3/PboyzzdLDzw/achievement.php
+- hxxp://feedproxy.google[.]com/~r/kgamcgzjlon/~3/ybcUXP6ULUE/sake.php
+- hxxp://feedproxy.google[.]com/~r/lwckewphq/~3/dlZPlGSDwA8/signaler.php
+- hxxp://feedproxy.google[.]com/~r/nmrygkkelcn/~3/cRNAP-4Kchk/participating.php
+- hxxp://feedproxy.google[.]com/~r/pqfapkof/~3/cg3hQOyyv1c/sad.php
+- hxxp://feedproxy.google[.]com/~r/qxepbiho/~3/I1LSZq1PR8s/trafficked.php
+- hxxp://feedproxy.google[.]com/~r/tbyvifzlqxc/~3/hSHgPh0RRlE/staunchness.php
+- hxxp://feedproxy.google[.]com/~r/tjazygwa/~3/46rfXdUDOlg/pollinate.php
+- hxxp://feedproxy.google[.]com/~r/ubheca/~3/0HrENsYcYg0/clasp.php
+- hxxp://feedproxy.google[.]com/~r/ufyezjtkhb/~3/sl-3zP5QZiY/vantage.php
+- hxxp://feedproxy.google[.]com/~r/xzjaqidozp/~3/uiizj9uzuds/decanter.php
+- hxxp://feedproxy.google[.]com/~r/yycztyeynb/~3/O_L0Y0pHPn8/wheeze.php
+- hxxp://feedproxy.google[.]com/~r/zfrke/~3/kbXdKMeWXXI/skimmer.php
+- hxxp://feedproxy.google[.]com/~r/zqztw/~3/Yhw5DKajWQQ/wastefully.php
+
+ABOVE LINKS REDIRECT TO 20 URLS THAT SEND THE WORD DOCUMENT:
+
+- hxxp://2020disposalservices[.]com/bouncer.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ghebljiz+%28eruditionrack%29
+- hxxp://an.nastena[.]lv/achievement.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+jwswdkj+%28promptingliquidate%29
+- hxxp://mohammadtalks[.]com/skimmer.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+zfrke+%28semiexpendableflammability%29
+- hxxp://mohammadtalks[.]com/vantage.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ufyezjtkhb+%28rectifierasterisk%29
+- hxxp://odas.ubicuo[.]site/participating.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+nmrygkkelcn+%28abasivemob%29
+- hxxp://odas.ubicuo[.]site/sad.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+pqfapkof+%28rosecowgirl%29
+- hxxp://odas.ubicuo[.]site/signaler.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+lwckewphq+%28absolutenessshovelling%29
+- hxxp://pphc.welkinfortprojects[.]com/electro.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ddmdrwopkh+%28grenadieradvocacy%29
+- hxxp://seatranscorp[.]com/adding.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+aofdoxjeqea+%28assessescopyholder%29
+- hxxp://seatranscorp[.]com/decanter.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+xzjaqidozp+%28tubulerah%29
+- hxxp://seatranscorp[.]com/wastefully.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+zqztw+%28salablesquatted%29
+- hxxp://www.seryzpiekielnika[.]pl/wheeze.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+yycztyeynb+%28hatredsparing%29
+- hxxp://turquoisecoaching[.]co[.]uk/staunchness.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tbyvifzlqxc+%28mildewdeclass%29
+- hxxp://www.agfphx[.]com/clasp.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ubheca+%28discontinuedsickish%29
+- hxxp://www.mintechindia[.]com/jobber.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+aamzrouwzqw+%28rebussuggestion%29
+- hxxps://affirmingyourlife[.]com/bomber.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+dlyzzl+%28protegeomega%29
+- hxxps://amazingholidaysmaldives[.]com/sake.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kgamcgzjlon+%28pretentiousnesstoffee%29
+- hxxps://autoscrapforcash[.]com/trafficked.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+qxepbiho+%28glandularbundled%29
+- hxxps://player.ebmstreaming[.]eu/autobiography.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+bgizyfo+%28oozequinary%29
+- hxxps://www.ivrvirtualsolutions[.]com/pollinate.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tjazygwa+%28headwaypalate%29
+
+SIX EXAMPLES OF DOWNLOADED WORD DOCS:
+
+- ba50aec821d7d7ce4b89d46118bc403e4b1d1fbf1988bec8c1a916f2bfc971f0  0712_0270003238.doc
+- 37965d058a349b0f619051664bb9c703dea11f097a0f37ad4a9d924cb1e76101  0712_2172200614.doc
+- 6c23b78efd34d5f7207287ba8364147b04559c711c7f32f15814c374aabf3d4b  0712_3006077542.doc
+- b79e96afa72d526d19cc7f01a12ba48fd7d56b24f7f7521e4e01964b891834f4  0712_3830710356.doc
+- 92d61bfb563722fc32a78ba7aabfb98cf984004309ca32c09667de4d10592a13  0712_5782248107.doc
+- 3ce1b2cc72f6c38a2651fbbdc9ff8a48ab6d8209eb4eff1f8869f4f67d65d391  0712_7248864204.doc
+
+SIX EXAMAPLES OF HANCITOR DLL FILES DROPPED AFTER ENABLING MACROS:
+
+- 2d2827524542f1f2001a3e92f9ecdaa22cd05ef8ec41143f02eb5cd6dc2c0a16
+- 346c87680684bd412d1e71c831512ea165f6ccf06cf2fb605b3cb5b2b7b0ee2d
+- 824618bdc40241bb5eeec62f833571dbad017a9f9b1b0b569dce76eddf099db6
+- a2fdece6e4333d1aef1c9ae499c0771b2c1f5583dae865aee81bc769123481f8
+- efa0bd07f38eed45809c73979c34fbde035c03539bd68df5d760576c39390ae1
+- fcb1666d5a122088c6c0cede4308c43d25c0bce15e0825a0ee21c249403047d7
+
+LOCATION OF HANCITOR DLL FILES:
+
+- C:\Users\[username]\AppData\Roaming\Microsoft\Templates\ier.dll
+
+HANCITOR DLL RUN METHOD:
+
+- rundll32.exe [filename],HINYYIMIVRX
+
+FICKER STEALER MALWARE:
+
+- SHA256 hash: dee4bb7d46bbbec6c01dc41349cb8826b27be9a0dcf39816ca8bd6e0a39c2019
+- File size: 272,910 bytes
+- File location: hxxp://pirocont70l[.]ru/7hjujnfds.exe
+- Note: File first submitted to VirusTotal on 2021-06-09
+
+HANCITOR C2 TRAFFIC:
+
+- port 80 - api.ipify[.]org - GET /
+- 194.147.115[.]74 port 80 - trictuatiove[.]com - GET /8/forum.php
+- 194.147.78[.]155 port 80 - olinsartain[.]ru - GET /8/forum.php
+- 194.147.115[.]74 port 80 - factoothfand[.]ru - GET /8/forum.php
+
+TRAFFIC FOR FICKER STEALER:
+
+- 8.211.241[.]0 port 80 - pirocont70l[.]ru - GET /7hjujnfds.exe
+- port 80 - api.ipify[.]org - GET /?format=xml
+- 95.213.179[.]67 port 80 - pospvisis[.]com - TCP traffic (not HTTP)
+
+TRAFFIC FOR COBALT STRIKE:
+
+- 8.211.241[.]0 port 80 - pirocont70l[.]ru - GET /1207.bin
+- 8.211.241[.]0 port 80 - pirocont70l[.]ru - GET /1207s.bin
+- 92.119.157[.]4 port 443 - HTTPS traffic
+- 92.119.157[.]4 port 80 - 92.119.157[.]4 - GET /8Qkh
+- 92.119.157[.]4 port 80 - 92.119.157[.]4 - GET /dot.gif
+
+NOTE:
+
+- traffic to api.ipify[.]org is a legitimate IP address checking service used by the malware to check the public IP address of the infected Windows host.
