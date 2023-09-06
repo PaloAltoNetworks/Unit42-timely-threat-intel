@@ -1,0 +1,57 @@
+2021-08-26 (THURSDAY) - "DDOS ATTACK PROOF" FORM EMAILS PUSH BAZARLOADER (BAZALOADER)
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1431321880808595468
+
+NOTES:
+
+- We have evidence of this campaign starting as early as November 2020.
+
+- This "Stolen Images Evidence" campaign previoulsy pushed IcedID as described here: https://www.microsoft.com/security/blog/2021/04/09/investigating-a-unique-form-of-email-delivery-for-icedid-malware/
+
+- "Stolen Images Evidence" switched from IcedID to BazarLoader by early July 2021: https://twitter.com/malware_traffic/status/1412470165179092992
+
+- As recently as 2021-08-16, the "Stolen Images Evidence" campaign switched to a "DDoS Attack Proof" theme: https://twitter.com/mesa_matt/status/1430974685110587395
+
+- Otherwise, "DDoS Attack Proof" follows the same infection patterns as "Stolen Images Evidence" and should be considered the same threat actor.
+
+EXAMPLE OF LINK FROM EMAIL:
+
+- hxxps://sites.google[.]com/view/m93ibv29fub4jr9n3n/drv/folders/shared/f/download?f=094707802844283701
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: d233d905290c4e9cb05f833b584ed2007fbc68d095a45b386dd078b05f1bde24 
+- File size: 7,988 bytes
+- File name: DDoS attack proof and instructions on how to fix it.zip
+- File description: ZIP archive downloaded from link in contact form-generated email
+
+- SHA256 hash: c205e557970970af8d77cc2189d43eea3eb1f70ddc066201f93ab2134e4d32bd
+- File size: 23,241 bytes
+- File name: DDoS attack proof and instructions on how to fix it.js
+- File description: JavaScript file extracted from above ZIP archive
+
+- SHA256 hash: 8ea46ac64f5af7bb295a8b784738fc11fc0fde1543d7da43c0f97f88950185c4  
+- File size: 481,809 bytes
+- File location: hxxp://manioris[.]space/333g100/main.php
+- File location: C:\Users\[username]\AppData\Local\Temp\StNsbaY.dat
+- File description: BazarLoader DLL
+- Run method: rundll32.exe [filename],StartW
+
+MALICIOUS DOMAIN HOSTING INITIAL ZIP ARCHIVE:
+
+- 172.67.217[.]206 port 443 - bunadrex[.]space
+
+JS RETREIVING THE BAZARLOADER DLL:
+
+- 172.67.208[.]70 port 80 - manioris[.]space - GET /333g100/index.php
+- 172.67.208[.]70 port 80 - manioris[.]space - GET /333g100/main.php
+
+BAZAR C2:
+
+- 94.140.112[.]22 port 443 - hxxps://94.140.112[.]22/out/minor/issue/invoke
+- port 443 - hxxps://microsoft[.]com/telemetry/update.exe  (not inherently malicious)
+- port 443 - hxxps://www.microsoft[.]com/telemetry/update.exe  (not inherently malicious)
+- 139.28.235[.]249 port 443 - hxxps://139.28.235[.]249/out/minor/issue/invoke
+- 172.83.155[.]231 port 443 - hxxps://172.83.155[.]231/out/minor/issue/invoke
