@@ -1,0 +1,125 @@
+2021-06-28 (MONDAY) - TA551 (SHATHAK) WORD DOCS WITH MACROS FOR TRICKBOT (GTAG ZEV1):
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1409902748712247302
+
+NOTES:
+
+- On Monday 2021-06-28, English-template Word documents distributed through TA551 malspam were pushing Trickbot malware. 
+  Prior to this, TA551 had been pushing Gozi/ISFB/Ursnif malware since 2021-06-10.
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> installer DLL for Trickbot --> 
+  Trickbot infection activity --> Cobalt Strike --> VNC-related malware EXE
+ 
+12 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 518d92e9dcaac49258600bd988d6d2b0ebc2af74e4bc9796d83987e57297d18d  bid-06.21.doc
+- a46458bc99e81157c17295a038fc599197805c840ecd67ecd662f9a383c8577a  charge,06.28.2021.doc
+- ff3d4a11cc11d04781679ba4edded9322765f5e9f9d936e35b482b451d138991  decree.06.28.2021.doc
+- d500ee06ed8664bcd5acfac596094aed9fe9c97c4b2b21b3b052c1eb7980a8b7  deed contract_06.21.doc
+- b75af3709a1cb0645ae7555d9f36305ecec8d5c1816986c1dd0f48ea3e26441c  details.06.28.2021.doc
+- 4e6ea45f01bd761bdfacc3e0397238607373b5a35f9eb8704b913252d3a19aa0  facts,06.21.doc
+- fd4e3fa8a8d9b59e58e08119e9aba18847b932c1ec8051b0544ebde855c19d46  files_06.28.2021.doc
+- 133eaec108dcdf485a65616e0b26d8ffe1781e795b49bef6021c51679bf92c7a  legal agreement-06.28.2021.doc
+- 04fdb0fdc76d11adab9864aa36d4b54e40823ff00373b236808e47b8465a626e  legal paper 06.28.2021.doc
+- 1cfcfa64c0e1dcce3aa0dc280fa21d6015acf3c615ce55ce23fb81813d37d799  legislate.06.21.doc
+- 8a4eabb942d797353328de51a6fb9898570502ac553f66768116f3a242975faf  order 06.21.doc
+- 2f6e6881e714782e8cd3c3f0c92bc576d9cc008e526be5e21d13a881e5b90e0f  report-06.21.doc
+
+AT LEAST 4 DOMAINS HOSTING THE INSTALLER DLL:
+
+- championriced[.]com - 194.156.98[.]249
+- curvecraft2003b[.]com - 194.156.98[.]249
+- enliststorage2016b[.]com - 194.156.98[.]254
+- pairmayerd[.]com - 45.153.230[.]72
+
+EXAMPLES OF URLS FOR INSTALLER DLL:
+
+- hxxp://championriced[.]com/adda/dm6i3OQlLqgqOizma1tvjGdIcSujiIx9AM3zw9hq6rW3/73053/tCRuId5tt5BDbk/PzTeSRBSjPt3zxKAEB8P06PCCEAjWkAKWJAg6/
+  IoAUqgI9gHXgyaos9DBrnzHr7WhaGcpQVlIcbQ/jDGhEd2X2xVaP4r9QNbCsb/sep4?bemjhd=JrNa774kjjCMD&search=XxuWC2tBsT7pOBwCx7gWXUs&
+  =HgPI3ds9999L3hMtnkGNcwIF7zbzf
+
+- hxxp://championriced[.]com/adda/gwsQAZgV4ghWFXcdQagBBscsnXcC9eZqooNI51lQFe/7B0tVd391GI3U6c0y3empD1Wrri78zh/BF6REH5ki61kD4MPfkFig7/
+  e7MuhAbFZd6GsenvhmnCxOVYPjm2f5yNpP/71744/77231/75248/63840/DD3zDv6MOrrZMaqGCVU/sep6?q=OPPdITVe&sid=6umwcOsWkT6USbmDEFRR0NFLNxo6&
+  page=4xisp&user=jBFNwGzueLp9baDT&user=h9RIr6kYW&search=TzfjS0SPZHf1PnHmt&id=y4JU70vwNOJbFGgPjmrXR26vRs&=PNibRZYbN3X1kk
+
+- hxxp://curvecraft2003b[.]com/adda/0ZnbUwpJsvjhvWHznhEOW/Jv18xXTmWBwwbjUeXpwyvKj7wFKZg1OMp8Yzb/XkzW334bq4/bBmyUmk6Hzt1aX9NnIbn/
+  VeXNdk03p9azlF43mkNKj6Vnwuy7R/30121/sep4?page=qJmWUtMx&ECDLqgOv=3Fh&pUl=KK&VDfgDVii7=wx5yo6K5Uz&q=3yk98DdlUiT1YfJG&ygPpIfjz=Cs&
+  =mA8PCp38jyxF2JVVUb2SuCfYT&page=INM02ui
+
+- hxxp://enliststorage2016b[.]com/adda/17148/fek5cC3Sb4GoiL3A8rvVNkTpR8/r4j56SyKYK4oDqfwa6V4bwq/TBRuVNxuRRwlo9h7KtNsEcwpk9rAtH05kGcvB/
+  sep2?=NPWM7HECe4ELvp2p&nimmOD8p=9riJ250V2sZynndeKc&id=LNy0oATPYuEzO&=L3hbb9PZUeaBgN&7M5A=GmTbsMRzztJOZ0chb
+
+- hxxp://enliststorage2016b[.]com/adda/8ulHi8WRE02AEcPLhi2H0pSfN65K6vS4UcWwGgx/imKvpDIZb5ckIU2tAQBT/HygqIW/693/Y/e0k2Ar04woOd1r/sep3?
+  search=fJ4IMh4Cljv0DcPXSK25N&search=BLsF0p5Qf7tx1d5&search=RqAtjijPn5tXxSfHKh&vm7TK=8xXuEa6dq8F1DhAt&mHMZVgFJNg=2Tj7eIuC9eo7aT6O7F
+
+- hxxp://pairmayerd[.]com/adda/32764/7UaV2yJ4vAwPJRvP/72889/R1omH4J/K8q0n4XpP/6pUXkYf7MTZmFY6fKz3UcyOULeRmEs9QABasN/
+  NYqIWmiGwFsfA6JnLpsw8MuGhXaik8kmP3kjUV099s/EThNZV34hMS46b6j/sep1?search=f0CMfm5ta8lg5xc6Bj1tOE&page=ipbbrbX2Ph&=xGyGl5T4vhzzmLIpNuSh6&
+  cid=a4dxjm3RnMj6IM&alVI5V=1jwP8azygw4K7IswVAJr&lDLegF=bYDwcp9SC5iYgWF
+
+- hxxp://pairmayerd[.]com/adda/mRazXzBNyUE4LCESFTtbQt/46671/57041/67753/FizF7hQB66RWrKfnvF497QVXCIU2RiC5c19lsR6xYiy/
+  i61JkQh8mnjbRMnJMFa6C7U9kJkenBD/kxkSZhwLcy7R1BX957o5sleEKZRj2h62WVih/sep2?sid=oF&EGzoSX2r=FHR8x&cid=OodUcDzqTrbYE8vDEzv2E5FgQw&
+  ref=fP2d4ggkmJHwXcUvc80vVuAeuLJUJU&ZoAv=cZls&1Q6ee=DLdFmvGhKzQjKx
+
+7 EXAMPLES OF HTA FILES DROPPED BY THE WORD MACROS:
+
+- f2cf11448b69c248425759b272f7cf2d9d95565e2dac219e08e4a469ca9086f0  dCurTable.hta
+- b3be02abef98fd6bde2752217b996cb0ab6ea534be8aadb9440474e1088a90af  doubleBorderInt.hta
+- 7cfd4eac092b2af1a9d30c133c385e82168ba934c931844a8aac20d1e4abaf97  nameTpl.hta
+- 2417ddbc3e5f32e0817250e4f7e7dcb6b5093b272c2086130f8bc8bab07cb9bc  oStruct.hta
+- bf4db025fc7e84f3d9f5c4654cf215410d9e4cd20694950a1512e967a28bd9fa  objectVarQuery.hta
+- cf14b69dd241966a8e847bc32f6ce09135c49c634f803a7d0ed6ea67ef585f32  repoRequestDocument.hta
+- 73854ade2c5247dbaaf5c6be29c58f57ba72db762109e635dc5df470a37e4a8f  winSelBefore.hta
+
+7 EXAMPLES OF INSTALLER DLLS RETRIVED BY THE ABOVE HTA FILES:
+
+- 8368a955dd5d9850ed8ced6144a202368c52e065abafdb71a7960d3a90647e85  dCurTable.jpg
+- 97c1deed13a9dba0c5834c3961ec93f96897e45e56f1c86a641427228830fcd4  doubleBorderInt.jpg
+- 9822e135cafc24d7d610a2831cd97e13c0f2b3ce1935aadde0bbbcf140395bba  nameTpl.jpg
+- c601014207780cd2448d3953272a43cacc9252bc86b365b7869af2a6a2ab3c09  oStruct.jpg
+- b827fde51c75a1c5a400dd99d5b345f946874d77587384d31e3ca188364e92a4  objectVarQuery.jpg
+- b3c17ea77c22b4f4ce232f4de674e1ab8639d063f54cc088612f73d7a7268a28  repoRequestDocument.jpg
+- 0bb797aef9711d46a54f363b0d28211337605db7d84b079e91cae672f7a981d4  winSelBefore.jpg
+
+LOCATION FOR THE HTA AND INSTALLER DLL FILES:
+
+- C:\Users\Public\
+
+INSTALLER DLL RUN METHOD:
+
+- regsvr32.exe [filename]
+
+FOLLOW-UP COBALT STRIKE MALWARE:
+
+- SHA256 hash: cf0a85f491146002a26b01c8aff864a39a18a70c7b5c579e96deda212bfeec58
+- File size: 181,248 bytes
+- File location: hxxp://109.230.199[.]73/107.dll
+- File location: C:\Users\[username]\AppData\Local\Temp\iduD2A1.tmp
+- Run method: C:\Windows\system32\rundll32.exe C:\Users\[username]\AppData\Local\Temp\iduD2A1.tmp,StartW
+
+VNC-RELATED FOLLOW-UP MALWARE FOUND AFTER COBALT STRIKE ACTIVITY STARTED:
+
+- SHA256 hash: 7b844cc75f594f536f486b137817a497407b689725ab45c7904444e82374d4ac
+- File size: 2,142,720 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\idu54F7.exe
+- File location: C:\Users\[username]\AppData\Local\Temp\idu9A98.exe
+- Reference: https://twitter.com/malware_traffic/status/1409664178357379075
+
+TRICKBOT C2:
+
+- 12.23.113[.]82 port 443 - 12.23.113[.]92:443 - POST /zev1/[string identifying infected host]/81/
+- 12.23.113[.]82 port 443 - 12.23.113[.]92:443 - POST /zev1/[string identifying infected host]/83/
+- 12.23.113[.]82 port 443 - 12.23.113[.]92:443 - POST /zev1/[string identifying infected host]/91
+- 45.239.234[.]2 port 443 - HTTPS traffic
+- 190.109.204[.]126 port 443 - HTTPS traffic
+
+COBALT STRIKE C2:
+
+- 107.181.161[.]197 port 443 - zizodream[.]com - HTTPS traffic
+
+VNC-RELATED FOLLOW-UP MALWARE TRAFFIC:
+
+- 172.241.27[.]226 port 443 - TCP traffic with encoded data (not HTTPS/SSL/TLS)
