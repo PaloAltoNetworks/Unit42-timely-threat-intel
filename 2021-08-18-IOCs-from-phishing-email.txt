@@ -1,0 +1,33 @@
+2021-08-18 - PHISHING EMAIL SPOOFING US POSTAL SERVICE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1428078520555745281
+
+EMAIL HEADERS:
+
+Received: from hosting.swin.net.id ([103.11.134.180])
+        by [recipient's mail server] with SMTP (Postfix)
+        for [recipient's email address];
+        Wed, 18 Aug 2021 14:44:03 +0000 (UTC)
+Received: from heritage by arjuna.capoeng.net with local (Exim 4.94.2)
+	(envelope-from <support@heritagepasuruan.com>)
+	id 1mGMnT-00053F-8l
+	for [recipient's email address]; Wed, 18 Aug 2021 21:44:03 +0700
+To: [recipient's email address]
+Subject: Your shipment is waiting to be delivered.
+Date: Wed, 18 Aug 2021 21:44:03 +0700
+From: "USPS.COM" <support@heritagepasuruan.com>
+Content-Type: multipart/alternative;
+	boundary="b1_2a0b903f0a40c63d0a2965edfd2dfda1"
+Content-Transfer-Encoding: 8bit
+
+LINK FROM MESSAGE TEXT:
+
+- hxxps://usps-delivery-support.logitel[.]com[.]au/update/
+
+NOTES:
+
+- Link from email is HTTPS, but it worked as an HTTP URL.
+- 276.121.68[.]115 - usps-delivery-support.logitel[.]com[.]au
+- Most browsers (Chrome/Edge/Firefox) are currently flagging this URL.
