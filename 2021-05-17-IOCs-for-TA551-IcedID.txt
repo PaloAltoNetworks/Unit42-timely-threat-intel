@@ -1,0 +1,94 @@
+2021-05-17 (MONDAY) - TA551 (SHATHAK) WORD DOCS WITH MACROS FOR ICEDID (BOKBOT):
+
+CHAIN OF EVENTS:
+ 
+malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> installer DLL for IcedID --> IcedID infection activity
+ 
+7 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 64f18f6216cd4e495810b41ae0a1f832996c5c8024594193b9e0c844b7e4cbcb  details,05.17.21.doc
+- 166c35d8c178578e6462605a6a6586ac9dc63d86c34323ff994921ab26a8602f  documents.05.21.doc
+- 8433561e238931d05371568771b12669787bf13198b1c2024f2ec98292517819  file.05.21.doc
+- 7215e503b77bdd7fd48b5f63cbce288bf0caa00ed5688bc9b810cb51ed3a765a  inquiry.05.17.21.doc
+- f77cec7700b080328e04c109accd50b7494a458d069fd6d06d8d54025ef97abf  legal paper.05.21.doc
+- 40a7acb496de8d94023cda16ae646ad6e9216df95b173f48bbf1653a02824df9  legislate_05.17.2021.doc
+- 9a93fc9f3606055fad6f7a2a9b0a848555d9e8d29eb3e5419a6803c315e8cba4  rule.05.17.2021.doc
+
+AT LEAST 3 DOMAINS HOSTING THE INSTALLER DLL:
+
+- escobarestatez[.]com - 45.67.231[.]221
+- fluidhebertz[.]com - 193.38.54[.]235
+- starkthoughtz[.]com - 193.38.54[.]45
+
+
+EXAMPLES OF URLS FOR INSTALLER DLL:
+
+- http://fluidhebertz.com/dgsos/9WWpwaNYOOqD66FlZJRBAXR/t03Iv8HWLBKetgbcmqrUCX/0cSuI0u1sHOHt7O6sDYkF5gXMN852DAk9V3LkwvYjLr4juO/35N/
+  e54yIEjGv3915pP/zed3?3cXP=eG&q=3DES3BfG9At6ja3u0rcGb0E1kW&page=RPZUQtPLuibtTu&=OlMQskP48cAr5P2w1wDq&cid=Kd4Fzp5xvsyr
+
+- http://fluidhebertz.com/dgsos/g/lJ1GO11GpIXXBU1mldWd8HWmUYKa9/sPM5ApYAoSlKdFYNUMrsOFRWLiO/9oLHcc/87342/zed11?id=cmqQCosP52QM5nO&
+  search=5q&Rj=ZSxe2kVpKX&q=Z8g177mh&time=z47N0Piy9zzs7wLvvoe8ooO&page=QxycbKwVb&FFxH9=zAAXsDGYHWFRf6gWzdG5&ref=CW7oopCBLxqwyi9R68SPh&
+  9pu=4lpxgr
+
+- http://escobarestatez.com/dgsos/8Vr/40574/MfmHMoD292TivVuZ/g21LyVRFdD2FA/ZvQlnkM90SqGDwc1s67MbWC24TGoOjMXC/86527/oqwQfpdcWjuv/
+  zed14?uGbBlWB8Pp=B7VLCXPVgzZh8EIhk&UqEODwvmp=ISJDub&page=Ejoa61qZS8xgQCjHjX&search=5ItIv2
+
+5 EXAMPLES OF INSTALLER HTA AND ASSOCIATED DLL FILESS:
+
+- f40e8f7ce63c485562cec5e262609441fbfb796896c8c37d14d5151401094f3d  dataConvert.hta
+- 00ae287e1ea4fec96e00761df4a7e997eaa2ea902186e57301d0f020f737b19d  dataConvert.jpg
+- 22a52e1d42f34e8639d2e1b6e4bbc1f12fdc2d13f4ffa6cfe90bcfae2e300f46  screenTmpStruct.hta
+- 0e7825e740e893b2dd307432b6eff3e554aba5be68a86d8874c4cee173a67c09  screenTmpStruct.jpg
+- 6c4f359e23449688774ded77d9ed28407bc0d451ae16cca5e1411bcbc3691682  structButtonMemory.hta
+- a15ab7254721cd06c225e4fbbec127de2ac987d6aa508c7d4803aca9430bf94b  structButtonMemory.jpg
+- da461aeac9b1ac0083bdfdb1e5fba20724014cf4785934743f38cda974d77e6d  textBorderClass.hta
+- a3344cca830fc5e1445d5760769d083ba91e3bdacd4e441475b5cde9e554fa02  textBorderClass.jpg
+- 1ba01f2fd5abd26077787c276bdd317ba634efb1611a58ff36379e5db10f5ddb  vbProcedureLink.hta
+- 4eafd1638408d6248136de37782662f387130fd69ee750d05698f7028b6f56d6  vbProcedureLink.jpg
+
+
+LOCATION FOR THE INSTALLER HTA AND DLL FILES:
+
+- C:\Users\Public\
+
+DLL RUN METHOD:
+
+- rundll32.exe [filename],PluginInit
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+TRAFFIC FOR THE INSTALLER DLL:
+
+- 193.38.54[.]235 port 80 - fluidhebertz[.]com - GET /dgsos/Y078YzNbqt1tTp9twB/17655/Z10aRZzt1yEVhGPd1QcA2ZlLICnWTFTRTCYJzs/
+  gDIHQ73JCnlAro/F/a82jOb6jaENeWTz8mLqF7ANStdFn6Yv/Kh6EPs1u60BuU/zed1?ref=BDo&id=dlOW5FgfeJoglSG7FW5nUh58&
+  user=ZwEf3QSPTWJTC45nOVhM&user=2vc2EG
+
+TRAFFIC CAUSED BY THE INSTALLER DLL:
+
+- port 443 - aws.amazon.com - HTTPS traffic
+- 104.21.90[.]225 port 80 - kickersflyers[.]bid - GET / HTTP/1.1
+
+ICEDID C2 TRAFFIC:
+
+- 185.33.85[.]35 port 443 - fimlubindu[.]club
+- 185.33.85[.]35 port 443 - fimlubindu[.]top
+- 185.33.85[.]35 port 443 - kilodaser4[.]fit
+- 185.33.85[.]35 port 443 - tournamento3[.]online
+
+MALWARE FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: ee99fbb6af4cc8540d3139ff94f0f7a9cf729fb04ce1d5cbfce0181f02d12e62
+- File size: 368,476 bytes
+- File location: hxxp://kickersflyers[.]bid/
+- File description: Fake gzip file used by installer DLL to create license.dat and IcedID DLL
+
+- SHA256 hash: 29d2a8344bd725d7a8b43cc77a82b3db57a5226ce792ac4b37e7f73ec468510e
+- File size: 341,098 bytes
+- File location: C:\Users\user1\AppData\Roaming\DuckLaundry\license.dat
+- File description: binary used to run IcedID DLL, same file first submitted to VirusTotal on 2021-03-24
+
+- SHA256 hash: f75efd25362d8eed3c2b190e3ba178b2cbbcf7c7da0b991f4fe1d85072e8dcc6
+- File size: 26,624 bytes
+- File location: C:\Users\user1\AppData\Local\{14DC2EC7-87AE-DBEA-FB7F-D86D594A98D7}\geuzet64\Muroqudd.dll
+- File description: IcedID DLL persistent on the infected Windows host
+- Run method: rundll32.exe "C:\Users\user1\AppData\Local\{14DC2EC7-87AE-DBEA-FB7F-D86D594A98D7}\geuzet64\Muroqudd.dll",update /i:"DuckLaundry\license.dat"
