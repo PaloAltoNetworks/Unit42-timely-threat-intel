@@ -1,0 +1,128 @@
+2021-09-13 (MONDAY) - TA551 (SHATHAK) WORD DOCS WITH MACROS FOR TRICKBOT
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1437787000690683911
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> installer DLL for Trickbot --> 
+  post-infection activity --> DarkVNC and Cobalt Strike as follow-up malware
+
+NOTES:
+
+- After pushing BazarLoader for several weeks, TA551 is pushing Trickbot today
+- Saw DarkVNC and Cobalt Strike as follow-up malware
+- Similar activity from June 2021 is documented at: https://www.malware-traffic-analysis.net/2021/06/30/index.html
+- No malware binaries on disk for Cobalt Strike or DarkVNC from the Windows host used during this infection
+
+12 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 01a107877afd2e7d83d9f0efc0bf34974fae01a5119d7c41520daef2e4769a3f  commerce -09.13.21.doc
+- 08ed1fcf353a53c804b4fcbe8f5d52716632478b1f1760208c773fb1e45710a4  command-09.21.doc
+- 0b288f346f79947c253a899d28ea958ef971fe01e0199502420fd8f5244c4687  tell 09.21.doc
+- 20b0cafaa2876fc7a8e346ad64cae8400bf5ce9b4abf3a12c0a9582022c6536e  details 09.13.2021.doc
+- 330f1da454bce0a5b16245971a404c629ebe272524dc01ce46605556cd15191b  ordain 09.21.doc
+- 3b4fc1c2307b3212fd89d0453c91667e234293eb3905d67e19a824b3f508fece  bid 09.21.doc
+- 7d82104c8f7ee68dcc8d14cccd87f5414e8de08f252f4667482a75edda76926a  legal agreement.09.13.2021.doc
+- 9daf33d2d3b122f8caccbca555164e11046957ed0af5afbb2b243a292d6f2de2  deed contract,09.21.doc
+- bc977de2c812009947e6ae3fbcda2e1770b9b94789c2b486187c7a8af6d2f3ce  enjoin_09.21.doc
+- d5c4ddb8c3539c115edd0c177c71077f16e7187cac0bde5b3e69947c8783a9fa  files,09.21.doc
+- ed493db03ed0a43ee059026fadbfccb26cde4b3d71610073e09adcaa173a6c1f  adjure 09.21.doc
+- f49776813d5cc25e0cba7a2a7eb6477b153915f7165c5d4d6e18e750065ebb67  dictate_09.21.doc
+
+AT LEAST 3 DOMAINS HOSTING THE TRICKBOTT DLL:
+
+- clarkerentalss[.]com - 194.62.42[.]202
+- gownstevensond[.]com - 194.62.42[.]209
+- marksvelvetg[.]com - 194.62.42[.]204
+
+6 EXAMPLES OF TA551 URLS FOR TRICKBOT DLL:
+
+- hxxp://clarkerentalss[.]com/bmdff/2646/vTt6/ig6Xo0C5Bke4gF28e0CZQO6RW33tTcz1vdff8AamEfX5mHG/vacug8?=
+  JhjQAGVXVFapX53Kqg16w434YPCI0&El6HXbNF=fP1CM2&tMlpySJ=KGp7g2kIOiXs&sid=VsmKcsnlTo&search=s2ho&4Tn3QabR5k=
+  9LXwhla15OxbUB9eBICT&time=nrf
+
+- hxxp://clarkerentalss[.]com/bmdff/79847/co8nuyPvsa8xRxyATw1eht1zgdvb/Yci0na/bdLCmVpxnoq/dyOjt0mFLv/73527/
+  Zul0fpjXrrGPU/58014/fzGxtKDSGImRmy6luSAFvM1E/82880/vacug9?time=6xbiH&search=8LA26jSjP5lN2
+
+- hxxp://gownstevensond[.]com/bmdff/64WO8AuVcQzzGkgZoZcTHisvqf/UhMb1nyc6Z0NY7LGZcT50eZIlE/
+  Ss04V6AIkyxsrhUx7gkFGXT3ZlaqnSfZHxLuiNM/B/arbaDhhwKAfTmkH0NYI3UvTM3mko3x/vacug8?sid=QFwbBgb60C5cCszX&=
+  kpXbOgytkIvJoR2N&page=0t7dcWUMJOLOr2i0G7zAh1chAbg&q=nlcJCGHyAZgxmuMDyVy&sid=sz3UOQ2ps7PILSu1&id=
+  3b8k3u5bIOojg0Zhqooc&wEWHSJeNp=0s
+
+- hxxp://gownstevensond[.]com/bmdff/98508/28068/78672/BcRMMqy/dELOKZymMV0fvg41EodPr8r/PbiikrFjYEqQBN9BzlXOJhpco2DYq/
+  Qatc3tAfiF/42634/vacug7?=jCz20ymbCMJ&6FyZT=tGZBcaJ2NEXURT&v4LjjUwj=E9Bh0ZG8a&search=TaxxnHLMlOEl0l9P5&user=
+  OzpnTsA9y9&sid=ZVFYOv4FXvyOiRH8&id=Qn5REjnyNNViZab9ri8&ve9vDsY32=iKyDIix&VOrJl=j1M9CMWpP73kUBQh
+
+- hxxp://marksvelvetg[.]com/bmdff/26Uze6hyRrcMxO0JlrzmR4d9dTM3XDCyevACAfZI93/uF5mIiWlpECfFWZ16Vn7MNDyjg5KNyBHOowRs0F/
+  6pdvTzQC6vzIW3lq/vacug12?time=VStv0kfzBMXCqz4JHwyu80T1Y&id=Upsdbw7Auwv44gzhC6NjnR9L3T5H
+
+- hxxp://marksvelvetg[.]com/bmdff/kosQ/4hMhMSGppB0sjVPEk/75043/HRPABLK1YyGWMOlGuEY74DgzZSqSeYdpe1PZ0AZX/
+  Ua8eiYXZpcoEVcWj5OwABnExHKgN5hRqZMn18Dj/EB2tcK7C6HySJWrsTqm4YCpXMvcPFxMUuHN/rj1MLU0r6I4prjV2fMO8uJp4DfXH/
+  bk1RiPGE1x8nzjlDFtKxwSmERRC5ThurmssNsguKU13oW/vacug10?page=h8E7Z6Wb1s&user=ckpXM6u3&sid=RQNcdLpLto9AtIBoybToy&
+  kQYMoeJ=j5v&page=hR72w1Vkc&q=NRXgfd752QaM9jP
+
+6 EXAMPLES OF HTA FILES DROPPED BY THE WORD DOCS:
+
+- 043cd968d81bb514e7c0540349efb7320e1ffb1734f5845e0a5ea590d1d09ada  prevPwDe.hta
+- 18dbeef175a38e7a24b34c8881bc66fadd66847cff61dbc7b16d7ead3f5e9a5c  plDeCa.hta
+- 25b5403d31718c98c22cdc9f880a9c3f0c9d1eda2667547fee40ed9ef757c22f  exPlEx.hta
+- 854c4b3bd8e4d044ed26941615c5c607dcffe0ba39d92b62313b7c6aafae2a89  nextUsDe.hta
+- d869fccdb3807528fb62cabc388d4ad9da641fc3354c4432ce2a93ce99e43d3c  currCurrPl.hta
+- fc2ceee58fce8f2729790eb13f34e9a974f8ad8073df1ee520500f14a69a3028  caDeEx.hta
+
+LOCATIONS OF THE HTA FILES:
+
+- C:\Users\[username]\Documents\
+- or same directory as the Word doc
+
+6 EXAMPLES OF TRICKBOT DLLS:
+
+- 074b3d896e53fc8335cdea4b0f565e01b99ee9041c01d9c17a23f67409b138c1  caDeEx.jpg  (gtag zev4)
+- 07d1bd48ef3b4baf2e8498b3a2dc406c533c90bce7a2cb963506b6889330c020  prevPwDe.jpg  (gtag zev4)
+- 096691e267868f40153264181ee8550a4537688fd4c98acb6af775c3c4ba0ebd  plDeCa.jpg  (gtag zev4)
+- 0fae415c360c5be4b6b2a2e83c11b2b9d05afd5e3c98074328637e05164c96b3  exPlEx.jpg  (gtag zev4)
+- 1c3eeb573dc5bc74ca1ce3cb1e9a2d7b26102ae6dbde1df38f0536e28eb9c805  nextUsDe.jpg  (gtag zev4)
+- 27557ee7f8721a728a65676740ccc1246f4de3bba9496b467b6ba7e8e0129fc4  currCurrPl.jpg  (gtag zem1)
+
+INITIAL LOCATION FOR THE TRICKBOTT DLL FILES:
+
+- C:\Users\Public\
+
+TRICKBOT DLL RUN METHOD:
+
+- regsvr32.exe [filename]
+
+TRICKBOT TRAFFIC:
+
+- 171.103.187[.]218 port 449 - HTTPS traffic
+- 59.4.68[.]75 port 443 - HTTPS traffic
+
+- port 443 - api.ip.sb - HTTPS traffic (IP address check, not inherently malicious
+
+- 103.56.207[.]230 port 443 - attempted TCP connections
+- 103.209.178[.]165 port 443 - attempted TCP connections
+- 111.125.138[.]138 port 443 - attempted TCP connections
+
+- 103.16.104[.]83 port 443 - 103.16.104[.]83:443 - POST /zem1/[string with host identifying info]/84/
+- 103.65.194[.]98 port 443 - 103.65.194[.]98:443 - POST /zem1/[string with host identifying info]/84/
+- 103.65.194[.]98 port 443 - 103.65.194[.]98:443 - POST /zem1/[string with host identifying info]/90/
+- 103.125.128[.]25 port 443 - 103.125.128[.]25:443 - POST /zem1/[string with host identifying info]/84/
+- 103.153.227[.]253 port 443 - 103.153.227[.]253:443 - POST /zem1/[string with host identifying info]/84/
+- 103.158.215[.]73 port 443 - 103.158.215[.]73:443 - POST /zem1/[string with host identifying info]/84/
+- 103.209.178[.]54 port 443 - 103.209.178[.]54:443 - POST /zem1/[string with host identifying info]/84/
+- 203.112.154[.]106 port 443 - 203.112.154[.]106:443 - POST /zem1/[string with host identifying info]/83/
+- 203.112.154[.]106 port 443 - 203.112.154[.]106:443 - POST /zem1/[string with host identifying info]/84/
+
+- NOTE: The Trickbot gtag above is zem1, but some of the above Trickbot DLLs used gtag zev4 (see the Trickbot DLL list).
+
+DARKVNC TRAFFIC:
+
+- 5.181.80[.]138 port 9090 - encoded or otherwise encrypted TCP traffic for DarkVNC
+
+COBALT STRIKE TRAFFIC:
+
+- 23.106.123[.]219 port 80 - 23.106.123[.]219 - GET /adsgfsdfdfghdf
+- 23.106.123[.]219 port 80 - micrasoftedgeupdater[.]com - GET /btn_bg.html?contact=true
+- 23.106.123[.]219 port 80 - micrasoftedgeupdater[.]com - POST /us
