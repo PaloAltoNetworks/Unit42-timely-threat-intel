@@ -1,0 +1,64 @@
+2021-07-20 (TUESDAY) - BAZARLOADER FROM STOLEN IMAGES EVICENCE.ZIP
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1417570775897411591
+
+CHAIN OF EVENTS:
+
+- Email --> Link --> Stolen Images Evidence.zip --> Stolen Images Evidence.js --> BazarLoader DLL --> Bazar C2 traffic --> Trickbot gtag mod8
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 11f4063c74834acada62284c1c3d5bacf4aebb82cae57e2d07fb7477f1fc4be7
+- File size: 6,110 bytes
+- File name: Stolen Images Evidence.zip
+- File description: Downloaded ZIP archive from link in email
+
+- SHA256 hash: 99b33d046b950bfe1d39e73d6ca0a1c071a0653b979094a8680da8ad22604e90
+- File size: 21,572 bytes
+- File name: Stolen Images Evidence.js
+- File description: JS file extracted from downloaded ZIP archive
+
+- SHA256 hash: 82c4c174ad1822ac3c1a55b2e08e9987a9be2294f46508318e50f70566beab5c
+- File size: 1,091,079 bytes
+- File location: hxxp://menoiras[.]space/222g100/main.php
+- File location: C:\Users\[username]\AppData\Roaming\Temp\DRQxZrK.dat
+- File description: BazarLoader DLL retreived by Stolen Images Evidence.js
+- Run method: rundll32.exe [filename],StartW 
+
+- SHA256 hash: 8eb708fb8f044596b841b47c2d75f6c02f878f5685b75008084c70752b961d15
+- File size: 380,928 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\59FC.dll
+- File location: C:\Users\[username]\AppData\Roaming\aeygwtpv.nao
+- File description: Trickbot as follow-up malware from BazarLoader infection (gtag mod8)
+- Run method: rundll32.exe [filename],StartW 
+
+- SHA256 hash: ade2a738f75f052722923641168d0b3862981e0dd23b31834c1520123a73be49
+- File size: 655,360 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\DDA9.dll
+- File description: Another binary for Trickbot as follow-up malware from BazarLoader infection (gtag mod8)
+- Run method: rundll32.exe [filename],StartW 
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+STOLEN IMAGES EVIDENCE.JS RETRIEVES BAZARLOADER DLL:
+
+- 104.21.8[.]76 port 80 - hxxp://menoiras[.]space/222g100/index.php
+- 104.21.8[.]76 port 80 - hxxp://menoiras[.]space/222g100/main.php
+
+BAZAR C2 TRAFFIC:
+
+- 3.16.22[.]120 port 443 - hxxps://twenzim[.]com/www/html/generic
+- 3.233.192[.]20 port 443 - hxxps://saltraw[.]com/www/html/generic
+
+TRICKBOT C2 TRAFFIC:
+
+- port 443 - ident.me - IP address check (not inherently malicious)
+- 103.105.254.17 port 443 - HTTPS traffic
+- 190.144.10.242 port 443 - HTTPS traffic
+- 194.135.33.220 port 443 - 194.135.33.220:443 - POST /mod8/[string identifying infected host/83/
+- 94.140.114.239 port 443 - 94.140.114.239:443 - POST /mod8/[string identifying infected host/83/
+- 194.15.113.73 port 443 - 194.15.113.73:443 - POST /mod8/[string identifying infected host/83/
+- 5.181.80.128 port 443 - 5.181.80.128:443 - POST /mod8/[string identifying infected host/83/
+- 45.86.65.164 port 443 - 45.86.65.164:443 - POST /mod8/[string identifying infected host/83/
