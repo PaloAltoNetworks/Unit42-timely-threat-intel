@@ -1,0 +1,45 @@
+2021-06-07 - MIRAI IOC UPDATE
+
+REFERENCE:
+
+- https://unit42.paloaltonetworks.com/mirai-variant-iot-vulnerabilities/
+
+Read: URL - SHA-256
+
+- 212[.]192.241.72/bins/dark.arm5 - 4b745539ee696697a465a86a8f9f70d89c35ddbeef0a0f3244e2d3fe65b43b01
+- 212[.]192.241.72/bins/dark.arm5 - fd22a14e31f6675c50b5c57fdaa09fcf466a39b2eb6fccb546c419aa4064a96d
+- 212[.]192.241.72/bins/dark.arm6 - 03ba8eaacbff2ae82b2f834b47fc055127733116eb7ed6a95fc3cbfa243135ef
+- 212[.]192.241.72/bins/dark.arm6 - 9df3df2e35a6ebc669dc84a04dc8ceacd26ac2d92e3358061448a0d69d1c0b03
+- 212[.]192.241.72/bins/dark.arm7 - 75612082a5eb445067fc4e8ba155b13d07786930e1f1528ded4228294ff84c0d
+- 212[.]192.241.72/bins/dark.arm7 - e93b82e208d59b4d3655437a124fc48045e90897a5854c2f9b77cca909c7b1d0
+- 212[.]192.241.72/bins/dark.m68k - b15a302c698a454548c42c144a23da4435db2423100416adfb52bd75794dce01
+- 212[.]192.241.72/bins/dark.m68k - c22292b2a99aa62865bdcb961be4ca9d4605c04359373af5122693265d7664fc
+- 212[.]192.241.72/bins/dark.mips - 04d2b1479280a2633f570d36645a0d9a79ec4082d9a45d371a46dcf02e40866f
+- 212[.]192.241.72/bins/dark.mips - 8b028d9bba07127393e17147420348012000cf1b877d4e9544476ac7d23921af
+- 212[.]192.241.72/bins/dark.mpsl - 2f3a427e041122bdb02364b0a15568262dfc27a509f4962fe5a334cc872863e1
+- 212[.]192.241.72/bins/dark.mpsl - 701e8e574a0dd36e0c28628721496a57a48f94e49a60b354520f7127da76b6f1
+- 212[.]192.241.72/bins/dark.ppc - 25fcefa76d1752b40b33f353332ddb48b3bae529f0af24347ffeffc5e1acd5cd
+- 212[.]192.241.72/bins/dark.ppc - e27d03679f4dc02cc32230c782ed6883af0086220817bf0d4578e5aa0ffc43c2
+- 212[.]192.241.72/bins/dark.sh4 - 1eeddcaa24d935c4d5463b46902726e4d23c6746493c5734b693bae71b6b613a
+- 212[.]192.241.72/bins/dark.spc - 30aacb60ab0c7f0440d166bd7993d576ef37b0ee8ecd71a707f57be29d9b75e4
+- 212[.]192.241.72/bins/dark.x86 - 08efaafd5ca09611ecde73d48a4f3eef20e55c715c0d6a1e9f4c274c31e75ee5
+- 212[.]192.241.72/bins/dark.x86 - 483f452d2ccf44866dbb42a7cf5213a666eed57b6e78fca8db32861452f94cb2
+
+Vulnerabilities targeted:
+
+- CVE-2021-1497 Cisco HyperFlex HX Command Injection
+- Unidentified vulnerability
+
+GET enable=aaa;[payload]
+
+- CVE-2021-31755 Tenda AC11 Router RCE
+- OptiLink ONT1GEW GPON Router RCE
+- CVE-2009-4487 nginx 0.7.64 Terminal Escape Sequence in Logs Command Injection
+- CVE-2020-28188 TerraMaster TOS RCE
+- CVE-2020-26919 Netgear ProSAFE RCE
+- CVE-2021-25502 Micro Focus Operation Bridge Reporter (OBR) RCE
+- CVE-2020-25506 D-Link DNS-320 Firewall RCE
+- VisualDoor SonicWall SSL-VPN RCE
+- CVE-2021-27561 & CVE-2021-27562 Yealink Device Management Pre-Auth ‘root’ Level RCE
+
+Previous Research on the same variant: https://unit42.paloaltonetworks.com/mirai-variant-iot-vulnerabilities/
