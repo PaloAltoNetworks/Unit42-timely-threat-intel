@@ -1,0 +1,111 @@
+2021-06-21 (MONDAY) - TA551 (SHATHAK) WORD DOCS WITH MACROS FOR URNSIF (GOZI/ISFB):
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1407069332245520384
+
+NOTES:
+
+- English-template Word docs distributed by TA551 switched from pushing IcedID (Bokbot) to pushing Ursnif (Gozi/ISFB) 
+  starting on Thursday 2021-06-10.
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> 
+  installer DLL for Ursnif --> Ursnif infection activity
+ 
+19 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 9263854abe5dbe018d02d6dcd445f0346b291c7fe0153aaf5e62a03b3c6defe7  certificate-06.21.2021.doc
+- cc70447b7be5068a55ad34baa92ebd524a00e0a4a210b69fa16d4bf84f48e239  certificate.06.21.doc
+- 6f220dc3acbb8c5f77b0cab2ea5708768f631487f3df4f1f19b7801b6beb16ce  deed contract.06.21.doc
+- f2040360f616328b604f250435c203f28ed71cae425e730f1d1106dc4e00b1e1  dictate 06.21.doc
+- aee477aeadc468aa5220219596a7854c0042a019d96b970d6c2bbbb80eb7b99f  document_06.21.2021.doc
+- 09274470ff6ffa641a7689f945b617e02529c9de3e3ad73a1439af9e5a583f4c  enjoin.06.21.doc
+- 1fc80ed2a0dc682d7bbee1f5d7ec1c1c49fce2b6a9829e46433018d97a4c178a  input.06.21.doc
+- 2f119823e4005e0126d947cf59ca877bd4c5e0ed63a1c2170198f6198ff07608  instrument indenture,06.21.doc
+- 95b98956227a62ff4d290f302c81a095fd6c2fedfd9b15cd7150fbe16f292cf2  legal agreement.06.21.doc
+- b1052b1555c64fa125026a80600dd0f97919d8f1ae5eddd447084f030f267796  legal paper 06.21.doc
+- 826805ccac4cc3826c361b8901d05b34794a125db697a084c6e5c7054e88705f  material-06.21.2021.doc
+- 89816b893e66ff5eb9a42c14a2223e451e178c944438365ccecc9a8d1d64e6e8  ordain.06.21.2021.doc
+- e793667a46743a4a0dd951ba0ee0f4714be6402304c87255c1d388f2c6396207  question-06.21.2021.doc
+- cf6bc835020e94b637c6baffcf08e7ea20ddf1186b66ad9b2797e371e5c57ef9  report,06.21.doc
+- 5d072a554bd078f6a4d47b12cb5079b399a55992f41903d50f2d0dbaf065fc16  specifics.06.21.21.doc
+- c0fe37f0bdc8d38ba9c63b34e610f047d655e66bce1b07094bf9f62d5fb07bcb  statistics 06.21.2021.doc
+- 53db3f71127f11158a1cac73c4ab8452f8f444f41c89da9cc1e4794da9bac99d  statistics 06.21.doc
+- 30d428098399549fe88b7baaaee412b612d4b772ce2e4713f3ddb3949b972842  tell.06.21.doc
+- 848229c38d65277f2021ba9cabb1284e9160bdd9c816b71077027af82f040222  tell_06.21.doc
+
+AT LEAST 6 DOMAINS HOSTING THE INSTALLER DLL:
+
+- 45.67.229[.]158 - albumtv2009b[.]com
+- 45.67.231[.]44 - checkbaileyd[.]com
+- 194.156.98[.]259 - conwayfilmg[.]com
+- 138.124.183[.]154 - farmerdwarfg[.]com
+- 194.156.98[.]254 - houstontermg[.]com
+- 45.153.230[.]72 - normalharmond[.]com
+
+EXAMPLES OF URLS FOR INSTALLER DLL:
+
+- hxxp://albumtv2009b[.]com/adda/39878/EUGZTWPD7ciHqU/nN7o64/arTPF9GqdTnKTUOLiUkVv6M/du5htkww/ZWLcraKrngKbKPtJ1YaYahvfEQKnrf/focy2?
+  id=g6luuTT0tUCKVwZO6y0&n5LUNflu=WCDm7&id=g831m2gGQ1UwIGJSp5WBVP&id=1T0LgzTwCwvYIsdzCAQiWEK&user=LuGTfoN12iIWsEuSnsKx7aA9yK&q=GO
+
+- hxxp://checkbaileyd[.]com/adda/73029/GGlZxg9zz4qKgcolAeNIZhPHsVeEsfc/95316/ipSebORfpCUINNClIO5m0DT/K/
+  y6srZaScaV1WrQZTDSnL6vgLGGfDIUqz47oi3Nf3xVzwQW/QPw3R4P3JCYDOW54X1I2ujZLhMuYDUiTqF1eYwKc9q5xiR6/22974/focy10?jG7mnwM=NLvHnnU&
+  q=4eX6zi8EvGSru7vWBPS9rvku6o&=cm1K88E&mjhOTXWu45=aJDuAe54Xpq&C6NVG5EsXQ=OhmLI05IoY&xwzpouLOFf=ez&page=QVgXG3DXP&=tAfHmbV7HXYc
+
+- hxxp://conwayfilmg[.]com/adda/79847/co8nuyPvsa8xRxyATw1eht1zgdvb/Yci0na/bdLCmVpxnoq/dyOjt0mFLv/73527/Zul0fpjXrrGPU/58014/
+  fzGxtKDSGImRmy6luSAFvM1E/82880/focy8?time=6xbiH&search=8LA26jSjP5lN2
+
+- hxxp://farmerdwarfg[.]com/adda/slDmw/q5VZDBKkP/53901/VoV4aV7jfcIU8PodjT/6861/409/RfNjGc6TEZCpKb3brSC4HG2qYFx5fsPoZ69bafbO/
+  b6dOQrvWoC7Uy1vPxtEh4k0mmpxF85JiCbyPv4sn3yqvWZ/pfVtbDSYs1MsYK50V/d34hbAQBucldfao42akDYq1TCFMj57tQYtrYm/focy3?time=
+  l4nwMU5Z1oglgnTafcpybGN6Mc&=zAzmapbhN&page=QM5Z7K5HYoo7gDCWkZQq0oG&time=cE4L1mEacze&page=8e&=lvZPi9sN&1t7=UIp5QQpH2I72e&
+  =ByWLUHv&page=C0EHMn2JVxcpyzozB5iAyaagooIXzT&search=fai
+
+- hxxp://farmerdwarfg[.]com/adda/l02ORW3EL7HgVszlEtL8O6RlK/cjBFoOU4b7ILgAuPQ2cRFOkYWMOKog8he6h9aFHtqLmPKMK/wPxSl3zD6o0j8kX8/
+  0NSmfyMTh6lSbFnjzXgEwcORE6op1UPgejtUoybh6/TrSCGZUx7RDTbE/1868/zKzQIsjVqXyirBM3YeVMJc/Wlo2k1af63KOYNBPb5ISqhw3Wd2X/23865/
+  focy1?cid=uNKoRrv&a7wL6NCJP=laqMA1u&N8borW2=qZMM&8CNKivD91N=avjTpsqMY8Yhrd&ref=Wcx015IMFMoQCB3h5qDHNACbWVZk&user=eY0duMW&
+  cid=q3U6NjMyVfmZ7lMCfzAbEoVSbLlq&cid=3rzmtmrEUMKp42XJbX2eYUsYEJczW
+
+- hxxp://houstontermg[.]com/adda/97989/L1gilQRdZq/69162/21769/92295/LDaP53s4jS/xmbPmbPLTBgcHiQBTvpV3/FiRpMcV1KQoZvQXF/focy6?
+  ref=QMM2RoYUyJaRoSyKnsQTWwia3HAT&id=Vmd8BZgkL2LfL0Q6rP5E90A4IuV6uK&=L3nxZvx0pbc&bxwa6j=W1JDNxusaKQ52ftR&
+  cid=CEY1IPTRZnuRMLPgWYwL&EAebOs=D7BBL9IK3Z2O
+
+- hxxp://normalharmond[.]com/adda/53269/65445/90854/U4MqWgXtsbXrx3DgMAkrh0TVC2FbUUvcJjJqctb/
+  8eUSuIBMfXoHFPedrEBrMgtVq2jOzN5FXTgANaOaNXc/7pcHZTkwpC/focy9?4OxNcPFV=GY0TVdlTHBN&search=I3C9VEsgNHbn9cnelA82dR4w6t&
+  ref=ohRO5gEPxMZedV6T3iG7zYYNHA&sid=b2hcoKh0i16jtB3A2H0NA1hpcNKp&user=eu44SSv8NGhJXy5fQxaupfd&cid=t4ZJEBqbYfqJ9lstoLuZrOYp
+
+7 EXAMPLES OF HTA FILES CREATED BY ENABLING MACROS:
+
+- 96e9bcb0843c25edba92eaa6cca64041314c7874c861c47628356b2aefa33eb9  boxMain.hta
+- 625563aa593e5d238bfa1787b9549b1a9a152147642a603b10bb472268cb7df4  bytesRCount.hta
+- 11b36880249acdc464cf11c56487f3b429b09b6d28fee18cbd0dc51b754096f4  countTitleGen.hta
+- 8fd99c19c5f04b332c6b8333e84911b70f43ea0d2840fd5b7602073ec0546d23  lngCopy.hta
+- 471578f00b2f4e3aefc0dc3c625569210c67a08e6ac203de96918c31aa802bb5  procedureI.hta
+- 326c67e1bb327b87346e16e94e2c66b6f92881baba2c08a8ec0da872bf6183f1  vbaCaptionMem.hta
+- dddcc267ce697c5ec06aacdaf884d2eced853e987aef4767472d491db9903258  vbaQueryCount.hta
+
+7 EXAMPLES OF DLL FILES RETRIEVED BY THE ABOVE HTA FILES:
+
+- a58f423a00ca933ae2898803bd1b3a07a2cd76ef1aa0d5de69905d80a096874c  boxMain.jpg
+- 2da9852912cf01db29e1b3db4a1b9599979ac3c63a6522f5a4a771938c2b36db  bytesRCount.jpg
+- d7847c5d6c978eb21740a2c829c08dde017c137840a8006f0720bcaf613b83fb  countTitleGen.jpg
+- ef7d2dfe2e6cc6be192d145a55307f8aabc577f01ed7b62267de9bf2b5cee65a  lngCopy.jpg
+- 4f1837fb94066946162aad84d00789e80595f2953547e5ad16ee62e10a96988c  procedureI.jpg
+- 9ba401c5d14030d60bbe2ae5cb7d872262b9018271aeb3d95f456af2754b1327  vbaCaptionMem.jpg
+- 31a940dab7bce1146e29e59a348f2aa15fa1b30bc28ed300f6db8a28df1b0778  vbaQueryCount.jpg
+
+RUN METHOD FOR THE ABOVE DLL FILES:
+
+- regsvr32.exe [filename]
+
+FILE LOCATIONS FOR HTA AND DLL FILES:
+
+- HTA files all located in C:\ProgramData\
+- DLL files all located in C:\Users\Public\
+
+C2 DOMAINS FOR URSNIF (GOZI/ISFB)
+
+- 165.232.183[.]49 - authd.feronok[.]com
+- 165.232.183[.]49 - app.bighomegl[.]at
+- 165.232.183[.]49 - todo.faroin[.]at
