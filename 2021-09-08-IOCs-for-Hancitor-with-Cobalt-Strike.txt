@@ -1,0 +1,66 @@
+2021-09-08 (WEDNESDAY) - HANCITOR (CHANITOR/MAN1/MOSKALVZAPOE/TA511) WITH COBALT STRIKE (BEACON)
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1435704012830035971
+
+EXAMPLE OF EMAIL HEADERS:
+
+- Received: from STICKNSTUCK.COM ([186.86.69[.]50])
+- Date: Wed, 08 Sep 2021 10:42:29 -0500
+- From: "DocuSign Electronic Signature and Invoice Service" <ma@STICKNSTUCK.COM>
+- Subject: You got notification from DocuSign Electronic Service 
+
+- NOTE: STICKNSTUCK.COM is a parked domain being spoofed in emails from today's wave of Hancitor.
+
+EXAMPLE OF GOOGLE FEEDPROXY LINK USED IN MESSAGE TEXT:
+
+- hxxp://feedproxy.google[.]com/~r/lxbmpr/~3/sVt0mUVwDTM/derby.php
+
+ABOVE URL REDIRECTS TO THIS ONE TO SEND WORD DOC FOR HANCITOR:
+
+- hxxps://www.bpbj[.]id/derby.php?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+lxbmpr+%28terminallyassociated%29
+
+ASSOCIATED MALWARE
+
+- SHA256 hash: 42d9fc8acb6df395cd148157f2410185572ef2adf04b4fe1eb2242c924d517ae
+- File size: 534,016 bytes
+- File name: 0908_3674663753075.doc
+- Word doc for Hancitor returned after clicking link from DocuSign-themed malspam
+- Sample available at: https://bazaar.abuse.ch/sample/42d9fc8acb6df395cd148157f2410185572ef2adf04b4fe1eb2242c924d517ae/
+
+- SHA256 hash: 28978a1c90c581fe12175afeb57e0c408b607997bcd60c188058a7aa7a1514cb
+- File size: 340,480 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Templates\reform.doc
+- File description: Password-protected Word doc dropped after enabling macros, password: 2281337
+- Sample available at: https://bazaar.abuse.ch/sample/28978a1c90c581fe12175afeb57e0c408b607997bcd60c188058a7aa7a1514cb/
+
+- SHA256 hash: 891cb03e77807de0ee50fb600358468a98af30eaf744e390ab45684ba06bfb91
+- File size: 605,696 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Templates\hhh.mp3
+- File description: Hancitor malware DLL
+- Run method: rundll32.exe [filename],PKADTGUDFDW
+- Sample available at: https://bazaar.abuse.ch/sample/891cb03e77807de0ee50fb600358468a98af30eaf744e390ab45684ba06bfb91/
+
+HANCITOR BUILD:
+
+- 0709_baxc7
+
+HANCITOR TRAFFIC:
+
+- port 80 - api.ipify.org - GET /
+- 93.125.114[.]53 port 80 - takitrisexp[.]ru - POST /8/forum.php
+- 185.49.68[.]111 port 80 - olocratim[.]ru - POST /8/forum.php
+- 62.109.19[.]44 port 80 - kedaeclas[.]ru - POST /8/forum.php
+
+TRAFFIC FOR FOLLOW-UP MALWARE (COBALT STRIKE):
+
+- 47.88.0[.]40 port 80 - klistr0n[.]ru - GET /0709.bin 
+- 47.88.0[.]40 port 80 - klistr0n[.]ru - GET /0709s.bin 
+
+COBALT STRIKE TRAFFIC:
+
+- 23.160.193[.]55 port 80 - 23.160.193[.]55 - GET /l7vC
+- 23.160.193[.]55 port 443 - HTTPS traffic
+- 23.160.193[.]55 port 80 - 23.160.193[.]55 GET /ca
+- 23.160.193[.]55 port 80 - 23.160.193[.]55 - POST /submit.php?id=
