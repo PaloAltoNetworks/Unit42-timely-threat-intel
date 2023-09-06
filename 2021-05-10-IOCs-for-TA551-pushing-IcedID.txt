@@ -1,0 +1,64 @@
+2021-05-10 (MONDAY) - TA551 (SHATHAK) WORD DOC PUSHES ICEDID (BOKBOT)
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1391860350388260871
+
+CHAIN OF EVENTS:
+
+- malspam --> password-protected ZIP archive --> extracted Word doc --> enable macros --> initial DLL --> follow-up binary used in gziploader process --> 
+  IcedID DLL and follow-up C2 activity
+
+REFERENCE:
+
+- https://www.binarydefense.com/icedid-gziploader-analysis/
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: ad0df2dfd749f0d84f7fc56204e1001307183575ebb488d99fcf4da7a46a8ef6
+- File size: 47,659 bytes
+- File name: input-05.010.2021.doc
+- File description: malicious Word doc with macros for IcedID
+
+- SHA256 hash: 5c66856fbf859169f1788c63a788e09e003219ace7142ed0a3244d36cac2d008
+- File size: 52,824 bytes
+- File location: hxxp://policearellanoz[.]com/dgsos/hPpvERy/xaH0HecVHbhNn1wk5c1LEGmNqWEEfXu3tbWeWACS/zuz2?time=smx0I8sp&=bombw1eGaN3ykyPpIE0lxVzVyIXgWS&
+  =KD5hanf9uOyixXA&eqJKEGY5=rlydjAsOmUGoc0&q=8UW7Z5lTNXBOgQd0DB82ByQ0pziw&XFQDO2rSjJ=xrkrYFWM1W8u2K2&4elNlNrKy=L2aWxu9d&q=fOPCCgSxr1uIiPZBhUea0YzTxePJtp&
+  cid=I0btT6cd9veKcyJ9f6E22tuuNxc7&time=ZvyBHpHKm
+- File location: C:\ProgramData\linkABuffer.jpg
+- File description: Initial DLL acting as loader for IcedID
+- Run method: rundll32 c:\programdata\linkABuffer.jpg,PluginInit
+
+- SHA256 hash: b35e993d9a9bb9f8f7e0a38cceba7e8808480e701fa7a723e9294446acb4ea0f
+- File size: 376,158 bytes
+- File location: hxxp://dupperawergo[.]top/
+- File description: Fake gzip binary used in gziploader process to install IcedID
+
+- SHA256 hash: 29d2a8344bd725d7a8b43cc77a82b3db57a5226ce792ac4b37e7f73ec468510e
+- File size: 341,098 bytes
+- File location: C:\Users\system.administrator\AppData\Roaming\BrightBike\license.dat
+- File description: encoded binary used to run IcedID DLL listed below.
+
+- SHA256 hash: bdfd7e4b148540b06cb722de7072d04381d2a3a90dcdc1cd51fe5bd16fdd8b10
+- File size: 34,304 bytes
+- File location: C:\Users\[username]\AppData\Local\Azad\qahaumsp.dll
+- File description: IcedID DLL persistent on infected Windows host
+- Run method: rundll32.exe "C:\Users\[username]\AppData\Local\Azad\qahaumsp.dll",update /i:"BrightBike\license.dat"
+
+TRAFFIC CAUSED BY ENABLING MACROS ON WORD DOC:
+
+- 45.142.215[.]173 port 80 - policearellanoz[.]com - GET /dgsos/hPpvERy/xaH0HecVHbhNn1wk5c1LEGmNqWEEfXu3tbWeWACS/zuz2?
+  time=smx0I8sp&=bombw1eGaN3ykyPpIE0lxVzVyIXgWS&=KD5hanf9uOyixXA&eqJKEGY5=rlydjAsOmUGoc0&q=8UW7Z5lTNXBOgQd0DB82ByQ0pziw&
+  XFQDO2rSjJ=xrkrYFWM1W8u2K2&4elNlNrKy=L2aWxu9d&q=fOPCCgSxr1uIiPZBhUea0YzTxePJtp&cid=I0btT6cd9veKcyJ9f6E22tuuNxc7&
+  time=ZvyBHpHKm
+
+TRAFFIC CAUSED BY INSTALLER DLL:
+
+- port 443 - aws.amazon.com - HTTPS traffic
+- 194.5.249[.]103 port 80 - dupperawergo[.]top - GET /
+
+ICEDID C2 TRAFFIC:
+
+- 83.97.20[.]254 port 443 - zasatava[.]top - IcedID C2 HTTPS traffic
+- 83.97.20[.]254 port 443 - defliressisto[.]top - IcedID C2 HTTPS traffic
+- 83.97.20[.]254 port 443 - luppotuppo[.]top - IcedID C2 HTTPS traffic
