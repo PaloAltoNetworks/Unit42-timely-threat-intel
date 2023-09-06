@@ -1,0 +1,46 @@
+2021-07-26 (MONDAY) - TRICKBOT GTAG ROB112
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1420035517668806672
+
+EMAIL HEADERS:
+
+- Received: from o2.p8.mailjet.com ([87.253.233.2]) [info removed]; Mon, 26 Jul 2021 10:34:34 -0700
+- Subject: Order Confirmation 83864
+- Date: Mon, 26 Jul 2021 18:34:18 +0100
+- Message-Id: <01b809de.AMwAAKoqBuIAAAAAAAAAALKImNcAAR0rOK4AAAAAAAZC2QBg_vIj@mailjet.com>
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 8f421ddf0df678fe1c22460e0fa3a10c7c48112197917e3843c5674ffe429503
+- File size: 741,635 bytes
+- File name: details_5908.zip
+- File description: Malicious ZIP archive attached to email
+
+- SHA256 hash: 7559493fd22c60217b62790fa4576988396967b597cade92f288ef39335bee3b
+- File size: 1,231,703 bytes
+- File name: details_5908.js
+- File description: Malicious JS file retrieved from above ZIP archive
+
+- SHA256 hash: 6e057855e21f4c93a4e3825b9711ca07ccec94fed55dbc20e1d3316b2b3dc549
+- File size: 632,320 bytes
+- File location: hxxps://docs.zohopublic[.]eu/downloaddocument.do?docId=674ni225458b03d204b4ab290dc0afd57ec8c&docExtn=pdf
+- File location: C:\Users\[username]\AppData\Local\Temp\wfhG.bin
+- File location: C:\Users\[username]\AppData\Roaming\wise-toolsZ7RZBV\hbwfhGzt.grf
+- File description: DLL for Trickbot gtag rob112
+- Run method: Rundll32.exe [filename],StartW
+
+INFECTION TRAFFIC:
+
+- 192.185.150[.]20 port 80 - hxxp://netvalleykenya[.]com/crm.php
+- 213.244.146[.]19 port 443 - hxxps://docs.zohopublic[.]eu/downloaddocument.do?docId=674ni225458b03d204b4ab290dc0afd57ec8c&docExtn=pdf
+- 38.110.103[.]18 port 443 - hxxps://38.110.103[.]18/rob112/[long string]
+- 38.110.103[.]19 port 443 - hxxps://38.110.103[.]19/rob112/[long string]
+- 38.110.100[.]33 port 443 - hxxps://38.110.100[.]33/rob112/[long string]
+- 38.110.103[.]124 port 443 - hxxps://38.110.103[.]124/rob112/[long string]
+- 38.110.103[.]136 port 443 - hxxps://38.110.103[.]136/rob112/[long string]
+- 80.15.2[.]105 port 443 - hxxps://80.15.2[.]105/rob112/[long string]
+- 94.140.114[.]239 port 443 - hxxp://94.140.114[.]239:443/rob112/[long string]
+- 190.144.10[.]242 port 443 - hxxps://190.144.10[.]242/rob112/[long string]
+- 194.135.33[.]220 port 443 - hxxp://194.135.33[.]220:443/rob112/[long string]
