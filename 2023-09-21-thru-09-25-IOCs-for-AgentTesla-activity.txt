@@ -1,0 +1,180 @@
+2023-09-21 (THURSDAY) THRU 09-25 (MONDAY) - EXAMPLES OF MALSPAM PUSHING AGENTTESLA
+
+NOTES:
+
+- Recent AgentTesla samples have sent stolen data over C2 to the same email accounts for at least the past few months.
+
+- First set of compromised or malicious accounts:
+  -- Email account used to send stolen data: oppong@expertsconsultgh[.]co
+  -- Destination email account that received stolen data: info@ledcenter[.]by
+
+- Second set of compromised or malicious accounts:
+  -- Email account used to send stolen data: heera.bisht@adityagroup[.]co
+  -- Destination email account that received stolen data: zakirrome@ostdubai[.]com
+
+- Previous data on the above accounts available at: https://www.malware-traffic-analysis.net/2023/07/07/index.html
+
+ELEVEN EMAILS:
+
+- Date: Thu, 21 Sep 2023 00:53:03 +0000 (UTC)
+- Received: from bmptech[.]ru (unknown [194.180.48[.]78])
+- From: ''alexey.zhuravlev'' <alexey.zhuravlev@bmptech[.]ru>
+- Reply-To: alipaper882@gmail[.]com
+- Subject: RE: Balance Confirmation as on 21st August 2023
+- Attachment: no attachment
+
+- Date: Thu, 21 Sep 2023 01:05:39 +0000 (UTC)
+- Received: from sam[.]sg (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: ''beelei.chong'' <beelei.chong@sam[.]sg>
+- Subject: RE: PAYMENT USD $184,040,00
+- Attachment name: $184,040,00 SWIFT.pdf____________________.rar
+
+- Date: Thu, 21 Sep 2023 01:09:48 +0000 (UTC)
+- Received: from avantchem[.]com (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Iris Lee <irislee@avantchem[.]com>
+- Subject: SOA as at September 2023 
+- Attachment name: Statement Of Account.pdf_________________.rar
+
+- Date: Fri, 22 Sep 2023 01:53:43 +0000 (UTC)
+- Received: from wyman[.]com (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: ''lydell.reed'' <lydell.reed@wyman[.]com>
+- Subject: Re: Outstanding Payment
+- Attachment name: HYI-BOO2.pdf__________________.rar
+
+- Date: Fri, 22 Sep 2023 02:33:23 +0000 (UTC)
+- Received: from pursuitaero[.]com (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Andrew Podlipny <apodlipny@pursuitaero[.]com>
+- Subject: Re:_Payment status
+- Attachment name: INVOICE OUTSTANDING.pdf_________________.rar
+
+- Date: Fri, 22 Sep 2023 18:42:46 +0000 (UTC)
+- Received: from imega[.]cn (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Kelly < sales4@imega[.]cn >
+- Subject: RE: RE: RE: RE: Packing List PI#23204
+- Attachment name: CI and PL.pdf_______________________________.rar
+
+- Date: Sun, 24 Sep 2023 01:52:23 +0000 (UTC)
+- Received: from atimetals[.]com (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Zhu, Alexis <Alexis.Zhu@atimetals[.]com>
+- Subject: SWIFT deposit payment
+- Attachment name: EURO SWIFT.pdf_____________________________________.rar
+
+- Date: Sun, 24 Sep 2023 01:53:27 +0000 (UTC)
+- Received: from sam-sz[.]cn (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Vicky (SAM) <yi.zhu@sam-sz[.]cn>
+- Subject: Transfer of USD 15,000.00
+- Attachment name: BANK SWIFT.pdf_________________________________.rar
+
+- Date: Mon, 25 Sep 2023 01:01:24 +0000 (UTC)
+- Received: from tasl[.]aero (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Sangramappa Shankar <sshankar@tasl[.]aero>
+- Subject: RE: Re: Payment Reminder september
+- Attachment name: Bank Information.pdf____________________________________________.rar
+
+- Date: Mon, 25 Sep 2023 01:04:21 +0000 (UTC)
+- Received: from bfmachine[.]com (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Melissa Amenta <mamenta@bfmachine[.]com>
+- Subject: SWIFT PAYMENT SEPTEMBER
+- Attachment name: Payment Information.pdf_________________________________________________.rar
+
+- Date: Mon, 25 Sep 2023 02:00:39 +0000 (UTC)
+- Received: from atlantic-intermodal[.]com (unknown [194.180.48[.]78])
+- Reply-To: alipaper882@gmail[.]com
+- From: Olga Smirnova <billing@atlantic-intermodal[.]com>
+- Subject: RE: RE: SEPT.2023 PAYMENT
+- Attachment name: Sept due Invoice.pdf_______________________________________________________.rar
+
+TEN ATTACHMENTS:
+
+- 04adb0f369df981e4464a5ae275f7a1311750904e1ad65948d26d78933a61f23 - 614,771 bytes - EURO SWIFT.pdf_____________________________________.rar
+- 2ca7c6e1efed1a26ef1e174084d450aaaa584e92c2e49c8a9674e3acc9f2be87 - 571,222 bytes - $184,040,00 SWIFT.pdf____________________.rar
+- 2499f47890853727488cadec8df5fa361f4f8f9fc035532300d20e8484058eb8 - 571,198 bytes - Statement Of Account.pdf_________________.rar
+- 70e8cdcccf80f8e69de0e00aa2cd6f9c9fb3a92a8ebba13db248567575936658 - 517,618 bytes - Bank Information.pdf____________________________________________.rar
+- 8cc1a8e571fe82cb710a0ffac1b4a2e477386d0f1f3cf704eb6d713e975ecf9a - 517,634 bytes - Payment Information.pdf_________________________________________________.rar
+- 8cc1a8e571fe82cb710a0ffac1b4a2e477386d0f1f3cf704eb6d713e975ecf9a - 517,634 bytes - Sept due Invoice.pdf_______________________________________________________.rar
+- 9c0e7a08545f60bc7e3244bdcb13f0a32b048e3f201a1c02b0d5a81a1ed30d66 - 585,659 bytes - INVOICE OUTSTANDING.pdf_________________.rar
+- b82c1159670defc81febee26f79728a45f93fe0d27697e987277ec567b2fd74c - 585,639 bytes - HYI-BOO2.pdf__________________.rar
+- d16e1e1c65bc6dd45379445430fbb4314e25ad2a0931077f1240c9aab1cb825d - 614,763 bytes - BANK SWIFT.pdf_________________________________.rar
+- e57c9c9e8be4e62ccaccc63cebdff94cb03faee3cd9a50fab8e35c6390a8bb30 - 568,355 bytes - CI and PL.pdf_______________________________.rar
+
+TEN EXTRACTED FILES (FIVE UNIQUE FILE HASHES):
+
+- 768ad01a4a10350c639160a41fcb2e08e108cfeddb993cb2535bc1804fdd1a3c - 613,376 bytes - HYI-2023.pdf__________________.exe
+- a92454653447052d1a4d2342adeae2ae74a0499868a6fbd7834773b47b368cb7 - 772,096 bytes - EURO SWIFT.pdf_____________________________________.exe
+- a92454653447052d1a4d2342adeae2ae74a0499868a6fbd7834773b47b368cb7 - 772,096 bytes - SWIFT COPY.pdf_________________________________.exe
+- a5af11e2769f368d8bec867577a1063dd82dae97052289d69a1a6b03c112c5d4 - 618,496 bytes - $184,040,00 SWIFT.pdf____________________.exe
+- a5af11e2769f368d8bec867577a1063dd82dae97052289d69a1a6b03c112c5d4 - 618,496 bytes - Statement Of Account.pdf_____.exe
+- ac4ba0aff57a411df5eabcec6b1ab5cff2ff47dcf578fdce74be6cd3405b626c - 647,168 bytes - SWIFT PAYMENT GATD.pdf___________________.exe
+- c7834a1e61260b87156453c5281e2dc6f922d6ffdced1cec6ad2c5507680fa17 - 545,280 bytes - Bank Information.pdf____________________________________________.exe
+- c7834a1e61260b87156453c5281e2dc6f922d6ffdced1cec6ad2c5507680fa17 - 545,280 bytes - Payment Information.pdf_________________________________________________.exe
+
+C2:
+
+- Contacted rmail server: port 587 (unencrypted) - mail.expertsconsultgh[.]co
+- Compromised email account used to send stolen data: oppong@expertsconsultgh[.]co
+- Destination email account that received stolen data: info@ledcenter[.]by
+
+=================================================================================
+
+FIVE EMAILS:
+
+- Date: Thu, 21 Sep 2023 03:07:01 +0000 (UTC)
+- Received: from coretek[.]cn (unknown [193.42.33[.]171])
+- From: "Flora Jiang"<flora.jiang@coretek[.]cn>
+- Subject: RE: SOA as at 20th  September 2023
+- Attachment name: SOA.zip
+
+- Date: Thu, 21 Sep 2023 04:42:24 +0000 (UTC)
+- Received: from tlsc[.]by (unknown [193.42.33[.]171])
+- From: From: "Hanna Pankova"<apa@tlsc[.]by>
+- Subject: FWD: PAYMENT NOTIFICATION
+- Attachment name: Swift copy (MT103).zip
+
+- Date: Fri, 22 Sep 2023 03:05:08 +0000 (UTC)
+- Received: from truly[.]cn (unknown [193.42.33[.]171])
+- From: "Li Lijing"<lilijing@truly[.]cn>
+- Subject: New purchase Order: KMAI2300042
+- Attachment name: PURCHASE ORDER.rar
+
+- Date: Fri, 22 Sep 2023 04:42:15 +0000 (UTC)
+- Received: from solaredge[.]com (unknown [193.42.33[.]171])
+- From: "Zoltan Sebestyen"<Zoltan.Sebestyen@solaredge[.]com>
+- Subject: FWD: PAYMENT NOTIFICATION
+- Attachment name: TT.zip
+
+- Date: Fri, 22 Sep 2023 02:53:42 +0000 (UTC)
+- Received: from coretek[.]cn (unknown [193.42.33[.]171])
+- From: "Flora Jiang"<flora.jiang@coretek[.]cn>
+- Subject: RE: SOA as at 20th  September 2023
+- Attachment name: STATEMENT OF ACCOUNT.zip
+
+FIVE ATTACHMENTS:
+
+- 2508967d3a013d4c0d4fc5d5c1ac68f450575e73355e2f0e37390e6333efc7c1 - 570,330 bytes - Swift copy (MT103).zip
+- a62c26ba03ab9f40acfefc53fb5c3d311cdd0f9ae42754b8ae7179a3049c348b - 588,034 bytes - PURCHASE ORDER.rar
+- c1dd7a1d2c768e47c78431f6eb32f62ed2ec804214577f30924eaf531ef304d4 - 570,300 bytes - SOA.zip
+- e0b82e45a3f9730b6a4984918864330c7783b90f9a88276d18146587d5657ce8 - 589,460 bytes - STATEMENT OF ACCOUNT.zip
+- e1ccc241c8a7cbb216838f8e0a5eefea0a150bcd9a441b54754e482974abf365 - 589,424 bytes - TT.zip
+
+FIVE EXTRACTED FILES (TWO UNIQUE FILE HASHES):
+
+- 2e8241eff0540974da2847ba7129a79187a3e5d860d5c3125edd20ee183d74a9 - 618,496 bytes - SOA.exe
+- 2e8241eff0540974da2847ba7129a79187a3e5d860d5c3125edd20ee183d74a9 - 618,496 bytes - Swift copy (MT103).exe
+- 7a7c13b3a488e5198ef87d64a8e7cb54a8bb5eadef1cbfb7a76888a8b7a6353b - 614,912 bytes - PURCHASE ORDER.exe
+- 7a7c13b3a488e5198ef87d64a8e7cb54a8bb5eadef1cbfb7a76888a8b7a6353b - 614,912 bytes - STATEMENT OF ACCOUNT.exe
+- 7a7c13b3a488e5198ef87d64a8e7cb54a8bb5eadef1cbfb7a76888a8b7a6353b - 614,912 bytes - TT.exe
+
+C2:
+
+- Contacted rmail server: port 587 (TLS) - mail.adityagroup[.]co
+- Compromised email account used to send stolen data: heera.bisht@adityagroup[.]co
+- Destination email account that received stolen data: zakirrome@ostdubai[.]com
