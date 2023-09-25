@@ -106,7 +106,7 @@ TEN ATTACHMENTS:
 - d16e1e1c65bc6dd45379445430fbb4314e25ad2a0931077f1240c9aab1cb825d - 614,763 bytes - BANK SWIFT.pdf_________________________________.rar
 - e57c9c9e8be4e62ccaccc63cebdff94cb03faee3cd9a50fab8e35c6390a8bb30 - 568,355 bytes - CI and PL.pdf_______________________________.rar
 
-TEN EXTRACTED FILES (FIVE UNIQUE FILE HASHES):
+EIGHT EXTRACTED FILE NAMES (FIVE UNIQUE FILE HASHES):
 
 - 768ad01a4a10350c639160a41fcb2e08e108cfeddb993cb2535bc1804fdd1a3c - 613,376 bytes - HYI-2023.pdf__________________.exe
 - a92454653447052d1a4d2342adeae2ae74a0499868a6fbd7834773b47b368cb7 - 772,096 bytes - EURO SWIFT.pdf_____________________________________.exe
