@@ -1,0 +1,94 @@
+2023-08-29 (TUESDAY): ICEDID (BOKBOT) INFECTION WITH KEYHOLE VNC AND COBALT STRIKE
+
+INFECTION CHAIN:
+
+- thread-hijacked email --> link for zip download --> password-protected zip --> extracted Windows shortcut (.lnk) --> 
+  retrieves IcedID installer --> IcedID infection --> BackConnect traffic, Keyhole VNC, and Cobalt Strike activity
+
+EXAMPLES OF LINKS FOR THE INITIAL ZIP DOWNLOADS:
+
+- hxxps://abelinis[.]com/su/?43882811
+- hxxps://skillerszone[.]com/dis/?92765714
+
+- Note: The URLs from the emails work without the question mark and following seven numeric characters.
+  This is why the are usually reported without the question mark and numeric suffix.
+
+EXAMPLES OF DOWNLOADED ZIP ARCHIVE:
+
+- SHA256 hash: e109db8cb4759a8e2c6c301fe9f3ca470bb2f0421e9b3565d63ae41c38b2349d
+- File size: 966 bytes
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File name: 2Z9S.zip
+- File description: Password-protected zip archive
+- Password: 341
+
+WINDOWS SHORTCUT EXTRACTED FROM THE ABOVE ZIP ARCHIVE:
+
+- SHA256 hash: 55e78bc62a279eea69fc448ebe1adc848b7805efb85b7378fbe377870d4ad947
+- File size: 2,154 bytes
+- File type: MS Windows shortcut
+- File name: 9ZB.pdf.lnk
+- File description: Windows shortcut designed to retrieve and install IcedID malware
+
+ICEDID INSTALLER RETRIEVED BY THE ABOVE WINDOWS SHORTCUT:
+
+- SHA256 hash: 6dbeb28cbe80c26172002ea3b96b94b49cf6be226c4c56cd64bf9830a55e65d2
+- File size: 365,490 bytes
+- File location: hxxp://155.138.160[.]67/fYYQ0/e
+- File location: C:\Users\[username]\AppData\Local\Temp\1z.log
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: 64-bit DLL to install IcedID
+- Run method: rundll32.exe [filename] scab /k pechene634
+
+FILES FROM THE INFECTED WINDOWS HOST:
+
+- SHA256 hash: 7fbbd4aebd82f60e00c83bd963deb28af97728346568cf7fc8c757eaf98e4009
+- File size: 698,389 bytes
+- File location: hxxp://carsfootyelo[.]com/
+- File type: gzip compressed data, was "Detail.txt", from FAT filesystem (MS-DOS, OS/2, NT), original size modulo 2^32 3570413
+- File description: gzip binary used to create persistent IcedID DLL and license.dat data binary
+
+- SHA256 hash: 332afc80371187881ef9a6f80e5c244b44af746b20342b8722f7b56b61604953
+- File size: 354,474 bytes
+- File location: C:\Users\user\AppData\Roaming\CloudGiant\license.dat
+- File type: data
+- File description: data binary needed to run persistent IcedID DLL
+
+- SHA256 hash: 9c0e8c491253caf39dd15e60ad2558e4c1b1178d9898f1121ade9fc6568845ce
+- File size: 343,160 bytes
+- File location: C:\Users\[username]\AppData\Local\opibos2\Uncifp3.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: Persistent DLL for IcedID infection
+- Run method: rundll32 [filename],init --po="[path to license.dat]"
+
+NOTE:
+
+- Forensic analysis revealed no binaries saved to disk for BackConnect, Keyhole VNC, or Cobalt Strike
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+HTTPS REQUEST TO RETRIEVE PASSWORD-PROTECTED ZIP ARCHIVE:
+
+- hxxps://skillerszone[.]com/dis/
+
+HTTP REQUEST BY WINDOWS SHORTCUT TO RETRIEVE ICEDID INSTALLER DLL:
+
+- 155.138.160[.]67 port 80 - 155.138.160[.]67 - GET /fYYQ0/e
+
+HTTP REQUEST BY ICEDID INSTALLER FOR GZIP BINARY:
+
+- 104.21.85[.]40 port 80 - carsfootyelo[.]com - GET /
+
+ICEDID HTTPS C2 TRAFFIC:
+
+- 157.245.102[.]160 port 443 - majzolimka[.]com - HTTPS traffic
+- 157.245.106[.]203 port 443 - awindakizend[.]com - HTTPS traffic
+- 157.245.106[.]203 port 443 - feekstokandy[.]com - HTTPS traffic
+
+BACKCONNECT AND KEYHOLE VNC TRAFFIC:
+
+- 172.86.75[.]88 port 443 - encoded/encrypted TCP traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 141.98.80[.]158 port 443 - umomrmwa[.]com - TLSv1.2 traffic using Let's Encrypt certificate
