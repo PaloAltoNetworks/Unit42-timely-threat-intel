@@ -1,0 +1,98 @@
+2023-10-18 (WEDNESDAY) - ICEDID FORKED VARIANT WITH BACKCONNECT, ANUBIS VNC, COBALT STRIKE & SCREENCONNECT
+
+NOTES:
+
+- The forked IcedID (Bokbot) variant was reported by Proofpoint earlier this year:
+  -- https://www.proofpoint.com/us/blog/threat-insight/fork-ice-new-era-icedid
+- The standard variant of IcedID moved from Anubis VNC to Keyhole VNC as early as October 2022.
+- This forked variant uses an older version of BackConnect and still uses Anubis VNC.
+- The forked variant doesn't have any data binary (license.dat) like the standard IcedID variant does.
+
+- After Cobalt Strike started, the attacker retrieved and ran ScreenConnect on the infected host.
+- ScreenConnect is a legitimate remote management tool, but it has been used by various threat actors.
+  -- Example: https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/
+
+- During this infection run, ScreenConnect led to "hands on keyboard" by the attacker approximately
+  95 minutes after the initial infection.
+
+INFECTION CHAIN:
+
+- url --> redirects --> downloaded zip --> extract and run VBS file --> retrieves fake gzip binary -->
+  creates persistent IcedID (forked variant) DLL --> IcedID C2 --> BackConnect, Anubis VNC and 
+  Cobalt Strike --> retrieves and runs ScreenConnect --> "hands on keyboard" by the attacker
+
+INITIAL ZIP ARCHIVE DOWNLOAD:
+
+- 193.3.19[.]226 port 443 - hxxps://vippartyrentals[.]net/c2/ks/kffhwtmsdz9ba1
+- 156.38.171[.]131 port 443 - hxxps://precisiongroupsa[.]com/wqmfths
+- 135.181.180[.]74 port 443 - hxxps://corona.com[.]pk/wqmftjs/
+
+DOWNLOADED ZIP ARCHIVE AND EXTRACTED VBS FILE:
+
+- SHA256 hash: 8c9e20691f72b4f4c42ab4fc20dd429a4f2216212d5d1fa69b6893fe26746e07
+- File size 1,880,116 bytes
+- File name: ACOW0158_6761905.zip
+
+- SHA256 hash: 5f332e5243cf9af46600a2887c23044b337a9bbc9fa466be42a5656697234ce8
+- File size 2,578,688 bytes
+- File name: offer[2023.10.18_06-12].vbs
+
+INSTALLER FOR ICEDID FORKED VARIANT CREATED BY THE ABOVE VBS FILE:
+
+- SHA256 hash: 8901e289c92449e47212b5e6e948ee1d12e9d809af9026ea39834f595bc9f238
+- File size: 356,864 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\QzlWtcd\IXwmcoBtgW.dll
+- File description: DLL installer for IcedID forked variant
+- Run method: regsvr32.exe [filename]
+
+ICEDID FORKED VARIANT INSTALLER TRAFFIC FOR FAKE GZIP BINARY:
+
+- 212.18.104[.]12 port 443 - modalefastnow[.]com - HTTPS traffic
+- 212.18.104[.]12 port 80 - modalefastnow[.]com - GET / HTTP/1.1 
+
+FAKE GZIP BINARY AND PERSISITENT DLL FOR ICEDID FORKED VARIANT:
+
+- SHA256 hash: 323f82d448e7c2b777d6c51c4f980f2398db34e8507523e7fdf7aa1af3cd3305
+- File size: 641,281 bytes
+- File description: Fake gzip binary retrieved from modalefastnow.com by the installer DLL
+
+- SHA256 hash: d0dcdd4a5fe73a06de67ce5c9a6757da078ab81eb964c4953c478d996530f8dc
+- File size: 640,512 bytes
+- File location: C:\Users\[username]\user\AppData\Local\[username]\Vijeum3.dll
+- File description: Persistent DLL for IcedID forked variant
+- Run method: rundll32.exe [filename],#1 --ni="!"
+
+POST-INFECTION ICEDID FORKED VARIANT C2 TRAFFIC:
+
+- 77.105.142[.]135 port 443 - skrechelres[.]com - HTTPS traffic
+- 77.105.140[.]181 port 443 - jerryposter[.]com - HTTPS traffic
+- 173.255.204[.]62 port 443 - jkbarmossen[.]com - HTTPS traffic
+
+ICEDID FORKED VARIANT BACKCONNECT TRAFFIC AND ANUBIS VNC (VERSION 1.2.0):
+
+- 194.61.53[.]185 port 8080 - encoded TCP traffic
+
+COBALT STRIKE STAGER:
+
+- SHA256 hash: 5fa88551572d1c357e3ae4ffaa97ab27d838cf802a987c92e4eaca8607dc6850
+- File size: 355,328 bytes
+- File location: hxxp://85.209.11[.]48/download/http64.exe
+- File location: C:\Users\U[username]\AppData\Local\Temp\tegi32.exe
+
+COBALT STRIKE TRAFFIC:
+
+- 85.209.11[.]48 port 80 - hxxp://85.209.11[.]48/download/http64.exe
+- 85.209.11[.]48 port 80 - 85.209.11[.]48 - GET /pixel.gif HTTP/1.1 
+- 85.209.11[.]48 port 80 - 85.209.11[.]48 - POST /submit.php?id=1487244850 HTTP/1.1 
+
+SCREENCONNECT INSTALLER:
+
+- SHA256 hash: c2ddb954877dcfbb62fd615a102ce5fa69f4525abc1884e8fe65b0c2b120cfd4
+- File size: 5409976 bytes
+- File location: hxxp://85.209.11[.]48/download/bryst.exe 
+- File location: C:\Users\U[username]\AppData\Local\Temp\tegi32.exe
+
+SCREENCONNECT TRAFFIC:
+
+- 85.209.11[.]48 port 80 - hxxp://85.209.11[.]48/download/bryst.exe 
+- 147.75.62[.]184 port 443 - instance-jc1vlj-relay.screenconnect[.]com - encoded/encrypted TCP traffic
