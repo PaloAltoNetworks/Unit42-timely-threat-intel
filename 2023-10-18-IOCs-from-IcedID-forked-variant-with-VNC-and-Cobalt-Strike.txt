@@ -74,7 +74,7 @@ ICEDID FORKED VARIANT BACKCONNECT TRAFFIC AND ANUBIS VNC (VERSION 1.2.0):
 
 COBALT STRIKE STAGER:
 
-- SHA256 hash: 5fa88551572d1c357e3ae4ffaa97ab27d838cf802a987c92e4eaca8607dc6850
+- SHA256 hash: c2ddb954877dcfbb62fd615a102ce5fa69f4525abc1884e8fe65b0c2b120cfd4
 - File size: 355,328 bytes
 - File location: hxxp://85.209.11[.]48/download/http64.exe
 - File location: C:\Users\U[username]\AppData\Local\Temp\tegi32.exe
@@ -87,8 +87,8 @@ COBALT STRIKE TRAFFIC:
 
 SCREENCONNECT INSTALLER:
 
-- SHA256 hash: c2ddb954877dcfbb62fd615a102ce5fa69f4525abc1884e8fe65b0c2b120cfd4
-- File size: 5409976 bytes
+- SHA256 hash: 5fa88551572d1c357e3ae4ffaa97ab27d838cf802a987c92e4eaca8607dc6850
+- File size: 5,409,976 bytes
 - File location: hxxp://85.209.11[.]48/download/bryst.exe 
 - File location: C:\Users\U[username]\AppData\Local\Temp\tegi32.exe
 
