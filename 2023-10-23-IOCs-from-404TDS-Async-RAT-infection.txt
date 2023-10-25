@@ -1,0 +1,57 @@
+2023-10-23 (MONDAY): 404 TDS CHAIN LEADS TO ASYNC RAT VARIANT
+
+ASSOCIATED MALWARE AND ARTIFACTS:
+
+- SHA256 hash: 51b92bd4cde8164490184df637c14749dc0bab563761c7dba9347d3bb6e99bf0
+- File size: 658,658 bytes
+- File name: DHLQ1578_7076053.js
+- File type: Unicode text, UTF-16, little-endian text
+- File description: .js file downloaded from 404 TDS link chain
+
+- SHA256 hash: b0006d6ea4eee13fc486e6dac8e869091d7af353f39f9d4b456b4f997f06336a
+- File size: 26,150 bytes
+- File location: C:\Users\[username\AppData\Roaming\Microsoft\dateagent.ps1
+- File type: Unicode text, UTF-16, little-endian text, with very long lines (8544), with CRLF line terminators
+- File description: Powershell script used for persistent infection
+
+- SHA256 hash: 29e5033f25becbe94e9a22fecc247497e3cd81b354cb63ffdc69559ef5861acf
+- File size: 516,326 bytes
+- File location: C:\Users\[username\AppData\Roaming\Microsoft\EULA.txt
+- File type: data
+- File description: Data binary in same directory as Powershell script used for persistent infection
+
+- File size: 2 bytes
+- File location: C:\ProgramData\Microsoft
+- File type: Unicode text, UTF-16, little-endian text, with no line terminators
+- File description: File contains only the following two bytes: \xFF\xFE
+
+404 TDS LINK CHAIN LEADING TO .JS FILE:
+
+- port 80 - hxxp://truedatapartners[.]com/thg/ia662wbvxgv
+- port 443 - hxxps://mphasistech[.]com/wsjdfghd/
+- port 443 - hxxps://precisiongroupsa[.]com/wsjdfghd/
+
+INFECTION TRAFFIC GENERATED AFTER RUNNING THE DOWNLOADED .JS FILE:
+
+- 45.61.136.242 port 80 - asivuzu4bz[.]top - GET /1.php?hash=
+- 45.61.136.242 port 80 - asivuzu4bz[.]top - GET /2.php?id=DESKTOP-WIN10PC&key=13999366963
+- 164.90.149.198 port 80 - mgmmcbdgaflejie[.]top - GET /spam/sdfzw.php?i=DESKTOP-WIN10PC
+- 140.82.27.51 port 14235 - s3v3i17ok1gpjfv[.]top - TLSv1.0 traffic
+- 162.33.177.125 port 80 - peribzw[.]top - GET /ritgzoe/us4/r
+- 162.33.177.125 port 80 - peribzw[.]top - GET /ritgzoe/us4/gde.php
+- 162.33.177.125 port 80 - peribzw[.]top - GET /ritgzoe/us4/gde.php
+- 149.248.20.213 port 53245 - o8i9asf86v76t3y67t63gg[.]cn - TLSv1.0 traffic
+- 93.184.216.34 port 443 - example[.]com - TLSv1.2 HTTPS traffic **
+
+ ** example[.]com appears to be a legitimate "example domain." Unsure why the infected host contacted this server.
+
+IP ADDRESS AND LOCATION CHECKS DURING THE INFECTION:
+
+- port 443 - hxxps://api.ipify[.]org/
+- port 80 - hxxp://checkip.dyndns[.]org/
+- port 80 - hxxp://ipinfo[.]io//city
+- port 80 - hxxp://ipinfo[.]io//region
+- port 80 - hxxp://ipinfo[.]io//country
+- port 80 - hxxp://ipinfo[.]io/[victim's public IP address]/city
+- port 80 - hxxp://ipinfo[.]io/[victim's public IP address]/region
+- port 80 - hxxp://ipinfo[.]io/[victim's public IP address]/country
