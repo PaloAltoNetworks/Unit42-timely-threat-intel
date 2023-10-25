@@ -26,7 +26,7 @@ ASSOCIATED MALWARE AND ARTIFACTS:
 - File description: Data binary in same directory as Powershell script used for persistent infection
 
 - File size: 2 bytes
-- File location: C:\ProgramData\Microsoft
+- File location: C:\ProgramData\Microsoft\Get-NetAdapterQos.log
 - File type: Unicode text, UTF-16, little-endian text, with no line terminators
 - File description: File contains only the following two bytes: \xFF\xFE
 
