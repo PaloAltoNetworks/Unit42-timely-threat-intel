@@ -1,5 +1,10 @@
 2023-10-23 (MONDAY): 404 TDS CHAIN LEADS TO ASYNC RAT VARIANT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_404tds-asyncrat-async-activity-7122945665868984320-W5U3
+- https://twitter.com/Unit42_Intel/status/1717179793966268785
+
 NOTES:
 
 - Proofpoint describes a 404 TDS campaign in this article:
