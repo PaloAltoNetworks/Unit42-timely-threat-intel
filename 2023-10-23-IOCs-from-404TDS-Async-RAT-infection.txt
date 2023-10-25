@@ -39,7 +39,6 @@ INFECTION TRAFFIC GENERATED AFTER RUNNING THE DOWNLOADED .JS FILE:
 - 140.82.27.51 port 14235 - s3v3i17ok1gpjfv[.]top - TLSv1.0 traffic
 - 162.33.177.125 port 80 - peribzw[.]top - GET /ritgzoe/us4/r
 - 162.33.177.125 port 80 - peribzw[.]top - GET /ritgzoe/us4/gde.php
-- 162.33.177.125 port 80 - peribzw[.]top - GET /ritgzoe/us4/gde.php
 - 149.248.20.213 port 53245 - o8i9asf86v76t3y67t63gg[.]cn - TLSv1.0 traffic
 - 93.184.216.34 port 443 - example[.]com - TLSv1.2 HTTPS traffic **
 
