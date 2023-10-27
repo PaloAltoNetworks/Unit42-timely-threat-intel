@@ -1,5 +1,11 @@
 2023-10-25 (WEDNESDAY): DARKGATE INFECTION FROM MALSPAM
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintel-wireshark-ugcPost-7123453507566723074-hOu4
+- https://twitter.com/Unit42_Intel/status/1717687387025809465
+- https://malware-traffic-analysis.net/2023/10/25/index.html
+
 INFECTION CHAIN:
 
 - email --> PDF --> link from PDF --> downloaded .cab --> extracted .url file --> HTTP traffic for installer .msi from .zip  --> 
