@@ -1,0 +1,64 @@
+2023-10-31 (TUESDAY): ICEDID (BOKBOT) ACTIVITY
+
+NOTES:
+
+- This is based on a Micrsoft Installer (MSI) file first submitted to VirusTotal on Monday 2023-10-30.
+- The source of this MSI file is unknown.
+- We saw indicators of BackConnect traffic, but no associated VNC or other follow-up activity.
+
+CHAIN OF EVENTS:
+
+- MSI file --> IcedID installer DLL --> HTTP traffic for fake gzip binary --> persistent files created --> 
+  IcedID C2 with BackConnect traffic
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: c9c4ed0902df031f72f3ae176895a2b43dc2737f7ce5ab5017134aec0c21dfad
+- File size: 3,125,248 bytes
+- File name: build-123.msi
+- File description: malicious MSI package for IcedID
+
+- SHA256 hash: 2ed82c45ca01afb84db23d41f50eecc726a804f4f8b2f5e9c6a561003643194d
+- File size: 1,328,560 bytes
+- File location: C:\ProgramData\btgvvtr\0loader_p1_dll_64_n1_x64_inf.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: 64-bit DLL installer for IcedID
+- Run method: rundll32.exe [filename] scab /k roluxe752
+
+- SHA256 hash: e562eafa553e130de12386f8b099d77fc2bdeeebdc5aa3573268bbc73a259c64
+- File size: 1,683,790 bytes
+- File location: hxxp://grafielucho[.]com/
+- File type: gzip compressed data, was "Husband.txt", from FAT filesystem (MS-DOS, OS/2, NT), original size modulo 2^32 2334984
+- File description: fake gzip file used to created persistent IcedID DLL file and license.dat data binary
+
+- SHA256 hash: 332afc80371187881ef9a6f80e5c244b44af746b20342b8722f7b56b61604953
+- File size: 354,474 bytes
+- File location: C:\Users\[username]\AppData\Roaming\ChronicExample\license.dat
+- File type: data
+- File description: data binary used to run persistent IcedID DLL
+
+- SHA256 hash: 5d58a00e92dcbc86c8d6825f1971e589b17029611f1e3206ac9a6604923e3d90
+- File size: 1,328,560 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[username]\Fazufopm64.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: persistent IcedID DLL
+- Run method: rundll32.exe [filename],init --itpela="[path to license.dat]"
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+Date/Time (UTC)      IP Address        Port  Domain               Info
+-------------------  ----------------  ----  -------------------  ------------------------------------
+2023-10-31 23:46:34  104.21.32[.]6     80    grafielucho[.]com    GET / HTTP/1.1 
+2023-10-31 23:46:38  45.61.137[.]225   443   manjuskploman[.]com  Client Hello
+2023-10-31 23:47:38  45.61.139[.]232   443   qousahaff[.]com      Client Hello
+2023-10-31 23:47:39  45.61.139[.]232   443   qousahaff[.]com      Client Hello
+2023-10-31 23:47:39  45.61.139[.]232   443   qousahaff[.]com      Client Hello
+2023-10-31 23:47:39  45.61.137[.]225   443   manjuskploman[.]com  Client Hello
+2023-10-31 23:47:39  45.61.136[.]22    443   brojizuza[.]com      Client Hello
+2023-10-31 23:47:41  162.33.179[.]136  443   asleytomafa[.]com    Client Hello
+2023-10-31 23:47:42  159.89.124[.]188  443                        start of TCP traffic for BackConnect
+2023-10-31 23:52:39  162.33.179[.]136  443   asleytomafa[.]com    Client Hello
+2023-10-31 23:57:40  162.33.179[.]136  443   asleytomafa[.]com    Client Hello
+2023-11-01 00:02:41  162.33.179[.]136  443   asleytomafa[.]com    Client Hello
+2023-11-01 00:07:42  162.33.179[.]136  443   asleytomafa[.]com    Client Hello
+2023-11-01 00:12:43  162.33.179[.]136  443   asleytomafa[.]com    Client Hello
