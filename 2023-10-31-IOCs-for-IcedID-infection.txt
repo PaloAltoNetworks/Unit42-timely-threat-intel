@@ -1,5 +1,10 @@
 2023-10-31 (TUESDAY): ICEDID (BOKBOT) ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_icedid-bokbot-timelythreatintel-activity-7125607698699550720-msaz
+- https://twitter.com/Unit42_Intel/status/1719841834204033376
+
 NOTES:
 
 - This is based on a Micrsoft Installer (MSI) file first submitted to VirusTotal on Monday 2023-10-30.
