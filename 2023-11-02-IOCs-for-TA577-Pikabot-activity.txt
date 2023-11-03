@@ -1,7 +1,9 @@
 2023-11-02 (THURSDAY): TA577 PIKABOT ACTIVITY
 
-REFERENCE:
+REFERENCES:
 
+- https://www.linkedin.com/posts/unit42_ta577-pikabot-unit42threatintel-activity-7126273089293713408-OBp1
+- https://twitter.com/Unit42_Intel/status/1720507470290801122
 - https://twitter.com/Cryptolaemus1/status/1720025977315565869
 
 EXAMPLE OF LINK FROM TA577 EMAIL DISTRIBUTING PIKABOT:
