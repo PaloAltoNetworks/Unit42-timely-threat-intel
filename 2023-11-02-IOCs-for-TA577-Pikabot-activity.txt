@@ -1,0 +1,84 @@
+2023-11-02 (THURSDAY): TA577 PIKABOT ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Cryptolaemus1/status/1720025977315565869
+
+EXAMPLE OF LINK FROM TA577 EMAIL DISTRIBUTING PIKABOT:
+
+- hxxps://gdom[.]org/iit/?48305841
+
+DOWNLOADED ZIP ARCHIVE:
+
+- SHA256 hash: 3222c6052ff4e89c015d5af4a5f2bb19613c258fa3b23dcf0ae704a4ea60851f
+- File size: 115,018 bytes
+- File name: FIEYT.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+
+CONTENTS FROM THE ABOVE ZIP ARCHIVE:
+
+- SHA256 hash: 824c62a3ed64ac3b2329c5ceef29432627617ed5b7b0deff48304332d954f4df
+- File size: 193,396 bytes
+- File name: Imweo.js
+- File type: ASCII text, with very long lines (2742), with CRLF line terminators
+
+- SHA256 hash: 48fd53b1298d8b68b677f80419251eb3a3751757a59b0453d88671e7ba7ff71c
+- File size: 44,059 bytes
+- File name: p.txt
+- File type: data
+
+PIKABOT INSTALLER DLL DOWNLOADED BY THE ABOVE .JS FILE:
+
+- SHA256 hash: 2bf21a583f86c4889b1653cb188aa361a20a9fbaa451d514c4d2d8bf5decc24d
+- File size: 1,295,885 bytes
+- File location: hxxp://216.128.185[.]35/mdh/unmos
+- File location: C:\Users\[username]\AppData\Local\Temp\VSP.sct
+- File type: PE32 executable (DLL) (console) Intel 80386, for MS Windows
+- Run method: rundll32.exe [filename], Crash
+
+PERSISTENT PIKABOT DLL ON AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: c057334eac50caa5a998077f62f2276b8bdd2e305f50e445d76e610cac433d4d
+- File size: 1,295,360 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\alluvions\fervence.dll
+- Modified date/time: 2023-11-02 14:18 UTC
+- File type: PE32 executable (DLL) (console) Intel 80386, for MS Windows
+- Run method: rundll32.exe [filename], Crash
+
+- SHA256 hash: 89602d44becc204e3dddd611b5414c430160aa58ac0525482b2ce56ec5544b04
+- File size: 1,569,792 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\alluvions\fervence.dll
+- Modified date/time: 2023-11-02 23:54 UTC
+- File type: PE32 executable (DLL) (console) Intel 80386, for MS Windows
+- Run method: rundll32.exe [filename], Crash
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+ZIP DOWNLOAD AND PIKABOT INSTALLER DLL DOWNLOAD:
+
+- hxxps://gdom[.]org/iit/?48305841
+- 216.128.185[.]35 port 80 - 216.128.185[.]35 - GET /mdh/unmos
+
+IP ADDRESSES AND PORTS FOR PIKABOT HTTPS C2 TRAFFIC:
+
+- 15.235.44[.]231:5938
+- 15.235.45[.]155:2221
+- 15.235.47[.]80:23399
+- 15.235.47[.]206:13783
+- 15.235.202[.]109:2226
+- 45.32.140[.]39:2078
+- 51.195.232[.]97:13782
+- 51.68.147[.]114:2083
+- 51.79.143[.]215:13783
+- 65.20.84[.]254:13783
+- 65.20.84[.]3:2221
+- 95.179.141[.]41:1194
+- 104.238.144[.]171:2221
+- 154.61.75[.]156:2078
+- 154.92.19[.]139:2222
+- 154.221.30[.]136:13724
+- 158.247.197[.]73:23399
+- 158.247.202[.]180:13783
+- 167.179.103[.]206:2083
+- 198.13.58[.]126:2223
+- 210.243.8[.]247:23399
