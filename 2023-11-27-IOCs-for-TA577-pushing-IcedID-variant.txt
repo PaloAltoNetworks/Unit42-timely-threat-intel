@@ -1,5 +1,10 @@
 2023-11-27 (MONDAY): TA577 PUSHES ICEDID (BOKBOT) VARIANT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ta577-icedid-bokbot-ugcPost-7135285478743822336-Hwga
+- https://twitter.com/Unit42_Intel/status/1729519857908015333
+
 INFECTION CHAIN OF EVENTS:
 
 - email --> link --> victim downloads, mounts & opens IMG --> victim double-clicks LNK to run hidden DLL -->
