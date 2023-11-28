@@ -1,0 +1,59 @@
+2023-11-27 (MONDAY): TA577 PUSHES ICEDID (BOKBOT) VARIANT
+
+INFECTION CHAIN OF EVENTS:
+
+- email --> link --> victim downloads, mounts & opens IMG --> victim double-clicks LNK to run hidden DLL -->
+  HTTPS C2 traffic for IcedID variant
+
+EXAMPLE OF LINK FROM AN EMAIL:
+
+- hxxp://bigsurlibros[.]com[.]ar/iu/  ( Reference: https://urlhaus.abuse.ch/url/2735833/ )
+
+EXAMPLE OF A REDIRECT:
+
+- hxxp://bigsurlibros[.]com[.]ar/iu//?WYO=1701122367
+
+EXAMPLE OF DOWNLOADED DISK IMAGE:
+
+- SHA256 hash: e075f8cea3a3438838aa18256e588b2f271ac6b1476874a4229fe2dbe5fa6f00
+- File size: 1,540,096 bytes
+- File name: ANC.img
+- File location: hxxp://bigsurlibros[.]com[.]ar/iu//?WYO=1701122367
+- File type: ISO 9660 CD-ROM filesystem data ''
+- NOTE: Different name every download, different file hash when requested from different source IP addresses
+
+DISK IMAGE CONTENTS:
+
+- NOTE: Each disk image from this wave has the same contents, even if the IMG file hash is different
+
+- SHA256 hash: db03a34684feab7475862080f59d4d99b32c74d3a152a53b257fd1a443e8ee77
+- File size: 1,634 bytes
+- File name: UPDATE-HSYEYDBB.html.lnk
+- File type: MS Windows shortcut
+- Shortcut: C:\Windows\system32\rundll32.exe version1.dll, scab
+
+- SHA256 hash: e99f3517a36a9f7a55335699cfb4d84d08b042d47146119156f7f3bab580b4d7
+- File size: 1,475,072 bytes
+- File name: version1.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- Run method: rundll32.exe [filename], scab
+
+EXAMPLE OF PERSISTENCE THROUGH SCHEDULED TASK:
+
+- Task name: Updater
+- Task trigger: On login
+- Task command: rundll32.exe "C:\Users\[user]\AppData\Roaming\Custom_update\Update_560c5b10.dll", scab
+
+- NOTE: Persistent DLL file name has different random 8-character hex value for each infection.
+
+ICEDID VARIANT POST-INFECTION HTTPS TRAFFIC:
+
+- 104.21.66[.]197 or 172.67.164[.]29 or port 443 - mazdakrichest[.]com - HTTPS traffic
+- 104.21.39[.]107 or 172.67.144[.]144 port 443 - mraskopal[.]link - HTTPS traffic
+- 104.21.25[.]253 or 172.67.134[.]246 or port 443 - missisanjoup[.]shop - HTTPS traffic
+
+CERTIFICATE INFO FROM THE C2 SERVERS FOR HTTPS TRAFFIC:
+
+- mazdakrichest[.]com - Let's Encrypt certificate, valid since: 2023-10-09 05:56:27 UTC
+- mraskopal[.]link -  Google Trust Services LLC certificate, valid since: 2023-10-12 07:25:11 UTC
+- missisanjoup[.]shop - Let's Encrypt certificate, valid since: 2023-10-16 08:02:44 UTC
