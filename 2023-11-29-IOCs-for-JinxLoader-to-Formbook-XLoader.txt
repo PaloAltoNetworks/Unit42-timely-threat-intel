@@ -1,0 +1,96 @@
+2023-11-29 (WEDNESDAY): EMAIL --> JINXLOADER --> FORMBOOK/XLOADER
+
+NOTES:
+
+- First advertised on hackforums.net on 2023-04-30, JinxLoader is relatively new malware written in Golang.
+- Analyzing this infection revealed a login panel for JinxLoader at hxxp://46.183.221[.]59/login 
+
+INFECTION CHAIN:
+
+email --> password-protected RAR --> ZIP --> JinxLoader EXE --> JinxLoader checkin starts --> Formbook/XLoader C2
+
+SOME OF THE EMAIL HEADER LINES:
+
+- Received: from loose.vietdot.com (loose.vietdot[.]com [88.209.206[.]65]); Tue, 28 Nov 2023 11:58:17 +0000 (UTC)
+- From: Mohamed Abdulla Al Hosani (ADNOC Refining - HQ) <alhossani@adnoc[.]ae>
+- Subject: Abu Dhabi National Oil Company  Onshore has invited you to participate in this RFQ for: WOR DRI RFX93748372873
+- Date: 28 Nov 2023 12:58:15 +0100
+- Message-ID: <20231128124623.11D85D83ED11A341@adnoc[.]ae>
+- Disposition-Notification-To: praveen.s@hsrfunke[.]com
+- Attachment name: RFQ for HRI HOR RFX204847394304893545 Offshore Project.rar
+
+EMAIL ATTACHMENT AND EXTRACTED FILES:
+
+- SHA256 hash: 5c11e9204d181a28fb6ba97d0f26febe409e2151ae71c5aa63ea34ffb14ed383
+- File size: 41,181 bytes
+- File name: RFQ for HRI HOR RFX204847394304893545 Offshore Project.rar
+- File type: RAR archive data, v5
+- File description: password-protected RAR archive
+- Password: X93k@*#DH*DJD*&D*JH
+
+- SHA256 hash: 9b1090ff32a441a89294739884b9a0330e75497573dde39b6b79ac4dd0a9effd
+- File size: 40,739 bytes
+- File name: RFQ for HRI HOR RFX204847394304893545 Offshore Project.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Zip archive extracted from the above RAR archive
+
+- SHA256 hash: b7c66440c975bed86efe68c47c95bd1460ab8cf21bccacfc1e80c145e7be0f8b
+- File size: 68,096 bytes
+- Filename: RFQ for HRI HOR RFX204847394304893545 Offshore Project.exe
+- File type: PE32+ executable (GUI) x86-64 Mono/.Net assembly, for MS Windows
+- File description: Extracted from the above zip archive, this is an EXE for JinxLoader
+
+FILE RETRIEVED BY JINXLOADER:
+
+- SHA256 hash: 08bf78e0c3c6250a295664c3fb4be7d05b90592260f979f87bb476638dd4a0a9
+- File size: 5,363,712 bytes
+- File location: hxxps://www.wgs[.]com[.]pk/js/Qvaloe.vdf
+- File description: XOR-encoded binary using the ASCII string 566
+
+- SHA256 hash: c1d3ad3f518cf02925d304f1912860d01e8cfd8d2ed6f76bd200c7d25370206f
+- File size: 5,363,712 bytes
+- File type: PE32 executable (DLL) (console) Intel 80386 Mono/.Net assembly, for MS Windows
+- File description: decoded DLL from the above XOR-encoded binary
+- Run method: unknown
+
+FOLLOW-UP MALWARE (FORMBOOK/XLOADER):
+
+- SHA256 hash: edf824f5152829ef7be198c97a42e4ecd5ae9be37ef57051deda0435cc302063
+- File size: 774,144 bytes
+- File type: PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows
+- File location: C:\Users\[username]\AppData\Local\Temp\cx5ylLPZa0WXFvQ.exe
+- File description: Formbook/XLoader "rre4"
+
+INFECTION TRAFFIC CAUSED BY JINXLOADER:
+
+- port 443 - hxxps://www.wgs[.]com[.]pk/js/Qvaloe.vdf
+- port 443 - ipinfo[.]io - HTTPS traffic (IP address check, not inherently malicious)
+- port 443 - checkip.amazonaws[.]com - HTTPS traffic (IP address check, not inherently malicious)
+
+JINXLOADER C2:
+
+- 46.183.221[.]59 port 80 - 46.183.221[.]59 - POST / HTTP/1.1  (application/x-www-form-urlencoded)
+
+FORMBOOK/XLOADER C2 URLS:
+
+- POST /rre4/
+- GET /rre4/?[long string of characters]
+
+DOMAINS USED IN FORMBOOK/XLOADER C2 TRAFFIC:
+
+- www.1214888[.]com
+- www.219855[.]xn--80aswg
+- www.autrevalevale[.]click
+- www.austintrafficlawyer[.]com
+- www.cjjmobbbshhhu[.]shop
+- www.e3iaibr[.]icu
+- www.infinite-7[.]com
+- www.julieannmirabel[.]online
+- www.ldhqi4[.]fun
+- www.ncdanmark[.]org
+- www.ofupakoshi[.]com
+- www.overthemoonphoto[.]com
+- www.taxhwangeub[.]com
+- www.terranovaservices[.]top
+- www.worldlife[.]casino
+- www.zkrbma[.]store
