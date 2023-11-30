@@ -1,5 +1,10 @@
 2023-11-29 (WEDNESDAY): EMAIL --> JINXLOADER --> FORMBOOK/XLOADER
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_jinxloader-formbook-xloader-activity-7136002703737974786-9y8J
+- https://twitter.com/Unit42_Intel/status/1730237085246775562
+
 NOTES:
 
 - First advertised on hackforums.net on 2023-04-30, JinxLoader is relatively new malware written in Golang.
