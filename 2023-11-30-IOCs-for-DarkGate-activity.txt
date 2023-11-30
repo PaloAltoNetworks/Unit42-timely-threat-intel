@@ -7,7 +7,8 @@ INITIAL REFERENCE:
 NOTES:
 
 - Unknown distribution method, possibly through Microsoft Teams similar to an example we previously noted at:
-  -- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintelligence-threatintel-activity-7118377814826905600-idoc  -- https://twitter.com/Unit42_Intel/status/1712612195651998098
+  -- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintelligence-threatintel-activity-7118377814826905600-idoc
+  -- https://twitter.com/Unit42_Intel/status/1712612195651998098
 
 ASSOCIATED MALWARE AND ARTIFACTS:
 
@@ -86,3 +87,4 @@ DARKGATE C2:
 
 - 158.160.77[.]234 port 80 - trans1ategooglecom[.]com - POST / HTTP/1.0 
 - 158.160.77[.]234 port 8080 - attempted TCP connections, RST from server
+- 64.190.113[.]222 port 8080 - saintelzearlava[.]com - attempted TCP connections, RST from server
