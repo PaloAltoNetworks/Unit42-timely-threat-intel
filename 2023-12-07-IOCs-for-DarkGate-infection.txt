@@ -66,6 +66,9 @@ PERSISTENCE:
 
 POST-INFECTION TRAFFIC:
 
+- DNS TXT query for tos.viewdobdrv[.]com - returned installation script for DarkGate
+  -- Note: This DNS TXT query did not generate traffic to that domain
+
 - DNS resolution for cdn.boxmedrbopdrv[.]com: 172.67.216[.]253 or 104.21.61[.]240
 
 - 172.67.216[.]253 port 80 - cdn.boxmedrbopdrv[.]com GET /boostrap/p.pdf <-- goes to HTTPS
