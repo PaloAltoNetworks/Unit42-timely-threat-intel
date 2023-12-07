@@ -1,0 +1,79 @@
+2023-12-07 (THURSDAY): DARKGATE ACTIVITY
+
+INFECTION CHAIN:
+
+- unknown source, probably email --> PDF --> link in PDF --> downloaded zip --> extracted Windows shortcut --> 
+  retrieves decoy PDF/copy of autoit3.exe/malicious .au3 file --> DarkGate C2
+
+INITIAL PDF FILE:
+
+- SHA256 hash: b83bea2de2e8c1cfcd3acfb69d29a1e0f4df25fd40f38162e4f316bfc34059a0
+- File size: 74,679 bytes
+- File name: Bank statement.pdf
+- Link in PDF file: hxxps://cdn.boxmedrbopdrv[.]com/openGf6lumTLaPAab7z93TVbXOfcaXUU10axL9S/
+
+DOWNLOADED ZIP AND EXTRACTED WINDOWS SHORTCUT:
+
+- SHA256 hash: a9d2d1d6cf9550a4c149e751b0cf7a9cb369844b4b7f3dedb4fcebde6bf06c36
+- File size: 470 bytes
+- File location: hxxps://onedrive.live[.]com/download?authkey=%21ABu-bQzx6NEjh7s&resid=6F09B27E56B40C39%21112
+- File name: Passport20231023_90223.pdf.zip
+- File description: zip archive downloaded from link in above PDF file
+
+- SHA256 hash: 5733ddb3efed1f4cc5c45649563604afa192bb3622d343acf6da3ee6d854de70
+- File size: 2,546 bytes
+- File name: Passport20231023_90223.pdf.lnk
+- File description: Shortcut extracted from the above zip archive
+
+MALWARE/ARTIFACTS FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: f820a87bd1660928e375540c0e4914a235dbb38768937ee7952731705d34b16d
+- File size: 919,552 bytes
+- File location: hxxps://cdn.boxmedrbopdrv[.]com/boostrap/p.pdf
+- File location: C:\Users\[username]\Downloads\Passport20231023_90223.pdf <-- same directory path as shortcut
+- File description: Decoy PDF file retrieved for this infection, not malicious
+
+- SHA256 hash: 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d
+- File size: 893,608 bytes
+- File location: hxxps://cdn.boxmedrbopdrv[.]com/boostrap/a.png
+- File location: C:\Temp\AutoIt3.exe
+- File location: C:\ProgramData\fccgddc\Autoit3.exe
+- File description: Copy of Autoit3.exe, version 3.3.14.5, not malicious but used to run malicious .au3 file
+
+- SHA256 hash: f0eed58c85832e5a694d9e842de938e5500cb3617d16f7597af00c67d8df7d8f
+- File size: 511,998 bytes
+- File location: hxxps://cdn.boxmedrbopdrv[.]com/boostrap/s.png
+- File location: C:\Temp\dcdddkk.au3
+- File description: malicious AutoIt V3 script with embedded XOR-encoded Windows executable
+
+- SHA256 hash: 12c0e189448bd931b4303722e1778f10297a12e0e271711771f85d743f030aa1
+- File size: 515,498 bytes
+- File location: C:\ProgramData\fccgddc\cbhfbdh.au3
+- Run method: C:\ProgramData\fccgddc\Autoit3.exe C:\ProgramData\fccgddc\cbhfbdh.au3
+- File description: malicious AutoIt V3 script with embedded XOR-encoded Windows executable
+- ASCII string used to XOR encode the Windows executable in this .au3 file: FYCloQVJ
+
+- SHA256 hash: 1fce9ee9254dd0641387cc3b6ea5f6a60f4753132c20ca03ce4eed2aa1042876
+- File size: 414,720 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: DarkGate EXE extracted from the above .au3 file
+
+PERSISTENCE:
+
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\echehha.lnk
+- File description: Windows shortcut
+- Shortcut: C:\ProgramData\fccgddc\Autoit3.exe C:\ProgramData\fccgddc\cbhfbdh.au3
+
+POST-INFECTION TRAFFIC:
+
+- DNS resolution for cdn.boxmedrbopdrv[.]com: 172.67.216[.]253 or 104.21.61[.]240
+
+- 172.67.216[.]253 port 80 - cdn.boxmedrbopdrv[.]com GET /boostrap/p.pdf <-- goes to HTTPS
+- 172.67.216[.]253 port 443 - hxxps://cdn.boxmedrbopdrv[.]com/boostrap/p.pdf <-- decoy PDF file
+- 172.67.216[.]253 port 80 - cdn.boxmedrbopdrv[.]com GET /boostrap/a.png <-- goes to HTTPS
+- 172.67.216[.]253 port 443 - hxxps://cdn.boxmedrbopdrv[.]com/boostrap/a.png <-- copy of Autoit3.exe
+- 172.67.216[.]253 port 80 - cdn.boxmedrbopdrv[.]com GET /boostrap/s.png <-- goes to HTTPS
+- 172.67.216[.]253 port 443 - hxxps://cdn.boxmedrbopdrv[.]com]/boostrap/s.png <-- .au3 file
+
+- 46.101.78[.]238 port 443 - cdn-uk.widgetsfordeploy[.]com:443 - POST / HTTP/1.0 
+- 46.101.78[.]238 port 8080 - cdn-uk.widgetsfordeploy[.]com:8080 <-- attempted TCP connections, not successful
