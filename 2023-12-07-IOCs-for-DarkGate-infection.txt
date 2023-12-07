@@ -1,5 +1,10 @@
 2023-12-07 (THURSDAY): DARKGATE ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintel-threatintelligence-activity-7138645787709767680-mgL_/
+- https://twitter.com/Unit42_Intel/status/1732857094167023618
+
 NOTES:
 
 - This infection was generated from a PDF file originally submitted to VirusTotal on 2023-12-04.
