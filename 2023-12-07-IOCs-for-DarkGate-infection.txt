@@ -30,6 +30,12 @@ DOWNLOADED ZIP AND EXTRACTED WINDOWS SHORTCUT:
 - File name: Passport20231023_90223.pdf.lnk
 - File description: Shortcut extracted from the above zip archive
 
+- SHA256 hash: ad1750e114b0cb1c1a4648ceec46ca18117ee53b873d9ae85b618e42fb445608
+- File size: 463 bytes
+- File location: DNS txt record for tos.viewdobdrv[.]com
+- File location: C:\Users\[username]\AppData\Local\Temp\Taste.cmd
+- File description: Command script to instlal DarkGate
+
 MALWARE/ARTIFACTS FROM AN INFECTED WINDOWS HOST:
 
 - SHA256 hash: f820a87bd1660928e375540c0e4914a235dbb38768937ee7952731705d34b16d
@@ -42,12 +48,14 @@ MALWARE/ARTIFACTS FROM AN INFECTED WINDOWS HOST:
 - File size: 893,608 bytes
 - File location: hxxps://cdn.boxmedrbopdrv[.]com/boostrap/a.png
 - File location: C:\Temp\AutoIt3.exe
+- File location: C:\Users\[username]\AppData\Local\Temp\AutoIt3.exe
 - File location: C:\ProgramData\fccgddc\Autoit3.exe
 - File description: Copy of Autoit3.exe, version 3.3.14.5, not malicious but used to run malicious .au3 file
 
 - SHA256 hash: f0eed58c85832e5a694d9e842de938e5500cb3617d16f7597af00c67d8df7d8f
 - File size: 511,998 bytes
 - File location: hxxps://cdn.boxmedrbopdrv[.]com/boostrap/s.png
+- File location: C:\Users\[username]\AppData\Local\Temp\Organge.txt
 - File location: C:\Temp\dcdddkk.au3
 - File description: malicious AutoIt V3 script with embedded XOR-encoded Windows executable
 
