@@ -1,5 +1,10 @@
 2023-12-07 (THURSDAY): DARKGATE ACTIVITY
 
+NOTES:
+
+- This infection was generated from a PDF file originally submitted to VirusTotal on 2023-12-04.
+- Modified date of the Windows shortcut used for this infection was 2023-11-27.
+
 INFECTION CHAIN:
 
 - unknown source, probably email --> PDF --> link in PDF --> downloaded zip --> extracted Windows shortcut --> 
