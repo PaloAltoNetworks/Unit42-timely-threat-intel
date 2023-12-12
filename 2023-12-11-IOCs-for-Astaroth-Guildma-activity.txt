@@ -1,5 +1,10 @@
 2023-12-11 (MONDAY): INFECTION FROM BRAZIL PORTUGUESE MALSPAM (ASTAROTH/GUILDMA)
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malspam-guildma-astaroth-activity-7140451772770205696-t2d6/
+- https://twitter.com/Unit42_Intel/status/1734686148289777666
+
 NOTES:
 
 - This infection method has previously delivered malware called "Astaroth" or "Guildma."
