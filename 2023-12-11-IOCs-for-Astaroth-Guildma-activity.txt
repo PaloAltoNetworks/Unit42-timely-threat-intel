@@ -1,0 +1,110 @@
+2023-12-11 (MONDAY): INFECTION FROM BRAZIL PORTUGUESE MALSPAM (ASTAROTH/GUILDMA)
+
+NOTES:
+
+- This infection method has previously delivered malware called "Astaroth" or "Guildma."
+- Today's infection artifacts are the same as seen with previous versions of Astaroth/Guildma.
+- Post-infection C2 traffic is somewhat different that previously documented, with traffic over 
+  TCP port 27156 to an ngrok.io domain.
+
+EMAIL INFORMATION:
+
+- Received: from kele4.emporioredepas.com.br (kele4.emporioredepas.com.br [159.89.5[.]86])
+  [information removed]; Mon, 11 Dec 2023 12:23:59 +0000 (UTC)
+- Subject:  O licenciamento 2024 do seu veiculo foi efetuado. REGISTRO: 137291937. 
+- From: Detran <detran@multas[.]com>
+- Message-Id: <20231211120235.2A55488596@kele4.emporioredepas[.]com[.]br>
+- Date: Mon, 11 Dec 2023 12:02:03 +0000 (UTC)
+- Link in message text: hxxps://cmkz.short[.]gy/D1aJOA
+
+ASSOCIATED MALWARE:
+
+DOWNLOADED ZIP ARCHIVE AND EXTRACTED CONTENTS:
+
+- SHA255 hash: 1e3566ff8cfa21710743100d8fe47a5d6e93028a7e85d1b41a81ff13c09dcb91
+- File size: 1,081 bytes
+- File name: 597123494.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Downloaded zip archive after clicking link in email
+
+- SHA255 hash: 88feb530f5f9e63d934feea096567fcb7e82bd5ad66c7062cb054671c5632c50
+- File size: 489 bytes
+- File name: 597123494.htm
+- File type: XML 1.0 document text, ASCII text
+- File description: HTML file extracted from the zip archive, not malicious on its own
+
+- SHA255 hash: 769a015d3cbac7280e54fcf4dc0a8ce1d9db99b04ae10496ed49fd4f9b8480ba
+- File size: 1,050 bytes
+- File name: 597123494.lnk
+- File type: MS Windows shortcut, Item id list present, Has command line arguments
+- File description: Windows shortcut extracted from the zip archive
+
+MALWARE/ARTIFACTS FROM THE INFECTION:
+
+FULL LIST:
+
+- C:\qGI0RE\JVHBDFEE.JS <-- 738 bytes
+- C:\TempData40685669777\auid.log <-- 452 bytes
+- C:\TempData40685669777\dump.log <-- 8,504 bytes
+- C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439.exe <-- 893,608 bytes
+- C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439.log <-- 258,052 bytes
+- C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439db\I1 <-- 221 bytes
+- C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439dbl.log <-- 2,057,627 bytes
+- C:\TempData40685669777\r.log <-- 34 bytes
+- C:\TempData40685669777\r2.log <-- 34 bytes
+- C:\TempData40685669777\sdk.log <-- 3,231,232 bytes 
+- C:\TempData40685669777\sqlite3.dll <-- 932,223 bytes
+- C:\Users\Public\Libraries\fb <-- 25 bytes
+- C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\sysupdates.setup46122f7c0355.lnk <-- 1,573 bytes
+
+PERSISTENT FILES:
+
+- SHA255 hash: 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d
+- File size: 893,608 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File location: C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439.exe
+- File description: Copy of autoit3.exe version 3.3.14.5, not malicious, but used to run malicious .au3 file
+
+- SHA255 hash: 36db8a3b2356fad3947e0ee0272be63fa2f412ff22789da619f6d0d729a29472
+- File size: 258,052 bytes
+- File type: data
+- File location: C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439.log
+- File description: Malicious file run by above copy of autoit3.exe
+
+PERSISTENCE METHOD:
+
+- Persistence method: Windows shortcut in Startup menu
+- Location: C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\sysupdates.setup46122f7c0355.lnk
+- Shortcut: powershell.exe  -windowstyle hidden -Command 
+  C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439.exe
+  C:\TempData40685669777\Phanteks.Optiplex.05164.9910.439.log
+
+INFECTION TRAFFIC:
+
+INITIAL ZIP DOWNLOAD:
+
+- 52.21.33[.]16 post 80 - cmkz.short[.]gy - GET /D1aJOA
+- 72.167.140[.]100 post 80 - 100.140.167.72.host.secureserver[.]net - GET /
+- 34.42.56[.]19 post 80 - 19.56.42.34.bc.googleusercontent[.]com - GET /726036053/597123494//
+
+- Note: After sending the inital zip download, the victims browser viewed the legitimate site www.terra[.]com[.]br
+
+RUNNING THE WINDOWS SHORTCUT:
+
+- 172.67.169[.]60 post 80 - twio0t.vertucelullares[.]pro - GET /?2/
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro  - HEAD /?32775656189628782
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro - GET /?32775656189628782
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro  - HEAD /?72552847471632952
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro - GET /?72552847471632952
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro  - HEAD /?47051450996639040
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro - GET /?47051450996639040
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro  - HEAD /?32489875649678041
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro - GET /?32489875649678041
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro  - HEAD /?51500889783693628
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro - GET /?51500889783693628
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro  - HEAD /?68647256062613997
+- 172.64.80[.]1 post 80 - gaa7r.lavacelullares[.]pro - GET /?68647256062613997
+
+POST-INFECTION C2 TRAFFIC:
+
+- TCP port 27156 - 1.tcp.sa.ngrok[.]io - TCP traffic
