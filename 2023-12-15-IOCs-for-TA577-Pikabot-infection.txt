@@ -1,5 +1,10 @@
 2023-12-15 (FRIDAY): TA577 PIKABOT INFECTION
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ta577-pikabot-timelythreatintel-activity-7141526098479149056-6DCW
+- https://twitter.com/Unit42_Intel/status/1735760477391552670
+
 INFECTION CHAIN OF EVENTS:
 
 - TA577 email --> link --> downloaded zip --> js file --> retrieves and runs Pikabot DLL --> Pikabot C2
