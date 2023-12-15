@@ -1,0 +1,72 @@
+2023-12-15 (FRIDAY): TA577 PIKABOT INFECTION
+
+INFECTION CHAIN OF EVENTS:
+
+- TA577 email --> link --> downloaded zip --> js file --> retrieves and runs Pikabot DLL --> Pikabot C2
+
+NOTES:
+
+- Earlier this week, TA577 emails had PDF attachments with links to the zip
+
+EXAMPLES OF LINKS SUBMITTED TO VIRUSTOTAL ON 2023-12-15 FOR ZIP DOWNLOAD:
+
+- hxxps://3070[.]store/btv/?21737581
+- hxxps://apurnomo[.]com/yytn8/?10937581
+- hxxps://apurnomo[.]com/yytn8/?57957581
+- hxxps://disturbnot[.]com/7rsg/?14157581
+- hxxps://disturbnot[.]com/7rsg/?32737581
+- hxxps://disturbnot[.]com/7rsg/?85737581
+- hxxps://jinjadiocese[.]com/wgm3/?60937581
+- hxxps://kaabrehman[.]com/1kdy/?11857581
+- hxxps://kaabrehman[.]com/1kdy/?39937581
+- hxxps://kaabrehman[.]com/1kdy/?56367581
+- hxxps://kaabrehman[.]com/1kdy/?65357581
+- hxxps://kaabrehman[.]com/1kdy/?74737581
+- hxxps://nsicon2022[.]com/gevk/?70457581
+- hxxps://pindjagatpur[.]com/bdvy/?33737581
+- hxxps://pindjagatpur[.]com/bdvy/?59537581
+- hxxps://rayyantechnology[.]com/yow/?05147581
+- hxxps://rayyantechnology[.]com/yow/?19157581
+- hxxps://zegaponsel.site/cazyh/?24247581
+
+INITIAL MALWARE FROM AN INFECTION RUN:
+
+- SHA256 hash: f24888da47bae0149ab5c0d887d32fc155cb42ac8138d22699ae12ce1dca6bd1
+- File size: 117,213 bytes
+- File name: GURVU.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Zip archive downloaded from link in email
+
+- SHA256 hash: ee8435dd5557068c63e783201b32f8e5b102fbcbcd98414cd9b561c1e2492ea3
+- File size: 113,013 bytes
+- File name: Notesgf.js
+- File type: SCII text, with very long lines (65536), with no line terminators
+- File description: Malicious JS file extracted from the above zip archive
+
+URLS HOSTING THE PIKABOT DLL FILE:
+
+- hxxps://keebling[.]com/Y0j85XT/0.10875332025895956.dat
+- hxxps://baumbachers[.]com/WDmfb/0.8975268370755537.dat
+- hxxps://ionister[.]com/TS1m/0.0489649759978486.dat
+
+SAVED PIKABOT DLL FILE FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 9568b980c17f08d11bdd2346d1efedbac68140707113281c65551c4fc2ead2b2
+- File size: 1,356,800 bytes
+- File location: C:\Gkooegsglitrg\Dkrogirbksri\Wkkfgujbsrbuj.dll
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: 
+- Run method: rundll32 C:\Gkooegsglitrg\Dkrogirbksri\Wkkfgujbsrbuj.dll,Enter
+
+PIKABOT C2 TRAFFIC:
+
+- 45.76.98[.]136 port 2221 - HTTPS traffic
+- 51.83.253[.]102 port 9785 - HTTPS traffic
+- 57.128.83[.]129 port 2078 - HTTPS traffic
+- 57.128.108[.]132 port 13785 - HTTPS traffic
+- 57.128.109[.]221 port 13724 - HTTPS traffic
+- 57.128.164[.]11 port 5242 - HTTPS traffic
+- 139.99.222[.]29 port 5631 - attempted TCP connections
+- 141.95.108[.]252 port 2078 - HTTPS traffic
+- 154.211.12[.]126 port 2967 - HTTPS traffic
+- 172.232.173[.]141 port 2226 - HTTPS traffic
