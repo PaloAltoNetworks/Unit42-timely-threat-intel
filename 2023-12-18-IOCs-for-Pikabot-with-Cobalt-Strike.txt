@@ -36,7 +36,6 @@ PIKABOT C2 TRAFFIC:
 - 155.138.140[.]156 port 13720 - HTTPS traffic
 - 172.232.54[.]192 port 2224 - HTTPS traffic
 - 172.232.189[.]166 port 1194 - HTTPS traffic
-- 207.246.99[.]159 port 443  - HTTPS traffic
 - 208.76.221[.]253 port 13724 - HTTPS traffic
 - 216.238.79[.]12 port 2221 - HTTPS traffic
 
