@@ -1,0 +1,73 @@
+2023-12-18 (MONDAY): TA577 PIKABOT INFECION WITH COBALT STRIKE
+
+INFECTION CHAIN:
+
+- Email --> link --> zip --> js file --> retrieves and runs Pikabot DLL --> Pikabot C2 --> Cobalt Strike
+
+INFECTION TRAFFIC:
+
+INITIAL URL AND REDIRECT FOR ZIP DOWNLOAD:
+
+- port 443 - hxxps://tsdandassociates[.]co[.]sz/w0ks/?92444881
+- port 443 - hxxps://tsdandassociates[.]co[.]sz/w0ks//?YO=1702920835 
+
+PIKABOT DLL DOWNLOAD:
+
+- 143.95.249[.]177 port 443 - hxxps://shakyastatuestrade[.]com/IhA6F/616231603"
+
+PIKABOT C2 TRAFFIC:
+
+- 45.33.15[.]215 port 2967 - HTTPS traffic
+- 45.56.71[.]218 port 13724 - HTTPS traffic
+- 45.76.22[.]139 port 13786 - HTTPS traffic
+- 45.76.96[.]172 port 2223 - HTTPS traffic
+- 45.76.119[.]22 port 13724 - HTTPS traffic
+-  51.161.81[.]190 port 13721 - HTTPS traffic
+- 64.176.13[.]28 port 2083 - HTTPS traffic
+- 65.20.85[.]39 port 2967 - HTTPS traffic
+- 69.164.213[.]141 port 5631 - HTTPS traffic
+- 70.34.196[.]219 port 2226 - HTTPS traffic
+- 78.141.200[.]111 port 5938 - HTTPS traffic
+- 78.141.223[.]212 port 1194 - HTTPS traffic
+- 95.179.247[.]197 port 13782 - HTTPS traffic
+- 149.28.100[.]66 port 5243 - HTTPS traffic
+- 154.211.12[.]126 port 2967 - HTTPS traffic
+- 154.221.30[.]136 port 13724 - HTTPS traffic
+- 155.138.140[.]156 port 13720 - HTTPS traffic
+- 172.232.54[.]192 port 2224 - HTTPS traffic
+- 172.232.189[.]166 port 1194 - HTTPS traffic
+- 207.246.99[.]159 port 443  - HTTPS traffic
+- 208.76.221[.]253 port 13724 - HTTPS traffic
+- 216.238.79[.]12 port 2221 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 207.246.99[.]159 port 443 - masterunis[.]net - HTTPS traffic
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 83e9f14a2895c3418f1147e712f86d3e22ad7457932914d704ab2238dc4f6d9a
+- File size: 130,734 bytes
+- File name: TD.zip
+- File type: ip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Downloaded zip archive
+
+- SHA256 hash: 393a451442dd17754aa598000bf126b60fe3513a0c62daab2f829189f7156675
+- File size: 85,834 bytes
+- File name: Nuj.js
+- File type: ASCII text, with very long lines (355)
+- File description: Extracted from the above zip archive, JS file to instal Pikabot
+
+- SHA256 hash: 6b790c16989acc20f7649f1c1481f8b51b15bd16071b8292d13e3367746d03e9
+- File size: 1,612,288 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\qui.q
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: Initial Pikabot DLL
+- Run method: rundll32 [filename] Enter
+
+- SHA256 hash: 9578021396dee634293bb43fe9cad820e96d18262dacbc12e978f340a87351c1
+- File size: 1,612,288 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\phonophob\misaccuse.dll
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: Persistent Pikabot DLL
+- Run method: rundll32 [filename], Enter
