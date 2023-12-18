@@ -71,3 +71,5 @@ ASSOCIATED MALWARE:
 - File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
 - File description: Persistent Pikabot DLL
 - Run method: rundll32 [filename], Enter
+
+- NOTE: Post-forensic analysis did not reveal any Cobalt Strike binary saved to disk.
