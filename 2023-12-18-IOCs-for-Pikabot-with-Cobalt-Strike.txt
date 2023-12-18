@@ -1,5 +1,10 @@
 2023-12-18 (MONDAY): TA577 PIKABOT INFECTION WITH COBALT STRIKE
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ta577-pikabot-cobaltstrike-activity-7142625078227156992-Cmvd
+- https://twitter.com/Unit42_Intel/status/1736859404157276596
+
 INFECTION CHAIN:
 
 - Email --> link --> zip --> js file --> retrieves and runs Pikabot DLL --> Pikabot C2 --> Cobalt Strike
