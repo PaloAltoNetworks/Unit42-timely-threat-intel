@@ -1,0 +1,47 @@
+2024-01-08 (MONDAY): GOOTLOADER INFECTION
+
+CHAIN OF EVENTS:
+
+- Fake forum post page --> link to zip download --> zip --> extracted .js file --> Gootloader C2
+
+EXAMPLE OF FAKE FORUM POST PAGE:
+
+- hxxps://recorock[.]com[.]ar/what-cards-are-legal-in-goat-format/
+
+LINK FOR ZIP DOWNLOAD FROM THE FAKE FORUM PAGE:
+
+- hxxps://travel.ronny[.]berlin/blog.php
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: f95f98899cb981b52fcf3ce770d09f65cf85fffd5083f3e2058e37cf61c8406d
+- File size: 233,302 bytes
+- File name: What_cards_are_legal_in_goat_format_85805.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Malicious zip archive
+
+- SHA256 hash: c853d91501111a873a027bd3b9b4dab9dd940e89fcfec51efbb6f0db0ba6687b
+- File size: 860,920 bytes
+- File name: what cards are legal in goat format 35435.js
+- File type: Unicode text, UTF-8 text, with very long lines (414)
+- File description: JavaScript file extracted from the above zip archive
+
+- SHA256 hash: aacc1a4f82a7e62a89860cd7ae0472f61265ed509dd35b3df74e36ad3b3668cf
+- File size: 43,641,390 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[random existing directory]\Data Acquisition.js
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- File description: Persistent malware from this infection
+- Persistence method: Scheduled task
+
+POST-INFECTION TRAFFIC:
+
+- hxxps://arabfish[.]net/xmlrpc.php
+- hxxps://fitnessx[.]dk/xmlrpc.php
+- hxxps://javstory1[.]com/xmlrpc.php
+- hxxps://livetstrad[.]com/xmlrpc.php
+- hxxps://marukenauto[.]com/xmlrpc.php
+- hxxps://michaelcasado[.]com/xmlrpc.php
+- hxxps://mihfada[.]com/xmlrpc.php
+- hxxps://musify[.]co/xmlrpc.php
+- hxxps://ostadmajazi[.]com/xmlrpc.php  <-- attempted TCP connections, not successful
+- hxxps://palladiummall[.]com/xmlrpc.php
