@@ -1,5 +1,10 @@
 2024-01-12 (FRIDAY): MALSPAM DISTRIBUTING STEALC MALWARE
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_stealc-unit42threatintel-timelythreatintel-activity-7151697619247935488-uVlq
+- https://twitter.com/Unit42_Intel/status/1745931999380947250
+
 MORE INFO ON STEALC MALWARE:
 
 - hxxps://malpedia.caad.fkie.fraunhofer.de/details/win.stealc
