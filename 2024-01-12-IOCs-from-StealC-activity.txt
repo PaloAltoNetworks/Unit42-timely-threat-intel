@@ -1,0 +1,76 @@
+2024-01-12 (FRIDAY): MALSPAM DISTRIBUTING STEALC MALWARE
+
+MORE INFO ON STEALC MALWARE:
+
+- hxxps://malpedia.caad.fkie.fraunhofer.de/details/win.stealc
+
+CHAIN OF EVENTS:
+
+- email --> PDF --> link from PDF --> downloaded zip --> extracted JS --> run JS --> HTTPS traffic for script -->
+  HTTPS traffic for zip --> extracted StealC EXE --> StealC data exfiltration over HTTP
+
+11 EXAMPLES OF PDF FILES:
+
+- 4da1e0e109e0a86489b4b0807591c4f259c65e6eb444cb92e1a18d9a163e42ab - 43,028 bytes - Invoice_24301.pdf
+- 7d96df9d67f6f60c000ffc8e44949cbcd3f2e39d9ce5a5da594b274114d33d34 - 42,077 bytes - ReDC_3995239952.pdf
+- a6d9ea8edc9edd423d84d292b46d095b49678f90a667606b36eb45e52f7aa085 - 43,406 bytes - ReDC_5033950339.pdf
+- 976094b34cd3bde071e284172122d1b931237583c067ce36a1ee1d333fd24b6e - 43,854 bytes - ReDC_5300353003.pdf
+- 3a6d884bc62ced7080438baa3fc7aefd75efe2607d1c010055038cd444da05cc - 43,380 bytes - ReDC_77277727.pdf
+- d6b78177ebea628a07509293ba8051bffa8befabc8c7bc1271228028c4bf4257 - 43,412 bytes - inv_1355213552.pdf
+- 9e88d3705216cb8e76aad3db9d0433058ec653d06d92768fb3b10f8fd4e2d0a1 - 43,960 bytes - inv_1936819368.pdf
+- 428315183ec50de7f2ca225cb01c824d22a48f9c63cb57c76e0cd66e14511ff6 - 44,229 bytes - inv_3121331213.pdf
+- 141b73e5c3535412f31fb325f7d795d584e2b5063635bc255b71abbf1acff9c4 - 44,481 bytes - inv_3178831788.pdf
+- 8cf5e491a8463765dda734088ce5390afcc13dcfb87a2744e1ba2eabeac40ffe - 42,542 bytes - inv_4148841488.pdf
+- 01209ac41c22ce2d87b3ccb1a5bc7dba0cb421ba70d42843cb79afd7cf888ce8 - 40,965 bytes - inv_67016701.pdf
+
+ALL PDF FILES HAVE THE SAME LINK:
+
+- hxxps://mimsmehediclub.com/download.html
+
+FOUR EXAMPLES OF DOWNLOADED ZIP ARCHIVES:
+
+- b18f2e3386760766c1760c351e62240b765dbcee7d6be75aca3773bfb85418dd - 3,318 bytes - att.file.downloaded_11.zip
+- b09d7436e865f111f93fb9cf49500baf35813fc4636fc9d34f77eb1429d06122 - 4,019 bytes - att.file.downloaded_167.zip
+- 364ac4596d4eed3711d3080e6f2614a0ac9be4ebc85fb67aef5b0dfdce209ca6 - 3,628 bytes - att.file.downloaded_234.zip
+- a49873bcbb532ebe9487d71c7f4d8c0eb8a01cae217a333978651a9aae4ce54e - 4,408 bytes - att.file.downloaded_1983.zip
+
+EXTRACTED JS FILES:
+
+- 17f0582f326f55ae6e030588e23169ecc0b769fd368dc3de8fd7e3cbbb050b43 - 9,130 bytes - att.file.downloaded_11.js
+- 8f8410f68e62f6be499e13746560d8ddd935778d07675985aa258891eacae7b7 - 11,473 bytes - att.file.downloaded_167.js
+- 7764cd65c3cc00a5d86f49dcc2ffcdccd08bd6c271900bf4752d7ce2aa416444 - 10,270 bytes - att.file.downloaded_234.js
+- a50210ad0a05a674a18427ed262e5118b811aaac32b4b84ba79590728aa75eed - 13,065 bytes - att.file.downloaded_1983.js
+
+MALWARE FROM AN INFECTION:
+
+- SHA256 hash: 9ffcbb79f453876587c2a46a1eb320dae890d548d8bfa3df0f58abaf748c6d77
+- File size: 5,356 bytes
+- File type: Unicode text, UTF-16, little-endian text, with very long lines (2051), with CRLF, LF line terminators
+- File location: hxxps://erp.wesmarines[.]com/getme.txt
+- File description: PowerShell script retrieved by an extracted JS file
+
+- SHA256 hash: 40b6ceac066b778b4d67751217a71f4d57b73d247d09b8b8060bece86f2ea639
+- File size: 1,266,336 bytes
+- File type: hxxps://erp.wesmarines[.]com/d.zip
+- File location: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: zip archive retrieved by the above script
+
+- SHA256 hash: bcb2d451f4dfa2303bee79a0ad6b2f060ae508ab7cdd92e6d3f718baf297fca8
+- File size: 2,371,584 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File location: C:\Users\[username]\AppData\Local\Temp\[random name]\d.exe
+- File description: Windows EXE for StealC malware
+
+TRAFFIC FROM AN INFECTION:
+
+- hxxps://mimsmehediclub[.]com/download.html
+- hxxps://mimsmehediclub[.]com/download.php
+- hxxps://erp.wesmarines[.]com/getme.txt
+- hxxps://erp.wesmarines[.]com/d.zip
+- hxxp://109.107.181[.]33/de4846fc29f26952.php <-- repeats several times
+- hxxp://109.107.181[.]33/742d3278227bff91/sqlite3.dll
+
+- hxxp://109.107.181[.]33/742d3278227bff91/freebl3.dll  <-- if Thunderbird/Mozilla/other application installed
+- hxxp://109.107.181[.]33/742d3278227bff91/mozglue.dll  <-- if Thunderbird/Mozilla/other application installed
+- hxxp://109.107.181[.]33/742d3278227bff91/msvcp140.dll  <-- if Thunderbird/Mozilla/other application installed
+- hxxp://109.107.181[.]33/742d3278227bff91/nss3.dll  <-- if Thunderbird/Mozilla/application installed
