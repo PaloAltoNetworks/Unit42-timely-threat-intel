@@ -27,17 +27,19 @@ ALL PDF FILES HAVE THE SAME LINK:
 
 - hxxps://mimsmehediclub[.]com/download.html
 
-FOUR EXAMPLES OF DOWNLOADED ZIP ARCHIVES:
+FIVE EXAMPLES OF DOWNLOADED ZIP ARCHIVES:
 
 - b18f2e3386760766c1760c351e62240b765dbcee7d6be75aca3773bfb85418dd - 3,318 bytes - att.file.downloaded_11.zip
 - b09d7436e865f111f93fb9cf49500baf35813fc4636fc9d34f77eb1429d06122 - 4,019 bytes - att.file.downloaded_167.zip
 - 364ac4596d4eed3711d3080e6f2614a0ac9be4ebc85fb67aef5b0dfdce209ca6 - 3,628 bytes - att.file.downloaded_234.zip
+- 7acaa1011452c0d1a72dd162a8d78e07fbe0cce56276a937eacff119aa39da83 - 3,483 bytes - att.file.downloaded_1914.zip
 - a49873bcbb532ebe9487d71c7f4d8c0eb8a01cae217a333978651a9aae4ce54e - 4,408 bytes - att.file.downloaded_1983.zip
 
-EXTRACTED JS FILES:
+FIVE EXAMPLES OF EXTRACTED JS FILES:
 
 - 17f0582f326f55ae6e030588e23169ecc0b769fd368dc3de8fd7e3cbbb050b43 - 9,130 bytes - att.file.downloaded_11.js
 - 8f8410f68e62f6be499e13746560d8ddd935778d07675985aa258891eacae7b7 - 11,473 bytes - att.file.downloaded_167.js
+- 7764cd65c3cc00a5d86f49dcc2ffcdccd08bd6c271900bf4752d7ce2aa416444 - 10,270 bytes - att.file.downloaded_234.js
 - 7764cd65c3cc00a5d86f49dcc2ffcdccd08bd6c271900bf4752d7ce2aa416444 - 10,270 bytes - att.file.downloaded_234.js
 - a50210ad0a05a674a18427ed262e5118b811aaac32b4b84ba79590728aa75eed - 13,065 bytes - att.file.downloaded_1983.js
 
