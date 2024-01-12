@@ -72,7 +72,9 @@ TRAFFIC FROM AN INFECTION:
 - hxxp://109.107.181[.]33/de4846fc29f26952.php <-- repeats several times
 - hxxp://109.107.181[.]33/742d3278227bff91/sqlite3.dll
 
-- hxxp://109.107.181[.]33/742d3278227bff91/freebl3.dll  <-- if Thunderbird/Mozilla/other application installed
-- hxxp://109.107.181[.]33/742d3278227bff91/mozglue.dll  <-- if Thunderbird/Mozilla/other application installed
-- hxxp://109.107.181[.]33/742d3278227bff91/msvcp140.dll  <-- if Thunderbird/Mozilla/other application installed
-- hxxp://109.107.181[.]33/742d3278227bff91/nss3.dll  <-- if Thunderbird/Mozilla/application installed
+- hxxp://109.107.181[.]33/742d3278227bff91/freebl3.dll  <-- depending on applications installed on the infected host
+- hxxp://109.107.181[.]33/742d3278227bff91/mozglue.dll  <-- depending on applications installed on the infected host
+- hxxp://109.107.181[.]33/742d3278227bff91/msvcp140.dll  <-- depending on applications installed on the infected host
+- hxxp://109.107.181[.]33/742d3278227bff91/nss3.dll  <-- depending on applications installed on the infected host
+- hxxp://109.107.181[.]33/742d3278227bff91/softokn3.dll  <-- depending on applications installed on the infected host
+- hxxp://109.107.181[.]33/742d3278227bff91/vcruntime140.dll  <-- depending on applications installed on the infected host
