@@ -1,0 +1,129 @@
+2024-01-17 (WEDNESDAY): MALSPAM PUSHES WIKILOADER
+
+NOTES:
+
+- Different SHA256 hashes every infection for most (or all) files seen during this chain of events
+- Didn't find a persistence method or persistent files until after rebooting
+
+INFECTION CHAIN:
+
+- email --> PDF attachment --> link --> downloaded zip --> extracted .js file --> 
+  traffic for malicious Notepad++ package --> runs legitimate Notepad++ EXE as hidden process -->
+  legitimate Notepad++ EXE side loads malicious DLL --> WikiLoader C2
+
+SHA256 HASHES FROM 10 EXAMPLES OF PDF FILES:
+
+- 34424359d7bc1ef0ed859cc118f5ae8f4456d612086e026355ca4d4d95af15c9 - DSV-Invoice-S0178796-signed.pdf
+- 9d632c9c957633b83fd4815cd6c283dae5ef3f4c98a42255cc622ae0dc966b6e - DSV-Invoice-S1738817-signed.pdf
+- d4ddc1a34a0c08c33375eb9dbff741f32a4bf444b01297221ea1384475dda190 - DSV-Invoice-S4443575-signed.pdf
+- f3e7bb3530775b9e769f742738b2eb7cde03de7dd578cbdb641fcd852983406f - DSV-Invoice-S7532643-signed.pdf
+- f9449c2f3cc4e0e5327622382fd6ebbdbd5be8cf88dedd37affbbc7aadf0e337 - DSV-Invoice-S8973338-signed.pdf
+- 0bfb4ef49e8043ea7575aa5a96eba440abaee2316b7120c340ff7236765f4af9 - DSV-Outbound Invoice-S0266520-signed.pdf
+- dd2ea7833f80cfbecf7ff541de7ace7fac70d4c78fff4cae6ab842708dcacd21 - DSV-Outbound Invoice-S2170766-signed.pdf
+- b40aab70d13c574c1c311fb18acb98b69a2ca575f3b0c03b34bc00a5ca7d6d56 - DSV-Outbound Invoice-S8999874-signed.pdf
+- 06498583a45437068dd490616307015d03dd340df295adbe5437839a839ddd8b - DSV-Outbound Invoice-S9066355-signed.pdf
+- 41220cdde65131fae99a8a115627ffc40b1787592e4b3dae58c8cce0b3882096 - DSV_Outbound_Invoice_S9117286_signed.pdf
+
+FILE SIZES FROM THE ABOVE 10 PDF FILES:
+
+- 62,637 bytes - DSV-Invoice-S0178796-signed.pdf
+- 70,278 bytes - DSV-Invoice-S1738817-signed.pdf
+- 27,556 bytes - DSV-Invoice-S4443575-signed.pdf
+- 76,361 bytes - DSV-Invoice-S7532643-signed.pdf
+- 78,480 bytes - DSV-Invoice-S8973338-signed.pdf
+- 52,376 bytes - DSV-Outbound Invoice-S0266520-signed.pdf
+- 60,725 bytes - DSV-Outbound Invoice-S2170766-signed.pdf
+- 64,852 bytes - DSV-Outbound Invoice-S8999874-signed.pdf
+- 66,669 bytes - DSV-Outbound Invoice-S9066355-signed.pdf
+- 66,421 bytes - DSV_Outbound_Invoice_S9117286_signed.pdf
+
+LINK FROM ALL OF THE PDF FILES:
+
+- hxxps://livespoints[.]com/sso.dsv[.]com
+- Note: This domain had been taken off-line when checked on 2024-01-18 at 02:30 UTC
+
+EXAMPLE OF ZIP DOWNLOAD AND EXTRACTED JS FILE:
+
+- SHA256 hash: 4e11ce7d74bf9a25bf97de7658a2f2ed26456184232c6994b8a8a24b1c3d5fe8
+- File size: 3,670,579 bytes
+- File name: 2023-2024-DSV-Invoice 12_20231113919493.zip
+- File type: Zip archive data, at least v1.0 to extract, compression method=deflate
+
+- SHA256 hash: 0ab8b661e9ed38f5dc4e4b7f98da49c36a209138695dd9813ac8ed2910d4a5e3
+- File size: 9,399,314 bytes
+- File name: 2023-2024-DSV-Invoice 12_2023894970_1113919493.js
+- File type: ASCII text, with very long lines (3202), with CRLF, LF line terminators
+
+TRAFFIC GENERATED AFTER RUNNING THE ABOVE JS FILE:
+
+- hxxps://livespoints[.]com/purchase-order-management
+- NOTE: The above HTTPS URL redirected returned almost 5 MB of data during the infection
+
+- HTTPS traffic to cdn.dicordapp[.]com
+- NOTE: Unknown URL, but appears to have hosted the malicious Notepad++ zip package used for this infection
+
+MALICIOUS NOTEPAD++ ZIP PACKAGE:
+
+- SHA256 hash: 23793f299da8aaa411dbd5c7f8d891d46a56b6324e46cc85ef13576cc38d21d8
+- File size: 8,553,123 bytes
+- File location: C:\ProgramData\912c0ee46e9c9eef0ad97b14ef61fa8b.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=store
+- NOTE: The Notepad++ EXE and associated files are all legitimate, except for a malicious DLL named mimeTools.dll
+
+MALICIOUS DLL AND SUSPICIOUS PEM FROM THE ABOVE ZIP PACKAGE:
+
+- SHA256 hash: 54217c6cbf03fc628fae65a0e54ae3f1692ae4e7bdfa60f3f020bdbe0ff83006
+- File size: 146,264 bytes
+- File location: C:\ProgramData\npp.8.6.portable.x64\plugins\mimeTools.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: malicious 64-bit DLL run by legitimate Notepad++ EXE
+- Modified date within the zip archive: 2024-01-17 16:58 UTC
+- NOTE: File explorer puts the extracted file modified date as 2024-01-17 08:58 UTC
+
+- SHA256 hash: ef80a5a2c12adc7bf95090b52c0b40e53dc8081b1c28f5a94377b33ff8d0ef37
+- File size: 139,512 bytes
+- File location: C:\ProgramData\npp.8.6.portable.x64\certificate.pem
+- File type: PEM certificate
+- File description: PEM certificate with same file modified date as above DLL
+- Modified date within the zip archive: 2024-01-17 16:58 UTC
+- NOTE: File explorer puts the extracted file modified date as 2024-01-17 08:58 UTC
+
+INITIAL C2:
+
+- HTTPS traffic to thichgiban[.]com
+
+POST-INFECTION C2 CHECKIN TRAFFIC APPROXIMATELY EVERY 10 MINUTES
+
+- 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+
+FILES CREATED AFTER A REBOOT AT C:\PROGRAMDATA\7XACLH:
+
+- 0b3731c524e6ba716f15087d85eae7e6225b6b51d4ae2fa6c142ff1523f57046 - vdTy.exe  <-- legitimate EXE for VNmap
+- 534c989d110ece8c429d2ded913933b961710726d8655b858474bc31dfed25c3 - version.dll  <-- malicious DLL
+- eb5792fd9b468012c71f06768df63979663a16c876811459e8e9cc0ed834e526 - pM0.pem  <-- data binary
+
+- NOTE: A reboot created the above files and a registry update to run vdTy.exe
+
+TRAFFIC LOGGED FROM AN INFECTED WINDOWS HOST:
+
+- 2024-01-17 17:07:26 UTC - port 443 - livespoints[.]com - HTTPS traffic
+- 2024-01-17 17:08:16 UTC - port 443 - livespoints[.]com - HTTPS traffic
+- 2024-01-17 17:08:20 UTC - port 443 - cdn.discordapp[.]com - HTTPS traffic
+- 2024-01-17 17:20:31 UTC - port 443 - thichgiban[.]com - HTTPS traffic
+- 2024-01-17 17:20:33 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 17:30:47 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 17:41:01 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 17:51:16 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 18:01:30 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 18:11:44 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 18:21:58 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 18:32:12 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 18:42:26 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 18:52:40 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 19:02:54 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 19:13:09 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 19:23:23 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 19:33:37 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 19:43:51 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 19:54:05 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+- 2024-01-17 20:04:20 UTC - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
