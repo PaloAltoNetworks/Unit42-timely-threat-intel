@@ -59,7 +59,7 @@ TRAFFIC GENERATED AFTER RUNNING THE ABOVE JS FILE:
 - hxxps://livespoints[.]com/purchase-order-management
 - NOTE: The above HTTPS URL redirected returned almost 5 MB of data during the infection
 
-- HTTPS traffic to cdn.dicordapp[.]com
+- HTTPS traffic to cdn.dicordapp[.]com (legitimate domain occasionally abused for malware campaigns like this one)
 - NOTE: Unknown URL, but appears to have hosted the malicious Notepad++ zip package used for this infection
 
 MALICIOUS NOTEPAD++ ZIP PACKAGE:
@@ -95,6 +95,8 @@ INITIAL C2:
 POST-INFECTION C2 CHECKIN TRAFFIC APPROXIMATELY EVERY 10 MINUTES
 
 - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
+
+- NOTE: In this case, a legitimate service on broker.emqx[.]io is being abused for WikiLoader C2 traffic. This is an MQTT (Message Queuing Telemetry Transport) service designed for IoT applications.
 
 FILES CREATED AFTER A REBOOT AT C:\PROGRAMDATA\7XACLH:
 
