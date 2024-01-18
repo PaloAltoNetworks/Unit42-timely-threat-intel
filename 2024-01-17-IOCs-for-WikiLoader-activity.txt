@@ -78,7 +78,7 @@ MALICIOUS DLL AND SUSPICIOUS PEM FROM THE ABOVE ZIP PACKAGE:
 - File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
 - File description: malicious 64-bit DLL run by legitimate Notepad++ EXE
 - Modified date within the zip archive: 2024-01-17 16:58 UTC
-- NOTE: File explorer puts the extracted file modified date as 2024-01-17 08:58 UTC
+- NOTE: Windows File Explorer puts the extracted file modified date as 2024-01-17 08:58 UTC
 
 - SHA256 hash: ef80a5a2c12adc7bf95090b52c0b40e53dc8081b1c28f5a94377b33ff8d0ef37
 - File size: 139,512 bytes
@@ -86,7 +86,7 @@ MALICIOUS DLL AND SUSPICIOUS PEM FROM THE ABOVE ZIP PACKAGE:
 - File type: PEM certificate
 - File description: PEM certificate with same file modified date as above DLL
 - Modified date within the zip archive: 2024-01-17 16:58 UTC
-- NOTE: File explorer puts the extracted file modified date as 2024-01-17 08:58 UTC
+- NOTE: Windows File Explorer puts the extracted file modified date as 2024-01-17 08:58 UTC
 
 INITIAL C2:
 
