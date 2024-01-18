@@ -1,5 +1,10 @@
 2024-01-17 (WEDNESDAY): MALSPAM PUSHES WIKILOADER
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_wikiloader-unit42threatintel-timelythreatintel-activity-7153818846691266561-GUgO
+- https://twitter.com/Unit42_Intel/status/1748053225100451973
+
 NOTES:
 
 - Different SHA256 hashes every infection for most (or all) files seen during this chain of events
