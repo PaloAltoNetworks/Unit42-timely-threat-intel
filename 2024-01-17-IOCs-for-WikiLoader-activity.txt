@@ -96,7 +96,9 @@ POST-INFECTION C2 CHECKIN TRAFFIC APPROXIMATELY EVERY 10 MINUTES
 
 - 54.146.113[.]169 port 1883 - broker.emqx[.]io - encoded TCP traffic
 
-- NOTE: In this case, a legitimate service on broker.emqx[.]io is being abused for WikiLoader C2 traffic. This is an MQTT (Message Queuing Telemetry Transport) service designed for IoT applications.
+- NOTE: In this case, a legitimate service on broker.emqx[.]io is being abused for WikiLoader C2 traffic. 
+  This is an MQTT (Message Queuing Telemetry Transport) service designed for IoT applications.
+  While the domain/IP/port combo is not inherently malicious, it is highly-suspicious on a Windows host.
 
 FILES CREATED AFTER A REBOOT AT C:\PROGRAMDATA\7XACLH:
 
