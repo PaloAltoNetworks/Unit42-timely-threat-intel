@@ -1,5 +1,10 @@
 2024-01-19 (FRIDAY): GOOTLOADER INFECTION
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_gootloader-timelythreatintel-unit42threatintel-activity-7154209418077728768-eQNx
+- https://twitter.com/Unit42_Intel/status/1748443799443869966
+
 CHAIN OF EVENTS:
 
 - Fake forum post page --> link to zip download --> zip --> extracted .js file --> Gootloader C2
