@@ -1,0 +1,47 @@
+2024-01-19 (FRIDAY): GOOTLOADER INFECTION
+
+CHAIN OF EVENTS:
+
+- Fake forum post page --> link to zip download --> zip --> extracted .js file --> Gootloader C2
+
+EXAMPLE OF FAKE FORUM POST PAGE:
+
+- hxxps://trustadvisorygroup[.]com/2022/11/26/pet-skunk-legal-in-california/
+
+LINK FOR ZIP DOWNLOAD FROM THE FAKE FORUM PAGE:
+
+- hxxps://www.info-wp.konsport[.]com/blog.php
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 15dda10c1d8d815b6d840a874a887cb0ccc306291202ba0623894cae38a5714b
+- File size: 233,419 bytes
+- File name: Pet_skunk_legal_in_california_43675.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Malicious zip archive
+
+- SHA256 hash: 81ea063d096079f01b57cb6a61e89659699b3553f8e0a18da0b086137efb2906
+- File size: 861,072 bytes
+- File name: pet skunk legal in california 855.js
+- File type: Unicode text, UTF-8 text, with very long lines (414)
+- File description: JavaScript file extracted from the above zip archive
+
+- SHA256 hash: 80f37fbdb2b3515c4845b610215aef77984e170936320d1f4f737eb41c0e8c0d
+- File size: 4,2975,356 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[random existing directory]\Internal Marketing.js
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- File description: Persistent malware from this infection
+- Persistence method: Scheduled task
+
+POST-INFECTION TRAFFIC:
+
+- hxxps://aeesuisse[.]ch/xmlrpc.php
+- hxxps://brgresidence[.]vn/xmlrpc.php
+- hxxps://carapedi[.]id/xmlrpc.php
+- hxxps://koodoocreative[.]co[.]uk/xmlrpc.php
+- hxxps://kragerosiden[.]com/xmlrpc.php
+- hxxps://pagalsongs[.]in/xmlrpc.php
+- hxxps://poodledoodle-vachtspecialist[.]nl/xmlrpc.php
+- hxxps://propars[.]net/xmlrpc.php
+- hxxps://psycursions[.]ru/xmlrpc.php
+- hxxps://vtorbaza[.]com/xmlrpc.php
