@@ -1,0 +1,73 @@
+2024-01-23 (TUESDAY): ULTRAVNC INFECTION
+
+REFERENCE:
+
+- https://twitter.com/Tac_Mangusta/status/1749763630847987861
+
+NOTES:
+
+- On 2024-01-23, @Tac_Mangusta posted on X (Twitter) information about an Italian malspam campaign with a link to malware.
+- Further investigation reveals this campaign happened as early as Monday 2024-01-22, pushing a Trojanized UltraVNC package.
+- UltraVNC is a free remote desktop software, and a copy of it has has been customized for this infection.
+- During our test run, the host merely established a VNC connection over TCP and kept it alive without any activity.
+- No emails associated with this activity are currently available.
+
+INFECION CHAIN:
+
+- email --> Dropbox link --> downloaded EXE --> EXE installs Trojanized UltraVNC package --> VNC traffic
+
+LINK FROM EMAIL:
+
+- hxxps://www.dropbox[.]com/scl/fi/kcs0pwroc060awep6wrtr/Preventivo24.01.11.exe?rlkey=whqooo60ufh3ht7epj0nf6ii4&dl=1
+- NOTE: Malicious content from the above link has been taken off-line
+
+ASSOCIATED FILES:
+
+- SHA256 hash: 0cb44c4f8273750fa40497fca81e850f73927e70b13c8f80cdcfee9d1478e6f3
+- File size: 5,955,744 bytes
+- File name: Preventivo24.01.11.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Installer for Trojanized UltraVNC package
+
+- SHA256 hash: 01fa678a302763b83703f0449fc63309cf7677fc119d2755defad6dea9d25bcd
+- File size: 44,763 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\~.pdf
+- File type: PDF document, version 1.7, 1 pages
+- File description: Decoy PDF file presented by the above installer (fake invoice), not malicious!
+
+- SHA256 hash: 1ce4768f825372d55c1d30ce3ac41afb913de6299a64ae5b0ac1b3b752421d64
+- File size: 799 bytes
+- File name: C:\Games\on.cmd
+- File type: ASCII text, with CRLF line terminators
+- File description: Command line script to start Trojanized UltraVNC package, persistent through registry update
+
+- SHA256 hash: c2ab7b8701bdc36198a8f01791c8a3479ef3e8bcc6ccd3bd8c2f60dd9672e8e1
+- File size: 1,035 bytes
+- File name: C:\Games\c.cmd
+- File type: ASCII text, with CRLF line terminators
+- File description: Command line script run by the above file, C:\Games\on.cmd
+
+- SHA256 hash: b3c509fc687793ed75f2792540efbdab88d65ca18570c28651da737cac6544b7
+- File size: 1,102 bytes
+- File name: C:\Games\cmd.txt
+- File type: ASCII text, with CRLF line terminators
+- File description: Command line script run by the above file, C:\Games\c.cmd
+- Note: This file contains the command to start UltraVNC and connect to the server at vnvariant2024.ddnsfree[.]com:5500
+
+- SHA256 hash: 3fb38eefb8db4d52be428facc8a242997ab2ad58a8d08980a7688c9bf0b30454
+- File size: 2,648,008 bytes
+- File location: C:\Games\taskhost.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Copy of UltraVNC executable originally named WinVNC.exe, version 1.4.3.6, not inherently malicious
+
+DIRECTORY ARTIFACT:
+
+- C:\Users\[username]\AppData\Roaming\Photo and Fax Vn\Photo and vn
+- NOTE: The above directory path is empty, and its creation time aligns with the initial infection
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- port 443 - hxxps://www.dropbox[.]com/scl/fi/kcs0pwroc060awep6wrtr/Preventivo24.01.11.exe?rlkey=whqooo60ufh3ht7epj0nf6ii4&dl=1
+- port 443 - ucf65c7f79fea35f25bf1c95597d.dl.dropboxusercontent[.]com - HTTPS traffic for EXE
+- port 80 - hxxp://www.example[.]com/download/updates.txt <-- connectivity check, not inherently malicious
+- 140.228.29[.]110 port 5500 - vnvariant2024.ddnsfree[.]com:5500 - VNC traffic
