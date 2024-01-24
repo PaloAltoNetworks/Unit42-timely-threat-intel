@@ -1,8 +1,13 @@
 2024-01-23 (TUESDAY): ULTRAVNC INFECTION
 
-REFERENCE:
+ORIGINAL REFERENCE:
 
 - https://twitter.com/Tac_Mangusta/status/1749763630847987861
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ultravnc-timelythreatintel-indicatorsofcompromise-activity-7156060867678150657-ktbL
+- https://twitter.com/Unit42_Intel/status/1750295249174372862
 
 NOTES:
 
