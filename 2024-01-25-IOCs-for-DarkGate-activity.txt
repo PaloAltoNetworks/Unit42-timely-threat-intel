@@ -19,7 +19,7 @@ DOWNLOADED ZIP AND EXTRACTED WINDOWS SHORTCUT:
 - File size: 3,777,671 bytes
 - File location: hxxps://www.duelmener-naturtrailpark[.]org/images/demo/JANUARY-25-2024-FWD897.zip
 - File name: JANUARY-25-2024-FWD897.zip
-- File type: 
+- File type: Zip archive data, at least v2.0 to extract, compression method=AES Encrypted
 
 - SHA256 hash: 6d0a906f3764e755d50412c58e70868db223da4a4a6ce1770f27dd9042a869bc
 - File size: 511,646 bytes
