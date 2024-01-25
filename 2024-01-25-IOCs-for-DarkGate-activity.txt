@@ -4,6 +4,11 @@ ORIGINAL REFERENCE FROM URLHAUS:
 
 - https://urlhaus.abuse.ch/url/2751573/
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-unit42threatintel-timelythreatintel-activity-7156413691289116672-W3GG/
+- https://twitter.com/Unit42_Intel/status/1750648073603125757
+
 INFECTION CHAIN:
 
 - unknown source --> doubleclick URL --> compromised site --> zip download --> extracted Windows shortcut -->
