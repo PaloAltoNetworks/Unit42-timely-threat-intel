@@ -1,0 +1,87 @@
+2024-01-25 (THURSDAY): DARKGATE INFECTION
+
+ORIGINAL REFERENCE FROM URLHAUS:
+
+- https://urlhaus.abuse.ch/url/2751573/
+
+INFECTION CHAIN:
+
+- unknown source --> doubleclick URL --> compromised site --> zip download --> extracted Windows shortcut -->
+  WebDAV traffic for files to install DarkGate --> DarkGate installed --> DarkGate HTTP C2 traffic
+
+URL FROM URLHAUS:
+
+- hxxps://adclick.g.doubleclick[.]net/pcs/click?adurl=//higreens[.]co[.]in
+
+DOWNLOADED ZIP AND EXTRACTED WINDOWS SHORTCUT:
+
+- SHA256 hash: d70199d3f662e922363ed36d7eaf9b0dab895b9776370514b53b12099a30a802
+- File size: 3,777,671 bytes
+- File location: hxxps://www.duelmener-naturtrailpark[.]org/images/demo/JANUARY-25-2024-FWD897.zip
+- File name: JANUARY-25-2024-FWD897.zip
+- File type: 
+
+- SHA256 hash: 6d0a906f3764e755d50412c58e70868db223da4a4a6ce1770f27dd9042a869bc
+- File size: 511,646 bytes
+- File name: JANUARY-25-2024-FWD897.pdf.url
+- File type: MS Windows 95 Internet shortcut text
+- Shortcut: file://5.181.159[.]76@80/Downloads/alpha.url
+
+ARTIFACTS FROM AN INFECTION RUN:
+
+- SHA256 hash: a53be1e2a6f17a5f4c22ac6fcd24fd70e04cd2c768ed83e84155e37b2a14bcbd
+- File size: 237 bytes
+- File location: file://5.181.159[.]76@80/Downloads/alpha.url
+- File type: MS Windows 95 Internet shortcut text
+- Shortcut: file://5.181.159[.]76@80/Downloads/roamingkiller.zip/roamingkiller.msi
+
+- SHA256 hash: 1efbfb8f9e441370bb3f3a316fea237564eefebbf4ba33cccdae5f853c86a7b0
+- File size: 2,027,173 bytes
+- File location: file://5.181.159[.]76@80/Downloads/roamingkiller.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+
+- SHA256 hash: 8738866be2f39ac05df243bbe2c82dfc6c125643cc5c75e5f199701fbacc90c9
+- File size: 4,177,920 bytes
+- File location: file://5.181.159[.]76@80/Downloads/roamingkiller.zip/roamingkiller.msi
+- File type: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, MSI Installer
+
+FILES FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d
+- File size: 893,608 bytes
+- File location: C:\ProgramData\bkaccfh\Autoit3.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Copy of Autoit3.exe, version 3.3.14.5, not malicious but used to run malicious .au3 file
+
+- SHA256 hash: 2d61625a0e63ab4491deab98c76aa02ba583b4c655b55c1672b74338c20e39dd
+- File size: 724,858 bytes
+- File location: C:\ProgramData\bkaccfh\cbbbgae.au3
+- File type: data
+- File description: Malicious AutoIt v3 compiled script for DarkGate
+
+REGISTRY UPDATE FOR PERSISTENCE:
+
+- Key Name: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+- Value Name: EAAfGGH
+- Value Type: REG_SZ
+- Value Data: C:\ProgramData\bkaccfh\Autoit3.exe C:\ProgramData\bkaccfh\cbbbgae.au3
+
+TRAFFIC FROM AN INFECTION RUN:
+
+- hxxp://higreens[.]co[.]in/
+- port 443 - hxxps://www.duelmener-naturtrailpark[.]org/images/demo/JANUARY-25-2024-FWD897.zip
+
+RUNNING THE WINDOWS SHORTCUT EXTRACTED FROM THE ABOVE ZIP ARCHIVE:
+
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - OPTIONS /
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - OPTIONS /Downloads
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - PROPFIND /Downloads
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - PROPFIND /Downloads/alpha.url
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - GET /Downloads/alpha.url
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - PROPFIND /Downloads/roamingkiller.zip
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - GET /Downloads/roamingkiller.zip
+- 5.181.159[.]76 port 80 - 5.181.159[.]76 - PROPFIND /Downloads/roamingkiller.zip/roamingkiller.msi
+
+DARKGATE C2 TRAFFIC:
+
+- 138.124.183[.]23 port 443 - strongdomainsercgerhhost[.]com:443 - POST / HTTP/1.0 
