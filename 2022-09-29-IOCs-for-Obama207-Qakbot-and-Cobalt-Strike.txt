@@ -1,0 +1,73 @@
+2022-09-29 (THURSDAY) - OBAMA207 QAKBOT (QBOT) INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1577332475398963204
+
+CHAIN OF EVENTS:
+
+- thread-hikacled email --> attached HTML file --> password-protected zip --> ISO --> files for Qakbot --> Qakbot C2 --> Cobalt Strike
+
+HEADERS FROM THREAD-HIJACKED EMAIL EXAMPLE:
+
+- Received: from linuxtr01.webimonline.com (linuxtr01.webimonline.com [194.1.192.131])
+- X-Authenticated-Sender: linuxtr01.webimonline.com: marketing@polyfilmambalaj.com
+- From: <marketing@polyfilmambalaj.com>
+- Date: Wed, 28 Sep 2022 20:14:32 +0300
+- Subject: Re: [subject line information removed]
+- Attachment name: REF#5689_Sep_28.html
+
+EXAMPLE OF ATTACHMENT AND EXTRACTED MALWARE:
+
+- SHA256 hash: 254fe44d8be366113010305301f9bb98c21046b819cdb7460f83177d2ea10eda
+- File size: 839,474 bytes
+- File name: REF#5689_Sep_28.html
+- File description: HTML file attached to thread-hijackedemail
+
+- SHA256 hash: af1e56b4e4e536e950dde6309529978d54b831c4dbed355d66acdd75c05e3b22
+- File size: 410,653 bytes
+- File name: attachment.zip
+- File description: password-protected zip archive presented by the above HTML file
+- Password: abc333
+
+- SHA256 hash: 74eadf557feb76f995acc9c3371712044c73e21323904bb41ba1a72378928d32
+- File size: 1,040,384 bytes
+- File name: REF#5694.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF ISO IMAGE:
+
+- SHA256 hash: 973a4e4501ebe54944cedce75462b30f90e5d06b60ced203ae9e7db66c1256e2
+- File size: 1,245 bytes
+- File name: REF.lnk
+- File description: Windows shortcut on ISO image
+- Shortcut: eloquentGlummer.js
+
+- SHA256 hash: fcdb889021a8ad5cc85f75de4247c052289dead4e09817f90e7f1ff516ea74be
+- File size: 154 bytes
+- File name and location on ISO image: gaffes\eloquentGlummer.js
+- File description: JS file run by the above Windows shortcut
+
+- SHA256 hash: cc4eea861c9c3a4ea4e9bd0e7cd6e19650f5d80d993536f41b8bd0735a7b56e4
+- File size: 142 bytes
+- File name and location on ISO image: gaffes\acknowledgeablyPartner.cmd
+- File description: CMD batch script run by the above JS file
+
+- SHA256 hash: d4adf98011c988085273146bac1d815f69adfd7c3722d8e2103c53c86b909be7
+- File size: 712,192 bytes
+- File name and location on ISO image: gaffes\wheelwright.db
+- File description: Qakbot DLL run by above CMD batch script
+- Run method: regsvr32.exe [filename]
+
+WORKING QAKBOT C2 TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- 186.90.144[.]235 port 2222 - HTTPS traffic using TLS v1.3 
+- 186.81.122[.]168 port 443 - HTTPS traffic using TLS v1.3 
+- 85.86.242[.]245 port 443 - HTTPS traffic using TLS v1.3 
+- 193.3.19[.]137 port 443 - HTTPS traffic using TLS v1.3 
+
+COBALT STRIKE TRAFFIC SEEN DURING THIS INFECTION:
+
+- 194.165.16[.]64 port 80 - onefile[.]icu - GET /prepare/add.mp4a HTTP/1.1 
+- 194.165.16[.]64 port 80 - onefile[.]icu - GET /risk.ico HTTP/1.1 
+- 194.165.16[.]64 port 80 - onefile[.]icu - POST /target HTTP/1.1  (text/plain)

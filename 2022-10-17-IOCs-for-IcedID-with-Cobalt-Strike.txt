@@ -1,0 +1,108 @@
+2022-10-17 (MONDAY): ICEDID (BOKBOT) INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1582370171963944963
+
+INFECTION CHAIN:
+
+- email --> password-protected zip --> ISO --> Windows shortcut runs DLL --> IcedID C2 --> Cobalt Strike
+
+PASSWORD-PROTECTED ZIP AND EXTRACTED ISO IMAGE:
+
+- SHA256 hash: fd2accbe0796165c1ec1c36937890071ecf1176be9100269689c34a6fac5555b
+- File size: 164,155 bytes
+- File name: document_10-17#invoice_11.zip
+- File description: password-protected zip archive presented by above HTML file
+- Password: doc975
+
+- SHA256 hash: a48ebc4ff0a7f68c389223aac7b512e889e61f9c55e5cbc1b866686878323a20
+- File size: 1,900,544 bytes
+- File name: document_10-17#invoice_11.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF ISO IMAGE:
+
+- Files.lnk:                        MS Windows shortcut, Item id list present, Has Relative path, ...
+- siricybandel\fundraising.dat:     PE32+ executable (DLL) (console) x86-64, for MS Windows
+- siricybandel\zeroingelevate.bat:  DOS batch file text, ASCII text, with very long lines (595), ...
+
+- SHA256 hash: 3a08e3a21ea83f1018c0eaf402a056b13cddc08b73cdeb01cb5092c1c039b4ed
+- File size: 1,773 bytes
+- File name: Files.lnk
+- File description: Windows shortcut used to run siricybandel\zeroingelevate.bat
+
+- SHA256 hash: 6047dc9e1224fe1f4ba5f4c05871f9c5e7275f38159d1c26f9d53c260ccd1ca2
+- File size: 1,590 bytes
+- File name: siricybandel\zeroingelevate.bat
+- File description: obfuscated batch script run by the above Windows shortcut
+
+- SHA256 hash: c4ad446ec82ec737d195596b04d696a563ec7675d0c6c4a2a9574637d867f295
+- File size: 404,992 bytes
+- File name: siricybandel\fundraising.dat
+- File description: IcedID installer DLL (64-bit) run by the above .cmd file
+- Run method: rundll32.exe [filename],#1
+
+FILES FOR ICEDID SEEN DURING THE INFECTION:
+
+- SHA256 hash: 0dbed2ce7bd3df083cdf93a37be3cbfd0707fec163c1672a0cb9829d5dd915a4
+- File size: 760,540 bytes
+- File description: gzip binary from faxilapodiumz[.]com used to create license.dat & persistent IcedID DLL
+
+- SHA256 hash: a0f5450deb333336e9d157e94647381036e7a9107ec842b24a9624d59cbfd59a
+- File size: 364,522 bytes
+- File location: C:\Users\[username]\AppData\Roaming\DecorateBelt\license.dat
+- File description: data binary used to run persistent IcedID DLL
+- Note: new license.dat first submitted to VirusTotal 2022-10-11
+
+- SHA256 hash: c4ad446ec82ec737d195596b04d696a563ec7675d0c6c4a2a9574637d867f295
+- File size: 404,992 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\fundraising.dat
+- File description: 64-bit DLL for IcedID on the infected host 
+- Run method: unknown, possibly: rundll32.exe [filename],#1 --usol="[path to license.dat]"
+
+- SHA256 hash: 1c2add451b93a86ecd1937d6fab8fcc0be516bf8b77557fe94a3d791db002a13
+- File size: 395,264 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[username]\[username]\uzughita.dll
+- File description: 64-bit DLL for IcedID persistent on the infected host 
+- Run method: rundll32.exe [filename],#1 --usol="[path to license.dat]"
+
+INFECTION TRAFFIC:
+
+INSTALLER DLL RETRIEVES GZIP BINARY:
+
+- 138.197.152[.]110 port 80 - axilapodiumz[.]com - GET /
+
+ICEDID C2 ACTIVITY:
+
+- 66.63.168[.]75 port 443 - pipsolik[.]art - HTTPS traffic
+- 94.140.114[.]103 port 443 - yeloypod[.]hair - HTTPS traffic
+- 66.63.168[.]75 port 443 - airsaintol[.]beauty - HTTPS traffic
+
+COBALT STRIKE ACTIVITY:
+
+- 5.8.18[.]242 port 443 - HTTPS traffic
+
+CERTIFICATE ISSUER DATA FROM ICEDID HTTPS SERVER ON 66.63.168[.]75 (PIPSOLIK[.]ART):
+ 
+ - id-at-commonName=localhost
+ - id-at-countryName=AU
+ - id-at-stateOrProvinceName=Some-State
+ - id-at-organizationName=Internet Widgits Pty Ltd
+
+CERTIFICATE ISSUER DATA FROM ICEDID HTTPS SERVER ON 94.140.114[.]103 (YELOYPOD[.]HAIR):
+ 
+ - id-at-commonName=localhost
+ - id-at-countryName=AU
+ - id-at-stateOrProvinceName=Some-State
+ - id-at-organizationName=Internet Widgits Pty Ltd
+
+CERTIFICATE ISSUER DATA FROM COBAL STRIKE HTTPS SERVER ON 5.8.18[.]242:
+ 
+ - id-at-countryName=
+ - id-at-stateOrProvinceName=
+ - id-at-localityName=
+ - id-at-organizationName=
+ - id-at-organizationalUnitName=
+ - id-at-commonName=
+ - NOTE: all values for the above fields are blank for the certificate from this Cobalt Strike server.

@@ -1,0 +1,90 @@
+2022-10-31 (MONDAY) - ICEDID (BOKBOT) INFECTION WITH DARK VNC AND COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1587463493300719616
+
+INFECTION CHAIN:
+
+- email --> HTML attachment --> password-protected zip --> ISO --> Windows shortcut runs DLL --> IcedID C2 --> DarkVNC & Cobalt Strike
+
+NOTES:
+
+- This infection was generated from an HTML file submitted to Malware Bazaar by @k3dg3 at: 
+  https://bazaar.abuse.ch/sample/eca3ef27738569bbd0d4b577da6848068769e8164d7b3276c4867f3343a8c948/
+
+ATTACHED HTML FILE:
+
+- SHA256 hash: eca3ef27738569bbd0d4b577da6848068769e8164d7b3276c4867f3343a8c948
+- File size: 251,507 bytes
+- File name: Unpaid_3945_Oct31.html
+- File description: HTML file attached to email distributing IcedID 
+
+DOWNLOADED ZIP AND EXTRACTED ISO IMAGE:
+
+- SHA256 hash: d04e63e88ffefddb66b73308d1c1a8e2349d998b86eb1191b41732666cbf4cee
+- File size: 90,195 bytes
+- File name: Invoice.zip
+- File description: Password-protected zip archive presented by the above HTML file
+- Password: w1031
+
+- SHA256 hash: 043a13615bdfe7a7011f09b826a4a5f5597f8b8e4b9498c0807e67db9ad1ed88
+- File size: 1,703,936 bytes
+- File name: document_3_Oct31.iso
+- File description: ISO image containing files to install IcedID
+
+CONTENTS OF ISO IMAGE:
+
+- SHA256 hash: d2d2bda70687d4c070e06c44008880d1f52859f0e3bca67853978221799d6cbc
+- File size: 1,657 bytes
+- File name/location in the ISO: Data.lnk
+- File description: Windows shortcut that runs the below batch file
+
+- SHA256 hash: 0d64fb2cd5cce8f8e8a9ac1c311d1867ec1dadb7622a3bc5e930d1c7063ae62e
+- File size: 1,482 bytes
+- File name/location in the ISO: ribfaymasnot\chickenrelaxed.bat
+- File description: batch file that runs the below IcedID installer DLL
+
+- SHA256 hash: 2ff819c01e03fa26413bf607711df3e5a7f4efdffe55f57c3c637d6c7b408bec
+- File size: 206,848 bytes
+- File name/location in the ISO: ribfaymasnot\shortening.dat
+- File description: IcedID installer 64-bit DLL
+- Run method: rundll32.exe [filename],#1
+
+FILES FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 0b65cb4b59b61689155c6599c5a8c256aac980dc602ac1daeb9bf273489c0e4f
+- File size: 562,907 bytes
+- File description: gzip binary retrieved from vgiragdoffy[.]com by the IcedID installer DLL
+
+- SHA256 hash: a0f5450deb333336e9d157e94647381036e7a9107ec842b24a9624d59cbfd59a
+- File size: 364,522 bytes
+- File location: C:\Users\[username]\AppData\Roaming\DifferSpeak\license.dat
+- File description: data binary used to run persistent IcedID DLL below
+
+- SHA256 hash: ff3be9c287431fec953681fd50c96632cefaa164a00ab84dcecd1a817537777e
+- File size: 197,632 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[username]\Odwikp.dll
+- File description: 64-bit DLL for IcedID persistent on infected Windows host
+- Run method: rundll32.exe [filename],#1 --lahu="[path to license.dat]"
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+INSTALLER DLL RETRIEVES GZIP BINARY:
+
+- 67.205.184[.]237 port 80 - vgiragdoffy[.]com - GET /
+
+POST-INFECTION ICEDID C2 TRAFFIC:
+
+- 137.184.208[.]116 port 443 - ringashopsu[.]com - HTTPS traffic
+- 138.68.255[.]102 port 443 - sainforgromset[.]com - HTTPS traffic
+- 94.140.114[.]103 port 443 - yeloypod[.]hair - HTTPS traffic
+- 66.63.168[.]75 port 443 - airsaintol[.]beauty - HTTPS traffic
+
+DARK VNC TRAFFIC:
+
+- 137.74.104[.]108 port 8080 - encrypted traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 198.44.140[.]67 port 8008 - clouditsoft[.]com - HTTPS traffic

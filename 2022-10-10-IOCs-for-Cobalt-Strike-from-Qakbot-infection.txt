@@ -1,0 +1,92 @@
+2022-10-10 (MONDAY) - COBALT STRIKE FROM QAKBOT INFECTION
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1579876998276558862
+
+CHAIN OF EVENTS:
+
+- link from email --> password-protected zip --> ISO --> Windows shortcut runs Qakbot DLL --> Qakbot C2 --> Cobalt Strike
+
+NOTES:
+
+- No binary for Cobalt Strike was saved to disk on the infected Windows host.
+
+- The URL used to kick off this infection was reported at URLhaus" https://urlhaus.abuse.ch/url/2353588/
+
+DOWNLOADED ZIP ARCHIVE AND EXTRACTED ISO IMAGE:
+
+- SHA256 hash: e94d8d2ac206bc3fb9e020ee23a7e597ef280d14330034ed5b27b5b203f24de4
+- File size: 648,391 bytes
+- File name: N2752610163.zip
+- File location: hxxp://webexpertize[.]com/ssv/N2752610163.zip
+- File description: Password-protected zip archive returned from link in email
+- Password: X353
+
+- SHA256 hash: f07c5e4debb8c334afc75875ceacf5d4af627ba39b4eb65c56d70373d8ff0951
+- File size: 1,525,760 bytes
+- File name: New_documents#6904.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF THE EXTRACTED ISO IMAGE:
+
+- SHA256 hash: 2929d8090f813cffafab014a9915184def203147665e33ac0bc124c21aa22c30
+- File size: 1,185 bytes
+- File name: New_documents.lnk
+- File description: Windows shortcut
+
+- SHA256 hash: ed9240124e2a1628cd04d2e718c3d5eff496bca505b8df66e90d319f142667d8
+- File size: 271 bytes
+- File location: 3550\2646.cmd
+- File description: Batch file run by the above Windows shortcut
+
+- SHA256 hash: 80556052a05684ca0f8729c182aa3a48abb040fe5e358b6f67833b52dbd1c172
+- File size: 1,465,856 bytes
+- File location: 3550\unaccidental.dat
+- File description: DLL file for Qakbot
+- Run method: regsvr32.exe [filename]
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+TRAFFIC FROM LINK IN THE EMAIL TO DOWNLOAD PASSWORD-PROTECTED ZIP ARCHIVE:
+
+- 162.241.85[.]74 port 80 - webexpertize[.]com - GET /ssv/ftugauit
+- 162.241.85[.]74 port 80 - webexpertize[.]com - GET /ssv/N2752610163.zip
+- Note: URL in the email was originally reported as HTTPS at https://urlhaus.abuse.ch/url/2353588/
+
+QAKBOT POST-INFECTION TRAFFIC:
+
+- 190.73.190[.]235 port 443 - attempted TCP connections
+- 42.189.2[.]151 port 80 - attempted TCP connections
+- 105.99.214[.]100 port 443 - attempted TCP connections
+
+- 197.204.78[.]120 port 443 - HTTPS traffic (TLSv1.2)
+- 134.35.4[.]128 port 443 - HTTPS traffic (TLSv1.2)
+
+COBALT STRIKE TRAFFIC:
+
+- 64.44.102[.]244 port 443 - pigahinilu[.]com - HTTPS traffic (TLSv1.2)
+
+CERTIFICATE ISSUER DATA FOR QAKBOT HTTPS SERVER AT 197.204.78[.]120:
+
+- id-at-countryName=AT
+- id-at-stateOrProvinceName=JW
+- id-at-localityName=Wcqiyf
+- id-at-organizationName=Oaobt Tana Jtr Inc.
+- id-at-commonName=medg.org
+
+CERTIFICATE ISSUER DATA FOR QAKBOT HTTPS SERVER AT 134.35.4[.]128:
+
+- id-at-countryName=GB
+- id-at-stateOrProvinceName=HS
+- id-at-localityName=Jifieo Eetcgeqes
+- id-at-organizationName=Wijoi Ang Gkmvew Inc.
+- id-at-commonName=ucooezonym.com
+
+CERTIFICATE ISSUER DATA FOR COBALT STRIKE HTTPS SERVER AT 64.44.102[.]244
+
+- id-at-countryName=GB
+- id-at-stateOrProvinceName=Greater Manchester
+- id-at-localityName=Salfordc
+- id-at-organizationName=Sectigo Limited
+- id-at-commonName=Sectigo RSA Domain Validation Secure Server (CA)

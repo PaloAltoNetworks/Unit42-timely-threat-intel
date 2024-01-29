@@ -1,0 +1,52 @@
+2022-08-15 (MONDAY) - MONSTER LIBRA (TA551/SHATHAK) PUSHES SVCREADY MALWARE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1559558884787978242
+
+INFECTION CHAIN:
+
+- email --> attached Word doc --> enable macros --> traffic for SVCready DLL --> SVCready C2 traffic --> possible follow-up activity
+
+NOTES:
+
+- Palo Alto Networks is tracking the TA551 (Shathak) threat actor as "Monster Libra."
+
+- Monster Libra currently pushes either IcedID (Bokbot), or it pushes SVCready malware.
+
+- Malicious Word documents from Monster Libra on 2022-08-15 use an Italian language template.
+
+- Since 2022-07-11, SVCready malware samples have not set up persistence correctly when we test these samples our lab environments.
+
+- SVCready's initial infection and data exfiltration still occur, but rundll32.exe is copied to the location that the SVCready DLL should be for persistence.
+
+- This means the scheduled task set up by the malware uses rundll32.exe to unsuccessfully run a copy of itself, instead of running the SVCready DLL.
+
+ASSOCIATED FILES:
+
+- SHA256 hash: e78276b7bd18e36dbd3a4b85eab8c55e9683f56b8fcf2360810859b9e801edf9
+- File size: 3,404,751 bytes
+- File name: [name removed].file.15.08.2022.doc
+- File description: Monster Libra Word document with macro code for SVCready
+
+- SHA256 hash: 6cbe0e1f046b13b29bfa26f8b368281d2dda7eb9b718651d5856f22cc3e02910
+- File size: 61,440 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\r19F2.tmp.exe
+- File description: Copy of legitimate Microsoft file rundll32.exe, not inherently malicious
+
+- SHA256 hash: f766d2ea0d8124120d712caad5f00ac51114076fa3354fb760ae64aae39147f1
+- File size: 1,332,736 bytes
+- File location: hxxp://45.89.54[.]120/6AFO0dsXmb/6AFO0dsXmb.php?uPUHsLURhNxs7-OfbGQ5Ga_LIgyD8S29Lg~~=Lsf4PGDFAYqkIDqE88ZTWDEJItzx79AOWg~~
+- File location: C:\Users\[username]\AppData\Local\Temp\yCE1.tmp.dll
+- File location: Windows DLL for SVCready
+
+INFECTION TRAFFIC:
+
+- 45.89.54[.]120 port 80 - 45.89.54[.]120 - GET /6AFO0dsXmb/6AFO0dsXmb.php?uPUHsLURhNxs7-OfbGQ5Ga_LIgyD8S29Lg~~=Lsf4PGDFAYqkIDqE88ZTWDEJItzx79AOWg~~
+- 34.141.91[.]129 port 80 - oilproduct[.]quest - POST /tyjigsdcdg/ruiohmc/uhgvrkr
+- 34.141.91[.]129 port 80 - oilproduct[.]quest - POST /tyjigsdcdg/ruiohmc
+- 34.141.91[.]129 port 80 - oilproduct[.]quest - POST /tyjigsdcdg/ruiohmc
+- 34.141.91[.]129 port 80 - oilproduct[.]quest - POST /tyjigsdcdg/ruiohmc/truheru
+- DNS query for biofarma[.]buzz - response: No such name
+- DNS query for biotech[.]cyou - response: No such name
+- DNS query for biotech[.]ink - response: No such name
