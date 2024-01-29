@@ -1,0 +1,52 @@
+2023-05-22 (MONDAY): PIKABOT INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1661068254628986892
+
+INFECTION CHAIN: 
+
+- email --> link --> downloaded .js file --> retrieves Pikabot DLL --> Pikabot C2 --> Cobalt Strike
+
+NOTES:
+
+- The .js file and Pikabot DLL are different file hashes every time.
+- The URL for the Pikabot DLL has a different character string after the last "/" from each .js file.
+- Pikabot information provided here is specific for this infection.
+- The Cobalt Strike server seen during this infection used a domain originally registered on 2023-04-05.
+
+DOMAIN HOSTING .JS FILE:
+
+- alejnr[.]com
+- Note: This is a legitimate, but compromised website. For URL details, see the following reference:
+  --- Reference: https://urlhaus.abuse.ch/browse.php?search=alejnr
+
+PIKABOT DLL DOWNLOAD:
+
+- hxxp://176.124.198[.]213/Fs8Py/eKTYt3dRbEXw
+
+PIKABOT C2:
+
+- 129.213.54.49 port 2078 - HTTPS traffic (self-signed cert date: 2023-03-23)
+
+COBALT STRIKE TRAFFIC:
+
+- 46.30.190[.]12:443 - dopubopigo[.]us - HTTPS traffic (Domain resgistered: 2023-04-05, Sectigo cert date: 2023-04-06)
+
+DOWNLOADED .JS FILE:
+
+- SHA256 hash: 461e17a3fd2cb632fc31c85d625c289550daf359a6565c9dd7d08cf0b6914c9f
+- File size: 130,584 bytes
+- Downloaded file name: Iuksxy.js
+- When run, file was copied to: C:\ProgramData\Firnismalerei.js
+- Sample available at: https://bazaar.abuse.ch/sample/461e17a3fd2cb632fc31c85d625c289550daf359a6565c9dd7d08cf0b6914c9f/
+
+PIKABOT DLL:
+
+- SHA256 hash: ff99eaa3851bee30db140846f083a5f8064eaad2707ab5a6d8a0b6d4dd9b8c61
+- File size: 543,048 bytes
+- Downloaded from: hxxp://176.124.198[.]213/Fs8Py/eKTYt3dRbEXw
+- Initial saved location: C:\ProgramData\Undermines.Personificative
+- Final saved location: C:\Users\[username]\AppData\Roaming\Microsoft\CostumicEuxineUndernatural\postventralImpetuosityJunglewood.dll
+- Run method: rundll32.exe [filename],vips
+- Sample available at: https://bazaar.abuse.ch/sample/ff99eaa3851bee30db140846f083a5f8064eaad2707ab5a6d8a0b6d4dd9b8c61/

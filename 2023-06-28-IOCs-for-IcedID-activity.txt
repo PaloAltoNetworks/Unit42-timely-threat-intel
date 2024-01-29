@@ -1,0 +1,96 @@
+2023-06-28 (WEDNESDAY) - ICEDID (BOKBOT) ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1674522713929535492
+
+INFECTION CHAIN:
+
+- email --> PDF attachment --> link from PDF --> TDS redirect --> password-protected zip archive --> 
+  EXE installer for IcedID --> gzip binary --> persistent IcedID infection established --> IcedID C2
+
+8 EXAMPLES OF PDF FILES:
+
+- b7e7d65af558e4fb957bf3b233e58107e2a71e1a4c6fdab4303038322864ac80 - 109,894 bytes - Document_06-28_82.pdf
+- c2d710da20a3aee9764a95d8a177d0fe6e972427b35cc67f5b8316df7e7a750c - 142,732 bytes - Document_06-28_110.pdf
+- fe9912bcc33e4ce9664696840f339c6a8fc0ea0cb656e6b4027873f1e3dc6e48 - 138,578 bytes - Document_06-28_179.pdf
+- f261d118e2c1087ad250b475473c08758ad229e1265d8c214585a6679dd5df71 - 139,813 bytes - Document_06-28_250.pdf
+- f6ec1006752a0b480059a6c90736c3a9e370b31875267f0d78cd4e712b1704e2 - 146,995 bytes - Document_06-28_425.pdf
+- 7b332b904ba9497c9fa0a341effe55affcdd3246b5eccd7c56697cd013caa1cc - 150,237 bytes - Document_06-28_452.pdf
+- e3d63e0379a92318449ea094f33c75620c20efa3d0d1094edb46bfb569fcb307 - 162,880 bytes - Document_06-28_475.pdf
+- f36309b19948c880c13b30a6db56d14dd65c9d1c45cdfe5ade274e5c568192f7 - 122,209 bytes - Document_06-28_494.pdf
+
+LINKS FROM THE ABOVE 8 PDF FILES:
+
+- hxxp://80.77.23[.]64%20
+- hxxp://80.77.23[.]154%20
+- hxxp://80.77.23[.]155%20
+- hxxp://80.77.23[.]168%20
+- hxxp://80.77.23[.]170%20
+- hxxp://80.77.23[.]176%20
+- hxxp://91.240.202[.]190%20
+- hxxp://91.240.202[.]195%20
+
+- Note: The "%20" in these URLs is likely an error.  The URLs won't work unless the "%20" is removed.
+
+EXAMPLES OF REDIRECTS FROM THE ABOVE URLS FOR ZIP DOWNLOAD:
+
+- hxxps://arisenursing[.]co[.]uk/temporize/
+- hxxp://dvmens.gaus[.]pro/pip/
+- hxxps://helatech[.]lk/acetonic/
+- hxxps://ikennaubeh[.]com/trespasser/
+- hxxps://integracionoem[.]cl/mutilated/
+- hxxps://integracionoem[.]cl/surfing/
+- hxxps://myliishop[.]com/pharmacopoeias/
+- hxxps://treni.com[.]ng/looker/
+
+8 EXAMPLES OF DOWNLOADED ZIP ARCHIVES:
+
+- b8fbcb7a846bab553c524a7bd4e669db1efad6e890bf71dc0587149cdcf84105 - 1,691,008 bytes - Scan_06-28_INV _4.zip
+- 154947ab6529b520cf2b747b959aca58c45feaa1a5dc5ce471edba57a74feb31 - 1,691,010 bytes - Scan_06-28_INV _12.zip
+- 390559d698f822720ea1d64dc43a7371f4d63c830a7e5c7692b33c3f576e2fa9 - 1,691,010 bytes - Scan_06-28_INV _13.zip
+- f076dbb4e8076ed4b665fdedc6b14eb357c05e4f912c151b04e3f4e468812435 - 1,690,985 bytes - Scan_06-28_INV _15.zip
+- ad59f34dfcdfdb6c209025aeb6a0d2acf7b0e46d8fa7589d94710db08c3822fa - 1,690,455 bytes - Scan_06-28_INV _30.zip
+- e71ac162d1055f523703e1fe9e72ea54e8506053bd1a465383bbd24c0692ac40 - 1,693,985 bytes - Scan_06-28_INV _46.zip
+- 085c741e76be5e32eeff91fc0f085e40013accf4836bb4279e7e89309a5ce71b - 1,689,436 bytes - Scan_06-28_INV _56.zip
+- 95f18b6b9db145db1af95d2699685a21739a920501ca7fcafc855c10f799b0d2 - 1,689,436 bytes - Scan_06-28_INV _64.zip
+
+- Password for the above zip archives: 573
+
+ICEDID INSTALLER EXE FILES EXTRACTED FROM THE ABOVE 8 ZIP ARCHIVES (5 DIFFERENT FILE HASHES):
+
+- 24dd8fa972d5101dbf73e69b0a48c028230eacac970b18f4e140337eba948ae7 - 2,933,384 bytes - Scan_06-28_INV _56.exe
+- 24dd8fa972d5101dbf73e69b0a48c028230eacac970b18f4e140337eba948ae7 - 2,933,384 bytes - Scan_06-28_INV _64.exe
+- 252c75237d927a1b9aeae3d4b4c04389f6c8eeccc318cdc7ae05508fed7b7b4e - 2,932,152 bytes - Scan_06-28_INV _12.exe
+- 252c75237d927a1b9aeae3d4b4c04389f6c8eeccc318cdc7ae05508fed7b7b4e - 2,932,152 bytes - Scan_06-28_INV _13.exe
+- 252c75237d927a1b9aeae3d4b4c04389f6c8eeccc318cdc7ae05508fed7b7b4e - 2,932,152 bytes - Scan_06-28_INV _4.exe
+- 523f8b05f6a8c37a973e6fcc5f8f0530eb4b5ca6a309c583506f9c79dab4a162 - 2,939,992 bytes - Scan_06-28_INV _46.exe
+- e2bbd1fc4eea8fed725f05ecc64ccdf517bdc41f4e36fe93cd2b58a5ebcd8747 - 2,932,112 bytes - Scan_06-28_INV _30.exe
+- f9c2b554e1eddb140de08135878123278f028f37c25c826cc0765ab9d540e9f2 - 2,941,208 bytes - Scan_06-28_INV _15.exe
+
+ICEDID INFECTION TRAFFIC:
+
+- 193.149.129[.]12 port 80 - hloyagorepa[.]com - GET /
+- 192.3.76[.]146 port 443 - appkasnofert[.]com - HTTPS traffic
+
+MALWARE/ARTIFACTS FROM AN INFECTION:
+
+- SHA256 hash: f66364670dad08793253c79822da4b555c46ecc235f2e7366df45d810a893e5b
+- File size: 1,170,519 bytes
+- File location: hxxp://hloyagorepa[.]com/
+- File type: gzip compressed data, was "Summer.txt", from FAT filesystem (MS-DOS, OS/2, NT),
+  original size modulo 2^32 3773247
+- File description: gzip binary retrieved by IcedID installer
+
+- SHA256 hash: 332afc80371187881ef9a6f80e5c244b44af746b20342b8722f7b56b61604953
+- File size: 354,474 bytes
+- File location: C:\Users\user\AppData\IndexCigar\license.dat
+- File type: data
+- File description: data binary used to run persistent IcedID DLL
+
+- SHA256 hash: b5fcee33db2262955cf5daeb02f1ee302277ccf873808cca3fd74b2eb9134c23
+- File size: 815,290 bytes
+- File location: C:\Users\user\AppData\Roaming\user\ofuphoko.dll
+- File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
+- File description: 64-bit DLL for persistent IcedID infection
+- Run method: rundll32.exe [filename],init --yoep="[path to license.dat]"

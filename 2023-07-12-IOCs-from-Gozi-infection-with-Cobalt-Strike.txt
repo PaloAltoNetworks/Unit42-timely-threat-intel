@@ -1,0 +1,56 @@
+2023-07-12 (WEDNESDAY): GOZI/ISFB INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1679500766858432512
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 620bc1e016887d7761907a85d49870a832b70e0340f599b472bec0a11b7b663a
+- File size: 613,888 bytes
+- File type: PE32 executable (DLL) (GUI) Intel 80386 (stripped to external PDB), for MS Windows
+- File description: 32-bit Windows DLL for Gozi/ISFB, Botnet 2100, build 250259
+- Run method: regsvr32.exe [filename]
+
+- SHA256 hash: 540dfbef1bc65462cac88ad24a6d5cea867d9b392e9f8ae66c20ee49f4002793
+- File size: 1,578,496 bytes
+- File type: PE32+ executable (DLL) (GUI) x86-64 (stripped to external PDB), for MS Windows
+- File location: hxxps://softwaredw[.]com/64HTTPS.dll
+- Saved location: C:\Windows\Tasks\x11ogwin.dll
+- File description: 64-bit Windows DLL for Cobalt Strike stager
+- Run method: start-process rundll32.exe -ArgumentList '/s c:\windows\tasks\x11ogwin.dll,recurring'
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+GOZI/ISFB C2 TRAFFIC:
+
+- 151.248.117[.]244 port 80 - diwdjndsfnj[.]ru - GET /uploaded/[long base64 string with backslashes and underscores].pct
+- 151.248.117[.]244 port 80 - diwdjndsfnj[.]ru - POST /uploaded/[long base64 string with backslashes and underscores].dib
+- 151.248.117[.]244 port 80 - diwdjndsfnj[.]ru - GET /uploaded/[long base64 string with backslashes and underscores].pmg
+- 151.248.117[.]244 port 80 - iwqdndomdn[.]su - GET /uploaded/[long base64 string with backslashes and underscores].pmg
+- 151.248.117[.]244 port 80 - iwqdndomdn[.]su - POST /uploaded/[long base64 string with backslashes and underscores].dib
+
+GOZI/ISFB MODULES (ENCRYPTED DATA BINARIES):
+
+- 91.199.147[.]95 port 80 - 91.199.147[.]95 - GET /vnc32.rar
+- 91.199.147[.]95 port 80 - 91.199.147[.]95 - GET /vnc64.rar
+- 91.199.147[.]95 port 80 - 91.199.147[.]95 - GET /stilak32.rar
+- 91.199.147[.]95 port 80 - 91.199.147[.]95 - GET /stilak64.rar
+- 91.199.147[.]95 port 80 - 91.199.147[.]95 - GET /cook32.rar
+- 91.199.147[.]95 port 80 - 91.199.147[.]95 - GET /cook64.rar
+
+TRAFFIC CAUSED BY VNC MODULE:
+
+- 188.127.224[.]25 port 9955 - TCP traffic
+
+ENCRYPTED DATA BINARY FOR COBALT STRIKE STAGER:
+
+- 194.58.102[.]187 port 80 - 194.58.102[.]187 - GET /01/64HTTPS.zip
+
+DLL FOR COBALT STRIKE STAGER:
+
+- 193.149.176[.]60 port 443 - softwaredw[.]com - GET /softwaredw.com/64HTTPS.dll
+
+COBALT STRIKE C2:
+
+- 170.130.55[.]162 port 443 - iamupdate[.]com - HTTPS traffic, TLSv1.2, Let's Encrypt certificate, not valid before 2023-07-03

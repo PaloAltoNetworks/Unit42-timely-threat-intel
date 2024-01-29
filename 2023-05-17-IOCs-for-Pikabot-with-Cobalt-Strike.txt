@@ -1,0 +1,198 @@
+2023-05-17 (WEDNESDAY): BB28 DISTRIBUTION FOR QAKBOT PUSHES PIKABOT INSTEAD, LEADS TO COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1659199751265595392
+
+NOTES:
+
+- On Monday 2023-05-15 and Tuesday 2023-05-16, this distribution chain was pushing BB28-tagged Qakbot.
+- Today (Wednesday 2023-05-17), this distribution chain pushed Pikabot.
+- More information on Pikabot at: https://malpedia.caad.fkie.fraunhofer.de/details/win.pikabot
+- We first saw Pikabot on 2023-02-07: https://www.malware-traffic-analysis.net/2023/02/07/index.html
+
+INFECTION CHAIN OF EVENTS:
+
+- email --> link --> downloaded .js file --> retrieves Pikabot DLL --> Pikabot C2 --> Cobalt Strike
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 3c12e78abe3efd063ff99c06727ec4f1b9c59d900f78b7362d7677edaf7d0581
+- File size: 235,140 bytes
+- File location: hxxps://webmasterdev[.]com/mui/?1
+- File description: JavaScript file for Pikabot
+
+- SHA256 hash: 9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6
+- File size: 1,288,212 bytes
+- File location: hxxp://162.252.172[.]54/9GQ5A8/6ctf5JL
+- File location: C:\ProgramData\reknowMechant.montageFirring
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\[random characters]\cimeter\unbevelledHamuli.dll
+- File description: Example of 32-bit DLL for Pikabot
+
+INITIAL INFECTION TRAFFIC:
+
+- hxxps://webmasterdev[.]com/mui/?1  <-- Initial .JS download
+- hxxp://162.252.172[.]54/9GQ5A8/6ctf5JL  <-- URL hosting Pikabot DLL
+
+PIKABOT C2:
+
+- 45.85.235[.]39 port 2078 - HTTPS traffic (self-signed cert date: 2023-05-14)
+- 94.199.173[.]6 port 2222 - HTTPS traffic (self-signed cert date: 2023-05-14)
+- 129.153.135[.]83 port 2078 - HTTPS traffic (self-signed cert date: 2023-03-23)
+- 129.153.22[.]231 port 32999 - HTTPS traffic (self-signed cert date: 2023-03-23)
+- 129.213.54[.]49 port 2078 - HTTPS traffic (self-signed cert date: 2023-03-23)
+- 129.80.164[.]200 port 32999 - HTTPS traffic (self-signed cert date: 2023-03-23)
+- 132.148.79[.]222 port 2222 - HTTPS traffic (self-signed cert date: 2023-05-14)
+- 144.172.126[.]136 port 2222 - HTTPS traffic (self-signed cert date: 2023-05-14)
+- 185.87.148[.]132 port 1194 - HTTPS traffic (self-signed cert date: 2023-05-10)
+- 193.122.200[.]171 port 2078 - HTTPS traffic (self-signed cert date: 2023-03-23)
+
+COBALT STRIKE ACTIVITY:
+
+- [various prefixes].dns.steasteel[.]net - DNS traffic: tunneling via replies to DNS queries for this domain
+- Note: The domain steasteel[.]net was registered on 2023-04-11
+
+- DNS query for gitinab[.]xyz - resolved to 127.42.0[.]6, but no follow-up traffic to that IP
+- 23.163.0[.]37 port 8080 - HTTPS traffic using Sectigo certificate for gitinab[.]xyz, cert date 2023-03-30
+
+SELF-SIGNED CERTIFICATE INFO FOR PIKABOT C2 SERVERS:
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 45.85.235[.]39 PORT 2078:
+
+- Issuer:
+ -- id-at-countryName=SX
+ -- id-at-stateOrProvinceName=KI
+ -- id-at-organizationName=Uneared Inc
+ -- id-at-organizationalUnitName=Undelightful
+ -- id-at-localityName=Pyopneumopericardium
+ -- id-at-commonName=votation.bzh
+- Validity:
+ -- notBefore=2023-05-14 08:36:52 (UTC)
+ -- notAfter=2024-05-13 08:36:52 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 94.199.173[.]6 PORT 2222:
+
+- Issuer:
+ -- id-at-countryName=SK
+ -- id-at-stateOrProvinceName=BR
+ -- id-at-organizationName=Hayburner Inc.
+ -- id-at-organizationalUnitName=Uncontestablely
+ -- id-at-localityName=Henwise Chirotonsory
+ -- id-at-commonName=organizabilitybigate.rehab
+- Validity:
+ -- notBefore=2023-05-14 11:43:43 (UTC)
+ -- notAfter=2024-05-13 11:43:43 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 129.153.135[.]83 PORT 2078:
+
+- Issuer:
+ -- id-at-countryName=PL
+ -- id-at-stateOrProvinceName=AC
+ -- id-at-organizationName=Marginellidae Cogitabundous Inc.
+ -- id-at-organizationalUnitName=Unallowedly Nonmedicative
+ -- id-at-localityName=Etymography
+ -- id-at-commonName=formamide.ruhr
+- Validity:
+ -- notBefore=2023-03-23 10:57:18 (UTC)
+ -- notAfter=2024-03-22 10:57:18 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 129.153.22[.]231 PORT 32999:
+
+- Issuer:
+ -- id-at-countryName=GR
+ -- id-at-stateOrProvinceName=DE
+ -- id-at-organizationName=Enmeshing Inc.
+ -- id-at-organizationalUnitName=Reasseverate
+ -- id-at-localityName=Hitchhiking Sustentational
+ -- id-at-commonName=tennesseealkamine.me
+- Validity:
+ -- notBefore=2023-03-23 13:12:17 (UTC)
+ -- notAfter=2024-03-22 13:12:17 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 129.213.54[.]49 PORT 2078:
+
+- Issuer:
+ -- id-at-countryName=MX
+ -- id-at-stateOrProvinceName=EN
+ -- id-at-organizationName=Awarrant
+ -- id-at-organizationalUnitName=Prediet
+ -- id-at-localityName=Wrinkles Fireless
+ -- id-at-commonName=nonveracitygalvanometry.band
+- Validity:
+ -- notBefore=2023-03-23 12:07:48 (UTC)
+ -- notAfter=2024-03-22 12:07:48 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 129.80.164[.]200 PORT 32999:
+
+- Issuer:
+ -- id-at-countryName=IS
+ -- id-at-stateOrProvinceName=CA
+ -- id-at-organizationName=Lapins Aerobacteriological Inc.
+ -- id-at-organizationalUnitName=Inappellable
+ -- id-at-localityName=Turgidities
+ -- id-at-commonName=istiophoridaecummer.date
+- Validity:
+ -- notBefore=2023-03-23 12:02:10 (UTC)
+ -- notAfter=2024-03-22 12:02:10 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 132.148.79[.]222 PORT 2222:
+
+- Issuer:
+ -- id-at-countryName=NZ
+ -- id-at-stateOrProvinceName=UN
+ -- id-at-organizationName=Anaudia Aquose Inc.
+ -- id-at-organizationalUnitName=Halutz
+ -- id-at-localityName=Priorship
+ -- id-at-commonName=lordless.name
+- Validity:
+ -- notBefore=2023-05-14 18:46:04 (UTC)
+ -- notAfter=2024-05-13 18:46:04 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 144.172.126[.]136 PORT 2222:
+
+- Issuer:
+ -- id-at-countryName=PA
+ -- id-at-stateOrProvinceName=RE
+ -- id-at-organizationName=Komsomol
+ -- id-at-organizationalUnitName=Melaniline
+ -- id-at-localityName=Simonists Kustenau
+ -- id-at-commonName=unsucculent.earth
+- Validity:
+ -- notBefore=2023-05-14 18:59:01 (UTC)
+ -- notAfter=2024-05-13 18:59:01 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 185.87.148[.]132 PORT 1194:
+
+- Issuer:
+ -- id-at-countryName=PR
+ -- id-at-stateOrProvinceName=OV
+ -- id-at-organizationName=Vibrotherapeutics Inc.
+ -- id-at-organizationalUnitName=Forecovert Obligor
+ -- id-at-localityName=Reannounce Balian
+ -- id-at-commonName=munificmissorts.wine
+- Validity:
+ -- notBefore=2023-05-10 14:27:26 (UTC)
+ -- notAfter=2024-05-09 14:27:26 (UTC)
+- Subject: Same values as issuer fields
+
+SELF-SIGNED CERTIFICATE FOR PIKABOT HTTPS SERVER AT 193.122.200[.]171 PORT 2078:
+
+- Issuer:
+ -- id-at-countryName=SE
+ -- id-at-stateOrProvinceName=ST
+ -- id-at-organizationName=Compete Disminister
+ -- id-at-organizationalUnitName=Gulfed
+ -- id-at-localityName=Boschbok
+ -- id-at-commonName=ancylopodaphonoscope.live
+- Validity:
+ -- notBefore=2023-03-23 12:59:56 (UTC)
+ -- notAfter=2024-03-22 12:59:56 (UTC)
+- Subject: Same values as issuer fields
