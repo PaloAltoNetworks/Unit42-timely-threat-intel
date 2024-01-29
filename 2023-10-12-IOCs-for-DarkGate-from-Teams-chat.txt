@@ -1,5 +1,10 @@
 2023-10-12 (THURSDAY): DARKGATE INFECTION FROM TEAMS CHAT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintelligence-threatintel-activity-7118377814826905600-idoc
+- https://twitter.com/Unit42_Intel/status/1712612195651998098
+
 NOTES:
 
 - This infection chain has been reported through mulitple sources as early as September 2023.
