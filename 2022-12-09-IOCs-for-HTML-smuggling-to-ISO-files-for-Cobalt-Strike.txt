@@ -1,0 +1,54 @@
+2022-12-09 (FRIDAY): HTML SMUGGLING PUSHES COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1602715058383065091
+
+INFECTION CHAIN:
+
+- unknown, possibly email --> HTML file (possibly attachment) --> downloaded ISO image --> Windows shortcut --> runs Powershell script
+
+NOTES:
+
+- This activity is a continuation of activity reported as early as 2022-12-05 at: https://twitter.com/James_inthe_box/status/1599787857467834368
+- In this most recent wave, at least 8 HTML files have been submitted to VirusTotal since 2022-12-09, all have names starting with DMCA-Report- and ending with an .html file extension.
+- No proof of delivery vector, but these were likely sent as email attachments.
+
+EXAMPLE OF ATTACHED HTML FILE AND SMUGGLED ISO IMAGE:
+
+- SHA256 hash: 81fa36b1d5e9f5457644fc784f2e03d14734052c35023e899ba521697d0bbef9
+- File size: 1,780,737 bytes
+- File name: DMCA-Report-67718961029992.html
+- File description: Email attachment, HTML file used for smuggling below ISO image
+
+- SHA256 hash: c897cd5eb6d4c569f9a540bafb0f966f14e960826266648c08a15f5a48ba58db
+- File size: 874,496 bytes
+- File name: DMCA-Report-87f1e5e70079d.iso
+- File description: ISO image presented by the above HTML file
+
+CONTENTS OF ISO IMAGE:
+
+- SHA256 hash: 7ffbeb1df7b0dcb06ddc0e54b7e06b338bf4901461022b0af7fe4b97d12ab4ef
+- File size: 2,179 bytes
+- File name:DMCA-Report.lnk
+- File description: Windows shorcut, only visible file in ISO image
+
+- SHA256 hash: 5799028ec3ad388e031fc42cd0fb5443a5a5e0a7e3e57c895a3f9e4ce4c2e9ee
+- File size: 34,098 bytes
+- File name: xqdxcxlgtxeesj.log
+- File description: Powershell script run by above Windows shortcut
+
+- SHA256 hash: 7cdf0263c3ce42e3ff3ea3c0a376e1aa1b0340dfc1e373f3c765a51a3a639be8
+- File size: 453,626 bytes
+- File name: wnjvejahaimreqt.log
+- File description: Powershell script run by above Powershell script
+
+- SHA256 hash: 3902e1734b1d0187d3404dafa4616212342630cb46913242060f485e58201a75 
+- File size: 11,140 bytes
+- File name: zvdcoglidj.pdf
+- File description: Decoy PDF file opened during infection process that states, "Couldn't open PDF"
+
+COBALT STRIKE TRAFFIC:
+
+- 165.22.48[.]183 port 80 - 165.22.48[.]183 - GET /common?chunk=false HTTP/1.1
+- 165.22.48[.]183 port 80 - 165.22.48[.]183 - POST /tab_shop HTTP/1.1  (application/x-www-form-urlencoded

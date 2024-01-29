@@ -1,0 +1,71 @@
+2022-12-07 (WENDESDAY) - BUMBLEBEE INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1600587285577203715
+
+NOTES:
+
+- The .img disk image file used for this Bumblebee infection was submitted to VirusTotal on Tuesday 2022-12-06.
+- Cannot determine the delivery method for this .img file.
+- No Cobalt Strike binary was saved to disk.
+- Certificate data for Cobalt Strike HTTPS traffic suggests the server was established on 2022-11-15.
+
+DISK IMAGE:
+
+- SHA256 hash: 1367bcb44c70baf0ff20e488c38a6efde51eb61d14abb0292d848800a88f7961
+- File size: 2,097,152 bytes
+- File name: unknown, possibly PFFMDdY6E.img
+- File description: Disk image with contents used for Bumblebee infection
+- Note: File mounts as disk image in Win 10/11, but it's not identified as a disk image in VirusTotal or using the *nix file command.
+
+CONTENTS OF THE ABOVE DISK IMAGE:
+
+- SHA256 hash: ac8e67644d7b6b6f0bd78522a3568c98fe386a23542f73a2ec1a3cff4f433684
+- File size: 1,745 bytes
+- File name: order.lnk
+- File description: Windows shortcut, only visible file in the disk imagechm
+- Shortcut: C:\Windows\System32\cmd.exe /c matrix.bat
+
+- SHA256 hash: d084bcd4d01dc5964e31910bc90ca4574d6270e1e57f01af7c633ee02e0a6d06
+- File size: 3,091 bytes
+- File name: matrix.bat
+- File description: Batch file that copies Bumblebee DLL to disk, runs it, and sets scheduled task to keep it persistent.
+
+- SHA256 hash: 1436cd7b3ec8fc3941292fad31475711a89b050bd1d87cdbbbf2866394dad099
+- File size: 851,968 bytes
+- File name: worldsex.dll
+- Saved to disk at: C:\ProgramData\worldsex.dll
+- File description: 64-bit DLL for Bumblebee malware
+- Run method: rndll32.exe [filename],mainRngSet
+
+MALWARE NOTES:
+
+- C:\Windows\System32\rundll32.exe was copied to C:\ProgramData\oiv0I4ymqE.exe and set by scheduled task to run Bumblebee DLL.
+
+INFECTION TRAFFIC:
+
+- 88.52.50[.]98 port 452 - attempted TCP connections for Bumblebee C2
+- 81.77.212[.]213 port 118 - attempted TCP connections for Bumblebee C2
+- 139.177.146[.]137 port 443 - HTTPS traffic for Bumblebee C2
+- 23.108.57[.]213 port 443 - ceyuvigi[.]com - HTTPS traffic for Cobalt Strike
+
+CERTIFICATE ISSUER DATA FOR COBALT STRIKE SERVER AT 23.108.57[.]213:
+
+Subject Name:
+- Common Name: ceyuvigi[.]com
+
+Issuer Name:
+- Country: GB
+- State/Province: Greater Manchester
+- Locality: Salford
+- Organization: Sectigo Limited
+- Common Name: Sectigo RSA Domain Validation Secure Server CA
+
+Validity:
+- Not Before: Tue, 15 Nov 2022 00:00:00 GMT
+- Not After: Wed, 15 Nov 2023 23:59:59 GMT
+ 	
+Subject Alt Names:
+- DNS Name: ceyuvigi[.]com
+- DNS Name: www.ceyuvigi[.]com

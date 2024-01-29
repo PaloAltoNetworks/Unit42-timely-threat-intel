@@ -1,0 +1,75 @@
+2022-12-20 (TUESDAY): ICEDID (BOKBOT) INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1606013040599699476
+
+NOTES:
+
+- The initial zip archive is likely from a fake software page referred to from a Google ad.
+- For more information, see: https://isc.sans.edu/diary/Google+ads+lead+to+fake+software+pages+pushing+IcedID+Bokbot/29344/
+
+DOWNLOADED ZIP AND EXTRACTED ISO IMAGE:
+
+- SHA256 hash: 533fcedd97d1ef374629c61f7482bb5711b366ac025f648b92f924111f676c5a
+- File size: 585,550 bytes
+- File name: Setup_Win_20-12-2022_13-48-52.zip
+- File description: Zip archive likely downloaded from fake software page
+
+- SHA256 hash: 866a63ec6d217e594a69b34bfe3a629c4eac3b6f117fe191df1a2bac3b4f5491
+- File size: 2,818,048 bytes
+- File name: Setup_Win_20-12-2022_13-48-52.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF ISO IMAGE:
+
+- SHA256 hash: 6a973a28800a689db38973fa0465a80915200e5d1e8a5ca0a7876cfb7428270c
+- File size: 2,990 bytes
+- File name: LicenseSoft_12-19.lnk
+- File description: Windows shortcut used to run the installer DLL for IcedID below
+- Shortcut: rundll32.exe \liemap.dat,init
+
+- SHA256 hash: 90551d31eb982f6e35514e0d028465f9699b21fccdc3e7a1ca53f839b5055a98
+- File size: 1,363,734 bytes
+- File name: liemap.dat
+- File description: 64-bit DLL installer for IcedID
+- Run method: rundll32.exe [filename],init
+
+MALWARE/ARTIFACTS FROM AN INFECTION:
+
+- SHA256 hash: 8ec930ccc29c7a7ee877ab046203f7770b21e5740f2ca826abdfc3a6ca6a04b6
+- File size: 1,713,300 bytes
+- File location: hxxp://trbiriumpa[.]com/
+- File description: gzip binary on trbiriumpa[.]com retrieved by above IcedID installer
+
+- SHA256 hash: 509628d0ce1f30b6ce77aa484fb687aa23fa9d7ee73ed929e149eee354b3a3b0
+- File size: 352,906 bytes
+- File location: C:\Users\[useranem]\AppData\Roaming\SpendMesh\license.dat
+- File description: data binary used to run persistent IcedID DLL below
+
+- SHA256 hash: 38cb14c7cd94b1662dd8432042b286bf597f8b29b22eb5f682977bd9f2a37d68
+- File size: 1,359,638 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[username]\[username]\jejiia4.dll
+- File description: 64-bit DLL for persistent IcedID infection
+- Run method: rundll32.exe [filename],init --arpa="[path to license.dat]"
+
+- SHA256 hash: 56f354afbff05d3d6f4a8a8f85ba5457a65cda09cc7443fa75fca1169676bf26
+- File size: 229,376 bytes
+- File location: hxxp://209.182.227[.]138/download/x64.dll
+- File location: C:\Users\[useranem]\AppData\Local\Temp\Uyusdu.dll
+- File description: 64-bit DLL for Cobalt Strike
+- Run method: regsvr32.exe [filename]
+
+INITIAL ICEDID C2, DOMAIN FOR GZIP BINARY:
+
+- 143.198.92[.]88 port 80 - trbiriumpa[.]com - GET / HTTP/1.1
+
+ICEDID C2 TRAFFIC:
+
+- 103.208.85[.]184 port 443 - thinkiwond[.]skin - HTTPS traffic
+- 103.208.85[.]184 port 443 - artiwal[.]pics - HTTPS traffic
+
+TRAFFIC FOR COBALT STRIKE:
+
+- 209.182.227[.]138 port 80 - 209.182.227[.]138 - GET /download/x64.dll HTTP/1.1
+- 23.81.246[.]152 port 443 - xedefeg[.]com - HTTPS traffic

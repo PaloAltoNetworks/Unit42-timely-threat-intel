@@ -1,0 +1,102 @@
+2022-11-03 (THURSDAY) - ICEDID (BOKBOT) FROM EMOTET EPOCH 4 INFECTION
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1588524735368937484
+
+NOTES:
+
+- Starting in mid-July 2022, Emotet stopped spamming.  The botnet infrastructure remained alive, but active campaigns had ceased.
+
+- By Wednesday 2022-11-02, both Emotet botnets (epoch 4 and epoch 5) resumed generating massive amounts of spam.
+
+- Current Emotet infection chains are similar to previous activity, with new lures using Excel spreadsheets to kick off new infections.
+
+- Since Thursday 2022-11-03, IcedID has appeared as follow-up malware from some Emotet infections.
+
+- In previous years, Emotet has sent IcedID as follow-up malware, so this is not unprecedented.  Previous examples of IcedID from Emotet:
+
+  -- https://www.malware-traffic-analysis.net/2018/06/19/index.html
+  -- https://www.malware-traffic-analysis.net/2018/06/26/index.html
+  -- https://www.malware-traffic-analysis.net/2018/06/27/index2.html
+  -- https://www.malware-traffic-analysis.net/2018/09/04/index2.html
+  -- https://isc.sans.edu/forums/diary/Emotet+infection+with+IcedID+banking+Trojan/24312/
+  -- https://www.malware-traffic-analysis.net/2018/12/07/index.html
+  -- https://www.malware-traffic-analysis.net/2018/12/10/index2.html
+  -- https://www.malware-traffic-analysis.net/2019/01/18/index.html
+  -- https://www.malware-traffic-analysis.net/2019/02/15/index.html (Emotet --> IcedID --> Trickbot)
+
+INDICATORS FROM TODAY'S INFECTION:
+
+PERSISTENT EMOTET EPOCH 4 MALWARE DLL:
+
+- SHA256 hash: a116213f16ecd416cbde43ddf94d3e5af1935886d19db1e978225c15616c1d7b
+- File size: 763,392 bytes
+- File location: hxxp://www.muyehuayi[.]com/cmp/Vtm2m7z88g/
+- File location: C:\Users\[username]\AppData\Local\EEdafoGqJrPp\pYvzqbuWqgBOj.dll
+- File description: 64-bit DLL for Emotet (epoch 4)
+- Run method: regsvr32.exe [filename]
+
+ICEDID MALWARE/ARTIFACTS:
+
+- SHA256 hash: 05a3a84096bcdc2a5cf87d07ede96aff7fd5037679f9585fee9a227c0d9cbf51
+- File size: 369,152 bytes
+- File location: C:\Users\[username]\AppData\Local\EEdafoGqJrPp\VOcAfmAvKLlv.dll
+- File description: 64-bit DLL installer for IcedID sent through HTTPS Emotet C2 traffic
+- Run method: rundll32.exe [filename],#1
+
+- SHA256 hash: dd7aaf2f085ed894d59430d7993b7f35151c4699d443451dde0a498fb1a80095
+- File size: 842,180 bytes
+- File location: hxxps://bayernbadabum[.]com/botpack.dat
+- File description: Data binary retrieved by IcedID installer DLL
+
+- SHA256 hash: ba6a1ce17dd9ff4eddccad6cba853c8a0b84e14cc62e9e868ecc2a0841f6676b
+- File size: 344,810 bytes
+- File location: C:\Users\[username]\Roaming\jhghjdfghdfgh
+- File description: Data binary used in scheduled task to run persistent IcedID DLL
+
+- SHA256 hash: a9037ea919538ac125a8a235c73875afea68ce45c5d9f1a86fbf6ec898cdc08b
+- File size: 496,640 bytes
+- File location: C:\Users\[username]\AppData\Local\{3B3CEF60-AFC9-5F9B-3CED-DE6BE81FCDCE}\dauzjo4\miatomdo2.dll
+- File description: persistent IcedID DLL (64-bit) kept persistent through scheduled task
+- Run method: rundll32.exe [filename],#1 --uyocas="[path to jhghjdfghdfgh]"
+
+TRAFFIC FROM EMOTET INFECTION:
+
+WEB TRAFFIC FOR EMOTET DLL FILES:
+
+- 185.98.131[.]156:80 - hxxp://ftp.agir-santeinternationale[.]com/doctors/KAacngW97n4ApzVBDdGy/
+- 163.172.115[.]126:80 - hxxp://www.vinyz[.]com/admin3693/BDFFgAZ6zBRumcUSG/
+- 81.68.152[.]197:80 - hxxp://ly.yjlianyi[.]top/wp-admin/NRAdJ/
+- 103.229.183[.]58:80 - hxxp://www.muyehuayi[.]com/cmp/Vtm2m7z88g/
+
+EMOTET C2 ACTIVITY:
+
+- 182.162.143[.]56:443 - HTTPS traffic
+- 146.59.151[.]250:443 - HTTPS traffic
+- 169.60.181[.]70:8080 - HTTPS traffic
+- 149.28.143[.]92:443 - HTTPS traffic
+- 91.187.140[.]35:8080 - HTTPS traffic
+- 87.63.160[.]88:80 - HTTPS traffic
+- 94.23.45[.]86:4143 - HTTPS traffic
+- 167.172.199[.]165:8080 - HTTPS traffic
+- 213.239.212[.]5:443 - HTTPS traffic
+- 104.168.155[.]143:8080 - HTTPS traffic
+- 103.75.201[.]2:443 - HTTPS traffic
+- 164.90.222[.]65:443 - HTTPS traffic
+- 27.254.65[.]114:8080 - HTTPS traffic
+- 159.65.3[.]147:7080 - HTTPS traffic
+- 51.161.73[.]194:443 - HTTPS traffic
+- 172.105.226[.]75:8080 - HTTPS traffic
+- 165.227.166[.]238:8080 - HTTPS traffic
+- 149.56.131[.]28:8080 - HTTPS traffic
+- 159.89.202[.]34:443 - HTTPS traffic
+- 213.32.75[.]32:8080 - HTTPS traffic
+- 96.125.171[.]165:7080 - HTTPS traffic
+
+ICEDID TRAFFIC:
+
+- 94.232.43[.]215:443 - hxxps://bayernbadabum[.]com/botpack.dat
+- 87.251.67[.]168:443 - spkdeutshnewsupp[.]com - HTTPS traffic
+- 5.61.44[.]218:443 - newscommercde[.]com - HTTPS traffic
+- 94.232.43[.]213:443 - nrwmarkettoys[.]com - HTTPS traffic

