@@ -1,5 +1,10 @@
 2023-10-18 (WEDNESDAY) - ICEDID FORKED VARIANT WITH BACKCONNECT, ANUBIS VNC, COBALT STRIKE & SCREENCONNECT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_icedid-backconnect-anubisvnc-activity-7121114100046168064-TDqK
+- https://twitter.com/Unit42_Intel/status/1715348477809402118
+
 NOTES:
 
 - The forked IcedID (Bokbot) variant was reported by Proofpoint earlier this year:
