@@ -1,0 +1,98 @@
+2022-08-03 (WEDNESDAY) - ICEDID (BOKBOT) INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1555255274897801216
+
+ORIGINAL REFERENCES:
+
+- https://twitter.com/pr0xylife/status/1554884205070499845
+- https://twitter.com/Myrtus0x0/status/1554892382663053313
+
+INFECTION CHAIN:
+
+- email --> attached zip archive --> extracted ISO image --> files to install IcedID --> IcedID C2 --> Cobalt Strike
+
+ZIP ATTACHMENT AND EXTRACTED ISO IMAGE:
+
+- SHA256 hash: 72c0ab4ff621352f59c68fc3c6dc8a613470cba9b863985ac3f4ca219629b7de
+- File size: 119,548 bytes
+- File name: August_020822_2634_pdf.zip
+- File description: zip archive attached to email
+
+- SHA256 hash: 7e2b3d9795856b837bde2b562ff1c672f248764c5d44a4b525425481d4cfb255
+- File size: 415,744 bytes
+- File name: August_7937_pdf.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF ISO USED FOR INFECTION:
+
+- SHA256 hash: 7c5af344f948f56dab9c1c10b9c79d090734f8f519f169a7b18a08a682f18a32
+- File size: 1,255 bytes
+- File name: 5486_pdf.lnk
+- File description: Windows shortcut
+- Shortcut: C:\well\withOutWhichINo.bat
+
+- SHA256 hash: 6f753a8dbffbe3886dc437cda888ece1521a383e7bbb40cfd5996bac007808c4
+- File size: 43 bytes
+- File name: well\withOutWhichINo.bat
+- File description: Batch file run by the Windows shortcut
+
+- SHA256 hash: 2e671aa9208ea3b649f402930fca1be646f755f886645dc1a606432ef61241f4
+- File size: 186 bytes
+- File name: well\evenCouldTheseWayOr.js
+- File description: script run by the above batch file
+
+- SHA256 hash: 6942bdc3fef603f86e7c33e427668c15ea38401bb7a0fec693ac6bc8d9156021
+- File size: 64,512 bytes
+- File name: well\theyItsThisSomeThat.txt
+- File description: 64-bit DLL installer for IcedID
+- Run method: rundll32.exe [filename],#1
+
+FILES FROM THE INFECTION:
+
+- SHA256 hash: 619b6aebf34be0e7def2172ea9c0a44093247b3b1d433fb868c135285cf5250d
+- File size: 393,659 bytes
+- File location: http://getmeaninwurz[.]com/
+- File description: gzip binary from getmeaninwurz[.]com used to creat license.dat and peristent IcedID DLL
+
+- SHA256 hash: 1de8b101cf9f0fabc9f086bddb662c89d92c903c5db107910b3898537d4aa8e7
+- File size: 342,218 bytes
+- File location: C:\Users\[username]\AppData\Roaming\OrphanExample\license.dat
+- File description: data binary used to run persistent DLL for IcedID
+
+- SHA256 hash: 91b51e17fbbea3524af6957c20345165ddc2d0aa60a0a1e1b283ac21c832b5ac
+- File size: 50,688 bytes
+- File location: C:\Users\[username]\AppData\Local\[username]\xoeyzeae4.dll
+- File description: 64-bit persistent DLL for IcedID
+- Run method: rundll32.exe [filename],#1 --ew="[path to license.dat]"
+
+- SHA256 hash: 74ace0111970edf84a676c96b0c8180b2f2f6bc0a3f8e7bd1db4c9505e7e1d17
+- File size: 1,018,880 bytes
+- File location: hxxp://voxepimid[.]com/Lssaas.dll
+- File location: C:\User\[username]\AppData\Local\Temp\Afep1.exe
+- File location: C:\User\[username]\AppData\Local\Temp\Ivwied1.exe
+- File location: C:\User\[username]\AppData\Local\Temp\Mipeis3.exe
+- File location: C:\User\[username]\AppData\Local\Temp\Tiax2.exe
+- File location: C:\User\[username]\AppData\Local\Temp\Ufze.dll
+- File location: C:\User\[username]\AppData\Local\Temp\Uqvi1.dll
+- File description: 64-bit DLL stager for Cobalt Strike
+- Run method: regsvr32.exe [filename]
+
+TRAFFIC FROM THE INFECTION:
+
+INSTALLER RETRIEVES GZIP BINARY:
+
+- 159.89.43[.]72 port 80 - getmeaninwurz[.]com - GET / HTTP/1.1 
+
+ICEDID C2 TRAFFIC:
+
+- 165.227.210[.]86 port 443 - wronigrabs[.]com - HTTPS traffic
+- 165.227.210[.]86 port 443 - cleverchaosname[.]com - HTTPS traffic
+- 91.234.254[.]173 port 443 - weolaneocar[.]com - HTTPS traffic
+- 91.234.254[.]173 port 443 - nokainptisarda[.]com - HTTPS traffic
+
+COBALT STRIKE ACTIVITY:
+
+- 45.153.241[.]65 port 80 - voxepimid[.]com - GET /Lssaas.dll HTTP/1.1 
+- 185.173.34[.]75 port 443 - muwokok[.]com - HTTPS traffic

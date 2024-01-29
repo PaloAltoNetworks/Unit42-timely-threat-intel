@@ -1,0 +1,83 @@
+2022-09-13 (TUESDAY) - QAKBOT (QBOT) "BB" DISTRIBUTION ACTIVITY
+
+REFERENCE:
+
+- 
+
+INFECTION CHAIN:
+
+- thread-hijacked email --> link --> password-protected zip --> Windows shortcut --> HTTPS traffic for Qakbot DLL --> Qakbot post-infection activity
+
+NOTES:
+
+- After an absence since mid-July 2022, the criminals behind Qakbot resumed spamming as early as Thursday 2022-09-08.
+
+- In this Qabkto DLL sample, the metadata tag used to identify the distribution channel is "bb"
+
+- Today's infection was generated using an English language (US-based) thread-hijacked email.
+
+- URL from email: hxxps://outrankdigital[.]com/qt/btteuaea
+- URL for zip archive: hxxps://outrankdigital[.]com/qt/Voluptasbeatae575320321.zip
+- URL for script file: hxxps://nkbsuic[.]com/NXGcMPr/130.html
+- URL for initial Qakbot DLL: hxxps://diarioinformador[.]com/4IJ0/dhn.html
+
+- Password for zip archive: U4613
+
+INITIAL TRAFFIC:
+
+- 119.18.54[.]84 port 443 - hxxps://outrankdigital[.]in/qt/btteuaea
+- 119.18.54[.]84 port 443 - hxxps://outrankdigital[.]in/qt/Voluptasbeatae575320321.zip
+- 162.241.80[.]15 port 443 - hxxps://nkbsuic[.]com/NXGcMPr/130.html
+- 108.167.180[.]164 port 443 - hxxps://diarioinformador[.]com/4IJ0/dhn.html
+
+UNSUCCESSFUL QAKBOT POST-INFECTION TCP ATTEMPTS:
+
+- 210.195.18[.]76 port 2222 - attempted TCP connections
+- 81.214.220[.]237 port 443 - attempted TCP connections
+- 98.180.234[.]228 port 443 - attempted TCP connections
+- 88.246.170[.]2 port 443 - attempted TCP connections
+- 201.177.163[.]176 port 443 - attempted TCP connections
+
+QAKBOT POST-INFECTION TRAFFIC:
+
+- 24.178.196[.]158 port 2222 - HTTPS traffic
+- 37.252.0[.]102 port 443 - HTTPS traffic *
+- port 443 - www.openssl.org - HTTPS traffic (connectivity check) not inherently malicious
+- 23.111.114[.]52 port 65400 - TCP traffic **
+- port 443 - api.ipify.org - HTTPS traffic (IP address check) not inherently malicious
+- port 2525 - mail.smtp2go.com - email banner traffic (connectivity check) not inherently malicious
+- port 465 - smtp-relay.gmail.com - email banner traffic (connectivity check) not inherently malicious
+
+* NOTE: This IP has been previoulsy used by Qakbot, with the same HTTPS server and certificate issuer data.
+
+** NOTE: This is the same IP Qakbot has consistently used for TCP port 65400 traffic since it reappeared in September 2021 after a brief absence.
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: d20cdaceb7f849ffb336ce955eb6a0cfb80ae0e57d4fa1a1c5774eab95d3c4c1
+- File size: 1,216 bytes
+- File location: hxxps://outrankdigital[.]in/qt/Voluptasbeatae575320321.zip
+- File name: Voluptasbeatae575320321.zip
+- File description: password-protected zip archive downloaded from link in email
+- Password: U4613
+- Note: This file has a different file hash and content each time it is downloaded
+
+- SHA256 hash: 5a886f5043cbe61180a704221a2b8d66d921d0ecbd762c06f856be59900aca83
+- File size: 2,146 bytes
+- File location: Excepturiet\Temporaquisquam.lnk
+- File description: Extracted from the above zip archive, Windows shortcut for Qakbot
+
+- SHA256 hash: 6b40526dd6957cfb079729fc3795f2311fec32cca21d8bf6293d04af2e35429c
+- File size: 139,334 bytes
+- File location: hxxps://nkbsuic[.]com/NXGcMPr/130.html
+- File location: C:\Users\[username]\AppData\Roaming\MJj\eTaJ\Tw98D.Qs1v.OPHB.js
+- File description: script file retrieved by above Windows shortcut
+- Note: This file is a different file hash each time it is downloaded
+
+- SHA256 hash: 95682615b30f5ea299b4e60dba79f83b6d09052acab3cb9e1730b480b7dab340
+- File size: 450,844 bytes
+- File location: hxxps://diarioinformador[.]com/4IJ0/dhn.html
+- File location: C:\Users\[username]\AppData\Roaming\MJj\eTaJ\_KUB..html
+- File description: Initial Qakbot 32-bit DLL retrieved by above script file
+- Run method: regsvr32.exe [filename]
+- Note: This file is a different size and file hash each time it is downloaded

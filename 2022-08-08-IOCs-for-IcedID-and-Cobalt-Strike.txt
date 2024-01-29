@@ -1,0 +1,78 @@
+2022-08-08 (MONDAY) - ICEDID (BOKBOT) INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1557009330762809348
+
+INFECTION CHAIN:
+
+- email --> password-protected zip archive --> extracted ISO image --> files to install IcedID --> IcedID C2 --> Cobalt Strike
+
+ZIP ATTACHMENT AND EXTRACTED ISO IMAGE:
+
+- SHA256 hash: fb6d23f69d14d474ce096da4dcfea27a84c93f42c96f6dd8295d33ef2845b6c7
+- File size: 554,430 bytes
+- File name: erosstrucking-file-08.08.2022.zip
+- File description: password-protected zip archive
+- Password: office080822
+
+- SHA256 hash: d403df3fb181560d6ebf4885b538c5af86e718fecfabc73219b64924d74dd0eb
+- File size: 1,019,904 bytes
+- File name: order-130722.28554.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF ISO IMAGE:
+
+- SHA256 hash: 3d279aa8f56e468a014a916362540975958b9e9172d658eb57065a8a230632fa
+- File size: 401,115 bytes
+- File name: pss10r.chm
+- File description: CHM (Microsoft Compiled HTML Help) file used to run IcedID installer DLL
+
+- SHA256 hash: d240bd25a0516bf1a6f6b3f080b8d649ed2b116c145dd919f65c05d20fc73131
+- File size: 246,272 bytes
+- File name: app.dll
+- File description: 64-bit DLL installer for IcedID, hidden file on the ISO image.
+- Run method: rundll32.exe [filename],#1
+
+FILES FROM THE INFECTION:
+
+- SHA256 hash: e571bb9fa8d7aa7125b52f768d1b723e440ec352621a2c5410793a20a9eb1a01
+- File size: 576,956 bytes
+- File location: hxxp://abegelkunic[.]com/
+- File description: gzip binary from abegelkunic.com used to creat license.dat and peristent IcedID DLL
+
+- SHA256 hash: 1de8b101cf9f0fabc9f086bddb662c89d92c903c5db107910b3898537d4aa8e7
+- File size: 342,218 bytes
+- File location: C:\Users\[username]\AppData\Roaming\PioneerSilly\license.dat
+- File description: data binary used to run persistent DLL for IcedID
+
+- SHA256 hash: 62ddbb31a8c75afe47c5f55288da2082bc2fdb34303b203cb6d46d00fcfe200a
+- File size: 233,984 bytes
+- File location: C:\Users\[username]\AppData\Local\{6CAB6B1F-1147-D823-B509-235172939D4D}\Utimmiws.dll
+- File description: 64-bit persistent DLL for IcedID
+- Run method: rundll32.exe [filename],#1 --giqo="[path to license.dat]"
+
+- SHA256 hash: af0161e32347bfcf617e1783f4a4a97154f5e2e4da55f0b8ac65e99fa746a907
+- File size: 1,017,856 bytes
+- File location: hxxp://104.238.220[.]131/download/sys.exe 
+- File location: C:\User\[username]\AppData\Local\Temp\Liixke.exe
+- File location: C:\User\[username]\AppData\Local\Temp\sojeah.exe
+- File description: 64-bit EXE stager for Cobalt Strike
+
+TRAFFIC FROM THE INFECTION:
+
+INSTALLER RETRIEVES GZIP BINARY:
+
+- 178.62.238[.]75 port 80 - abegelkunic[.]com - GET / HTTP/1.1 
+
+ICEDID C2 TRAFFIC:
+
+- 193.109.120[.]51 port 443 - ultomductingbig[.]pro - HTTPS traffic
+- 146.190.25[.]131 port 443 - alohasockstaina[.]com - HTTPS traffic
+- 46.21.153[.]211 port 443 - wiandukachelly[.]com - HTTPS traffic
+
+COBALT STRIKE ACTIVITY:
+
+- 23.106.223[.]135 port 443 - rehazosipa[.]com - HTTPS traffic, probable Cobalt Strike
+- 104.238.220[.]131 port 80 - 104.238.220[.]131 - GET /download/sys.exe HTTP/1.1 
+- 172.93.179[.]196 port 443 - wafefuvuko[.]com - HTTPS traffic
