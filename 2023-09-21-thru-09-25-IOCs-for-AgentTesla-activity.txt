@@ -2,8 +2,8 @@
 
 REFERENCES:
 
-- https://twitter.com/Unit42_Intel/status/1706667528075022493
 - https://www.linkedin.com/posts/unit42_agenttesla-iocs-threatintelligence-activity-7112433146456928256-tjfu
+- https://twitter.com/Unit42_Intel/status/1706667528075022493
 
 NOTES:
 
