@@ -2,8 +2,8 @@
 
 REFERENCES:
 
-- https://www.linkedin.com/posts/unit42_agenttesla-iocs-threatintelligence-activity-7112433146456928256-tjfu
-- https://twitter.com/malware_traffic/status/1697614650051871040
+- https://www.linkedin.com/posts/unit42_threadhijacked-icedid-bokbot-activity-7103370928696299520-eUf2
+- https://twitter.com/Unit42_Intel/status/1697605312205766960
 
 INFECTION CHAIN:
 
