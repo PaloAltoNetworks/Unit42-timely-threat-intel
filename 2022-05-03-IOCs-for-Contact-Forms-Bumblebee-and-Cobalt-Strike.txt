@@ -1,0 +1,71 @@
+2022-05-03 (TUESDAY) - CONTACT FORMS CAMPAIGN --> BUMBLEBEE --> COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1521831026024239107
+
+CHAIN OF EVENTS:
+
+- Contact form-generated email --> link to URL at storage.googeapis.com --> ISO file download --> Bumblebee infection --> Cobalt Strike activity
+
+NOTES:
+
+- "Contact Forms" is a campaign that has distributed IcedID, Sliver, BazarLoader, and more recently Bumblebee malware.
+
+- This campaign uses a web site's contact form to email recipients messages with malicious links to download malware.
+
+- The Contact Forms campaign most often uses a DMCA violation notice that directs victims to a "Stolen Images Evidence" web page hosted on a URL at storage.googeapis.com.
+
+- In 2021 the Contact Forms campaign also used a "DDoS Attack Proof" theme.
+
+- An initial write-up about this campaign can be found at: https://www.microsoft.com/security/blog/2021/04/09/investigating-a-unique-form-of-email-delivery-for-icedid-malware/
+
+MALWARE RETRIEVED FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: c632b56628303f523b22a26231ae80836fed54df87c8a004f2d348d1b6f951b2
+- File size: 4,521,984 bytes
+- File name: StolenImages_Evidence.iso
+- File description: ISO file downloaded through link in contact forms email
+
+- SHA256 hash: 3c600328e1085dc73d672d068f3056e79e66bec7020be6ae907dd541201cd167
+- File size: 1,623 bytes
+- File location: StolenImages_Evidence.iso\documents.lnk
+- File description: Windows shortcut in the above ISO file
+- Windows shortcut: %windir%\system32.exe /c start
+rundll32.exe mkl2n.dll,KXlNkCkgFC
+
+- SHA256 hash: 0a9efce2cb38eb9e215d4ea308ccdc711659ab75b124dfd49561d6226c431ac2
+- File size: 3,023,872 bytes
+- File location: StolenImages_Evidence.iso\mkl2n.dll
+- File location: C:\ProgramData\96796b3c800e87fc\d99821d3530f702f.dll
+- File description: Bumblebee malware DLL
+- Run method: rundll32.exe [filename],KXlNkCkgFC
+
+- SHA256 hash: 330b74d26d0f25bd9b7cc147c9641241fea4a2a65965039c7a437ef739e51521
+- File size: 140 bytes
+- File location: C:\ProgramData\96796b3c800e87fc\d99821d3530f702f.vbs
+- File description: VBS file made persistent through scheduled task, used to run Bumblebee malware DLL
+
+MALWARE NOTE: 
+
+- No binaries for Cobalt Strike were found saved to disk during a forensic investigation on the infected Windows host.
+
+EXAMPLE OF LINK IN CONTACT FORM-GENERATED EMAIL FOR "STOLEN IMAGES EVIDENCE" PAGE:
+
+- port 443 - hxxps://storage.googleapis[.]com/sf796cw3zbj6nk.appspot.com/sh/f/pub/m/0/fileyxuMxCXbRc2e.html?f=308238708665803200
+
+EXAMPLES OF URLS RETRIEVED BY THE ABOVE PAGE THAT RETURN BASE64 TEXT TO GENERATE ISO FILE:
+
+- 172.67.183[.]217 port 443 - hxxps://baronrtal[.]com/images/logo.jpg
+- 172.67.168[.]3 port 443 - hxxps://bunadist[.]com/images/logo.jpg
+
+BUMBLEBEE C2 TRAFFIC:
+
+- 45.153.243[.]93 port 443 - 45.153.243[.]93 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 179.60.150[.]125 port 443 - HTTPS traffic
+- 172.93.201[.]12 port 443 - cevogesu[.]com - HTTPS traffic
+- 23.106.215[.]100 port 443 - titojukus[.]com - HTTPS traffic
+- 108.177.235[.]172 port 443 - xemigefav[.]com - HTTPS traffic

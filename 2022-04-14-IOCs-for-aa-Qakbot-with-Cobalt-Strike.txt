@@ -1,0 +1,55 @@
+2022-04-14 (THURSDAY) - AA DISTRIBUTION QAKBOT (QBOT) WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1514716895861256192
+
+INFECTION CHAIN:
+
+- email --> link --> zip --> extracted .msi file --> dropped Qakbot DLL --> Qakbot C2 --> Cobalt Strike
+
+NOTES:
+
+- Also known as TA577, aa distribution Qakbot started using .msi files in downloaded zip archives as of Monday 2022-04-11.
+- Reference: https://twitter.com/k3dg3/status/1513514251788464132
+- Reference: https://twitter.com/Max_Mal_/status/1513539551070937093
+
+- Saw the same Cobalt Strike C2 domain and IP address on Monday 2022-04-11 for 172.241.27[.]237 using kuxojemoli[.]com.
+- Reference: https://twitter.com/malware_traffic/status/1513556366346137605
+
+ASSOCIATED MALWARE:
+
+- SHA256: 5c3b39ec6ffbfe05ac0246d98d6ce7287de442896c90d24e256a03da21f3ada9
+- File size: 817,162 bytes
+- File location: hxxps://geobram[.]com/ist/iseerroaemtefspidnle
+- File location: hxxps://geobram[.]com/ist/NO_2950435796.zip 
+- File name: iseerroaemtefspidnle.zip
+- File description: ZIP archive downloaded from link in email
+
+- SHA256: 2b9861436d994bee6a332cbaf71a9fd6f157089062f414207c9effe84bf556e5
+- File size: 977,920 bytes
+- File name: 281.msi
+- File description: MSI file extracted from above ZIP archive
+
+- SHA256: f642fe6b372183af134c1c8cd5f806de37dcea27d6eab2ef53663d61795416e0
+- File size: 1,399,296 bytes
+- File location: C:\Users\[username]\AppData\Local\SetupTest\1.dll
+- File description: Windows DLL for Qakbot (aa distribution tag)
+- Run method: regsvr32.exe [filename]
+
+TRAFFIC TO DOWNLOAD THE INITIAL ZIP ARCHIVE:
+
+- 208.91.198[.]131 port 443 - hxxps://geobram[.]com/ist/iseerroaemtefspidnle
+- 208.91.198[.]131 port 443 - hxxps://geobram[.]com/ist/NO_2950435796.zip
+
+QAKBOT C2 TRAFFIC:
+
+- 47.158.25[.]67 port 443 - attempted TCP connections
+- 45.46.53[.]140 port 2222 - HTTPS traffic
+- port 443 - www.openssl[.]org - connectivity check (not inherently malicious)
+- 23.111.114[.]52 port 65400 - TCP traffic
+- 75.99.168[.]194 port 443 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 172.241.27[.]237 port 443 - kuxojemoli[.]com

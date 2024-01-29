@@ -1,0 +1,37 @@
+2022-04-05 (MONDAY) - BUMBLEBEE INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1512146449345171459
+
+NOTES:
+
+- Bumblebee malware associated with threat actor EXOTIC LILY was reported by Google's Threat Analysis Group (TAG) in March 2022.
+
+- For more information, see: https://blog.google/threat-analysis-group/exposing-initial-access-broker-ties-conti/
+
+- Was not able to recover Cobalt Strike binary from this infection example.
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: a3e023f9666dfacbbc028212682390de436a78e4291c512b0b9f022a05b138f8
+- File size: 2,555,904 bytes
+- File name: documents-0405-13.iso
+- File description: Malicious ISO file with Bumblebee malware
+
+- SHA256 hash: 9dfb32ed9b5756151623a8049eaa7785bf761601eb6c7165beff489cce31bb08
+- File size: 1,199 bytes
+- File name: documents.lnk
+- File description: Windows shortcut to run Blumblebee DLL
+- Shortcut: rundll32.exe setting.dll,IternalJob
+
+- SHA256 hash: 131f7e18bc3ea50cdcf74b618c24f5ae1b38594f8649d80538566b1cceeec683
+- File size: 2,502,144 bytes
+- File name: setting.dll
+- File description: Windows DLL for Bumblebee malware
+- Run method: rundll32.exe setting.dll,IternalJob
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- 192.236.198[.]63 port 443 - 192.236.198[.]63 - Bumblebee HTTPS C2 traffic
+- 23.108.57[.]23 port 443 - cuhitiro[.]com - Cobalt Strike traffic

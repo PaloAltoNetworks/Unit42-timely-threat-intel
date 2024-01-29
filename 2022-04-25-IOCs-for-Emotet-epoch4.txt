@@ -1,0 +1,92 @@
+2022-04-25 (MONDAY) - EMOTET EPOCH 4 MALSPAM WITH WINDOWS SHORTCUT (.LNK) ATTACHMENTS
+
+REFERENCE:
+
+- reference unavailable
+
+NOTES:
+
+- On Friday 2022-04-22, Emotet stopped sending Excel spreadsheets as attachments and began using Windows shortcut (.lnk) files.
+
+- The .lnk file can be directly attached to the emails, or they can be contained in a password-protected zip archive.
+
+- These shortcuts have embedded script appended to the file.
+
+- The shortcut command copys the embedded script to a .vbs file saved to and run from the victim's AppData\Local\Temp directory.
+
+ATTACHMENTS: .LNK FILES:
+
+- f1228e3fc8d14b670dcd05a73e9d8082c5468e7f869c04e4e2a192c24029cb0b  Electronic form 04.25.2022, USA.lnk
+- 4cfaec3d5afa0acd05aeea77cbd77f705659716849c4ffb1c00711e018e7e1d9  Electronic form 04.25.2022.lnk
+- de32b7042c9acd86b5f446c334a415f5f38df8dd71f74d0f826dc3e04e8b735c  Electronic form Dt 04.25.2022.lnk
+- e3a4e4b4fd779cb449b69d2831fe49e22c95eb917bc875a8ff9dea69699a2b75  Form Dt 04.25.2022.lnk
+- 193cf39b5c1d4174fbecc8ed34d476eab20129659e2f16a71341a53f3649819f  form 04.25.2022.lnk
+
+ATTACHMENTS: PASSWORD-PROTECTED ZIP ARCHIVES:
+
+- 4dfcc035699f72fe818d3862985043d7c9507c8fb41fa6daff6b040bd35f2fdb  Electronic form Dt 04.25.2022, United States.zip
+- 175926369c94fbbf586767836fdeb3d1eb23e0b6adaaa4f62d0437d7c1c3ffc5  Form 04.25.2022, US.zip
+- b4cef643571c26d7c96180c665250b3e2a64e6ff6957458c56dc8842640e20b9  form 04.25.2022, US.zip
+- 212b5544fd55f5d5060beec77d80ea600d29fbbce8cd3d6d7ab54af369e59363  INV 2022-04-25_1114, US.zip
+- 6bdac1eb612c6a9f7725a87d19d6a4e9f24012185d33cad66f0234cf0d572f07  INV 2022-04-25_1237, US.zip
+
+.LNK FILES EXTRACTED FROM THE ABOVE ZIP ARCHIVES:
+
+- 846a1548e1f1eb25c026060be4b132aef84c6e72d459ae4ba586e10bd3452e89  Electronic form Dt 04.25.2022, United States.lnk
+- 02eccb041972825d51b71e88450b094cf692b9f5f46f5101ab3f2210e2e1fe71  Form 04.25.2022, US.lnk
+- de494235193ae2144df12e3b5dddfee7f18fe155b71b8d816a010cf2ef95ed5a  form 04.25.2022, US.lnk
+- 406a50eb3bd3815a556e35015d65918b82cba4780c413f2028e3f8c346a5c283  INV 2022-04-25_1114, USA.doc.lnk
+- 19c4740ef48735d8fca435e54bb5ca4f0dea47c14d0a8ebf6f6278469b901eec  INV 2022-04-25_1237, United States.doc.lnk
+
+EXAMPLES OF WINDOWS SHORTCUT COMMANDS:
+
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "Electronic form 04.25.2022, USA.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "Electronic form 04.25.2022.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "Electronic form Dt 04.25.2022, United States.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "Electronic form Dt 04.25.2022.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "form 04.25.2022.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "Form 04.25.2022, US.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "form 04.25.2022, US.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "Form Dt 04.25.2022.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "INV 2022-04-25_1114, USA.doc.lnk"
+- cmd.exe ..\..\Windows\system32\cmd.exe /v:on /c findstr "glKmfOKnQLYKnNs.*" "INV 2022-04-25_1237, United States.doc.lnk"
+
+VBS SCRIPT APPENDED TO .LNK FILES FOR EMOTET:
+
+- SHA256 hash: c9182a9101d90a24fc6367d62e31abdd930b2c7f5e69d53d65468259ce1e295d
+- File size: 3,008 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\YlScZcZKeP.vbs
+
+URLS IN VBS SCRIPT TO RETRIEVE EMOTET DLL:
+
+- hxxps://creemo[.]pl/wp-admin/ZKS1DcdquUT4Bb8Kb/
+- hxxp://filmmogzivota[.]rs/SpryAssets/gDR/
+- hxxp://demo34.ckg[.]hk/service/hhMZrfC7Mnm9JD/
+- hxxp://focusmedica[.]in/fmlib/IxBABMh0I2cLM3qq1GVv/
+- hxxp://cipro[.]mx/prensa/siZP69rBFmibDvuTP1L/
+- hxxp://colegiounamuno[.]es/cgi-bin/E/
+
+EXAMPLE OF 64-BIT DLL FOR EMOTET:
+
+- SHA256 hash: d0c671e54b36dce0f652ef7fa8e18d609a89efff1a05b133d7c2cd536f65f15f
+- File size: 543,744 bytes
+- File location: C:\Users\[username]\AppData\Local\Kfichjg\cbun.zia
+- File type:  PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: 64-bit DLL for Emotet
+- Run method: regsvr32.exe [filename]
+
+EMOTET C2 TRAFFIC:
+
+- 49.231.16[.]102 port 8080 - HTTPS traffic
+- 51.210.176[.]76 port 443 - HTTPS traffic
+- 91.207.181[.]106 port 8080 - HTTPS traffic
+- 93.104.209[.]56 port 8080 - HTTPS traffic
+- 131.100.24[.]199 port 7080 - HTTPS traffic
+- 138.197.147[.]101 port 443 - HTTPS traffic
+- 138.201.142[.]73 port 8080 - attempted TCP connections
+- 176.31.163[.]17 port 8080 - HTTPS traffic
+- 217.160.107[.]189 port 8080 - HTTPS traffic
+
+EMOTET SPAMBOT TRAFFIC:
+
+- various IP addresses over various TCP ports - encrypted SMTP traffic

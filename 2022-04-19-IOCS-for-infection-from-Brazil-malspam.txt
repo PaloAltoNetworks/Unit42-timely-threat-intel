@@ -1,0 +1,51 @@
+2022-04-19 (TUESDAY) - MALWARE INFECTION FROM BRAZIL EMAIL
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1516878897341681665
+
+INFECTION CHAIN:
+
+- email --> link --> zip --> .msi file --> DLL run by legit EXE --> post-infection traffic
+
+EMAIL HEADERS:
+
+- Date: Tue, 19 Apr 2022 21:20:30 +0000 (UTC)
+- Return-Path: <root@mail51.notadobairro[.]com>
+- Received: from mail51.notadobairro[.]com (mail51.notadobairro[.]com [137.184.189[.]240])
+- Subject: Nota Fiscal Eletronica 8286498
+- From: prefeitura@prefeitura.sp.gov.br [spoofed sender]
+
+LINK FROM MESSAGE TEXT:
+
+- hxxps://projeto-nota[.]com/?cid=[recipient's email address]
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 3a4da1e6bbd311133b1232f8b4080ebd2a9e747afd96f8c3eadde8f1dd949d84
+- File size: 14,940,993 bytes
+- File location: hxxp://download.kicks-ass[.]org/PREFEITURAfds.zip
+- File name: PREFEITURAfds.zip
+- File description: zip archive downloaded from link in email
+
+- SHA256 hash: de8dc757ae084e180d13d97afb93b64b678a786dc968657c85004b5a84fef10d
+- File size: 15,470,080 bytes
+- File name: ji89UHECQSfP.msi
+- File description: MSI file extracted from the above zip archive
+
+- SHA256 hash: 3847c039ec8f75424201032f288b86d79822cd9c993e9b9f51bd2f904eed4dfe
+- File size: 14,278,656 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Segun‡a\Aplicativo\zlibai.dll
+- File description: Malware DLL installed from above MSI file
+- Run method: loaded by legitimate file intune.exe in the same directory
+
+INFECTION TRAFFIC:
+
+- 208.109.26[.]144 port 80 - projeto-nota[.]com - GET /?cid=[recipient's email address]
+- 20.226.20[.]129 port 80 - sgfghfhdghdd.doesntexist[.]org - GET /
+- 20.226.20[.]129 port 80 - sgfghfhdghdd.doesntexist[.]org - GET /nfe.jpg
+- 20.226.20[.]129 port 80 - sgfghfhdghdd.doesntexist[.]org - GET /loading2.gif
+- 20.226.20[.]129 port 80 - sgfghfhdghdd.doesntexist[.]org - GET /favicon.ico
+- 20.226.20[.]129 port 80 - gssfsfgf.scrapping[.]cc - GET /354386&tyGUuguyGUYGU435483962329378273892738973492380403UIGIUGGGG438746783/
+- 20.226.20[.]129 port 80 - download.kicks-ass[.]org - GET /PREFEITURAfds.zip
+- 20.226.20[.]129 port 80 - iofajfioshnguiosfui.from-pa[.]com - POST /novidades/inspecionando.php

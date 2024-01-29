@@ -1,0 +1,80 @@
+2022-05-23 (MONDAY) - ICEDID (BOKBOT) INFECTION WITH DARKVNC:
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1529113268559699972
+
+NOTES: 
+
+- Indications of this infection chain originally appeared last week.
+- It apparently started on Monday 2022-05-16.
+- The Windows shortcut file was first reported at https://twitter.com/malwrhunterteam/status/1526557532277424129
+- The associated files were still available online, and we used them to infect a vulnerable Windows host on Monday 2022-05-23.
+- This infection chain likely used email with a link to the zip-ed Windows shortcut as an initial infection vector.
+
+INFECTION CHAIN:
+
+- URL --> ZIP --> LNK --> HTA --> 64-bit EXE installer for IcedID
+
+INFECTION CHAIN STEP-BY-STEP:
+
+- hxxps://hectorcalle[.]com/May-16_2022.zip --> May-16_2022.lnk
+- May-16_2022.lnkÿ--> hxxps://hectorcalle[.]com/093789.hta
+- hxxps://hectorcalle[.]com/093789.hta --> hxxps://hectorcalle[.]com/listbul.exe
+- hxxps://hectorcalle[.]com/listbul.exe --> C:\Users\[username]\listbul.exe
+
+ICEDID INSTALLER TRAFFFIC FOR GZIP BINARY:
+
+- 94.140.116[.]34 port 80 - hxxp://pilatylu[.]com/
+
+ICEDID POST-INFECTION C2 DOMAINS:
+
+- 45.86.229[.]46 port 443 - guguchrome[.]com - HTTPS traffic
+- 45.86.229[.]46 port 443 - attemptersnext[.]site - HTTPS traffic
+- 5.196.103[.]151 port 443 - hipnoguard[.]com - HTTPS traffic
+- 5.196.103[.]151 port 443 - sawertinoit[.]site - HTTPS traffic
+
+FOLLOW-UP MALICIOUS TRAFFIC FOR DARK VNC:
+
+- 88.119.161[.]76 port 8080 - encrypted TCP traffic
+
+MALWARE/ARTIFACTS:
+
+- SHA256 hash: 547be6f1aebb777b6b729b7b919bb5f7d7f068299f96b92b0b5e601a080c3720
+- File size: 1,206 bytes
+- File location: hxxps://hectorcalle[.]com/May-16_2022.zip
+- File description: zip archive, presumably called from link in malicious email
+
+- SHA256 hash: 24ee20d7f254e1e327ecd755848b8b72cd5e6273cf434c3a520f780d5a098ac9
+- File size: 2,559 bytes
+- File name: May-16_2022.lnk
+- File description: Malicious Windows shortcut to install IcedID malware
+
+- SHA256 hash: f59531b810bcbc677907e9fa2be65187b3ee4cd980f633775cc8b2186f3e83d2
+- File size: 130,835 bytes
+- File location: hxxps://hectorcalle[.]com/093789.hta
+- File description: HTA file retrieved by above Windows shortcut
+
+- SHA256 hash: 1e3d10c3c84d7617692174a1f9ae8a658eabb22c7122ef1c8f37f35641ccf7aa
+- File size: 3,000,000 bytes
+- File location: hxxps://hectorcalle[.]com/listbul.exe
+- File location: C:\Users\[username]\listbul.exe
+- File description: IcedID installer retrieved by above HTA file
+
+- SHA256 hash: 28cea90671b362b0c6408c1a031fb571b70f1086a5f40afb1be843d6123ce898
+- File size: 1,337,758 bytes
+- File location: hxxp://pilatylu[.]com/
+- File description: gzip binary from pilatylu.com
+
+- SHA256 hash: dbe9743c9c57247cb9275a23a84909dd78aca59f584df62197bde07cb87bd1ed
+- File size: 342,186 bytes
+- File location: C:\Users\[username]\ApppData\Roaming\LiquidSausage\license.dat
+- File description: Data binary used to run persistent IcedID DLL
+- File note: First submitted to VirusTotal on 2022-04-15
+
+- SHA256 hash: 327006b939627d1300906e10ec00cae6092d97929b104af552c2bd18882f7df3
+- File size: 994,816 bytes
+- File location: C:\Users\[username]\ApppData\Local\[username]\fupodb32.dll
+- File description: 64-bit DLL for persistent IcedID infection
+- Run method: rundll32.exe [filename],#1 --om="LiquidSausage\license.dat"
+- File note: Made persistent through scheduled task
