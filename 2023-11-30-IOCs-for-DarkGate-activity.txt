@@ -1,5 +1,10 @@
 2023-11-30 (THURSDAY): DARKGATE ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintel-malwaretraffic-activity-7136107640379637760-F4OH
+- https://twitter.com/Unit42_Intel/status/1730342021628400092
+
 INITIAL REFERENCE:
 
 - https://www.virustotal.com/gui/file/7156fe159f4f8b13cceb42bcc66972cc6feeced13b34211a3c6b4ba8ead15257
