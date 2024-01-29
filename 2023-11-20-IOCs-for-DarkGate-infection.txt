@@ -1,4 +1,9 @@
-2023-10-20 (MONDAY): DARKGATE INFECTION
+2023-11-20 (MONDAY): DARKGATE INFECTION
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintel-unit42threatintel-activity-7132871065927655428-X2wP
+- https://twitter.com/Unit42_Intel/status/1727105445200814456
 
 INFECTION CHAIN:
 
