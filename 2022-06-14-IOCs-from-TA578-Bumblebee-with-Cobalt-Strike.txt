@@ -1,0 +1,59 @@
+2022-06-14 (TUESDAY) - TA578 THREAD-HIJACKED EMAIL --> BUMBLEBEE --> COBALT STRIKE:
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1536820531227418630
+
+ORIGINAL REFERENCE:
+
+- https://bazaar.abuse.ch/sample/f17744df579de5a9b657299f909d32fd3ef60812f1b0d4f6e7ea518d2f571a39/
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: f17744df579de5a9b657299f909d32fd3ef60812f1b0d4f6e7ea518d2f571a39
+- File size: 956,787 bytes
+- File name: June-14-Request-Scan_103_docx.zip
+- File description: zip archive attached to email
+
+- SHA256 hash: 3499d4981c2a23681954b74793976d8d99e097a905bacd2c3d4e77855e90e4d9
+- File size: 3,211,264 bytes
+- File name: June-14-Request-Scan_103_docx.iso
+- File description: ISO image extracted from the above zip archive
+
+- SHA256 hash: 7ea93d3194137b5e8e11609733b6d1dbefda22cc1e129e25a06e8623f2bbc3e3
+- File size: 2,098 bytes
+- File name: documents.lnk
+- File description: Windows shortcut contained in above ISO image
+- Command from shortcut: C:\Windows\System32\rundll32.exe toso3l.dll,LyirJCyvGh
+
+- SHA256 hash: 2e349b3224cc0d958e6945623098c2d28cc8977e0d45480c0188febbf7b8aa78
+- File size: 1,764,864 bytes
+- File name: toso3l.dll
+- File description: 64-bit DLL for Bumblebee malware
+- Run method: rundll32.exe [filename],LyirJCyvGh
+
+BUMBLEBEE C2 TRAFFIC:
+
+- 193.233.203[.]156 port 443 - HTTPS traffic
+- 39.57.152[.]217 port 440 - attempted TCP connections
+- 69.161.201[.]181 port 382 - attempted TCP connections
+
+COBALT STRIKE TRAFFIC:
+
+- 172.93.181[.]105 port 443 - hocavopeh[.]com - HTTPS traffic
+
+SELF-SIGNED CERTIFICATE ISSUER DATA FOR BUMBLEBEE HTTPS C2 TRAFFIC:
+
+- id-at-countryName=AU
+- id-at-stateOrProvinceName=Some-Staste
+- id-at-organizationName=Internet Widgits Pty Ltd
+
+SECTIGO CERTIFICATE ISSUER DATA FOR COBALT STRIKE HTTPS TRAFFIC:
+
+- id-at-countryName=GB
+- id-at-stateOrProvinceName=Greater Manchester
+- id-at-localityName=Salford
+- id-at-organizationName=Sectigo Limited
+- id-at-commonName=Sectigo RSA Domain Validation Secure Server CA
+
+- NOTE: Sectigo is a legitimate Certificate Authority (CA), and criminals occasionally use Sectigo certificates for their Cobalt Strike servers.

@@ -1,0 +1,72 @@
+2022-06-28 (TUESDAY) - TA578 THREAD-HIJACKED EMAIL --> ICEDID (BOKBOT) --> DARK VNC & COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1541888192802181120
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 458526b6a8158b015fc91b35a417ddd8a17a4b1c03c8a46574f44ee7cef4dc5a
+- File size: 271,967 bytes
+- File name: June-06028_75-Report.zip
+- File description: password-protected zip archive attached to TA578 thread-hijacked email
+- Password: 78934
+
+- SHA256 hash: fb220072b9c47db2fe824cc72c1d3073cab37bf9b80d6adbc0911abc58babb11
+- File size: 1,966,080 bytes
+- File name: June-06028_75-Report.iso
+- File description: ISO image extracted from the above zip archive
+
+- SHA256 hash: bb1fe6256cc9fc42bd74632871700af5f8663fe954a53378298b35c1f187f16b
+- File size: 2,082 bytes
+- File name: documents.lnk
+- File description: Windows shortcut from above ISO image
+- Shortcut: %windir%\System32\rundll32.exe r7kom.dll, #1
+
+- SHA256 hash: dea1ff9aa93653426473b13a0fbc088c3ad5849ec002a6a732d970cb6a01fa2d
+- File size: 461,824 bytes
+- File name: r7kom.dll
+- File description: Hidden 64-bit DLL to install IcedID from above ISO image
+- Run method: rundll32.exe [filename], #1
+
+- SHA256 hash: b00b6da10eb383e32cb52689b5ffac199814ef986dc140c99e14cec1ee132fdc
+- File size: 790,939 bytes
+- File location: hxxp://alionavon[.]com/
+- File description: gzip binary retrieved by IcedID installer to create persistent infection
+
+- SHA256 hash: 4505dd5adb62e76a93c2a7a55823b12f54777607decf84d255a9f49719a2a8aa
+- File size: 448,000 bytes
+- File location: C:\Users\[username]\AppData\Local\[username]\Weyu\ijidwm1.dll
+- File description: persistent 64-bit DLL for IcedID
+- Run method: rundll32.exe [filename],#1 --ixjowe="[path to license.dat]"
+
+- SHA256 hash: dbe9743c9c57247cb9275a23a84909dd78aca59f584df62197bde07cb87bd1ed
+- File size: 342,186 bytes
+- File location: C:\Users\[username]\AppData\Roaming\FruitAlready\license.dat
+- File description: data binary used to run persistent IcedID DLL
+
+INFECTION TRAFFIC:
+
+TRAFFIC FOR GZIP BINARY:
+
+- 165.232.157[.]41 port 80 - alionavon[.]com - GET /
+
+ICEDID C2 TRAFFIC:
+
+- 151.236.30[.]114 port 443 - mioshaltikaz[.]com - HTTPS traffic
+- 103.208.86[.]72 port 443 - cukliosario[.]com - HTTPS traffic
+- 104.168.132[.]251 port 443 - plomiberka[.]com - HTTPS traffic
+
+DARK VNC TRAFFIC:
+
+- 91.238.50[.]80 port 8080 - encoded/encrypted traffic
+
+COBALT STRIKE TRAFFIC (1 OF 2):
+
+- 217.79.243[.]147 port 8080 - bcnupdate[.]com:8080 - GET /lsass
+- 217.79.243[.]147 port 8080 - bcnupdate[.]com - GET /favicon.css?goto=true
+- 217.79.243[.]147 port 8080 - bcnupdate[.]com - POST /avatars
+
+COBALT STRIKE TRAFFIC (2 OF 2):
+
+- 194.37.97[.]139 port 8080 - solvesalesoft[.]com - HTTPS traffic

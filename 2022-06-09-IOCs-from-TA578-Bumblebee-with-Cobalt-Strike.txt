@@ -1,0 +1,85 @@
+2022-06-09 (THURSDAY) - TA578 CONTACT FORMS CAMPAIGN --> BUMBLEBEE --> COBALT STRIKE:
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1535267801384235008
+
+REFERENCE:
+
+- https://twitter.com/malware_traffic/status/1534950475690295296
+
+EXAMPLE OF TA578 CONTACT FORMS CAMPAIGN "STOLEN IMAGES EVIDENCE" PAGE:
+
+- hxxps://storage.googleapis[.]com/bcxkja6v4u8de4.appspot.com/ri9s/f/d/s/f8bP4VVdWO0WA.html?d=086573710585143249
+
+URL CALLED BY THE ABOVE "STOLEN IMAGES EVIDENCE" PAGE:
+
+- hxxps://storage.googleapis[.]com/nvhhkqnv0s8nkz.appspot.com/f/fileGVxZ1t0ssa5C.html 
+
+- NOTE: The above URL returned base64 text used to create a malicious zip archive for this infection
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 5b56671835254cb265c0e2d967882eadb51a7abafd82fda3105f23ec13eca325
+- File size: 897,893 bytes
+- File name: StolenImages_Evidence.zip
+- File description: Downloaded zip archive from "Stolen Images Evidence" page
+
+- SHA256 hash: f3525e18d5c7384ddb59903dab5c6518b15140ce20d8c04efe1db951b4fc39cb
+- File size: 2,752,512 bytes
+- File name: StolenImages_Evidence.iso
+- File description: ISO image extracted from the above zip archive
+
+- SHA256 hash: e105a1d7fae4d0cb63d068b328d83d41e07b7b27b2bfdc65b2e47c5dfb90466b
+- File size: 2,061 bytes
+- File name: documents.lnk
+- File description: Windows shorcut contains in above ISO image
+- Command from shortcut: C:\Windows\System32\cmd.exe/c start docum.bat
+
+- SHA256 hash: f17420ec26a57d29eefd782b046a8c7be41bc1da1d9bf08313e6fc83ccca333e
+- File size: 39 bytes
+- File name: docum.bat
+- File description: Hidden batch file contained in ISO image
+- Batch file content: @start RunDll32 parelmo2.dll,nHqRHTKVae
+
+- SHA256 hash: f3d6cc38e35b0738ac5968f8c15404bbe17a1cc00cd6af03b99942e3d9174c8e
+- File size: 1,261,568 bytes
+- File name: parelmo2.dll
+- File description: 64-bit DLL for Bumblebee malware
+
+BUMBLEBEE C2 TRAFFIC:
+
+- 145.239.30[.]26 port 443 - HTTPS traffic
+
+HTTPS traffic to suspicious Amazon AWS server:
+
+- 18.118.156[.]145 port 443 - ec2-18-118-156-145.us-east-2.compute.amazonaws[.]com - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 23.82.141[.]226 port 443 - zupeyico[.]com - HTTPS traffic
+
+SELF-SIGNED CERTIFICATE ISSUER DATA FOR BUMBLEBEE HTTPS C2 TRAFFIC:
+
+- id-at-countryName=AU
+- id-at-stateOrProvinceName=Some-Staste
+- id-at-organizationName=Internet Widgits Pty Ltd
+
+CERTIFICATE ISSUER DATA FOR HTTPS TRAFFIC TO SUSPICIOUS AMAZON AWS SERVER:
+
+- id-at-countryName=US
+- id-at-stateOrProvinceName=KY
+- id-at-organizationName=Denesik-Walsh
+- id-at-organizationUnitName=system
+- id-at-commonName=denesik.walsh.biz
+- pkcs-9-at-emailAddress=system@denesik.walsh.biz
+
+SECTIGO CERTIFICATE ISSUER DATA FOR COBALT STRIKE HTTPS TRAFFIC:
+
+- id-at-countryName=GB
+- id-at-stateOrProvinceName=Greater Manchester
+- id-at-localityName=Salford
+- id-at-organizationName=Sectigo Limited
+- id-at-commonName=Sectigo RSA Domain Validation Secure Server CA
+
+- NOTE: Sectigo is a legitimate Certificate Authority (CA), and criminals occasionally use Sectigo certificates for their Cobalt Strike servers.

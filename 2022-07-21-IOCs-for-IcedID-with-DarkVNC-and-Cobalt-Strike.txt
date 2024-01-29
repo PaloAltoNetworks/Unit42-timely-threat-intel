@@ -1,0 +1,79 @@
+2022-07-21 (THURSDAY) ICEDID (BOKBOT) INFECTION WITH DARK VNC AND COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1550582228119420928
+
+NOTES:
+
+- Threat actors pushing IcedID have been active this week using thread-hijacked emails with password-protected zip archives containing ISO files.
+
+- Explorblins[.]com for the IcedID gzip binary was also reported on 2022-07-20 at https://twitter.com/pr0xylife/status/1549785810458841089
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: f0e7d595b2e3e5fd67e13a1db24506052487b1501d0b06ff50721c1902b47e8e
+- File size: 68,984 bytes
+- File name: Invoice_unpaid_July_21_document_11.zip
+- File description: Password-protected zip archive (distributed as email attachment)
+- Password: 0721
+
+- SHA256 hash: c00e2bd4b565faca702473ec323c0785fb958156109085c2e65d8e2132d5fe89
+- File size: 1,638,400 bytes
+- File name: Invoice_unpaid_July-21_document_11.iso
+- File description: ISO image extracted from the above zip archive
+
+CONTENTS OF THE ABOVE ISO IMAGE:
+
+- SHA256 hash: d0dcf0ef859cae89068152e08323fd7175eda951a050b36e11db29bcd931abe6
+- File size: 1,327 bytes
+- File name: documents.lnk
+- File description: Windows shortcut to run IcedID installer DLL
+- Shortcut: C:\Windows\System32\cmd.exe /c start rundll32.exe a4lomar.dll, PluginInit
+
+- SHA256 hash: fffeb0a9811bf7f77874eafcc2675c2ebc54a18c63b97b3701d2d4be2b89045f
+- File size: 184,320 bytes
+- File name: a4lomar.dll
+- File description: Hidden file, 64-bit DLL for IcedID installer
+- Run method: rundll32.exe [filename],PluginInit
+
+FILES RETRIEVED OR CREATED BY ICEDID INSTALLER:
+
+- SHA256 hash: 378dcb495c71e6517990d5962b90dc9be07ad9664b9945d3e1f0f12149722801
+- File size: 507,835 bytes
+- File location: hxxp://explorblins[.]com/
+- File description: gzip binary retrieved by IcedID installer
+
+- SHA256 hash: 1de8b101cf9f0fabc9f086bddb662c89d92c903c5db107910b3898537d4aa8e7
+- File size: 342,218 bytes
+- File location: C:\Users\[username]\AppData\Roaming\OrdinaryNarrow\license.dat
+- File description: Created from gzip file, data binary used to run persistent IcedID DLL
+
+- SHA256 hash: d095c4c942974d05f58ade7d2a170333ea04a0e6da215de2492ac3bdee11f6da
+- File size: 164,864 bytes
+- File location: C:\Users\[username]\AppData\Roaming\[username]\seol64\Ebnifu.dll
+- File description: Created from gzip file, persistent IcedID DLL
+- Run method: rundll32.exe [filename],#1 --zoaq="[path to license.dat]"
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+TRAFFIC FOR GZIP BINARY:
+
+- 165.22.201[.]70 port 80 - explorblins[.]com - GET /
+
+POST-INFECTION ICEDID C2 TRAFFIC:
+
+- 91.234.254[.]173 port 443 - weolaneocar[.]com - HTTPS traffic
+- 149.154.152[.]42 port 443 - brebdaalizan[.]com - HTTPS traffic
+- 149.154.152[.]42 port 443 - izzicarat[.]com - HTTPS traffic
+- 165.227.210[.]86 port 443 - cleverchaosname[.]com - HTTPS traffic
+- 188.93.233[.]241 port 443 - pnovajim[.]com - HTTPS traffic
+- 188.93.233[.]241 port 443 - mlidaxeraza[.]com - HTTPS traffic
+
+DARK VNC TRAFFIC:
+
+- 212.114.52[.]91 port 8080 - encrypted/encoded traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 194.135.24[.]240 port 443 - HTTPS traffic
