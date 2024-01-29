@@ -1,5 +1,10 @@
 2023-08-29 (TUESDAY): ICEDID (BOKBOT) ACTIVITY
 
+REFERENCES:
+
+- 
+-https://twitter.com/Unit42_Intel/status/1697605312205766960
+
 INFECTION CHAIN:
 
 - thread-hijacked email --> link to fake Azure page --> URL for .js download --> .js file --> IcedID infection
