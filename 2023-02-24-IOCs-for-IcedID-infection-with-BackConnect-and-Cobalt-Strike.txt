@@ -1,0 +1,54 @@
+2023-02-24 (FRIDAY): ICEDID (BOKBOT) INFECTION WITH BACKCONNECT TRAFFIC AND COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1630265343879835656
+
+NOTES:
+
+- This infection was generated using a OneNote file from Tuesday 2023-02-21 (Tuesday)
+  -- More info at on this wave IcedID at: https://twitter.com/pr0xylife/status/1628155747040210945
+- IP for IcedID BackConnect traffic first reported at: https://twitter.com/teamcymru_S2/status/1629186902011138049
+- Cobalt Strike activity first reported on 2023-02-04: https://twitter.com/drb_ra/status/1622058257823965189
+
+INFECTION TRAFFIC:
+
+ICEDID INSTALLER RETRIEVES GZIP BINARY:
+
+- 193.149.129[.]131 port 80 - aerilaponawki[.]com - GET / HTTP/1.1 
+
+ICEDID C2 TRAFFIC:
+
+- 5.255.102[.]167 port 443 - klindriverfor[.]com -  HTTPS traffic
+- 192.236.163[.]96 port 443 - qoipaboni[.]com -  HTTPS traffic
+- 192.236.163[.]96 port 443 - yelsopotre[.]com -  HTTPS traffic
+
+ICEDID BACKCONNECT TRAFFIC:
+
+- 135.148.217[.]85 port 8080 - TCP traffic for IcedID BackConnect
+
+COBALT STRIKE ACTIVITY:
+
+- Domain: aspnetcenter[.]com - Registered on 2023-02-02
+- First reported as Cobalt Strike on 2023-02-04: https://twitter.com/drb_ra/status/1622058257823965189
+- Domain also seen on other IP addresses: https://twitter.com/search?q=%40drb_ra%20aspnetcenter&f=live
+
+- 23.227.203[.]70 port 80 - aspnetcenter[.]com - GET /aspnetsystem HTTP/1.1 
+- 23.227.203[.]70 port 80 - aspnetcenter[.]com - GET /da.html?close=false HTTP/1.1 
+- 23.227.203[.]70 port 80 - aspnetcenter[.]com - POST /mobile-ipad-home HTTP/1.1  (text/plain)
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 1ab812f7d829444dc703eeb02ea0a955ec839d5e2a9b619d44ac09a91135cad1
+- File size: 418,906 bytes
+- File type: PE32+ executable (DLL) (console) x86-64 (stripped to external PDB), for MS Windows
+- File description: 64-bit DLL installer for IcedID
+- Run method: rundll32.exe [filename],init
+- Sample: https://bazaar.abuse.ch/sample/1ab812f7d829444dc703eeb02ea0a955ec839d5e2a9b619d44ac09a91135cad1/
+
+- SHA256 hash: 8518d86b514edfb1ff301d6526e4fbbc0d65aec52442dc108e0797a34c334879
+- File size: 276,992 bytes
+- File type: PE32+ executable (DLL) (GUI) x86-64 system file, for MS Windows
+- File description: 64-bit DLL for Cobalt Strike
+- Run method: unknown
+- Sample: https://bazaar.abuse.ch/sample/8518d86b514edfb1ff301d6526e4fbbc0d65aec52442dc108e0797a34c334879

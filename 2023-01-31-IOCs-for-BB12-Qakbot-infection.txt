@@ -1,0 +1,89 @@
+2023-01-31 (TUESDAY) - QAKBOT INFECTION (DISTRIBUTION TAG: BB12) WITH COBALT STRIKE AND VNC ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1620531956504055812
+
+NOTES:
+
+- Qakbot stopped sending new spam near the end of December 2022.
+- On 2023-01-31, Qakbot returned from an absence of approximately 1 month and began spamming again.
+- Since its return, Qakbot has been using malicious OneNote (.one) files as the initial malware lure.
+- Post-infection activity from our Qakbot test run today includes Cobalt Strike and VNC traffic.
+
+BB12 INFECTION CHAIN:
+
+- email --> link --> downloaded zip --> extracted .one file --> embedded .hta file -- traffic for Qakbot DLL --> Qakbot C2
+
+OBAMA234 INFECTION CHAIN:
+
+- thread-hijacked email --> attached .one file --> embedded .hta file -- traffic for Qakbot DLL --> Qakbot C2
+
+ MALWARE FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: cbd7136dcdc7746124d93dc05d461ee5def7fc1b498183f453d4cb0c3b4926b6
+- File size: 142,620 bytes
+- File name: 408709.one.zip
+- File location: hxxps://aixjobsonline[.]net/SFAF.php?PPSIITERISAC=1
+- File description: Zip archive downloaded from link in email distributing Qakbot
+
+- SHA256 hash: 002fe00bc429877ee2a786a1d40b80250fd66e341729c5718fc66f759387c88c
+- File size: 185,696 bytes
+- File name: 408709.one
+- File description: OneNote file extracted from the above zip archive
+
+- SHA256 hash: 145e9558ad6396b5eed9b9630213a64cc809318025627a27b14f01cfcf644170
+- File size: 2,536 bytes
+- File name: attachment.hta
+- File description: .hta file attached to above OneNote file, used to download/run the Qakbot DLL
+
+- SHA256 hash: d6e499b57fdf28047d778c1c76a5eb41a03a67e45dd6d8e85e45bac785f64d42
+- File size: 743,422 bytes
+- File location: hxxps://rmbonlineshop[.]com/VV71d8/300123.gif
+- File location: C:\ProgramData\121.png
+- File description: DLL for Qakbot (32-bit) retrieved by the above .hta file
+- Run method: rundll32 [filename],Wind
+- Note: This is a different size and file hash each time the file is downloaded
+
+TRAFFIC FROM AN INFECTION:
+
+LINK FROM EMAIL SENDING ZIP ARCHIVE:
+
+- hxxp://aixjobsonline[.]net/SFAF.php?PPSIITERISAC=1
+- port 443 - aixjobsonline[.]net - HTTPS traffic
+
+MALICIOUS .HTA IN .ONE FILE RETRIEVES QAKBOT DLL:
+
+- port 443 - (HTTPS traffic) - hxxps://rmbonlineshop[.]com/VV71d8/300123.gif
+
+QAKBOT C2 TRAFFIC TO LEGITIMATE DOMAINS:
+
+- port 443 - broadcom.com - HTTPS traffic
+- port 443 - cisco.com - HTTPS traffic
+- port 443 - google.com - HTTPS traffic
+- port 443 - irs.gov - HTTPS traffic
+- port 443 - linkedin.com - HTTPS traffic
+- port 443 - microsoft.com - HTTPS traffic
+- port 443 - oracle.com - HTTPS traffic
+- port 443 - verisign.com - HTTPS traffic
+- port 443 - xfinity.com - HTTPS traffic
+- port 443 - yahoo.com - HTTPS traffic
+- port 443 - www.openssl.org - HTTPS traffic
+
+QAKBOT C2 TRAFFIC:
+
+- 87.10.205[.]117 port 443 - HTTPS traffic
+- 82.121.195[.]187 port 2222 - HTTPS traffic
+- 92.8.190[.]175 port 2222 - HTTPS traffic
+- 5.75.205[.]43 port 443 - HTTPS traffic
+- 23.111.114[.]52 port 65400 - TCP traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 104.237.219[.]36 port 443 - ciruvowuto[.]com - HTTPS traffic
+- 104.237.219[.]36 port 443 - HTTPS traffic
+- 104.237.219[.]36 port 8888 - ciruvowuto[.]com - HTTPS traffic
+
+VNC TRAFFIC:
+
+- 78.31.67[.]7 port 443

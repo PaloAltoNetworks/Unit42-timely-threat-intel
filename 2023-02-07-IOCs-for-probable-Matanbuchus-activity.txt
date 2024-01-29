@@ -1,0 +1,93 @@
+2023-02-07 (TUESDAY) - ONENOTE FILES PUSH PROBABLE UNIDENTIFIED MALWARE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1623349272061136900
+
+[Note: This document was updated 2023-02-08 at 16:31 UTC.]
+
+INFECTION CHAIN OF EVENTS:
+
+- email --> attached OneNote file --> embedded .cmd script --> traffic for installer DLL --> registry update/scheduled task --> 
+  traffic for base64 text --> base64 text converted to unidentified DLL --> unidentified malware C2 traffic
+
+NOTES:
+
+- This malware was sent through email distribution that also sent Qakbot (Qbot).
+- Originally thought this might be Matanbuchus, but it's notably different.
+- In September 2021, we also saw Squirrelwaffle from #Qakbot email distribution, so this is likely a new malware.
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 9019a31723e8dde778639cf5c1eb599bf250d7b6a3a92ba0e3c85b0043644d93
+- File size: 116,904 bytes
+- File size: Item.one
+- File description: malicious OneNote file
+- Sample: https://bazaar.abuse.ch/sample/9019a31723e8dde778639cf5c1eb599bf250d7b6a3a92ba0e3c85b0043644d93/
+
+- SHA256 hash: 9f0c37ff84dd327ff0582104c59478dfc3ac20f7ae5e3c531be5e636f3fea629
+- File size: 185 bytes
+- File location: C:\ProgramData\in.cmd
+- File description: .cmd script file embedded in above OneNote file
+- Sample: https://bazaar.abuse.ch/sample/9f0c37ff84dd327ff0582104c59478dfc3ac20f7ae5e3c531be5e636f3fea629/
+
+- SHA256 hash: 5fb7f3fac0a9b9ab243ee642a0775500c524166ef075035c9510ccbab76ad633
+- File size: 151,360 bytes
+- File location: hxxps://aradcapital[.]com/MpD8Yk/00.gif
+- File location: C:\ProgramData\big.jpg
+- File description: Installer DLL
+- Run method: rundll32.exe [filename],DllRegisterServer
+- Sample: https://bazaar.abuse.ch/sample/5fb7f3fac0a9b9ab243ee642a0775500c524166ef075035c9510ccbab76ad633/
+
+- SHA256 hash: 59f42ecde152f78731e54ea27e761bba748c9309a6ad1c2fd17f0e8b90f8aed1
+- File size: 1,066,136 bytes
+- File location: C:\Users\[username]\AppData\Roaming\\Microsoft\nonresistantOutlivesDictatorial\AphroniaHaimavati.dll
+- File description: persistent DLL
+- Run method: regsvr32 /s [filename]
+- Sample: https://bazaar.abuse.ch/sample/59f42ecde152f78731e54ea27e761bba748c9309a6ad1c2fd17f0e8b90f8aed1/
+
+- SHA256 hash: 3e15f2e2f603d0460b2457cd586fed7ee2e6195bbd39954fd05827d3ec6f4f35
+- File size: 657,920 bytes
+- File location: C:\Users\[username]\AppData\Roaming\\Microsoft\nonresistantOutlivesDictatorial\AphroniaHaimavati.dll
+- File description: Decoy DLL that replaces the above persistent DLL
+- Note 1: After persisitent DLL is run/loaded, this decoy DLL replaces it.
+- Note 2: This file will not do anything when run/loaded, but it's a forensic artifact from the infection.
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+TRAFFIC FOR INSTALLER DLL:
+
+- 45.139.10[.]19 port 443 - hxxps://aradcapital[.]com/MpD8Yk/00.gif
+
+TRAFFIC FOR BASE64 TEXT USED TO CREATE PERSISTENT DLL:
+
+- 37.1.215[.]220 port 443 - hxxps://37.1.215[.]220/messages/DBcB6q9SM6
+
+C2 TRAFFIC:
+
+- 37.1.215[.]220 port 443 - HTTPS traffic
+- 205.204.71[.]238 port 443 - HTTPS traffic
+- 62.197.48[.]230 port 443 - HTTPS traffic
+- 185.87.150[.]108 port 443 - HTTPS traffic
+- 5.45.69[.]171 port 443 - HTTPS traffic
+- 23.227.194[.]96 port 443 - HTTPS traffic
+
+C2 NOTES:
+
+- HTTPS traffic to each of the above IP addresses all use self-signed certificates impersonating slack.com.
+
+- Issuer:
+  -- Country: US
+  -- State/Province: CA
+  -- Organization: Slack Technologies Inc
+  -- Organizational Unit: DigiCert Inc
+  -- Common Name: slack.com
+
+- Validity range of these certificates all have "Not Before" dates from the last few days of January 2023.
+
+- C2 traffic consists of POST requests over HTTPS. Some examples of the URLs:
+
+  -- hxxps://37.1.215[.]220/messages/INJtv97YfpOzznVMY
+  -- hxxps://37.1.215[.]220/messages/ADXDAG6
+  -- hxxps://37.1.215[.]220/messages/KNmplxwwtkyL
+  -- hxxps://205.204.71[.]238/messages/KNmplxwwtkyL

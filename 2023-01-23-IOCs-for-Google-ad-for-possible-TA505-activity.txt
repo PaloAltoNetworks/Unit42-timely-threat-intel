@@ -1,0 +1,69 @@
+2022023-01-23 (MONDAY): GOOGLE AD --> FAKE ANYDESK PAGE --> POSSIBLE TA505 ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1617672614792642560
+
+NOTES:
+
+- Download-cdn[.]com seen in today's traffic is associated with infrastructure previously used for TA505's "Get2" (GetandGo) loader.
+- TA505's Get2 loader was last seen in 2020, back when threat actors more commonly used Microsoft Office documents as initial lures.
+
+INFECTION CHAIN:
+
+- Google ad --> fake AnyDesk page --> MSI --> traffic for persistent DLL --> traffic for additional DLL --> post-infection C2
+
+GOOGLE AD: 
+
+- hxxps://www.googleadservices[.]com/pagead/aclk?sa=L&ai=DChcSEwjXyOnToN78AhW3fG8EHXGmBggYABABGgJqZg&ohost=www.google.com&
+  cid=CAASJuRoQHLL0UjPJuRfBwY5hCvWnzj89qG_kmWAzxtkdnaNbPIElHZF&sig=AOD64_3_5-fOmGsshEyXOapF53KCoq3rWA&q&
+  adurl&ved=2ahUKEwiOwuHToN78AhVGlGoFHRkEAOMQ0Qx6BAgLEAE
+
+- 188.127.239[.]132 - hxxps://www.amydecke[.]online/?gclid=EAIaIQobChMI18jp06De_AIVt3xvBB1xpgYIEAAYASAAEgK_1PD_BwE
+
+FAKE ANYDESK PAGE:
+
+- 191.101.13[.]129 - hxxps://anydeskcloud[.]tech/?gclid=EAIaIQobChMI18jp06De_AIVt3xvBB1xpgYIEAAYASAAEgK_1PD_BwE
+
+MSI FILE DOWNLOAD
+
+- 191.101.13[.]129 - hxxps://anydeskcloud[.]tech/download/AnyDeskSetup_26b30163.msi
+
+DOWNLOADED MSI FILE:
+
+- SHA256 hash: e4edb4cc8f35c7bab6e89774a279593d492714fce9865e53879f87d3704ad96c
+- File size: 11,544,064 bytes
+- File name: AnyDeskSetup_26b30163.msi
+- File description: MSI installer for TA505 malware
+- Sample: https://bazaar.abuse.ch/sample/e4edb4cc8f35c7bab6e89774a279593d492714fce9865e53879f87d3704ad96c/
+- Note: SAH256 hash for this sample was first reported in VT on 2022-12-01.
+
+INFECTION TRAFFIC:
+
+- 152.89.196[.]75 - hxxps://download-cdn[.]com/download.php?f=Ldrp.dll&from=AnyDeskSetup_26b30163.msi  <-- DLL for persistent malware
+- 152.89.196[.]75 - hxxps://download-cdn[.]com/pload/26b30163  <-- Follow-up DLL retrieved by persistent malware
+
+EXAMPLE OF PERSISTENT MALWARE:
+
+- SHA256 hash: caaea7ec83956a823420a78dec430fddb5db65d9fa4bc6555659b9b0c05c817a
+- File size: 112,640 bytes
+- File location: hxxps://download-cdn[.]com/download.php?f=Ldrp.dll&from=AnyDeskSetup_26b30163.msi
+- File location: C:\ProgramData\1c220cdc.dat
+- File description: DLL used to keep TA505 malware persistent
+- Sample: https://bazaar.abuse.ch/sample/caaea7ec83956a823420a78dec430fddb5db65d9fa4bc6555659b9b0c05c817a/
+- Run method: rundll32.exe [filename],#2
+- Note: File hash and file name is different each time the MSI file installer is run, although file size and 
+  placement under C:\ProgramData\ directory remain consistent.
+
+POST-INFECTION C2 TRAFFIC:
+
+- 64.190.113[.]123:443 - TCP traffic
+
+EXAMPLE OF MALWARE RESPONSIBLE FOR POST-INFECTION TRAFFIC:
+
+- SHA256 hash: e14ee6302076a2bb9e5634407500757319d5de9c45305ec6269120b7283b24cf
+- File size: 94,720 bytes
+- File location: hxxps://download-cdn[.]com/pload/26b30163
+- File description: DLL retreived by persistent malware but not saved to disk
+- Sample: https://bazaar.abuse.ch/sample/e14ee6302076a2bb9e5634407500757319d5de9c45305ec6269120b7283b24cf/
+- Note: File hash is different each time this file is retrieved from download-cdn[.]com

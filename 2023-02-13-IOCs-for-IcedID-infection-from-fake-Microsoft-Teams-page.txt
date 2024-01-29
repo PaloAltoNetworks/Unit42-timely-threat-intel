@@ -1,0 +1,60 @@
+2023-02-13 (MONDAY) - ICEDID (BOKBOT) INFECTION FROM FAKE MICROSOFT TEAMS PAGE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1625218084288987136
+
+NOTE:
+
+- The fake Microsoft Teams page was registered on Thursday, 2023-02-09.
+
+- Certificate data for HTTPS from fake Microsoft Teams page indicates this server was established on 2023-02-09.
+
+- This was likely set up for a malvertising campaign as reported earlier this month by Spamhaus at:
+  -- https://www.spamhaus.com/resource-center/a-surge-of-malvertising-across-google-ads-is-distributing-dangerous-malware/
+
+FAKE TEAMS PAGE:
+
+- 85.193.93[.]125 - hxxps://microsofteamsus[.]top/en-us/teams/download-app/
+
+ZIP ARCHIVE DOWNLOAD:
+
+- port 443 - hxxps://firebasestorage.googleapis[.]com/v0/b/hardy-city-377704.appspot.com/o/B3WPGiNEK2%2FSetup_Win_13-02-2023_16-33-16.zip?
+             alt=media&token=ea9a5843-8216-4883-b45b-d0af1a1d80c8
+
+ICEDID INSTALLER RETRIEVED GZIP BINARY:
+
+- 45.61.139[.]138 port 80 - alishabrindeader[.]com - GET /
+
+ICEDID C2:
+
+- 192.3.76[.]227 port 443 - treylercompandium[.]com - HTTPS traffic
+- 192.3.76[.]227 port 443 - qonavlecher[.]com - HTTPS traffic
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 3abf775b4cf70b7e0b86288320b3ce39483ea7b4b2073dc14204c2e229c9f6bf
+- File size: 820,729 bytes
+- File name: Setup_Win_13-02-2023_16-33-16.zip
+- File description: Zip archive downloaded from the fake Microsoft Teams page
+
+- SHA256 hash: 68fcd0ef08f5710071023f45dfcbbd2f03fe02295156b4cbe711e26b38e21c00
+- File size: 742,701,568 bytes
+- File name: Setup_Win_13-02-2023_16-33-14.exe
+- File description: Extracted from the above zip archive, an inflated 64-bit EXE to install IcedID
+
+- SHA256 hash: 7eb6e8fdd19fc6b852713c19a879fe5d17e01dc0fec62fa9dec54a6bed1060e7
+- File size: 1,286,648 bytes
+- File description: gzip binary from alishabrindeader[.]com retrieved by IcedID installer
+- File type: gzip compressed data, was "Table.txt", from FAT filesystem (MS-DOS, OS/2, NT), original size modulo 2^32 1760198
+
+- SHA256 hash: 332afc80371187881ef9a6f80e5c244b44af746b20342b8722f7b56b61604953
+- File size: 354,474 bytes
+- File location: C:\Users\[username]\AppData\Roaming\ClothOriginal\license.dat
+- File description: Data binary used to run persistent IcedID DLL
+
+- SHA256 hash: 28905b90b90bc7dacf6ccd6c2fadd04db5f164099d837ed065c92cc93c0126c5
+- File size: 931,420 bytes
+- File location: C:\Users\[username]\AppData\Local\{C7AD9C9E-113F-1954-F746-CE738D27118A}\zeayexta2.dll
+- File description: Persistent IcedID DLL (64-bit DLL)
+- Run method: rundll32.exe [filename],init --pi="[path to license.dat]"

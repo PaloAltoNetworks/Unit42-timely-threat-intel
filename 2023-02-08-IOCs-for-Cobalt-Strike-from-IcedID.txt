@@ -1,0 +1,32 @@
+2023-02-08 (WEDNESDAY) - COBALT STRIKE FROM ICEDID (BOKBOT) INFECTION
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1623707361184477185
+
+NOTES:
+
+- IcedID infection generated using a OneNote file reported earlier today by @k3dg3 at:
+  -- https://twitter.com/k3dg3/status/1623333951069646857
+
+ICEDID TRAFFIC:
+
+- 80.66.88[.]143 port 80 - ehonlionetodo[.]com - GET /
+- 94.232.46[.]221 port 443 - noosaerty[.]com - HTTPS traffic
+- 37.252.6[.]77 port 443 - palasedelareforma[.]com - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 167.172.154[.]189 port 80 - 167.172.154[.]189 - GET /36.ps1
+- 167.172.154[.]189 port 80 - 167.172.154[.]189 - GET /b360802.dll
+- 79.132.128[.]191 port 443 - thefirstupd[.]com - HTTPS traffic
+
+COBALT STRIKE STAGER:
+
+- SHA256 hash: 9e68ac920bae102ccf1829ae8b8c212cc3046dd82114966c74e740df68b76fcd
+- File size: 754,688 bytes
+- File location: hxxp://167.172.154[.]189/b360802.dll
+- File location: C:\Windows\tasks\si.dll
+- File description: 64-bit DLL stager for Cobalt Strike
+- Run method: rundll32.exe [filename],ApendMenu 
+- Sample: https://bazaar.abuse.ch/sample/9e68ac920bae102ccf1829ae8b8c212cc3046dd82114966c74e740df68b76fcd/
