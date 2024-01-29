@@ -1,0 +1,86 @@
+2022-03-01 (TUESDAY) - EMOTET EPOCH 4 INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1498802280992227330
+
+INFECTION CHAIN:
+
+- email --> attached Excel file --> enable macros --> Emotet DLL --> Emotet C2 --> Cobalt Strike
+
+TIMELINE FROM AN INFECTED WINDOWS HOST:
+
+- Initial Emotet DLL downloaded: 2022-03-01 at 18:38 UTC
+- Emotet C2 started: 2022-03-01 at 18:38 UTC
+- Cobalt Strike traffic started: 2022-03-01 at 19:04 UTC
+- Spambot activity started: 2022-03-01 at 19:24 UTC
+
+INFORMATION FROM EPOCH 4 EMAIL USED FOR THIS INFECTION:
+
+- Received: from relay.shared-server.net (relay.shared-server.net [211.13.204.68])
+- Received: from [210.237.60.47] (flets-210-237-060-047.fip.synapse.ne.jp [210.237.60.47])
+- Date: Wed, 02 Mar 2022 01:37:29 -0900
+- From: "[spoofed sender name]" <t_matsuoka@toyoaquatech.co.jp>
+- Subject: Re: [information removed]
+- Attachment name: 2022-03-01_1137- Statement.xlsm
+
+EMOTET EPOCH 4 SPREADSHEET:
+
+- SHA256 hash: b7a364b209fe7924dbe422a9f4763723bc56ee7abf7b1f05fe1d3bb9ac3ae502
+- File size: 47,699 bytes
+- File name: 2022-03-01_1137- Statement.xlsm
+- File type: Microsoft Excel 2007+
+- File description: Excel file with macro for Emotet
+
+EMOTET EPOCH 4 DLL:
+
+- SHA256 hash: d9381d778e21373428040d10d06da1f739cd527686797aaeaae93a4a9698bb40
+- File size: 505,856 bytes
+- File location: hxxp://diacrestgroup[.]com/ggv3rjy/9/
+- File location: C:\Users\[username]\aew.ocx
+- File location: C:\Users\[username]\AppData\Local\Phxnzljad\wcgzvziqg.ljk
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- Run method: regsvr32.exe /s [filename]
+- File description: Windows DLL for Emotet
+
+COBALT STRIKE:
+
+- SHA256 hash: 26b4f70f421cd52e5c567ff123495bed2b952f63348059bde71780fd935e846f
+- File size: 729,600 bytes
+- File location: C:\Users\[username]\AppData\Local\Phxnzljad\wcgzvziqg.ljk
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- File description: Windows 64-bit EXE for Cobalt Strike
+
+TRAFFIC:
+
+URLS USED BY SPREADSHEET MACRO FOR EMOTET EPOCH 4 DLL:
+
+- hxxp://diacrestgroup[.]com/ggv3rjy/9/
+- hxxps://merturku[.]com/blogs/IFcif/
+- hxxps://winnieswondersaviary[.]com/wp-content/GfGvSMj6HihGNZZa9T/
+- hxxps://mayatherm[.]com/vendor/3Vk/
+- hxxps://dbmtechnologies[.]ca/wp-content/oZE7jRqRoPg7zVVW9/
+
+TRAFFIC FOR EMOTET EPOCH 4 DLL:
+
+- port 80 - diacrestgroup[.]com - GET /ggv3rjy/9/
+
+EMOTET EPOCH 4 C2 TRAFFIC:
+
+- 209.15.236[.]39 port 8080 - HTTPS traffic
+- 147.139.134[.]226 port 443 - HTTPS traffic
+- 134.209.156[.]68 port 443 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 139.60.161[.]225 port 80 - klycnmik[.]com - GET /jquery-3.3.1.min.js
+- 139.60.161[.]225 port 443 - klycnmik[.]com - HTTPS traffic
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=Jm3Rhx5d4r8UVOC3
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=oyD60JsQyeiRGcvg
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=zoUwu_a1A4P8vAGL
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=RFSOk3xkvat2bb-j
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=iD5jwrAOUPq6B1Ly
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=XNQtT2TkHndu7Rx_
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=nyeBQacXsnmtHrBx
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=sgrrfYo62EWAM9pN
+- 139.60.161[.]225 port 80 - klycnmik[.]com - POST /jquery-3.3.2.min.js?__cfduid=Gyjf2yMY7OMpEe7r

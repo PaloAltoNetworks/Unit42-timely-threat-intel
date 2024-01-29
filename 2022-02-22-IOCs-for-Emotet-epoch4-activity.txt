@@ -1,0 +1,61 @@
+2022-02-22 (TUESDAY) - EMOTET EPOCH 4 INDICATORS
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1496623426538291200
+
+NOTE:
+
+- This is a small set of indicators for Emotet epoch 4 activity on 2022-02-22
+
+SHA256 HASHES FROM 2 EXAMPLES OF PASSWORD-PROTECTED ZIP ATTACHMENT AND EXTRACTED EXCEL FILES: 
+
+- NOTE: zip password: 4vahobk5lzs
+- 2393aa0a0424086dc266fd5b5370f1f7a365f5c70ae33334a4d760cd084e19de  2022-22-02_1239.zip
+- 0ccfb233a6d245f9f626e6f2e320497c44870d23ac070821490de5495ad5978a  2022-22-02_1239.xls
+- 3689034e54b8e8cd72b779daf8e35765f495e46ca0107affd702e1ec731a576b  2022-22-02_1617.zip
+- dfcb4b56f39a4578d47734699e8d24036bee228940fe3f2db3f7ec6876b4fd9e  2022-22-02_1617.xls
+
+SHA256 HASHES FROM 12 EXAMPLES OF ATTACHED EXCEL FILES:
+
+- 258ef1257f5d2f90eeb7b0e1a948e08bfc0e25cc014f86e05df02a344c5eabdf  Barker Cabinets.xls
+- 2b87f525b90d47410cb6240f949140ff81d39b467ebe675bffaf2f0b360a16a7  Payment.xls
+- 36ea088ffc747d149aab4ddf89182ce618edb7754b8643e4d9ae69dbabd759c8  ACH Payment info.xls
+- 3dac3ccac97fe026839c988180072987c7fe20d4eacdf76868564480879c2f72  Global Information Technology Inc.xls
+- 52c27e74e1d7a494cda92876fe33c1e397dbc53cf9e5657e4590a9af77f57f3b  1008397229627355965.xls
+- 5813667c73a3ec74cb979c55c19102e819f659bc97d24fa4888b2612c982fff3  HHC774705930DP.xls
+- 69b8ed3cdc49ffc2638df7d3c12e53fc553f12cca769fdc2030ec8f739e3cdc8  PO 02222022.xls
+- 6bf75d05768e1c4417ffa6a98a7154041992b9888e3252983bb6d796a7fb4deb  comments_208697167.xls
+- ba07555c7cb0e846bb693ac3d391b47cad49443bae7dfae2e43e65d70c6eb2d0  OVW-010222 IVLY-220222.xls
+- c9332bc46897abfface9a0a4400475c552c970a180176d2b8e5a18b1635594f1  PA-2241 report.xls
+- d33426fc6cd7365ed49d0c847600e1a73be2630c033601260c63bc4b4aeeeac5  Scott Murdock Trailer Sales.xls
+- f67e201abcb2128d7df61e93171e5a9072a29601047a727acd37b392afda790a  B and C Body Company.xls
+
+SHA256 HASH FOR C:\PROGRAMDATA\BBIWJDF.VBS DROPPED AFTER ENABLING EXCEL MACRO:
+
+- 31cb0d7a224f16ec4e998140c4efde8ef752295b8a88080915f0bb2b49034bee
+
+ABOVE VBS USES THE FOLLOWING URLS TO RETRIEVE AN EMOTET DLL:
+
+- hxxp://wearsweetbomb[.]com/wp-content/15zZybP1EXttxDK4JH/
+- hxxps://1566xueshe[.]com/wp-includes/z92ZVqHH8/
+- hxxp://mymicrogreen.mightcode[.]com/Fox-C/NWssAbNOJDxhs/
+- hxxp://o2omart.co[.]in/infructuose/m4mgt2MeU/
+- hxxp://mtc.joburg.org[.]za/-/GBGJeFxXWlNbABv2/
+- hxxp://www.ama[.]cu/jpr/VVP/
+- hxxp://actividades.laforetlanguages[.]com/wp-admin/dU8Ds/
+- hxxps://dwwmaster[.]com/wp-content/1sR2HfFxQnkWuu/
+- hxxps://edu-media[.]cn/wp-admin/0JAE/
+- hxxps://iacademygroup[.]cl/office/G42LJPLkl/
+- hxxps://znzhou[.]top/mode/0Qb/
+
+SHA256 HASH FOR AN EMOTET DLL AT C:\PROGRAMDATA\OIPHILFJ.DLL:
+
+- b4b5d17481e99f072a5b7c568248579611b91bfc7e6c893ab2a4fd74f2b48414
+
+EMOTET C2 FROM AN INFECTED WINDOWS HOST:
+
+- 134.209.156[.]68:443
+- 144.217.88[.]125:443
+- 156.67.219[.]84:7080
+- 175.107.196[.]192:80

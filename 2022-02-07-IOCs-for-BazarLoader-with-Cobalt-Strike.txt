@@ -1,0 +1,54 @@
+2022-02-07 (MONDAY) - BAZARLOADER INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1491062537181609985
+
+INFECTION CHAIN:
+
+- email --> OneDrive link --> downloaded .iso file --> double-click (mount) .iso file --> double-click Windows shortcut --> BazarLoader infection --> Bazar C2 --> Cobalt Strike
+
+EXAMPLE OF ONEDRIVE LINK:
+
+- hxxp://1drv[.]ms/u/s!AoKLsbl6G4QIgQiYSBQ37JfA8_fl?e=ecg04E
+
+- NOTE: The above OneDrive link was taken down by Microsoft shortly after it was reported as malicious
+
+DOWNLOADED ISO FILE:
+
+- SHA256 hash: 0900b4eb02bdcaefd21df169d21794c8c70bfbc68b2f0612861fcabc82f28149
+- File size: 307,200 bytes
+- File name: docs_1309.iso
+
+CONTENTS OF ISO FILE:
+
+- SHA256 hash: 303be66bb8f026a9153b749eff2446fe5a0f9f75c52c49af84210187d257f2de
+- File size: 1,385 bytes
+- File name: Attachments.lnk
+- File type: MS Windows shortcut
+- Shortcut: C:\Windows\System32\rundll32.exe documents.log,vspa
+
+- SHA256 hash: 8a09d53d9663eda55e91e4803a5222be9b3b0c804173b6a918d13c35ad1d0134
+- File size: 253,440 bytes
+- File name: documents.log
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- Run method: rundll32.exe [filename],vspa
+
+BAZAR C2 TRAFFIC:
+
+- 5.182.207.28 port 443 - hxxps://5.182.207[.]28/data/service
+- 198.252.108.16 port 443 - hxxps://198.252.108[.]16/data/service
+- 80.71.158.142 port 443 - attempted TCP connections
+- 84.32.188.136 port 443 - hxxps://84.32.188[.]136/data/service
+
+COBALT STRIKE BINARY:
+
+- SHA256 hash: 12f7f6b7e1840a15e141abadf099efa435a608afb19176816f131f5172bd7cd2
+- File size: 98,712 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\BEB2.dll
+- File type: PE32 executable (DLL) (console) Intel 80386, for MS Windows
+- Run method: regsvr32.exe [filename]
+
+COBALT STRIKE C2 TRAFFIC:
+
+- 23.82.141[.]117 port 443 ? zoroxeku[.]com - HTTPS traffic

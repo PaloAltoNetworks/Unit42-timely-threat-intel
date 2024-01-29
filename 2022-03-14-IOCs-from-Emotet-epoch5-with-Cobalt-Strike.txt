@@ -1,0 +1,102 @@
+2022-03-14 (MONDAY) - EMOTET EPOCH 5 INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1503500488574222340
+
+INFECTION CHAIN:
+
+- Email --> attachment zip or Excel file --> enable macros --> Emotet --> Emotet C2 --> Cobalt Strike
+
+SHA256 HASHES FROM 6 EXAMPLES OF EMOTET EPOCH 5 ATTACHMENTS:
+
+- 16f6d2b87d6a387e7d384687654402196185dc9e6017bf24937e9374c7b2773e  Mail 75.xlsm
+
+- 1a4ab1b9b262617d02429c7942d51d99fe07c0e0580339b56fdd5e950f6442c5  SCAN_14032022.xlsm
+
+- ce856285f4f1f1f48b00eebb83cb2b8282955f37ff156d79353d4f9ca372077c  list 072108003.xlsm
+
+- 82a93fa8f3e67de8b99445079364a6be6e01c730385578b437579cca0fe48d56  doc_483539.zip
+- 2d9244a53632a370140df4879b56c85fc0ec8ab199ec10caddf5808d12918bb3  doc_483539.xlsm
+
+- 6c4850744c1be55a081adb027e655eed880141f7fa0261b52dabb9735f968137  message 14032022.zip
+- 2d41a1b9ba532e69f0282e3010287de0b63e45989b78b488f39f82c886171f43  message 14032022.xlsm
+
+- 6d22b68714ddd594197d9535acd9667f9c1e29d3b1d672773491bfd9f1f52204  pack_0939161250.zip
+- aed3699368e70279e82352dfc5d60e21d7419b9db68199e5f379f2aa2ab0c73f  pack_0939161250.xlsm
+
+HEADER INFORMATION FROM EMAIL USED TO KICK OFF THIS INFECTION:
+
+- Received: from mail.agmonza.it (consulenti.agmonza[.]it [188.213.169[.]97])
+- Received: from [80.68.188.230] (h230-ipv4-80-68-188.mynet[.]it [80.68.188[.]230])
+- Date: Mon, 14 Mar 2022 16:25:47 -0100
+- From: ""[spoofed sender name]"" <r.dallagnol7337@consulenti.agmonza[.]it>
+- Subject: Re: [information removed]
+- Message-ID: <20220314103117.DWAT525.msl11.plala.or[.]jp@[124.102.139[.]87]>
+- Attachment name: message 14032022.zip
+
+ATTACHMENT INFO:
+
+- SHA256 hash: 6c4850744c1be55a081adb027e655eed880141f7fa0261b52dabb9735f968137
+- File size: 69,874 bytes
+- File name: message 14032022.zip
+- File type: Zip archive data, at least v5.1 to extract
+- File description: Password-protected zip archive containing Excel spreadsheet
+- Password: 826
+
+- SHA256 hash: 2d41a1b9ba532e69f0282e3010287de0b63e45989b78b488f39f82c886171f43
+- File size: 76,170 bytes
+- File name: message 14032022.xlsm
+- File type: Microsoft Excel 2007+
+- File description: Extracted from zip archive: Excel spreadsheet with macro for Emotet
+
+URLS FROM MACRO TO RETRIEVE EMOTET DLL:
+
+- hxxp://praachichemfood[.]com/wp-content/lcT43/
+- hxxp://support.techopesolutions[.]com/application/zTAIK6GZ8I6zSLk/
+- hxxp://vulkanvegasbonus.jeunete[.]com/wp-content/vsQ3Jp0XRqEqsVu/
+- hxxp://aesiafrique[.]com/azerty/iTbkP5mpqK/
+- hxxp://abildtrup[.]eu/wordpress/H0uDBpR/
+- hxxp://aaticd.co[.]za/wp-content/6JENALSdgs0RAPqV20z/
+- hxxp://actua[.]dk/res/EaoItn4LAZOeLFrFL/
+
+EMOTET DLL RETREIVED FROM INFECTED WINDOWS HOST:
+
+- SHA256 hash: c45b343b1fc28012b51c6d9c5703bd3f937779f4f41b3337f989462942f12c0d
+- File size: 820,736 bytes
+- File location: hxxp://support.techopesolutions[.]com/application/zTAIK6GZ8I6zSLk/
+- File location: C:\Users\[username]\fdb.dll
+- File location: C:\Users\[username]\AppData\Local\Vqkwyfejbj\dkrtkhv.ktv
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: Emotet epoch 5 DLL
+- Run method: regsvr32.exe /s [filename]
+
+EMOTET C2 TRAFFIC:
+
+- 68.183.62[.]61 port 8080 - HTTPS traffic
+- 54.37.106[.]167 port 8080 - HTTPS traffic
+- 128.199.93[.]156 port 8080 - HTTPS traffic
+- 139.196.72[.]155 port 8080 - HTTPS traffic
+- 180.250.21[.]2 port 443 - HTTPS traffic
+- 185.168.130[.]138 port 443 - HTTPS traffic
+- 186.250.48[.]5 port 80 - HTTPS traffic
+
+- 45.71.195[.]104 port 8080 - attempted TCP connections
+- 51.75.33[.]122 port 443 - attempted TCP connections
+- 78.47.204[.]80 port 443 - attempted TCP connections
+- 168.119.39[.]118 port 443 - attempted TCP connections
+- 194.9.172[.]107 port 8080 - attempted TCP connections
+- 207.148.81[.]119 port 8080 - attempted TCP connections
+- 159.69.237[.]188 port 443 - attempted TCP connections
+
+FOLLOW-UP MALWARE: COBALT STRIKE EXE
+
+- SHA256 hash: a9c4eafcff0567c68919c93ddf8baa769392e92706e6b35f7b989310d70f732f
+- File size: 850,432 bytes
+- File location: C:\Users\[username]\AppData\Local\Vqkwyfejbj\glzwfrkh.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- File description: Windows EXE for Cobalt Strike
+
+COBALT STRIKE POST-INFECTION TRAFFIC:
+
+139.60.160[.]7 port 443 - hxxps://josefgur[.]com/jquery-3.3.1.min.js

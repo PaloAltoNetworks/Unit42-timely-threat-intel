@@ -1,0 +1,96 @@
+2022-02-10 (THURSDAY) - EMOTET EPOCH 5 INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1492160514109149193
+
+INFECTION CHAIN:
+
+- email --> password-protected zip attachment --> Excel file --> enable macros --> Emotet --> Cobalt Strike
+
+HEADER INFO FROM EPOCH 5 EMAIL DISTRIBUTING EMOTET:
+
+- Received: from mail.mailer-esb.com (unknown [147.139.201[.]229])
+- Date: Thu, 10 Feb 2022 10:07:45 +0800
+- From: "<[spoofed sender name]> [spoofed sender email address]" <indah@esb.co.id>
+- To: "[recipient's name]" <[recipient's email address]>
+- Subject: Fwd: [recipient's email address]
+
+PASSWORD-PROTECTED ZIP ARCHIVE ATTACHED TO EMAIL:
+
+- SHA256 hash: efe6b82a4471523df12673f47e318aae2e2c49ce096769638d172952c996f76f
+- File size: 83,477 bytes
+- File name: Data_57592.zip
+- File type: Zip archive data, at least v5.1 to extract
+- File description: password-protected zip archive attached to epoch 5 email
+- Password for zip archive: 980
+
+EXTRACTED EXCEL FILE WITH MALCIOUS MACRO CODE:
+
+- SHA256 hash: e73b86fc2b4e93f2808c6e634a4e513a551f42ecbd927f3507d83cd0c1e94ed4
+- File size: 141,312 bytes
+- File name: Data_57592.xls
+- File type: Composite Document File V2 Document, Little Endian, 
+Os: Windows, Version 6.2, Code page: 1251, Author: User, 
+Last Saved By: 1, Name of Creating Application: Microsoft Excel, 
+Create Time/Date: Wed Feb  9 09:48:26 2022, 
+Last Saved Time/Date: Wed Feb  9 16:14:48 2022, Security: 0
+
+BATCH AND VBS FILES DROPPED AFTER ENABLING MACROS FROM EXCEL FILE:
+
+- SHA256 hash: 9e9915a1e009b7a9283629e5a1a66604915030b445c1f266914955299563473e
+- File size: 3,751 bytes
+- File location: C:\ProgramData\bhnasleil.bat
+
+- SHA256 hash: 5c3d66e2d33dfb51c691010af5d0a87250aa475235b537a336c607ade93a881a
+- File size: 604 bytes
+- File location: C:\ProgramData\oue4hjld.vbs
+
+EMOTET DLL:
+
+- SHA256 hash: 0199a072fee39255eb3767466ed0d5ef857850abd391b9a697ef00ec36a71315
+- File size: 476,672 bytes
+- File location: hxxp://tempral[.]com/NATE_05_22_2009/BI710N4cQ6R3/
+- File location: C:\ProgramData\vxcjkfhd.dll
+- File location: C:\Users\[username]\AppData\Local\Meajrcbavloy\npuf.vya
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- Run method: rundll32.exe [filename],DllRegisterServer
+- Note: Seems like any string can be used for the entry point with rundll32.exe
+- Scheduled task: rundll32.exe [file path],PpNQIIzq
+
+COBALT STRIKE EXE:
+
+- SHA256 hash: 64239ecd16c558e4a927742071f6931878ab6d6ad08ab3a724257172060c31fe
+- File size: 101,376 bytes
+- File location: C:\Users\[username]\AppData\Local\Meajrcbavloy\yohyvbg.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+
+URLS HOSTING EMOTET EPOCH 5 DLL:
+
+- hxxp://midnightsilvercrafters[.]com/store/wBjNOUw/
+- hxxp://tempral[.]com/NATE_05_22_2009/BI710N4cQ6R3/
+- hxxps://redington.karmatechmediaworks[.]com/wp-content/3JVuVx7QUM/
+- hxxps://uhc.karmatechmediaworks[.]com/wp-content/0EqfdeznntlOpaIP2Qv/
+- hxxps://servilogic[.]net/b/14hqrdyP0Z3WsbQib8/
+- hxxps://comezmuhendislik[.]com/ljfrmm/VTpHRFWoORAHnRQ3aQL/
+- hxxp://webmail.glemedical[.]com/wp-content/J1M2xxodH/
+- hxxp://toto.karmatechmediaworks[.]com/wp-content/i826vbcVgRJ/
+- hxxps://golfpia.karmatechmediaworks[.]com/wp-content/oEicpDnEkk/
+- hxxps://fortiuspharma[.]com/y6krss/EGm347cqj5/
+- hxxps://garyjharris[.]com/cgi-bin/0hH/
+- hxxps://vietnam.karmatechmediaworks[.]com/wp-content/PfSVQagusZy7AaMw/
+- hxxps://vinculinc.karmatechmediaworks[.]com/wp-content/VlcOPPwgidWlXDJNs6/
+
+EMOTET C2 TRAFFIC:
+
+- 198.199.126[.]144 port 443 - attempted TCP connection, no response from the server
+- 103.42.57[.]17 port 8080 - attempted TCP connection, no response from the server
+- 195.154.146[.]35 port 443 - attempted TCP connection, no response from the server
+- 104.131.62[.]48 port 8080 - attempted TCP connection, no response from the server
+
+- 116.124.128[.]206 port 8080 - HTTPS traffic
+- 180.250.21[.]2 port 443 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 172.93.201[.]64 port 443 - ledikexive[.]com - HTTPS traffic

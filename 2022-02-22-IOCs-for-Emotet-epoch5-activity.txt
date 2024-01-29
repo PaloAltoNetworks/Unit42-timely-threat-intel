@@ -1,0 +1,50 @@
+2022-02-22 (TUESDAY) - EMOTET EPOCH 5 INDICATORS
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1496623426538291200
+
+NOTE:
+
+- This is a small set of indicators for Emotet epoch 5 activity on 2022-02-22
+
+SHA256 HASHES FROM 5 EXAMPLES OF ATTACHED EXCEL FILES:
+
+- 296694bd1aed4a2e6d1ba06859e978a869dac37d3a7d1d7a1b3ed1f44cbd1979  97-22022022.xls
+- 5bb4f8da9b1de0a2472b752b640c418f851756002b739dc78d1459f04d9af600  Data 4.xls
+- 5bcf051f92d382bee159d249ab6551fcfa4c41573aca4e28ef275694820b6370  479DA-2778.xls
+- 6bf75d05768e1c4417ffa6a98a7154041992b9888e3252983bb6d796a7fb4deb  comments_208697167.xls
+- ecdf22c55102caa1405093b2fb7fdd178f233c39fdd750a123dd1409919ba695  Untitled-0438531018.xls
+
+SHA256 HASH FOR C:\PROGRAMDATA\BBIWJDF.VBS DROPPED AFTER ENABLING EXCEL MACRO:
+
+- 555c1a3f0d1ff08f3a45c7558ded360c36b86541eae3ba84eb6b5aaba0c4c661
+
+ABOVE VBS USES THE FOLLOWING URLS TO RETRIEVE AN EMOTET DLL:
+
+- hxxp://boardingschoolsoftware[.]com/backup/VC7WK/
+- hxxp://towardsun[.]net/admin/O29Fja/
+- hxxp://47.244.189[.]73/well-known/cwxgmEZsYIT/
+- hxxp://centrobilinguelospinos[.]com/wp-admin/AivCY/
+- hxxp://qqziyuanwang[.]com/wp-includes/KtXrm5GwJ/
+- hxxps://www.swaong[.]com/b/SVSAPzeDU657xJdmJv/
+- hxxps://trasix[.]com/wp-admin/FzpdyUrlGt/
+- hxxps://marineboyrecords[.]com/font-awesome/t37LOj/
+- hxxps://edgetactical.ritabilisim[.]com/admin/NbjDzEeNJ/
+- hxxp://cairm[.]xyz/backup_1/mQPAhJhpV/
+- hxxp://vrstar-park[.]com/wp-includes/0bAm9feNorwTmVrj/
+- hxxps://panaderialaimperial[.]com/wp-includes/Oi0guE0CQbyBJVg/
+
+SHA256 HASH FOR AN EMOTET DLL AT C:\PROGRAMDATA\OIPHILFJ.DLL:
+
+- a83c22f222be787c8c45ea6eb55b7f07c8c7cba6b5c8233b075bb2472a8f4acb
+
+EMOTET C2 FROM AN INFECTED WINDOWS HOST:
+
+- 27.254.174[.]84:8080
+- 43.229.206[.]214:8080
+- 59.148.253[.]194:443
+- 61.7.231[.]229:443
+- 142.93.76[.]76:7080
+- 168.197.250[.]14:80
+- 180.250.21[.]2:443

@@ -1,0 +1,27 @@
+2022-03-21 (MONDAY) - COBALT STRIKE FROM ICEDID (BOKBOT):
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1506286594357182467
+
+POST-INFECTION ICEDID C2 TRAFFIC:
+
+- 157.245.142[.]66 port 443 - antnosience[.]com - HTTPS traffic
+
+SUPSPICIOUS ACTIVITY SEEN WITHIN 1 MINUTE BEFORE COBALT STRIKE TRAFFIC:
+
+- port 443 - filebin[.]net - HTTPS traffic (a legitimate file sharing service)
+- port 443 - situla.bitbit[.]net - HTTPS traffic (another domain associated with file sharing)
+
+COBALT STRIKE 64-BIT EXE:
+
+- SHA256 hash: 09d8fb54a22c3bb753fce7dc5192221122cf5dc26b42504ffca254e2521dbf8e
+- File size: 474,624 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\ifof.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- Sample: https://bazaar.abuse.ch/sample/09d8fb54a22c3bb753fce7dc5192221122cf5dc26b42504ffca254e2521dbf8e/
+
+
+COBALT STRIKE C2 TRAFFIC:
+
+- 23.227.198[.]203 port 757 - hxxps://bupdater[.]com:757/link.css
