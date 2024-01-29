@@ -2,6 +2,11 @@
 
 REFERENCES:
 
+- https://www.linkedin.com/posts/unit42_pikabot-cobaltstrike-timelythreatintel-activity-7115093198233894912-ZhRp
+- https://twitter.com/Unit42_Intel/status/1709327580380197038
+
+ORIGINAL REFERENCES:
+
 - https://twitter.com/Cryptolaemus1/status/1709238615904018605
 - https://infosec.exchange/@cryptolaemus1@bird.makeup/111171942237441322
 - https://github.com/pr0xylife/Pikabot/blob/main/Pikabot_03.10.2023.txt
