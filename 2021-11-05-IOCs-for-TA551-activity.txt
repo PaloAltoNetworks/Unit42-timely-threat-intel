@@ -1,0 +1,79 @@
+2021-11-05 (FRIDAY) - TA551 (SHATHAK) WORD DOC --> BAZARLOADER --> COBALT STRIKE AND DARK VNC
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1458113934024757256
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> Word doc --> enable macros --> Bazarloader DLL --> Bazar C2 traffic --> Cobalt Strike & DarkVNC
+
+NOTES:
+
+- DarkVNC is a remote access trojan that was seen as early as 2017, but very little has been published about it publicly.  References include:
+
+ -- https://reaqta.com/2017/11/short-journey-darkvnc/
+ -- https://blog.talosintelligence.com/2020/04/azorult-brings-friends-to-party.html
+
+Recent examples of similar malware identified as DarkVNC can be found at https://bazaar.abuse.ch/browse/tag/darkvnc/
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 4d1ba7c3d9cf95d861266734c00defbb10d3aae10aae1380029976a340a9e270
+- File size: 35,131 bytes
+- File name: require-11.21.doc
+- File description: TA551 Word doc retrieved from password-protected zip archive
+
+- SHA256 hash: 9bb19afbb65c8abb2e2ccdbcf455b21a9a531ab56ef955ff81f2d1d12a40da76
+- File size: 3,523 bytes
+- File location: C:\Users\Public\doorKarolNext.hta
+- File description: HTA file dropped after enabling macros on the above Word doc
+
+- SHA256 hash: 9368f92222c18019b0b25251c6cdd1d6bd05b46b2f02721ce5a32ffce5e08959
+- File size: 283,267 bytes
+- File location: C:\Users\Public\girlDowTube.jpg
+- File description: DLL for BazarLoader retrieved by above HTA file
+- Run method: regsvr32.exe [filename]
+
+- SHA256 hash: cee3128442b86e3dbc117fe491739c3a21dcd8bd813b2eec8321c59af7537081
+- File size: 161,263 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\C9C0.dll
+- File description: DLL for Cobalt Strike
+- Run method: rundll32.exe [filename], gfhcgfgDzsRALOPB
+
+- SHA256 hash: e09fa5be06248ef49fae8fc387b604c95b1bb93b871b2527d344b159f5cccfb6
+- File size: 404,992 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\FBE4.dll
+- File description: DLL for DarkVNC
+- Run method: rundll32.exe [filename],DllRegisterServer --id [32 character hex string] --group 19 --ip 87.120.8.190,158.69.133.70,185.106.120.99,45.14.226.195,103.124.106.154,149.3.170.201,5.181.80.103,89.41.182.242,172.83.155.186,45.42.201.179,194.15.112.223
+
+TA551 TRAFFIC TO RETRIEVE BAZARLOADER DLL:
+
+- 77.75.230[.]91 port 80 - covermillsd[.]com - GET /boolk/aIqT8eHh2Hd0kfbT0sjjwqP6/sAsvpDjipATdFg9SV2ylmJ5dJHdBeMU6BjCM/16138/gEwAwD8purFO/93628/36005/44935/leh6?search=QPCpFqx3ez051kem0kWeDEmwTR&search=6FfDVvSz&=0gBUpsPtKCh&RatBKf=ypH&pgJm=9XEl56FXiYmitVdrRN&id=XK5BeS&=1DhZbMsFNPDPRkyPOpqvEEXdO9oMi&q=zMhnzBGBO4R4dKv7h
+
+BAZAR C2 TRAFFIC:
+
+- 87.120.8[.]112 port 443 - HTTPS traffic
+- 87.120.254[.]96 port 443 - HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 192.34.109[.]102 port 757 - sonyblueprint[.]com - HTTPS traffic
+- 23.108.57[.]50 port 443 - guvafe[.]com - HTTPS traffic
+
+DARKVNC TRAFFIC:
+
+- 87.120.8[.]190 port 9090
+
+OTHER IP ADDRESSES USED FOR DARKVNC TRAFFIC (ALL USING TCP PORT 9090):
+
+- 158.69.133[.]70
+- 185.106.120[.]99
+- 45.14.226[.]195
+- 103.124.106[.]154
+- 149.3.170[.]201
+- 5.181.80[.]103
+- 89.41.182[.]242
+- 172.83.155[.]186
+- 45.42.201[.]179
+- 194.15.112[.]223

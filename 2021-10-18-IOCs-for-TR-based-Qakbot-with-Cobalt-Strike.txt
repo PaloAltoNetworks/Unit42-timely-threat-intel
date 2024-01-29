@@ -1,0 +1,67 @@
+2021-10-18 (MONDAY) - TR-DISTRIBUTION QAKBOT (QBOT) WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1450535983146053639
+
+NOTE:
+
+- This Qakbot infection is attributed to the TR distribution network, as metadata in the malware is has a "TR" tag that names the infrastructure used to distribute the malware.
+
+INFECTION CHAIN:
+
+- email --> link --> downloaded zip archive --> extracted Excel file --> enable macros --> installer DLL for Qakbot --> Qakbot C2 --> Cobalt Strike activity
+
+URLS FOR THE INITIAL ZIP ARCHIVE:
+
+- hxxp://ing-play[.]com/vitaelibero/inventoreest-31247564
+- hxxp://ing-play[.]com/vitaelibero/charts-3657249237.zip
+
+URLS FOR THE INITIAL QAKBOT DLL FILES:
+
+- hxxp://thanhanhotel[.]com/M7NvbognImhW/hnhkji.html
+- hxxps://guardsociety[.]org/4TMUUI9u/hnhkji.html
+- hxxp://bro.jerashfestival[.]jo/2kAlAJGc/hnhkji.html
+
+QAKBOT C2:
+
+- 103.143.8[.]71 port 443 - HTTPS traffic
+- 37.252.0[.]102 port 443 - HTTPS traffic
+- 23.111.114[.]52 port 65400 - TCP traffic
+
+COBALT STRIKE C2:
+
+- 213.227.154[.]159 port 443 - artysecuritybusinaudit[.]com - HTTPS traffic
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 086e81e972597d576da5e7f43f12d5814c78acc5881e6bdc58e5659ee42c264f
+- File size: 198,572 bytes
+- File location: hxxp://ing-play[.]com/vitaelibero/charts-3657249237.zip
+- File name: inventoreest-31247564.zip
+- File description: Zip archive containing Excel file with macros for Qakbot
+
+- SHA256 hash: 555d97f2052c8ab8e81698c87f3558506f81d20eeee0138cd2d2e5051a6268aa
+- File size: 253,440 bytes
+- File name: trend-1367022806.xls
+- File description: Extracted from the above archive, Excel file with macros for Qakbot
+
+- SHA256 hash: 511acd21f0b7ad5bf8297ad113bc5feb0a252940009e7f0588fe001a00520702
+- File size: 807,518 bytes
+- File location: hxxp://thanhanhotel[.]com/M7NvbognImhW/hnhkji.html
+- File location: C:\Datop\test.test
+- File description: Corrupt DLL file not fully downloaded, so not actually malicious
+
+- SHA256 hash: d6b1d2ca4ea331f84bfeab5b0590c418a5f337e84a06344789530afeca1392c8
+- File size: 1,583,011 bytes
+- File location: hxxps://guardsociety[.]org/4TMUUI9u/hnhkji.html
+- File location: C:\Datop\test1.test
+- File description: Qakbot installer DLL file
+- Run method: regsvr32.exe -s [filename]
+
+- SHA256 hash: b6c7c10b2389872e1c16b8c398bb3192103ec858179ecb04c89ea93633173796
+- File size: 1,583,047 bytes
+- File location: hxxp://bro.jerashfestival[.]jo/2kAlAJGc/hnhkji.html
+- File location: C:\Datop\test2.test
+- File description: Qakbot installer DLL file
+- Run method: regsvr32.exe -s [filename]

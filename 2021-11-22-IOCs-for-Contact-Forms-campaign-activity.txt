@@ -1,0 +1,63 @@
+2021-11-22 (MONDAY) - CONTACT FORMS CAMPAIGN PUSHES BAZARLOADER, LEADS TO COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1463178309160906753
+
+NOTES:
+
+- We previously called this the "Stolen Images Evidence" campaign, but it has also used other themes.
+- This campaign uses contact pages on websites to generate emails
+- This campaign uses themes like DMCA violation (stolen images) or that the site is being used for a DDoS attack.
+- These form-based emails contain links to Google-hosted pages that deliver malicious zip archives.
+
+CHAIN OF EVENTS:
+
+- Email --> Link --> Stolen Images Evidence.zip --> Stolen Images Evidence.js --> BazarLoader DLL --> Bazar C2 traffic --> Cobalt Strike
+
+EXAMPLES OF MALICIOUS GOOGLEAPIS LINKS FROM THE EMAILS:
+
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/04jnm49fhb4mfk.html?f=98010055057206238
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/0j45nvm4ohhkf.html?h=616579298817753918
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/0j45nvm4ohhkf.html?h=814903596081662856
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/0j45nvm4ohhkf.html?l=247161489063871373
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/49gfhn49bfy34h.html?f=862528881239887564
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/49gfhn49bfy34h.html?l=865897479086522531
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/6k4mnbvkk49j.html?d=186853687282029549
+- hxxps://storage.googleapis[.]com/d20vn4j9chb39v2kf30.appspot.com/public/0/files/d/9n5nw8yg4k4.html?h=385340095387424816
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 8a2b83c479ac871edf5471d3a0ad91aaac8115ee2dd7ccb1f4a23e09da1ff2a4
+- File size: 2,734 bytes
+- File name: Stolen_Images_Evidence.zip
+- File description: ZIP archive downloaded from googleapis page
+
+- SHA256 hash: 7636d563c16a37aa05fdbe2b29e65c934f3f25d08b48d5ce91f3023e6f2e5729
+- File size: 6,248 bytes
+- File name: Stolen_Images_Evidence.js
+- File description: JS file extracted from the above ZIP archive
+
+- SHA256 hash: 30d991153e4d40909ff95b5252ce6f82b7e4ab064214da4ff28f02bd45ffd6fa
+- File size: 308,244 bytes
+- File location: hxxp://mosteplo[.]top/222g100/main.php
+- File location: C:\Users\[username]\AppData\Local\Temp\mnevPL.bin
+- File description: BazarLoader DLL retreived by the above JS file
+
+TRAFFIC TO RETRIEVE THE ARCHIVE:
+
+- 104.21.19[.]55 port 443 - barconia[.]top - HTTPS traffic retrieved by googleapis page
+
+TRAFFIC TO RETRIEVE BAZARLOADER DLL:
+
+- 104.21.8[.]143 port 80 - mosteplo[.]top - GET /222g100/index.php 
+- 104.21.8[.]143 port 80 - mosteplo[.]top - GET /222g100/main.php
+
+BAZAR C2 TRAFFIC:
+
+- 162.33.179[.]96 port 443 - HTTPS/SSL/TLS traffic
+- 162.33.178[.]153 port 443 - HTTPS/SSL/TLS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 185.81.114[.]125 port 443 - zuppohealth[.]com 

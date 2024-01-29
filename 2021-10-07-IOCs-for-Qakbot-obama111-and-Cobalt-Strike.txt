@@ -1,0 +1,114 @@
+2021-10-07 (THURSDAY) - QAKBOT (QBOT) OBAMA111 INFECTION WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1446584963885936642
+
+INFECTION CHAIN:
+
+- malspam --> attached zip archive --> extracted Excel file --> enable macros --> Initial Qakbot DLL --> Qakbot post-infection activity (continuous) --> Cobalt Strike --> ANGRYPUPPY/BloodHound reconnaissance activity
+
+NOTES:
+
+- A password-protected zip archive with the malware/artifacts for this infection is available at:
+
+https://github.com/pan-unit42/tweets/blob/master/2021-10-07-Qakbot-obama111-and-Cobalt-Strike-malware-and-artifacts.zip
+
+- Password for the above zip archive is: infected
+
+- obama111 is a designator for this particular Qakbot distribution infrastructure, where 111 is a one-up serialization for the specific day.
+- The Cobalt Strike binary was run from memory (maybe process hollowing) so there was nothing on disk.
+- Reconnaissance information gained from ANGRYPUPPY/BloodHound was temporarily saved to the C:\Users\Public directory and quickly deleted.
+- ANGRYPUPPY is a tool for the Cobalt Strike framework designed to automatically parse and execute BloodHound.
+- BloodHound is an AD relationship mapping and visualization tool
+- More information about ANGRYPUPPY/BloodHound is at: https://www.networksgroup.com/blog/angrypuppy-bloodhound-attack-path-execution-for-cobalt-strike-2
+- The Windows user account for this infected host was andre.montgomery
+
+CONTENTS OF TODAY'S MALWARE/ARTIFACTS ZIP ARCHIVE:
+
+- 2021-10-07-Windows-registry-update-for-Qakbot.txt
+- 2021-10-07-initial-binary-for-Cobalt-Strike-from-185.106.96.158.bin
+- Users/Public/NzlhOTIxYmQtNTEyZi1jYzliLTYwNTMtMzU4MzEyNGY2NGU0.bin
+- Users/Public/20211007183502_BloodHound.zip
+- Users/andre.montgomery/Downloads/AMLRPT_1094753610.zip
+- Users/andre.montgomery/Downloads/AMLRPT_1094753610.xls
+- Users/andre.montgomery/Celod.wac
+- Users/andre.montgomery/AppData/Roaming/Microsoft/Bbbetedog/u/
+- Users/andre.montgomery/AppData/Roaming/Microsoft/Bbbetedog/naqhixfsvwhmw.dll
+- Users/andre.montgomery/AppData/Roaming/Microsoft/Bbbetedog/yxrrsq.oee
+- Users/andre.montgomery/AppData/Roaming/Microsoft/Bbbetedog/mewynjy.dll
+- Users/andre.montgomery/AppData/Roaming/Microsoft/Bbbetedog/sylkusyn.luq
+
+INITIAL MALWARE:
+
+- SHA256 hash: c4dfafbe698285e5f95e0e75a5bcda4642e9f6fcf826df51c90957a49cd2a4d1
+- File size: 90,943 bytes
+- File name: AMLRPT_1094753610.zip
+- File description: Zip archive, attachement from malspam
+
+- SHA256 hash: 73f9a63b139bf560cbbec05febf73cebbf4ca9051e0c8e14d9d45098e138c34a
+- File size: 137,216 bytes
+- File name: AMLRPT_1094753610.xls
+- File description: Extracted from the above zip archive, Excel file with macros for Qakbot obama111
+
+TRAFFIC FOR QAKBOT OBAMA111 DLL:
+
+- hxxp://190.14.37[.]238/44476.7629744213.dat --> C:\Users\[username]\Celod.wac
+- hxxp://5.196.247[.]5/44476.7629744213.dat --> C:\Users\[username]\Celod.wac1
+- hxxp://94.140.115[.]118/44476.7629744213.dat --> C:\Users\[username]\Celod.wac2
+
+- NOTE: This infection could only retrieve the first DLL for Celod.wac
+
+QAKBOT OBAMA111 DLL:
+
+- SHA256 hash: 41af67ae35a6f1aa2361e3e35ed02c78f6995067359a94c417488304f2744a63
+- File size: 844,800 bytes
+- File location: hxxp://190.14.37[.]238/44476.7629744213.dat
+- File location: C:\Users\[username]\Celod.wac
+- Run method: regsvr32.exe -silent [filename]
+
+ENCODED BINARY USED FOR COBALT STRIKE:
+
+- SHA256 hash: 3ec118323b5c34ed63d56b7969a1cb2c605922459210c174eb58a6cc19a863ea
+- File size: 210,002 bytes
+- File location: hxxp://185.106.96[.]158/spfooh/cacerts.crl
+- User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 OPR/78.0.4093.147
+- Binary can be retrieved using the following cURL command with the above file location and user-agent
+
+QAKBOT OBAMA111 DLL FILES SAVED TO DISK AFTER INFECTED HOST WAS SHUT DOWN:
+
+- SHA256 hash: 061dfb6a251e536f700a295239652dafab34aee5e5145320d1d57e3fca5e5d52
+- File size: 620,032 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\[random letters]\[random letters].dll
+- Run method: regsvr32.exe -silent [filename]
+
+- SHA256 hash: bac73f9ccebf93009a6037145a9c71a2e8b916956f6a7e6a4f4b53b4b50b7a00
+- File size: 620,032 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\[random letters]\[random letters].dll
+- Run method: regsvr32.exe -silent [filename]
+
+QAKBOT TRAFFIC:
+
+- 206.47.134[.]234 port 2222 [attempted TCP connections]
+- 197.90.137[.]161 port 61201 [attempted TCP connections]
+- 181.84.114[.]46 port 443 [attempted TCP connections]
+- 89.137.52[.]44 port 443 [attempted TCP connections]
+- 76.25.142[.]196 port 443 - HTTPS traffic
+- 37.252.0[.]102 port 443 - HTTPS traffic
+- port 443 - www.openssl.org - HTTPS traffic [connectivity check, not inherently malicious]
+- 23.111.114[.]52 port 65400 - TCP traffic
+- port 443 - api.ipify.org - HTTPS traffic [IP address check, not inherently malicious]
+- various IP addresses over various ports - email traffic
+
+COBALT STRIKE TRAFFIC:
+
+- NOTE: Cobalt Strike is spoofing the legitimate domain "ocsp.verisign.com" but using a malicious IP address at 185.106.96[.]158. That IP address is -not- related to ocsp.verisign.com, and this malicious traffic is -not- associated with VeriSign.
+
+- DNS query for survmeter[.]live resolved to 185.106.96[.]158
+- 185.106.96[.]158 port 80 - ocsp.verisign.com - GET /spfooh/cacerts.crl
+- 185.106.96[.]158 port 80 - ocsp.verisign.com - GET /gscp.R/bibnhanmgppibmikaedapnnmhhfhpgeofaofbfnbdmkchjbjeapchkejfhegeeocidmcdeoalpljcneknihhcdgnlfhlhmcmlicjdhjhbcfdamcclgpnjdmchjhpikhfflloilphkdakhcdliajfkkpaejobknpmemmmcklidlhfamccmmhlcfdijoanipbgongikigocgjgfhomajacnlplhebffipeldkmlaaghflegfaagbjbnnkbklneaopd 
+- 185.106.96[.]158 port 80 - ocsp.verisign.com - POST /supprq/sa/dgdcdhdgdhdidadjde
+
+COBALT STRIKE USER AGENT STRING:
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36 OPR/78.0.4093.147

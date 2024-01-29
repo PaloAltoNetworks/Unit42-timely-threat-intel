@@ -1,0 +1,73 @@
+2021-11-15 (MONDAY) - MATANBUCHUS DELIVERS QAKBOT (DISTRIBUTION TAG: OBAMA128B), LEADS TO SPAMBOT AND COBALT STRIKE ACTIVITY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1461004489234829320
+
+NOTE:
+
+- For background on Matanbuchus, see: https://unit42.paloaltonetworks.com/matanbuchus-malware-as-a-service/
+
+CHAIN OF EVENTS:
+
+- email --> zip attachment --> extracted Excel file --> enable macros --> Matanbuchus DLL --> Matanbuchus C2 --> Qakbot DLL --> Qakbot C2 --> spambot activity and Cobalt Strike
+
+ASSOCIATED MALWARE
+
+- SHA256 hash: 18bd1ae701ff57a6d1119f18c53350688f41cbac0ea1ad0cb73234f6ab733404
+- File size: 240.445 bytes
+- File name: CLMCP 9215 Nov 15 (383).xlsb
+- File description: Excel file with macro for Matanbuchus DLL
+
+- SHA256 hash: aca6a42ef77fb9e13c8a77caad356b10b7f8114fa89de06acda9ab4e379a69f9
+- File size: 883,920 bytes
+- File location: hxxp://190.14.37[.]84/5555555.dat
+- File location: C:\ProgramData\delta.ocx
+- File description: Matanbuchus DLL retreived by Excel macro
+- Run method: regsvr32.exe [filename]
+
+- SHA256 hash: b9b399dbb5d901c16d97b7c30cc182736cd83a7c53313194a1798d61f9c7501e
+- File size: 336,896 bytes
+- File location: hxxps://softwareupdatechecking[.]at/d8b8d14f-6842-46ec-b254-e92ffe990498/4ad4e44f
+- File description: Another DLL retrieved by Matanbuchus DLL
+- Run method: unknown
+- NOTE: Couldn't find this saved to disk, but C:\ProgramData\F1B2503007FE48B68E2406AD42928F5A\ was created approximately the same time as the related traffic
+
+- SHA256 hash: 3cde8a896848e9c28ccfcc2db7812602143de7be90aa44fcfe83c85ac7e53f9b
+- File size: 565,248 bytes
+- File location: hxxp://80.71.158[.]152/disjdifijdjifsdd.dat?iddqd=1
+- File location: C:\ProgramData\F1B2503007FE48B68E2406AD42928F5A\yKQeKcEeweN.ocx
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Ljsxknicz\enkiysrb.dll
+- File description: Retreived by Matanbuchus, Qakbot (Qbot) DLL, distribution tag: obama128b
+- Run method: regsvr32.exe -s [filename]
+
+TRAFFIC TO RETRIEVE MATANBUCHUS DLL:
+
+- 190.14.37[.]84 port 80 - 190.14.37[.]84 - GET /5555555.dat
+
+TRAFFIC CAUSED BY MATANBUCHUS:
+
+- 193.56.146[.]60 port 443 - hxxps://checkingupdatesoftware[.]at/d8b8d14f-6842-46ec-b254-e92ffe990498/b32f9ccc
+- 193.56.146[.]61 port 443 - hxxps://softwareupdatechecking[.]at/d8b8d14f-6842-46ec-b254-e92ffe990498/4ad4e44f
+- 193.56.146[.]60 port 44413 - 193.56.146[.]60 - POST /GtHODfM/qilZw/YjtK.php
+- 193.56.146[.]61 port 44413 - 193.56.146[.]61 - POST /GtHODfM/qilZw/YjtK.php
+
+TRAFFIC CAUSED BY MATANBUCHUS TO RETRIEVE QAKBOT:
+
+- 80.71.158[.]152 port 80 - 80.71.158[.]152 - GET /disjdifijdjifsdd.dat?iddqd=1
+
+QAKBOT TRAFFIC:
+
+- 71.13.93[.]154 port 6881 - attempted TCP connections
+- 103.143.8[.]71 port 443 - attempted TCP connections
+- 50.194.160[.]233 port 443 - HTTPS traffic
+- 37.252.0[.]102 port 443 - HTTPS traffic
+- port 443 - www.openssl[.]org - HTTPS traffic (connectivity check, not inherently malicious)
+- 23.111.114[.]52 port 65400 - TCP traffic
+- various IP addresses, various ports - Email banner checks
+- port 443 - api.ipify[.]org - HTTPS traffic (IP address check, not inherently malicious)
+- various IP addresses, various ports (mostly TCP port 25) - spambot traffic (encrypted SMTP)
+
+COBALT STRIKE TRAFFIC:
+
+- 5.255.98[.]144 port 8888 - dxabt[.]com - HTTPS traffic

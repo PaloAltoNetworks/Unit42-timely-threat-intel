@@ -1,0 +1,91 @@
+2022-01-12 (WEDNESDAY) - ICEDID (BOKBOT) WITH COBALT STRIKE AND DARK VNC
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1481395829806149637
+
+NOTES:
+
+- This campaign first reported on Tuesday 2022-01-11 in this Twitter thread: https://twitter.com/executemalware/status/1481048885284020230
+
+INFECTION CHAIN:
+
+- email --> link --> downloaded XLL file --> dropped DLL for IcedID installer --> web traffic --> persistent IcedID --> IcedID C2 --> Follow-up malware (Cobalt Strike and DarkVNC)
+
+URL FROM MALSPAM:
+
+- hxxps://www.royalcityplumbing[.]ca/wp-content/plugins/wp-roilbask/includes/?FQUVPKMwuZrjyvabRIB
+
+DOWNLOADED XLL FILE:
+
+- SHA256 hash: c9c6b253530238054aa343c132836c934b94413d1c768ed77417e6c7a72edd00
+- File size: 72,704 bytes
+- File location: hxxps://www.royalcityplumbing[.]ca/wp-content/plugins/wp-roilbask/includes/?FQUVPKMwuZrjyvabRIB
+- File name: DH-1641998904.xll
+- File description: Downloaded Excel add-on file
+
+INSTALLER DLL:
+
+- SHA256 hash: cbd2e49a46f4f9df1bbcd8eb7ba048692a3ddf0108aef42ff5381c3a3c572b0f
+- File size: 42,496 bytes
+- File location: C:\Users\[username]\JavaClassObjectCm.dll
+- File description: Installer DLL for IcedID
+- Run method: rundll32.exe [filename],DllGetClassObject
+
+GZIP BINARY:
+
+- SHA256 hash: a2c8441342c1ebd7d5fe65dc59fc17ded908f3888feb6659aefb97b0fc476d9d
+- File size: 457,853 bytes
+- File location: hxxp://olerantand[.]top/
+- File type: gzip compressed data, was "Orphan.txt", from FAT filesystem (MS-DOS, OS/2, NT), original size modulo 2^32 2529244
+- File description: gzip binary retreived by installer to create license.dat and persistent IcedID DLL
+
+LICENSE.DAT:
+
+- SHA256 hash: cfc202b44509f2f607d365858a8218dfdc6b26f8087efcc5e46f4fef9ab53705
+- File size: 341,898 bytes
+- File location: C:\Users\[username]\AppData\Roaming\FirstInherit\license.dat
+- File description: data file used to run persistent IcedID DLL
+- Note: First submitted to VirusTotal on 2021-11-24
+
+PERSISTENT ICEDID DLL:
+
+- SHA256 hash: e7b98a1b6c6b463d309a2a067b8c7362888e5d1d96ce983558c96e96c8d73ad9
+- File size: 115,200 bytes
+- File location: C:\Users\[username]\AppData\Roaming\kosohu\Gigaod32\Jugeejmo2.dll
+- File description: Persistent DLL for IcedID
+- Run method: rundll32.exe [filename],DllMain --exibga="[path to license.dat]"
+
+TRAFFIC FOR THE GZIP BINARY:
+
+- 159.89.171[.]14 port 80 - olerantand[.]top - GET /
+
+ICEDID C2 IP ADDRESSES AND DOMAINS:
+
+- 45.147.228[.]138 port 443 - charliedeffer[.]store
+- 45.147.228[.]138 port 443 - hashingold[.]top
+- 45.147.228[.]138 port 443 - namerikode[.]uno
+- 185.70.186[.]133 port 443 - lasticjugs[.]top
+- 185.70.186[.]133 port 443 - ouldmakeithapp[.]top
+
+COBALT STRIKE BINARY:
+
+- SHA256 hash: 94053dfbc06bc7124129dd51fabf67f7f3738109d6dc11d0b4bb785f0e93c0b6
+- File size: 398,336 bytes
+- File location: hxxp://104.168.44[.]45/download/4564.exe
+- File location: C:\Users\[username]\AppData\Local\Temp\Ayfaga3.exe
+- File description: EXE for Cobalt Strike seen as follow-up to IcedID infection
+
+COBALT STRIKE TRAFFIC:
+
+- 104.168.44[.]45 port 80 - 104.168.44[.]45 - GET /download/4564.exe
+- 104.168.44[.]45 port 443 - HTTPS Cobalt Strike traffic
+
+UNUSUAL TRAFFIC (DON'T KNOW WHAT THIS WAS CAUSED BY):
+
+- 185.70.184[.]43 port 8572 - HTTPS/SSL/TLS traffic
+
+DARK VNC TRAFFIC:
+
+- 45.147.228[.]197 port 8080 - encrypted or otherwise encoded traffic
+

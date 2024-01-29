@@ -1,0 +1,99 @@
+2021-12-07 (TUESDAY) - OBAMA141 MALSPAM DISTRIBUTION PUSHES QAKBOT AND MATANBUCHUS
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1468747286763167750
+
+NOTES:
+
+- obama141 is the distribution tag used in code from the Qakbot DLL associated with this infection
+
+INFECTION CHAIN:
+
+- email --> link --> zip --> Excel file --> enable macros --> Qakbot and Matanbuchus DLLs --> post-infection traffic
+
+TRAFFIC TO DOWNLOAD ZIP ARCHIVE:
+
+- port 80 - snes.edu[.]pk - GET /doc/R/gcJaBMPOQ.zip
+
+TRAFFIC TO RETRIEVE QAKBOT AND MATANBUCHUS DLL FILES:
+
+- 101.99.95[.]143 port 80 - 101.99.95[.]143 - GET /44537.7815862269.dat
+- 185.244.149[.]138 port 80 - 185.244.149[.]138 - GET /44537.7815862269.dat
+- 194.38.20[.]30 port 80 - 194.38.20[.]30 - GET /44537.7815862269.dat
+- 101.99.95[.]143 port 80 - 101.99.95[.]143 - GET /44537.7815862269.dat2
+- 185.244.149[.]138 port 80 - 185.244.149[.]138 - GET /44537.7815862269.dat2
+- 194.38.20[.]30 port 80 - 194.38.20[.]30 - GET /44537.7815862269.dat2
+
+TRAFFIC CAUSED BY MATANBUCHUS:
+
+- 193.56.146[.]72 port 443 - belialq449663[.]at - HTTPS traffic
+- 193.56.146[.]74 port 443 - beliale232634[.]at - HTTPS traffic
+- 193.56.146[.]73 port 52777 - belialw869367[.]at - POST /GtHODfM/qilZw/YjtK.php
+- 193.56.146[.]74 port 52777 - beliale232634[.]at - POST /GtHODfM/qilZw/YjtK.php
+
+TRAFFIC CAUSED BY QAKBOT:
+
+- 73.151.236[.]31 port 443 - HTTPS traffic
+- 71.74.12[.]34 port 443 - HTTPS traffic
+- 207.246.112[.]221 port 443 - HTTPS traffic
+- port 443 - www.openssl[.]org - HTTPS traffic (connectivity check, not inherently malicious)
+- 23.111.114[.]52 port 65400 - TCP traffic
+
+- 174.20.72[.]123 port 443 - attempted TCP connections
+- 81.250.153[.]227 port 2222 - attempted TCP connections
+- 45.46.53[.]140 port 2222 - attempted TCP connections
+- 220.255.25[.]187 port 2222 - attempted TCP connections
+- 86.154.2[.]69 port 443 - attempted TCP connections
+- 123.252.190[.]14 port 443 - attempted TCP connections
+- 68.204.7[.]158 port 443 - attempted TCP connections
+
+DOWNLOADED ZIP ARCHIVE:
+
+- SHA256 hash: 9c3f2a3170535d3a9532fabc0089fc7c010304ed9e880b78d18fbe908f6c1fa5
+- File size: 478,874 bytes
+- File location: hxxp://snes.edu[.]pk/doc/R/gcJaBMPOQ.zip
+- File name: gcJaBMPOQ.zip
+- File description: Zip archive containing below Excel file
+
+EXTRACTED EXCEL SPREADSHEET:
+
+- SHA256 hash: 09cc1b9a19d0437c21fbd20f531cc3718b7a8c7c7c1a10fd52660bdf67576556
+- File size: 482,970 bytes
+- File name: EmergReport-1265284595-12072021.xlsb
+- File description: Excel spreadsheet with macros for Qakbot/Matanbuchus
+
+QAKBOT DLL RETRIEVED BY EXCEL MACROS:
+
+- SHA256 hash: 1e9962a003e423c0bd217ea674754e4d683df8749575302156f9f3e28f3fe6da
+- File size: 596,896 bytes
+- File location: hxxp://101.99.95[.]143/44537.7815862269.dat
+- File location: hxxp://185.244.149[.]138/44537.7815862269.dat
+- File location: hxxp://194.38.20[.]30/44537.7815862269.dat
+- File location: C:\ProgramData\Volet1.ocx
+- File location: C:\ProgramData\Volet2.ocx
+- File location: C:\ProgramData\Volet3.ocx
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Gyeyuazitmie\ixichv.dll
+- Run method: regsvr32.exe -s [filename]
+- File description: Qakbot DLL
+
+MATANBUCHUS DLL RETRIEVED BY EXCEL MACROS:
+
+- SHA256 hash: dbac4888cb2be8a41986d0992abcb7215556da786e9b12759f6a39eede97b5f5
+- File size: 576,416 bytes
+- File location: hxxp://101.99.95[.]143/44537.7815862269.dat2
+- File location: hxxp://185.244.149[.]138/44537.7815862269.dat2
+- File location: hxxp://194.38.20[.]30/44537.7815862269.dat2
+- File location: C:\ProgramData\Volet4.ocx
+- File location: C:\ProgramData\Volet5.ocx
+- File location: C:\ProgramData\Volet6.ocx
+- Run method: regsvr32.exe -s [filename]
+- File description: Intitial Matanbuchus DLL
+
+MATANBUCHUS DLL PERSISTENT ON INFECTED WINDOWS HOST:
+
+- SHA256 hash: 207f12337550c58cbbb9337f5696a957043c02a23d0b29874eab20e93a50d101
+- File size: 569,856 bytes
+- File location: C:\ProgramData\9e09.ocx
+- Run method: regsvr32.exe -e [filename]
+- File description: Matanbuchus DLL persistent on infected Windows host

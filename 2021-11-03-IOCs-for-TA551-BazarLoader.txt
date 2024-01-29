@@ -1,0 +1,46 @@
+2021-11-03 (WEDNESDAY) - TA551 (SHATHAK) BAZARLOADER INFECTION
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1457839609174536196
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> BazarLoader DLL --> post-infection activity --> Cobalt Strike as follow-up malware
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 981cdead74b028ee7fb081f369abfde84e1e2ab1cd54ddd3b602ec937651904d
+- File size: 35,333 bytes
+- File name: instrument indenture,11.03.2021.doc
+- File description: TA551 Word document with macros for BazarLoader malware
+
+- SHA256 hash: 212a0b6d8e9951707e35d84ca4d6c42523fb99102548c34b8d6b83ecb6083534
+- File size: 3,366 bytes
+- File location: C:\Users\Public\girlYou.hta
+- File description: HTA file dropped by Word macros
+
+- SHA256 hash: 0ee9d13ecc93f06d1f7a1a6ae5f352c67c3e2a3c6314d53e3ad400f1b29054a1
+- File size: 442,495 bytes
+- File location: C:\Users\Public\nextNextLike.jpg
+- File description: Retrieved by .hta file, this is a DLL for BazarLoader
+- Run method: regsvr32.exe [filename]
+
+- SHA256 hash: 72ffe612b16ea8c81c1e1507b309c9452c894b4bdfc65971b7100085f41a45e9
+- File size: 153,649 bytes
+- File location: B899.dll
+- File description: DLL for Cobalt Strike seen after the initial infection
+- Run method: rundll32.exe [filename], hkyuFwDacGhvLOsGYdGaRF
+
+HTTP URL HOSTING INSTALLER DLL:
+
+- 45.95.11.201 port 80 - pulpfarmerd[.]com - GET /cbfsd/BlDFRsj1bsGvKdLIj/98697/7309/33451/Pg9zYLcfzirZtPtx1Pn64fLoWAIDvNPx4lclw/LaQAZSeiLYPCjjCble334/QdHhD0r/98/RDvuSh/zidem3?q=RYaTpLn2leLH6rxKG0pux1CME3RY&sid=UY8SVDRzRqZb&CWpJmycHi=iF0I26&sid=YGrkJjD4n&q=mbdtF5ziKWJczkstBlW0PBT7Ia&time=DEYO7nTt&q=EY7sl24iZtw7zTehznnCVwHt&q=G9FdCrnm6Z6yu HTTP/1.1 
+
+BAZAR C2:
+
+- 87.120.37[.]231 port 443 - HTTPS traffic
+- 31.13.195[.]145 port 443 - HTTPS traffic
+
+COBALT STRIKE POST-INFECTION TRAFFIC:
+
+- 192.34.109[.]19 port 1443 - introwebsites[.]com - HTTPS traffic

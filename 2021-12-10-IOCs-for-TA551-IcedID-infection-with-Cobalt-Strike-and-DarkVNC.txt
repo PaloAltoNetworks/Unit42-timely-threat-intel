@@ -1,0 +1,76 @@
+2021-12-10 (FRIDAY) - TA551 (SHATHAK) ICEDID (BOKBOT) WITH COBALT STRIKE & DARK VNC
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1469473539573039105
+
+INFECTION CHAIN:
+
+- email --> password-protected zip archive --> Word doc --> enable macros --> installer DLL --> gzip binary --> persistent IcedID --> C2 activity --> Cobalt Strike & DarkVNC as follow-up malware
+
+NOTES:
+
+- Cobalt Strike and DarkVNC traffic occurred during this infection, but no binaries for these two malware families were saved to disk.
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 6a6a5c2082110a74eb93c7ae402366258db1a8b2fbd055f6f818c1beac1a0347
+- File size: 51,463 bytes
+- File name: Info.zip
+- File description: password-protected zip archive attached to email
+- Password: ujy55
+
+- SHA256 hash: 6403581b415e32cfb92c28f1628126f05a15e4583f33f5856f0dc731640ee955
+- File size: 43,512 bytes
+- File name: rule.12.21.doc
+- File description: TA551 Word doc with macros for IcedID installer
+
+- SHA256 hash: 27bda9f843a233947ed63de0107f8f23f2e5ce08bbf40cca29cedab2c285a1ed
+- File size: 3,535 bytes
+- File name: C:\Users\[username]\Documents\likePowLike.hta
+- File description: HTA file dropped by above Word document (HTA always in the Documents directory) 
+
+- SHA256 hash: 91f6e11096604479f796787e8f4315cee982d7abb7d7e817f7377dd01e1b8b47
+- File size: 227,455 bytes
+- File location: hXXp://copelandbenefitg[.]com/frhe/1ukcmJN/yCvH52W8TJwx5X6Sfo0Cui6JnmHG2PFr2omut/MXdINzqAuUBxk4ZqjDiASIJQ0T2z9/BjpzhVrLsYXGsW2y8Lh5/repa7?user=oq7xaGpp0HeOeVHY&page=DJpnZd6hKsTc&page=IW96WhLYqVxOj4iAasoL5iF&time=sH0HCUHcuo&id=70Uezj2iHkaqZbtvoqIQoc6iX3ld&cid=q9XLicGSEHSJQ5DxImz1&=nlTMmjAL9k2huJIqBoyNbC4&q=c5bIpGxMHT&user=NwBOY6y5xcvi5wMU
+- File location: C:\Users\Public\loadLikeLoad.jpg
+- File description: Installer DLL for IcedID
+- Run method: regsvr32.exe [filename]
+
+- SHA256 hash: 2b948191f534f43a21842b4657eb2b58c9e3d9dc9ab4facf4b1f029c702800c8
+- File size: 462,973 bytes
+- File location: hXXp://jeliskvosh[.]com/ 
+- File description: Binary retreived by IcedID installer
+- File type: gzip compressed data, was "Income.txt", from FAT filesystem (MS-DOS, OS/2, NT), original size modulo 2^32 1075616
+
+- SHA256 hash: cfc202b44509f2f607d365858a8218dfdc6b26f8087efcc5e46f4fef9ab53705
+- File size: 341,898 bytes
+- File name: C:\Users\[username]\AppData\Roaming\WrongEvolve\license.dat
+- File description: license.dat binary needed to run persistent IcedID DLL
+
+- SHA256 hash: 2d5584e4c30e2a82e8da600bf6686ba261d838f27fc82d1c8feff8c1bb4ee5e3
+- File size: 120,320 bytes
+- File name: C:\Users\[username]\AppData\Local\iyraed2\{6CC49CA5-BD87-48D5-05CE-51176ABC04C6}\owkaidmi.dll
+- File description: Persistent IcedID DLL (persistent through scheduled task)
+- Run method: rundll32.exe [filename],DllMain --fi="[path to license.dat]"
+
+TRAFFIC FOR INSTALLER DLL:
+
+- 146.19.233[.]44 port 80 - copelandbenefitg[.]com - GET /frhe/[long string]/repa7?[long string]
+
+TRAFFIC CAUSED BY ICEDID INSTALLER DLL: 
+
+- port 443 - aws.amazon[.]com - HTTPS traffic
+- 94.140.112[.]17 port 80 - jeliskvosh[.]com - GET /
+
+ICEDID C2 TRAFFIC:
+
+- 87.120.8[.]98 port 443 - baeswea[.]com - IcedID C2 HTTPS traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 108.62.118[.]215 port 443 - solobiv[.]com - Cobalt Strike HTTPS traffic
+
+DARK VNC TRAFFIC:
+
+- 88.119.161[.]76 port 8080 - encoded/encrypted TCP traffic for DarkVNC

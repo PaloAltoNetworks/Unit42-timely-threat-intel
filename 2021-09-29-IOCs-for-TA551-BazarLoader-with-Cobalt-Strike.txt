@@ -1,0 +1,112 @@
+2021-09-29 (WEDNESDAY) - TA551 (SHATHAK) BAZARLOADER WITH COBALT STRIKE
+
+REFERENCE:
+
+- 
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> installer DLL for BazarLoader --> post-infection activity --> Cobalt Strike as follow-up malware
+
+NOTES:
+
+- These Word docs use English language templates, but the file names are Italian.
+- In our example, Cobalt Strike appeared approximately 12 to 13 hours after the initial BazarLoader infection.
+
+15 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 04e26a429675b08dce30bebc6dc3277a4dc4242c25002840b0b92114c00d5911  comando-09.21.doc
+- 0d8679cdd59a906f58a4e4ec7ef8d673b7360cd9e12d284281a239876fe17c58  Materiale-09.29.2021.doc
+- 2a554cc97d7d2a57f7bdd2d75f359ea60df1d9c0c12b3b5d786a1733336adacf  particolari-09.21.doc
+- 2e4086e704bc6de9ab0687f4cd94b0a76fd61ca521dd22fcb29a5ee9a5f84391  documento ufficiale 09.21.doc
+- 3449185c5e01edf45abdd3c46bf032e503aa9fc3910b728bccac19b110b3da8b  Istruire 09.21.doc
+- 65cf4ba4799d821c60657b12ea21d6c6ccbfdd9c5e9a84582867a6b5982bdb7d  domanda-09.29.2021.doc
+- 6ea3e4daddad527a3d56a80f0a767295f84e95c54cef5653dada78aeb547de01  fatti.09.21.doc
+- 76980a9aa1f0b8e4090f4e4996ba7d46ad2e7ba3686d92be4d0d85ae48a94a08  ingresso-09.21.doc
+- 833ef6da205622cc7239cb3c4bb8cd734d892edb24d49347b8adf98cb76fbe6f  ordinare-09.21.doc
+- 8cc2d9417231758b5eb259b7cd0b51e30969ad363548a8d6990489af59a91592  diffidare_09.21.doc
+- 8d9a5a1713cf71f93f7a79045d329f690233df1273e2eba1e9f0dc6dae28411a  diretto_09.21.doc
+- 9ca640878f2e57f0e303707eea9e0c0c3f14f269cf454907e4ae1dff53a16a2a  legiferare-09.21.doc
+- b2d063f0c51c08853ea374567c2eceda86deb65796653a8be24a23cd90ac612e  caricare,09.29.2021.doc
+- bfc70d95721b0f54dadbde2f845c9c7ff4cb39c51d7961f536f1c489ca4dd7ae  caricare_09.29.2021.doc
+- ce3d54ae221510e31f2bcfe9f85ce98f7a4872b1c6a090ebe47e17a036694b49  Istruire-09.21.doc
+
+AT LEAST 6 DOMAINS HOSTING THE INSTALLER DLL:
+
+- 194.62.42[.]208 - chavezuniqueg[.]com
+- 194.62.42[.]234 - officecleaning2018b[.]com
+- 194.62.42[.]235 - exposetaxi2011b[.]com
+- 194.62.42[.]238 - coachstorage2020b[.]com
+- 194.62.42[.]238 - sampsonlunarg[.]com
+- 194.62.42[.]239 - berrydeliverys[.]com
+
+EXAMPLES OF URLS FOR INSTALLER DLL:
+
+- hxxp://chavezuniqueg[.]com/bmdff/kIB5cdKOsfTsGvmvZ/V/bcFnIh/75632/esKeMcrysdSzRdoJ4pQ1HwyTQMok5TG/51252/lilu2?sid=4vcP4eyoNNPxt2YQPjsp3rg
+
+- hxxp://berrydeliverys[.]com/bmdff/L4M7BiOSmEgyoAcnw5g38CvO28wl/rUDzPcv/lilu5?46TmDE=a5vuzJ9&ref=xlAx8G8SVf9Nn7&cid=U1gBHO0O5XHzbG&ref=HQ1idua2YsJPcBEizg&liZ4d3=4qlX7GxMibthcGuXVn&3ZE7GKY3=mL1m3RY4xB&2PhKgT3n=DHbioGf21Y&page=30yKSog2VpKz9EIG1dndwHsw7bb&user=glY2V1E5S&page=lGTX2QSrbaeAv2rud
+
+- hxxp://berrydeliverys[.]com/bmdff/T1mXvaIPBUI0o4l/04dryQVE4akqnY0vPK46hs7V4zec1/lilu4?time=owtmxppUXIG1C5Z1
+
+- hxxp://coachstorage2020b[.]com/bmdff/23346/vqxXu3SSIJfHFwSgi3vT5oktZ94ju/94785/MGGEkupJF6LiTJChA5jbRoGXhm4/97370/uvHMGZZiDZQcNDrm/x59HkgMNxcvUnKiBAfB0nzpHr/18546/3916/NRf0U8duGAHPdpxY5l6opCc3LVdrgvXvt3MJvPx5Wvz1/lilu7?user=WZj3bKezdhMz7QO0v&time=snfxAiP5X6g&cid=UAlKCY2wIAn43mV5&ref=OkSAYs2nKcfMTT0RCofeD2sZ9&time=VDaw8M5YvsRchuqLaeiLmx&CJdZ7EJTC=oBjCaJVPynGau7&=2Z3qLtNQmY1Iqc5&id=P8SeA7VYdpQj3&time=Wj5cem6GLAlERsUj
+
+- hxxp://exposetaxi2011b[.]com/bmdff/J5dJHdBeMU6BjCM2al/EwAwD8purFOqW/36005/44935/16901/QPCpFqx3ez051kem0kWeDEmwTRcze6FfDVvSzsUk/26679/lilu4?q=PtKChouRatBKf4y&3jpgJmR9=El56FXiYmitVdrRNb1aX&Be=gUX1DhZbMsFNPDPRky&ref=qvEEXdO9oMiuq&search=hnzBGBO4R4dKv7hKRAYFDQLA&B6OwYj99=ONUGGWGsxkMDsa2b3b&search=z0M44RgdUiZnM
+
+- hxxp://officecleaning2018b[.]com/bmdff/I6PD/OPDey638Vr4pfkMfmHMoD292TivVuZVgg21LyVRFdD2FAB/vQlnkM90SqGDwc1s67MbWC24TGoOjMXC1RieoqwQfpdcWjuv/UuGb/WB8PpOB7VLCXPVgzZ/EIhkrSU/65989/wvmpeISJDubxjzEjoa61qZS8xgQCjHj/xa5ItIv2KPbo3QzSDAD5bpR7WaczCc9wrlEz7WbOR/QppHKYr78gks5vSFcqsdzdT4NDxIXRf6FE/lilu1?=GuydBWq&=d5&0SO=p1v8uK0nR&AChiJl2=h8fpdBD
+
+- hxxp://officecleaning2018b[.]com/bmdff/p7ynhRpou9wrJllCfhQvKiverfim3sF0ONCJqAzF/xnBpYZ5EQ3kICHvsgvmdfy5QxtrGCjCzr/lilu2?ref=JOnIYMuAxr250wlG&sid=lzk9wlZQd&FRQpurg6Er=fZNTzQ0Nh4135ZjK&q=tqR7lSY4VjbalWjo9uIctbfzUJd&search=vnVMqfddQyYn&user=v1QNhYgxXN&fOw=mTMK0mgsq5Vokn&time=6bNXBdYCIjJDMVceF3W7G84wHaba2
+
+- hxxp://sampsonlunarg[.]com/bmdff/NYp6E8NZ/69bMxpjXQ8sjdaCtoQevz1i1u1f6mH5lTo/kXJbmJ0tdz1iCNfKNfErriJrNMplz1cgYT2MKIpZ5/uJ67nSRTegX496/J7114vbdL03HTQtr4INSnQQ1oYZiei4/xpIgURh79MRasZs1zRvJHd0W/pHmgFDP9hOcUcQaSUPXT/lilu7?page=1upXSR0bnx&ref=80hJKlk0X3lOQl97&7pB04C9kle=6Od13N23n8GqPcBf&ref=7ojE6tyeOxSXlN8NiYFfJhjf
+
+9 EXAMPLES OF HTA FILES DROPPED BY WORD MACROS:
+
+- 2089b44b21295e8958cc001895dbd674ea87fa7b0a0767f29536b5f7ef8df4f5  accessPopEarth...hTa
+- 96d5aaa8342c344fdae21fe8fc414bed055f075435129e9e81d77667be7bb946  aprilAccessWindows...hTa
+- 32aeab29881aa242f3c97993885b6bb3741dc0b76dc4225bef57f7a51024912a  cleanAccess...hTa
+- db4873797a66f0447e1377545adfef2e73a05e4af08b4c90c497369e8ad50b98  excelWindows...hTa
+- 679fedfd5d7732c072fec8379295b9ae3d22fd60c3a4ea36fc6541b240afb633  officeWord...hTa
+- a13055962c1b5965c82da9ebc57613ba58c3347041113d1fc0b65d7f223d91a9  popMicrosoft...hTa
+- 7b7f759c73fe89abd555dfa49b7955dabced6963f389f17a214b6e453523d82a  rapAccess...hTa
+- e9f9e78b90e16f1686f8ab3bfcd124c33f86d6f20bc8d62a7b5ef7863775ef10  rapExcelRap...hTa
+- 8626838de9f60b2f3879a4e7354a2749c552e6a92cba369cd5edbdaeada34efd  windowsWord...hTa
+
+LOCATIONS OF THE HTA FILES:
+
+- [same directory as the Word doc]
+
+9 EXAMPLES OF BAZARLOADER DLL FILES RETRIEVED BY THE ABOVE HTA FILES:
+
+- 61589d22ba47b11612e71f58463f664716f6b41fb76933e5b7e6294896b10e19  accessPopEarth.jpg
+- 59f6920572e085331b13de8e0adc15c0cba87d0872af0daa6f64969febcfa425  aprilAccessWindows.jpg
+- ffcae86616e45340bcfb91cef686cfdb9822ee2dfb4cd8ee55eb10d91e4b1c53  cleanAccess.jpg
+- b130b5a05f3b7fc08245c558bfcfb71dcf17e913c969f63abe98a6b19f534863  excelWindows.jpg
+- 8f2bc90f938a2f43f48e0a77073ef7a617b3479fd2c68f4a7dd4a7bfdaf08afe  officeWord.jpg
+- ca3b52301bf6981165a5b7844f10ee68b958d936d7d27ae33c5d8ec46d9eaa88  popMicrosoft.jpg
+- b3f2720d3f280811007fd10a16f641b757ebeadf8e59b5973d9284973a565630  rapAccess.jpg
+- 4c32529e9beef00fe01fd839b3f9e1eeceb541f36c5e5e23da8b62a06b817d16  rapExcelRap.jpg
+- 2d21fd417bdbbe0fd3ce5b3e49649f9f1049d01c6532a906b314f2dbead18a3d  windowsWord.jpg
+
+LOCATION FOR THE INSTALLER DLL FILES:
+
+- C:\Users\Public\
+
+DLL RUN METHOD:
+
+- regsvr32.exe [filename]
+
+BAZAR C2 TRAFFIC:
+
+- hxxps://164.90.226[.]27/feed/news/actual/last
+- hxxps://164.90.226[.]23/feed/news/actual/last
+
+FOLLOW-UP MALWARE: COBALT STRIKE
+
+- SHA256 hash: a40b710413dea51189032d6337e397f8f65ce87abe4afadfae528739662e916d
+- File size: 391,168 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\DEC6.dll
+- File description: Cobalt Strike sent as follow-up malware from BazarLoader infection
+- Run method: rundll32.exe [filename],#1
+
+COBALT STRIKE TRAFFIC:
+
+- 144.202.101[.]37 port 443 - hxxps://fully1[.]com/__utm.gif

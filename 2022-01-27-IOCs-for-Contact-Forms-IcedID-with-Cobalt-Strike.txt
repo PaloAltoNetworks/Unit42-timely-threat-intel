@@ -1,0 +1,91 @@
+2022-01-27 (THURSDAY) - CONTACT FORMS CAMPAIGN PUSHED ICEDID (BOKBOT) WHICH LED TO COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1488179539909951491
+
+INFECTION CHAIN:
+
+- website contact form submission --> email --> link --> "Stolen Images Evidence" page --> downloaded zip --> extracted Excel file --> enable macros --> IcedID --> Cobalt Strike
+
+BACKGROUND INFORMATION ON CONTACT FORMS CAMPAIGN:
+
+- https://isc.sans.edu/diary/How+the+%22Contact+Forms%22+campaign+tricks+people/28142
+- https://twitter.com/Unit42_Intel/status/1463178309160906753
+
+EXAMPLES OF URLS FOR "STOLEN IMAGES EVIDENCE" PAGE:
+
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/f8cuokiT78PH7.html?l=107197773776304810
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/fByK5463yQDA2.html?d=351584383195986175
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/file4y8hb7TYskO4.html?f=07599225852838802
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/file4y8hb7TYskO4.html?h=956937301494761153
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/fnZfy94THQ3Rr.html?d=34193548556491136
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/fnZfy94THQ3Rr.html?h=605250523327714838
+- hxxps://storage.googleapis[.]com/gjmp1ujyphj1iu.appspot.com/0/file/sh/public/d/0/fnZfy94THQ3Rr.html?l=708304669785009247
+
+EXAMPLE OF DOWNLOADED ZIP AND EXTRACTED EXCEL FILE:
+
+- SHA256 hash: 2ac0ef18f64b8c597c6e980706966265607a0ef3e15f959f17a143964e742def
+- File size: 125,581 bytes
+- File name: Stolen_Images_Evidence.zip
+
+- SHA256 hash: 96b5aa6131ccc681343c86744da809e01682a4e81b18322c7f49c4a91429e83b
+- File size: 133,780 bytes
+- File name: Stolen_Images_Evidence.xlsm
+
+INSTALLER DLL FILES FOR ICEDID:
+
+- SHA256 hash: a61b1d70d469b8ca7acdbd26fc859e6aeb229c4636fe9c92eac856914f326ac8
+- File size: 180,224 bytes
+- File location: hxxp://asoperdo[.]com/sddk2fe09/1.dll
+- File location: C:\Ueli\alle.ocx
+
+- SHA256 hash: 02044cb407b4b9fc093a8a384a9759b33d7a2396770143ededebaf11f76766bf
+- File size: 180,736 bytes
+- File location: hxxp://asoperdo[.]com/sddk2fe09/2.dll
+- File location: C:\Ueli\alll.ocx
+
+- SHA256 hash: b8524e0783b6d542128f0b7845b83f2f0f65b07a7f1e37a8781de34a0742fe56
+- File size: 180,736 bytes
+- File location: hxxp://asoperdo[.]com/sddk2fe09/3.dll
+- File location: C:\Ueli\all1.ocx
+
+FILES FOR PERSISTENT ICEDID INFECTION:
+
+- SHA256 hash: 99ebe73d254cd651c29a12f3c344953b327618d05fa0048b1be02648c994dd4d
+- File size: 891,004 bytes
+- File location: hxxp://carpricegoods[.]com/
+- File description: Gzip binary retrieved by the above installer DLLs
+
+- SHA256 hash: cfc202b44509f2f607d365858a8218dfdc6b26f8087efcc5e46f4fef9ab53705
+- File size: 341,898 bytes
+- File location: C:\Users\[username]\AppData\Roaming\ReduceGeneral\license.dat
+- File description: data binary used to run second-stage IcedID DLL
+
+- SHA256 hash: ad3685a9fa9f87f18eb06a44c3e564244c691421d5ee80f5a8a9f025dea84b33
+- File size: 548,352 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\sustain32.dat
+- File description: Second-stage IcedID DLL
+- Run method: rundll32.exe [filename],DllMain --uqehru="[path to license.dat]"
+
+- SHA256 hash: 6a366753ecedd069de92b0164b5e1c24b272f870c8dbcf2157b6af54819c8f1f
+- File size: 548,352 bytes
+- File location: C:\Users\[username]\AppData\Local\[username]\uzaw2\Okagdt3.dll
+- File description: Persistent IcedID DLL
+- Run method: rundll32.exe [filename],DllMain --uqehru="[path to license.dat]"
+
+POST-INFECTION ICEDID C2 TRAFFIC:
+
+- 149.3.170[.]104 port 443 - cooldogblunts[.]com - HTTPS traffic
+- 194.15.112[.]23 port 443 - coolbearblunts[.]com - HTTPS traffic
+
+FOLLOW-UP MALWARE: POWERSHELL SCRIPT (.PS1) FILE FOR COBALT STRIKE:
+
+- SHA256 hash: 56943ed138eaf9c02377cdd6e375ef673f2ed02c0d2333bd7d291e88d3802450
+- File size: 225,837 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\ciaj1.txt
+- File description: Powershell script for Cobalt Strike
+
+COBALT STRIKE C2 TRAFFIC:
+
+- 149.255.35[.]174 port 787 - driverpackcdn[.]com - HTTPS traffic

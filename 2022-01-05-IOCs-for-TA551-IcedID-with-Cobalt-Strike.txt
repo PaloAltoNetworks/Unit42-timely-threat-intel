@@ -1,0 +1,169 @@
+2022-01-05 (WEDNESDAY) - TA551 (SHATHAK) PUSHES ICEDID (BOKBOT) WITH COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1479131414918479875
+
+CHAIN OF EVENTS:
+ 
+- malspam --> password-protected zip attachment --> extracted Word doc --> enable macros --> installer DLL for IcedID --> IcedIDpost-infection activity --> Cobalt Strike as follow-up malware
+
+NOTES:
+
+- Today's TA551 activity used Word documents with both German templates and Italian templates
+
+- Names for password-protected zip archives:
+
+  - Info.zip
+  - Informazioni.zip
+  - Request.zip
+
+- Password for zip files containing German template Word docs: itg68
+- Password for zip files containing Italian template Word docs: 4y45h
+
+20 EXAMPLES OF TA551 WORD DOCS WITH MACROS:
+
+- 11f8314bddab2bcfa1310c6050c4cd0d6b102efd9e6ae00b9daa6b555a066d11  comando.01.22.doc
+- 1cf0366fb4c26f95f44c9a5386f3a654063c22eb4b8770f0f141b2c884fbd38b  file_01.04.22.doc
+- 2120de96a7a1bb99fa6bb1246b5f0642e974ac8bc24493b8597d182f112c1a61  caricare.01.22.doc
+- 27ae3c84b2e5beb5d07751b7c87825842a2cb326a05891d36e95711ae7ea0221  raccontare_01.04.2022.doc
+- 362e4316595bf82c5225e60e3cecbb1bd2f0fbce8aef8de31d79b7e2e43712a6  inchiesta.01.04.2022.doc
+- 3e9e00a01e3bb9dc95bc15f278e72ce1e9c0117daf4da94302c2afed7e85747f  Istruire.01.22.doc
+- 3f5875cfce2698bd6d47634f673f9186efe1aae5bf417e99461e6c6ad0bb2f2a  Zertifikat,01.22.doc
+- 4d966d7cff36c1e87fb37544dd2fd9a17900becd4cf98ed54efb3e9ec54485f5  dettagli.01.04.2022.doc
+- 688484c4c5e829b981933816b4a0705e8f8f51eecca1fe8eebcc481fe3fc67d2  accordo legale 01.22.doc
+- 864e74b54bdcff531da58aa7eec05cd574326f824edd33753fe745759ebd4355  statistica-01.22.doc
+- 8a05777456543848ae7a004126d144b947f4c6ba9b3cebcdfe3ae82216e9bede  inchiesta.01.22.doc
+- 9340236c91150d9b662af12e6bdf5bd0fa84b1d6064d5f20e97fd6b7fd28f907  Dateien.01.22.doc
+- a0836236582786249df0ba763059e53271879269d6bb3f9b741c69d59a6498f3  rapporto-01.22.doc
+- aacc06a5bf600867026f86a872b61d1118535fe7490b5323dd99fa4bca1589db  Materiale,01.22.doc
+- ad63e5e83852eeafd5a950c91b6eb67818fa2b1e895133a14a06b572b3921a35  accordo legale,01.22.doc
+- b4e7f81fd7d66925b515cf926ad5417da4ee0d8c94410e44efd444337dfff67e  accordo legale_01.22.doc
+- d8a07a5f019c165dde055e13bc31c9d653b3369eea51ad88f027e09bd4fb0799  certificato.01.22.doc
+- ed94117546b1388ce3e8a4df4cc3cf167437c49beb5f703d922d9a6fa3397b69  dettare_01.04.2022.doc
+- efc3bd22afd1013a6fefef412a5df1f1dcdb566f3ff9c1380a3a5eb757013887  ingresso 01.04.22.doc
+- f67616c55c1400a1b1f025af7616040497a64e8ba271202582cd539d62193271  die Dokumente_01.22.doc
+
+AT LEAST 6 DOMAINS HOSTING THE INSTALLER DLL:
+
+- 45.67.229[.]54 - mccormickborings[.]com
+- 45.142.212[.]97 - ayalahurryg[.]com
+- 45.142.212[.]174 - figueroascorpiong[.]com
+- 45.142.212[.]198 - gallagherpipess[.]com
+- 80.71.157[.]216 - hullsmileg[.]com
+- 80.92.204[.]89 - umbrellamclaughlind[.]com
+
+EXAMPLES OF URLS FOR INSTALLER DLL:
+
+- hxxp://ayalahurryg[.]com/vcnh/75632/esKeMcrysdSzRdoJ4pQ1HwyTQMok5TG/51252/27076/myla10?vc=4eyoNNPxt2YQPjsp3&OUMP=Aa93N&user=MYqjfAOnpCOmZrUkdR
+
+- hxxp://figueroascorpiong[.]com/vcnh/62595/8CN90h7s7P/6ZI/myla4?aAsv1WxN6t=zMFt3Su0XKoyuemHnG&search=WRFCkOaTIIDpr1bmkHouKdm1xx&time=9r&id=eB&9RHPO6t=hyaMaV
+
+- hxxp://figueroascorpiong[.]com/vcnh/uLPgx/gvlBWkA9Ev5zdZqBZfItOgyS2u02vUGHyYG2/66849/hrwe8i2ZXFflAxKYmnC879twdkomuSZmhgkLrt1g/95JGjX28C66gEdfyuxjXKMEXva7wnp17qIfHgP6LZWsfbN/XBwVS5px4ras6p794d8BAyygJFc76frD/54380/ofxY0BAgcjB46ApnhamERfjRoABt0m3thi2ij/myla6?G4rRvQ31mE=UlINt4M8cB2o&dUuZxy=xIFwhX4yO07&4FY6=2NyB5va1ay2j6VLeg3&sWDf33shUk=OkhT2bQbGNv&=dnC&q=PedPlnV5nvzjDZDClD3zeNkhvkplS&user=Anmpk4G5lvHtl1RHxs8kEb1tU0
+
+- hxxp://gallagherpipess[.]com/vcnh/8661/iwPJtN3Xq16d7NHS2b3M8OTgTKqbgBoRKsZa/Wqk3tuTujHqjETS6dqKXf8Ztrm3L1XXoIg7sJ8xzNSFN/uLqXtyVtzKmfgrV8vfl/eQ9309sOFsfZOvR4vua1n9vkvHGWtR5knQxsPn/81534/tles9xQVfmoP7gVmCe4f3JUJjJ2uHHxL5/myla11?OTzf=zMn85JTUp3wp1Ot&ref=tosxJ5IbYQ7EqxExNvM&sid=tpF8b56YUyks5UzrHJy&sid=uKCF5&page=zDo8FeeKBRNS4UA&sid=zE02cXq
+
+- hxxp://hullsmileg[.]com/vcnh/BbyqOiX4WvMClk6jRHwRQ69u7vyU3nQltGBvITVCEYppBoa5/13212/37546/64567/myla6?search=n8Zn5yH31s0mg3Jjq5elBKlrmLp3&page=bzfjgHEjiO&time=YnbwODeaphDCl1LlJ6qk9e&id=CjpYZHW4y1Bz3BRAGjFHat
+
+- hxxp://hullsmileg[.]com/vcnh/BlDFRsj1bsGvKdLIj/98697/7309/33451/Pg9zYLcfzirZtPtx1Pn64fLoWAIDvNPx4lclw/LaQAZSeiLYPCjjCble334/QdHhD0r/98/RDvuSh/myla5?q=RYaTpLn2leLH6rxKG0pux1CME3RY&sid=UY8SVDRzRqZb&CWpJmycHi=iF0I26&sid=YGrkJjD4n&q=mbdtF5ziKWJczkstBlW0PBT7Ia&time=DEYO7nTt&q=EY7sl24iZtw7zTehznnCVwHt&q=G9FdCrnm6Z6yu
+
+- hxxp://hullsmileg[.]com/vcnh/JFOqkL8wKTcaI/49894/45420/VFz6JAmRsUVHcT5Bwde2y8aYRkfSy2kIdZJXXojzlXq1vVT/Z/83512/OCVOr82vOkScgGx5E9B/dbP4QRCiuJvP9na/26944/myla4?time=VhahvDlCfGyhfBCg58T2Svdxc&ha4UblesLQ=qWf&cid=FgxzHwRr&ZOpvg=Mawq8&6yo=9DTb3tNQKFNdJj78YY&=M8vxiK9kEzIfpjyKFcwO1VVTAKEZ&page=x9&ref=Qkyq6DVcxCjjdtzJK&id=efxTf5s3THBpLMlpWzv23MrL9DZxR&search=gCOEWHgq0hI936vgansKWPW4sF
+
+- hxxp://mccormickborings[.]com/vcnh/3V0ruqQUKqYG8ntXwhXtfAvq9gI/MG5l6ZHQIKFTzxFP8tVwo7ahOACY/YWtRu19lQzS1hpAuwTLQLSo/HU3GbiBhH2pL454RFUGMiuOflhAuCfActTTC/14115/PulVvTbK8PH9zgwR9FH4JZ/DJ6qIQ0ukNEXizFwYC6pdUAllU/dCxJasH63rgpc0lRt7v9chSxeq2/34T46AN53FFLTTds4oD1yKFNO2xDPRWQ3j6jt0Kmx06Q/S50PiXRl3Leypo632aWWcVINA1TIqiriq5PDPf2kk7ws/myla3?sid=1RHVaUPXh37NB7w3QtwO&=GsQG
+
+- hxxp://mccormickborings[.]com/vcnh/TWrxEVuhhepD7ifN08EwiaF0OoUXVhtDtM/MnqrH2vwAdhahTl76yMAV8ci57GrquPLhHJ/IZhr0GqVypBiOh3qKRuCQh7K4/9TqnGgQVEFsyW4RYRW9phfUzxseGsxJtp/myla1?cid=H4rfcCxk&time=NWoCwBk&ref=z7xSJ92UUO9ZGPeC8q6KTj7P1I8Q&page=hir057H2IIlsaE5&=afT&sid=A0G7Yh3vvnCPaT7qpTK8e0ei4&user=Up9SdnwtXPDVBQG271paZs1b&user=o6YiEOJSj&cid=dPK5HAGCC&search=iqobBXQ8R1ZFVAqu86
+
+- hxxp://umbrellamclaughlind[.]com/vcnh/31455/E235NIie54yIEjGv3915pPppi3cXP2eGzuP3DES/60517/9At6ja3u0rcGb0E1kWClqRPZUQtPLuibt/UZEOlMQskP48cAr5P2w1wDq9/Kd4Fzp5xvsyrCzllwv/myla1?page=Gwz6reoIROo0jJ&cid=YJY9ZLzJKlJIJyEVTZ3I&user=W9oGWG&yhkm8oisv=xQ&aKx8MSn=rtp&user=WvSmRsjC&time=cEa7PIm&user=fWAphxEerxEkc3Mxv
+
+- hxxp://umbrellamclaughlind[.]com/vcnh/62748/Qf1wqr0ntEbjOS93OyZNhFjhB/HAAgOBPzNum/39499/POILtMf3Kw1xeJnF3EaqMYJgvXUaPh2BRb/ao3rR68hw3xwgs88F1eAOZHQj3T/26349/myla3?cid=SfHmzCTcg&Q8sI=W7MuTSpaG632zDIHeOP&=nekZQOHaayKmQyFq&q=HBby26w&user=t8IKEhgj98fvzpZNZkm80AG0Ir
+
+11 EXAMPLES OF HTA FILES:
+
+- 40b4ecc14a9fe20aabd4d0355cb114a00ffb0f7e2201caf15e21121320e6aa50  i9MonitorTable.htA
+- 69245ea7e0396db4c5e0972b5009391e1b422009de958ed89409310bbce57348  cardVideoProcessor.htA
+- 8c274180b6469d313635413cdb12a0fb33873759350e940be04ce218e42dc564  asusNotebookVideo.htA
+- 99cc457330dffe861535b712e9197bd196b61471064be62d3080163e95e96eae  superMonitor.htA
+- a3c258b3e0c59eea3d91b686c7c34de63c57259248285e3a7f40765a8200981a  cardMonitor.htA
+- a5241312cafde063d73f3d984bdbb83da5eb564d7568125d5a0d195d080fd7b3  cardKeyboard.htA
+- c520eada8f780c35c2f218c69e67341b6b6a5d756b3529fe3e5c186e4906ceb3  processorI7Processor.htA
+- d4e4da330d622780099bc8c5d05b9f5de1353f4cea6e797ab2b4d7d800ed60e1  i7Super.htA
+- d6a356ef49bfc41cb0bddbcd86447f6d965d1de4e6ec4e7c30f5b3231fdebf34  superVideoMonitor.htA
+- e9d179c3110c14e8b8344e0827a86231a2a7efaeac110126db1d7fa05e7cb6d0  cardComputer.htA
+- ea700047f088db00fc4c1781e4f2517d8d86ceb2c4f2d8f55694e64ed5e0a898  superVideo.htA
+
+LOCATIONS OF THE HTA FILES:
+
+- C:\Users\[username]\Documents\
+
+10 EXAMPLES OF INSTALLER DLLS:
+
+- 0fbd0334d7e16d305082936921cc0c29a913259d45a9b1ffd008171526ab5681  notebookKeyboardTable.jpg
+- 1bc5b9b6ed8bf1f8d37775e3966ad1207bbe4d6114525ae9b78d2c38ecc0d477  cardCard.jpg
+- 29bc70bcaf13763c4e370e36ad21bd1c631dc1d2a700bd3f29190d7e1d3cc631  i9TableComputer.jpg
+- 2e02c81a78d3490f938a5da2390a9a02aa54413940aab2c3c74eb9f0243e1920  notebookAsus.jpg
+- 325b971b2a293c6745b82a5e141e2d39b61054c354fca843cc0fffd7540fad40  processorVideoNotebook.jpg
+- 59cd79c51883d20897f4fa27aa81c4dab01edeb33b905c84a0f99a32312b155b  cardCardVideo.jpg
+- 5dd1db2d6accc30f16683d8e9284fbeeeb0d6d4bcf12b54c7c64abbe79e8a400  superSuper.jpg
+- 5f8307954612eee05b12be52d74d01bfd5d666619a0ff6ccb6b3701e94683b1d  videoI9.jpg
+- 799c26d9df2230e66fcc679f1a66a51ba13e4258cb071c54f332ea06a14b75d4  mouseKeyboard.jpg
+- db2f7e72398e41a8a6883d2ef7d0c3c5eea3ccf8765162b2d3b151d10413d5c4  asusSuperMonitor.jpg
+
+LOCATION FOR THE INSTALLER DLL FILES:
+
+- C:\Users\Public\
+
+DLL RUN METHOD:
+
+- regsvr32.exe [filename]
+
+ICEDID INSTALLER TRAFFIC:
+
+- port 443 - aws.amazon[.]com - HTTPS traffic
+- 5.196.196[.]253 port 80 - greshman[.]xyz - GET /
+
+GZIP BINARY FROM GRESHMAN[.]XYZ:
+
+- SHA256 hash: 414cc182d82aeed4ee8a4685170341828b3521a07cfc0af86a50f65bf4a7d2b5
+- File size: 374,907 bytes
+- File location: hxxp://greshman[.]xyz/
+- File type: gzip compressed data, was "Melt.txt", from FAT filesystem (MS-DOS, OS/2, NT), original size modulo 2^32 3084102
+
+LICENSE.TXT USED TO RUN PERSISTENT ICEDID DLL:
+
+- SHA256 hash: cfc202b44509f2f607d365858a8218dfdc6b26f8087efcc5e46f4fef9ab53705
+- File size: 341,898 bytes
+- File location: C:\Users\[username]\AppData\Roaming\FiscalMelody\license.dat
+- File type: data
+
+PERSISTENT ICEDID DLL FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 991588eb9da7096a7bf7c001bf895c3789d6e2442c64b2bb79126aac2d71358d
+- File size: 32,256 bytes
+- File location: C:\Users\[username]\AppData\Local\ocjeiv4\Uson1\asgecowd3.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- Run method: rundll32.exe [filename],DllMain --tieguf="[path to license.dat]"
+
+ICEDID C2 TRAFFIC:
+
+- 185.81.114[.]189 port 443 - xijsry[.]com - HTTPS traffic
+
+COBALT STRIKE MALWARE:
+
+- SHA256 hash: 6e6d3f1224e9c5cb5fc392b292c3def7c585346bde8c7f7b2173677a4a0068b0
+- File size: 225,720 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\Inis.txt
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- Run method: Powershell script
+- C2 traffic: 23.227.196[.]35 port 787 - customsecurityusa[.]com - HTTPS traffic
+
+
+- SHA256 hash: fff82d0ec3c87081fdd41eece5bf406fbe4543ad8888c64818efcb28777c81ae
+- File size: 474,624 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\ancoiq2.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- C2 traffic: 216.244.95[.]165 port 778 - juniperengineer[.]com - HTTPS traffic
+
+COBALT STRIKE C2 TRAFFIC:
+
+- 23.227.196[.]35 port 787 - customsecurityusa[.]com - HTTPS traffic
+- 216.244.95[.]165 port 778 - juniperengineer[.]com - HTTPS traffic
