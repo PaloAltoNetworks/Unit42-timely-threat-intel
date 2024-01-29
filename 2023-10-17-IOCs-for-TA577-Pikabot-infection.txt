@@ -1,7 +1,8 @@
 2023-10-17 (TUESDAY) - TA577 PIKABOT INFECTION WITH COBALT STRIKE
 
-REFERENCE:
+REFERENCES:
 
+- https://www.linkedin.com/posts/unit42_ta577-pikabot-cobaltstrike-activity-7120141441103794177-lKee
 - https://twitter.com/Cryptolaemus1/status/1714233359587856620
 
 INFECTION CHAIN:
