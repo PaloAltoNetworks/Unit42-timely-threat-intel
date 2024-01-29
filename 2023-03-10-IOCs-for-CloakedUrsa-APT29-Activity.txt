@@ -1,0 +1,60 @@
+FEBRUARY 2023: CLOAKED URSA (APT29) PHISHING
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1634290575393402883
+
+NOTES:
+
+- This highlights additional activity originally reported upon by Recorded Future's Insikt Group on 20230127.
+- The activity related to SHA256 21a0b617431850a9ea2698515c277cbd95de4e59c493d0d8f194f3808eb16354 was first tweeted on 20230305 by @felixaime
+- Cloaked Ursa continues to use compromised WordPress sites to deliver malicious payloads in its phishing operations
+
+
+REFERENCES:
+
+- https://go.recordedfuture.com/hubfs/reports/cta-2023-0127.pdf
+- https://twitter.com/felixaime/status/1632448523995103232
+
+
+INFECTION CHAIN:
+
+- Email --> link --> HTA file containing obfuscated archive --> open downloaded archive file --> click on masquerading .exe / .lnk file within archive -->
+  GraphicalNeutrino .dll loads and contacts notion[.]com for C2 & additional payloads
+
+
+COMPROMISED WORDPRESS SITES USED:
+signitivelogics[.]com
+literaturaelsalvador[.]com
+
+-----
+
+Czech Republic Ministry of Foreign Affairs-Related:
+--> URL: hxxps://signitivelogics[.]com/Schedule.html
+--> Downloaded Archive: SHA256 56595330e9b7abc1fb1044ca7970693fab47d3191d1d98d7f7b5a12e43e07a0b; Filename: Schedule.zip
+--> Legitimate .exe: SHA256 8ca4bf6df28088aa9ce3fc4a226932ae37af74ef54069480b7f4b2efe9402ddc; Filename: Meeting_Info.exe (Legitimate BsSndRpt.exe)
+--> Hidden GraphicalNeutrino .dll: SHA256 4d92a4cecb62d237647a20d2cdfd944d5a29c1a14b274d729e9c8ccca1f0b68b; Filename: BugSplatRc64.dll
+
+-----
+
+European Commission-Related Software Instructions:
+hxxps://literaturaelsalvador[.]com/Instructions.html
+--> Downloaded Archive: SHA256 21a0b617431850a9ea2698515c277cbd95de4e59c493d0d8f194f3808eb16354; Filename: Instructions.iso
+--> .lnk File: dffaefaabbcf6da029f927e67e38c0d1e6271bf998040cfd6d8c50a4eff639df; Filename: Instructions.lnk
+--> GraphicalNeutrino .dll: SHA256 e957326b2167fa7ccd508cbf531779a28bfce75eb2635ab81826a522979aeb98; Filename: BugSplatRc64.dll
+
+-----
+
+Polish Ministry of Foreign Affairs-Related:
+hxxps://literaturaelsalvador[.]com/Schedule.html
+--> Downloaded Archive: SHA256 505f1e5aed542e8bfdb0052bbe8d3a2a9b08fc66ae49efbc9d9188a44c3870ed; Filename: Schedule.iso
+--> .lnk File: dffaefaabbcf6da029f927e67e38c0d1e6271bf998040cfd6d8c50a4eff639df; Filename: Instructions.lnk
+--> GraphicalNeutrino .dll: SHA256 e957326b2167fa7ccd508cbf531779a28bfce75eb2635ab81826a522979aeb98; Filename: BugSplatRc64.dll
+
+-----
+
+BMW Automobile Purchase-Related:
+--> URL: hxxps://signitivelogics[.]com/BMW.html
+--> Downloaded Archive: SHA256 9c72d80f93ef4d51efbc1c4e29e65cc8af399a1e9463bacc694fb32ea5342771; Filename: Car_info.zip
+--> Legitimate .exe: SHA256 8ca4bf6df28088aa9ce3fc4a226932ae37af74ef54069480b7f4b2efe9402ddc; Filename: BMW_sale.exe (Legitimate BsSndRpt.exe)
+--> Hidden GraphicalNeutrino .dll: SHA256 3a489ef91058620951cb185ec548b67f2b8d047e6fdb7638645ec092fc89a835; Filename: BugSplatRc64.dll

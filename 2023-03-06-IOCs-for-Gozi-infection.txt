@@ -1,0 +1,66 @@
+2023-03-06 (MONDAY): GOZI (ISFB/URSNIF) FROM MALSPAM TARGETING ITALY
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1633934017031467010
+
+NOTES:
+
+- This activity was first tweeted on Monday 2023-03-06 by the Italy CERT at @AgidCert
+- As of Thursday 2023-03-09, many URLs and servers hosting the associted malware were apparently still on-line.
+
+ORIGINAL REFERENCES:
+
+- https://twitter.com/AgidCert/status/1632686769203302402
+- https://twitter.com/JAMESWT_MHT/status/1632693485739429889
+
+INFECTION CHAIN:
+
+- Email --> link --> downloaded zip --> double-click extracted .url file --> SMB traffic for Gozi EXE --> Gozi infection
+
+MALWARE FROM AN INFECTION TEST RUN ON 2023-03-06:
+
+- SHA256 hash: 57befac41319e7e1fc9d6cd5637240fa766bdbc562d7720bb04beee36113ae10
+- File size: 474 bytes
+- File location: hxxps://nhatheptienchebinhduong[.]com/mise/Normativa.zip
+- File description: Zip archive from link in email
+
+- SHA256 hash: c59dc482b521b021813681f99a8570aa0f57a30bcf42d48667eb09ae635cc9a1
+- File size: 189 bytes
+- File name Normativa.url
+- File description: URL file extracted from the above zip archive
+
+- SHA256 hash: fc3e7ff40a45bccd83617ea952eccdfc93301c6673cce8de33b4bf924b8957d9
+- File size: 318,976 bytes
+- File location: file://46.8.19[.]163/mise/server.exe
+- File description: Windows EXE for Gozi/ISFB/Ursnif retrieved by the above .url file
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+URL FOR INITIAL ZIP DOWNLOAD:
+
+- 103.138.88[.]52 port 80 - nhatheptienchebinhduong[.]com - GET /mise/Normativa.zip
+- Note: The URL for this is HTTPS, but it can also be retrieved over unencrypted HTTP traffic.
+
+SMB TRAFFIC FOR GOZI (ISFB/URSNIF) EXE:
+
+- 46.8.19[.]163 port 445 - SMB traffic - file://46.8.19[.]163/mise/server.exe
+
+GOZI (ISFB/URSNIF) C2:
+
+- 62.173.140[.]103 port 80 - 62.173.140[.]103 - GET /drew/[base64 string with underscores and backslashes].jlk
+- 62.173.138[.]138 port 80 - 62.173.138[.]138 - GET /drew/[base64 string with underscores and backslashes].gif
+- 62.173.149[.]243 port 80 - 62.173.149[.]243 - GET /stilak32.rar
+- 62.173.149[.]243 port 80 - 62.173.149[.]243 - GET /stilak64.rar
+- 62.173.138[.]138 port 80 - 62.173.138[.]138 - POST /drew/[base64 string with underscores and backslashes].bmp
+- 62.173.149[.]243 port 80 - 62.173.149[.]243 - GET /cook32.rar
+- 62.173.149[.]243 port 80 - 62.173.149[.]243 - GET /cook64.rar
+- 62.173.140[.]94 port 80 - 62.173.140[.]94 - GET /drew/[base64 string with underscores and backslashes].gif
+- 31.41.44[.]60 port 80 - 31.41.44[.]60 - GET /drew/[base64 string with underscores and backslashes].gif
+- 46.8.19[.]233 port 80 - 46.8.19[.]233 - GET /drew/[base64 string with underscores and backslashes].gif
+- 5.44.45[.]201 port 80 - 5.44.45[.]201 - GET /drew/[base64 string with underscores and backslashes].gif
+- 89.116.236[.]41 port 80 - 89.116.236[.]41 - GET /drew/[base64 string with underscores and backslashes].gif
+- 62.173.140[.]76 port 80 - 62.173.140[.]76 - GET /drew/[base64 string with underscores and backslashes].gif
+- 31.41.44[.]49 port 80 - 31.41.44[.]49 - GET /drew/[base64 string with underscores and backslashes].gif
+- 46.8.19[.]86 port 80 - 46.8.19[.]86 - GET /drew/[base64 string with underscores and backslashes].gif
+- 62.173.140[.]94 port 80 - 62.173.140[.]94 - GET /drew/[base64 string with underscores and backslashes].gif

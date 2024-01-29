@@ -1,0 +1,132 @@
+2023-05-10 (WEDNESDAY): QAKBOT (QBOT) ACTIVITY, DISTRIBUTION TAG OBAMA262 WITH DARK CAT VNC AND COBALT STRIKE
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1657015363593203713
+
+INFECTION CHAIN:
+
+- Thread-hijacked email --> PDF attachment --> Link from PDF file --> downloaded zip archive --> 
+  extracted .wsf file --> drops script artifacts that download and run Qakbot DLL --> Qakbot C2 activity
+
+NOTES:
+
+- The associated lab infection used a Windows 11 client. 
+- During the lab infection, Qakbot HTTPS C2 traffic was TLSv1.3, and so was the Cobalt Strike activity.
+- Because of this, the pcap of the infection traffic does not contain any certificate data these servers.
+
+THREE EMAIL EXAMPLES:
+
+- Received: from smtpx012.webglobe.com (smtpx012-2.webglobe.com [62.109.150.178])
+- From: <ales.choutka@alstanet.cz>
+
+- Received: from ns.phpafrique.biz (ns.phpafrique.biz [37.187.252.187])
+- From: <ifranklin@supermarchemontsinai.com>
+
+- Received: from outbound-ss-820.bluehost.com (outbound-ss-820.bluehost.com [69.89.24.241])
+- From: <contacto@encuentromundialdevalores.org>
+
+PDF ATTACHMENTS:
+
+- f7a83b15e7192f727e43e7259292177f3e7c24740b08072f05e417515ec43ff9 - 62,171 bytes - NDA-1404425932-May10.pdf
+- 692e265d129f9d9df3c6422419378c3eca7ec79c67e608a7b7fe1d9efba82735 - 62,176 bytes - NDA-713267031-May10.pdf
+- 7fa4c4a7d0427548c4864123c362c1492953063067ec84795bdbc37c7e3dd2fe - 62,162 bytes - NDA-951695883-May10.pdf
+
+LINKS FROM THE ABOVE PDF FILES:
+
+- hxxps://amorconsulta[.]com.br/qxiyzlsigg/qxiyzlsigg.zip
+- hxxps://masjidtrust[.]com/ocnofodwcp/ocnofodwcp.zip
+- hxxps://vogue-pharmaceuticals[.]com/mnyrzfuljk/mnyrzfuljk.zip
+
+DOWNLOADED ZIP ARCHIVES:
+
+- c6d061da031de177fc842db81225b8281d36e7e7cc021fab5afd4039c909f26b - 16,949 bytes - mnyrzfuljk.zip
+- 5c6c50ebb873c57484700934ec2cffb943c7feb7cb3517b1c555c8a88adb49bf - 14,881 bytes - ocnofodwcp.zip
+- 54594dc01d597b5eed2dae2d7fd628e1d0357be1aa6309411d625b13fc6b9a23 - 13,761 bytes - qxiyzlsigg.zip
+
+EXTRACTED WSF FILES:
+
+- 569d056e8ccfe4504dcf7aee226ff537502e910f2178af307f3a274611c2309c - 38,872 - NDA_B752_May_10.wsf
+- d166e5bca8ae4ac7fe501e66c09d92e85fc0b3da505cb3eca96701e1dc8d7428 - 36,364 - NDA_C523_May_10.wsf
+- 35a7c3e1cbdb72516b001fecdeea8f4d77333e2306d5853d7bd02bad9ec9bf6e - 32,032 - NDA_E367_May_10.wsf
+
+SCRIPT ARTIFACTS DROPPED BY THE ABOVE WSF FILES:
+
+- C:\ProgramData\aUqsh0p9ktQFAV2cb.txt
+- C:\ProgramData\a2UVvDtpx.txt
+
+- C:\ProgramData\adNjZUciY18.txt
+- C:\ProgramData\a9VkNUa7QzfIXOJ.txt
+
+- C:\ProgramData\anTqrQEepfVAUcsaP.txt
+- C:\ProgramData\a8YJpNdMU.txt
+
+URLS FROM SCRIPT ARTIFACTS FOR QAKBOT DLL:
+
+- http://5.42.221[.]144/aFmBD1aNws3OzgS.dat
+- http://5.42.221[.]144/aRyL4l0Z86h5n3pF.dat
+- http://5.42.221[.]144/azL5BNqA089MI.dat
+
+- http://45.155.37[.]101/aFmBD1aNws3OzgS.dat
+- http://45.155.37[.]101/aRyL4l0Z86h5n3pF.dat
+- http://45.155.37[.]101/azL5BNqA089MI.dat
+
+- http://91.193.16[.]139/aFmBD1aNws3OzgS.dat
+- http://91.193.16[.]139/aRyL4l0Z86h5n3pF.dat
+- http://91.193.16[.]139/azL5BNqA089MI.dat
+
+- http://144.208.127[.]242/aFmBD1aNws3OzgS.dat
+- http://144.208.127[.]242/aRyL4l0Z86h5n3pF.dat
+- http://144.208.127[.]242/azL5BNqA089MI.dat
+
+- http://149.102.225[.]18/azL5BNqA089MI.dat
+- http://149.102.225[.]18/aRyL4l0Z86h5n3pF.dat
+- http://149.102.225[.]18/aFmBD1aNws3OzgS.dat
+
+- http://207.148.14[.]105/aFmBD1aNws3OzgS.dat
+- http://207.148.14[.]105/aRyL4l0Z86h5n3pF.dat
+- http://207.148.14[.]105/azL5BNqA089MI.dat
+
+INITIAL QAKBOT DLL FILES SAVED TO DISK FOR AN INFECTION (ALL 320,512 BYTES):
+
+- 7becc47fb8af92b2128ebd7215033839414c144180947c12f11360e227cc2404 - C:\Users\Public\a03kht2Y9AHJdCib.dat
+- 77cfac788fcfe0f6528e73f5cf52620e31295b7559e238efec4448b2c765efbe - C:\Users\Public\aXWKC7aUjsDxLhgu.dat
+- d04b1d4e7fe9c3d54b18ce928e714e0b30bfe8b6866fe01461e728284b118af7 - C:\Users\Public\aiegLREly.dat
+
+RUN METHOD FOR ABOVE DLL FILES:
+
+- conhost.exe rundll32 C:\Users\Public\[filename].dat,print
+
+INITIAL ZIP DOWNLOAD:
+
+- 103.53.42[.]238 port 80 - vogue-pharmaceuticals[.]com - GET /mnyrzfuljk/mnyrzfuljk.zip HTTP/1.1 
+
+QAKBOT DLL DOWNLOAD:
+
+- 45.155.37[.]101 port 80 - 45.155.37[.]101 - GET /azL5BNqA089MI.dat HTTP/1.1 
+
+ACTIVE QAKBOT C2 DURING THE INFECTION RUN:
+
+- 2.49.63[.]193 port 2222 - HTTPS traffic (TLSv1.3)
+- 81.224.201[.]143 port 2222 - HTTPS traffic (TLSv1.3)
+
+LEGITIMATE DOMAINS USED FOR CONNECTIVITY CHECKS DURING C2 TRAFFIC:
+
+- broadcom.com
+- cisco.com
+- google.com
+- irs.gov
+- linkedin.com
+- microsoft.com
+- oracle.com
+- verisign.com
+- xfinity.com
+- yahoo.com 
+
+BACKCONNECT TRAFFFIC WITH DARK CAT VNC:
+
+- 46.151.30[.]109 port 443 - encoded/encrypted TCP traffic
+
+COBALT STRIKE TRAFFIC:
+
+- 77.105.141[.]154 port 443 - floatfil[.]com - HTTPS traffic

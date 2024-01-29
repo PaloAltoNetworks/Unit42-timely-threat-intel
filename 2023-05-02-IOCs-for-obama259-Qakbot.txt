@@ -1,0 +1,292 @@
+2023-05-02 (TUESDAY): QAKBOT (QBOT), DISTRIBUTION TAG OBAMA259
+
+REFERENCE:
+
+- https://twitter.com/Unit42_Intel/status/1654133112035590145
+
+INFECTION CHAIN OF EVENTS:
+
+- Thread-hijacked email --> PDF attachment --> Link from PDF file --> downloaded zip archive --> extracted .wsf file --> 
+  downloads and runs Qakbot DLL --> Qakbot C2 activity
+
+NOTES:
+
+- URLs from 2 of the PDF attachments downloaded smaller zip archives that contained an 8 kB Excel file named Book1.xlsx
+- These Book1.xlsx files have the same SHA256 hash, a creation date of 2022-06-06, and was first submitted to Virus Total on 2022-12-22.
+- Dark Cat VNC started approximate 12 hours after BackConnect traffic started, using the same IP address.
+- Dark Cat VNC identified by decoding the VNC traffic and viewing screen images.
+
+- For more information on BackConnect and VNC traffic associated with Qakbot, see the following blog posts:
+ -- https://www.netresec.com/?page=Blog&month=2022-10&post=IcedID-BackConnect-Protocol
+ -- https://blog.nviso.eu/2023/03/20/icedids-vnc-backdoors-dark-cat-anubis-keyhole/
+
+PDF ATTACHMENTS:
+
+- 8f7b440eaedb3ef0c0728399e22d6121038376287734cac92ddac5d93a777d7e - 46,615 bytes - Contract-330580565-May2.pdf
+- 35071031409a3b9607fe9b93921fa5eb71985bbda45d5f9124abe6a427b31293 - 46,605 bytes - Contract-487530548-May2.pdf
+- 2d252b093f8ea171da37590ad98aa5679901342941fb91bb3bcedc1a0e169199 - 46,600 bytes - Contract-520171337-May2.pdf
+- 49934ac4b9f7aeb063b5683ab22ae6881539783815bdd83b6f6f7de369e93fae - 46,599 bytes - Contract-542295328-May2.pdf
+- db238772ed9da366c5e89b15c8d30cee0ddfa8238ed11de0523d60b88785c508 - 46,606 bytes - Contract-594980421-May2.pdf
+- 3e9b1295291a05ff23467c5e71336bc6896f96b6c709b8ceb0184915016b3081 - 46,599 bytes - Contract-611452306-May2.pdf
+- 63c0da98ce0b595ba34fc4e5479fbc43c379dd37bd1ac998e713ebd0fa64dc47 - 46,597 bytes - Contract-862559184-May2.pdf
+- e1876411d7b7fce2a79c8da6e53c2e988ef7ceebeb9f321de482ea106d9fce0f - 46,601 bytes - Contract-882032430-May2.pdf
+- c341495e085ff57d6ce9df1674643cb5a958bbbcc3e5d3c89b21a5ac63ad65ea - 46,605 bytes - Contract-1017256014-May2.pdf
+- 013bc9d14b95a8dc9e5546ddc5eb4cd2d9cffa342ef5e696ada24f74c9bf61e5 - 46,594 bytes - Contract-1050598262-May2.pdf
+- 293ced4b624fe437cf85d4ac44273b2be0449edc55cfb6204bb65458a7065e2b - 46,611 bytes - Contract-1137480436-May2.pdf
+- 1114d3a3680593420d69dd11266b1186161453a338b6318c6e280aabd64eea15 - 46,602 bytes - Contract-1146099196-May2.pdf
+- 993bd16ff8845fa558a1cd7c502e2abd6c3a4788569cfff309b8fb9b04e42222 - 46,599 bytes - Contract-1396875869-May2.pdf
+- 4b0a98711ce08e8c04b72a6144f65f1159020029ec57fb0643432ecba159a489 - 46,602 bytes - Contract-1598766723-May2.pdf
+- bd0168368ffc018ad535b4aa52d5bbe6a027790523090c4c8ae2f09e7574896d - 46,603 bytes - Contract-1751356048-May2.pdf
+- a82cc6e5fed01e0b5bb647df9924e82bf7b35c6ec056444b0ac4897dbe5f9251 - 46,606 bytes - Contract-2051582708-May2.pdf
+
+16 URLS FROM THE ABOVE PDF ATTACHMENTS:
+
+- hxxp://ambujagroup[.]com/gkonf/644bc4f3c35b8.zip
+- hxxp://chetesi[.]it/gkonf/644bd8319e7f7.zip
+- hxxp://crazymoney[.]app/gkonf/644bd5363391a.zip
+- hxxp://imihigo-watch[.]rw/gkonf/644b9d319362e.zip
+- hxxp://instinctux[.]com/gkonf/644b9fbdaf952.zip
+- hxxp://irte[.]in/gkonf/644ba13c7c4a9.zip
+- hxxp://lacarpa[.]com[.]ar/gkonf/644ba2ec4ea20.zip
+- hxxp://mainorchile[.]cl/gkonf/644b9b3ec5ead.zip
+- hxxp://mcfg[.]com[.]mx/gkonf/644ba048c606f.zip
+- hxxp://mybulksmsgh[.]com/gkonf/644ba81c8195d.zip
+- hxxp://piacsaproyectos[.]com/gkonf/644bd40f31aa0.zip
+- hxxp://qfinity[.]co[.]za/gkonf/644bca0b36eb5.zip
+- hxxp://royaltyblackcard[.]club/gkonf/644bd6ad6f948.zip  <-- returned zip containing 8,063 byte xlsx file
+- hxxp://societypustak[.]com/gkonf/644bd7470cb06.zip
+- hxxp://themachen[.]com/gkonf/644bd3895631a.zip
+- hxxp://vesnade3ign[.]com/gkonf/644bd66302a37.zip  <-- returned zip containing 8,063 byte xlsx file
+
+DOWNLOADED ZIP FILES:
+
+- dc43b286584f111a1e4fb0c897d9e0c6776bd695b8043114b22af5e4ae4e06f9 - 16,172 bytes -  644b9b3ec5ead.zip
+- 21998360d4b5fd08113194341bf6f10d0abf7776654cab0fcfa3341043f50eab - 16,226 bytes -  644b9d319362e.zip
+- 98b009575335ca2c045e814f8aeb45fb0af436295701dd4b4e9aad355bacab4f - 16,884 bytes -  644b9fbdaf952.zip
+- f1b02a9a425918042ab301c95780178e15294ec00410e6dd449f766b4f42162a - 18,182 bytes -  644ba048c606f.zip
+- ce942c5f49d44869e5731921e243a8ae56070a5f9537262dd21e032d0bc3ac42 - 16,056 bytes -  644ba13c7c4a9.zip
+- 9c40ec148d97cff1f41d00c8f411284947d69f048d0ff0277a629ba29a97fb77 - 19,290 bytes -  644ba2ec4ea20.zip
+- d9b9bb0b611414698de366c9d090de193cb699f4faa5b209d91adbfdcf5cb939 - 16,710 bytes -  644ba81c8195d.zip
+- 3f26ebff9e9976be6cc0b2d6a6ee7d1920a7e6a0e6efc39117dccf9178fdc3ed - 15,373 bytes -  644bc4f3c35b8.zip
+- ca283959818b34224f82722f77a478073d9bab1bbc6ad3d848f3e749e0f87473 - 14,888 bytes -  644bca0b36eb5.zip
+- 34dded18f5914c9d79b640f9bb99221c53fdc0d1509035362bd8bfd48c4d6a84 - 16,199 bytes -  644bd3895631a.zip
+- 8b7025277cee27d7ab57bb3ff103aee7307c3544dd70389c0bd18a6996fbf193 - 16,073 bytes -  644bd40f31aa0.zip
+- b19525c161a65ec1329809ddad57eb786ff720604383b4699a41e586fa407fe5 - 15,091 bytes -  644bd5363391a.zip
+- eb88a73acd3db3ff9221fa873f0a54d794f1632b46375ebd9e88d8179424524c - 5,723 bytes -  644bd66302a37.zip  <-- contains 8,063 byte xlsx file
+- eb88a73acd3db3ff9221fa873f0a54d794f1632b46375ebd9e88d8179424524c - 5,723 bytes -  644bd6ad6f948.zip  <-- contains 8,063 byte xlsx file
+- 4f45b48ed5cc2a49c977699ec135f9a5216a104e7d4351337ab3b641935e52d8 - 15,429 bytes -  644bd7470cb06.zip
+- 2bcc639bcaf30f7874681884adc2fb4988c8e50fc7edd0f249e73532f47d58f1 - 14,962 bytes -  644bd8319e7f7.zip
+
+EXTRACTED FILES:
+
+- edbb4e1885f014c52aebce42b7f048adfeda157cf3c984c8f72e4a43aca77583 - 8,063 bytes - Book1.xlsx  <-- not malicious
+- edbb4e1885f014c52aebce42b7f048adfeda157cf3c984c8f72e4a43aca77583 - 8,063 bytes - Book1.xlsx  <-- not malicious
+- 13a633b5de571d65c807a54a706c89b8035acc9d5fa1407f1e33c74cde0e184c - 39,960 bytes - Contract_A524_May2.wsf
+- 44852be21160b658301f73ad5d0b4b4c65cb448acbdf3b42746bfb233eec42c2 - 34,186 bytes - Contract_A916_May2.wsf
+- 9c0411ec7d00193106cac4e389d13a95ec91a3d7f486bdc3564acfc2fa643950 - 34,747 bytes - Contract_B260_May2.wsf
+- 15ffc401f1d9e0d59c81f1b655d377b784b5a014aa5f7794b424c4ec913281e4 - 39,389 bytes - Contract_B432_May2.wsf
+- 2e81d678b019f81b5fb48ba191a55d61067efdc1006b1b2726db37434e80f872 - 45,751 bytes - Contract_B574_May2.wsf
+- af837feb41239d0d4fcc6255d5deb59e4168c93c73115a8f87d480f7ec74346d - 35,615 bytes - Contract_B671_May2.wsf
+- 574d6689d297e48a05f699a4040cd30c9c21896b556a7abbcb4765c66686bff7 - 41,949 bytes - Contract_B857_May2.wsf
+- b63e61fa8476239999bcb0ee1dd2051ca5fa6d56e8d83a6856ecd7c7704ebfac - 33,853 bytes - Contract_B948_May2.wsf
+- f50b813ca581237f5ba953fed1a0c6ec1af32cd5d39b1b469993e14e8db55968 - 36,098 bytes - Contract_B970_May2.wsf
+- 33edd6d12784b4ff3ee927b33cd8f0fa82574e008b0864b4a6f4d1cff2374ada - 43,312 bytes - Contract_C408_May2.wsf
+- ee564ed39f4182e76792855abe8c7c3a03d1fee6bd3be249d21a9bd06deaee14 - 39,870 bytes - Contract_C870_May2.wsf
+- 500f25e601d2125742c89532e6a854e8e698f8d178ff52950f738181f76b81a0 - 39,015 bytes - Contract_D852_May2.wsf
+- 655a25042019521936b29676712ecdba681dd6047df2e222285996551ca67070 - 37,304 bytes - Contract_D871_May2.wsf
+- 715819155809821f50c72f3e4d0f71d55b56ac41ba962b32666c2d9ac4e26a42 - 40,099 bytes - Contract_E854_May2.wsf
+
+URLS FOR THE QAKBOT DLL GENERATED FROM SCRIPT DROPPED BY THE ABOVE .WSF FILES:
+
+- hxxp://66.135.3[.]99/a0xG8ikFA7yp3q.dat
+- hxxp://66.135.3[.]99/a8ZdLDHxE.dat
+- hxxp://66.135.3[.]99/a9tInQPNHB6ZLhYWg.dat
+- hxxp://66.135.3[.]99/acCh6vEOHNyu.dat
+- hxxp://66.135.3[.]99/afltTkMXaVzwPqdJb.dat
+- hxxp://66.135.3[.]99/agSvCrjBwZEdzQ2J.dat
+- hxxp://66.135.3[.]99/ajMmrsCYWpcI.dat
+- hxxp://66.135.3[.]99/aO7hPSEJ3zHtK5xL.dat
+- hxxp://66.135.3[.]99/aPn4pUS98.dat
+- hxxp://66.135.3[.]99/aQV5eEwxGUtY.dat
+- hxxp://66.135.3[.]99/av1Xh0BWQAy.dat
+- hxxp://66.135.3[.]99/aVNjkv3X502SQ6r.dat
+- hxxp://66.135.3[.]99/aVOqdXa5QcT68E0.dat
+- hxxp://66.135.3[.]99/axBm7TefU8b9.dat
+
+- hxxp://85.239.52[.]150/a0xG8ikFA7yp3q.dat
+- hxxp://85.239.52[.]150/a8ZdLDHxE.dat
+- hxxp://85.239.52[.]150/a9tInQPNHB6ZLhYWg.dat
+- hxxp://85.239.52[.]150/acCh6vEOHNyu.dat
+- hxxp://85.239.52[.]150/afltTkMXaVzwPqdJb.dat
+- hxxp://85.239.52[.]150/agSvCrjBwZEdzQ2J.dat
+- hxxp://85.239.52[.]150/ajMmrsCYWpcI.dat
+- hxxp://85.239.52[.]150/aO7hPSEJ3zHtK5xL.dat
+- hxxp://85.239.52[.]150/aPn4pUS98.dat
+- hxxp://85.239.52[.]150/aQV5eEwxGUtY.dat
+- hxxp://85.239.52[.]150/av1Xh0BWQAy.dat
+- hxxp://85.239.52[.]150/aVNjkv3X502SQ6r.dat
+- hxxp://85.239.52[.]150/aVOqdXa5QcT68E0.dat
+- hxxp://85.239.52[.]150/axBm7TefU8b9.dat
+
+- hxxp://45.89.55[.]145/a0xG8ikFA7yp3q.dat
+- hxxp://45.89.55[.]145/a8ZdLDHxE.dat
+- hxxp://45.89.55[.]145/a9tInQPNHB6ZLhYWg.dat
+- hxxp://45.89.55[.]145/acCh6vEOHNyu.dat
+- hxxp://45.89.55[.]145/afltTkMXaVzwPqdJb.dat
+- hxxp://45.89.55[.]145/agSvCrjBwZEdzQ2J.dat
+- hxxp://45.89.55[.]145/ajMmrsCYWpcI.dat
+- hxxp://45.89.55[.]145/aO7hPSEJ3zHtK5xL.dat
+- hxxp://45.89.55[.]145/aPn4pUS98.dat
+- hxxp://45.89.55[.]145/aQV5eEwxGUtY.dat
+- hxxp://45.89.55[.]145/av1Xh0BWQAy.dat
+- hxxp://45.89.55[.]145/aVNjkv3X502SQ6r.dat
+- hxxp://45.89.55[.]145/aVOqdXa5QcT68E0.dat
+- hxxp://45.89.55[.]145/axBm7TefU8b9.dat
+
+- hxxp://185.205.187[.]238/a0xG8ikFA7yp3q.dat
+- hxxp://185.205.187[.]238/a8ZdLDHxE.dat
+- hxxp://185.205.187[.]238/a9tInQPNHB6ZLhYWg.dat
+- hxxp://185.205.187[.]238/acCh6vEOHNyu.dat
+- hxxp://185.205.187[.]238/afltTkMXaVzwPqdJb.dat
+- hxxp://185.205.187[.]238/agSvCrjBwZEdzQ2J.dat
+- hxxp://185.205.187[.]238/ajMmrsCYWpcI.dat
+- hxxp://185.205.187[.]238/aO7hPSEJ3zHtK5xL.dat
+- hxxp://185.205.187[.]238/aPn4pUS98.dat
+- hxxp://185.205.187[.]238/aQV5eEwxGUtY.dat
+- hxxp://185.205.187[.]238/av1Xh0BWQAy.dat
+- hxxp://185.205.187[.]238/aVNjkv3X502SQ6r.dat
+- hxxp://185.205.187[.]238/aVOqdXa5QcT68E0.dat
+- hxxp://185.205.187[.]238/axBm7TefU8b9.dat
+
+- hxxp://104.36.229[.]105/a0xG8ikFA7yp3q.dat
+- hxxp://104.36.229[.]105/a8ZdLDHxE.dat
+- hxxp://104.36.229[.]105/a9tInQPNHB6ZLhYWg.dat
+- hxxp://104.36.229[.]105/acCh6vEOHNyu.dat
+- hxxp://104.36.229[.]105/afltTkMXaVzwPqdJb.dat
+- hxxp://104.36.229[.]105/agSvCrjBwZEdzQ2J.dat
+- hxxp://104.36.229[.]105/ajMmrsCYWpcI.dat
+- hxxp://104.36.229[.]105/aO7hPSEJ3zHtK5xL.dat
+- hxxp://104.36.229[.]105/aPn4pUS98.dat
+- hxxp://104.36.229[.]105/aQV5eEwxGUtY.dat
+- hxxp://104.36.229[.]105/av1Xh0BWQAy.dat
+- hxxp://104.36.229[.]105/aVNjkv3X502SQ6r.dat
+- hxxp://104.36.229[.]105/aVOqdXa5QcT68E0.dat
+- hxxp://104.36.229[.]105/axBm7TefU8b9.dat
+
+- hxxp://94.131.119[.]113/a0xG8ikFA7yp3q.dat
+- hxxp://94.131.119[.]113/a8ZdLDHxE.dat
+- hxxp://94.131.119[.]113/a9tInQPNHB6ZLhYWg.dat
+- hxxp://94.131.119[.]113/acCh6vEOHNyu.dat
+- hxxp://94.131.119[.]113/afltTkMXaVzwPqdJb.dat
+- hxxp://94.131.119[.]113/agSvCrjBwZEdzQ2J.dat
+- hxxp://94.131.119[.]113/ajMmrsCYWpcI.dat
+- hxxp://94.131.119[.]113/aO7hPSEJ3zHtK5xL.dat
+- hxxp://94.131.119[.]113/aPn4pUS98.dat
+- hxxp://94.131.119[.]113/aQV5eEwxGUtY.dat
+- hxxp://94.131.119[.]113/av1Xh0BWQAy.dat
+- hxxp://94.131.119[.]113/aVNjkv3X502SQ6r.dat
+- hxxp://94.131.119[.]113/aVOqdXa5QcT68E0.da
+- hxxp://94.131.119[.]113/axBm7TefU8b9.dat
+
+EXAMPLE OF QAKBOT DLL:
+
+- SHA256 hash: a26b21d38ad9e01daa3715ea447b8af583fc49703d035ad82bb37d9ad496ca8b
+- File size: 365,056 bytes
+- File location: C:\ProgramData\aYpv84GCeKF.dat
+- Run method: rundll32.exe [filename],Time
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+ACTIVE QAKBOT HTTPS C2 SERVERS CONTACTED BY THE INFECTED WINDOWS HOST:
+
+- 87.220.204[.]177 port 2222 - HTTPS traffic
+- 23.30.173[.]133 port 443 - HTTPS traffic
+- 108.190.115[.]159 port 443 - HTTPS traffic
+
+QAKBOT HTTPS C2 SERVER WITH SELF-SIGNED CERTIFICATE SPOOFING GIFTS.COM:
+
+- 185.81.114[.]188 port 443 - HTTPS traffic
+
+CONNECTIVITY CHECK & TCP PORT 65400 TRAFFIC GENERATED BY QAKBOT:
+
+- port 443 - www.openssl[.]org - Connectivity check by infected host, not inherently malicious
+- 94.103.85[.]86 port 65400 - TCP traffic
+
+BACKCONNECT AND DARK CAT VNC TRAFFIC:
+
+- 46.151.30[.]109 port 443 - BackConnect-style traffic and Dark Cat VNC
+
+IP ADDRESS/LOCATION CHECK BY INFECTED WINDOWS HOST INITIATED OVER BACKCONNECT TRAFFIC:
+
+- hxxp://proxy-checker.dolphin-anty-mirror[.]com/ip-info
+- hxxp://proxy-checker.dolphin-anty[.]com/ip-info
+- hxxp://proxy-checker.dolphin-anty-mirror[.]org/ip-info
+- hxxp://proxy-checker.dolphin-anty-mirror[.]net/ip-info
+
+- Note: The above URLs are not inherently malicious on their own.
+
+SELF-SIGNED CERTIFICATE FOR QAKBOT HTTPS C2 SERVER AT 87.220.204[.]177 PORT 2222:
+
+- Issuer:
+ -- id-at-countryName=CA
+ -- id-at-stateOrProvinceName=QR
+ -- id-at-localityName=Zemanltuq
+ -- id-at-organizationName=Jvdisqeg Giufd Vrav Urgelblzo Inc.
+ -- id-at-commonName=aiqtievfyn.mobi
+- Validity: 
+ -- notBefore: 2023-05-02 01:49:12 (UTC)
+ -- notAfter: 2026-05-01 08:26:40 (UTC)
+- Subject:
+ -- id-at-countryName=CA
+ -- id-at-organizationalUnitName=Tiemdaleobj Ihfeteuzclv Roceeohqxld
+ -- id-at-commonName=aiqtievfyn.mobi
+
+SELF-SIGNED CERTIFICATE FOR QAKBOT HTTPS C2 SERVER AT 23.30.173[.]133 PORT 443:
+
+- Issuer:
+ -- id-at-countryName=CA
+ -- id-at-stateOrProvinceName=QI
+ -- id-at-localityName=Ogugz
+ -- id-at-organizationName=Azcoxyxe Ieo Nqwqcalra Rlit
+ -- id-at-commonName=jegadaqeydn.us
+- Validity: 
+ -- notBefore: 2023-04-28 11:57:08 (UTC)
+ -- notAfter: 2025-04-27 14:01:11 (UTC)
+- Subject:
+ -- id-at-countryName=CA
+ -- id-at-organizationalUnitName=Toeeet Vatkibdi
+ -- id-at-commonName=jegadaqeydn.us
+
+SELF-SIGNED CERTIFICATE FOR QAKBOT HTTPS C2 SERVER AT 108.190.115[.]159 PORT 443:
+
+- Issuer:
+ -- id-at-countryName=US
+ -- id-at-stateOrProvinceName=NI
+ -- id-at-localityName=Buoau
+ -- id-at-organizationName=Uaja Oemet Bpaijna Inc.
+ -- id-at-commonName=yatwdgsot.com
+- Validity: 
+ -- notBefore: 2023-05-02 13:05:19 (UTC)
+ -- notAfter: 2028-04-30 13:19:17 (UTC)
+- Subject:
+ -- id-at-countryName=US
+ -- id-at-organizationalUnitName=Jqboazif Tioiaiou
+ -- id-at-commonName=yatwdgsot.com
+
+SELF-SIGNED CERTIFICATE INFO FOR QAKBOT HTTPS C2 AT 185.81.114[.]188 PORT 443:
+
+- Issuer:
+ -- id-at-countryName=US
+ -- id-at-stateOrProvinceName=NY
+ -- id-at-localityName=New York
+ -- id-at-organizationName=gifts.com
+ -- id-at-commonName=gifts.com
+- Validity: 
+ -- notBefore: 2023-02-14 14:58:35 (UTC)
+ -- notAfter: 2033-02-11 14:58:35 (UTC)
+- Subject:
+ -- id-at-countryName=US
+ -- id-at-stateOrProvinceName=NY
+ -- id-at-localityName=New York
+ -- id-at-organizationName=gifts.com
+ -- id-at-commonName=gifts.com
