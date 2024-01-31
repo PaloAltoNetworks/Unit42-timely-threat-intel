@@ -24,11 +24,11 @@ SHA256 HASHES FOR EXTRACTED WINDOWS SHORTCUT FILES:
 
 URLS CONTACTED BY THE ABOVE WINDOWS SHORTCUT FILES:
 
-- hxxps:\onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=F308D37440058965%21162&authkey=ABzcv7ofhAvMZiQ&.msi
-- hxxps:\onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=269ACD1A87F57BB5%21126&authkey=APDxsVshJA4PNGE&.msi
-- hxxps:\onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=269ACD1A87F57BB5%21188&authkey=ADmjb8zvNZHhwLc&.msi
-- hxxps:\onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=727E23581ED1347F%21145&authkey=AG3ulcj2nuOJlYQ&.msi
-- hxxps:/onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=8AF1295DA3BD6959%21204&authkey=AE1txFLokHN75gM&.msi
+- hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=F308D37440058965%21162&authkey=ABzcv7ofhAvMZiQ&.msi
+- hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=269ACD1A87F57BB5%21126&authkey=APDxsVshJA4PNGE&.msi
+- hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=269ACD1A87F57BB5%21188&authkey=ADmjb8zvNZHhwLc&.msi
+- hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=727E23581ED1347F%21145&authkey=AG3ulcj2nuOJlYQ&.msi
+- hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=8AF1295DA3BD6959%21204&authkey=AE1txFLokHN75gM&.msi
 
 SHA256 HASHES OF A DOWNLOADED MSI EXAMPLES:
 
