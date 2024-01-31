@@ -1,0 +1,84 @@
+2024-01-30 (TUESDAY): DARKGATE ACTIVITY
+
+ORIGINAL REFERENCE:
+
+- https://twitter.com/executemalware/status/1752105667064709251
+
+INFECTION CHAIN:
+
+- email --> PDF --> redirect traffic --> .cab download --> extracted .url file --> traffic for zip-ed .msi -->
+  .msi installs copy of Autoit3.exe and DarkGate .au3 file --> DarkGate C2 traffic
+
+EXAMPLES OF 2024-01-30 URLS, PRESUMABLY FROM PDF FILES:
+
+- hxxps://adclick.g.doubleclick[.]net/pcs/click?f957443683554531pn9713-24-QfP574vIONEZlkd&&adurl=//projetodegente[.]com/
+
+- hxxps://monitor.clickcease[.]com/tracker/tracker?id=vvabeFIqY827477154919rN15733877717t94&adpos=&nw=a&url=//projetodegente[.]com/
+
+- Note: doubleclick.net and clickcease.com are legitimate, but they were abused in URLs that led to projetodegent.com. 
+  The domain projetodegente[.]com is also a legitimate website, but it was redirecting traffic for this campaqign.
+
+REDIRECT AND CAB FILE DOWNLOAD ON 2024-01-30:
+
+- port 443 - hxxps://projetodegente[.]com/
+- port 443 - hxxps://www.verxy[.]me/wp-content/uploads/2023/12/s/s/letter-F54876-2024.cab
+
+EXTRACTED .URL FILE RETRIEVES .MSI INSTALLER:
+
+- 5.252.178[.]193 port 80 - 5.252.178[.]193 - OPTIONS / HTTP/1.1 
+- 5.252.178[.]193 port 80 - 5.252.178[.]193 - OPTIONS /Downloads HTTP/1.1 
+- 5.252.178[.]193 port 80 - 5.252.178[.]193 - PROPFIND /Downloads/independert.zip/independert.msi HTTP/1.1 
+- 5.252.178[.]193 port 80 - 5.252.178[.]193 - PROPFIND /Downloads/independert.zip HTTP/1.1 
+- 5.252.178[.]193 port 80 - 5.252.178[.]193 - GET /Downloads/independert.zip HTTP/1.1 
+
+DARKGATE C2 TRAFFIC:
+
+- 94.131.101.186 port 8094 - mainsercheronlinehostingbot.com:8094 - POST / HTTP/1.0 
+
+DOWNLOADED CAB FILE AND EXTRACTED WINDOWS SHORTCUT:
+
+- SHA256 hash: 57379fe988e3f7072312b7c2235f13ee4df2907e3243fdec47f658ae2dc395e5
+- File size: 355 bytes
+- File location: hxxps://www.verxy[.]me/wp-content/uploads/2023/12/s/s/letter-F54876-2024.cab
+- File name: letter-F54876-2024.cab
+- File type: Microsoft Cabinet archive data, many, 355 bytes, 2 files
+- Note: In addition to the .url file, this cab contains a zero byte decoy file named Cloud-Extract to Documents.txt
+
+- SHA256 hash: 24f38012941211da96f82938320fdbbcb4cf72e26fbe97dc4ad8d1da63da1574
+- File size: 264 bytes
+- File name: letter-F54876-2024.url
+- File type: MS Windows 95 Internet shortcut text
+- Shortcut: URL=file: //5.252.178[.]193@80/Downloads/independert.zip/independert.msi
+
+ARTIFACTS FROM AN INFECTION RUN:
+
+- SHA256 hash: 092d8e860b384fa6a0ff48620cf83807a6377ac1af495e0ca4467a11051cdecc
+- File size: 2,106,364 bytes
+- File location: file: //5.252.178[.]193@80/Downloads/independert.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+
+- SHA256 hash: 846f339f39e82f358fe5d0985afde119563754c9a8030dc237eac1a963a8bbf4
+- File size: 4,157,440 bytes
+- File location: file: //5.252.178[.]193@80/Downloads/independert.zip/independert.msi
+- File type: Composite Document File V2 Document, Little Endian, Os: Windows, Version 10.0, MSI Installer
+
+FILES FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d
+- File size: 893,608 bytes
+- File location: C:\ProgramData\ddfbkcd\Autoit3.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Copy of Autoit3.exe, version 3.3.14.5, not malicious but used to run malicious .au3 file
+
+- SHA256 hash: c83870e8f4884f6653ad7fe43d43e9ab8d6c8b3c295d10f1f1921acd8f1e42a8
+- File size: 932,574 bytes
+- File location: C:\ProgramData\ddfbkcd\bgkeddc.au3
+- File type: data
+- File description: Malicious AutoIt v3 compiled script for DarkGate
+
+REGISTRY UPDATE FOR PERSISTENCE:
+
+- Key Name: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+- Value Name: DdDDfce
+- Value Type: REG_SZ
+- Value Data: C:\ProgramData\ddfbkcd\Autoit3.exe C:\ProgramData\ddfbkcd\bgkeddc.au3
