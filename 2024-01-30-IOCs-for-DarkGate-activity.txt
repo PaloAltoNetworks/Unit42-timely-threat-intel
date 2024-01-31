@@ -1,5 +1,10 @@
 2024-01-30 (TUESDAY): DARKGATE ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-unit42threatintel-timelythreatintel-activity-7158494153910243329-Zj9p
+- https://twitter.com/Unit42_Intel/status/1752728535901278431
+
 ORIGINAL REFERENCE:
 
 - https://twitter.com/executemalware/status/1752105667064709251
