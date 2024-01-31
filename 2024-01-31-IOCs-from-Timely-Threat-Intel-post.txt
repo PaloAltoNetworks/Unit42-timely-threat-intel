@@ -35,7 +35,7 @@ URLS CONTACTED BY THE ABOVE WINDOWS SHORTCUT FILES:
 - hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=727E23581ED1347F%21145&authkey=AG3ulcj2nuOJlYQ&.msi
 - hxxps://onedrive[.]live[.]com/download?cid=85B4181C5D4F7514&resid=8AF1295DA3BD6959%21204&authkey=AE1txFLokHN75gM&.msi
 
-SHA256 HASHES OF A DOWNLOADED MSI EXAMPLES:
+SHA256 HASHES OF DOWNLOADED MSI EXAMPLES:
 
 - 6df1cda132d06e5cc00d6d8d88dfa8ed2dea8c036225d505008cd842a4de378c  38MirrorsConnectionAgent.msi
 - 8aac79ce5ff07259eed8be3d9beef6a2e14fce7f54d85083f6c4390654841fde  97WiseU_Connect_Home.msi
