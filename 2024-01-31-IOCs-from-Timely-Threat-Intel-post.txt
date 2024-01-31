@@ -1,5 +1,10 @@
 2024-01-31 (WEDNESDAY): UPDATE TO INFECTION CAMPAIGN PREVIOUSLY REPORTED AS PUSHING AZORULT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_azorult-timelythreatintel-unit42threatintel-activity-7158565872784019457-axg_
+- https://twitter.com/Unit42_Intel/status/1752800214795055209
+
 NOTES:
 
 - Campaign originally reported at: https://cyble.com/blog/sneaky-azorult-back-in-action-and-goes-undetected/
