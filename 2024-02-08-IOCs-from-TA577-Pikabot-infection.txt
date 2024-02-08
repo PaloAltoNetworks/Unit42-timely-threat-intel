@@ -1,0 +1,86 @@
+2024-02-08 (THURSDAY): TA577 MALSPAM PUSHES PIKABOT
+
+ORIGINAL REFERENCES:
+
+- https://twitter.com/Cryptolaemus1/status/1755655639370514595
+- https://urlhaus.abuse.ch/url/2758469/
+
+INFECTION CHAIN:
+
+- email --> link --> downloaded zip --> extracted .js --> traffic for installer EXE -->
+  Pikabot C2 traffic
+
+DOWNLOADED ZIP ARCHIVE:
+
+- SHA256 hash: 3cb8174becb3c89318ed01ccd76e71cbeb8bc9e0fcbce8e110d40cd71af20fa2
+- File size: 24,832 bytes
+- File name: Qft.zip
+- File type: Zip archive data, at least v1.0 to extract, compression method=store
+- File description: Zip archive downloaded from link in email
+
+CONTENTS OF ZIP ARCHIVE:
+
+- File name: cq - File size: 5,351 bytes - File type: data - Description: decoy file
+
+- SHA256 hash: 5211026d2559210ba16c4b896445737eaa920e4f18abe116da0180388207c3d7
+- File size: 61,047 bytes
+- File name: Qft.js
+- File type: ASCII text, with very long lines (39833), with CRLF line terminators
+- File description: JavaScript (.js) file extracted from above zip archive
+
+PIKABOT INSTALLER RETRIEVED BY .JS FILE
+
+- SHA256 hash: ca5fb5814ec62c8f04936740aabe2664b3c7d036203afbd8425cd67cf1f4b79d  
+- File size: 1,361,408 bytes
+- File location: hxxps://gloverstech[.]com/tJWz9/0.526635390798647.dat
+- File location: C:\Users\Public\Jrdhtjydhjf.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: EXE installer for Pikabot
+
+TRAFFIC FROM AN INFECTION:
+
+- hxxp://orangebrands[.]co[.]tz/pgdfga/
+- hxxp://orangebrands[.]co[.]tz/pgdfga//?5DSb=1707413069
+- hxxps://gloverstech[.]com/tJWz9/0.526635390798647.da
+- 158.220.80[.]167 port 2967 - HTTPS traffic
+- 104.129.55[.]103 port 2224 - HTTPS traffic
+- 158.220.80[.]157 port 9785 - HTTPS traffic
+
+SELF-SIGNED CERTIFICATE FOR TRAFFIC FROM 158.220.80[.]167 OVER TCP PORT 2967:
+
+- Issuer:
+  -- Country: US
+  -- State/Province: NO
+  -- Organization: Symmetrize Tyrannically Inc.
+  -- Organizational Unit: Unpleasing
+  -- Locality: Nondependability Icarus
+  -- Common Name: unsplendorous.tips
+- Validity:
+  -- Not Before: Thu, 08 Feb 2024 09:27:13 UTC
+  -- Not After: Fri, 07 Feb 2025 09:27:13 UTC
+
+SELF-SIGNED CERTIFICATE FOR TRAFFIC FROM 104.129.55[.]103 OVER TCP PORT 2224:
+
+- Issuer:
+  -- Country: IT
+  -- State/Province: SP
+  -- Organization: Electromagnetism
+  -- Organizational Unit: Mouseship
+  -- Locality: Mellow Supercarbonize
+  -- Common Name: infemininesilverberry.rentals
+- Validity:
+  -- Not Before: Thu, 08 Feb 2024 10:13:37 UTC
+  -- Not After: Fri, 07 Feb 2025 10:13:37 UTC
+
+SELF-SIGNED CERTIFICATE FOR TRAFFIC FROM 158.220.80[.]157 OVER TCP PORT 9785:
+
+- Issuer:
+  -- Country: SE
+  -- State/Province: PY
+  -- Organization: Abridges Lippier
+  -- Organizational Unit: Crabcatcher
+  -- Locality: Enhancive Alopias
+  -- Common Name: bloodguiltiness.tirol
+- Validity:
+  -- Not Before: Thu, 08 Feb 2024 09:57:45 UTC
+  -- Not After: Fri, 07 Feb 2025 09:57:45 UTC
