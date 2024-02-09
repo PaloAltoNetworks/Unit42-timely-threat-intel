@@ -1,5 +1,10 @@
 2024-02-08 (THURSDAY): TA577 MALSPAM PUSHES PIKABOT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ta577-pikabot-unit42threatintel-activity-7161507003310231552-ufq1
+- https://twitter.com/Unit42_Intel/status/1755741384982561175
+
 ORIGINAL REFERENCES:
 
 - https://twitter.com/Cryptolaemus1/status/1755655639370514595
