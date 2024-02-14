@@ -11,7 +11,7 @@ ORIGINAL REFERENCE:
 
 INFECTION CHAIN:
 
-- link from Italian language malspam --> downloaded .js file --> .js file downloads & runs Danbot DLL
+- link from Italian language malspam --> downloaded .js file --> .js file downloads & runs Danabot DLL
 
 TRAFFIC FROM AN INFECTED WINDOWS HOST:
 
