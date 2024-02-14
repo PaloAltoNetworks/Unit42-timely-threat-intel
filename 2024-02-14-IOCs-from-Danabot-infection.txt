@@ -1,0 +1,51 @@
+2024-02-14 (WEDNESDAY): DANABOT INFECTION FROM ITALIAN LANGUAGE MALSPAM
+
+ORIGINAL REFERENCE:
+
+- https://twitter.com/JAMESWT_MHT/status/1757694806950600780
+
+INFECTION CHAIN:
+
+- link from Italian language malspam --> downloaded .js file --> .js file downloads & runs Danbot DLL
+
+TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+INITIAL .JS FILE DOWNLOAD:
+
+- port 80 - hxxp://portfolio.serveirc[.]com/login.php
+- port 80 - hxxp://content.servepics[.]com/login.php  <-- alternate URL from original reference
+
+.JS FILE RETRIEVES DANBOT DLL:
+
+- port 80 - hxxp://soundata[.]top/resources.dll
+
+DANABOT C2 TRAFFIC:
+
+- 62.173.146[.]41 port 443 - attempted TCP connections: SYN from client, RST from server
+- 91.201.67[.]85 port 443 - encoded/encrypted TCP traffic, only one TCP stream
+- 195.133.88[.]98 port 443 - encoded/encrypted TCP traffic, consistently used as Danabot C2
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
+- File size: 5,558 bytes
+- File type: ASCII text, with very long lines (5558), with no line terminators
+- File name: allegato_708.js
+- File location: hxxp://portfolio.serveirc[.]com/login.php
+- File description: Example of JavaScript file from link in email
+- Run method: wscript.exe [filename]
+- Note: Different file name/hash for each download from the same URL
+
+- SHA256 hash: 2597322a49a6252445ca4c8d713320b238113b3b8fd8a2d6fc1088a5934cee0e
+- File size: 11,922,432 bytes
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File location: hxxp://soundata[.]top/resources.dll
+- File location: C:\Users\[username]\AppData\Local\Temp\bwrSQOxPJu.dll
+- File description: Danabot DLL
+- Run method: rundll32.exe /B [filename],start
+
+- SHA256 hash: 4d6dfd1fc01876b9602c32f6350458a2ee8914876a75a66d81dea588ce31bd28
+- File size: 47,408 bytes
+- File type: data binary, possibly wrongly-identified as Matlab v4 mat-file (little endian)
+- File location: C:\ProgramData\Eyyddidh.tmp
+- File description: Data binary that appeared during this infection, not malicious on its own
