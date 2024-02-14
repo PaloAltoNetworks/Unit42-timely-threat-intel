@@ -27,7 +27,7 @@ DANABOT C2 TRAFFIC:
 - 91.201.67[.]85 port 443 - encoded/encrypted TCP traffic, only one TCP stream
 - 195.133.88[.]98 port 443 - encoded/encrypted TCP traffic, consistently used as Danabot C2
 
-ASSOCIATED MALWARE:
+EXAMPLES OF MALWARE/ARTIFACTS FROM AN INFECTION:
 
 - SHA256 hash: 847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268
 - File size: 5,558 bytes
