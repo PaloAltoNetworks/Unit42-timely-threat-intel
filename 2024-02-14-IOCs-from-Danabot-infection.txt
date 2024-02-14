@@ -1,5 +1,10 @@
 2024-02-14 (WEDNESDAY): DANABOT INFECTION FROM ITALIAN LANGUAGE MALSPAM
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_danabot-malspam-unit42threatintel-activity-7163648622029422592-wDSx
+- https://twitter.com/Unit42_Intel/status/1757882997829730662
+
 ORIGINAL REFERENCE:
 
 - https://twitter.com/JAMESWT_MHT/status/1757694806950600780
