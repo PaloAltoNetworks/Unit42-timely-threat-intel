@@ -18,6 +18,8 @@ INITIAL .JS FILE DOWNLOAD:
 .JS FILE RETRIEVES DANBOT DLL:
 
 - port 80 - hxxp://soundata[.]top/resources.dll
+- port 80 - hxxp://soundline[.]top/resources.dll  <-- alternate URL from original reference
+- port 80 - hxxp://soundbase[.]top/resources.dll  <-- alternate URL from original reference
 
 DANABOT C2 TRAFFIC:
 
