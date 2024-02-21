@@ -1,5 +1,10 @@
 2024-02-21 (WEDNESDAY): PARROT TDS --> SOCGHOLISH --> ASYNC RAT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_parrottds-socgholish-asyncrat-activity-7166192124441415681-rnLv
+- https://twitter.com/Unit42_Intel/status/1760426508558950518
+
 INFECTION CHAIN:
 
 - legitimate but compromised site --> ParrotTDS script --> SocGholish URL --> 
