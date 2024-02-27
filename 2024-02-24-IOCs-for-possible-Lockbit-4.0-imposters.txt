@@ -1,0 +1,43 @@
+2024-02-24 (SATURDAY): POSSIBLE IMPOSTER RANSOMWARE IMPERSONATING LOCKBIT 4.0
+
+NOTES:
+
+- This ransomware identifies as Lockbit 4.0 in its ransom note, but other 
+  characteristics are not consistent with previous Lockbit ransomware samples.
+
+- These five samples were first submitted to VirusTotal on 2024-02-24.
+
+SHA256 HASHES FOR FIVE WINDOWS EXECUTABLE (.EXE) FILES IDENTIFYING AS LOCKBIT 4.0:
+
+- 0447c931bb8efc6dc531f69a891f2a0f28a85a18b25e04366fdb59bf827b2eb1
+- 31208a2640c1f2806d21bb8b40abd47b24dd3be85dedb1fdb9f33dac47b23152
+- 9b5f1ec1ca04344582d1eca400b4a21dfff89bc650aba4715edd7efb089d8141
+- b3a994f26b694fcfdc68e57fc6aeea2aa4b4906ff50b0319e00c693537a3b25c
+- f8935a295a316e15f60fadf465383f19cf881a42ba008ed1792cbeecb21580dc
+
+TEXT OF RANSOM NOTE:
+
+            ~~~ LockBit 4.0 Ransomware since 2024~~~
+
+>>>> Your data are stolen and encrypted
+
+	Price = 1000 $ 
+        Bitcoin = 328N9mKT6xFe6uTvtpxeKSymgWCbbTGbK2
+        Email = jimyjoy139@proton.me
+
+>>>> What guarantees that we will not deceive you? 
+
+	We are not a politically motivated group and we do not need anything other than your money. 
+    
+	If you pay, we will provide you the programs for decryption and we will delete your data. 
+	Life is too short to be sad. Be not sad, money, it is only paper.
+    
+	If we do not give you decrypters, or we do not delete your data after payment, then nobody will pay us in the future. 
+	Therefore to us our reputation is very important. We attack the companies worldwide and there is no dissatisfied victim after payment.
+    
+	
+>>>> Your personal DECRYPTION ID: A3138014A48684D6D525F3F372263313
+
+>>>> Warning! Do not DELETE or MODIFY any files, it can lead to recovery problems!
+
+>>>> Warning! If you do not pay the ransom we will attack your company repeatedly again!
