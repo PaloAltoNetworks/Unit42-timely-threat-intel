@@ -1,5 +1,10 @@
 2024-02-24 (SATURDAY): POSSIBLE IMPOSTER RANSOMWARE IMPERSONATING LOCKBIT 4.0
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_lockbit-virustotal-unit42threatintel-activity-7168336503381708801-Qdgt
+- https://twitter.com/Unit42_Intel/status/1762570867291070880
+
 NOTES:
 
 - This ransomware identifies as Lockbit 4.0 in its ransom note, but other 
