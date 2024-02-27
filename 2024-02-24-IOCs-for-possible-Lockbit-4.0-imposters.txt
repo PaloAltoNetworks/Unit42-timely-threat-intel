@@ -7,8 +7,8 @@ REFERENCES:
 
 NOTES:
 
-- This ransomware identifies as Lockbit 4.0 in its ransom note, but other 
-  characteristics are not consistent with previous Lockbit ransomware samples.
+- This ransomware identifies as Lockbit 4.0 in its ransom note, but the note 
+  characteristics are not consistent with previous Lockbit ransomware notes.
 
 - These five samples were first submitted to VirusTotal on 2024-02-24.
 
