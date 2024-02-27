@@ -1,5 +1,12 @@
 2024-02-27 (TUESDAY): UPDATES TO AKIRA RANSOMWARE CODEBASE
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_akiraransomware-kcipher2-chacha20-activity-7168276634125492225-Q2T6
+- https://twitter.com/Unit42_Intel/status/1762510454377619694 (1 of 3)
+- https://twitter.com/Unit42_Intel/status/1762510703745704339 (2 of 3)
+- https://twitter.com/Unit42_Intel/status/1762528566166626725 (3 of 3)
+
 NOTES:
 
 - We recently identified updates to the Akira ransomware codebase.
