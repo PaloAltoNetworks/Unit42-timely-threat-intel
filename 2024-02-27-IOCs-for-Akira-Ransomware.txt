@@ -1,0 +1,32 @@
+2024-02-27 (TUESDAY): UPDATES TO AKIRA RANSOMWARE CODEBASE
+
+NOTES:
+
+- We recently identified updates to the Akira ransomware codebase.
+- Updates include leveraging open source crypto libraries for importing keys and encrypting data, rather than leveraging an API.
+- Additionally, the KCipher2 algorithm has been added alongside ChaCha20, which is quite unusual.
+- The developers have also modified the file metadata appended to each encrypted file.
+- Metadata is encrypted with RSA instead of hardcoding it as a plaintext value.
+- An autosave feature has also been added, with .arika files being created on runtime containing temporary metadata. 
+- While these .akira files are deleted, it is possible to hunt for Akira ransomware based on these files.
+
+SHA256 HASHES FOR AKIRA RANSOMWARE:
+
+- 08207409e1d789aea68419b04354184490ce46339be071c6c185c75ab9d08cba
+- 2727c73f3069457e9ad2197b3cda25aec864a2ab8da3c2790264d06e13d45c3d
+- 2db4a15475f382e34875b37d7b27c3935c7567622141bc203fde7fe602bc8643
+- 56f1014eb2d145c957f9bc0843f4e506735d7821e16355bcfbb6150b1b5f39db
+- 58e9cd249d947f829a6021cf6ab16c2ca8e83317dbe07a294e2035bb904d0cf3
+- 6270cef0c8cc45905556c40c9273391d71ef8d73c865d44d2254a8a4943ae5b4
+- 77fe1619aa07d2ab169a2fa23feb22d7433bf07e856cda1402cf60205beddd7f
+- 78642603005f826a3b47effb852da980a6483ffb9461e30842020848305c9353
+- 7d5da695e6f9a421e3d3a94e384ce00e8ec58fac5b895b4cba5b66a6de7fafd5
+- 99c1cd740fa749a163ce8cdf93722191c4ba5d97de81576623a8bbcb622473d6
+- b7bbfb66338a3413f981561115bd8ef8a4014479bcc320de563499cfc73a3de2
+- c9a1d8240147075cb7ffd8d568e6d3c517ac4cfdddccd5bb37857e7bde6d2eb7
+- ca651d0eb676923c3b29190f7941d8d2ac8f14e4ad6c26c466069bbc59df4d1d
+- d5558ec7979a96fe1ddcb1f33053a1ac3416a9b65d4f27b5cc9fd0a816296184
+- e5c8888f51369c2105d47a4998ad9b4053471bd98b4fd73a854207da09206ee2
+- ee0a27f3de6f21463f8125dbfc95268ff995ef8ea464660d67cf9f77e240e1ab
+- f1f82d3b62f92f4fe8af320afea6c346210bb51774bb1567149e308469d40c92
+- ffcddd8544bca0acde69f49abd1ea9dbee5f4eb73df51dd456b401c045a0b6af
