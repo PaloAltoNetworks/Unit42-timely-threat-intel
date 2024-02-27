@@ -6,9 +6,9 @@ NOTES:
 - Updates include leveraging open source crypto libraries for importing keys and encrypting data, rather than leveraging an API.
 - Additionally, the KCipher2 algorithm has been added alongside ChaCha20, which is quite unusual.
 - The developers have also modified the file metadata appended to each encrypted file.
-- Metadata is encrypted with RSA instead of hardcoding it as a plaintext value.
+- Metadata is fully encrypted with RSA, rather than partially as seen within original versions of Akira ransomware.
 - An autosave feature has also been added, with .arika files being created on runtime containing temporary metadata. 
-- While these .akira files are deleted, it is possible to hunt for Akira ransomware based on these files.
+- While these .arika files are deleted, it is possible to hunt for Akira ransomware based on these files.
 
 SHA256 HASHES FOR AKIRA RANSOMWARE:
 
