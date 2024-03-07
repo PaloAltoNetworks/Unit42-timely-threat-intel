@@ -1,5 +1,10 @@
 2024-03-06 (WEDNESDAY): PIKABOT INFECTION LEADS TO MEDUZA STEALER
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_pikabot-meduza-meduzastealer-activity-7171529296388321282-7yIh
+- https://twitter.com/Unit42_Intel/status/1765763677192356196
+
 INITIAL REFERENCES ON PIKABOT ACTIVITY:
 
 - hxxps://twitter.com/Cryptolaemus1/status/1765409019718512946
