@@ -1,5 +1,10 @@
 2024-03-07 (THURSDAY): LATRODECTUS LEADS TO LUMMA STEALER
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_latrodectus-lummastealer-unit42threatintel-activity-7172007697196810240-gBxT
+- https://twitter.com/Unit42_Intel/status/1766242077585596520
+
 NOTES:
 
 - Latrodectus is a relatively new malware first seen in October 2023.
