@@ -1,0 +1,127 @@
+2024-03-07 (THURSDAY): LATRODECTUS LEADS TO LUMMA STEALER
+
+NOTES:
+
+- Latrodectus is a relatively new malware first seen in October 2023.
+- Not much has been publicly written about it yet, but it seems to have taken over for IcedID (Bokbot).
+- @Myrtus0x0 announced this malware's name in December 2023:
+  -- https://twitter.com/Myrtus0x0/status/1732997981866209550
+- For more info on Latrodectus see: 
+  -- https://malpedia.caad.fkie.fraunhofer.de/details/win.unidentified_111
+
+INFECTION CHAIN:
+
+- thread-hijacked email --> link --> redirects to fake Azure page --> Firebase URL --> .js file download -->
+  victim double-clicks .js file --> wscript runs .js file --> .js file generates WebDAV traffic for .msi -->
+  .msi installs Latrodectus DLL --> Latrodectus C2 --> Lumma Stealer EXE sent over Latrodectus C2
+
+EXAMPLE OF LINK FROM A THREAD-HIJACKED EMAIL:
+
+- hxxps://lufyfeo[.]org/BJqYKWtHf
+
+REDIRECTS TO FAKE AZURE WEB PAGE:
+
+- hxxps://horaot[.]org/
+
+URL FOR .JS FILE DOWNLOAD:
+
+- hxxps://horaot[.]org/vl.php
+
+NOTES:
+
+- This .JS download URL responds with 302 redirect for a Firebase URL.
+- The Firebase URL and downloaded .js file are different for each download.
+
+FOUR EXAMPLES OF FIREBASE URLS RETURNED FROM THE ABOVE VL.PHP URL:
+
+- hxxps://firebasestorage.googleapis[.]com/v0/b/maga-414515.appspot.com/o/t04isSpgLc%2FDoc_p73_09g609402-63f72619t6687-1674i1.js?alt=media&token=4ac98b2d-9c63-487a-8ff9-fffae570578a
+- hxxps://firebasestorage.googleapis[.]com/v0/b/maga-414515.appspot.com/o/vCGChyqLoo%2FDoc_g81_67p132651-93b87214a4280-5471a2.js?alt=media&token=13640016-f4a7-4f52-bcc6-af1c0a55daf3
+- hxxps://firebasestorage.googleapis[.]com/v0/b/maga-414515.appspot.com/o/poflTeFzqB%2FDoc_u06_11t252280-22f87291a9089-6090h7.js?alt=media&token=9bf9b214-5882-4a0a-8815-d10cbc77a539
+- hxxps://firebasestorage.googleapis[.]com/v0/b/maga-414515.appspot.com/o/SV3SRPclfX%2FDoc_p10_51w070205-06q90756q1213-0967n0.js?alt=media&token=9e3b37c5-9b84-4bfe-be63-2a064c6f9111
+
+SHA256 HASHES ON FILES DOWNLOADED FROM THE ABOVE FIREBASE URLS:
+
+- 7fe955e3bfa79f81f110747d912cdd45c019ff1510ba1d53050c134797c202b9  Doc_g81_67p132651-93b87214a4280-5471a2.js
+- c0fced3875d6aaa4fb082e26046a897e92de897a5540351e1df964d343353602  Doc_p10_51w070205-06q90756q1213-0967n0.js
+- f4df6f09f0e463a29ab49c760d867f620eab79454defe258a30ab1460913a718  Doc_p73_09g609402-63f72619t6687-1674i1.js
+- 1122b30ee6b611f73c54425002c2349ab75e02de1d562fda34a4afa6e16c2f3f  Doc_u06_11t252280-22f87291a9089-6090h7.js
+
+NOTE:
+
+- Stripped of the random comment lines, the above .js files all have the same functional script.
+
+FILE LOCATION THAT GENERATED WEBDAV TRAFFIC CAUSED BY THE ABOVE .JS FILES:
+
+- \\95.164.3[.]171@80\share\cisa.msi
+
+MSI USED TO INSTALL LATRODECTUS:
+
+- SHA256 hash: 3a950d7e6736f17c3df90844c76d934dc66c17ec76841a4ad58de07af7955f0f
+- File size: 1,566,208 bytes
+- File type: MSI Installer
+- File location: \\95.164.3[.]171@80\share\cisa.msi
+
+PERSISTENT LATRODECTUS DLL:
+
+- SHA256 hash: aee22a35cbdac3f16c3ed742c0b1bfe9739a13469cf43b36fb2c63565111028c
+- File size: 711,168 bytes
+- File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
+- File location: C:\Users\[username]\AppData\Roaming\Custom_Update\Update_5574b828.dll
+- Run method: rundll32 [file], vgml
+
+LATRODECTUS C2:
+
+- aytobusesre[.]com
+- popfealt[.]one
+
+LUMMA STEALER EXE:
+
+- SHA256 hash: 364a149283b79cb26ba93bd95d6480c329458ae4e1985800611ce1dff79640fe
+- File size: 6,332,928 bytes
+- File type: PE32 executable (GUI) Intel 80386 (stripped to external PDB), for MS Windows
+- File location: C:\Users\[username]\AppData\Local\-1561714384.exe
+
+LUMMA STEALER C2:
+
+- auctiondecadecontaii[.]shop
+
+TRAFFIC LOG FROM INFECTION RUN:
+
+Date/Time                IP address        Port  Host                              Info
+-----------------------  --------------    ----  ------------------------------    --------------------------
+2024-03-07 20:18:30 UTC  85.193.84[.]39    80    lufyfeo[.]org                     GET /BJqYKWtHf HTTP/1.1 
+2024-03-07 20:18:31 UTC  85.193.84[.]39    443   horaot[.]org                      Client Hello (HTTPS traffic)
+2024-03-07 20:18:31 UTC  85.193.84[.]39    443   horaot[.]org                      Client Hello (HTTPS traffic)
+2024-03-07 20:18:41 UTC  85.193.84[.]39    443   horaot[.]org                      Client Hello (HTTPS traffic)
+2024-03-07 20:18:41 UTC  85.193.84[.]39    443   horaot[.]org                      Client Hello (HTTPS traffic)
+2024-03-07 20:18:41 UTC  85.193.84[.]39    443   horaot[.]org                      Client Hello (HTTPS traffic)
+2024-03-07 20:18:42 UTC                    443   firebasestorage.googleapis[.]com  Client Hello (HTTPS traffic)
+2024-03-07 20:18:42 UTC                    443   firebasestorage.googleapis[.]com  Client Hello (HTTPS traffic)
+2024-03-07 20:19:14 UTC  95.164.3[.]171    80    95.164.3[.]171                    OPTIONS / HTTP/1.1 
+2024-03-07 20:19:18 UTC  95.164.3[.]171    80    95.164.3[.]171                    OPTIONS /share HTTP/1.1 
+2024-03-07 20:19:18 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share HTTP/1.1 
+2024-03-07 20:19:18 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share HTTP/1.1 
+2024-03-07 20:19:19 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share/Desktop.ini HTTP/1.1 
+2024-03-07 20:19:19 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share/cisa.msi HTTP/1.1 
+2024-03-07 20:19:19 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share/Desktop.ini HTTP/1.1 
+2024-03-07 20:19:19 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share/cisa.msi HTTP/1.1 
+2024-03-07 20:19:19 UTC  95.164.3[.]171    80    95.164.3[.]171                    GET /share/cisa.msi HTTP/1.1 
+2024-03-07 20:19:19 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share HTTP/1.1 
+2024-03-07 20:19:21 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share HTTP/1.1 
+2024-03-07 20:19:21 UTC  95.164.3[.]171    80    95.164.3[.]171                    PROPFIND /share HTTP/1.1 
+2024-03-07 20:22:42 UTC                    443   aytobusesre[.]com                 Client Hello (HTTPS traffic)
+2024-03-07 20:52:11 UTC                    443   aytobusesre[.]com                 Client Hello (HTTPS traffic)
+2024-03-07 21:01:08 UTC                    443   aytobusesre[.]com                 Client Hello (HTTPS traffic)
+2024-03-07 21:11:22 UTC                    443   aytobusesre[.]com                 Client Hello (HTTPS traffic)
+2024-03-07 21:11:36 UTC                    443   aytobusesre[.]com                 Client Hello (HTTPS traffic)
+2024-03-07 21:12:48 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 21:17:49 UTC                    443   auctiondecadecontaii[.]shop       Client Hello (HTTPS traffic)
+2024-03-07 21:17:54 UTC                    443   auctiondecadecontaii[.]shop       Client Hello (HTTPS traffic)
+2024-03-07 21:17:55 UTC                    443   auctiondecadecontaii[.]shop       Client Hello (HTTPS traffic)
+2024-03-07 21:21:25 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 21:32:24 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 21:42:00 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 21:50:44 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 22:01:21 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 22:11:03 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
+2024-03-07 22:21:30 UTC                    443   popfealt[.]one                    Client Hello (HTTPS traffic)
