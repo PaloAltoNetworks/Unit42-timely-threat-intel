@@ -1,5 +1,10 @@
 2024-03-13 (WEDNESDAY): GOOTLOADER INFECTION FROM FAKE FORUM POST
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_gootloader-timelythreatintel-unit42threatintel-activity-7174049166199779328-iB3F
+- https://twitter.com/Unit42_Intel/status/1768283551168946470
+
 NOTES:
 
 - These fake forum posts are the common method used for distributing GootLoader.
