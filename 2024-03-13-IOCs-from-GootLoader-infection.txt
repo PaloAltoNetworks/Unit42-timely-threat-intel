@@ -1,0 +1,50 @@
+2024-03-13 (WEDNESDAY): GOOTLOADER INFECTION FROM FAKE FORUM POST
+
+NOTES:
+
+- These fake forum posts are the common method used for distributing GootLoader.
+
+INFECTION TRAFFIC:
+
+URL FOR FAKE FORUM POST ON COMPROMISED WEBSITE:
+
+- hxxps://schindelhansel[.]de/2022/03/20/pa-collective-agreement-pay/ 
+
+LINK ON FAKE FORUM POST FOR MALCIOUS ZIP DOWNLOAD:
+
+- hxxps://potvinfoundation[.]org/read.php
+
+GOOTLOADER C2:
+
+- hxxps://kickfin[.]com/xmlrpc.php
+- hxxps://kintaroramen[.]com/xmlrpc.php
+- hxxps://monportailrh[.]com/xmlrpc.php
+- hxxps://pandorasboxny[.]com/xmlrpc.php
+- hxxp://sxshentai[.]com/xmlrpc.php
+- hxxps://thekartingarena[.]com/xmlrpc.php
+- hxxps://toyoaviation[.]ro/xmlrpc.php
+- hxxps://viyatravel[.]com/xmlrpc.php
+- hxxps://www.auriault86[.]com/xmlrpc.php
+- hxxps://www.doctorsacademy[.]org/xmlrpc.php
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 9302e732d148b91ec40a17db1d73f776ef16452a2fc7daba2e821772f3115378
+- File size: 734,127 bytes
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File name: Pa_collective_agreement_pay_16041.zip
+- File description: Zip archive containing initial file for GootLoader infection
+
+- SHA256 hash: 5117f249927d0204740450b643df2c2b62c42255ad5b4f6573b59c6f2bf11795
+- File size: 3,371,793 bytes
+- File type: ASCII text
+- File name: pa collective agreement pay 80199.js
+- File description:  Initial JavaScript file for GootLoader infection
+- Run method: wscript.exe [file]
+
+- SHA256 hash: 0470b13e58261073dc74d1e4e6df64e24c74ee774fe8a7cc07adfee3bec7f536
+- File size: 409,28,080 bytes
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- File location: C:\Users\[username]\AppData\Roaming\[existing directory]\Formula Language.js
+- File description: Persistent JavaScript file for GootLoader infection
+- Run method: wscript.exe [file]
