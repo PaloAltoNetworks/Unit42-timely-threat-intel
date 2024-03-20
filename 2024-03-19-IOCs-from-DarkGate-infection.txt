@@ -1,0 +1,68 @@
+2024-03-19 (TUESDAY): DARKGATE INFECTION
+
+INFECTION CHAIN:
+
+- XLSX file --> link to SMB share --> VBS file from SMB share --> retrieves/installs DarkGate --> DarkGate C2
+
+NOTES:
+
+- As early as Tuesday 2024-03-12, Darkgate switched from using AutoIt scripts to using AutoHotkey scripts.
+- Found serveral examples on VirusTotal of malicious Excel .xlsx files for DarkGate on Tuesday, 2024-03-19.
+- Thanks to user k3dg3___ on bazaar.abuse.ch, who submitted an example of an Excel files from this wave.
+
+- Of note, AutoHotkey.exe is a legitimate program. The test.txt file contains base64 text that converts to
+  a data binary, and that data binary is converted to DarkGate malware that runs in system memory.
+
+MALICIOUS FILES:
+
+- 11f4b7dfe50ee9e2797e309acb8b771f72f581fd0247d7df9418a46e2462f51c  march19-D3468-2024.xlsx
+- 2ebb7dc18fd2903b209987b2fc615a7de7624c329e360b36022cd0afd8434bdc  march19-D4644-2024.xlsx
+- ccc1b2fd835612e9d995d13d20bc10605f5156fe1054339d07502851cdeb658f  march19-D8585-2024.xlsx
+- faa5a30dc1d15e038ec5cbce94f59c23d4dd237cc72c09f82dbdefa6d0baa864  march19-D9134-2024.xlsx
+- b3a8c88bdd9701a5ca532e0b433944e0992a3ae90e0bb974b2d091b2a01efb94  AZURE_DOC_OPEN.vbs
+- 5aac7d31149048763e688878c3910ae4881826db80e078754f5d08f2c1f39572  C:\rimz\script.ahk
+- 442c5ecbf607b1b332bf83e2710197a374f540deba90d00564f566ee1612979e  C:\ProgramData\cccddcb\hafbccc.ahk
+
+MALICIOUS DOMAINS:
+
+- escuelademarina[.]com - hosts malicious VBS file on public-facing SMB server
+- badbutperfect[.]com - DarkGate C2 server
+
+FOUR EXAMPLES OF EXCEL XLSX FILES:
+
+- 57,771 bytes - march19-D3468-2024.xlsx
+- 57,770 bytes - march19-D4644-2024.xlsx
+- 57,771 bytes - march19-D8585-2024.xlsx
+- 57,770 bytes - march19-D9134-2024.xlsx
+
+LINK TO SMB SHARE FROM THE ABOVE EXCEL FILES:
+
+- file[:]//escuelademarina[.]com/cloud/AZURE_DOC_OPEN.vbs
+
+URLS FOR DARKGATE INSTALLATION:
+
+- hxxp[:]//badbutperfect[.]com/nrwncpwo <-- script to install DarkGate files
+- hxxp[:]//badbutperfect[.]com/test2 <-- copy of AutoHotkey.exe
+- hxxp[:]//badbutperfect[.]com/jvtobaqj <-- DarkGate AuthoHotkey script (.ahk)
+- hxxp[:]//badbutperfect[.]com/ozkpfzju <-- test.txt (base64 text used by .ahk file)
+
+DARKGATE C2:
+
+- badbutperfect[.]com - POST / HTTP/1.0
+
+FILES INITIALLY SAVED TO DISK AT:
+
+- C:\rimz\AutoHotkey.exe
+- C:\rimz\script.ahk
+- C:\rimz\test.txt
+
+FILES FINALLY SAVED TO DISK AT:
+
+- C:\ProgramData\cccddcb\AutoHotkey.exe
+- C:\ProgramData\cccddcb\hafbccc.ahk
+- C:\ProgramData\cccddcb\test.txt
+
+PERSISTENCE THROUGH STARTUP MENU SHORCUT:
+
+- Shortcut location: C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\DfAchhd.lnk
+- Shortcut runs: C:\ProgramData\cccddcb\AutoHotkey.exe C:\ProgramData\cccddcb"C:\ProgramData\cccddcb\hafbccc.ahk
