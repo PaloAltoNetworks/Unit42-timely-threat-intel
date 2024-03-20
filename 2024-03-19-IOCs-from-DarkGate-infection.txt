@@ -1,5 +1,10 @@
 2024-03-19 (TUESDAY): DARKGATE INFECTION
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-unit42threatintel-timelythreatintel-activity-7176227299975946241-o6qb
+- https://twitter.com/Unit42_Intel/status/1770461681145061378
+
 INFECTION CHAIN:
 
 - XLSX file --> link to SMB share --> VBS file from SMB share --> retrieves/installs DarkGate --> DarkGate C2
