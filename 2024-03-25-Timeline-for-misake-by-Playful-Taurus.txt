@@ -1,5 +1,10 @@
 TIMELINE FOR MISTAKE IN 2022 MADE BY PLAYFUL TAURUS
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_playfultaurus-unit42threatintel-apts-activity-7178097070908608514-40G6
+- https://twitter.com/Unit42_Intel/status/1772331391566389677
+
 NOTES:
 
 - This post provides a timeline highlighting a C2 domain misspelled by a threat actor we track as Playful Taurus.  
