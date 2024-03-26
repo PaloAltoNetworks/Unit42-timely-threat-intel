@@ -34,7 +34,8 @@ DETAILS:
 EXAMPLE OF MALICIOUS GOOGLE AD:
 
 - hxxps[:]//www.googleadservices[.]com/pagead/aclk?sa=L&
-  ai=DChcSEwjY8_qR2JCFAxU5bn8AHYnXBu4YABAAGgJvYQ&ae=2&
+  ai=DChcSEwjY8_qR2JCFAxU5bn8AHYnXBu4YABAAGgJvYQ&
+  ae=2&
   gclid=EAIaIQobChMI2PP6kdiQhQMVOW5_AB2J1wbuEAAYASAAEgKLs_D_BwE&
   ohost=www.google.com&
   cid=CAASJeRoOAJ0_zKfdLVscQrBoEBG8c7vXlYST1ChsiV3NATg9v4nHcg&
