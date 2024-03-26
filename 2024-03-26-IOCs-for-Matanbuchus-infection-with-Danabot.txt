@@ -124,7 +124,7 @@ MALWARE AND ARTIFACTS:
 - File size: 517,120 bytes
 - File type: PE32 executable (DLL) (console) Intel 80386, for MS Windows
 - File description: Matanbuchus DLL created from base64 text retrieved by previous Matanbuchus DLL
-- Note: Converted from base64 text returned from gammaproject.dev/index.aspx, then XOR the bytes with ASCII string FVh6M8Ze
+- Note: Converted from base64 text returned from gammaproject[.]dev/index.aspx, then XOR the bytes with ASCII string FVh6M8Ze
 - Run method: Unknown
 
 - SHA256 hash: 5f24b7934a1981d24700049056dca1be14a19db32779a97ca19766f218e47c0f
