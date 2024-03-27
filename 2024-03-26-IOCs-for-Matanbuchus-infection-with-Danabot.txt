@@ -1,5 +1,10 @@
 2024-03-26 (TUESDAY): MALICIOUS GOOGLE AD LEADS TO MATANBUCHUS INFECTION WITH DANABOT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malvertising-matanbuchus-danabot-activity-7178753900911480833-JlSx
+- https://twitter.com/Unit42_Intel/status/1772988284571877807
+
 DATE/TIME OF INFECTION RUN:
 
 - Tuesday 2024-03-26 01:40 UTC
