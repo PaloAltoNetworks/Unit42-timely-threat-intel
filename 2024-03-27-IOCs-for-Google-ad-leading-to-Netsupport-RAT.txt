@@ -1,5 +1,10 @@
 2024-03-27 (WEDNESDAY): GOOGLE MALVERTISING TO FAKE CISCO ANYCONNECT DOWNLOAD FOR NETSUPPORT RAT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_netsupportrat-unit42threatintel-remoteaccesstrojan-activity-7178858426649780224-GJ_N/
+- https://twitter.com/Unit42_Intel/status/1773092807311315211
+
 NOTES:
 
 - Netsupport Manager is a legitimate RAT occasionally used by criminal groups in malware packages.
