@@ -1,0 +1,65 @@
+2024-03-27 (WEDNESDAY): GOOGLE MALVERTISING TO FAKE CISCO ANYCONNECT DOWNLOAD FOR NETSUPPORT RAT
+
+NOTES:
+
+- Netsupport Manager is a legitimate RAT occasionally used by criminal groups in malware packages.
+- These malware packages are commonly known as Netsupport RAT malware.
+
+INFECTION CHAIN:
+
+- Malicious Google Advertisement --> 
+  redirect to fake Cisco AnyConnect download page --> 
+  .exe downloaded via DropBox --> 
+  InnoSetup installer runs PowerShell to extract an embedded .zip and execute file within --> 
+  .zip contains NetSupportRAT package
+
+EXAMPLE OF GOOGLE AD LINK:
+
+- hxxps[:]//www.googleadservices[.]com/pagead/aclk?sa=L&
+  ai=DChcSEwixzYjI6JSFAxXlgsIIHT8gAw8YABAAGgJqZg&ase=2&
+  gclid=EAIaIQobChMIsc2IyOiUhQMV5YLCCB0_IAMPEAAYASAAEgIla_D_BwE&
+  ohost=www.google.com&
+  cid=CAASJORoBM2adynphmvvnFgtcXGAF-tXiZBfBGs0DocgIUoxTohiEQ&
+  sig=AOD64_1Vf3QePgmBZDyNU5BL6I5sOpgzrg&
+  q&
+  nis=4&
+  adurl&
+  ved=2ahUKEwjhjP_H6JSFAxUxJ0QIHX2WD98Q0Qx6BAgGEAE
+
+REDIRECT URL:
+
+- hxxps[:]//natureaquadesigns[.]com/wp-content/uploads/index.php?gad_source=1&
+  gclid=EAIaIQobChMIsc2IyOiUhQMV5YLCCB0_IAMPEAAYASAAEgIla_D_BwE
+
+URL FOR FAKE ANYCONNECT DOWNLOAD PAGE:
+
+- hxxps[:]//ciscadex[.]com/actual.html?gad_source=1&
+  gclid=EAIaIQobChMI5bvDn46VhQMVQSytBh1JiAYKEAMYASAAEgIcEPD_BwE&
+  natureaquadesigns.com
+
+FAKE ANYCONNECT DOWNLOAD BUTTON:
+
+- hxxps[:]//ciscadex[.]com/hand.php
+
+DROPBOX DOWNLOAD LINK:
+
+- hxxps[:]//www.dropbox[.]com/scl/fi/v2p3mp8qgwvik4pms4pp0/SecureClientInstaller.exe?
+  rlkey=8jf4auncnsnqf37xirbxxwjgf&dl=1
+
+DOMAINS RESOLVING TO IP ADDRESS FOR MALICIOUS NETSUPPORT RAT C2 SERVER:
+
+- techcoredigital[.]com:443
+- tomuttaro[.]com:443
+
+URL FOR NETSUPPORT RAT C2 TRAFFIC:
+
+- 45.155.249[.]55 port 443 - 45.155.249[.]55 - POST hxxp[:]//45.155.249.55/fakeurl.htm
+
+SHA256 HASH FOR DOWNLOADED EXE:
+
+- edaa4e44df8652613f83cab2b7790f3a8c0086fee134747747afc139e5481ad4 - SecureClientInstaller.exe
+
+SHA256 HASHES FOR NETSUPPORT RAT .EXE (SUSPICIOUS) AND .INI CONFIGURATION FILE (MALICIOUS):
+
+- 89f0c8f170fe9ea28b1056517160e92e2d7d4e8aa81f4ed696932230413a6ce1 - client32.exe
+- bcd5d07db95d03eff196b476d468501709b6d151661b48d71a8a1688490191b4 - client32.ini
