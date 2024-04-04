@@ -1,0 +1,50 @@
+2024-04-04 KOI LOADER/STEALER ACTIVITY
+
+NOTE:
+
+- Based on the date of these zip archives, this wave started on 2024-04-02
+
+INFECTION CHAIN:
+
+- zip archive --> Windows shortcut --> traffic to install malware --> post-infection C2
+
+2 EXAMPLES OF ZIP ARCHIVES, MODIFIED 2024-04-02:
+
+- 3e150b3a958f67da3a821e468c3f3f72b4404dfba207158343589eab24c0074a  Chase_Bank_Statement_March.zip
+- 69bd5f29178b163082d9114ac996c5fc631700042348c07025905a172910d194  Chase_Bank_Statement_March.zip
+
+2 MALICIOUS WINDOWS SHORTCUTS FROM THE ABOVE ZIP ARCHIVES, DATED 2024-04-02:
+
+- 4f1a84d8a870a63bc255303d47f86a604b4233a97a49f4f26fc9b958d94ed24f  Chase_Bank_Statement_March.lnk
+- a6b75518b8e82e0990fd3510e803c76afdf56fe205c4bed27b74263f33e74aea  Chase_Bank_Statement_March.lnk
+
+URLS/FILES FOR MALWARE INSTALL IN ORDER OF APPEARENCE IN THE TRAFFIC (FROM OPEN DIRECTORY):
+
+- hxxps[:]//saidecommunity[.]org/assets/js/menkind.php
+- hxxps[:]//saidecommunity[.]org/assets/js/meningina.php
+- hxxps[:]//saidecommunity[.]org/assets/js/agent1.ps1
+- hxxps[:]//saidecommunity[.]org/assets/js/agent3.ps1
+- hxxps[:]//saidecommunity[.]org/assets/js/mendipite.exe
+- hxxps[:]//saidecommunity[.]org/assets/js/sd2.ps1
+- hxxps[:]//saidecommunity[.]org/assets/js/sd4.ps1
+
+FILES FROM THE ABOVE URLS:
+
+- e1a02fabd6c23c16aa0d95bcffa2578fe008f003a293941e9db426ee4ae30b3a  menkind.php
+- 00d029276eff4aa93ef5b736f2cc8e01658d1d9dcabf0356e32248c63c3b0222  meningina.php
+- 8020e944bea4e2c2d8d3a95abd805b68c0627b4e7a7a14812df8e714a9321f45  agent1.ps1
+- c90dda7e0bd8f2947160f8ab3825897df4f2e4a36498ca5016db6db0c7164311  agent3.ps1
+- 97b7cf5bf4cadde3bd8745e3347bb9707a43cb816f21a062eaf3010b6768a551  mendipite.exe
+- cf3727cbc326f0d37c0adf0c1d13e97d6723d767c43236a7fe2a71169ce4e030  sd2.ps1
+- aac338d4f543a930e5f464042d43a616d3ce972aa4568648f981d34664b97709  sd4.ps1
+
+DECODED BINARIES FROM SD2.PS1 AND SD4.PS1:
+
+- 001e9bd6b2aebb2b089ceb8ebe1488c66765c10d365ceffa77d67cedecea8c33  decoded EXE from sd2.ps1 script (pg20.exe)
+- 5c8186097677ae054afe689a14394b4171fcea8172d419842157de07f2b42fda  decoded EXE from sd4.ps1 script (pg40.exe)
+
+POST-INFECTION/C2 TRAFFIC:
+
+- 195.123.218[.]40 port 80 - 195.123.218[.]40 - POST /fougade.php
+- 195.123.218[.]40 port 80 - 195.123.218[.]40 - GET /index.php?id=&subid=Xtxgn5mh
+- 195.123.218[.]40 port 80 - 195.123.218[.]40 - POST /index.php
