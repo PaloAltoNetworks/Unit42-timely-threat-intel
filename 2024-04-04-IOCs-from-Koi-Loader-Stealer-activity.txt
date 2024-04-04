@@ -1,6 +1,11 @@
-2024-04-04 KOI LOADER/STEALER ACTIVITY
+2024-04-04 (THURSDAY) KOI LOADER/STEALER ACTIVITY
 
-NOTE:
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_koiloader-koistealer-unit42threatintel-activity-7181656774993747968-DphD
+- https://twitter.com/Unit42_Intel/status/1775891118963503288
+
+NOTES:
 
 - Based on the date of these zip archives, this wave started on 2024-04-02
 
