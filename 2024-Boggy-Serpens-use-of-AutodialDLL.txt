@@ -1,0 +1,57 @@
+BOGGY SERPENS (MUDDYWATER) USE OF AUTODIALDLL
+
+INITIAL NOTES:
+
+- Boggy Serpens is the name we use to track a state-sponsored Iranian threat actor also known as MuddyWater or TA450.
+- This is the first time we've discovered Boggy Serpens abusing the Windows Registry's AutodialDLL function. 
+- This Boggy Serpens activity appears to be based on an attack method documented by the Atomic Red Team at:
+  https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1546/T1546.md#atomic-test-1---persistence-with-custom-autodialdll
+- Although we detected the file hash for the C2 framework sample, we unfortunately could not obtain a copy of it to share.
+
+NOTABLE DISCOVERY:
+
+- The AutodialDLL technique has been used for persistence in the wild by other threat actors.
+- But in this case, Boggy Serpens is AutodialDLL to side-load the malicious DLL but relying on a scheduled task for persistence.
+
+PERSISTENCE DETAILS:
+
+- Persistence established through a scheduled task.
+- The scheduled task uses PowerShell commands to abuse the AutodialDLL technique.
+- PowerShell commands first update the AutodialDLL value in the Windows Registry, setting it to the malicious DLL.
+- PowerShell commands then side-load the malicious DLL by opening a hidden Internet Explorer window.
+- PowerShell commands finally reset the AutodialDLL value to its default settings to avoid other processes side-loading the DLL again.
+- The process repeats the next time the scheduled task runs.
+
+TIMEFRAME OF THE ACTIVITY: 
+
+- January 2024
+
+MALWARE DETAILS:
+
+- Compilation timestamp: 2024-01-01T14:02:56+00:00
+- MD5 hash: f585732e25a73b4b7d3dff51edae1b30
+- SHA-1 hash: 481f30675ef71b0cecea32b227f0f930573459a7
+- SHA-256 hash: 0f06f11ae1a611ff4a415aec1540aebe2d9ce3a27ef5acff426d97bea1c8202a
+- File type: dll64
+- Imphash: 0ddb00c7632b2d443b6293d9cc810a9b
+- SSDEEP: 384:QR8kPSjejsmJpwc54+xZH1tvt2uTdwJjONLKuNUwyJdd0qfCwwnwQIdtmG3:QJajSJpd/sqKuNvyCC8TIzmC
+- GUID: f3b4601e-4f86-4a2f-9fa4-22df3deebaca
+- PDB path: C:\Users\[username]\source\repos\AltWinSock2DLL\x64\Release\AltWinSock2DLL.pdb
+- Persistence: Through scheduled task
+
+FOLLOW-UP NOTES:
+
+- We discovered the domain googleonlinee[.]com associated with this Boggy Serpens activity.
+- Deep Instinct recently published an article that identifies googleonlinee[.]com as DarkBeatC2 at: 
+  https://www.deepinstinct.com/blog/darkbeatc2-the-latest-muddywater-attack-framework
+- Deep Instinct has reported DarkBeatC2 is the latest attack framework used by this threat actor.
+
+MORE INFORMATION ON THREAT ACTOR BOGGY SERPENS (MUDDYWATER):
+
+- https://attack.mitre.org/groups/G0069/
+- https://malpedia.caad.fkie.fraunhofer.de/actor/muddywater
+
+MORE INFORMATION ON ABUSING AUTODIALDLL:
+
+- https://www.hexacorn.com/blog/2015/01/13/beyond-good-ol-run-key-part-24/
+- https://www.mdsec.co.uk/2022/10/autodialdlling-your-way/
