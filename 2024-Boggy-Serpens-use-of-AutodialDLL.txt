@@ -1,5 +1,10 @@
 BOGGY SERPENS (MUDDYWATER) USE OF AUTODIALDLL
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_boggyserpens-muddywater-unit42threatintel-activity-7183168477073956864-aNYm
+- https://twitter.com/Unit42_Intel/status/1777402805533184107
+
 INITIAL NOTES:
 
 - Boggy Serpens is the name we use to track a state-sponsored Iranian threat actor also known as MuddyWater or TA450.
