@@ -49,7 +49,6 @@ DOWNLOADED MSI FILE:
 - File size: 1,725,952 bytes
 - File location: file[:]\\globalsolutionunlimitedltd[.]com@80\share\sharepoint.msi  <-- No longer online
 - Sample available at: https://bazaar.abuse.ch/sample/90f1511223698f33a086337a6875db3b5d6fbcce06f3195cdd6a8efa90091750/
-5VuMILYNp3gTiZebW
 
 SSLOAD DLL INSTALLED AND RUN BY THE ABOVE MSI FILE:
 
