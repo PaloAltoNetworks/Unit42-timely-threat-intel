@@ -52,7 +52,7 @@ DOWNLOADED MSI FILE:
 
 SSLOAD DLL INSTALLED AND RUN BY THE ABOVE MSI FILE:
 
-- SHA256 hash: 90f1511223698f33a086337a6875db3b5d6fbcce06f3195cdd6a8efa90091750
+- SHA256 hash: 09ffc4188bf11bf059b616491fcb8a09a474901581f46ec7f2c350fbda4e1e1c
 - File size: 718.848 bytes
 - File location: C:\Users\[username]\AppData\Local\sharepoint\MenuEx.dll
 - Run method: regsvr32.exe /s [filename]
