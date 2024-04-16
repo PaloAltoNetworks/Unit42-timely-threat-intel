@@ -1,5 +1,10 @@
 2024-04-11 (THURSDAY) CONTACT FORMS CAMPAIGN PUSHES SSLOAD MALWARE
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_contactforms-ssload-wirshark-activity-7185786751922192384-JPBX
+- https://twitter.com/Unit42_Intel/status/1780021135813337366
+
 NOTES:
 
 - The MSI for this campaign was seen as early as Thursday 2024-04-11.
@@ -17,20 +22,20 @@ INFECTION CHAIN:
 
 EXAMPLE OF URL FROM CONTACT FORM EMAIL SUBMITTED TO VIRUSTOTAL:
 
-- https[:]//mmtixmm[.]org/65629679a60671570e93799683b05/case49308469q2097/court/out/367910732497/documents?
+- hxxps[:]//mmtixmm[.]org/65629679a60671570e93799683b05/case49308469q2097/court/out/367910732497/documents?
   t017538i87=0535008152&i=qz&dmc=www.[info removed].com&4666842q3&cmp=horvitzlevy&4721702y0
 
 ASSOCIATED FAKE AZURE DOWNLOAD PAGE:
 
-- https[:]//mebumau[.]org/?4666842q3&4721702y0&cmp=horvitzlevy&dmc=www.[info removed].com&
+- hxxps[:]//mebumau[.]org/?4666842q3&4721702y0&cmp=horvitzlevy&dmc=www.[info removed].com&
   i=qz&t017538i87=0535008152
 
 EXAMPLES OF FIREBASESTORAGE URLS FOR JS DOWNLOAD:
 
-- https[:]//firebasestorage.googleapis[.]com/v0/b/terfe-419414.appspot.com/o/I3Hl2Mxyqs%2F
+- hxxps[:]//firebasestorage.googleapis[.]com/v0/b/terfe-419414.appspot.com/o/I3Hl2Mxyqs%2F
   Letter_b23_98b161159-63t511248325-3676a8.js?alt=media&token=a097d607-7759-4aaa-b6e2-bfe5c43df76e
 
-- https[:]//firebasestorage.googleapis[.]com/v0/b/terfe-419414.appspot.com/o/VbxHHBQUee%2F
+- hxxps[:]//firebasestorage.googleapis[.]com/v0/b/terfe-419414.appspot.com/o/VbxHHBQUee%2F
   Letter_u79_20w517865-65u0451500340-7186n6.js?alt=media&token=41e2b597-6b12-448a-92d1-9c770c818489
 
 SHA256 EXAMPLES OF DOWNLOADED .JS FILES:
@@ -61,7 +66,7 @@ SSLOAD DLL INSTALLED AND RUN BY THE ABOVE MSI FILE:
 
 POST-INFECTION TRAFFIC:
 
-- https[:]//t[.]me/+st2YadnCIU1iNmQy
+- hxxps[:]//t[.]me/+st2YadnCIU1iNmQy
 - 85.239.53[.]219 port 80 - 85.239.53[.]219 - GET /api/g   <-- encrypted payload
 - port 443 - api.ipify.org - HTTPS traffic
 - 85.239.53[.]219 port 80 - 85.239.53[.]219 - POST /api/gateway HTTP/1.1 , JSON (application/json)
