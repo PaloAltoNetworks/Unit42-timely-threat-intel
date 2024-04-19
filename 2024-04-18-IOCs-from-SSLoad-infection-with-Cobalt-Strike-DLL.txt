@@ -38,10 +38,10 @@ ASSOCIATED FILES:
 
 INFECTION TRAFFIC:
 
-- port 443 - hxxps://t[.]me/+st2YadnCIU1iNmQy
+- port 443 - hxxps[:]//t[.]me/+st2YadnCIU1iNmQy
 - 85.239.53[.]219 port 80 - 85.239.53.219 - GET /api/g HTTP/1.1 
 - port 80 - api.openweathermap[.]org - GET /data/2.5/weather?q=New%20York&appid=a9b11618d578a103e7be4de69342fcb2 HTTP/1.1 
-- port 443 - hxxps://api.ipify[.]org/
+- port 443 - hxxps[:]//api.ipify[.]org/
 - 85.239.53[.]219 port 80 - 85.239.53[.]219 - POST /api/gateway HTTP/1.1 , JSON (application/json)
 - 85.239.53[.]219 port 80 - 85.239.53[.]219 - POST /api/1f4b0ad7-0502-68bf-b0aa-fe57ec45c025/tasks HTTP/1.1 
 
