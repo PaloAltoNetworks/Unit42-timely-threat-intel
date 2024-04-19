@@ -43,7 +43,7 @@ INFECTION TRAFFIC:
 - port 80 - api.openweathermap[.]org - GET /data/2.5/weather?q=New%20York&appid=a9b11618d578a103e7be4de69342fcb2 HTTP/1.1  <-- not inherently malicious
 - port 443 - hxxps[:]//api.ipify[.]org/  <-- not inherently malicious
 - 85.239.53[.]219 port 80 - 85.239.53[.]219 - POST /api/gateway HTTP/1.1 , JSON (application/json)
-- 85.239.53[.]219 port 80 - 85.239.53[.]219 - POST /api/1f4b0ad7-0502-68bf-b0aa-fe57ec45c025/tasks HTTP/1.1 <-- numbers unique for each infected host
+- 85.239.53[.]219 port 80 - 85.239.53[.]219 - POST /api/1f4b0ad7-0502-68bf-b0aa-fe57ec45c025/tasks HTTP/1.1 <-- UUID unique for each infected host
 
 TRAFFIC TO RETRIEVE COBALT STRIKE DLL:
 
