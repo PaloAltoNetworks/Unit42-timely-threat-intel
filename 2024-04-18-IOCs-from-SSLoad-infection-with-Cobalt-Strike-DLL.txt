@@ -1,5 +1,10 @@
 2024-04-18 (THURSDAY): SSLOAD INFECTION LEADS TO COBALT STRIKE
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ssload-cobaltstrike-timelythreatintel-activity-7187091840968351744-xqe-
+- https://twitter.com/Unit42_Intel/status/1781326222019932535
+
 NOTES:
 
 - The initial Word document used to kick off this infection chain was modified on 2024-04-09.
