@@ -1,5 +1,10 @@
 2024-04-30 (TUESDAY): JAVASCRIPT-BASED WEB SKIMMERS FROM LEGITIMATE WEB SITES
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_unit42-timely-threat-intel2024-04-30-examples-of-web-skimmerstxt-activity-7191505915420856324-pCj_
+- https://twitter.com/Unit42_Intel/status/1785739970600116515
+
 NOTES:
 
 - Our research has revealed several seemingly legitimate web sites infected with JavaScript web skimmers.
