@@ -1,0 +1,62 @@
+2024-05-09 (THURSDAY): GOOTLOADER ACTIVITY
+
+INFECTION CHAIN:
+
+- Google search on a topic leads to compromised site with fake forum post --> download zip -->
+  wscript.exe runs .js file from downloaded zip --> GootLoader C2 and post-infection activity
+
+INFECTION TRAFFIC:
+
+URL FOR FAKE FORUM POST ON COMPROMISED WEBSITE:
+
+- hxxps[:]//solar-audio[.]net/is-bear-spray-legal-in-ca-california-bear-spray-laws-explained/
+
+OTHER RECENTLY-DISCOVERED URLS SIMILAR TO THE ABOVE:
+
+- hxxps[:]///ecolejilespoir[.]com/are-dune-buggies-street-legal-in-ohio-rules-regulations-explained/
+- hxxps[:]///fotos-epm[.]com/release/are-pet-monkeys-legal-in-colorado-laws-and-regulations-explained/
+- hxxps[:]///lavozdecipolletti[.]com/are-caracals-legal-in-california-rules-and-regulations-explained/
+- hxxps[:]///rapiclic[.]com/is-bear-spray-legal-in-florida-regulations-and-laws-explained/
+- hxxps[:]///regyan[.]com/are-hollow-points-legal-in-canada-laws-and-regulations-explained/
+- hxxps[:]///shemshadpub[.]ir/is-prizepicks-legal-in-new-york-legal-considerations-explained/
+- hxxps[:]///solohan[.]co/is-bear-spray-legal-in-california-laws-regulations-and-restrictions/
+- hxxps[:]///williambelle[.]com/are-tibetan-mastiffs-legal-in-the-uk-ownership-laws-explained/
+
+LINK FOR ZIP DOWNLOAD:
+
+- hxxps[:]///aynasy[.]com/manual.php
+
+GOOTLOADER C2:
+
+- hxxps[:]///amani[.]ma/
+- hxxp[:]//donationtown[.]org/
+- hxxps[:]///ecomsutra[.]com/
+- hxxps[:]///great-peoples[.]ru/
+- hxxps[:]///missingmiddlehousing[.]com/
+- hxxps[:]///ndeb-bned[.]ca/
+- hxxps[:]///technative[.]io/
+- hxxps[:]///technians[.]com/
+- hxxps[:]///www.magicbandcollectors[.]com/
+- hxxps[:]///www.zs-lucina[.]cz/
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 97c05027943e99873b4d953cd8f4ec017fdbc73b1f79f1c5c9504d55f585f86d
+- File size: 1,985,478 bytes
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File name: Is_bear_spray_legal_in_ca_33201.zip
+- File description: Zip archive containing initial file for GootLoader infection
+
+- SHA256 hash: 0117cb52f92ac381cd2707abd44dadeab443673f6b6fe7664f22660c73005e8f
+- File size: 8,044,617 bytes
+- File type: ASCII text, with very long lines (505)
+- File name: is bear spray legal in ca 8551.js
+- File description:  Initial JavaScript file for GootLoader infection
+- Run method: wscript.exe [file]
+
+- SHA256 hash: d5077092a452a90bd42198fea4cb1905ab01c46bba7d5bb5fab615a4b6748897
+- File size: 42,135,660 bytes
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- File location: C:\Users\[username]\AppData\Roaming\[existing directory]\Build Automation.js
+- File description: Persistent JavaScript file for GootLoader infection
+- Run method: wscript.exe [file]
