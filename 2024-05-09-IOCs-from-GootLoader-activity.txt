@@ -1,5 +1,10 @@
 2024-05-09 (THURSDAY): GOOTLOADER ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_gootloader-unit42threatintel-timelythreatintel-activity-7194787295676313600-UylW
+- https://twitter.com/Unit42_Intel/status/1789021679634505978
+
 INFECTION CHAIN:
 
 - Google search on a topic leads to compromised site with fake forum post --> download zip -->
