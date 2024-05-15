@@ -1,5 +1,10 @@
 2024-05-14 (TUESDAY): DARKGATE ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_darkgate-timelythreatintel-unit42threatintel-activity-7196580114761928704-Nblk/
+- https://twitter.com/Unit42_Intel/status/1790814496845394110
+
 INITIAL REFERENCES:
 
 - https://twitter.com/jcarndt/status/1790441771249320354
