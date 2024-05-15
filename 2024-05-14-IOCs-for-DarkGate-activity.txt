@@ -71,7 +71,7 @@ PERSISTENCE THROUGH WINDOWS SHORTCUT IN THE START MENU'S STARTUP FOLDER RUNNING 
 
 - C:\ProgramData\febabbh\Autoit3.exe C:\ProgramData\febabbh\gkfedbd.a3x
 
-EXAMPLE OF START OF TRAFFFIC FROM AN INFECTED WINDOWS HOST:
+EXAMPLE OF START OF TRAFFIC FROM AN INFECTED WINDOWS HOST:
 
 DATE/TIME                DESTINATION IP     PORT  DOMAIN                  URL
 -----------------------  -----------------  ----  ----------------------  -----------------------------
