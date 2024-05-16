@@ -1,1 +1,40 @@
+2024-05-16 (THURSDAY): RECENT SURGE IN CREDIT CARD STEALING CAMPAIGN ACTIVITY
 
+NOTES:
+
+- Unit 42 has been tracking a credit card stealing campaign with a recent surge in activity.
+- Campaign consists of deceptive emails with enticing subject lines and malicious URLs. 
+- These URLs redirect victims to pages with eith fake shops or surveys.
+- These pages present scam offers that entice victims into sharing credit card information.
+
+EXAMPLES OF URLS FROM THESE EMAILS:
+
+- www.circulation.sd-echo[.]com/bb/847888024082222168
+- www.connected.sd-echo[.]com/bb/69767940876006341
+- www.announcement.sd-echo[.]com/bb/110360336510561163
+- www.marketing.sd-echo[.]com/bb/62197796995048139
+- www.circulation.passing-action[.]net/bb/354888308705349945
+- www.members.passing-action[.]net/bb/837117433840441331
+- www.traffic.passing-action[.]net/bb/504900876711301622
+- www.ezine.visual-express[.]net/bb/141969568633026828
+- www.traffic.visual-express[.]net/bb/478477396885560149
+- www.traffic.visual-express[.]net/bb/623133546510288015
+- www.members.dailyimage[.]net/bb/881881656898334511
+- www.operative.dailyimage[.]net/o/16605/64158/bg.jpg
+- www.note.dailyimage[.]net/bb/523572535470690708
+
+FAKE SHOP EXAMPLES:
+
+- powerwattwise[.]com
+- hxxps[:]//topweeklywinners[.]com/x32/claim-it-now/?affid=2&c1=&c2=4tuMX82FaaDD&c3=&c4=&c5=carcook&click_id=eccb593bfc764332901ad0c0027bf144
+- hxxps[:]//www.granddealsmonthly[.]com/a13/claim-now/?affid=2&c1=&c2=4NOQMC5BAU2i&c3=&c4=&c5=dwltheater&click_id=bfb0184935434bddb389aeb3b257cd8d
+- hxxps[:]//www.powertechuniverse[.]com/x57/claim-it-now/?affId=4&c1=&c2=4OemoSfVcT3l&c3=&c4=&c5=dewheat&click_id=40ca7a93441d44c988bdfaed96426b14
+- hxxps[:]//www.safesalesanctuary[.]com/smartwatch/P5Q-R6S/?AFFID=3&C1=&C2=4R4MUSrTclG5&C3=&C4=&C5=&click_id=99cdc8e0b0ab4188af8ad2dae8000d78
+
+FAKE REWARD SURVEY EXAMPLES:
+
+- emanategas[.]sbs/1c7911af903d20e48613d2d3c3095a4a
+- hxxps[:]//zorbaminer[.]pro/b619079ff8a06230a18ee117fc52354b
+- hxxps[:]//marshprom[.]xyz/d-6v13g/?4b642c37dea1ebda1972cdc3bd7113a3
+- hxxps[:]//topicalpage[.]world/0a821afc669100b22377055f606a2abb
+- hxxps[:]//pipingport[.]website/cbcc330a8f67d854487209e19725d5b7
