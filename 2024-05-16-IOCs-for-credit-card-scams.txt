@@ -1,5 +1,10 @@
 2024-05-16 (THURSDAY): RECENT SURGE IN CREDIT CARD INFO STEALING CAMPAIGN ACTIVITY
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_unit42threatintel-indicatorsofcompromise-activity-7196980998771810304-dUm9
+- https://twitter.com/Unit42_Intel/status/1791215363134202188
+
 NOTES:
 
 - Unit 42 has been tracking a credit card info stealing campaign with a recent surge in activity.
