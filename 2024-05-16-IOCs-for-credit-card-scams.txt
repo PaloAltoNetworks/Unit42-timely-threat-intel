@@ -7,6 +7,16 @@ NOTES:
 - These URLs redirect victims to pages with eith fake shops or surveys.
 - These pages present scam offers that entice victims into sharing credit card information.
 
+EXAMPLES OF EMAIL SUBJECT LINES:
+
+- Subject: Rare event  Take Our Survey, Win a Carote 11pcs Pots and Pans Set
+- Subject: We know your time is valuable! Introducing Elon's Game-Changing Portable_Heater!
+- Subject: My Gift To You! Your Reward_is_waiting
+- Subject: Oops we did it again. You've been chosen!
+- Subject: New Post: $90 Offer here
+- Subject: Your Ticket Has Been Received
+- Subject: Touching base, See inside.. It's Here: Elon Musk's Portable Heater, Your Key to Savings!
+
 EXAMPLES OF URLS FROM THESE EMAILS:
 
 - www.circulation.sd-echo[.]com/bb/847888024082222168
