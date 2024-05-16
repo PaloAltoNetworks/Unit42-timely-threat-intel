@@ -1,8 +1,8 @@
-2024-05-16 (THURSDAY): RECENT SURGE IN CREDIT CARD STEALING CAMPAIGN ACTIVITY
+2024-05-16 (THURSDAY): RECENT SURGE IN CREDIT CARD INFO STEALING CAMPAIGN ACTIVITY
 
 NOTES:
 
-- Unit 42 has been tracking a credit card stealing campaign with a recent surge in activity.
+- Unit 42 has been tracking a credit card info stealing campaign with a recent surge in activity.
 - Campaign consists of deceptive emails with enticing subject lines and malicious URLs. 
 - These URLs redirect victims to pages with eith fake shops or surveys.
 - These pages present scam offers that entice victims into sharing credit card information.
