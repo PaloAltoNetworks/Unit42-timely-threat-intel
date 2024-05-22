@@ -1,5 +1,10 @@
 2024-05-21 (TUESDAY): DEEPFAKE SCAMS
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_deepfake-ai-timelythreatintel-activity-7199162637539028992-VTDv
+- https://x.com/Unit42_Intel/status/1793397014090178955
+
 NOTES:
 
 - We recently detected one or more campaigns using deepfake videos to promote several different scams.
