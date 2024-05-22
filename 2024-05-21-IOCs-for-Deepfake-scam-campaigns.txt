@@ -1,0 +1,146 @@
+2024-05-21 (TUESDAY): DEEPFAKE SCAMS
+
+NOTES:
+
+- We recently detected one or more campaigns using deepfake videos to promote several different scams.
+- Campaigns include:
+  -- Fake investment schemes (Quantum AI and World Bank)
+  -- Fake cryptocurrencies (Liberty Coin)
+  -- Fake giveaways (KazMunayGas, Kaspi Bank)
+- Many campaigns share some video hosting infrastructure, namely the video hosting domain.
+- As of 2024-05-21, this is an active set of campaigns, and new domains are appearing each day.
+- Deepfake-enabled scams on the web will most likely continue to rise in prevalence in the near-
+  and medium-term future as deepfake technology becomes more powerful and easier to use.
+
+VIDEO HOSTING DOMAINS:
+
+- video[.]belmar-marketing[.]online
+- conspatriots2024[.]com
+
+QUANTUM AI SCAM WEBPAGE EXAMPLES:
+
+- ai-usmcapital[.]click
+- ai-usmoutlay[.]click
+- ai-usmside[.]shop
+- alt-fin-side[.]shop
+- bit-360[.]site
+- dflihdr[.]top
+- directors[.]homes
+- enter-up[.]top
+- excellentone[.]one
+- flowcyber[.]click
+- flowpulse[.]click
+- gfnuw[.]top
+- ggenniusprrojecct[.]site
+- huerwlleiss-herton[.]pro
+- iaqa[.]life
+- illjp4gpz[.]sbs
+- illjp4xty[.]sbs
+- inc-co[.]site
+- investcontribution[.]top
+- kevxk[.]top
+- kos4mzf[.]monster
+- kuvukye[.]space
+- lsuhhf[.]top
+- milfarka[.]store
+- mmajp1oxg[.]monster
+- njecil[.]top
+- oakcloudhi-ere[.]world
+- originalquantum[.]shop
+- outlayquantum[.]shop
+- passionquantum[.]shop
+- peerfeectwall[.]online
+- prevaczcgv[.]site
+- pro-fitters[.]store
+- promisingendeavor[.]website
+- qatuk[.]org
+- quantum-ai[.]link
+- quantumai[.]tools
+- quantumal[.]xyz
+- redwoodrest[.]world
+- registration-form[.]website
+- sacvenih[.]sbs
+- ser2kke[.]monster
+- spacemome[.]online
+- srkgjh[.]top
+- sskkilfulinnvestoor[.]site
+- theebeestbrookeer[.]website
+- thequantumai[.]org
+- tulalavno[.]store
+- wztnb[.]shop
+
+QUANTUM AI VIDEO URL EXAMPLES:
+
+- hxxps[:]//video[.]belmar-marketing[.]online/videos/QuantumAI_Muskpresentations_EN[.]mp4
+- hxxps[:]//video[.]belmar-marketing[.]online/videos/QuantumAI_musk_EN[.]mp4
+- hxxps[:]//telegra[.]ph/file/3ae9666ce78ae1ba90b47.mp4
+
+WORLD BANK SCAM WEB PAGE EXAMPLES:
+
+- hugeproject[.]shop
+- higheststudy[.]click
+
+WORLD BANK SCAM VIDEO URL EXAMPLE:
+
+- hxxps[:]//video[.]belmar-marketing[.]online/videos/TheWorldBank_woman_EN[.]mp4
+
+KAZMUNAYGAS SCAM WEBPAGE EXAMPLES:
+
+- aibarricade[.]top
+- airesplendent[.]top
+- aitfindiscover[.]top
+- aitfinfacilitator[.]shop
+- aitfinoutlay[.]top
+- aitfinroot[.]shop
+- aitfinsalesperson[.]shop
+- aitfinside[.]shop
+- block4aifinancier[.]shop
+- block4aimethod[.]top
+- block4aioperation[.]shop
+- block4aiwell-being[.]top
+- brightenclosure[.]top
+- coinaibarricade[.]top
+- coinaienclosure[.]top
+- coinalgamble[.]shop
+- coinalinitiative[.]shop
+- coinangelinvestor[.]top
+- coincommunity[.]top
+- coinframework[.]top
+- coinpartition[.]top
+- coinundertaking[.]shop
+- coinundertaking[.]top
+- effortlesslegalentity[.]club
+- grrandventure[.]website
+- harmoniousundertaking[.]top
+- incompleteuniversal[.]top
+- innspiringdefense[.]fun
+- innspiringdefense[.]site
+- investprecaution[.]shop
+- riseanalyze[.]click
+- systemaibasis[.]top
+- systemaifence[.]shop
+- systemaigroundwork[.]shop
+- systemaiside[.]shop
+
+KAZMUNAYGAS SCAM VIDEO URL EXAMPLE:
+
+- hxxps[:]//video[.]belmar-marketing[.]online/videos/kazmunay-preland.mp4
+
+KASPI BANK SCAM WEBPAGE EXAMPLE:
+
+- peakquantum[.]shop
+
+KASPI BANK SCAM VIDEO URL EXAMPLE:
+
+- hxxps[:]//video.belmar-marketing[.]online/videos/Kaspiy_Profit_NQZO3_video_Obj_JS_v2.mp4?ver=123 
+
+LIBERTY COIN SCAM WEBPAGE EXAMPLE:
+
+- patriotsmaga2024[.]com/wp/2024/04/09/statement-from-president-trump-9th-of-april-2024/?1717411716131
+
+LIBERTY COIN SCAM VIDEO URL EXAMPLES:
+
+- hxxps[:]//conspatriots2024[.]com/wp-content/uploads/2024/04/
+  0-02-05-39b70d3c0c0582890da2793bd7551a4adacea2faef6e1303a943db46b875cde7_1c6dbb11ce91a9.mp4
+- hxxps[:]//conspatriots2024[.]com/wp-content/uploads/2024/04/
+  0-02-05-aca301a44b073ea87338efcd18aa41f18ebd53e8462b780976412fc70a3a28d2_1c6dbb100c4956.mp4
