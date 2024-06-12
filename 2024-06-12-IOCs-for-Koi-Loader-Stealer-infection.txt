@@ -1,5 +1,10 @@
 2024-06-12 (WEDNESDAY): KOI LOADER/KOI STEALER INFECTION
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_koiloader-koistealer-unit42threatintel-activity-7206786128199258113-2y7y
+- https://x.com/Unit42_Intel/status/1801020508755869718
+
 INITIAL REFERENCES:
 
 - https://x.com/V3n0mStrike/status/1800549934975869433
