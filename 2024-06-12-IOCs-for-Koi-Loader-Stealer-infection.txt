@@ -1,0 +1,58 @@
+2024-06-12 (WEDNESDAY): KOI LOADER/KOI STEALER INFECTION
+
+INITIAL REFERENCES:
+
+- https://x.com/V3n0mStrike/status/1800549934975869433
+- https://x.com/1ZRR4H/status/1798023836186632394
+- https://x.com/1ZRR4H/status/1797809897800687796
+
+INFECTION CHAIN:
+
+- inital email --> victim responds --> attacker sends email with link --> 
+- link --> web page --> zip download --> extracted .lnk --> Koi Loader traffic --> Koi Stealer traffic
+
+3 EXAMPLES OF URLS FOR FAKE CHASE BANK STATEMENTS, URL PATTERN SEEN AS EARLY AS 2024-06-04:
+
+- hxxps[:]//sites.google[.]com/view/1u3i-galaxy/samsung-s23?sharedfile=chase_31_05_24_statement.pdf&hid=0089216249
+- hxxps[:]//sites.google[.]com/view/sebw-galaxy/samsung-s23?sharedfile=chase_31_05_24_statement.pdf&hid=3095629535
+- hxxps[:]//sites.google[.]com/view/zd8y-galaxy/samsung-s23?sharedfile=chase_31_05_24_statement.pdf&hid=03085265
+
+3 EXAMPLES OF URLS FOR FAKE HSBC STATEMENTS, URL PATTERN SEEN AS EARLY AS 2024-06-04:
+
+- hxxps[:]//sites.google[.]com/view/gg5d-galaxy/samsung-s10?sharedfile=hsbc_statement_may.pdf&hid=0127894603
+- hxxps[:]//sites.google[.]com/view/p29a-galaxy/samsung-s10?sharedfile=hsbc_statement_may.pdf&hid=45295736255
+- hxxps[:]//sites.google[.]com/view/pi70l-galaxy/samsung-s10?sharedfile=hsbc_statement_may.pdf&hid=06318542
+
+3 EXAMPLES OF URLS FOR FAKE WELLS FARGO BANK STATEMENTS, URL PATTERN SEEN AS EARLY AS 2024-05-01:
+
+- hxxps[:]//sites.google[.]com/view/53bpt-files/easy-exchange?sharedfile=wells_fargo_statement.pdf&hid=8620124953
+- hxxps[:]//sites.google[.]com/view/ob9l-files/easy-exchange?sharedfile=wells_fargo_statement.pdf&hid=2301289
+- hxxps[:]//sites.google[.]com/view/x3d-files/easy-exchange?sharedfile=wells_fargo_statement.pdf&hid=00527953149
+
+EXAMPLE OF URL CALLED BY ABOVE SITES.GOOGLE.COM PAGES TO LOAD GOOGLE CAPTCHA PAGE:
+
+- From Chase statement/galaxy-s23 pages: hxxps://mawyon[.]com/equal/boat.php?id=[short alphanumeric string]
+- From HSBC statement/galaxy-s10 pages: hxxps://mucecsas[.]com/green/jocote.php?id=[short alphanumeric string]
+- From Wells Fargo statment/easy exchange pages: hxxps://mucecsas[.]com/green/jocote.php?id=[short alphanumeric string]
+
+EXAMPLES OF DOWNLOADED ZIP ARCHIVE AND EXTRACTED WINDOWS SHORTCUT ON WEDNESDAY 2024-06-12:
+
+- 510fe1efb4c907e23c4b0ad4e2aa33e4ed0575f8078e7a763a5fa3c82a7b327c  wells_fargo_statement.zip
+- 8e5e5103559d2f567adfc193605e3d1ec2170ee3a31e1330dbcd1e2b5cc4a3ec  wells_fargo_statement.lnk
+
+- 74d0aa9d0fd22c1d133a210f919c3c1123425832ffc08bdd519abacfa35681e1  hsbc_statement_may.zip
+- 975216ec8d4fef4fd3ae4eff18447dcf2f4db56a8980a2a26c3f3b0a30882762  hsbc_statement_may.lnk
+
+SEQUENCE OF INITIAL HTTPS URLS FOR KOI LOADER:
+
+- hxxps[:]//lechiavetteusb[.]it/imgs/usb/logo/andantezWA.php  <-- from above .lnk files
+- hxxps[:]//lechiavetteusb[.]it/imgs/usb/logo/arteriomalacia4hc.php
+- hxxps[:]//lechiavetteusb[.]it/imgs/usb/logo/khesariQUXH.ps1
+- hxxps[:]//lechiavetteusb[.]it/imgs/usb/logo/wizeninglYZn.ps1
+- hxxps[:]//lechiavetteusb[.]it/imgs/usb/logo/spiralitykSzkj.exe
+
+C2 TRAFFIC FOR KOI STEALER:
+
+- 89.251.22[.]227 port 80 - 89.251.22[.]227 - POST /guacos.php HTTP/1.1 
+- 89.251.22[.]227 port 80 - 89.251.22[.]227 - GET /index.php?id=&subid=gDfS4DCY HTTP/1.1 
+- 89.251.22[.]227 port 80 - 89.251.22[.]227 - POST /index.php HTTP/1.1
