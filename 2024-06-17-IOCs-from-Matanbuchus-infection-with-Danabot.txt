@@ -1,0 +1,94 @@
+2024-06-17 (MONDAY): GOOGLE AD --> FAKE UNCLAIMED FUNDS SITE --> MATANBUCHUS WITH DANABOT
+
+INFECTION CHAIN:
+
+- Google ad --> fake unclaimed funds site --> downloaded zip --> extracted .js --> Matanbuchus infection with Danabot
+
+EXAMPLE OF GOOGLE AD:
+
+- hxxps[:]//www.googleadservices[.]com/pagead/aclk?sa=L&
+  ai=DChcSEwiK3pO92eWGAxUyNtQBHYNHC64YABABGgJvYQ&ase=2&
+  gclid=EAIaIQobChMIit6TvdnlhgMVMjbUAR2DRwuuEAMYASAAEgINwPD_BwE&
+  ohost=www.google[.]com&
+  cid=CAASJORo-oDS6CjzWcE5PaX_wra5OTSrxEGQTX3xtS5uAt97GxjgKg&sig=AOD64_3GwvodJDCAyf-EM09yBcJx1L7GbA&
+  q&
+  nis=4&
+  adurl&
+  ved=2ahUKEwiiwI692eWGAxVW48kDHYEVCewQ0Qx6BAgKEAE
+
+GOOGLE ADVERTISER INFORMATION:
+
+- Advertiser: SOTO SALON
+- Location: United States
+
+TRAFFIC TO FAKE UNCLAIMED FUNDS SITE FOR ZIP DOWNLOAD:
+
+- 47.89.157[.]126:443 - hxxps[:]//treasuryfinance.org/?utm_source=googleads&
+  utm_medium=cpc&
+  utm_campaign=financetoday&
+  gad_source=1&
+  gclid=EAIaIQobChMIit6TvdnlhgMVMjbUAR2DRwuuEAMYASAAEgINwPD_BwE
+- 47.89.157[.]126:443 - hxxps[:]//treasuryfinance.org/checking
+- 47.89.157[.]126:443 - hxxps[:]//treasuryfinance.org/report
+- 47.89.157[.]126:443 - get.treasuryfinance.org - HTTPS traffic (unknown URL)
+
+EXAMPLES OF DOWNLOADED ZIP ARCHIVES:
+
+- e3ba467f75ccf7b8ba9bd644e90c897a43ef2763df4ae5d13e79852189150234 - 2,099,863 bytes - D-MichiganMotors-83249.zip
+- 68737d7fb59d67e39ac9313611e9c68b18ee904c251ebdfe5b3e8d39c1c97b82 - 2,099,856 bytes - F-Zellweiger-53375.zip
+- 862632be2e71ada2770f8364ef0dce0b563c7be46961bb6c5c04b49993367ea7 - 2,099,846 bytes - T-Bundt-46516.zip
+- 2f21dd05b32e22573b9a5c33c643bad038621d3601b501cead51c52f3ab64547 - 2,099,863 bytes - Z-FriendlyAcres-51530.zip
+
+EXAMPLES OF EXTRACTED .JS FILES:
+
+- 6f0ee20c63bb45a4e33f20eb4b2ba99a97d8d74a22e952620a19e4119e94ae26 - 1,788 bytes - D-MichiganMotors-82047.js
+- 7beedbd53e9826c8d68ce646a3331f36307327919a464b8a8301ed0625ac1f5e - 1,788 bytes - F-Zellweiger-26219.js
+- 0628955903e03090e98b5fc0bb719bdb55447ad5cbf4756e94bf90d0f67bd7ff - 1,788 bytes - T-Bundt-36354.js
+- 80d54040fc39d6219ce59d0197ccaf60d3825cfeec1b82f55f172dbe1088561d - 1,788 bytes - Z-FriendlyAcres-74277.js
+
+TRAFFIC FROM RUNNING THE ABOVE .JS FILES:
+
+- 8.211.34[.]5:443 - hxxps[:]//lab.aceranes[.]com/download/pdf  <-- decoy PDF file
+- 8.211.34[.]5:443 - hxxps[:]//dev.aceranes[.]com/download/agent  <-- MSI installer
+
+DOWNLOADED MALICIOUS FILES:
+
+- 744d9e50bade8726f58ee5ddca61224008cf1df469307b039c08dd63f58d72ee - 198,141 bytes - QMQjaBdqIo.pdf
+- ef98cb2bd884a12f033dd768236692d73c2aa31dd34f5a798928cd56ba9c3bb5 - 2,046,464 bytes - bLhLldebqq.msi
+
+TRAFFIC FROM RUNNING THE ABOVE .MSI FILE:
+
+- 194.67.193[.]204:443 - hxxps[:]//ricoshea[.]com/blog666/useraccount.aspx  <-- Matanbuchus DLL
+
+MATANBUCHUS C2 TRAFFIC (BOTH LINES REPEAT):
+
+- 194.67.193[.]206:443 - hxxps[:]//ahazko[.]com/blog666/index.aspx  <-- returns base64 text
+- 194.67.193[.]206:59619 - ahazko[.]com - POST /blogs/skinny/bleat/index.php HTTP/1.1  (application/x-www-form-urlencoded)
+
+DOMAIN HOSTING DANABOT INSTALLER:
+
+- 47.254.129[.]255:443 - www.ycchio[.]com - HTTPS traffic (unknown URL)
+
+DANABOT C2 TRAFFIC (REPEATS):
+
+- 34.130.217[.]52:443 - encoded/encrypted TCP traffic
+
+MATANBUCHUS AND DANABOT DLL FILES FROM AN INFECTED WINDOWS HOST:
+
+- SHA256 hash: 49e570aa9316228765f2af3dd413ae4d65896c5c4b7784c1a8fefecd49829972
+- File size: 780,800 bytes
+- File location: hxxps[:]//ricoshea[.]com/blog666/useraccount.aspx 
+- File location: C:\Users\[username]\AppData\Local\Temp\.exe
+- File location: C:\Users\[username]\9e0d\DESKTOP-NBJQ1S8.ocx
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: DLL for Matanbuchus, persistent through scheduled task
+- Run method: regsvr32 -e -n -i:"9e0d" [filename]
+- Note: The .ocx file name is based on the infected Windows hostname.
+
+- SHA256 hash: 39fab031c68d2d9cd0ec257fde15b73c9425eda1e19ba053b5d3095ec3475aa9
+- File size: 9,849,856 bytes
+- File location: C:\ProgramData\Oshqdeyyeopu.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: DLL for Danabot, persistent through scheduled task
+- Run method: rundll32 [filename],start
+- Note: The .dll file name is a random string, different for each infection
