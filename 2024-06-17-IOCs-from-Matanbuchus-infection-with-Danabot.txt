@@ -1,5 +1,10 @@
 2024-06-17 (MONDAY): GOOGLE AD --> FAKE UNCLAIMED FUNDS SITE --> MATANBUCHUS WITH DANABOT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malvertising-matanbuchus-danabot-activity-7208934021207113728-Tc05
+- https://x.com/Unit42_Intel/status/1803168396755820812
+
 INFECTION CHAIN:
 
 - Google ad --> fake unclaimed funds site --> downloaded zip --> extracted .js --> Matanbuchus infection with Danabot
