@@ -1,0 +1,60 @@
+2024-06-24 (MONDAY): CLICKFIX POPUP PUSHING LUMMA STEALER
+
+NOTES:
+
+- Researchers have named this particular infection chain "ClickFix."
+- This creates messages in a web browser instructing victims to paste script into a PowerShell window.
+- We are currently seeing Lumma Stealer malware pushed by these "ClickFix" popups.
+- A similar infection chain dubbed "ClearFake" is also active using this technique.
+- More info at hxxps[:]//www.proofpoint.com/us/blog/threat-insight/clipboard-compromise-powershell-self-pwn
+
+INFECTION CHAIN:
+
+- Legitimate but compromised website --> popup window with instructions --> 
+  victim copies/pastes script into PowerShell window --> PowerShell script retreives & runs Lumma Stealer malware
+
+EXAMPLE OF INITIAL LEGITIMATE BUT COMPROMISED SITE:
+
+- tuchinehd[.]com
+
+MALICIOUS REDIRECT:
+
+- hxxps[:]//bsc-dataseed1.binance[.]org/
+
+URL HOSTING POPUP WINDOW:
+
+- hxxps[:]//mdasidy72[.]lol/endpoint
+
+RUNNING POWERSHELL SCRIPT RETURNED FROM MDASIDY72.LOL GENERATED THE FOLLOWING URLS:
+
+- hxxps[:]//weoleycastletaxis[.]co[.]uk/chao/baby/cow.html
+- hxxps[:]//weoleycastletaxis[.]co[.]uk/chao/baby/omgsoft.zip
+
+LUMMA STEALER C2:
+
+- port 443 - latesttributedowps[.]shop - HTTPS traffic
+
+ASSOCIATED FILES:
+
+- SHA256 hash: 21af4ef9bcebc0c3b52eaf93bbcc069c9df6248f51d4a4016c1970ebec6f5aab
+- File size: 799 bytes
+- File type: ASCII text, with very long lines (518), with CRLF line terminators
+- File description: Fileless PowerShell command script copied from malicious popup notification window
+
+- SHA256 hash: 07594ba29d456e140a171cba12d8d9a2db8405755b81da063a425b1a8b50d073
+- File size: 1,395 bytes
+- File type: ASCII text, with very long lines (1395), with no line terminators
+- File location: hxxps[:]//weoleycastletaxis[.]co[.]uk/chao/baby/cow.html
+- File description: Powershell script to retreive and install Lumma Stealer
+
+- SHA256 hash: 6608aeae3695b739311a47c63358d0f9dbe5710bd0073042629f8d9c1df905a8
+- File size: 11,019,407 bytes
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File location: hxxps[:]//weoleycastletaxis[.]co[.]uk/chao/baby/omgsoft.zip
+- File description: Zip archive containing EXE for Lumma Stealer malware
+
+- SHA256 hash: e60d911f2ef120ed782449f1136c23ddf0c1c81f7479c5ce31ed6dcea6f6adf9
+- File size: 11,239,560 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File name: omgsoft.exe
+- File description: EXE for Lumma Stealer malware
