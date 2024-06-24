@@ -11,7 +11,7 @@ NOTES:
 - This creates messages in a web browser instructing victims to paste script into a PowerShell window.
 - We are currently seeing Lumma Stealer malware pushed by these "ClickFix" popups.
 - A similar infection chain dubbed "ClearFake" is also active using this technique, possibly sending different malware.
-- More info at hxxps[:]//www.proofpoint.com/us/blog/threat-insight/clipboard-compromise-powershell-self-pwn
+- More info at https://www.proofpoint.com/us/blog/threat-insight/clipboard-compromise-powershell-self-pwn
 
 INFECTION CHAIN:
 
