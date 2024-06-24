@@ -30,7 +30,7 @@ URL HOSTING POPUP WINDOW:
 
 - hxxps[:]//mdasidy72[.]lol/endpoint
 
-RUNNING POWERSHELL SCRIPT RETURNED FROM MDASIDY72.LOL GENERATED THE FOLLOWING URLS:
+RUNNING POWERSHELL SCRIPT RETURNED FROM MDASIDY72[.]LOL GENERATED THE FOLLOWING URLS:
 
 - hxxps[:]//weoleycastletaxis[.]co[.]uk/chao/baby/cow.html
 - hxxps[:]//weoleycastletaxis[.]co[.]uk/chao/baby/omgsoft.zip
