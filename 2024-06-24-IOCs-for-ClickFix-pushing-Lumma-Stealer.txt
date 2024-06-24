@@ -1,5 +1,10 @@
 2024-06-24 (MONDAY): CLICKFIX POPUP PUSHING LUMMA STEALER
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_lummastealer-lumma-unit42threatintel-activity-7211104318320435200-C3Xr
+- https://x.com/Unit42_Intel/status/1805338698025718221
+
 NOTES:
 
 - Researchers have named this particular infection chain "ClickFix."
