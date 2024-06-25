@@ -25,6 +25,7 @@ EXAMPLE OF INITIAL LEGITIMATE BUT COMPROMISED SITE:
 LEGITIMATE SERVICE USED FOR REDIRECT:
 
 - hxxps[:]//bsc-dataseed1.binance[.]org/
+- NOTE: The above URL is not inherently malicious on its own.
 
 URL HOSTING POPUP WINDOW:
 
