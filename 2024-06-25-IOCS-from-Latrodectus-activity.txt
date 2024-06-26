@@ -78,9 +78,9 @@ LATRODECTUS C2 FOR BOTH ACLUI.DLL FILES:
 
 LATRODECTUS C2 FOR CAPISP.DLL FILE:
 
-- 74.119.194[.]126 port 443 - bibidj[.]biz - HTTPS traffic, TLSv1.3 (Let's encrypt certificate)
-- 94.232.249[.]102 port 443 - barsman[.]biz - HTTPS traffic, TLSv1.3 (Let's encrypt certificate)
-- 94.232.249[.]103 port 443 - garunt[.]biz - HTTPS traffic, TLSv1.3 (Let's encrypt certificate)
+- 74.119.194[.]126 port 443 - bibidj[.]biz - HTTPS traffic, TLSv1.3 (Let's Encrypt certificate)
+- 94.232.249[.]102 port 443 - barsman[.]biz - HTTPS traffic, TLSv1.3 (Let's Encrypt certificate)
+- 94.232.249[.]103 port 443 - garunt[.]biz - HTTPS traffic, TLSv1.3 (Let's Encrypt certificate)
 - 184.174.96[.]179 port 443 - finjuiceer[.]com - HTTPS traffic (Self-signed certificate: Internet Widgets Pty Ltd) 
 - 104.129.20[.]167 port 443 - meakdgahup[.]com - HTTPS traffic (Self-signed certificate: Internet Widgets Pty Ltd) 
 - 198.244.224[.]83 port 443 - riscoarchez[.]com - HTTPS traffic (Self-signed certificate: Internet Widgets Pty Ltd) 
