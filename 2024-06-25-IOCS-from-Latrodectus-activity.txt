@@ -1,0 +1,90 @@
+2024-06-25 (TUESDAY): LATRODECTUS INFECTION WITH BACKCONNECT AND KEYHOLE VNC
+
+NOTES:
+
+- Latrodectus has been quiet for a few weeks, but it came back as early as 2024-06-20 (Thursday).
+
+INFECITON CHAIN:
+
+- ?? --> Google Firebase URL --> downloaded JS --> retrieves & runs MSI to install Latrodectus -->
+ Latrodectus C2 activity --> BackConnect traffic with Keyhole VNC
+
+2 EXAMPLES OF FIREBASE URLS HOSTING JS FILES:
+
+- hxxps://firebasestorage.googleapis[.]com/v0/b/kkk17-427021.appspot[.]com/o/
+  i37deBrXgC/Form_Ver-13-24-27.js?alt=media&token=dce8508c-4da9-4142-957c-25e5a5e7f408
+- hxxps://firebasestorage.googleapis[.]com/v0/b/namo-426715.appspot[.]com/o/
+  FX9PCWvub4/Form_Ver-18-27-38.js?alt=media&token=144a900b-00c4-4f88-a39a-54abc56f5a43
+
+14 EXAMPLES OF DOWNLOADED JS FILES SUMBITTED TO VIRUSTOTAL SINCE THURSDAY 2024-06-20:
+
+- 04086187681a0737f44284e2f715e3d90a7284157916cf1ece61cccc6d975227  Form_Ver-18-58-33.js
+- 073ed26f17f8efd735ad3f7737e88936f4bf2efd9722a37495874d6dd73ec12d  Form_Ver-21-45-51.js
+- 0a12f2ccd4dc561b924c3c88a9571a36fdd01acd12d5a3eca88d2336989fcb89  Form_Ver-16-01-01.js
+- 1e2a94cb10157e71a550fd514c3d3607da6e1d2e3dc59b8aec2b175f8492b182  Form_Ver-21-10-43.js
+- 232ec24aa416bd642fdd2eb5d5eae2c72f2dd028b0f5058e193acb656e010f6d  Form_Ver-18-13-38.js
+- 25d817277b8f9116b5379a5b676a11e8d3ca40dea387b903851a6f8eff989a88  Form_Ver-21-01-44.js
+- 3ac8decd825d1ed7a86ed86d7789b44c0f0c467d4f482ab0863df1b7b1e3e8cc  Form_Ver-11-58-52.js
+- 5b51c052283b08f981cbab43a7c5fcfe740941317adc6c9d9352291dacfda5f0  Form_Ver-18-01-54.js
+- 6532ac1ec717187e1b8d7b7060d8c2bc2992efa2c669082d6e94b35a73b6f4ba  Form_Ver-20-37-01.js
+- 6c0824f3dad54ddd96d6ae184c121b4205a2e1d4fd3f1e16140b06ab62449a66  Form_Ver-00-26-49.js
+- 9003415cc22d4e8b3c444ffcf84bb3f1c3a294d40d1f66329733edfc8472a7d2  Form_Ver-16-46-33.js
+- e57990d251937c5e4b27bf2240a08da37a40399bd3faa75ed67616ac3935f843  Form_Ver-21-34-26.js
+- e5f590d41d7ab1a7fde73fc0cb62c55c9ee2116383cbcf82620dcc74db9a9e81  Form_Ver-16-44-54.js
+- fb242f64edbf8ae36a4cf5a80ba8f21956409b448eb0380949bb9152373db981  Form_Ver-14-12-56.js
+
+3 EXAMPLES OF LATRODECTUS INSTALLER RETRIEVED BY THE ABOVE JS FILES:
+
+- SHA256 hash: 5b18441926e832038099acbe4a90c9e1907c9487ac14bdf4925ac170dddc24b6
+- File size: 1,602,048 bytes
+- File location: hxxp[:]//85.208.108[.]63/BST.msi
+- Note: drops and runs Latrodectus DLL named aclui.dll
+
+- SHA256 hash: 4586250dbf8cbe579662d3492dd33fe0b3493323d4a060a0d391f20ecb28abf1
+- File size: 1,678,848 bytes
+- File location: hxxp[:]//193.32.177[.]192/vpn.msi
+- Note: drops and runs Latrodectus DLL named aclui.dll
+
+- SHA256 hash: d71bfab9cca5df6a28e12ba51fe5eaf0f9151514b3fd363264513347a8c5cf3a
+- File size: 1,849,344 bytes
+- File location: hxxp[:]//85.208.108[.]30/neuro.msi
+- Note: drops and runs Latrodectus DLL named capisp.dll
+
+EXAMPLE OF PERSISTENT LATRODECTUS DLL:
+
+- SHA256 hash: 8484560c1526ee2e313a2b57f52ea5b31edd05a0c9664bd7f60da020871bfe6f
+- File size: 516,608 bytes
+- File location: C:\Users\[username]\AppData\Roaming\aclui.dll
+- Run method: rundll32 [filename], edit
+- Note: dropped and run by BST.msi
+
+- SHA256 hash: c5dc5fd676ab5b877bc86f88485c29d9f74933f8e98a33bddc29f0f3acc5a5b9
+- File size: 678,400 bytes
+- File location: C:\Users\[username]\AppData\Roaming\aclui.dll
+- Run method: rundll32 [filename], edit
+- Note: dropped and run by vpn.msi
+
+- SHA256 hash: 9b7bdb4cb71e84c5cff0923928bf7777a41cb5e0691810ae948304c151c0c1c5
+- File size: 1,244,160 bytes
+- File location: C:\Users\[username]\AppData\Roaming\capisp.dll
+- Run method: rundll32 [filename], remi
+- Persistence: Registry update at HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+- Note: dropped and run by neuro.msi
+
+LATRODECTUS C2 FOR BOTH ACLUI.DLL FILES:
+
+- kurvabbr[.]pw - domain no longer resolves to an IP address
+- barsen[.]monster - domain no longer resolves to an IP address
+
+LATRODECTUS C2 FOR CAPISP.DLL FILE:
+
+- 74.119.194[.]126 port 443 - bibidj[.]biz - HTTPS traffic, TLSv1.3 (Let's encrypt certificate)
+- 94.232.249[.]102 port 443 - barsman[.]biz - HTTPS traffic, TLSv1.3 (Let's encrypt certificate)
+- 94.232.249[.]103 port 443 - garunt[.]biz - HTTPS traffic, TLSv1.3 (Let's encrypt certificate)
+- 184.174.96[.]179 port 443 - finjuiceer[.]com - HTTPS traffic (Self-signed certificate: Internet Widgets Pty Ltd) 
+- 104.129.20[.]167 port 443 - meakdgahup[.]com - HTTPS traffic (Self-signed certificate: Internet Widgets Pty Ltd) 
+- 198.244.224[.]83 port 443 - riscoarchez[.]com - HTTPS traffic (Self-signed certificate: Internet Widgets Pty Ltd) 
+
+OTHER POST-INFECTION TRAFFIC:
+
+- 64.7.198[.]158 port 443 - Backconnect traffic with Keyhole VNC
