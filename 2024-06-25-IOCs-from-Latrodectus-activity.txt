@@ -1,5 +1,10 @@
 2024-06-25 (TUESDAY): LATRODECTUS INFECTION WITH BACKCONNECT AND KEYHOLE VNC
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_latrodectus-backconnect-keyholevnc-activity-7212105182103359488-UsPs
+- https://x.com/Unit42_Intel/status/1806339560273563668
+
 NOTES:
 
 - Latrodectus has been quiet for a few weeks, but it came back as early as 2024-06-20 (Thursday).
