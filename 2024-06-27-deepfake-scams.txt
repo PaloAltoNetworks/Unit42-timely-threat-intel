@@ -7,7 +7,7 @@ NOTES:
 - All scam pages are similar looking, and they use altered images of different celebrities. 
 - This campaign is widespread and still active.
 
-31 EXAMPLES OF FULL URLS FOR DEEPFAKE SCAM ARTICLES:
+31 EXAMPLES OF URLS FOR DEEPFAKE SCAM ARTICLES:
 
 - hxxps[:]//bastianastewkainfos[.]org/land/?offer=Vortex%20Genesis%20AI&cep=ITxoFlCbWqS5QeDN_6WFok1Rj42p4It4Lp1wN8sa4zXmPJauUkG_IbWZ9_51Zz9AaHmVVXrY2_54Je_meDU8f0XXjmbnyXJeAstyub4mGo6yDhYfA6APirzN5tqVl_ux4F3vAneJAwzenNrLd8ZqGPK7DX5vhmRVRSBEj3xPRTqnjiEI6u_jSgzb-tAvdH1V3QNS4sejtEQOUg78UUuJKUZhfhDrdeGJF600OlsoQZ2-QQwdbqDHIbxsr4CQZ0rZKqh5pmVFk0R2VLW36YQq3f_o4Z-Tc8HjJfps_SxZH-vOZmq36icA9ck5BOfVOr2mobC7Erk7LF6f37pruYC_d-xjgLD2QvuZdNfzo1XfqOc56kpHrvst1GuSVAMtxPcsp1z8TuKT74DbbNfnDKl8HqTO40kHGT4klDwcsq0sD46V4fqGYYditZzQ2yzr_YUY8_M5O4PC8gUmmFjUOsZgiZ82wy9oviKVYHNW0mmvMQxSnTn_8_l5r5TRkiW0PkDOBbwDEROfEwx2UywwU9uoWw&lptoken=17df14a7497201d29346&eng_click=03e9f704877340058a555424f01454b3&eng_creative_id=1025963075&eng_post_id=1025963075&eng_source=216404&eng_subid=null&eng_website_id=216404&eng_widget_id=230651
 
