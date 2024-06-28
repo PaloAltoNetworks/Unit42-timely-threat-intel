@@ -1,5 +1,10 @@
 2024-06-27 (THURSDAY): DEEPFAKE SCAMS
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_deepfake-unit42threatintel-aiscams-activity-7212490960012816384-IE5m
+- https://x.com/Unit42_Intel/status/1806725335595016531
+
 NOTES:  
 
 - Scammers are creating articles using deep fake images of popular German celebrities.
