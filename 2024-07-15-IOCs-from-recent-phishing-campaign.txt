@@ -43,7 +43,7 @@ RECENT EXAMPLES FROM THE ABOVE CAMPAIGN, SORTED BY EARLIEST SEEN DATE:
  Final page: hxxps://ipfs[.]io/ipfs/bafkreic7intzjnj746hcrgdbvs6xeg6tzdr2nen5jupl3nnpg7lucql4qy#[user account name]@[email domain]
  NOTE: URL from the above page to send stolen login credentials is hxxps://vf.qen12[.]za[.]com/.well-known/acme-challenge//r-xcut.php
 
-- 2024-02-02: hxxps://guide-orientation[.]tn/go_page[.]php?href=hxxps://fe.xrqo8[.]ru[.]com/[.]well-known/acme-challenge/[base64 string] -->
+- 2024-07-02: hxxps://guide-orientation[.]tn/go_page[.]php?href=hxxps://fe.xrqo8[.]ru[.]com/[.]well-known/acme-challenge/[base64 string] -->
  hxxps://fe.xrqo8[.]ru[.]com/[.]well-known/acme-challenge/[base64 string] (note: this URL not currently active) -->
  hxxps://cf-ipfs[.]com/ipfs/bafkreicj32yprjitxoyrmoxqcknj2xohjinvl5zcy6bnandbuggdki3bxu#[user account name]@[email domain]
  NOTE: URL from the above page to send stolen login credentials is hxxps://mldproltd[.]com/img/slim/r-xcut.php, but this domain is currently off-line.
