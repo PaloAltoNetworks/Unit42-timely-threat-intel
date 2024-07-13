@@ -1,0 +1,49 @@
+2024-07-15: RECENT PHISHING CAMPAIGNS USING HTTP REFRESH HEADERS
+
+NOTES:
+
+- Traffic from URLs in phishing campaigns occasionally generate HTTP refresh headers that redirect to phishing pages.
+- This technique is likely used to help initial links in phishing emails evade filtering for malicious content.
+- These infection chains are relatively short-lived, since only one link in the chain of events, are usually quickly blocked or taken off-line.
+- We continually find campaigns using this tactic, summarized in the chain of events below.
+
+CHAIN OF EVENTS:
+
+- Link from email --> Landing URL --> HTTP refresh header --> Fake login page or further redirects to fake login page
+
+
+EXAMPLE OF LINK FROM A PHISHING EMAIL:
+
+- hxxps://guide-orientation[.]tn/go_page.php?href=hxxps://atmmahmud[.]com/kgh/[user account name]/[user account name]@[email domain]
+
+LED TO:
+
+- hxxps://atmmahmud[.]com/kgh/[user account name]/[user account name]@[email domain]
+
+HTTP REFRESH HEADER IN RESPONSE FROM THE ABOVE URL LED TO:
+
+- hxxps://cf-ipfs[.]com/ipfs/bafkreic7intzjnj746hcrgdbvs6xeg6tzdr2nen5jupl3nnpg7lucql4qy#[user account name]@[email domain]
+
+ABOVE URL LED TO:
+
+- hxxps://ipfs[.]io/ipfs/bafkreic7intzjnj746hcrgdbvs6xeg6tzdr2nen5jupl3nnpg7lucql4qy#[user account name]@[email domain]
+
+
+RECENT EXAMPLES FROM THE ABOVE CAMPAIGN, SORTED BY EARLIEST SEEN DATE:
+
+- 2024-06-29: hxxps://guide-orientation[.]tn/go_page[.]php?href=hxxps://4cut[.]pl//fancybox/top/[base64 string]/[base64 string] -->
+ hxxps://4cut[.]pl//fancybox/top/[base64 string]/[base64 string] --> 
+ hxxps://cf-ipfs[.]com/ipfs/bafkreicbn4xgfxajydu6jbz2b5b5mijjnfskkns7uufaat5fao3tjddadi#[user account name]@[email domain] -->
+ Final page: hxxps://ipfs[.]io/ipfs/bafkreicbn4xgfxajydu6jbz2b5b5mijjnfskkns7uufaat5fao3tjddadi#[user account name]@[email domain]
+ NOTE: Final IPFS URL now off-line.
+
+- 2024-07-01: hxxps://guide-orientation[.]tn/go_page[.]php?href=hxxps://atmmahmud[.]com/kgh/[user account name]/[user account name]@[email domain] -->
+ hxxps://atmmahmud[.]com/kgh/[user account name]/[user account name]@[email domain] -->
+ hxxps://cf-ipfs[.]com/ipfs/bafkreic7intzjnj746hcrgdbvs6xeg6tzdr2nen5jupl3nnpg7lucql4qy#[user account name]@[email domain] -->
+ Final page: hxxps://ipfs[.]io/ipfs/bafkreic7intzjnj746hcrgdbvs6xeg6tzdr2nen5jupl3nnpg7lucql4qy#[user account name]@[email domain]
+ NOTE: URL from the above page to send stolen login credentials is hxxps://vf.qen12[.]za[.]com/.well-known/acme-challenge//r-xcut.php
+
+- 2024-02-02: hxxps://guide-orientation[.]tn/go_page[.]php?href=hxxps://fe.xrqo8[.]ru[.]com/[.]well-known/acme-challenge/[base64 string] -->
+ hxxps://fe.xrqo8[.]ru[.]com/[.]well-known/acme-challenge/[base64 string] (note: this URL not currently active) -->
+ hxxps://cf-ipfs[.]com/ipfs/bafkreicj32yprjitxoyrmoxqcknj2xohjinvl5zcy6bnandbuggdki3bxu#[user account name]@[email domain]
+ NOTE: URL from the above page to send stolen login credentials is hxxps://mldproltd[.]com/img/slim/r-xcut.php, but this domain is currently off-line.
