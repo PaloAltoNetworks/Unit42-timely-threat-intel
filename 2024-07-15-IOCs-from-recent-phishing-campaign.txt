@@ -1,5 +1,10 @@
 2024-07-15: RECENT PHISHING CAMPAIGNS USING HTTP REFRESH HEADERS
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-timelythreatintel-unit42threatintel-activity-7218635942796926978-ztlB
+- https://x.com/Unit42_Intel/status/1812870324045685177
+
 NOTES:
 
 - Traffic from URLs in phishing campaigns occasionally generate HTTP refresh headers that redirect to phishing pages.
