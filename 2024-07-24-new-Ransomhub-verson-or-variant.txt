@@ -20,4 +20,3 @@ SAMPLES AVAILABLE ON VIRUSTOTAL:
 INDICATOR FROM OUR TELEMENTRY:
 
 - SHA256 hash: 60b477dab8494d3a049cf3b17118a4124b68f9f7d3dcc3c92026ac86b00aae1e
-- Note: This hash comes from our telemetry, but we unfortunately don't have access to the sample.
