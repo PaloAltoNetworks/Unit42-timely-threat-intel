@@ -1,0 +1,23 @@
+2024-07-24 (WEDNESDAY): NEW RANSOMHUB RANSOMWARE VERSION/VARIANT
+
+NOTES:
+
+- A new version or variant of Golang-based Ransomhub ransomware has emerged in the wild.
+- These samples boast advanced capabilities like rapid encryption and bypassing VM shutdowns.
+- These samples retain the same gobfuscate (Go binary obfuscation) as in previous versions of Ransombub.
+  -- Github page for gofuscate: https://github.com/unixpickle/gobfuscate/tree/master 
+
+SAMPLES AVAILABLE ON VIRUSTOTAL:
+
+- SHA256 hash: 56856e1e275cebcd477e3a2995cd76398cfbb6c210181a14939c6307a82e6763
+- File size: 11,194,880 bytes
+- File type: 64-bit Windows executable (.exe)
+
+- SHA256 hash: 342b7b89082431c1ba088315c5ee81e89a94e36663f2ab8cfc27e17f7853ca2b
+- File size: 11,194,880 bytes
+- File type: 64-bit Windows executable (.exe)
+
+INDICATOR FROM OUR TELEMENTRY:
+
+- SHA256 hash: 60b477dab8494d3a049cf3b17118a4124b68f9f7d3dcc3c92026ac86b00aae1e
+- Note: This hash comes from our telemetry, but we unfortunately don't have access to the sample.
