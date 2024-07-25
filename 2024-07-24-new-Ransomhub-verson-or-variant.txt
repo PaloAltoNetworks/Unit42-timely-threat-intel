@@ -1,5 +1,10 @@
 2024-07-24 (WEDNESDAY): NEW RANSOMHUB RANSOMWARE VERSION/VARIANT
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_golang-ransomhub-ransomware-activity-7222225853517025280-9uYj
+- https://x.com/Unit42_Intel/status/1816460229443244142
+
 NOTES:
 
 - A new version or variant of Golang-based Ransomhub ransomware has emerged in the wild.
