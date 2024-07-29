@@ -1,5 +1,7 @@
 2024-07-24 (WEDNESDAY): NEW RANSOMHUB RANSOMWARE VERSION/VARIANT
 
+Author: Anmol Maurya
+
 REFERENCES:
 
 - https://www.linkedin.com/posts/unit42_golang-ransomhub-ransomware-activity-7222225853517025280-9uYj
