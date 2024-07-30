@@ -4,6 +4,11 @@ AUTHOR:
 
 - Shehroze Farooqi
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_olympicscam-unit42threatintel-timelythreatintel-activity-7224173687371874304-DxbA
+- https://x.com/Unit42_Intel/status/1818408063415521332
+
 NOTES:
 
 - We found a fraudulent investment app for Android named Olympics.apk from a site named 2024olympics-shop[.]com.
