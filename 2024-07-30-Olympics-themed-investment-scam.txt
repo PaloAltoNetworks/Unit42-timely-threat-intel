@@ -1,0 +1,41 @@
+2024-07-30 (TUESDAY): PARIS 2024 OLYMICS INVESTMENT SCAM AND ASSOCIATED ANDROID APP
+
+AUTHOR: 
+
+- Shehroze Farooqui
+
+NOTES:
+
+- We found a fraudulent investment app for Android named Olympics.apk from a site named 2024olympics-shop[.]com.
+- As early as 2024-07-28, videos promoting this scam are currently online and have hundreds of views, some over 1K.
+- The threat actors behind this scam also operate a telegram channel with more than 7,800 members.
+- This scheme is presented as an official olympic investment program related to cryptocurrency mining.
+
+EXAMPLES OF VIDEOS PROMOTING THE INVESTMENT SCAM:
+
+- hxxps[:]//www.youtube[.]com/watch?v=jMwDO-lPJ0s
+- hxxps[:]//www.youtube[.]com/watch?v=rxwkIg6atOY
+- hxxps[:]//www.youtube[.]com/watch?v=9FznTSqMPNA
+- hxxps[:]//www.youtube[.]com/watch?v=J7LyyZLt3wc
+- hxxps[:]//www.youtube[.]com/watch?v=dEWdIfRooco
+
+TELEGRAM CHANNEL FOR 2024 OLYMPICS INVESTMENT SCAM:
+
+- hxxps[:]//t[.]me/olympic2024_usdt
+
+SCAM 2024 OLYMPICS DOMAIN:
+
+- Domain name: 2024olympics-shop[.]com
+- Registration date: 2024-07-26
+- Registrar: www.gname[.]com
+- Name server 1: elliot.ns.cloudflare[.]com
+- Name server 2: zariyah.ns.cloudflare[.]com
+
+ANDROID APP FOR OLYMPIC GAMES-THEMED SCAM INVESTMENT PLATFORM: 
+
+- SHA256 hash: aae9b07dbf0c6205e80acd6a86c716fc46a0bf5fbfee1c1565b62d432c979647
+- File size: 5,695,231 bytes
+- File name: Olympics.apk
+- File location: hxxps[:]//api.2024olympics-shop[.]com/Olympics.apk
+- Package name: com.android.Olympics
+- First submitted to VirusTotal: 2024-07-26 23:59:19 UTC
