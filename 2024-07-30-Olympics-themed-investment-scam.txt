@@ -8,7 +8,7 @@ NOTES:
 
 - We found a fraudulent investment app for Android named Olympics.apk from a site named 2024olympics-shop[.]com.
 - As early as 2024-07-28, videos promoting this scam are currently online and have hundreds of views, some over 1K.
-- The threat actors behind this scam also operate a telegram channel with more than 7,800 members.
+- The threat actors behind this scam also operate a Telegram channel with more than 7,800 members.
 - This scheme is presented as an official Olympic investment program related to cryptocurrency.
 
 EXAMPLES OF VIDEOS PROMOTING THE INVESTMENT SCAM:
