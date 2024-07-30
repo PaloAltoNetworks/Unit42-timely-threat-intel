@@ -2,7 +2,7 @@
 
 AUTHOR: 
 
-- Shehroze Farooqui
+- Shehroze Farooqi
 
 NOTES:
 
