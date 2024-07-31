@@ -4,6 +4,11 @@ AUTHOR:
 
 - Zeyu You
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_techsupportscam-timelythreatintel-unit42threatintel-activity-7224513422858575872-cWOn
+- https://x.com/Unit42_Intel/status/1818747800047284538
+
 NOTES:
 
 - We have noted an increase of URLs for tech support scam pages abusing .core.windows[.]net domains through Microsoft Azure.
