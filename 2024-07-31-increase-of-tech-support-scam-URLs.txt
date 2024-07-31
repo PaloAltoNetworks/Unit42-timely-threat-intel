@@ -8,7 +8,7 @@ NOTES:
 
 - We have noted an increase of URLs for tech support scam pages abusing .core.windows[.]net domains through Microsoft Azure.
 - We also find tech support scam URLs from other domains like netlify[.]app.
-- The numbers of hits we've seen have jumped starting in June 2024 and continuing through today.
+- In the campaigns we're tracking the numbers of hits jumped starting in June 2024 and continuing through today.
 - These pages attempt to trick users into believing their systems are compromised, urging them to call a fake tech support phone number.
 - We have seen these primarily target Windows, but we have also seen macOS targeted as well.
 - We found a large number of pages with Japan-based phone numbers, and we saw some phone numbers based in the United States.
