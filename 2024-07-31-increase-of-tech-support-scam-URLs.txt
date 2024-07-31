@@ -1,0 +1,89 @@
+2024-07-31 (WEDNESDAY): INCREASE OF TECH SUPPORT SCAM PAGES IN RECENT MONTHS
+
+AUTHOR:
+
+- Zeyu You
+
+NOTES:
+
+- We have noted an increase of URLs for tech support scam pages abusing .core.windows[.]net domains through Microsoft Azure.
+- We also find tech support scam URLs from other domains like netlify[.]app.
+- The numbers of hits we've seen have jumped starting in June 2024 and continuing through today.
+- These pages attempt to trick users into believing their systems are compromised, urging them to call a fake tech support phone number.
+- We have seen these primarily target Windows, but we have also seen macOS targeted as well.
+- We found a large number of pages with Japan-based phone numbers, and we saw some phone numbers based in the United States.
+
+EXAMPLES OF URLS FOR TECH SUPPORT SCAM PAGES:
+
+- hxxps[:]//amhshaiu121-secondary.z23.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//asuyam876-secondary.z23.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//chn1-secondary.z1.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//chn1-secondary.z1.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//ddss8-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//jhbasu4-secondary.z11.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//jhbasu4-secondary.z11.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//masual1-secondary.z11.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//microsoftwindowsapplemacscams.netlify.app/scams/werrx01/?phone=%201-604-373-6777
+- hxxps[:]//nabyus5-secondary.z11.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//nabyus5-secondary.z11.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//nabyus5-secondary.z11.web.core.windows[.]net/windows/index.html?bcda=(0101)-50360-84553
+- hxxps[:]//nabyus5-secondary.z11.web.core.windows[.]net/windows/index.html?bcda=(0101)-50360-84553
+- hxxps[:]//nogc9.z31.web.core.windows[.]net/merrx01usahtml/?bcda=1-855-498-7096
+- hxxps[:]//seeb11-secondary.z31.web.core.windows[.]net/?bcda=(0101)-50235-75438
+- hxxps[:]//seeb11-secondary.z31.web.core.windows[.]net/?bcda=(0101)-50995-72676
+- hxxps[:]//seeb11-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//seeb11-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//seeb11-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//seeb12-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50360-84553
+- hxxps[:]//seeb12-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//seeb12-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50982-46596
+- hxxps[:]//seeb12-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//seeb12-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50360-84553
+- hxxps[:]//seeb12-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50982-46596
+- hxxps[:]//seeb13-secondary.z24.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//seeb14-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50360-84553
+- hxxps[:]//seeb14-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50982-46596
+- hxxps[:]//seeb15-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50235-75438
+- hxxps[:]//seeb15-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50982-46596
+- hxxps[:]//seeb5-secondary.z31.web.core.windows[.]net/?bcda=(0101)-50235-75438
+- hxxps[:]//seeb5-secondary.z31.web.core.windows[.]net/?bcda=(0101)-50995-72676
+- hxxps[:]//seeb5-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//seeb5-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//seeb5-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50235-75438
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50995-72676
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50360-84553
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50959-02152
+- hxxps[:]//seeb6-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//seeb8-secondary.z10.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//seeb8-secondary.z10.web.core.windows[.]net/?bcda=(0101)-50982-46596
+- hxxps[:]//seeb8-secondary.z10.web.core.windows[.]net/?bcda=(0101)-50995-72676
+- hxxps[:]//seeb8-secondary.z10.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//seeb8-secondary.z10.web.core.windows[.]net/windows/index.html?bcda=(0101)-50982-46596
+- hxxps[:]//seeb8-secondary.z10.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//seeb9-secondary.z35.web.core.windows[.]net/?bcda=(0101)-50235-75438
+- hxxps[:]//seeb9-secondary.z35.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//seeb9-secondary.z35.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//seeb9-secondary.z35.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
+- hxxps[:]//seeb9-secondary.z35.web.core.windows[.]net/windows/index.html?bcda=(0101)-50959-02152
+- hxxps[:]//seeb9-secondary.z35.web.core.windows[.]net/windows/index.html?bcda=(0101)-50982-46596
+- hxxps[:]//sjbkau3-secondary.z10.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//sjbkau4-secondary.z8.web.core.windows[.]net/windows/index.html?bcda=(0101)-50995-72676
+- hxxps[:]//swe3-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//swe4-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50235-75438
+- hxxps[:]//swe4-secondary.z30.web.core.windows[.]net/?bcda=(0101)-50982-46596
+- hxxps[:]//swe4-secondary.z30.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//swe5-secondary.z10.web.core.windows[.]net/?bcda=(0101)-50959-02152
+- hxxps[:]//swe5-secondary.z10.web.core.windows[.]net/?bcda=(0101)-50995-72676
+- hxxps[:]//swe5-secondary.z10.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//swe8-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//tccvx2.z31.web.core.windows[.]net/windows/index.html?bcda=(0101)-50959-02152
+- hxxps[:]//tdssz1-secondary.z24.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//tdssz4-secondary.z24.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//topp4-secondary.z24.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//trific5-secondary.z24.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//trific6-secondary.z31.web.core.windows[.]net/windows/index.html?bcda=
+- hxxps[:]//tccvx1-secondary.z24.web.core.windows[.]net/windows/index.html?bcda=(0101)-50235-75438
