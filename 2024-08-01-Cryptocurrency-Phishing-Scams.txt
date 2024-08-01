@@ -1,0 +1,66 @@
+2024-08-01 (WEDNESDAY): CRYPTOCURRENCY PHISHING/SCAMS
+
+AUTHOR:
+
+- Zeyu You, Yu Zhang
+
+NOTES:
+
+- We're tracking an emerging phishing/scam campaign targeting cryptocurrency users.
+- This campaign impersonates legitimate cryptocurrency exchanges and trading platforms.
+- Scammers lure victims to register and engage in fraudulent trades, and the scammers potentially steal cryptocurrency investments.
+- These sites can be displayed in English, French, German, Italian, Japanese, Korean, Russian, Spanish, Turkish or Vietnamese.
+- Each of these domains hosts a URL to register at hxxps[:]//[domain]/Login/register?
+- Some of these domains host a page to download an Android or Apple app at hxxps[:]//[domain]/app/
+
+49 EXAMPLES OF DOMAINS USED FOR THESE CRYPTOCURRENCY PHISHING/SCAMS
+
+- aaex773[.]xyz
+- bitflyioho[.]com
+- bitft6888[.]top
+- bittradeint[.]com
+- bittrpro[.]xyz
+- bloombergdown[.]com
+- bmt-seo3[.]top
+- btcbourse[.]world
+- btcpros[.]vip
+- cbs-dexx[.]top
+- cexbh[.]com
+- cexbp[.]com
+- cexdr[.]com
+- cointr9[.]vip
+- crypto13036947[.]com
+- cryptocloud[.]vip
+- cuoixgem[.]com
+- d16789[.]com
+- dcsmlxyusdt[.]com
+- easymarket[.]cc
+- finance-dnxesomi[.]com
+- fzcm01[.]com
+- getbit[.]vip
+- getbit365[.]top
+- globalcurrency[.]top
+- graeyal[.]cyou
+- grraysel[.]cyou
+- ledgerx-tys[.]xyz
+- leees-usdt[.]cyou
+- mbn-coin[.]com
+- mmm.1mhgbt[.]buzz
+- nexusx[.]cloud
+- oke[.]dog
+- onbara[.]com
+- online-usdt[.]shop
+- option-mexc[.]vip
+- ouyiusdtr[.]vip
+- paxc[.]cc
+- pisces-vips[.]com
+- qqd2ep76[.]com
+- strikeaa[.]live
+- tbwaba[.]com
+- test.super369[.]icu
+- tradecoin-vip[.]com
+- vapors[.]cloud
+- wsamll[.]net
+- xexplm[.]com
+- zbz-nex[.]com
+- zbz-nexx[.]top
