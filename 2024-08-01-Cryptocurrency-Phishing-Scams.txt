@@ -1,8 +1,13 @@
 2024-08-01 (THURSDAY): CRYPTOCURRENCY PHISHING/SCAMS
 
-AUTHOR:
+AUTHORS:
 
 - Zeyu You, Yu Zhang
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-scam-cryptocurrency-activity-7225172518267928577-Tui9
+- https://x.com/Unit42_Intel/status/1819406900951240740
 
 NOTES:
 
