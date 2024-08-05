@@ -1,0 +1,46 @@
+2024-08-05: ABUSING LEGITIMATE SAAS PLATFORMS LIKE GOOGLE DRAWINGS AND GOOGLE SLIDES FOR PHISHING:
+
+EXAMPLE 1:
+
+GOOGLE DRAWINGS --> LINK --> PHISHING PAGE:
+ 
+- https://docs.google.com/drawings/d/1SqoWfCQEkv3y_gLdr5i07wgfpWxHrtggYVJeLckU9nQ/preview
+- https://www.google.com/url?q=https://resapalosze.top/go/13b433/03b4&sa=D&source=editors&
+  ust=1722877545313972&usg=AOvVaw1tFiNdgov5FIVH-eWfMVY5
+- https://binsmails.top/info
+
+EXAMPLE 2:
+
+GOOGLE DRAWINGS --> LINK --> PHISHING PAGE:
+
+- https://docs.google.com/drawings/d/1UEqGZdp23M2nTJhoI7aMEXd9MB2AniNUQAERHLqruXY/preview
+- https://www.google.com/url?q=https://l.wl.co/l?u%3Dhttps://qrco.de/bfGIhB&sa=D&source=editors&
+  ust=1722878637402243&usg=AOvVaw0v6cDNKP1ZIq0s6Xitu1TK
+- https://supportaccmangespaymentswebappsintl.evaxuan.com/signin
+
+EXAMPLE 3:
+
+GOOGLE SLIDES --> LINK --> PHISHING PAGE:
+
+- https://docs.google.com/presentation/d/e/2PACX-1vT-deEghOu694SszDVsmEMCXfMJ7nlE08JicC1VRqVHl52Lpt_8XkWyntga4Laex-Z3cT3IE31Poe0g/pub
+- https://www.google.com/url?q=https://currently887.weebly.com/&sa=D&source=editors&
+  ust=1722879078622949&usg=AOvVaw2QL0hBWv8tbpqd51oQrSDz
+- https://currently887.weebly.com/
+
+EXAMPLE 4:
+
+GOOGLE SLIDES --> LINK --> PHISHING PAGE:
+
+- https://docs.google.com/presentation/d/e/2PACX-1vSMcWcXkT6Sj1zUSKwPxxorafu58YpjAd1mpi1oB1mbUpiMiQTvJDbD3zULJTTWvtpjXOvamDEBY5f3/pub
+- https://www.google.com/url?q=http://currently-att-8-2-2024.weeblysite.com&sa=D&source=editors&
+  ust=1722878627410572&usg=AOvVaw0LW1Hrn0CO3bEfcRTzCdoW
+- https://currently-att-8-2-2024.weeblysite.com/
+
+EXAMPLE 5:
+
+GOOGLE SLIDES --> LINK --> PHISHING PAGE:
+
+- https://docs.google.com/presentation/d/e/2PACX-1vRdrlMXfpcvp7a-cdFD6fU4qN6V6uo0JuHb8cW8VM5hJQ4lViEIN3_Q4CdtJGhfVYYMAMVz_MjHA8to/pub
+- https://www.google.com/url?q=https://aliceblue-horse-717430.builder-preview.com/&sa=D&source=editors&
+  ust=1722879452712540&usg=AOvVaw3FIZdiyvtnSTMQSrApxFi6
+- https://aliceblue-horse-717430.builder-preview.com/
