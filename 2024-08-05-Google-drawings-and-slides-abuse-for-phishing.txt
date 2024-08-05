@@ -1,5 +1,10 @@
 2024-08-05 (MONDAY): ABUSING LEGITIMATE SAAS PLATFORMS LIKE GOOGLE DRAWINGS AND GOOGLE SLIDES FOR PHISHING
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7226301955445309440-LjyE
+- https://x.com/Unit42_Intel/status/1820536336526299460
+
 AUTHORS:
 
 - Shehroze Farooqi, Lucas Hu, Nabeel Mohamed, Fang Liu
