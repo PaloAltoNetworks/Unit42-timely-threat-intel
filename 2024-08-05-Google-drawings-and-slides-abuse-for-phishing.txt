@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Shehroze Farooqi, Lucas Hu
+- Shehroze Farooqi, Lucas Hu, Nabeel Mohamed, Fang Liu
 
 NOTES:
 
