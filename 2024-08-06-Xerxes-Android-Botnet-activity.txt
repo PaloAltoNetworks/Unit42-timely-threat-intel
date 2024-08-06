@@ -1,0 +1,43 @@
+2024-08-06 (TUESDAY): XERXES ANDROID BOTNET ACTIVITY
+
+AUTHOR:
+
+- Anthony Galiette
+
+NOTES:
+
+- We recently found a Xerxes Android botnet server at 144.217.61[.]133 that was active as recently as Monday 2024-08-05.
+- Fingerprinting info this server led us to find two other domains used for Xerxes botnet servers in 2023.
+- We also discovered a RAR archive containing PHP and other files used for the Xerxes botnet servers.
+- Details follow.
+
+RECENT XERXES ANDROID BOTNET SERVER:
+
+- IP address: 144.217.61[.]133
+- Description: Xerxes botnet C2 server
+- Censys analysis: https://search.censys.io/hosts/144.217.61.133
+- Note: Hosted Xerxes botnet server as recently as 2024-08-05.
+
+XERXES ANDROID BOTNET DOMAINS:
+
+- Domain: insta-cart[.]shop
+- Description: Domain used for Xerxes botnet server
+- Registered: 2023-07-06
+- Login panel: hxxps[:]//testing1.insta-cart[.]shop/login.php
+- Active as early as: 2023-07-29
+- URLscan analysis: https://urlscan.io/result/2a75f38f-c414-4c8a-ae43-be411651c44e/
+
+- Domain: botnetbywrick[.]xyz
+- Description: Xerxes botnet C2 server
+- Registered: 2023-03-07
+- Login panel: hxxp[:]//botnetbywrick[.]xyz/login.php
+- Active as early as: 2023-03-07
+- URLscan analysis: https://urlscan.io/result/3903068c-fec1-4c76-9627-9e2e3cd0284d/
+
+FILES FROM XERXES ANDROID BOTNET SERVER:
+
+- SHA256 hash: 5e82cbabbbe4ceb44d9059f86bccfc0c26454fc13eda4f292dd7a4c0456b18f4
+- File size: 6,925,651 bytes
+- File name: Xerxes Botnet.rar
+- File type: RAR archive data, v5
+- File description: RAR archive containing files from Xerxes Android Botnet server
