@@ -18,7 +18,7 @@ RECENT XERXES ANDROID BOTNET SERVER:
 - Censys analysis: https://search.censys.io/hosts/144.217.61.133
 - Note: Hosted Xerxes botnet server as recently as 2024-08-05.
 
-XERXES ANDROID BOTNET DOMAINS:
+PREVIOUS XERXES ANDROID BOTNET DOMAINS:
 
 - Domain: insta-cart[.]shop
 - Description: Domain used for Xerxes botnet server
@@ -40,4 +40,4 @@ FILES FROM XERXES ANDROID BOTNET SERVER:
 - File size: 6,925,651 bytes
 - File name: Xerxes Botnet.rar
 - File type: RAR archive data, v5
-- File description: RAR archive containing files from Xerxes Android Botnet server
+- File description: RAR archive containing files for Xerxes Android botnet server
