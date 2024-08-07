@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Nabeel Mohamed
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_smishing-phishing-postalscam-activity-7227072034718015488-uDdU
+- https://x.com/Unit42_Intel/status/1821306417858437542
+
 NOTES:
 
 - Since late last year, we have been monitoring phishing campaigns impersonating various postal services across the world.
