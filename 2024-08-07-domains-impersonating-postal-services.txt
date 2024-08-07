@@ -1,0 +1,48 @@
+2024-08-07 (WEDNESDAY): DOMAINS IMPERSONATING POSTAL SERVICES
+
+AUTHOR:
+
+- 
+
+NOTES:
+
+- Since late last year, we have been monitoring phishing campaigns impersonating various postal services across the world.
+- We find many newly-registered domains (NRDs) every day from these campaigns.
+- These campaigns often use SMS messages (known as "smishing") to send malicious URLs as an initial attack vector.
+- We often see more than 200 hits on  malicious domains impersonating postal services each day.
+- Although these domains mostly impersonate US postal services, we also find other nations like:
+  - Australia
+  - Brazil
+  - Canada
+  - India
+  - Ireland
+  - Israel
+  - United Kingdom
+
+25 RECENT EXAMPLES OF OF DOMAINS IMPERSONATING POSTAL SERVICES:
+
+- anpost-online[.]com
+- anpost[.]ie-delivery[.]online
+- auspost[.]new-au[.]info
+- canadapost-postscanada[.]one
+- canadaposts-postalcanada[.]cc
+- correios[.]top
+- eevriipost[.]cfd
+- evri[.]errpostv[.]click
+- evriiposttonline[.]sbs
+- indiapost-gov[.]com
+- indiapostxw[.]vip
+- israelpostco[.]click
+- israelpostoffice[.]sbs
+- liteblue-usps-gov[.]com
+- postes-canada-delivery[.]top
+- retidocorreios[.]net
+- tracking-infocheck-auspost[.]com
+- us-usps-parcel[.]icu
+- usps[.]com[.]odz178[.]vip
+- usps[.]officialpostship[.]top
+- usps[.]uspsluv[.]com
+- uspshelpar[.]top
+- uspshelper[.]top
+- uspsnotification[.]com
+- www[.]anpost-collect[.]com
