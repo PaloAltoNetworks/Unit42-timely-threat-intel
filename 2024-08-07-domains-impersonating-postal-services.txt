@@ -11,13 +11,13 @@ NOTES:
 - These campaigns often use SMS text messages to send phishing URLs as an initial attack vector. This is often called "smishing."
 - We often see more than 200 hits on malicious domains for web sites impersonating postal services each day.
 - Although these sites mostly impersonate the US Postal Service, we also find other sites impersonating other nations like:
-  - Australia
-  - Brazil
-  - Canada
-  - India
-  - Ireland
-  - Israel
-  - United Kingdom
+  -- Australia
+  -- Brazil
+  -- Canada
+  -- India
+  -- Ireland
+  -- Israel
+  -- United Kingdom
 
 26 RECENT EXAMPLES OF DOMAINS FOR SITES IMPERSONATING POSTAL SERVICES:
 
