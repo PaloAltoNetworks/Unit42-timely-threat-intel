@@ -4,6 +4,11 @@ AUTHOR:
 
 - Anthony Galiette
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_xerxes-botnet-timelythreatintel-activity-7226955261834407937-RV2U
+- https://x.com/Unit42_Intel/status/1821189625026683179
+
 NOTES:
 
 - We recently found a Xerxes Android botnet server at 144.217.61[.]133 that was active as recently as Monday 2024-08-05.
