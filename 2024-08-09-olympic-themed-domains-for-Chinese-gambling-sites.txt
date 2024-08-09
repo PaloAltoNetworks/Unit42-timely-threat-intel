@@ -1,0 +1,22 @@
+2024-08-09 (FRIDAY): 2024 OLYMPICS-THEMED DOMAINS USED FOR CHINESE GAMBLING SITES
+
+AUTHORS:
+
+- Zhanhao Chen, Shu Wang, Daiping Liu, Fan Fei
+
+NOTES: 
+
+- Threat actors exploit public attention in the Olympic Games by creating domains that seem related to the event.
+- We recently observed a surge in network abuse from Olympic-themed newly registered domains (NRDs).
+- This page lists soiome Olympic-themed domains used a Chinese gambling sites.
+
+
+LIST OF OLYMPICS-THEMED DOMAINS USED FOR CHINESE GAMBLING SITES:
+
+- allolympic[.]com
+- climbolympic[.]com
+- olympiarealestate-online[.]com
+- olympicrentalcar[.]com
+- olympicslong[.]com
+- olympicsrentals[.]com
+- rcolympics[.]Icom
