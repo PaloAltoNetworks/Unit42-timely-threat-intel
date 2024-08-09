@@ -1,0 +1,42 @@
+2024-08-09 (FRIDAY): SCAM IMPERSONATING CRYPTOCURRENCY EXCHANGE PLATFORM
+
+AUTHORS:
+
+- Shehroze Farooqi, Nabeel Mohamed
+
+NOTES:
+
+- We recently discovered a scam that appears to be impersonating the Nominex cryptocurrency exchange platform.
+- The scam page can be accessed directly through a website or through an Android mobile app that uses webview.
+- This scam is promoted on social media platforms, like YouTube and Telegram.
+
+DOMAIN USED FOR THIS SCAM:
+
+- Domain name: nmxquantify[.]com
+- Registrar: NameSilo
+- Registration date: 2024-05-16
+
+WEBSITE:
+
+- URL: hxxps[:]//nmxquantify[.]com/
+- Certificate issued by: Google Trust Services
+- Certificate issued on: 2024-07-14
+
+ANDROID APPLICATION:
+
+- SHA256 jash: e3e4163263d65cd9de073cc564c4ab8be31c418c40eeb25af38fcfbfb063e6d9
+- File size: 5,546,634 bytes
+- File type: Android .apk file (Zip archive data, at least v0.0 to extract, compression method=store)
+- File location: hxxps[:]//api.nmxquantify[.]com/nmxquantify.apk
+
+YOUTUBE CHANNEL:
+
+- hxxps[:]//www.youtube[.]com/@Nominex_Quantify
+
+TELEGRAM CHANNELS:
+
+- hxxps{:]//t[.]me/NMX_English
+
+TELEGRAM USER:
+
+- hxxps{:]//t[.]me/NMX_Quantify
