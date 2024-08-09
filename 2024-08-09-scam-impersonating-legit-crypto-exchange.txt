@@ -24,9 +24,9 @@ WEBSITE PROMOTING THIS SCAM:
 
 ANDROID APPLICATION:
 
-- SHA256 jash: e3e4163263d65cd9de073cc564c4ab8be31c418c40eeb25af38fcfbfb063e6d9
+- SHA256 hash: e3e4163263d65cd9de073cc564c4ab8be31c418c40eeb25af38fcfbfb063e6d9
 - File size: 5,546,634 bytes
-- File type: Android .apk file (Zip archive data, at least v0.0 to extract, compression method=store)
+- File type: Android .apk file
 - File location: hxxps[:]//api.nmxquantify[.]com/nmxquantify.apk
 
 A YOUTUBE CHANNEL WITH VIDEOS PROMOTING THIS SCAM:
