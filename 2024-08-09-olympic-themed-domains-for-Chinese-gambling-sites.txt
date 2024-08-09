@@ -8,7 +8,7 @@ NOTES:
 
 - Threat actors exploit public attention in the Olympic Games by creating domains that seem related to the event.
 - We recently observed a surge in network abuse from Olympic-themed newly registered domains (NRDs).
-- This page lists soiome Olympic-themed domains used a Chinese gambling sites.
+- For a specific example, this page lists some Olympic-themed domains used for Chinese gambling sites.
 
 
 LIST OF OLYMPICS-THEMED DOMAINS USED FOR CHINESE GAMBLING SITES:
