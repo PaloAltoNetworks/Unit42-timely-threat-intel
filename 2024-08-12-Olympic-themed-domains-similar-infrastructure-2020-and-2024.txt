@@ -1,0 +1,59 @@
+2024-08-12 (MONDAY): SIMILARITIES IN PHISHING INFRASTRUCTURE BETWEEN TOKYO 2020 OLYMPICS & PARIS 2024 OLYMPICS
+
+AUTHORS:
+
+- Zhanhao Chen, Shu Wang, Daiping Liu, Fan Fei
+
+NOTES:
+
+- We recently uncovered connections between scam/phishing domains from the Tokyo 2020 Summer Olympics and the Paris 2024 Summer Olympics.
+
+- The shared infrastructure and similarities in naming patterns indicate a threat actor persistently abuses domains for Olympic events.
+
+- Of note, the Tokyo 2020 Summer Olympics was delayed due to the COVID-19 pandemic and held in 2021, resulting in Olympic-themed domains with 2021 in the name.
+
+- Below are a list of domains related to each Olympic games event and the shared IP addresses that hosted domains from both years.
+
+DOMAINS USED FOR SCAMS OR PHISHING RELATED TO THE TOKYO 2020 OLYMPICS:
+
+- 2021olympicupdates[.]com
+- 2021olympicupdates[.]live
+- 2021olympicupdateslive[.]com
+- olympic2021[.]in
+- olympicgames2021[.]co[.]za
+- olympics2020[.]in
+- olympics2021[.]in
+- olympictickets2020[.]com
+- tokyoolympicplay[.]com
+- tokyoolympicsport[.]com
+- usolympics2020[.]com
+- usolympics2021[.]com
+
+DOMAINS USED FOR SCAMS OR PHISHING RELATED TO THE PARIS 2024 OLYMPICS:
+
+- 2024olympicslive[.]com
+- 2024parisolympicathletes[.]com
+- olympicparis2024[.]com
+- paris-olympics2024[.]com
+- paris24olympics[.]com
+- parisolympic24[.]com
+- parisolympicgames2024[.]com
+- parisolympicgames2024official[.]com
+- parisolympicgamesevents[.]com
+- parisolympicgamesofficial[.]com
+- parisolympicgamestickets[.]com
+- parisolympicsphotographe[.]com
+- parisolympictickets[.]com
+
+IP ADDRESSES HOSTING DOMAINS USED FOR SCAMS OR PHISHING COMMON TO 2020 AND 2024 OLYMPICS:
+
+- 3.33.152[.]147
+- 3.64.163[.]50
+- 13.248.169[.]48
+- 13.248.213[.]45
+- 15.197.142[.]173
+- 34.98.99[.]30
+- 34.102.136[.]180
+- 76.223.54[.]146
+- 76.223.67[.]189
+- 184.168.131[.]241
