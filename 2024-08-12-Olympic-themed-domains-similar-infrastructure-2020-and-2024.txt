@@ -10,7 +10,7 @@ NOTES:
 
 - The shared infrastructure and similarities in naming patterns indicate a threat actor persistently abuses domains for Olympic events.
 
-- Of note, the Tokyo 2020 Summer Olympics was delayed due to the COVID-19 pandemic and held in 2021, resulting in Olympic-themed domains with 2021 in the name.
+- Of note, the 2020 Summer Olympics was delayed due to the COVID-19 pandemic and held in 2021, resulting in Olympic-themed domains with 2021 in the name.
 
 - Below are a list of domains related to each Olympic games event and the shared IP addresses that hosted domains from both years.
 
