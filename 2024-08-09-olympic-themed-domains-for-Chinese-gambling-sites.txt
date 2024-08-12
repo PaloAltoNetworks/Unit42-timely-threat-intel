@@ -4,6 +4,11 @@ AUTHORS:
 
 - Zhanhao Chen, Shu Wang, Daiping Liu, Fan Fei
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_olympics-newlyregistereddomains-olympicscams-activity-7228804198002221057-Imot/
+- https://x.com/Unit42_Intel/status/1823038576696693177
+
 NOTES: 
 
 - Threat actors exploit public attention in the Olympic Games by creating domains that seem related to the event.
