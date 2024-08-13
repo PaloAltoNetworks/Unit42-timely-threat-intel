@@ -4,14 +4,16 @@ AUTHORS:
 
 - Zhanhao Chen, Shu Wang, Daiping Liu, Fan Fei
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_olympics-phishing-scams-activity-7229166831943524353-SiRP
+- https://x.com/Unit42_Intel/status/1823387841797161385
+
 NOTES:
 
 - We recently uncovered connections between scam/phishing domains from the Tokyo 2021 Summer Olympics and the Paris 2024 Summer Olympics.
-
 - The shared infrastructure and similarities in naming patterns indicate a threat actor persistently abuses domains for Olympic events.
-
 - Of note, the 2020 Summer Olympics was delayed due to the COVID-19 pandemic and held in 2021, resulting in Olympic-themed domains with 2021 in the name.
-
 - Below are a list of domains related to each Olympic games event and the shared IP addresses that hosted domains from both years.
 
 DOMAINS USED FOR SCAMS OR PHISHING RELATED TO THE TOKYO 2021 OLYMPICS:
