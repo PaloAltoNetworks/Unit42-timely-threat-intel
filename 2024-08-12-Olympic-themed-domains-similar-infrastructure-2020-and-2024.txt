@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- We recently uncovered connections between scam/phishing domains from the Tokyo Summer Olympics and the Paris 2024 Summer Olympics.
+- We recently uncovered connections between scam/phishing domains from the Tokyo 2021 Summer Olympics and the Paris 2024 Summer Olympics.
 
 - The shared infrastructure and similarities in naming patterns indicate a threat actor persistently abuses domains for Olympic events.
 
