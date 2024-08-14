@@ -1,0 +1,47 @@
+2024-08-14 (WEDNESDAY): CRYTPO INVESTMENT SCAMS IMPERSONATING TESLA
+
+AUTHOR:
+
+- Shehroze Farooqi
+
+NOTES:
+
+- Don’t be fooled by crypto investment scam impersonating Tesla.
+- Scammers register domains with "tesla" in the name to fool victims. 
+- These scams often use an Android app and are promoted through social platforms like YouTube and Telegram.
+
+9 EXAMPLES OF DOMAINS FOR CRYTPO INVESTMENT SCAMS IMPERSONATING TESLA:
+
+- sc-tesla[.]com
+- tesla-usdt[.]com
+- teslabond[.]org
+- teslaevcharging[.]com
+- teslafund[.]org
+- teslamall66[.]vip
+- teslausdt[.]net
+- teslausdt[.]org
+- teslausdt[.]vip
+
+ANDROID APPS ASSOCIATED WITH THESE SCAMS:
+
+- If available, Android apps from these domains are located at:
+  -- api.[name].[tld]/[name].apk
+
+- For example: hxxps[:]//api.teslamall66[.]vip/teslamall66.apk
+
+SHA256 HASH FROM THE ABOVE ANDROID APP:
+
+- ebc120ac0608d4b43a23a84e7ebcf84aeee2fca96184928ee787b734d85b0f01
+
+EXAMPLES OF ASSOCIATED TELEGRAM CHANNELS:
+
+- hxxps[:]//t[.]me/supercharger_Ch
+- hxxps[:]//t[.]me/Tesla_Supercharger_Mall
+- hxxps[:]//t[.]me/teslavip88
+
+EXAMPLES OF YOUTUBE VIDEOS PROMOTING THESE SCAMS:
+
+- hxxps[:]//youtube[.]com/watch?v=2FfZVh-E1zY
+- hxxps[:]//youtube[.]com/watch?v=5sMxNrvQjko
+- hxxps[:]//youtube[.]com/watch?v=bKVb2-HJD3g
+- hxxps[:]//youtube[.]com/watch?v=m5sFoyBRWVE 
