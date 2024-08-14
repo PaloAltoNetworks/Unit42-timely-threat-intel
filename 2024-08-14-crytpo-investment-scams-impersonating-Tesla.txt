@@ -4,6 +4,11 @@ AUTHOR:
 
 - Shehroze Farooqi
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_crypto-investment-scams-activity-7229568232465010688-rnSr
+- https://x.com/Unit42_Intel/status/1823802609263681770
+
 NOTES:
 
 - Don’t be fooled by crypto investment scam impersonating Tesla.
