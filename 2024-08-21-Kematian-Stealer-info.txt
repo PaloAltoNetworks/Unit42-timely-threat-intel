@@ -8,7 +8,7 @@ NOTES:
 
 - Kematian Stealer was first reported in July 2024 as "a PowerShell based Token-Grabber." [1]
 - Kematian Stealer is actively developed and distributed through GitHub as an open source tool. [2]
-- Various sources reported a Kematian Stealer C2 server control panel at hxxps[:]//64.52.80[.]191:8080/ in July 2024. [3]
+- One of the Kematian Stealer C2 server control panels was active at hxxps[:]//64.52.80[.]191:8080/ in July 2024. [3]
 - We noticed the following Kematian Stealer sample submitted to VirusTotal earlier today.
 
 ORIGINAL REFERENCES:
