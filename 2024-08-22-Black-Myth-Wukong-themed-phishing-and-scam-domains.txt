@@ -1,5 +1,11 @@
 2024-08-22 (THURSDAY): SUSPICIOUS & MALICIOUS DOMAINS USING "BLACK MYTH: WUKONG" THEME
 
+AUTHOR:
+
+- Shu Wang
+
+NOTES:
+
 - Fans of the new action RPG 'Black Myth: Wukong' are being targeted through newly-regsitered domains (NRDs).
 - Phishing, crypto scams and illegal gambling linked to Wukong-themed NRDs are on the rise. 
 - We had noticed a spike in NRDs after a trailer for the game appeared at The Game Awards in December 2023.
