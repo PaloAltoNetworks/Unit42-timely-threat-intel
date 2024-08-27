@@ -4,6 +4,11 @@ AUTHOR:
 
 - Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malspam-guloader-remcos-activity-7234210584571826176-Pi_E/
+- https://x.com/Unit42_Intel/status/1828444963001995599
+
 NOTES:
 
 - Tested a .vbs file distributed through an email received over the weekend.
