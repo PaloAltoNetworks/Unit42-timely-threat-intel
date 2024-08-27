@@ -1,0 +1,75 @@
+2024-08-26 (MONDAY): GULOADER FOR REMCOS RAT
+
+NOTES:
+
+- Tested a .vbs file distributed through an email received over the weekend.
+- The results revealed GuLoader for Remcos RAT.
+- The Remcos C2 traffic contained a Windows EXE file with a file description of "Web Browser Password Viewer" in the metadata.
+- After receiving the web browser password viewer, the infected host returned login credentials over the Remcos RAT C2 channel.
+- Meanwhile, the malware notified the Remcos RAT C2 server about any activity on the infected host.
+
+EMAIL INFORMATION:
+
+- Received: from [164.92.211[.]192] (unknown [94.141.120[.]39]) [info removed]; Sat, 24 Aug 2024 16:14:51 +0000 (UTC)
+- From: "Al Ansari Exchange L.L.C. " <info@met-tech[.]de>
+- To: [recipient's email address]
+- Subject: Urgent Files
+- Date: 24 Aug 2024 09:14:51 -0700
+- Message-ID: <20240824091450.A5E62A2FE6C88767@met-tech[.]de>
+- Content-Disposition: attachment; filename="Payment_Confirmation_Advice_0822202400000000837849_pdf.7z"
+
+ATTACHMENT AND EXTRACTED VBS FILE:
+
+- SHA256 hash: f1c480f30c73c638cc23c896de021dafa5568ae0d0169c8573f910cf2c1718f4
+- File size: 68,202 bytes
+- File name: Payment_Confirmation_Advice_0822202400000000837849_pdf.7z
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Malicious zip archive sent as an email attachment
+
+- SHA256 hash: 68689a95e22cb95176aadd65b6daffab8ad8714c581c06cf6cab415eeb573da1
+- File size: 138,961 bytes
+- File name: Payment_Confirmation_Advice_0822202400000000837849_pdf.vbs
+- File type: ASCII text, with CRLF line terminators
+- File description: Extracted from the above zip archive, Visual Basic Script (.vbs) installer for GuLoader
+
+INFECTION TRAFFIC:
+
+- 194.36.140[.]235 port 443 - softiq[.]ro - hxxps[:]//softiq[.]ro/event/update/Eyeable49.xtp
+- 194.36.140[.]235 port 443 - softiq[.]ro - hxxps[:]//softiq[.]ro/event/update/mCNQZhDQboPBW61.bin
+- 206.123.148[.]197 port 3980 - janbours92harbu03.duckdns[.]org - TCP traffic for Remcos RAT
+- port 80 - hxxp[:]//geoplugin[.]net/json.gp  <-- location check, not inherently malicious
+
+DOMAIN NOTES:
+
+- softiq[.]ro was originally registered in 2016 may have been a legitimate domain.
+- Since 2022 the only active page on softiq[.]ro is the index page.
+- hxxps[:]//softiq[.]ro/event/update/ is an open directory with other files since 2024-08-14 similar to this GuLoader activity.
+
+MALWARE FROM AN INFECTION:
+
+- SHA256 hash: 69b5e0c27e96a065c63513036814c6b00564b5a0bd1432ca43be8ee0e71a4dfa
+- File size: 480,232 bytes
+- File location: hxxps[:]//softiq[.]ro/event/update/Eyeable49.xtp
+- File location: C:\Users\[username]\AppData\Roaming\skaberevners.Dam
+- File type: ASCII text, with very long lines (65536), with no line terminators
+- File description: Base64 text retrieved by VBS installer to install GuLoader
+
+- SHA256 hash: eeda06489209af135511ca1d49fbec9ff818e0e2d0ce2ab25dfe42c69c3320a7
+- File size: 494,656 bytes
+- File location: hxxps[:]//softiq[.]ro/event/update/mCNQZhDQboPBW61.bin
+- File type: data
+- File description: Data binary retrieved by GuLoader to run Remcos RAT
+
+- SHA256 hash: ea7215b91d46c44be60345e19d5e4765c118244fbf373db269b023496e1a7253
+- File size: 495,631 bytes
+- File type: MS-DOS executable PE32 executable (GUI) Intel 80386 (stripped to external PDB), for MS Windows, MZ for MS-DOS
+- File description: Windows EXE for "Web Browser Password Viewer" used during Remcos RAT infection to steal login credentials
+
+REGISTRY UPDATES FOR GULOADER PERSISTENCE:
+
+- HKCU\Software\Microsoft\Windows\CurrentVersion\Run --> Startup key
+- HKCU\Oversanselig --> Penta
+
+MISCELLANEOUS:
+
+- Location of keylogger data on infected Windows host for Remcos RAT: C:\ProgramData\remcos\logs.dat
