@@ -1,5 +1,9 @@
 2024-08-26 (MONDAY): GULOADER FOR REMCOS RAT
 
+AUTHOR:
+
+- Bradley Duncan
+
 NOTES:
 
 - Tested a .vbs file distributed through an email received over the weekend.
@@ -45,20 +49,20 @@ DOMAIN NOTES:
 - Since 2022 the only active page on softiq[.]ro is the index page.
 - hxxps[:]//softiq[.]ro/event/update/ is an open directory with other files since 2024-08-14 similar to this GuLoader activity.
 
-MALWARE FROM AN INFECTION:
+FILES FROM AN INFECTION:
 
 - SHA256 hash: 69b5e0c27e96a065c63513036814c6b00564b5a0bd1432ca43be8ee0e71a4dfa
 - File size: 480,232 bytes
 - File location: hxxps[:]//softiq[.]ro/event/update/Eyeable49.xtp
 - File location: C:\Users\[username]\AppData\Roaming\skaberevners.Dam
 - File type: ASCII text, with very long lines (65536), with no line terminators
-- File description: Base64 text retrieved by VBS installer to install GuLoader
+- File description: Base64 text retrieved by VBS installer to install GuLoader  <-- not malicious on its own
 
 - SHA256 hash: eeda06489209af135511ca1d49fbec9ff818e0e2d0ce2ab25dfe42c69c3320a7
 - File size: 494,656 bytes
 - File location: hxxps[:]//softiq[.]ro/event/update/mCNQZhDQboPBW61.bin
 - File type: data
-- File description: Data binary retrieved by GuLoader to run Remcos RAT
+- File description: Data binary retrieved by GuLoader to run Remcos RAT  <-- not malicious on its own
 
 - SHA256 hash: ea7215b91d46c44be60345e19d5e4765c118244fbf373db269b023496e1a7253
 - File size: 495,631 bytes
