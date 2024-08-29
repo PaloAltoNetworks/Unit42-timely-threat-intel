@@ -4,6 +4,11 @@ AUTHOR:
 
 - Paul Michaud II
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_lumma-stealer-lummastealer-activity-7234943650328125440-Y4CX/
+- https://x.com/Unit42_Intel/status/1829178013423992948
+
 NOTES:
 
 - As recently as 2024-08-27, fake verification pages have been established to distribute Lumma Stealer malware.
