@@ -1,0 +1,52 @@
+2024-09-04 (WEDNESDAY): ETHERHIDING POPUPS STILL ACTIVE
+
+AUTHOR:
+
+- Shehroze Farooqi
+
+NOTES:
+
+- We continue to find websites with injected code that uses "EtherHiding" to generate popup windows for fake browser updates.
+- We've seen this for infection chains dubbed "ClearFake" and "ClickFix."
+- We have not yet identified the malware from this particular infection chain.
+- We reported on a ClickFix infection chain in June 2024 at:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-06-24-IOCs-for-ClickFix-pushing-Lumma-Stealer.txt
+- More information on the EtherHiding techniques is available at:
+  -- https://labs.guard.io/etherhiding-hiding-web2-malicious-code-in-web3-smart-contracts-65ea78efad16
+
+INFECTION CHAIN:
+
+- Legitimate but compromised website --> popup window with link to download malware --> 
+  victim saves malware to vulnerable host --> victim double-clicks malware --> infection
+
+EXAMPLES OF INITIAL LEGITIMATE BUT COMPROMISED SITES:
+
+- allalert[.]com
+- bordercollie[.]app
+- didacfranquet[.]com
+- dioz[.]com
+- esugolfcarts[.]com
+- gurushop[.]me
+- texaschili[.]com
+
+LEGITIMATE SERVICE USED FOR REDIRECT:
+
+- hxxps[:]//bsc-dataseed1.binance[.]org/
+- NOTE: The above URL is not inherently malicious on its own.
+
+URL HOSTING CODE FOR POPUP WINDOW:
+
+- hxxps[:]//dais7nsa[.]shop/endpoint
+
+URLS HOSTING FAKE BROWSER UPDATES:
+
+- hxxps[:]//bitbucket[.]org/browserupdater/download/downloads/UpdateMe.exe
+- hxxps[:]//bitbucket[.]org/browserupdater/download/downloads/UpdateFix.exe
+- hxxps[:]//bitbucket[.]org/browserupdater/download/downloads/UpdateNow.exe
+- NOTE: The Bitbucket repository hosting these files has been taken off-line.
+
+SHA256 HASHES OF WINDOWS EXE FILES FOR FAKE BROWSER UPDATES FROM THE ABOVE URLS:
+
+- 2c8f611b0f2c157f010c20379d4fcd725a8c462a8d226ae0095e3e0fb110ddbe
+- 6976c3e0ffbbbbb310995e70f24bf9501d017279d865ac4536aee25b316a92de
+- 7eede0e13ed9990afb465c2f612d85bc10c946dd2419323528a58707cef62899
