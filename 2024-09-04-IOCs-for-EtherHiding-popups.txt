@@ -4,6 +4,11 @@ AUTHOR:
 
 - Shehroze Farooqi
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_etherhiding-timelythreatintel-unit42threatintel-activity-7237480630425370624-VkuR
+- https://x.com/Unit42_Intel/status/1831715000437571816
+
 NOTES:
 
 - We continue to find websites with injected code that uses "EtherHiding" to generate popup windows for fake browser updates.
