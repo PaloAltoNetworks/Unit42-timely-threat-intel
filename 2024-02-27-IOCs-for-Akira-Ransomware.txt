@@ -1,5 +1,9 @@
 2024-02-27 (TUESDAY): UPDATES TO AKIRA RANSOMWARE CODEBASE
 
+AUTHOR:
+
+- Daniel Bunce
+
 REFERENCES:
 
 - https://www.linkedin.com/posts/unit42_akiraransomware-kcipher2-chacha20-activity-7168276634125492225-Q2T6
