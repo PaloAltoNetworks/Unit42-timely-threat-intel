@@ -1,0 +1,50 @@
+2024-09-16 (MONDAY): SNAKE KEYLOGGER ACTIVITY
+
+AUTHOR:
+
+- Bradley Duncan
+
+INFECTION CHAIN:
+
+- email --> attached archive --> extracted EXE --> victim double-clicks EXE on vulnerable host --> Snake KeyLogger infection
+
+NOTES:
+
+- The emails used for data exfiltration in this infection show "VIP Recovery" as the name.
+- This has also been identified as "VIP KeyLogger."
+- But based on a test message in the email account used for data exfiltration, this appears to be Snake KeyLogger.
+- This Snake KeyLogger sample is a .NET-based Windows EXE.
+- We've seen .NET-based Windows EXE files before with AgentTesla and its successors like OriginLogger.
+- In recent months, Snake KeyLogger has been commonly found in the wild, much like AgentTesla and OriginLogger have been.
+- This infection exfiltrated login credentials from the lab host's web browsers and Microsoft Outlook.
+- This infection also exfiltrated cookie data from the lab host's web browsers.
+
+EMAIL INFORMATION:
+
+- Received: from mail.leadingstar[.]tw (mail.leadingstar.tw [61.222.155[.]52]) [info removed]; Mon, 16 Sep 2024 07:36:48 +0200 (CEST)
+- Received: from IP-129-55.dataclub[.]eu (unknown [84.38.129[.]55]) [info removed]; Mon, 16 Sep 2024 13:36:13 +0800 (CST)
+- Subject: NEW PO-09162024
+- From: "Westfield Sofia" <hang_chhaily@leadingstar[.]tw>
+- Date: Mon, 16 Sep 2024 07:35:46 +0200
+- Attachment name: NEW PO-09162024.gz
+
+ASSOCIATED MALWARE:
+
+- SHA256 hash: 0b2bd3030abd0361c0fcbe27efcb9ff9da2320a5025001ea06f4530446d09ead
+- File size: 648,153 bytes
+- File type: gzip compressed data
+- File name:  NEW PO-09162024.gz
+- File description: email attachment
+
+- SHA256 hash: bc5ee788c33389a426c9b5b10405a41a83f6875864bf09b0de6df15ab88cfbda
+- File size: 674,304 bytes
+- File type: PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows
+- File name: NEW PO-09162024.exe
+- File description: Windows EXE for Snake KeyLogger
+
+INFECTION TRAFFIC:
+
+- port 80 - checkip.dyndns[.]org - GET /   <-- IP address check 10 times, not inherently malicious
+- port 443 - reallyfreegeoip[.]org - HTTPS traffic   <-- IP address check, not inherently malicious
+- port 443 - api.telegram[.]org - HTTPS traffic
+- 208.91.199[.]223 port 587 - smtp.inhousepick[.]com - data exfiltration emails from infected Windows host
