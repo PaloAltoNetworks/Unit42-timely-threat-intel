@@ -23,7 +23,7 @@ EXAMPLES OF XLOADER (FORMBOOK) MALWARE USING RDGA DOMAINS IN C2 TRAFFIC:
 - SHA256 hash: 37505f85de087190cb5257ebe6c4e48726a946d23da71264ae5d670050903bb4
   -- Associated RDGA domain: home-care-72875[.]bond
   -- Example of public sandbox analysis: https://www.joesandbox.com/analysis/1514633/0/html#domains
-- f3b25ff7dc9cfcab029413dbaab77efdb5017d72ff5c0cc4d88769de1def78a6
+- SHA256 hash: f3b25ff7dc9cfcab029413dbaab77efdb5017d72ff5c0cc4d88769de1def78a6
   -- Associated RDGA domain: tires-book-robust[.]bond
   -- Example of public sandbox analysis: https://www.joesandbox.com/analysis/1466892/0/html#malware-configuration-pagination
 
@@ -70,8 +70,8 @@ EXAMPLES OF VARIATIONS ON AN RDGA DOMAIN NAME:
 EXAMPLES OF REDIRECTS TO REVOLVER RABBIT DOMAINS:
 
 - [unknown source]
-- https://kg656w.rngrpnt.com/
-- https://www.electric-cars-78398.bond/?backfill=0
+- hxxps://kg656w.rngrpnt[.]com/
+- hxxps://www.electric-cars-78398[.]bond/?backfill=0
   &lrt=1
   &KW1=First+Electric+Car
   &KW2=Cheapest+Electric+Car
@@ -88,8 +88,8 @@ EXAMPLES OF REDIRECTS TO REVOLVER RABBIT DOMAINS:
 - [affiliate marketing links]
 
 - [unknown source]
-- https://4tw9s5.bmdvvpmzk.com/
-- https://www.real-estate-42139.bond/?backfill=0
+- hxxps://4tw9s5.bmdvvpmzk[.]com/
+- hxxps://www.real-estate-42139[.]bond/?backfill=0
   &KW1=Homes+For+Sale
   &KW2=Designer+Homes+For+Sale
   &KW3=Mobile+Homes+For+Sale
