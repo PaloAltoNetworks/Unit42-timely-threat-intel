@@ -47,6 +47,7 @@ EXAMPLES OF FOLLOW-UP FILES:
 - File location: C:\Users\[username]\AppData\Roaming\Minnq Com\RairApp\bifow.rar
 - File type: RAR archive data, v5
 - File description: Password-protected RAR archive that contains malicious file vstdlib_s64.dll, password: 2161183588a
+- NOTE: This file is not malicious without the password
 
 - SHA256 hash: 0a0c09753b5103e86e32c2d8086dd1399f0d97a00e1525ec9c390067cdb242ba
 - File size: 654,696 bytes
