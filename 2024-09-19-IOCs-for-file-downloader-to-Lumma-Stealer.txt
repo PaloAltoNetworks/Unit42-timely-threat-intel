@@ -94,7 +94,7 @@ EXAMPLE OF INITIAL TRAFFIC FROM AN INFECTED WINDOWS HOST:
 - hxxp[:]//nhit66[.]com/test_gate0117.php?a=Gb6xzSbUeHnNVyY&id=0 
 - hxxps[:]//chick-chick666[.]com/s**k/my/d**k/you/little/b****h/239.exe   <-- Returned Lumma Stealer EXE
 - hxxps[:]//access-htaccess[.]com/2708.bs64
-- hxxp[:]//back-kurwa[.]com/gAySB.php?cnv_id=false&value=1  <-- redirecteS to HTTPS
+- hxxp[:]//back-kurwa[.]com/gAySB.php?cnv_id=false&value=1  <-- redirected to HTTPS
 - hxxp[:]//nhit66[.]com/gate2.php?a=[base64 string]
 
 EXAMPLE OF TRAFFIC TO LEGITIMATE DOMAINS SEEN DURING AN INFECTION:
