@@ -1,5 +1,9 @@
 2024-09-19 (THURSDAY): DOWNLOADED ZIP --> MSI --> FILE DOWNLOADER THROUGH DLL SIDE-LOADING --> LUMMA STEALER
 
+AUTHOR:
+
+- Veronika Senderovych
+
 NOTES:
 
 - As early as 2024-09-10, we've noted files using this infection chain for DLL side-loading of a file downloader to retreive Lumma Stealer.
