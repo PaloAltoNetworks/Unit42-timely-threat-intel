@@ -1,0 +1,110 @@
+2024-09-20 (FRIDAY): MASSIVE AMOUNTS OF RDGA DOMAINS FROM REVOLVER RABBIT
+
+AUTHORS:
+
+- Nabeel Mohamed, Shehroze Farooqi, Keerthiraj Nagaraj
+
+NOTES:
+
+- We discovered 1.5M+ RDGA domains (6K+ newly-registered daily) associated with Revolver Rabbit. 
+- Revolver Rabbit predominantly uses .bond TLDs, but we also found use of .com and .click TLDs.
+- We also discovered Revolver Rabbit is monetizing through cash parking.
+- Cash parking is a method of earning money through advertisements from parked pages of registered domains.
+- In this case, we find redirects to these parked pages, which contain affiliate marketing links.
+- More information on RDGAs and Revolver Rabbit is available at: 
+ -- https://blogs.infoblox.com/threat-intelligence/rdgas-the-next-chapter-in-domain-generation-algorithms/
+ -- https://www.bleepingcomputer.com/news/security/revolver-rabbit-gang-registers-500-000-domains-for-malware-campaigns/
+ -- https://www.cybervergent.com/articles/the-revolver-rabbit-saga
+
+EXAMPLES OF XLOADER (FORMBOOK) MALWARE USING RDGA DOMAINS IN C2 TRAFFIC:
+
+(Read: SHA256 hash - associated domain)
+
+- SHA256 hash: 37505f85de087190cb5257ebe6c4e48726a946d23da71264ae5d670050903bb4
+  -- Associated RDGA domain: home-care-72875[.]bond
+  -- Example of public sandbox analysis: https://www.joesandbox.com/analysis/1514633/0/html#domains
+- f3b25ff7dc9cfcab029413dbaab77efdb5017d72ff5c0cc4d88769de1def78a6
+  -- Associated RDGA domain: tires-book-robust[.]bond
+  -- Example of public sandbox analysis: https://www.joesandbox.com/analysis/1466892/0/html#malware-configuration-pagination
+
+EXAMPLE OF AN IP ADDRESS HOSTING PARKED PAGES FOR REVOLVER RABBIT RDGA DOMAINS:
+
+- 13.248.197[.]209
+
+EXAMPLES OF RDGA DOMAINS:
+
+- altenheimplaetzedeu[.]click
+- america-buy-suvs[.]click
+- car-deals-10306[.]bond
+- cruise-jobs-69800[.]bond
+- faucets-36296[.]bond
+- hotel-management-degrees-22938[.]bond
+- loans-credits-87651[.]bond
+- restaurant-jobs-35982[.]bond
+- smart-beds-24582[.]com
+- trucks-34249[.]bond
+- used-cars-33486[.]com
+- welding-machines-89760[.]bond
+- window-repair-90601[.]bond
+- window-replacement-jobs-86369[.]bond
+- wireless-security-23567[.]bond
+- work-in-usa-98040[.]bond
+- wrinkle-treatment-91815[.]bond
+
+EXAMPLES OF VARIATIONS ON AN RDGA DOMAIN NAME:
+
+- all-inclusive-vacations--13359[.]com
+- all-inclusive-vacations--16827[.]com
+- all-inclusive-vacations--17972[.]com
+- all-inclusive-vacations--45584[.]com
+- all-inclusive-vacations--46080[.]com
+- all-inclusive-vacations--48597[.]com
+
+- age-spot-treatment-48291[.]com
+- age-spot-treatment-57024[.]com
+- age-spot-treatment-58134[.]com
+- age-spot-treatment-74517[.]com
+- age-spot-treatment-76122[.]com
+- age-spot-treatment-91763[.]com
+
+EXAMPLES OF REDIRECTS TO REVOLVER RABBIT DOMAINS:
+
+- [unknown source]
+- https://kg656w.rngrpnt.com/
+- https://www.electric-cars-78398.bond/?backfill=0
+  &lrt=1
+  &KW1=First+Electric+Car
+  &KW2=Cheapest+Electric+Car
+  &KW3=Toyota+Electric+Car
+  &KW4=Audi+Electric+Car
+  &KW5=Electric+Cars+For+Sale
+  &KW6=Porsche+Electric+Car
+  &domainname=0&searchbox=0
+  &subid1=f518e295ca1cf005aa4367d094812b196ae287d536ddb354ad35acb4c28ba2d6
+  &track_id=f518e295ca1cf005aa4367d094812b196ae287d536ddb354ad35acb4c28ba2d6
+  &theme=DoriPlus
+  &vertical=Autos+%26+Vehicles
+  &offer=Electric+Cars+PR
+- [affiliate marketing links]
+
+- [unknown source]
+- https://4tw9s5.bmdvvpmzk.com/
+- https://www.real-estate-42139.bond/?backfill=0
+  &KW1=Homes+For+Sale
+  &KW2=Designer+Homes+For+Sale
+  &KW3=Mobile+Homes+For+Sale
+  &KW4=Tiny+Homes+For+Sale
+  &KW5=Estate+Real+Estate
+  &KW6=Real+Estate+Brokers+Near+Me
+  &KW7=Commercial+Real+Estate
+  &KW8=Real+Estate.+Com
+  &KW9=Real+Estate+Aust
+  &KW10=Real+Estate+Perth
+  &domainname=0
+  &searchbox=0
+  &subid1=3886b0c8243c8cfb853dd0fe368b5c1911ffb683664860bdee621048dedcc482
+  &track_id=3886b0c8243c8cfb853dd0fe368b5c1911ffb683664860bdee621048dedcc482
+  &theme=DoriPlus
+  &vertical=Real+Estate
+  &offer=Real+Estate+PR
+- [affiliate marketing links]
