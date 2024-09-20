@@ -4,6 +4,11 @@ AUTHOR:
 
 - Veronika Senderovych
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_lummastealer-dllsideloading-lumma-activity-7242903347068837888-TqUf/
+- https://x.com/Unit42_Intel/status/1837137726409158770
+
 NOTES:
 
 - As early as 2024-09-10, we've noted files using this infection chain for DLL side-loading of a file downloader to retreive Lumma Stealer.
