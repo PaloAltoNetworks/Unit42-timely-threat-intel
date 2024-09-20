@@ -1,0 +1,115 @@
+2024-09-19 (THURSDAY): DOWNLOADED ZIP --> MSI --> FILE DOWNLOADER THROUGH DLL SIDE-LOADING --> LUMMA STEALER
+
+NOTES:
+
+- As early as 2024-09-10, we've noted files using this infection chain for DLL side-loading of a file downloader to retreive Lumma Stealer.
+- The initial zip archives appear to have been downloaded, possibly through malvertisements or popup windows during web browsing.
+- The zip archives include MSI files that install and run the file downloader.
+- The MSI file drops a legitimate EXE that side-loads a malicious DLL for the file downloader.
+- The file downloader retreives and runs an EXE for Lumma Stealer.
+- Post infection traffic indicates the file downloader also retrieves and runs an additional info stealer that uses gzipdot[.]com as a C2 domain.
+- Could not find any malware saved to disk for the additional info stealer.
+
+10 RECENT EXAMPLES OF ZIP ARCHIVES:
+
+(Read: Date_first_seen  SHA256_hash  size  name)
+
+2024-09-19  801f0a8bf3c692688c80487875f5990ba08a9d3bb8f596396408e1e9a15a98c2  53,769,390 bytes  v6.25.3_installer_x64_.zip
+2024-09-19  a7b775935f941a9ee9c2d5fb7ed024db095595f6e3df12eac5d54c6d78be0520  53,768,514 bytes  v6.25.2_installer_x64_.zip
+2024-09-19  e6f86e7df02ea6a76e55d0fd97e6c98d5456e9d6566cd529fd817277212bd444  53,769,102 bytes  v6.25.1_installer_x64_.zip
+2024-09-19  c114d5c1b43adbe83c9b067c2635d00c5f3e6b57324cb3acb8d13ffa7cd26097  53,767,325 bytes  v6.25.0_installer_x64_.zip
+2024-09-19  afe1e265c3a59e33785cc87c706febb6a82d1fe794fc011619f372fc4c709c66  53,769,221 bytes  v6.24.9_installer_x64_.zip
+2024-09-18  4918b38ca22ae08bf19406d0dd9c4fbff62423b2a43555262c506826478f2bfb  53,766,644 bytes  v6.24.8_installer_x64_.zip
+2024-09-18  17da8c48ad17d5802a5658558e0a71a5cf468e2de346ac31e5e70ff87cfb5f9d  53,548,682 bytes  v6.24.6_installer_x64_.zip
+2024-09-16  c97b417648af57728ee9b2b6cee70cfeb6482bb6d8778908ab01cdb1e17e2480  53,880,312 bytes  v6.22.7_installer_x64_.zip
+2024-09-16  517a7a708e3227e565602875aa8e6ec28009a2d74f9ab5fd1431f91ee696e9e2  53,881,270 bytes  v6.22.6_installer_x64_.zip
+2024-09-13  d8f2f667708a14734a20d7731ab659fa1ab23ddd25ee96ba4ca33fedf4b7c613  54,897,971 bytes  v6.20.0_installer_x64_.zip
+
+EXTRACTED MSI FILES FROM THE ABOVE 10 ZIP ARCHIVES:
+
+(Read: Time_stamp  SHA256_hash  size  name)
+
+2024-09-19 09:00  0905db293dbc6be00cbdcfad4888d9702f2563a11b339d99656f6b8898a8ac10  57,161,728 bytes  app__v6.25.3_.msi
+2024-09-18 13:04  3bfc3e3cc9432f5766cedbc78bcbf80ffb52992c7685536c31396e60cd4b7205  57,161,216 bytes  app__v6.25.2_.msi
+2024-09-18 13:03  c2a5cf50e34cb713fe7c2e14b163352d361ce6a461feb74fabd4579b8b15c437  57,161,728 bytes  app__v6.25.1_.msi
+2024-09-18 13:03  4561722739d54e28db961095f302b7beb77804c15da10b85ac1f0218b85429cd  57,159,680 bytes  app__v6.25.0_.msi
+2024-09-18 13:02  e359742abac0c577e6cee555084f407f887d2443e4c9013802190b30faaa3081  57,161,728 bytes  app__v6.24.9_.msi
+2024-09-18 13:01  121221a1966a20b257e2365387840578ea04376eea406b21671ce9da3b7fd42a  57,159,168 bytes  app__v6.24.8_.msi
+2024-09-15 09:29  a4ff53f432c41f996a07243c54e22e9556a1ebcb78f5e56c177ebc8f1f577b88  56,519,168 bytes  app__v6.24.6_.msi
+2024-09-15 09:30  75622b92e3b4d0169a40dd8a5a9fea9ff6a6da8ca5f469d6bd1cd9c9d6d478e4  56,518,144 bytes  app__v6.22.7_.msi
+2024-09-15 09:29  a4ff53f432c41f996a07243c54e22e9556a1ebcb78f5e56c177ebc8f1f577b88  56,519,168 bytes  app__v6.22.6_.msi
+2024-09-13 04:48  082a0596b474806cc0ea58c4f7067a4f1166dbb4aa1800bc58af6f99f1209a4a  56,314,368 bytes  app__v6.20.0_.msi
+
+EXAMPLES OF FOLLOW-UP FILES:
+
+- SHA256 hash: aa6c36c7305a3f982c67bde1f64804ca1bf2aa20083f6d824044f45d46b8f4d7
+- File size: 315,998 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Minnq Com\RairApp\bifow.rar
+- File type: RAR archive data, v5
+- File description: Password-protected RAR archive that contains malicious file vstdlib_s64.dll, password: 2161183588a
+
+- SHA256 hash: 0a0c09753b5103e86e32c2d8086dd1399f0d97a00e1525ec9c390067cdb242ba
+- File size: 654,696 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Minnq Com\RairApp\steamerrorreporter64.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- File description: EXE for Steam Error Reporter, a legitimate file used to side-load DLL file named vstdlib_s64.dll
+- NOTE: This is not a malicious file
+
+- SHA256 hash: 2de30f3d500adcd4335c27dcc96006ac36c860e7591914e13fac061bd5841881
+- File size: 839,168 bytes
+- File location: C:\Users\[username]\AppData\Roaming\Minnq Com\RairApp\vstdlib_s64.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: Malicious DLL used as a file downloader for second stage malware
+
+- SHA256 hash: dd6f96d0d6f6ed2b83df7552f77523688f2a2272fce63564bc9ffdcb3157b70e
+- File size: 8,102,400 bytes
+- File location: hxxps[:]//chick-chick666[.]com/s**k/my/d**k/you/little/b****h/239.exe   <-- partially redacted due to profanity
+- Saved file location: C:\Users\[username]\AppData\Local\Temp\[random alphanumeric string]\svchost.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Second stage malware, an EXE for Lumma Stealer
+
+LUMMA STEALER C2 HTTPS TRAFFIC:
+
+- genedjestytw[.]shop
+
+LUMMA STEALER C2 DOMAINS THAT DID NOT RESOLVE:
+
+- eemmbryequo[.]shop
+- keennylrwmqlw[.]shop
+- licenseodqwmqn[.]shop
+- relaxatinownio[.]shop
+- reggwardssdqw[.]shop
+- tendencctywop[.]shop
+- tesecuuweqo[.]shop
+- tryyudjasudqo[.]shop
+
+EXAMPLE OF INITIAL TRAFFIC FROM AN INFECTED WINDOWS HOST:
+
+- hxxps[:]//software-license1[.]com/licenseUser.php   <-- returned password for bifow.rar
+- hxxp[:]//nhit66[.]com/test_gate0117.php?a=Gb6xzSbUeHnNVyY&id=0 
+- hxxps[:]//chick-chick666[.]com/s**k/my/d**k/you/little/b****h/239.exe   <-- Returned Lumma Stealer EXE
+- hxxps[:]//access-htaccess[.]com/2708.bs64
+- hxxp[:]//back-kurwa[.]com/gAySB.php?cnv_id=false&value=1  <-- redirecteS to HTTPS
+- hxxp[:]//nhit66[.]com/gate2.php?a=[base64 string]
+
+EXAMPLE OF TRAFFIC TO LEGITIMATE DOMAINS SEEN DURING AN INFECTION:
+
+- hxxps[:]//jspm[.]dev/uuid
+- hxxps[:]//jspm[.]dev/npm:uuid@9.0.1
+- hxxps[:]//blockstream[.]info/api/address/bc1q4fkjqusxsgqzylcagra800cxljal82k6y3ejay/txs
+- hxxps[:]//btcscan[.]org/api/address/bc1q4fkjqusxsgqzylcagra800cxljal82k6y3ejay/txs
+- hxxps[:]//exp.btcme[.]com/api/address/bc1q4fkjqusxsgqzylcagra800cxljal82k6y3ejay?limit=2
+- hxxps[:]//api.blockcypher[.]com/v1/btc/main/addrs/1bc1q4fkjqusxsgqzylcagra800cxljal82k6y3ejay/full?limit=1
+- hxxps[:]//bitcoinexplorer[.]org/api/address/bc1q4fkjqusxsgqzylcagra800cxljal82k6y3ejay?limit=1
+- hxxps[:]//bitcoinexplorer[.]org/api/tx/615b6bb11db4d8eddf21f4a6b8ef20215a6bd937ff179236cc5ab87a1a99eb15
+
+TRAFFIC SEEN DURING AN INFECTION THAT INDICATES ANOTHER INFORMATION STEALER:
+
+- hxxps[:]//gzipdot[.]com/api/machine/sign?d=gzipdot.com
+- hxxps[:]//gzipdot[.]com/api/machine/init
+- hxxps[:]//gzipdot[.]com/api/machine/injections?uuid=71e74d0b-4613-45a3-b6ac-910e6b9783a0
+- hxxps[:]//gzipdot[.]com/api/machine/commands?uuid=71e74d0b-4613-45a3-b6ac-910e6b9783a0
+- hxxps[:]//gzipdot[.]com/api/machine/settings
+- hxxps[:]//gzipdot[.]com/api/machine/clipper
+- hxxps[:]//gzipdot[.]com/api/machine/screenshot-rules
+- hxxps[:]//gzipdot[.]com/api/machine/set-command
