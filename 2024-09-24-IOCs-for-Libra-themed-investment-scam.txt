@@ -1,0 +1,79 @@
+2024-09-24 (TUESDAY): LIBRA CRYPTOCURRENCY-THEMED INVESTMENT SCAM
+
+AUTHORS:
+
+- Lucas Hu, Nabeel Mohamed, Alex Starov
+
+NOTES:
+
+- Criminals are still using Facebook's Libra cryptocurrency as a theme to promote fake investment scams.
+- Subsequently known as Diem, this Libra cryptocurrency was aborted before its planned launch in 2020.
+- This campaign uses previous footage of Mark Zuckerburg testifying about Libra cryptocurrency in the US Congress.
+- This campaign shows that attackers don’t need generative AI or deepfake content to use a celebrity’s likeness in scam campaigns.
+
+FOR MORE INFORMATION ON PREVIOUSLY-REPORTED SCAMS USING CELEBRITY LIKENESSES:
+
+Unit 42 blog post (August 2024): The Emerging Dynamics of Deepfake Scam Campaigns on the Web
+- https://unit42.paloaltonetworks.com/dynamics-of-deepfake-scams/
+
+Unit 42 timely threat intelligence (TTI) post (May 2024): 
+- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-05-21-IOCs-for-Deepfake-scam-campaigns.txt
+
+Unit 42 TTI post (June 2024): 
+- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-06-27-deepfake-scams.txt
+
+EXAMPLE OF URL HOSTING A VIDEO USED IN THIS SCAM:
+
+- hxxps[:]//cdn.jwplayer[.]com/videos/q9PHcXlx-isnoYrMQ.mp4
+
+DOMAINS HOSTING SCAM WEB PAGES:
+
+- daro.chimmato[.]top
+- jok.chimmato[.]top
+- yos.chimmato[.]top
+- pwalib.colgoinf[.]online
+- cosmicawareness[.]website
+- crisisecho[.]click
+- 1.czopenprof[.]xyz
+- mei.dr-ef[.]xyz
+- mer.dr-ef[.]xyz
+- met.dr-ef[.]xyz
+- mey.dr-ef[.]xyz
+- kiu.gaszosakaii[.]top
+- meu.goelin[.]top
+- mew.goelin[.]top
+- 1.headprroof[.]com
+- vvw.headprroof[.]com
+- company.lifeet[.]live
+- fadgy.lifeet[.]live
+- fads.lifeet[.]live
+- mondw.lifeet[.]live
+- newdas.lifeet[.]live
+- mertton[.]xyz
+- abota.mertton[.]xyz
+- bota.mertton[.]xyz
+- boti.mertton[.]xyz
+- lidiks.mertton[.]xyz
+- lidzav.mertton[.]xyz
+- melion.mertton[.]xyz
+- payblog.mertton[.]xyz
+- kcu.monaccode[.]live
+- vfc.monaccode[.]live
+- cepsreaction11.newstriy[.]top
+- cepsreactionskab.newstriy[.]top
+- storsokr.newstriy[.]top
+- amid.otkroyempravdu[.]site
+- blago.otkroyempravdu[.]site
+- blon.otkroyempravdu[.]site
+- blondi.otkroyempravdu[.]site
+- gain.otkroyempravdu[.]site
+- people.otkroyempravdu[.]site
+- well.otkroyempravdu[.]site
+- libra.peoplepro[.]xyz
+- businich.sclopi[.]com
+- bol.sitiizens-program[.]live
+- call.sitiizens-program[.]live
+- kow.sitiizens-program[.]live
+- wahl.sitiizens-program[.]live
+- wwv.stalhred[.]com
+- topsmarteuruich[.]cfg
