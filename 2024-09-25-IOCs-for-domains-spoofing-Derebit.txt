@@ -10,7 +10,7 @@ NOTES:
 - We have been monitoring scam campaigns impersonating various cryptocurrency trading platforms.
 - These campaigns use domain names that resemble the targeted brand.
 - We pivot on the domains we discover and hunt for similar malicious domains using Graph AI.
-  -- More info on Graph AI at https://www.microsoft.com/en-us/research/project/graph-ai-for-organizational-analytics/
+  -- More info on the Graph AI at https://distill.pub/2021/gnn-intro/
 - The below domains all impersonate deribit[.]com and share similar hosting infrastructure. 
 - The malicious domains' hosting infrastructure is distinctly different from the legitimate Deribit infrastructure. 
 - The malicious domains use both Cloudflare and non-Cloudflare IP addresses.
