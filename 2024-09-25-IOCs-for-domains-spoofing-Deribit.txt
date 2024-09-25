@@ -4,7 +4,6 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Nabeel Mohamed, Alex Starov
 
-
 NOTES:
 
 - We have been monitoring scam campaigns impersonating various cryptocurrency trading platforms.
