@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Nabeel Mohamed, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_crypto-scams-phishing-activity-7244800101808799744-v1oL/
+- https://x.com/Unit42_Intel/status/1839034476338286635
+
 NOTES:
 
 - We have been monitoring scam campaigns impersonating various cryptocurrency trading platforms.
