@@ -1,0 +1,38 @@
+2024-09-25 (WEDNESDAY): DOMAINS SPOOFING DERIBIT CRYPTOCURRENCY TRADING PLATFORM
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Nabeel Mohamed, Alex Starov
+
+
+NOTES:
+
+- We have been monitoring scam campaigns impersonating various cryptocurrency trading platforms.
+- These campaigns use domain names that resemble the targeted brand.
+- We pivot on the domains we discover and hunt for similar malicious domains using Graph AI.
+  -- More info on Graph AI at https://www.microsoft.com/en-us/research/project/graph-ai-for-organizational-analytics/
+- The below domains all impersonate deribit[.]com and share similar hosting infrastructure. 
+- The malicious domains' hosting infrastructure is distinctly different from the legitimate Deribit infrastructure. 
+- The malicious domains use both Cloudflare and non-Cloudflare IP addresses.
+- These malicious domains often move from one hosting location to another.
+- This resulted in 50+ hosting IP addresses in the last 6 months and more than 9000 pDNS hits. 
+
+- The legitimate deribit[.]com domain was originally registered in 2014.
+- The malicious domains we discovered impersonating Deribit were first registered in 2023 and 2024.
+
+DOMAINS NOTED IN RECENT SCAMS IMPERSONATING DERIBIT:
+
+- deribitglobala[.]com          First registered: 2024-03-14
+- deribitglobalc[.]com          First registered: 2024-03-14
+- deribitglobali[.]com          First registered: 2024-04-23
+- deribitglobalm[.]com          First registered: 2024-06-08
+- deribitglobaln[.]com          First registered: 2024-06-08
+- deribitglobalo[.]com          First registered: 2024-04-23
+- deribitglobalofficial[.]com   First registered: 2024-04-23
+- deribitglobals[.]com          First registered: 2024-03-14
+- deribitglobalu[.]com          First registered: 2024-04-23
+- deribitprob[.]com             First registered: 2023-03-21
+- deribitproe[.]com             First registered: 2023-03-21
+- deribitprop[.]com             First registered: 2023-03-21
+- deribitpror[.]com             First registered: 2023-03-21
+- deribitweb3[.]org             First registered: 2024-09-06
