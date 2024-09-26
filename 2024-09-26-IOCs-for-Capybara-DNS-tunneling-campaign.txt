@@ -1,0 +1,96 @@
+2024-09-26 (THURSDAY): CAPYBARA DNS TUNNELING CAMPAIGN
+
+AUTHOR:
+
+- Shu Wang
+
+NOTES:
+
+- We have discovered a DNS tunneling campaign we call Capybara that uses various methods of encoding or obfuscating data within the DNS tunnel.
+
+- Data obfuscation methods include customized Base32 encoding. 
+
+- We named this campaign Capybara due to the string 'capybara' in several of the root domain names, like chkhj-capybara[.]biz.
+
+- All Capybara domains have an A record of 104.236.196[.]131 and an NS record of 167.71.250[.]194. 
+
+- The Capybara domains are sometimes named in a way that could impersonate legitimate brands, for example: www-microsoft-ddfcs[.]com.
+
+- DNS tunneling can start as early as the second day after a Capybara domain is registered.
+
+- This campaign started as early as June 2024, and telemetry revealed a peak of 22,685,570 FQDN detections during a single day in August 2024.
+
+- We have not yet determined the purpose of this campaign.
+
+
+69 EXAMPLES OF DOMAINS USED IN THE CAPYBARA DNS TUNNELING CAMPAIGN:
+
+- 016656477884440675138143481364679730[.]com
+- 330808364653252368286123[.]com
+- 3ef3db1fdf4d546beb2632c9[.]com
+- 499817362469650332850899[.]com
+- 685384085526912082544592884350276026[.]com
+- 70f1a8e6a47c9539c3ac51593824e17f5cc0[.]com
+- 7aacd04a13abfd3bf4a5b1cd[.]com
+- 84e28d1c80fd[.]com
+- 9ff2c02507bd154f646332f756c65838829e[.]com
+- a922e84ad8d9[.]com
+- admin-bqfcb[.]com
+- admin-fflpz[.]com
+- baseballstarhotclarinetchefsaxophone[.]com
+- brown-bqfcb[.]com
+- brown-fflpz[.]com
+- chkhj-capybara[.]biz
+- chkhj-capybara[.]co
+- chkhj-capybara[.]com
+- chkhj-capybara[.]info
+- chkhj-capybara[.]me
+- chkhj-capybara[.]mobi
+- chkhj-capybara[.]org
+- chkhj-capybara[.]ws
+- dpcnr-capybara[.]biz
+- dpcnr-capybara[.]co
+- dpcnr-capybara[.]com
+- dpcnr-capybara[.]info
+- dpcnr-capybara[.]me
+- dpcnr-capybara[.]mobi
+- dpcnr-capybara[.]org
+- dpcnr-capybara[.]ws
+- dryovaltenniscloudyfoggy[.]com
+- electriciansurfingguitar[.]com
+- files-bqfcb[.]com
+- files-fflpz[.]com
+- green-bqfcb[.]com
+- green-fflpz[.]com
+- hcvvszvnlvrpdvjxuinischbqkitvytmdgwr[.]com
+- jpqndoipuibezzfywudcwlrs[.]com
+- login-bqfcb[.]com
+- login-fflpz[.]com
+- mysql-bqfcb[.]com
+- mysql-fflpz[.]com
+- olomwedftisnhxostmmpzxxzbzjaajfaubne[.]com
+- porcupineplumbercellomuskratbaseball[.]com
+- store-bqfcb[.]com
+- store-fflpz[.]com
+- taco-bout-dns[.]com
+- tuyuvqgacoubtnamgzeyufob[.]com
+- users-bqfcb[.]com
+- users-fflpz[.]com
+- www-amazon-nmmlj[.]com
+- www-amazon-pflvc[.]com
+- www-fedex-nmmlj[.]com
+- www-fedex-pflvc[.]com
+- www-homedepot-nmmlj[.]com
+- www-homedepot-pflvc[.]com
+- www-microsoft-ddfcs[.]com
+- www-microsoft-nmmlj[.]com
+- www-microsoft-pflvc[.]com
+- www-microsoft-rbscq[.]com
+- www-network-nmmlj[.]com
+- www-network-pflvc[.]com
+- www-online-nmmlj[.]com
+- www-online-pflvc[.]com
+- www-paypal-nmmlj[.]com
+- www-paypal-pflvc[.]com
+- www-xfinity-nmmlj[.]com
+- www-xfinity-pflvc[.]com
