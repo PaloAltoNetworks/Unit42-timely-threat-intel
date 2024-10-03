@@ -4,6 +4,11 @@ AUTHOR:
 
 - Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_smartloader-lummastealer-timelythreatintel-activity-7247636038628614144-N3jQ/
+- https://x.com/Unit42_Intel/status/1841870419504111758
+
 NOTES:
 
 - We've tracked an active campaign using SmartLoader to push Lumma Stealer as far back as 2024-07-31.
