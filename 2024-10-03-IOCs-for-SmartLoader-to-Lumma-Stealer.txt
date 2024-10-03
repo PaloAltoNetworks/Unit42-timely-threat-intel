@@ -1,0 +1,120 @@
+2024-10-02 (WEDNESDAY): SMARTLOADER TO LUMMA STEALER
+
+AUTHOR:
+
+- Bradley Duncan
+
+NOTES:
+
+- We've tracked an active campaign using SmartLoader to push Lumma Stealer as far back as 2024-07-31.
+- This infection chain primarily involves a private account named "user-attachments" on Github, although we also found other accounts.
+- URLs linked to these Github accounts host the initial zip archives for this campaign.
+- These zip archives all have at least the following 4 files: compiler.exe, conf.txt, Launcher.bat and lua51.dll.
+- Lanucher.bat kicks off the infection by running the following command: start compiler.exe conf.txt
+- All 4 files have to be present in the same location for the infection to work.
+- Although the names are consistent, the file hashes and sizes for these 4 files are different in each initial zip archive.
+
+INFECTION CHAIN
+
+- downloaded zip archive --> run Launch.bat in zip archive --> SmartLoader --> Lumma Stealer
+
+GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM "USER-ATTACHMENTS" ACCOUNT:
+
+(Date first submitted to VirusTotal: URL hosting malicious zip archive)
+
+- 2024-07-31: hxxps[:]//github[.]com/user-attachments/files/16419475/HWID-Spoofer.zip
+- 2024-08-07: hxxps[:]//github[.]com/user-attachments/files/16461750/Lunar.zip
+- 2024-08-12: hxxps[:]//github[.]com/user-attachments/files/16439914/Solara.zip
+- 2024-08-15: hxxps[:]//github[.]com/user-attachments/files/16624706/Solara.zip
+- 2024-08-17: hxxps[:]//github[.]com/user-attachments/files/16378201/Solara.zip
+- 2024-08-17: hxxps[:]//github[.]com/user-attachments/files/16604911/Celery.zip
+- 2024-08-24: hxxps[:]//github[.]com/user-attachments/files/16624642/Lunar.zip
+- 2024-08-30: hxxps[:]//github[.]com/user-attachments/files/16612167/Cheat.zip
+- 2024-08-31: hxxps[:]//github[.]com/user-attachments/files/16737767/Fluxus.zip
+- 2024-09-06: hxxps[:]//github[.]com/user-attachments/files/16815855/Sentinel.zip
+- 2024-09-08: hxxps[:]//github[.]com/user-attachments/files/16737776/Roexec.zip
+- 2024-09-08: hxxps[:]//github[.]com/user-attachments/files/16830252/Client.zip
+- 2024-09-17: hxxps[:]//github[.]com/user-attachments/files/16737815/Santoware.zip
+- 2024-09-18: hxxps[:]//github[.]com/user-attachments/files/16913125/Software.zip
+- 2024-09-22: hxxps[:]//github[.]com/user-attachments/files/17057089/SolaraV3.zip
+- 2024-09-23: hxxps[:]//github[.]com/user-attachments/files/17063327/Zorara.zip
+- 2024-09-27: hxxps[:]//github[.]com/user-attachments/files/16928413/Cheat.zip
+- 2024-09-27: hxxps[:]//github[.]com/user-attachments/files/17130043/Software.zip
+- 2024-09-28: hxxps[:]//github[.]com/user-attachments/files/16737801/Wave.zip
+- 2024-09-29: hxxps[:]//github[.]com/user-attachments/files/16824318/Lunar.zip
+- 2024-09-29: hxxps[:]//github[.]com/user-attachments/files/16828195/Cheat.zip
+- 2024-10-01: hxxps[:]//github[.]com/user-attachments/files/16737786/Incognito.zip
+- 2024-10-02: hxxps[:]//github[.]com/user-attachments/files/16737756/Nezur.zip
+
+GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM OTHER ACCOUNTS:
+
+- 2024-09-03: hxxps[:]//github[.]com/nhioufgaewnofidasjg/Minecraft-Entropy-Client/releases/download/v1.0/Client.zip
+- 2024-09-06: hxxps[:]//github[.]com/azpower90/Lunar-Executor/releases/download/v1.0/Executor.zip
+- 2024-09-17: hxxps[:]//github[.]com/bosxz23/Minecraft-Rise-V6-Client/releases/download/v1.0/Client.zip
+- 2024-09-20: hxxps[:]//github[.]com/skydive1221/Wave-Executor/releases/download/v1.0/Wave.zip
+
+EXAMPLE OF INITIAL ZIP FILE:
+
+- SHA256 hash: cbd9226c470efd29143f357e9ee0f6b2d20456041a0b4cb74912ccce9e37f97d
+- File size: 401,803 bytes
+- File name: Nezur.zip
+- File location: hxxps[:]//github[.]com/user-attachments/files/16737756/Nezur.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Malicious zip archive containing files for SmartLoader
+
+CONTENTS OF THE ABOVE ZIP:
+
+- File information (Read: SHA256 hash - file size - file name)
+  -- cf31e682396556b5cfc16e660417b9c52da38e543229ccd0430c59c6a6227b79 - 1,571 bytes - Launcher.bat
+  -- f9127bb4981ffef3181cd574220943ab67ae8e105b2f9384a07d097fd0799b99 - 208,384 bytes - compiler.exe
+  -- 89f3810779ff691c1e8a1c4293acd4ee7a1b74a202785ecf363ca275dee942b6 - 168,118 bytes - conf.txt
+  -- 473276ea7cd546b7d10dadbfe6d071710695e7c12d3d43d4c97e91999674b896 - 398,848 bytes - lua51.dll
+- Note: File sizes and hashes are differrent for each zip archive.
+- Run method: Launcher.bat, which executes the following: start compiler.exe conf.txt
+
+SMARTLOADER TRAFFIC:
+
+- hxxp[:]//ip-api[.]com/json/   <-- IP address check, not inherently malicious
+- hxxp[:]//212.193.4[.]66/api/OWYsN2YsN2YsYTAsOWUsODYsOGMsOTYsNjQsN2Ms   <-- HTTP PUT request sent screenshot of desktop & other info
+- hxxp[:]//github[.]com/user-attachments/files/17160709/error.json   <-- returned file to create Lumma Stealer EXE
+- hxxp[:]//212.193.4[.]66/task/OWYsN2YsN2YsYTAsOWUsODYsOGMsOTYsNjQsN2Ms   <-- HTTP PUT request sent other data
+
+SMARTLOADER PERSISTENT ON THE INFECTED WINDOWS HOST:
+
+- File information (Read: SHA256 hash - file size - file name)
+  -- f9127bb4981ffef3181cd574220943ab67ae8e105b2f9384a07d097fd0799b99 - 208,384 bytes - ODA1.exe
+  -- 89f3810779ff691c1e8a1c4293acd4ee7a1b74a202785ecf363ca275dee942b6 - 168,118 bytes - conf.txt
+  -- 473276ea7cd546b7d10dadbfe6d071710695e7c12d3d43d4c97e91999674b896 - 398,848 bytes - lua51.dll
+- Located under: C:\Users\[username]\AppData\Local\OWYsN2YsN2YsYTAsOWUsODYsOGMsOTYsNjQsN2Ms\
+- Run method: ODA1.exe conf.txt
+- Persistence method: Scheduled task named BrowserMaintenanceTask_ODA1
+- Note: File sizes and hashes can be differrent for each infection.
+
+EXAMPLES OF LUMMA STEALER USING INFLATED EXE FILES:
+
+- SHA256 hash: cec5d299d148ffffe1d02d6a4fc1a2bf5e1ec19a54988b8e1c68334f428b508d
+- File size: 789,898,193 bytes
+- File location: C:\Users\[username]\AppData\Roaming\7zip\bin\x64\win.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Inflated Windows EXE for Lumma Stealer
+- Persistence method: Scheduled task named d2luODA1
+
+- SHA256 hash: 5ad301ad1a6b9cf6c35edf6840884473e7f919ba251df18490de914022331eb8
+- File size: 976,635,604 bytes
+- File location: C:\Users\[username]\Music\MoonpayUpdater\SentinelOculus.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Inflated Windows EXE for Lumma Stealer
+- Persistence method: Windows registry update under HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+
+LUMMA STEALER C2 DOMAINS EXTRACTED FROM THE MALWARE CONFIGURATION:
+
+- drawzhotdog[.]shop
+- fragnantbui[.]shop
+- ghostreedmnu[.]shop
+- gravvitywio[.]store
+- gutterydhowi[.]shop
+- highawaretemptersudwu[.]xyz  <-- C2 traffic during infection run
+- offensivedzvju[.]shop
+- reinforcenh[.]shop
+- stogeneratmns[.]shop
+- vozmeatillu[.]shop
