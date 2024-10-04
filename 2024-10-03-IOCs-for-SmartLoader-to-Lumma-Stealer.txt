@@ -12,8 +12,9 @@ REFERENCES:
 NOTES:
 
 - We've tracked an active campaign using SmartLoader to push Lumma Stealer as far back as 2024-07-31.
-- This infection chain primarily involves a private account named "user-attachments" on Github, although we also found other accounts.
-- URLs linked to these Github accounts host the initial zip archives for this campaign.
+- Most examples of this infection chain appear to be abusing Github comments as described here:
+  https://www.bleepingcomputer.com/news/security/github-comments-abused-to-push-malware-via-microsoft-repo-urls/
+- These Github URLs host the initial zip archives for this campaign.
 - These zip archives all have at least the following 4 files: compiler.exe, conf.txt, Launcher.bat and lua51.dll.
 - Lanucher.bat kicks off the infection by running the following command: start compiler.exe conf.txt
 - All 4 files have to be present in the same location for the infection to work.
@@ -23,7 +24,7 @@ INFECTION CHAIN
 
 - downloaded zip archive --> run Launch.bat in zip archive --> SmartLoader --> Lumma Stealer
 
-GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM "USER-ATTACHMENTS" ACCOUNT:
+GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM GITHUB COMMENT ABUSE METHOD INVOIVING "USER-ATTACHMENTS":
 
 (Date first submitted to VirusTotal: URL hosting malicious zip archive)
 
