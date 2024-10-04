@@ -24,7 +24,7 @@ INFECTION CHAIN
 
 - downloaded zip archive --> run Launch.bat in zip archive --> SmartLoader --> Lumma Stealer
 
-GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM GITHUB COMMENT ABUSE METHOD INVOIVING "USER-ATTACHMENTS":
+GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM GITHUB COMMENT ABUSE METHOD INVOLVING "USER-ATTACHMENTS":
 
 (Date first submitted to VirusTotal: URL hosting malicious zip archive)
 
@@ -52,7 +52,7 @@ GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM GITHUB COMMENT ABUSE METHOD INVOIVIN
 - 2024-10-01: hxxps[:]//github[.]com/user-attachments/files/16737786/Incognito.zip
 - 2024-10-02: hxxps[:]//github[.]com/user-attachments/files/16737756/Nezur.zip
 
-GITHUB DOWNLOADS FOR INITIAL ZIP FILES FROM OTHER ACCOUNTS:
+GITHUB DOWNLOADS FOR INITIAL ZIP FILES INVOLVING OTHER ACCOUNTS:
 
 - 2024-09-03: hxxps[:]//github[.]com/nhioufgaewnofidasjg/Minecraft-Entropy-Client/releases/download/v1.0/Client.zip
 - 2024-09-06: hxxps[:]//github[.]com/azpower90/Lunar-Executor/releases/download/v1.0/Executor.zip
