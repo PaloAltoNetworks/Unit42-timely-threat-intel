@@ -1,0 +1,22 @@
+2024-10-10 (THURSDAY): CRYPTO INVESTMENT SCAMS EXPLOITING INTEREST IN CYBERCAB
+
+AUTHOR:
+
+- Shu Wang
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_scams-cryptoscam-activity-7250218040095629313-Y9LU/
+- https://x.com/Unit42_Intel/status/1844452406890828114
+
+NOTES:
+
+- In recent weeks, we've seen multiple newly-registered domains with the string "cybercab" or "robotaxi" in the domain names.
+- These domains are hosting sites for cryptocurrency investment scams.
+- These scams are likely exploiting interest in the release of Tesla’s robotaxi Cybercab.
+
+LIST OF DOMAINS USED FOR THE SCAM:
+
+- cybercab[.]icu
+- robotaxi2024[.]xyz
+- robotaxioneth[.]com
