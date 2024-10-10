@@ -1,0 +1,93 @@
+2024-10-09 (WEDNESDAY): TYPOSQUATTED DOMAIN PUSHES LUMMA STEALER MALWARE
+
+AUTHORS:
+
+- Jonny Westfall, Ilia Kulmin
+
+REFERENCES:
+
+- 
+- 
+
+NOTES:
+
+- In recent months, we've noted numerous instances of domains impersonating legitimate vendors pushing Lumma Stealer malware.
+- While these typosquatted domains have hosted a variety of malware, we've noted a dramatic increasae of Lumma Stealer using this distribution method since July 2024.
+- We often malicious ads on popular search platforms directing victims to these typosquatted domains.
+- As recently as 2024-10-08, we found one such examaple of a domain spoofing the postman app at posrman[.]com.
+- This site provided an 8 MB to 20 MB Windows executable for a malware installer that retrieved and ran Lumma Stealer malware.
+- The malware installer is compiled with NodeJS and it retrieves Lumma Stealer in a zip archive from 144.126.129[.]4.
+- This is somewhat similar to our report about the fake Clockify site from yesterday:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-11-08-IOCs-for-malware-from-fake-Clockify-site.txt
+- However, the domains, URLs, and file hashes are different for today's Lumma Stealer.
+
+INFECTION CHAIN:
+
+- malicious ad --> fake Postman site --> downloaded malware --> retrieves and runs Lumma Stealer
+
+SIX EXAMPLES OF URLS TO THE FAKE POSTMAN SITE:
+
+- hxxps[:]//posrman[.]com/?gclid=Cj0KCQjwjY64BhCaARIsAIfc7Yb378zuzIw0om9lIsoPvo1izUwIyDY7F6CCEXg-73UnKlYJnY_2yQ0aAojIEALw_wcB
+- hxxps[:]//posrman[.]com/?gclid=Cj0KCQjwjY64BhCaARIsAIfc7YYM9HudUOaFvOvsEikbSQoIhDZ4QoOTthqp7bT-xJuTC0d5UzmPO-caAnROEALw_wcB
+- hxxps[:]//posrman[.]com/?gclid=Cj0KCQjwjY64BhCaARIsAIfc7YYHb5l1rwokh1MvQTIbyxjL73dFZhEGgYVzpz4aBQY0QOcn0Ln9yQEaAnsyEALw_wcB
+- hxxps[:]//posrman[.]com/?gclid=Cj0KCQjwjY64BhCaARIsAIfc7YYMpcj1E2CpeseuEJ57DS5ATVNaJwKyMP5CaSc_fLfmN57V8o1igQwaApIOEALw_wcB
+- hxxps[:]//posrman[.]com/?gclid=Cj0KCQjwjY64BhCaARIsAIfc7YaY4vdUcmonvvOBUBAKZEfm7GWbqDa4N6UsEtoXs_RQMSrLlEfy2uQaAtSBEALw_wcB
+- hxxps[:]//posrman[.]com/?gclid=CjwKCAjwx4O4BhAnEiwA42SbVG5sSqHJ8fyN3-EJZmg3qTE-CnEaoiy41Zso0fK4PMnbR32MIIB4EBoCTskQAvD_BwE
+
+EXAMPLE OF URL CHAIN FROM FAKE POSTMAN SITE LEADING TO DOWNLOAD OF MALICIOUS INSTALLER FOR LUMMA STEALER:
+
+- hxxps[:]//apkportion[.]com/B783Vg7q?partner=qTEoBuZDERIK7iu
+- hxxps[:]//lulu.mandarin-ca[.]com/load_module?subid=12vissq3bll
+- hxxps[:]//lulu.mandarin-ca[.]com/botid.js
+- hxxps[:]//cdn.jsdelivr[.]net/npm/ua-parser-js@1.0.37/src/ua-parser.min.js
+- hxxps[:]//lulu.mandarin-ca[.]com/new_download
+- hxxps[:]//lulu.mandarin-ca[.]com/update_download
+- hxxps[:]//aiaggregator[.]com/api/set_v_4_new_uuid?uuid=oICMDTq6xE&name=last_version.exe
+- hxxps[:]//aiaggregator[.]com/ua-parser.min.js
+- hxxps[:]//lulu.mandarin-ca[.]com/update_download
+- hxxps[:]//aiaggregator[.]com/api/p_b?uuid=oICMDTq6xE&icon=loader&name=last_version.exe
+
+EXAMPLE OF DOWNLOADED MALICIOUS INSTALLER FOR LUMMA STEALER:
+
+- SHA256 hash: 357c8d6c47160afd0fb4b71d787b5a85944ce54eccbc34e667c16159652403ed
+- File size: 37,661,576 bytes
+- File name: last_version.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+
+INITIAL DOMAIN CHECKIN WHEN RUNNING THE INSTALLER:
+
+- nenkinseido[.]com - HTTPS traffic
+
+EXAMPLES OF THE SAME INSTALLER RETREIVING A ZIP ARCHIVE CONTAINING LUMMA STEALER EXE:
+
+- hxxp[:]//144.126.129[.]4/6WCckxL04bTWyx2r5X0HBQ%3D%3D
+- hxxp[:]//144.126.129[.]4/3wwYG9dMeaZUy52wMn2%2BXw%3D%3D
+- hxxp[:]//144.126.129[.]4/RGoSd3G9Ba1MB2%2BVZtxGcw%3D%3D
+
+THREE EXAMPLES OF ZIP ARCHIVES DOWNLOADED FROM 144.126.129.4 CONTAINING LUMMA STEALER:
+(Read: SHA256 hash - file size)
+
+- 349aa04e4a7b5dd201ce982693df6600b9eb18a49f69da6b9a6836343d5fa69f - 8,769,704 bytes
+- b2254f12166816cbaada2fb308049054ec412e46a86bb6e1133aa376bfc1875c - 12,965,279 bytes
+- b58a223bf8468fbf75ebac1cfd1709816d17f6aab651d2aac1f750979a64a7c6 - 10,867,489 bytes
+
+EXE FILES FOR LUMMA STEALER EXTRACTED FROM THE ABOVE ZIP ARCHIVES:
+(Read: SHA256 hash - file size - file name)
+
+- 6cea1bd0874cdae42c64f89d4ff3093b89117fcc319e6c55c95d4863b5934bed - 21,284,864 bytes - AyRXIIntgK.exe
+- bf0d2ef3a7d8d0f8c00d33f53df9b4e76bb4106712fd934796fd011cba094d71 - 19,187,712 bytes - tfMewdhxlE.exe
+- cf53a2ba0ec4ba36114543df10d5dd01268881b4bbbc6205765199aed0137c08 - 17,090,560 bytes - ouNvBjBfDQ.exe
+
+INITIAL DOMAIN CHECK IN BY LUMMA STEALER FROM THE ABOVE SAMPLES:
+
+- bjj-gameplan[.]com - HTTPS traffic
+
+DOMAINS FOR LUMMA STEALER C2 TRAFFIC FROM THE ABOVE SAMPLES:
+
+- chinnyvoushw[.]shop
+- lonellykrqwmn[.]shop
+- chinnyvoushw[.]shop
+- mathcucom[.]sbs
+- allocatinow[.]sbs
+- resinedyw[.]sbs
+- enlargkiw[.]sbs
