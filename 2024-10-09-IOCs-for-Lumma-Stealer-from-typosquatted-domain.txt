@@ -13,10 +13,10 @@ NOTES:
 
 - In recent months, we've noted numerous instances of domains impersonating legitimate vendors pushing Lumma Stealer malware.
 - While these typosquatted domains have hosted a variety of malware, we've noted a dramatic increasae of Lumma Stealer using this distribution method since July 2024.
-- We often malicious ads on popular search platforms directing victims to these typosquatted domains.
-- As recently as 2024-10-08, we found one such examaple of a domain spoofing the postman app at posrman[.]com.
-- This site provided an 8 MB to 20 MB Windows executable for a malware installer that retrieved and ran Lumma Stealer malware.
-- The malware installer is compiled with NodeJS and it retrieves Lumma Stealer in a zip archive from 144.126.129[.]4.
+- We often see malicious ads on popular search platforms directing victims to these typosquatted domains.
+- As recently as 2024-10-08, we found one such examaple of a domain spoofing the Postman app at posrman[.]com.
+- This site provided an 8 MB to 20 MB Windows executable for an installer that retrieved and ran Lumma Stealer malware.
+- The malware installer is compiled with NodeJS, and it retrieves Lumma Stealer in a zip archive from 144.126.129[.]4.
 - This is somewhat similar to our report about the fake Clockify site from yesterday:
   -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-11-08-IOCs-for-malware-from-fake-Clockify-site.txt
 - However, the domains, URLs, and file hashes are different for today's Lumma Stealer.
