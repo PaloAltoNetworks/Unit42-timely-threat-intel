@@ -10,7 +10,7 @@ NOTES:
 - This system provides fake login pages for various commercial, educational, government, and nonprofit organizations.
 - We tracked some of these fake login pages back to PDF email attachments, but the delivery vector is not necessarily limited to email or email attachments.
 
-EXAMPLE OF AN INFECTION CHAIN ACTIVE AS OF 2024-10-11:
+PHISHING CHAIN OF EVENTS EXAMPLE, ACTIVE AS OF 2024-10-11:
 
 INITIAL URL:
 
