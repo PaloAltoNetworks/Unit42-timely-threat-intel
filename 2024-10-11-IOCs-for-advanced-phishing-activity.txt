@@ -23,7 +23,7 @@ FAKE LOGIN PAGE:
 
 THE FOLLOWING ARE 121 DOMAINS WE'VE SEEN USED FOR THE FAKE LOGIN PAGES:
 
-2e59-4dc7-abe6[.]com
+- 2e59-4dc7-abe6[.]com
 - 323toto[.]com
 - 369realtygroup[.]com
 - 3bindustriesconnect[.]com
