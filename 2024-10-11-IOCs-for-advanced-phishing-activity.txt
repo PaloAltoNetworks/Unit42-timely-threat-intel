@@ -1,0 +1,148 @@
+2024-10-11 (FRIDAY): ADVANCED PHISHING ACTIVITY
+
+AUTHORS
+
+- Fang Liu, Lucas Hu, Shehroze Farooqi
+
+NOTES:
+
+- We have discovered advanced phishing activity that customizes a fake login page based on the victim's email address.
+- This system provides fake login pages for various commercial, educational, government, and nonprofit organizations.
+- We tracked some of these fake login pages back to PDF email attachments, but the delivery vector is not necessarily limited to email or email attachments.
+
+EXAMPLE OF AN INFECTION CHAIN ACTIVE AS OF 2024-10-11:
+
+INITIAL URL:
+
+- hxxp[:]//sunvalleyhydro[.]com/new/auth/1234/new/new/[vicitm's email address]
+- Note: In the above URL, 1234 is any 4-digit number
+
+FAKE LOGIN PAGE:
+
+- hxxps[:]//r8w1v9.roytnate[.]com/1qId17b/#A[vicitm's email address]
+
+THE FOLLOWING ARE 121 DOMAINS WE'VE SEEN USED FOR THE FAKE LOGIN PAGES:
+
+2e59-4dc7-abe6[.]com
+- 323toto[.]com
+- 369realtygroup[.]com
+- 3bindustriesconnect[.]com
+- 3dincre[.]com
+- 3gfreesex[.]net
+- abreuaduogados[.]com
+- ahead-recruitment[.]ue
+- alkadrinks[.]cam
+- amportsinc[.]com
+- apeivo[.]cam
+- arctlcpaper[.]com
+- atrrbklaw[.]com
+- badgercreekenergy[.]info
+- badgerlnc[.]com
+- bausch-streobel[.]de
+- besthugespin[.]com
+- biddingonlinedocuments[.]com
+- bio-fiocruz-br[.]com
+- blusekychemical[.]com
+- bmacorp[.]org
+- boyletm[.]uk
+- calgroverents[.]info
+- carpentertechnlogy[.]com
+- ccaglobals[.]com
+- celticmotorbike[.]com
+- cemaonlines[.]com
+- centricselevator[.]com
+- confluencesco[.]com
+- coventaryhomes[.]com
+- cristoreylc[.]org
+- cuninghampavlng[.]com
+- cynclys[.]com
+- doqatarnimr[.]sbs
+- dreamcusorray[.]com
+- drivepointe[.]xyz
+- ebsfrod[.]co[.]uk
+- eldensco[.]uk
+- evluator[.]com
+- extreme-deslgn[.]co[.]uk
+- exymm[.]com
+- fcpmlami[.]com
+- foreverpoz[.]com
+- freelosshistory[.]com
+- fujtisu[.]com
+- gadehomes[.]org
+- galandwelding[.]com
+- gascare-ae[.]com
+- geodls[.]cam
+- greystoneun[.]com
+- groupehalisol[.]com
+- hansgrohhe[.]com
+- hdbthailand[.]com
+- horizoncartage[.]org
+- hpcwlaw[.]com
+- hvncaireers[.]com
+- ic-cds[.]com
+- infrashareinc[.]ru
+- inncept[.]net
+- insclude[.]com
+- integracsc[.]com
+- investcapitalpartners[.]com
+- jpcrownpointcqas[.]com
+- justbuycheap[.]com
+- kastbuild[.]co
+- lancasale[.]com
+- lexinqtonco[.]com
+- linkauthenticator[.]cz
+- mail-mhc[.]com
+- mail-voice-mhc[.]com
+- mailsupport-netsuites[.]online
+- mamchac[.]com
+- mconcept-textile[.]cam
+- medleyblockk[.]com
+- mircrosofts[.]online
+- missinez[.]com
+- montecitoclubs1918[.]com
+- mountviewpot[.]pro
+- nathanandstock[.]co
+- nuunez-edu[.]com
+- officehomecloud[.]nl
+- opssolve[.]com
+- orfits[.]com
+- orgelbau-klais[.]co
+- pchwinsintl[.]us
+- perpinallawfirm[.]com
+- perudosmadethat[.]com
+- pmni1[.]com
+- prackr[.]com
+- precisethiopia[.]com
+- present-info[.]org
+- prohockayeurope[.]com
+- qaraxanli[.]com
+- qeodiss[.]com
+- r2robingraphics[.]com
+- remmipyservice[.]org
+- reviosn[.]com
+- roytnate[.]com
+- sarnerholz[.]cam
+- smilhome[.]com
+- sonaper[.]de
+- ssynchronizationsystemsco[.]com
+- syncportal[.]tech
+- teaf-c[.]org
+- teasmsharesync[.]top
+- texascapitalsonline[.]ru
+- thconsultig[.]org
+- thormpsonbldg[.]com
+- topdocs4viewscans[.]com
+- transequltydevelopment[.]com
+- tynurserys[.]com
+- uniformsforthededicateds[.]com
+- venurconstructions[.]com
+- viklngrefrig[.]com
+- vilagale[.]cam
+- vinkq[.]com
+- washcomanagements[.]net
+- wealthcadics[.]com
+- welsky[.]info
+- westandint[.]com
+- zulrichna[.]com
+
+
