@@ -21,7 +21,6 @@ NOTES:
 - If viewed on a mobile device, the app download pages display links to download Android or iOS files.
 - Investigation revealed strong associations between the domains, as they share hosting IP addresses and cross-link to each other.
 
-
 18 DOMAINS FOR FAKE SHOPPING SCAM SITES:
 
 (Read: date registered: domain name)
