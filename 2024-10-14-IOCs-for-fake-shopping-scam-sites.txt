@@ -1,0 +1,81 @@
+2024-10-14 (MONDAY): "PENGUIN MALL" FAKE SHOPPING SCAM SITES
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Lucas Hu
+
+NOTES:
+
+- Fake shopping campaigns are prevalent scams that mimic legitimate e-commerce sites.
+- These fraudulent sites often have limited payment options and favor cryptocurrencies to enable easier theft.
+- Indicators of fake shopping sites include broken links, unbelievably enticing deals, and poor-quality content.
+- These sites often feature "dropcaught" domains, which are expired and re-registered domains, due to their history and residual traffic.
+- We've identified 18 malicious domains with similar names, hosted on suspicious infrastructure, all hosting "Penguin Mall" fake e-commerce sites.
+- Attackers re-registered a dropcaught domain penguinshops[.]com, originally a legitimate shopping site, on 2024-09-30.
+- WHOIS records reveal 2 registrants for 17 additional domains on 2024-09-30 and 2024-10-05 related to this campaign.
+- These sites offer BTC, ETH and USDT cryptocurrency as their only payment options.
+- Potential victims send cryptocurrency to the these sites wallet addresses.
+- Victims can also request loan applications requiring sensitive info such as passport number and scanned copies of passports.
+- These sites include links for Android and iOS apps for victims to help facilitate the scam.
+- If viewed on a desktop OS, app download pages from these sites display a QR code for mobile apps to scan.
+- If viewed on a mobile device, the app download pages display links to download Android or iOS files.
+- Investigation revealed strong associations between the domains, as they share hosting IP addresses and cross-link to each other.
+
+
+18 DOMAINS FOR FAKE SHOPPING SCAM SITES:
+
+(Read: date registered: domain name)
+
+- 2024-09-30: penguinmallin[.]com
+- 2024-09-30: penguinmallit[.]com
+- 2024-09-30: penguinmalls[.]com
+- 2024-09-30: penguinshopin[.]com
+- 2024-09-30: penguinshopit[.]com
+- 2024-09-30: penguinshops[.]com (dropcaught domain, previously legitimately-registered)
+
+- 2024-10-05: penguinmallc[.]com
+- 2024-10-05: penguinmalle[.]com
+- 2024-10-05: penguinmallex[.]com
+- 2024-10-05: penguinmallmax[.]com
+- 2024-10-05: penguinmallpro[.]com
+- 2024-10-05: penguinmallt[.]com
+- 2024-10-05: penguinshopc[.]com
+- 2024-10-05: penguinshopex[.]com
+- 2024-10-05: penguinshopig[.]com
+- 2024-10-05: penguinshopmax[.]com
+- 2024-10-05: penguinshoppings[.]com
+- 2024-10-05: penguinshoppro[.]com
+
+APP DOWNLOAD PAGE EXAMPLE
+
+- hxxps[:]//penguinshops[.]com/app.html
+- Note: the "app.html" page exists for all of the "Penguin Mall" domains.
+
+URL FROM QR CODE RETURNED WHEN VIEWING APP.HTML PAGE FROM A NON-MOBILE DEVICE:
+
+- hxxps[:]//www.antmallbe[.]com/app.html
+
+APP.HTML PAGES LEAD TO THE FOLLOWING FILES WHEN USING A MOBILE DEVICE:
+
+- SHA256 hash: 4dcce01704dbf42d2e561ed42bb6af9a9a8d2e26245dcce738f27df781563542
+- File size: 73,251 bytes
+- File name: IOSbuyer.mobileconfig
+- File location: https://penguinshopit.com/IOSbuyer.mobileconfig
+
+- SHA256 hash: befc2eef18428d7fe3e407f3e6a5894d8831c28eeaab50d9e787dfb8983fbdcf
+- File size: 27,485,797 bytes
+- File name: dd66a4774f760f9975218ecd231c478b.apk
+- File page: https://geqian.kbsyub.com/s/sMMx (leads to download when using a mobile device)
+- Download URL: https://app.qianx147.top/data/attachment/dd66a4774f760f9975218ecd231c478b.apk
+
+- SHA256 hash: 4dcf6592850e8e22edb726a7ac5d4a3181bb6d3eb4ef95ea972574a7a9b2a657
+- File size: 63,609 bytes
+- File name: IOSseller.mobileconfig
+- File location: https://penguinshopit.com/IOSseller.mobileconfig
+
+- SHA256 hash: a6831474201ccb6eb22bf7a3c17d0e430034cb6e21f9ac7bf1f8dd8bb56d3d2b
+- File size: 36,908,354 bytes
+- File name: da51c7f9d7c7d554700b05f3f714c96d.apk
+- File page: https://geqian.kbsyub.com/s/HqEm (leads to download when using a mobile device)
+- Download URL: https://app.qianx147.top/data/attachment/da51c7f9d7c7d554700b05f3f714c96d.apk
+
