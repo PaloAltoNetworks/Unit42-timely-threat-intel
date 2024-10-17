@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Lucas Hu
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_scam-dropcaught-shoppingscams-activity-7251984189271519232-V86d/
+- https://x.com/Unit42_Intel/status/1846218568452481207
+
 NOTES:
 
 - Fake shopping campaigns are prevalent scams that mimic legitimate e-commerce sites.
