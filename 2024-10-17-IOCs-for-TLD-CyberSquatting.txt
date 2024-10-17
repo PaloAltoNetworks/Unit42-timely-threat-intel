@@ -18,7 +18,6 @@ NOTES:
 - This campaign since moved to using the same TDS URL paths under a new domain: choto[.]click.
 - We will continue monitoring domains registered under new TLDs to discover and track new trends and attack campaigns
 
-
 13 DOMAINS FROM THIS CAMPAIGN REGISTERED ON 2024-03-18:
 
 - betano[.]diy
