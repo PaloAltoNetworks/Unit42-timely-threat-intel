@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Reethika Ramesh, Zhanhao Chen
+- Reethika Ramesh
 
 NOTES:
 
