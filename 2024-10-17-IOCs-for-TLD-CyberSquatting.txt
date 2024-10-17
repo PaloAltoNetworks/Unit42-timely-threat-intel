@@ -1,0 +1,64 @@
+2024-10-17 (THURSDAY): CYBERSQUATTING OF NEW TLDS .DIY AND .FOOD
+
+AUTHORS:
+
+- Reethika Ramesh, Zhanhao Chen
+
+NOTES:
+
+- This is an update for our Aug 2024 report of new Top Level Domains (TLDs) used for cybersquatting and redirection at:
+  -- https://unit42.paloaltonetworks.com/tracking-newly-released-top-level-domains/
+- This campaign has now expanded to include at least two more TLDs: .diy and .food.
+- The threat actors used choto[.]xyz as the traffic redirection service (TDS) through at least April 2024.
+- This campaign since moved to using the same TDS URL paths under a new domain: choto[.]click.
+- We will continue monitoring domains registered under new TLDs to discover and track new trends and attack campaigns
+
+
+13 DOMAINS FROM THIS CAMPAIGN REGISTERED ON 2024-03-18:
+
+- betano.diy
+- betano.food
+- betway.diy
+- betway.food
+- caliente.diy
+- caliente.food
+- onlyfans.diy
+- onlyfans.food
+- xhamster.diy
+- xhamster.food
+- xnxx.diy
+- xvideos.diy
+- xvideos.food
+
+
+CURRENT CHOTO REDIRECTS TO GAMBLING SITE:
+
+- hxxps[:]//choto[.]click/vx/38sa4zcebspir7lt
+- hxxps[:]//choto[.]click/vx/68lmfh0mv9jpsk1n
+- hxxps[:]//choto[.]click/vx/c5oujoeneiak8g6s
+- hxxps[:]//choto[.]click/vx/dsxrr32nz1hlh4wa
+- hxxps[:]//choto[.]click/vx/g0p2psgfh60ypi4b
+- hxxps[:]//choto[.]click/vx/njhpaqk1l7xnpehe
+- hxxps[:]//choto[.]click/vx/of6v9q4jnjzlzgwp
+- hxxps[:]//choto[.]click/vx/syrzavohf4zjujur
+- hxxps[:]//choto[.]click/vx/t6o8rk8mmbhqgpxs
+- hxxps[:]//choto[.]click/vx/t94xjdvc9lypquqd
+- hxxps[:]//choto[.]click/vx/ubf3duweqjwqv271
+- hxxps[:]//choto[.]click/vx/zkqywwamrzs8m2ms
+- hxxps[:]//choto[.]click/vx/zpasrmlfidmobvpx
+
+PREVIOUS CHOTO REDIRECTS TO GAMBLING SITE THROUGH APRIL 2024:
+
+- hxxps[:]//choto[.]xyz/vx/38sa4zcebspir7lt
+- hxxps[:]//choto[.]xyz/vx/68lmfh0mv9jpsk1n
+- hxxps[:]//choto[.]xyz/vx/c5oujoeneiak8g6s
+- hxxps[:]//choto[.]xyz/vx/dsxrr32nz1hlh4wa
+- hxxps[:]//choto[.]xyz/vx/g0p2psgfh60ypi4b
+- hxxps[:]//choto[.]xyz/vx/njhpaqk1l7xnpehe
+- hxxps[:]//choto[.]xyz/vx/of6v9q4jnjzlzgwp
+- hxxps[:]//choto[.]xyz/vx/syrzavohf4zjujur
+- hxxps[:]//choto[.]xyz/vx/t6o8rk8mmbhqgpxs
+- hxxps[:]//choto[.]xyz/vx/t94xjdvc9lypquqd
+- hxxps[:]//choto[.]xyz/vx/ubf3duweqjwqv271
+- hxxps[:]//choto[.]xyz/vx/zkqywwamrzs8m2ms
+- hxxps[:]//choto[.]xyz/vx/zpasrmlfidmobvpx
