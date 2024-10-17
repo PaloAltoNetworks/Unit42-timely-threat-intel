@@ -15,7 +15,7 @@ NOTES:
 - WHOIS records reveal 2 registrants for 17 additional domains on 2024-09-30 and 2024-10-05 related to this campaign.
 - These sites offer BTC, ETH and USDT cryptocurrency as their only payment options.
 - Potential victims send cryptocurrency to the these sites wallet addresses.
-- Victims can also request loans with applications requiring sensitive info such as passport number and scanned copies of passports.
+- Victims can also request loan applications requiring sensitive info such as passport number and scanned copies of passports.
 - These sites include links for Android and iOS apps for victims to help facilitate the scam.
 - If viewed on a desktop OS, app download pages from these sites display a QR code for mobile apps to scan.
 - If viewed on a mobile device, the app download pages display links to download Android or iOS files.
