@@ -1,0 +1,93 @@
+2024-10-24 (THURSDAY): CRYPTOCURRENCY INVESTMENT SCAM "TEMU WORK PLATFORM"
+
+AUTHORS:
+
+- Reethika Ramesh, Zhanhao Chen, Daiping Liu
+
+NOTES:
+
+- We've identified a number of stockpiled domains involved with a crytpocurrency investment scam active as early July 2024.
+- Pages hosting this scam refer to it as the "TEMU Work Platform" so we track this campaign as phishing_temuwork_platform.
+- We've seen a notable spike in traffic from this campaign starting on 2024-10-15.
+- All domains from this campaign host visually identical versions of the platform and are designed for mobile viewing.
+- To register on one of these sites, the form asks for a referral code but accepts "0", as we found during code inspection.
+- The sites in this campaign use the same backend service, so accounts created on one site work on another.
+- URLs for this campaign use the pattern: hxxps[:]//[domain name]/index/index/home.html
+
+38 DOMAINS REGISTERED IN OCTOBER 2024:
+
+- bmotu-017[.]com
+- bmotu-137[.]com
+- bmotu-279[.]com
+- bmotu-289[.]com
+- bmotu-304[.]com
+- bmotu-308[.]com
+- bmotu-419[.]com
+- bmotu-562[.]com
+- bmotu-583[.]com
+- bmotu-587[.]com
+- bmotu-590[.]com
+- bmotu-602[.]com
+- bmotu-624[.]com
+- bmotu-701[.]com
+- bmotu-784[.]com
+- bmotu-859[.]com
+- bmotu-865[.]com
+- bmotu-935[.]com
+- bmotu-942[.]com
+- bmotu-967[.]com
+- cawotu-146[.]com
+- cawotu-162[.]com
+- cawotu-209[.]com
+- cawotu-248[.]com
+- cawotu-250[.]com
+- cawotu-349[.]com
+- cawotu-380[.]com
+- cawotu-534[.]com
+- cawotu-639[.]com
+- cawotu-670[.]com
+- cawotu-671[.]com
+- cawotu-683[.]com
+- cawotu-705[.]com
+- cawotu-726[.]com
+- cawotu-739[.]com
+- cawotu-785[.]com
+- cawotu-867[.]com
+- cawotu-975[.]com
+
+19 DOMAIN REGISTERED IN SEPTEMBER 2024:
+
+- mar-work254[.]com
+- mar-work304[.]com
+- mar-work829[.]com
+- mar-work840[.]com
+- pmotu-084[.]com
+- pmotu-146[.]com
+- pmotu-301[.]com
+- pmotu-408[.]com
+- pmotu-412[.]com
+- pmotu-493[.]com
+- pmotu-591[.]com
+- pmotu-721[.]com
+- pmotu-769[.]com
+- pmotu-792[.]com
+- pmotu-803[.]com
+- pmotu-807[.]com
+- pmotu-892[.]com
+- pmotu-894[.]com
+- pmotu-921[.]com
+
+3 DOMAINS REGISTERED IN JULY 2024:
+
+- dnxmq[.]shop
+- ebgkm[.]shop
+- kcyiw[.]shop
+
+
+
+
+
+
+
+
+
