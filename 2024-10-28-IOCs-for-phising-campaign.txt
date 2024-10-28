@@ -1,0 +1,85 @@
+2024-10-28 (MONDAY): PHISHING INFRASTRUCTURE IMPERSONATING CYBERSECURITY VENDORS/VPN PROVIDERS
+
+AUTHORS:
+
+- Shehroze Farooqi, Keerthiraj Nagaraj, Alex Starov, Nabeel Mohamed, Bradley Duncan
+
+NOTES:
+
+- We've recently mapped a malicious campaign impersonating cybersecurity vendors and VPN providers.
+- This campaign is reflected in root domains containing the names of various cybersecurity or VPN vendors.
+- Some of these domains have been previously reported as phishing at:
+  -- https://cybernews.com/news/us-vpn-phishing-attack/
+- These domains were registered between June 26th and October 8th 2024.
+- These domains have been hosted on 7 unique IP addresses during the past 30 days.
+- Pages from most of these servers currently show "503 service unavailable" or "internal server error" messages.
+- Some of the hosting infrastructure overlaps with that of Scattered Spider:
+  -- https://unit42.paloaltonetworks.com/tag/scattered-spider/
+
+17 ROOT DOMAINS AND REGISTRATION DATES:
+
+ciscoacclink[.]com      registered 2024-06-26
+ciscolinkacc[.]com      registered 2024-06-26
+ciscolinkweb[.]com      registered 2024-06-26
+ciscoweblink[.]com      registered 2024-06-26
+fortivpnlink[.]com      registered 2024-07-03
+linkwebcisco[.]com      registered 2024-08-20
+logonlink[.]com         registered 2024-09-23
+logonpointportal[.]com  registered 2024-09-23
+logonprotect[.]com      registered 2024-09-23
+panel-cisco[.]com       registered 2024-08-21
+pointlogin[.]com        registered 2024-09-23
+vpncisco[.]com          registered 2024-09-12
+vpnciscoweb[.]com       registered 2024-10-08
+vpnpalaolto[.]com       registered 2024-09-12
+web-cisco[.]com         registered 2024-09-13
+webpaloalto[.]com       registered 2024-09-13
+webvpnpaloalto[.]com    registered 2024-09-13
+
+34 EXAMPLES OF FULLY QUALIFIED DOMAIN NAMES (FQDNs):
+
+         analytics.ciscolinkacc[.]com
+                bi.ciscolinkacc[.]com
+              data.ciscolinkacc[.]com
+           insight.ciscolinkacc[.]com
+  c2nyrc6g5xqkq374.ciscolinkweb[.]com
+  cloak2b3dyro7qca.ciscolinkweb[.]com
+         dashboard.ciscolinkweb[.]com
+               www.ciscolinkweb[.]com
+  9hdqcobrcdutceyr.ciscoweblink[.]com
+              ebay.ciscoweblink[.]com
+           insight.ciscoweblink[.]com
+  ecf77kfp6np8ghpf.fortivpnlink[.]com
+               www.fortivpnlink[.]com
+                  ssl.logonlink[.]com
+                  www.logonlink[.]com
+           www.logonpointportal[.]com
+             airflow.pointlogin[.]com
+               kafka.pointlogin[.]com
+                 www.pointlogin[.]com
+                 kafka.vpncisco[.]com
+              kafka-ui.vpncisco[.]com
+                   www.vpncisco[.]com
+               www.www.vpncisco[.]com
+           www.www.www.vpncisco[.]com
+                www.vpnciscoweb[.]com
+                  m.vpnpalaolto[.]com
+   yt9pbgt05d2eibmq.vpnpalaolto[.]com
+   ety6i1og4unmve3m.vpnpaloalto[.]com
+     azoeajykidojkesr.web-cisco[.]com
+               report.web-cisco[.]com
+            airflow.webpaloalto[.]com
+3bp4klbi6goov7am.webvpnpaloalto[.]com
+         airflow.webvpnpaloalto[.]com
+             www.webvpnpaloalto[.]com
+
+SEVEN IP ADDRESSES HOSTING SERVERS USING THE FQDNs:
+
+94.159.100[.]245
+94.232.249[.]246
+103.136.150[.]88
+147.45.125[.]120
+185.219.7[.]201
+185.219.7[.]204
+212.192.13[.]136
+
