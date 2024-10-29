@@ -9,7 +9,7 @@ NOTES:
 - With the 2024 US elections a week away, we've seen a surge in newly registered domains for election-related scams.
 - These scams are targeting supporters of both major presidential candidates.
 - These scam sites include cryptocurrency scams, donation-themed phishing and fake shopping sites.
-- Siz example of these sites are listed below.
+- Six examples of these sites are listed below.
 
 6 EXAMPLES OF ROOT DOMAINS AND REGISTRATION DATES:
 
