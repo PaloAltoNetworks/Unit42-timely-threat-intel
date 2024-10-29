@@ -78,7 +78,7 @@ webvpnpaloalto[.]com    registered 2024-09-13
          airflow.webvpnpaloalto[.]com
              www.webvpnpaloalto[.]com
 
-SEVEN IP ADDRESSES HOSTING SERVERS USING THE FQDNs:
+EIGHT IP ADDRESSES HOSTING SERVERS USING THE FQDNs:
 
 94.159.100[.]245
 94.232.249[.]246
@@ -87,4 +87,3 @@ SEVEN IP ADDRESSES HOSTING SERVERS USING THE FQDNs:
 185.219.7[.]201
 185.219.7[.]204
 212.192.13[.]136
-
