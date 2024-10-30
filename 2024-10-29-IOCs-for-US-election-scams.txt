@@ -4,6 +4,11 @@ AUTHOR:
 
 - Shu Wang
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_unit42-timely-threat-intel2024-10-29-iocs-for-us-election-scamstxt-activity-7257345540772777984-3arC/
+- https://x.com/Unit42_Intel/status/1851579848264716712
+
 NOTES:
 
 - With the 2024 US elections a week away, we've seen a surge in newly registered domains for election-related scams.
