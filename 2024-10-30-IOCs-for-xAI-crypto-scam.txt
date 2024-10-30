@@ -13,23 +13,23 @@ NOTES:
 
 MALICIOUS DOMAINS FOR THE INITIAL SCAM PAGES:
 
-- xai12j[.]com - regsitered 2024-10-28
-- xai14w[.]com - regsitered 2024-10-24
-- xai24k[.]com - regsitered 2024-10-28
-- xai27n[.]com - regsitered 2024-10-25
-- xai34k[.]com - regsitered 2024-10-25
-- xai35p[.]com - regsitered 2024-10-25
-- xai36l[.]com - regsitered 2024-10-28
-- xai40d[.]com - regsitered 2024-10-25
-- xai41v[.]com - regsitered 2024-10-25
-- xai45l[.]com - regsitered 2024-10-25
-- xai49p[.]com - regsitered 2024-10-25
-- xai50q[.]com - regsitered 2024-10-25
-- xai52e[.]com - regsitered 2024-10-25
-- xai58s[.]com - regsitered 2024-10-25
-- xai61r[.]com - regsitered 2024-10-25
-- xai72s[.]com - regsitered 2024-10-25
-- xai75n[.]com - regsitered 2024-10-24
+- xai12j[.]com - registered 2024-10-28
+- xai14w[.]com - registered 2024-10-24
+- xai24k[.]com - registered 2024-10-28
+- xai27n[.]com - registered 2024-10-25
+- xai34k[.]com - registered 2024-10-25
+- xai35p[.]com - registered 2024-10-25
+- xai36l[.]com - registered 2024-10-28
+- xai40d[.]com - registered 2024-10-25
+- xai41v[.]com - registered 2024-10-25
+- xai45l[.]com - registered 2024-10-25
+- xai49p[.]com - registered 2024-10-25
+- xai50q[.]com - registered 2024-10-25
+- xai52e[.]com - registered 2024-10-25
+- xai58s[.]com - registered 2024-10-25
+- xai61r[.]com - registered 2024-10-25
+- xai72s[.]com - registered 2024-10-25
+- xai75n[.]com - registered 2024-10-24
 - xai84m[.]com - registered 2024-10-24
 - xai90i[.]com - registered 2024-10-25
 - xai93j[.]com - registered 2024-10-25
@@ -37,11 +37,11 @@ MALICIOUS DOMAINS FOR THE INITIAL SCAM PAGES:
 
 INDEX PAGES FROM ALL OF THE ABOVE SITES HAVE A LINK TO:
 
-- xaiofficial[.]com - regsitered 2024-10-03
+- xaiofficial[.]com - registered 2024-10-03
 
 DOMAINS HOSTING PRESALE AND CRYPTO SWAP SCAM PAGES:
 
-- xaicryptosale[.]com - regsitered 2024-10-20
+- xaicryptosale[.]com - registered 2024-10-20
 - xaipresale[.]net - registered 2024-10-20
 - xaitoken-sale[.]org - registered 2024-10-20
 
