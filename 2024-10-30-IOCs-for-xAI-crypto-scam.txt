@@ -1,0 +1,66 @@
+2024-10-30 (WEDNESDAY): XAI CRYPTO TOKEN PRESALE SCAM
+
+AUTHORS:
+
+-  Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Lucas Hu, Alex Starov
+
+NOTES:
+
+- We've identified 25 malicious domains hosted on suspicious infrastructure impersonating xAI.
+- These sites offer to swap BTC, ETH, DOGE and other cryptocurrencies for xAI tokens.
+- This scam entices victims with additional discounts and bonuses for early investors.
+- Our investigation uncovered a shared infrastructure among the 25 malicious domains.
+
+MALICIOUS DOMAINS FOR THE INITIAL SCAM PAGES:
+
+- xai12j[.]com - regsitered 2024-10-28
+- xai14w[.]com - regsitered 2024-10-24
+- xai24k[.]com - regsitered 2024-10-28
+- xai27n[.]com - regsitered 2024-10-25
+- xai34k[.]com - regsitered 2024-10-25
+- xai35p[.]com - regsitered 2024-10-25
+- xai36l[.]com - regsitered 2024-10-28
+- xai40d[.]com - regsitered 2024-10-25
+- xai41v[.]com - regsitered 2024-10-25
+- xai45l[.]com - regsitered 2024-10-25
+- xai49p[.]com - regsitered 2024-10-25
+- xai50q[.]com - regsitered 2024-10-25
+- xai52e[.]com - regsitered 2024-10-25
+- xai58s[.]com - regsitered 2024-10-25
+- xai61r[.]com - regsitered 2024-10-25
+- xai72s[.]com - regsitered 2024-10-25
+- xai75n[.]com - regsitered 2024-10-24
+- xai84m[.]com - registered 2024-10-24
+- xai90i[.]com - registered 2024-10-25
+- xai93j[.]com - registered 2024-10-25
+- xai94u[.]com - registered 2024-10-25
+
+INDEX PAGES FROM ALL OF THE ABOVE SITES HAVE A LINK TO:
+
+- xaiofficial[.]com - regsitered 2024-10-03
+
+DOMAINS HOSTING PRESALE AND CRYPTO SWAP SCAM PAGES:
+
+- xaicryptosale[.]com - regsitered 2024-10-20
+- xaipresale[.]net - registered 2024-10-20
+- xaitoken-sale[.]org - registered 2024-10-20
+
+URLS FOR THE PRESALE AND CRYTPO SWAP SCAM PAGES:
+
+- hxxp[:]//xaicryptosale[.]com/presale/
+- hxxp[:]//xaipresale[.]net/presale/
+- hxxp[:]//xaitoken-sale[.]org/presale/
+
+- hxxp[:]//xaicryptosale[.]com/swap/
+- hxxp[:]//xaipresale[.]net/swap/
+- hxxp[:]//xaitoken-sale[.]org/swap/
+
+CRYPTOCURRENCY WALLET ADDRESSES USED FOR THIS SCAM:
+
+- ADA: addr1q9dqkaydgyaltjujm3wa00nc5k8dsnfgxhed7h08l6qzz5uqtdq4t7xz3cjnusc6l22m4ch9pcuwhl7x4ge5385gwa7sddudsz
+- BNB: 0xc54e1f4E1aD38D892b28Acfb56e83951b61671D9
+- BTC: bc1q4qhczl32av4sldml26ry5zv6zywr4meqxf53sy
+- DOGE: DGcvTB4e2jdHZCeybysPULmLcN9gXWMZ84
+- ETH: 0xc54e1f4E1aD38D892b28Acfb56e83951b61671D9
+- USDT: 0xc54e1f4E1aD38D892b28Acfb56e83951b61671D9
+- XRP: rVX5nzmkJRxZxf7hmhNGshAdXJHhzs6Jq
