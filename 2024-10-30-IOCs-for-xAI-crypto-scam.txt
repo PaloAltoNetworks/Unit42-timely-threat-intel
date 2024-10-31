@@ -4,6 +4,11 @@ AUTHORS:
 
 -  Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Lucas Hu, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_crypto-scam-cryptoscams-activity-7257775874274406401--LCy/
+- https://x.com/Unit42_Intel/status/1852010236090921419
+
 NOTES:
 
 - We've identified 25 malicious domains hosted on suspicious infrastructure impersonating xAI.
