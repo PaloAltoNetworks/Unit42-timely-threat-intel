@@ -1,0 +1,54 @@
+2024-11-04 (MONDAY): CASH AND LOAN FINANCIAL SCAMS
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
+
+NOTES:
+
+- We recently identified 32 malicious domains on suspicious infrastructure for a loan lending scam.
+- Some of these domains are dropcaught, meaning registration had expired and these were registered (caught) by criminals.
+- WHOIS records indicate most of these domains were registered or re-registered between 2024-10-24 and 2024-10-28.
+- These scam sites try to steal numbers for SSN, bank account/routing, driver’s license and other sensitive information.
+- These domains share hosting infrastructure and a similar web layout.
+
+DOMAINS REGISTERED ON 2024-10-24:
+
+- 45-cash-app[.]com
+- 45-cash-today[.]com
+- 45-get-cash[.]com
+- 79-cash-now[.]com
+- 79-get-cash[.]com
+- app-cash-45[.]com
+- flash-cash-45[.]com
+- get-cash-45[.]com
+
+DOMAINS REGISTERED ON 2024-10-28:
+
+- cash-cash-loan[.]com
+- cash-credit-loan-eligibility[.]com
+- cash-loan-fast-approval[.]com
+- cash-loan-low-interest[.]com
+- cash-mart-loan[.]com
+- cash-money-installment-loan[.]com
+- cash-money-payday-loan[.]com
+- cash-to-new-loan[.]com
+- cash-usa-loan[.]com
+- ez-cash-loan[.]com
+- get-cash-loan-today[.]com
+- mobile-cash-loan[.]com
+- need-cash-now-loan[.]com
+- personal-loan-fast-cash[.]com
+- quick-cash-loan-online[.]com
+
+DROPCAUGHT DOMAINS SHARING HOSTING IP ADDRESS WITH ABOVE NEWLY REGISTERED DOMAINS:
+
+- 100-loan[.]com - re-registered 2024-08-25
+- 32loan[.]com - re-registered 2024-10-25
+- 34loan[.]com - re-registered 2024-10-25
+- 48loan[.]com - re-registered 2024-10-25
+- 55loan[.]com - re-registered 2024-10-25
+- 56loan[.]com - re-registered 2024-10-25
+- 69loan[.]com - re-registered 2024-10-25
+- 76loan[.]com - re-registered 2024-10-25
+- 90loan[.]com - re-registered 2024-10-25
