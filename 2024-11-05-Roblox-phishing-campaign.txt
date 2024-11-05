@@ -11,7 +11,7 @@ NOTES:
 - Most of these domains use various country code Top-Level Domain (TLD) names.
 - These domains hosting phishing pages to steal Roblox account credentials.
 - These pages incorporate captchas that mimic the login process to appear legitimate.
-- The captchas only appear if valid Roblox login credentials are used on the phishing page.
+- The captchas only appear after valid Roblox login credentials are used on the phishing page.
 
 DOMAINS FOR ROBLOX PHISHING WEBSITES:
 
