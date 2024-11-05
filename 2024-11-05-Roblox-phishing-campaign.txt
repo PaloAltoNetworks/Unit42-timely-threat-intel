@@ -7,7 +7,7 @@ AUTHORS:
 NOTES:
 
 - We've identified at least 19 domains that have remain active in a phishing campaign targeting Roblox users.
-- Many of these domains have been active for months or years.
+- Some of these domains have been active for months or years.
 - Most of these domains use various country code Top-Level Domain (TLD) names.
 - These domains hosting phishing pages to steal Roblox account credentials.
 - These pages incorporate captchas that mimic the login process to appear legitimate.
