@@ -1,0 +1,39 @@
+2024-11-05 (TUESDAY): ROBLOX PHISHING CAMPAIGN
+
+AUTHORS:
+
+- Peng Peng
+
+NOTES:
+
+- We've identified at least 19 domains that have remain active in a phishing campaign targeting Roblox users.
+- Many of these domains have been active for months or years.
+- Most of these domains use various country code Top-Level Domain (TLD) names.
+- These domains hosting phishing pages to steal Roblox account credentials.
+- These pages incorporate captchas that mimic the login process to appear legitimate.
+
+DOMAINS FOR ROBLOX PHISHING WEBSITES:
+
+- httpps-wvw-roblox[.]com
+- https-vwww-roblox[.]com
+- roblofx[.]com
+- roblox[.]com[.]by
+- roblox[.]com[.]hn
+- roblox[.]com[.]kg
+- roblox[.]com[.]kz
+- roblox[.]com[.]ni
+- roblox[.]com[.]sb
+- roblox[.]com[.]zm
+- roblox[.]et
+- roblox[.]fo
+- roblox[.]ge
+- roblox[.]gr[.]com
+- roblox[.]tg
+- robloxi[.]com[.]kz
+- robloxx[.]com[.]kz
+- web-www-roblox[.]com
+- wvyw-roblox[.]com
+
+DOMAIN FOR SERVER COLLECTING LOGIN CREDENTIALS:
+
+- wakura[.]lu
