@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Peng Peng
+- Peng Peng, Joey Allen
 
 NOTES:
 
