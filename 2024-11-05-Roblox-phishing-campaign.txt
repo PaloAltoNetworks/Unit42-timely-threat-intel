@@ -4,6 +4,11 @@ AUTHORS:
 
 - Peng Peng, Joey Allen
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7260079529208000512-cUk0/
+- https://x.com/Unit42_Intel/status/1854313903594848483
+
 NOTES:
 
 - We've identified at least 19 domains that have remain active in a phishing campaign targeting Roblox users.
