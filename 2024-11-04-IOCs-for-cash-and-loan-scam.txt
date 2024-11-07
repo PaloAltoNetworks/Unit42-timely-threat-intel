@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-scam-dropcaught-activity-7260314072762507264-wEEX/
+- https://x.com/Unit42_Intel/status/1854550444778881160
+
 NOTES:
 
 - We recently identified 32 malicious domains on suspicious infrastructure for a loan lending scam.
