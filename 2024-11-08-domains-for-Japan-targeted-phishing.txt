@@ -1,0 +1,93 @@
+2024-11-08 (FRIDAY): NEWLY REGISTERED DOMAINS IN JAPAN-TARGETED PHISHING
+
+AUTHORS:
+
+- Fang Liu
+
+NOTES:
+
+- This is a long-running phishing campaign targeting Japan-based companies and organizations.
+- The attackers frequently register new domains for sites that are frequently hosted on the public cloud.
+- These phishing sites are short-lived, and the threat actor continues registering a large amount of new domains.
+- For example, we found more than 50 new domains active and resolving to 43.153.149[.]164 on Friday 2024-11-08.
+- Several of these phishing sites only work on mobile browsers, and they do not show content on a desktop browser.
+
+EXAMPLES OF NEWLY REGISTERED DOMAINS
+
+- asdfghjklzxcvbnmqwertyuiopmlkhnas[.]com
+- asdfghjklzxcvbnmqwertyuiopnlkasuopas[.]com
+- iunjeanjed[.]com
+- iwmaasdioas[.]com
+- tinfrnub[.]com
+- ybrjaobs[.]com
+- ybrjaonjws[.]com
+- yngsowusad[.]com
+
+EXAMPLES OF URLS FOR THE PHISHING PAGES
+
+- hxxps[:]//a2.jcbmnksasd[.]com/FjgDET/
+- hxxps[:]//a3.uisna[.]com/CaACrB/
+- hxxps[:]//dianyneksa[.]com/ele
+- hxxps[:]//oveksaama[.]com/ama
+- hxxps[:]//oveksadian[.]com/ele
+- hxxps[:]//oveksamaomao[.]com/yaya
+- hxxps[:]//oveksasanjng[.]com/sj
+- hxxps[:]//sanjinyneksa[.]com/sj
+- hxxps[:]//tkwouiasf[.]com/
+- hxxps[:]//ynjkwama[.]com/ama
+- hxxps[:]//ynjkwmaom[.]com/yaya
+
+EXAMPLES OF URLS FOR THIS CAMPAIGN DELIVERED THROUGH EMAIL:
+
+- hxxps[:]//www.smbc-card.compctjcpyndamyntbasquvczdjegcsflwhugcfmai@inkiunf[.]com/
+​​- hxxps[:]//jpyzhsh.comjdlppqploqayhmkeqsklvshkalnhvzhqvpmlmln@tinfrnnjic[.]com?loginid=hxwqvccnuraxgnkeeprdyguartlxxtegwbnuktfwjznezjkiei9000188595xujlbdvzbq
+- hxxps[:]//bllrkco.comsivrdctigsupylijeidyeqjnprojhxtpzglruhl@tinfrns[.]com?loginid=nafkgfmajbxfktdehpmqqrinrcjmbxnownyciifwmbjywvjpnh7444598292msypxiwwoc
+- hxxps[:]//www.smbc-card.comewsbqmsttsfhfmedaagcdfncbbfqmfylshzfwkm@masrpjw[.]com/
+- hxxps[:]//www.smbc-card.comtihjporzafkaiueyuzyvoxkhxklhjbwpnjjshmy@wernhgb[.]com/ 
+- hxxps[:]//yahoo.co.jpybexxlqlrorrekqpwiqrdsgxcvvtfvfjcbogaot@electpmw[.]com/ 
+- hxxps[:]//yahoo.co.jpagfblgsnimurlzxbzcecdaozxcuknpzmkacvhql@kpjpns[.]com/
+
+- Note 1: In the above URL list, when a URL has @ anywhere in the domain area, the actual domain is after the @ symbol.
+  -- For example, hxxps[:]//something@somethingbad[.]com/ would go to hxxps[:]//somethingbad[.]com/
+- Note 2: In the above URL ist, the ? symbol marks the end of the domain area.
+  -- For example, hxxps[:]//something@somethingbad[.]com?loginid=123 would go to hxxps[:]//somethingbad[.]com/?loginid=123
+
+IP ADDRESSES HOSTING THESE PHISHING DOMAINS:
+
+- 101.36.105[.]44
+- 101.36.105[.]98
+- 124.156.212[.]175
+- 165.154.231[.]17
+- 165.154.231[.]34
+- 165.154.231[.]62
+- 165.154.231[.]96
+- 165.154.231[.]99
+- 165.154.231[.]175
+- 165.154.231[.]184
+- 43.128.237[.]191
+- 43.128.237[.]235
+- 43.130.232[.]219
+- 43.130.245[.]23
+- 43.133.12[.]183
+- 43.133.13[.]115
+- 43.133.13[.]196
+- 43.133.173[.]108
+- 43.133.193[.]162
+- 43.133.193[.]3
+- 43.133.196[.]251
+- 43.133.8[.]139
+- 43.153.140[.]10
+- 43.153.147[.]20
+- 43.153.149[.]164
+- 43.153.168[.]126
+- 43.153.176[.]165
+- 43.153.178[.]121
+- 43.153.183[.]161
+- 43.153.185[.]146
+- 43.163.198[.]51
+- 43.163.204[.]5
+- 43.163.212[.]225
+- 43.163.221[.]38
+- 43.163.234[.]142
+- 43.163.238[.]42
+- 43.167.237[.]47
