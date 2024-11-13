@@ -1,0 +1,74 @@
+2024-11-13 (WEDNESDAY): PHISHING DOMAINS FOR THE HOLIDAYS 
+
+AUTHORS:
+
+- Nabeel Mohamed, Keerthiraj Nagaraj, Alex Starov, Shehroze Farooqi
+
+NOTES:
+
+- In early November, a single threat actor registered over 550 domains impersonating booking sites, banks, crypto wallets and restaurants.
+- The email POC for all of these registrations is ilotirabec207@gmail[.]com.
+- Manual analysis of random domains showed signs of activity before 2024, indicated these are previously-registered domains "dropcaught" by this threat actor.
+- Many of these domains are stockpiled and not yet weaponized, while some are currently active in phishing scams.
+- These scams often trick victims into sharing sensitive information like login credentials, financial details and personal identification.
+
+PREVIOUS REPORTING:
+
+- https://krebsonsecurity.com/2024/11/booking-com-phishers-may-leave-you-with-reservations
+
+EXAMPLES REGISTERED ON 2024-11-09:
+
+- 6gmao[.]com
+- buffd2[.]com
+- elo7verificacao[.]com
+- io-home-app-v3[.]com
+- slngtd[.]com
+
+EXAMPLES REGISTERED ON 2024-11-08:
+
+- 1incho[.]com
+- 1nvestment-1ogin-401k[.]com
+- caprevolve[.]com
+- ch-uberprufung[.]com
+- chatinvfolio[.]com
+- checks-referensview5543[.]com
+- complete-orderr[.]com
+- dextscreeneer[.]com
+- guestyrelus[.]com
+- gzpop-nov08[.]com
+- hotelpolicies[.]com
+- hotelppolicy[.]com
+- hotelreluss[.]com
+- id45436[.]com
+- id76281[.]com
+- id983[.]com
+- invrevise[.]com
+- io-v3-home-app[.]com
+- mojaplatba[.]com
+- myhomes38[.]com
+- myhomes98[.]com
+- operamarie[.]com
+- org-home-on-app[.]com
+- otelthematch2425[.]com
+- payment-poshmark[.]com
+- pizlanova[.]com
+- policieshotel[.]com
+- rajskapartment[.]com
+- rlsguesty[.]com
+- sbri-nov08[.]com
+- tbi-nov08[.]com
+
+EXAMPLES REGISTERED ON 2024-11-07:
+
+- ciashofcoins[.]com
+- d2maket[.]com
+- elon23[.]com
+- home9438[.]com
+- marketsdota2[.]com
+- microqarzuz[.]com
+- monesyg2[.]com
+- myhome9482[.]com
+- myworklifeatt[.]com
+- push-aktualisieren[.]com
+- sghausfloidpmga[.]com
+- sign-aktualisieren[.]com
