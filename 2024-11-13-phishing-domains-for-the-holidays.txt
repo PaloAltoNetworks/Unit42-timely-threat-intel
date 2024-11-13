@@ -10,6 +10,7 @@ NOTES:
 - The email POC for all of these registrations is ilotirabec207@gmail[.]com.
 - Manual analysis of random domains showed signs of activity before 2024, indicated these are previously-registered domains "dropcaught" by this threat actor.
 - Many of these domains are stockpiled and not yet weaponized, while some are currently active in phishing scams.
+- 90% of the active domains use Cloudflare for domain fronting, with 10% on shared hosting, possibly revealing the real hosting IP addresses.
 - These scams often trick victims into sharing sensitive information like login credentials, financial details and personal identification.
 
 PREVIOUS REPORTING:
@@ -72,3 +73,10 @@ EXAMPLES REGISTERED ON 2024-11-07:
 - push-aktualisieren[.]com
 - sghausfloidpmga[.]com
 - sign-aktualisieren[.]com
+
+HOSTING IP ADDRESSES:
+
+- 46.173.214[.]86
+- 80.64.24[.]116
+- 147.45.48[.]99
+- 178.253.40[.]69
