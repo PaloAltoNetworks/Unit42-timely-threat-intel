@@ -4,6 +4,11 @@ AUTHORS:
 
 - Nabeel Mohamed, Keerthiraj Nagaraj, Alex Starov, Shehroze Farooqi
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7262559881285517312-pX_v/
+- https://x.com/Unit42_Intel/status/1856794256310161795
+
 NOTES:
 
 - In early November, a single threat actor registered over 550 domains impersonating booking sites, banks, crypto wallets and restaurants.
