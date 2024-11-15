@@ -52,32 +52,32 @@ EXAMPLES OF FQDNS AND TCP PORTS FOR THE FINAL LANDING PAGES:
 - ks883hsggahbc.z0kuj6[.]top:22403 - root domain registered 2024-11-12
 - ml01605mlt.fhfghud[.]top:12708 - root domain registered 2024-11-14
 - ml31302mlt.ortzj[.]site:12718 - root domain registered 2024-11-08
-- ml71603mlt.phooway.top:12707 - root domain registered 2024-11-14
+- ml71603mlt.phooway[.]top:12707 - root domain registered 2024-11-14
 - sangroidayjthoichan1111.csoqp0[.]my:5030 - root domain registered 2024-11-12
 - terwtwregr.a1lag8[.]wang - root domain registered 2024-11-10 (port unknown)
-- uuuuuyuyuyuyuy.w5mokm.top:5001 - root domain registered 2024-11-13
+- uuuuuyuyuyuyuy.w5mokm[.]top:5001 - root domain registered 2024-11-13
 
 FIVE EXAMPLES OF TRAFFIC FROM INTIAL DOMAIN TO LANDING PAGE:
 
-- https[:]//18103[.]me/   <--- initial domain
-- https[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/?cid=825910&currency=CNY&id=883734028   <--- landing page: gambling site
-- https[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/normal/?cid=825910&currency=CNY&id=883734028   <-- final landing page: gambling site
+- hxxps[:]//18103[.]me/   <--- initial domain
+- hxxps[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/?cid=825910&currency=CNY&id=883734028   <--- landing page: gambling site
+- hxxps[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/normal/?cid=825910&currency=CNY&id=883734028   <-- final landing page: gambling site
 
-- https[:]//56269[.]party/   <--- initial domain
-- https[:]//qdff.nmhcvyr[.]com:7111/61/cpa16.html   <--- TDS
-- https[:]//ml61602mlt.phooway[.]top:12707/61/?channelCode=cpa16   <-- final landing page: gambling site
+- hxxps[:]//56269[.]party/   <--- initial domain
+- hxxps[:]//qdff.nmhcvyr[.]com:7111/61/cpa16.html   <--- TDS
+- hxxps[:]//ml61602mlt.phooway[.]top:12707/61/?channelCode=cpa16   <-- final landing page: gambling site
 
-- https[:]//266738[.]com/   <-- initial domain
-- https[:]//qdff.nmhcvyr[.]com:7111/18/xjiu241.html   <-- TDS
-- https[:]//ml61602mlt.phooway[.]top:12707/18/?channelCode=xjiu241   <-- final landing page: adult website
+- hxxps[:]//266738[.]com/   <-- initial domain
+- hxxps[:]//qdff.nmhcvyr[.]com:7111/18/xjiu241.html   <-- TDS
+- hxxps[:]//ml61602mlt.phooway[.]top:12707/18/?channelCode=xjiu241   <-- final landing page: adult website
 
-- https[:]//57243[.]pink/   <-- initial domain
-- https[:]//qdff.nmhcvyr[.]com:7111/61/cpa15.html   <-- TDS
-- https[:]//ml71603mlt.phooway[.]top:12707/61/?channelCode=cpa15   <-- final landing page: gambling website
+- hxxps[:]//57243[.]pink/   <-- initial domain
+- hxxps[:]//qdff.nmhcvyr[.]com:7111/61/cpa15.html   <-- TDS
+- hxxps[:]//ml71603mlt.phooway[.]top:12707/61/?channelCode=cpa15   <-- final landing page: gambling website
 
-- https[:]//985586[.]com/   <-- initial domain
-- https[:]//qdff.nmhcvyr[.]com:7111/53/yh249.html   <-- TDS
-- https[:]//ml01605mlt.fhfghud[.]top:12708/53/?channelCode=yh249   <-- final landing page: gambling website
+- hxxps[:]//985586[.]com/   <-- initial domain
+- hxxps[:]//qdff.nmhcvyr[.]com:7111/53/yh249.html   <-- TDS
+- htxps[:]//ml01605mlt.fhfghud[.]top:12708/53/?channelCode=yh249   <-- final landing page: gambling website
 
 10 EXAMPLES OF PUP APK FILES OFFERED ON THE LANDING PAGES:
 
