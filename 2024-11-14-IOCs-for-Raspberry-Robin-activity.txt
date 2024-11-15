@@ -24,7 +24,7 @@ NOTES:
   -- min.zip --> min.hta
 - The extracted HTA files contain hundreds or thousands of spaces and include a single line to run script hosted on a publicly-accessible URL.
 - The URL returns obfuscated script to retrieve and run a Raspberry Robin DLL hosted on a WebDAV server.
-- The script hosted on these publicly-accessible URL changes periodically, indicating that different WebDAV servers have been used for this campaign.
+- The script hosted on these publicly-accessible URLs changes periodically, indicating that different WebDAV servers have been used for this campaign.
 - The WebDAV server has a new Raspberry Robin DLL approximately every 50 minutes using the same name, but a different size and file hash.
 - Testing some of these DLL files generated Tor-based C2 traffic, which is expected for Raspberry Robin.
 - For more information on Raspberry Robin, see:
