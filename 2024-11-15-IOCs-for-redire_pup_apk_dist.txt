@@ -79,7 +79,7 @@ FIVE EXAMPLES OF TRAFFIC FROM INTIAL DOMAIN TO LANDING PAGE:
 - https[:]//qdff.nmhcvyr[.]com:7111/53/yh249.html   <-- TDS
 - https[:]//ml01605mlt.fhfghud[.]top:12708/53/?channelCode=yh249   <-- final landing page: gambling website
 
-10 EXAMPLES OF PUP APK FILES:
+10 EXAMPLES OF PUP APK FILES OFFERED ON THE LANDING PAGES:
 
 (Read: SHA256 hash - file name)
 
