@@ -7,7 +7,7 @@ AUTHOR:
 NOTES:
 
 - We're currently tracking a campaign distributing potentially unwanted programs (PUP) through Android .apk files.
-- Our designator for this campaingn is: redire_pup_apk_dist
+- Our designator for this campaingn is: redir_pup_apk_dist
 - During the past 3 months, we've detected 1,346 domains redirecting to pages distributing these PUA/PUP .apk files.
 - Domain registration for this campaign peaked on 2024-11-03.
 - Landing pages associated with this campaign advertise adult applications or gambling applications and follow the same set of design templates.
