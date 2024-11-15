@@ -1,0 +1,95 @@
+2024-11-15 (FRIDAY): DOMAINS REDIRECTING TO SITES DISTRIBUTING PUP ANDROID APK FILES
+
+AUTHOR:
+
+- Reethika Ramesh
+
+NOTES:
+
+- We're currently tracking a campaign distributing potentially unwanted programs (PUP) through Android .apk files.
+- Our designator for this campaingn is: redire_pup_apk_dist
+- During the past 3 months, we've detected 1,346 domains redirecting to pages distributing these PUA/PUP .apk files.
+- Domain registration for this campaign peaked on 2024-11-03.
+- Landing pages associated with this campaign advertise adult applications or gambling applications and follow the same set of design templates.
+- Initial domain names consist of 5 or 6 character numeric strings followed by a TLD like .com or .me.
+- The chain of events often includes a traffic distribution system (TDS) URL.
+
+20 EXAMPLES OF INITIAL DOMAINS REGISTERED AT THE PEAK OF THIS CAMPAIGN ON 2024-11-03:
+
+- 18103[.]me
+- 49623[.]africa
+- 35270[.]me
+- 36986[.]party
+- 51979[.]ac
+- 57243[.]pink
+- 56269[.]party
+- 81055[.]uk
+- 266738[.]com
+- 315337[.]com
+- 315738[.]com
+- 337125[.]com
+- 631563[.]com
+- 754838[.]com
+- 797896[.]com
+- 856254[.]com
+- 892636[.]com
+- 965923[.]com
+- 971185[.]com
+- 985586[.]com
+
+EXAMPLES OF FULLY QUALIFIED DOMAIN NAMES (FQDNS) AND TCP PORTS FOR THE TDS URLS:
+
+- qdff.esvsgkp[.]com:7107 - root domain registered 2024-06-29, URLs seen as early as 2024-07-06
+- qdff.jzmdlly[.]com:7108 - root domain registered 2024-06-29, URLs seen as early as 2024-08-06
+- qdff.nmhcvyr[.]com:7111 - root domain registered 2024-10-01, URLs seen as early as 2024-11-01
+- qdff.rmkuaso[.]com:7196 - root domain registered 2024-04-09, URLs seen as early as 2024-06-01
+- qdff.slsxrpx[.]com:7109 - root domain registered 2024-06-29, URLs seen as early as 2024-09-26
+- qdff.uqcpcmr[.]com:7110 - root domain registered 2024-06-29, URLs seen as early as 2024-10-29
+
+EXAMPLES OF FQDNS AND TCP PORTS FOR THE FINAL LANDING PAGES:
+
+- chabietvietgi12.3wwmi6[.]my:5029 - root domain registered 2024-11-02
+- ks883hsggahbc.z0kuj6[.]top:22403 - root domain registered 2024-11-12
+- ml01605mlt.fhfghud[.]top:12708 - root domain registered 2024-11-14
+- ml31302mlt.ortzj[.]site:12718 - root domain registered 2024-11-08
+- ml71603mlt.phooway.top:12707 - root domain registered 2024-11-14
+- sangroidayjthoichan1111.csoqp0[.]my:5030 - root domain registered 2024-11-12
+- terwtwregr.a1lag8[.]wang - root domain registered 2024-11-10 (port unknown)
+- uuuuuyuyuyuyuy.w5mokm.top:5001 - root domain registered 2024-11-13
+
+FIVE EXAMPLES OF TRAFFIC FROM INTIAL DOMAIN TO LANDING PAGE:
+
+- https[:]//18103[.]me/   <--- initial domain
+- https[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/?cid=825910&currency=CNY&id=883734028   <--- landing page: gambling site
+- https[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/normal/?cid=825910&currency=CNY&id=883734028   <-- final landing page: gambling site
+
+- https[:]//56269[.]party/   <--- initial domain
+- https[:]//qdff.nmhcvyr[.]com:7111/61/cpa16.html   <--- TDS
+- https[:]//ml61602mlt.phooway[.]top:12707/61/?channelCode=cpa16   <-- final landing page: gambling site
+
+- https[:]//266738[.]com/   <-- initial domain
+- https[:]//qdff.nmhcvyr[.]com:7111/18/xjiu241.html   <-- TDS
+- https[:]//ml61602mlt.phooway[.]top:12707/18/?channelCode=xjiu241   <-- final landing page: adult website
+
+- https[:]//57243[.]pink/   <-- initial domain
+- https[:]//qdff.nmhcvyr[.]com:7111/61/cpa15.html   <-- TDS
+- https[:]//ml71603mlt.phooway[.]top:12707/61/?channelCode=cpa15   <-- final landing page: gambling website
+
+- https[:]//985586[.]com/   <-- initial domain
+- https[:]//qdff.nmhcvyr[.]com:7111/53/yh249.html   <-- TDS
+- https[:]//ml01605mlt.fhfghud[.]top:12708/53/?channelCode=yh249   <-- final landing page: gambling website
+
+10 EXAMPLES OF PUP APK FILES:
+
+(Read: SHA256 hash - file name)
+
+- 1fe237e426b06ad01b6376753cb4e5634d6903184a1bf792d387569c9a3a7b50 - 331-new-1731697300472.apk
+- 28ec30c95246e3154e820093e24fbd0dd29ede9f272bc7886c33e543f15d241c - 0kVeHOOgQZ_3.apk
+- 2d91356c46bf586ab71377dc44b882e384962d07ee3464e6f76ff9a8a73a9ed9 - 221-new-1731694376618.apk
+- 440d605f1e24cd3415d51e9c3347f4c6260cfdd9cf35ce66795ec2aca24a1345 - 5W5dwzdpLU_3.apk
+- 46fe1a536ee6dd0040efec5f7dc36be30617e9e484a275705760b1f7581cb2cd - 331-new-1731694383724.apk
+- 70a541aac5fe4bde4267c31ff2b7531b36d158d04175b71ec3ed2dc602345a48 - 4I7Br2aEj7_3.apk
+- 8086783d4cbbabd6163c8ea03b6c80527634d3de10aa1b1955c728a260b28585 - 221-new-1731697291388.apk
+- b14023b89fd2f57ae73cb81f259a3f2ab04b69d897c8a2c16c310c397d95fb8a - 2ocJmz1emR_0.apk
+- c89d8dfdda3c3b667fb45e4f430fc76b5365501b6b7ea7e6eb64149a2da97a85 - 1EAB46rFc7_3.apk
+- c8dc893b6b0f3d00bb80962b77021a668f37c7f8be8f157d678d800652655f8f - 27RGqnL0tv_0.apk
