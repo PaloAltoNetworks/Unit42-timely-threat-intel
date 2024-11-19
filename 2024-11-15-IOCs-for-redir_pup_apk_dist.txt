@@ -4,6 +4,11 @@ AUTHOR:
 
 - Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_androidpups-activity-7264428436427874304-1c4i/
+- https://x.com/Unit42_Intel/status/1858523099026669742
+
 NOTES:
 
 - We're currently tracking a campaign distributing potentially unwanted programs (PUP) through Android .apk files.
