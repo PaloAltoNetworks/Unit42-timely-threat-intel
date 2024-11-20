@@ -1,0 +1,114 @@
+- 2024-11-19 (TUESDAY): INDICATOR UPDATES FOR APATEWEB CAMPAIGN
+
+AUTHOR:
+
+- Shresta Bellary Seetharam, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
+
+NOTES:
+
+- We've discovered new indicators on entry point infrastructure for the ApateWeb campaign, first reported in our January 2024 article:
+  -- https://unit42.paloaltonetworks.com/apateweb-scareware-pup-delivery-campaign/ 
+- Out of 14.6k domains we attribute to this campaign, 2.4k domains were first seen in 2024.
+- We've discovered 5 new IP addresses hosting the ApateWeb entry point infrastructure so far in 2024.
+- During the past 2 to 3 months, we've seen an increase of new ApateWeb domains, at more than 200 each month.
+- These domain names typically use 2 to 4 random english words as the root name, followed by a .com TLD.
+
+EXAMPLES OF DOMAINS USED IN THE APATEWEB CAMPAIGN IN RECENT MONTHS: 
+
+(Read: - Registered date: domain name)
+
+- 2024-07-23: conceivesaucerfalcon[.]com
+- 2024-08-13: scholarsslate[.]com
+- 2024-08-13: swingdeceive[.]com
+- 2024-08-13: viablehornsborn[.]com
+- 2024-08-14: budgepenitent[.]com
+- 2024-08-14: percentagesubsequentprosper[.]com
+- 2024-08-14: scholarslate[.]com
+- 2024-08-28: sausagefaithfemales[.]com
+- 2024-09-21: bunabsence[.]com
+- 2024-09-24: inclinedallusionnearby[.]com
+- 2024-09-24: kindlygateway[.]com
+- 2024-09-24: settlementlaying[.]com
+- 2024-09-24: turniptriumphantanalogy[.]com
+- 2024-09-27: crackbrilliancegown[.]com
+- 2024-09-27: definiteeverblizzard[.]com
+- 2024-09-30: decisionsensation[.]com
+- 2024-09-30: heroismvarnish[.]com
+- 2024-10-03: immoderatetender[.]com
+- 2024-10-03: nicecartrigezip[.]com
+- 2024-10-07: drakerecitalpraised[.]com
+- 2024-10-09: hungerblackenunequal[.]com
+- 2024-10-11: flatjeep[.]com
+- 2024-10-11: shovegrave[.]com
+- 2024-10-14: easterobsessive[.]com
+- 2024-10-14: frameworkprogenybreastfeeding[.]com
+- 2024-10-14: ghostnimblefrecklessfreckless[.]com
+- 2024-10-14: harshlyfraternity[.]com
+- 2024-10-14: harvestexcavator[.]com
+- 2024-10-15: flyernovelty[.]com
+- 2024-10-15: highperformanceformat[.]com
+- 2024-10-15: intendemploy[.]com
+- 2024-10-15: rabbitssignaturegrumble[.]com
+- 2024-10-15: valestumble[.]com
+- 2024-10-17: deploymentbalance[.]com
+- 2024-10-17: larvamellow[.]com
+- 2024-10-18: appearshundred[.]com
+- 2024-10-18: panelghostscontractor.com
+- 2024-10-18: stuffygirlie[.]com
+- 2024-10-21: cleavertowardinformal[.]com
+- 2024-10-21: coherentchuckled[.]com
+- 2024-10-21: playsnourishbag[.]com
+- 2024-10-21: recommendedblanket[.]com
+- 2024-10-21: shamelessappellation[.]com
+- 2024-10-21: shrewdcrumple[.]com
+- 2024-10-23: brooksuitcase[.]com
+- 2024-10-23: mankinddemocrat[.]com
+- 2024-10-23: ownershornyplatitude[.]com
+- 2024-10-23: workplaceanticipatedtribe[.]com
+- 2024-10-25: detectivegrilled[.]com
+- 2024-10-25: installationtruckuseful[.]com
+- 2024-10-29: actglimpse[.]com
+- 2024-10-29: detrimentalspark[.]com
+- 2024-10-29: isobeldrug[.]com
+- 2024-10-29: paritycreepercar[.]com
+- 2024-11-01: discourageabjure[.]com
+- 2024-11-04: everyoneprocessingworse[.]com
+- 2024-11-04: federalacerbitylid[.]com
+- 2024-11-04: researchingdestroy[.]com
+- 2024-11-06: anybodyroutinefickle[.]com
+- 2024-11-06: hatredappointsinging[.]com
+- 2024-11-07: flockexecute[.]com
+
+EXAMPLES FROM ONE OF THE URL PATTERNS SEEN WITH THIS CAMPAIGN RETURNING JAVASCRIPT FILES:
+
+- hxxps[:]//budgepenitent[.]com/30/51/01/305101d66cd36c4a78b3655b260865ae.js
+- hxxps[:]//conceivesaucerfalcon[.]com/9a/d6/93/9ad69306106b6973bcafe40ac0d2d6ca.js
+- hxxps[:]//crackbrilliancegown[.]com/a5/21/5e/a5215ef0ecc7fe67eddb0d06da117587.js
+- hxxps[:]//detectivegrilled[.]com/2c/03/60/2c0360ed33b0b4736859081c701f9a91.js
+- hxxps[:]//kindlygateway[.]com/9d/9c/86/9d9c860636b52354b9d04ae0c7ea1af0.js
+- hxxps[:]//panelghostscontractor[.]com/d8/00/23/d80023a5828b0e72461b8a871c06f929.js
+- hxxps[:]//percentagesubsequentprosper[.]com/30/51/01/305101d66cd36c4a78b3655b260865ae.js
+- hxxps[:]//recommendedblanket[.]com/2d/27/25/2d27255cab20c847b3a41dd1d11cd631.js
+- hxxps[:]//sausagefaithfemales[.]com/15/ae/6c/15ae6c9abdee9221202fef11df7683f4.js
+- hxxps[:]//sausagefaithfemales[.]com/79/dc/36/79dc36023c5ec5df9ca870f6e557b2cb.js
+- hxxps[:]//scholarsslate[.]com/30/51/01/305101d66cd36c4a78b3655b260865ae.js
+- hxxps[:]//shamelessappellation[.]com/2d/27/25/2d27255cab20c847b3a41dd1d11cd631.js
+- hxxps[:]//shamelessappellation[.]com/73/0e/40/730e401eb387477f393579127aed718f.js
+- hxxps[:]//shrewdcrumple[.]com/2d/27/25/2d27255cab20c847b3a41dd1d11cd631.js
+- hxxps[:]//swingdeceive[.]com/4d/be/e5/4dbee55e59fc95ea4356dbb197f2132c.js
+- hxxps[:]//viablehornsborn[.]com/46/13/76/461376390131460d2543a2334b5021e2.js
+
+EXAMPLES OF IP ADDRESSES CURRENTLY HOSTING APATEWEB ENTRY POINT INFRASTRUCTURE:
+
+- Note: * indicates the 5 new IP addresses we have found hosting this ApateWeb infrastructure.
+
+- 172.240.108[.]68 *
+- 172.240.108[.]76 *
+- 172.240.108[.]84 *
+- 172.240.127[.]234 *
+- 172.240.253[.]132 *
+- 192.243.59[.]12
+- 192.243.59[.]13
+- 192.243.59[.]20
+- 192.243.61[.]225
+- 192.243.61[.]227
