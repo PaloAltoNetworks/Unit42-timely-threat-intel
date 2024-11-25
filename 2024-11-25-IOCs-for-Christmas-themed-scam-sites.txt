@@ -7,7 +7,7 @@ AUTHOR:
 NOTES:
 
 - We've recently discovered 1,000+ sites with Christmas-themed scam pages offering fake internet data giveaways.
-- These sites are designed for mobile devices and bait victims into sharing with WhatsApp friends.
+- These sites are designed for mobile devices and bait victims into sharing with their WhatsApp friends.
 - The end result leads to fake surveys, shopping sites or app stores for potentially unwanted programs (PUPs).
 
 40 EXAMPLES OF DOMAINS HOSTING THESE CHRISTMAS-THEMED SCAM PAGES:
