@@ -7,7 +7,7 @@ AUTHORS:
 NOTES:
 
 - This is a long-running campaign. During the past year, we've identified tech support scam campaigns on multiple CDN services.
-- The daily average detection of tech support scam increased from 30 hits in August 2024 to 300  hits in November 2024.
+- Tech support scam activity has increased from an average of 30 daily hits in August 2024 to an averay oF 300 daily hits by November 2024.
 - These scam sites typically have a short lifespan, and hosting providers generally take these sites down quickly once identified. 
 - Tech support scam pages are delivered through a variety of methods, like ads and traffic distribution system (TDS) activity.
 - In recent weeks the majority of these tech support sites have used Japanese language and phone numbers starting with (0101).
