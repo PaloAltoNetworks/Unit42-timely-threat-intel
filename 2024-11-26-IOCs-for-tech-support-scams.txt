@@ -1,0 +1,69 @@
+2024-11-26 (TUESDAY): TECHNICAL SUPPORT SCAMS
+
+AUTHORS:
+
+- Peng Peng, Alex Starov, Shehroze Farooqi
+
+NOTES:
+
+- This is a long-running campaign. During the past year, we've identified tech support scam campaigns on multiple CDN services.
+
+- The daily average detection of tech support scam increased from 30 hits in August 2024 to 300  hits in November 2024.
+
+- These scam sites typically have a short lifespan, and hosting providers generally take these sites down quickly once identified. 
+
+- These tech support scam pages are delivered through a variety of methods, like ads and traffic distribution system (TDS) activity.
+
+- In recent weeks the majority of these tech support sites have used Japanese language and phone numbers starting with (0101).
+
+EXAMPLES OF RECENT PAGES FOR TECH SUPPORT SCAMS:
+
+- hxxps[:]//ayufgfyt23.z9.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-85549-14992
+- hxxps[:]//dadsda-secondary.z5.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-88880-44640
+- hxxps[:]//hjkxsxsxdcdyyjska65zs.z13.web.core.windows[.]net/?bcda=1-888-331-7870
+- hxxps[:]//lbidl1-secondary.z8.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-85549-14992
+- hxxps[:]//mmnnjiuoo.z5.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-85532-40973
+- hxxps[:]//qqerrt6.z24.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-84421-04568
+- hxxps[:]//qqpplv2-secondary.z14.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-84421-04568
+- hxxps[:]//qqpplv2.z14.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-88861-59081
+- hxxps[:]//qqpplv3.z20.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-84421-04568
+- hxxps[:]//sooii15-secondary.z23.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-85549-14992
+- hxxps[:]//sooii17-secondary.z33.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-84421-04568
+- hxxps[:]//soso21-secondary.z33.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-85549-14992
+- hxxps[:]//soso37.z28.web.core.windows[.]net/werrx01USAHTML/?bcda=(0101)-88861-59081
+
+EXAMPLES OF RECENTLY-REGISTERED DOMAINS HOSTING THESE TECH SUPPORT SCAMS:
+
+- egerss03p01[.]club
+- flurss03p01[.]club
+- hitrss03p01[.]club
+- oilrss03p01[.]club
+- vanrss03p01[.]club
+
+- Note: These domains were all registered on 2024-11-07.
+
+DOMAINS FOR AD TRAFFIC THAT HAVE LED TO TECH SUPPORT SCAM PAGES IN RECENT MONTHS:
+
+- adfpoint[.]com
+​​- t83v0zs.kib7z[.]com
+- us.bluetides[.]xyz
+- us.toromclk[.]com
+- xml.exdirectopl[.]com
+- xml.staradsmedia[.]com
+- xml.userwave[.]com
+- xml.webmedxml[.]com
+- xml.rtxplatform[.]com
+
+- Note: Although the above domains are for ad traffic, they are not inherently malicious.
+
+EXAMPLE OF AN AD TRAFFIC URL LEADING TO A TECH SUPPORT SCAM PAGE:
+
+- hxxps[:]//xml.staradsmedia[.]com/search?format=json&feed=670947&auth=OmVngd&
+  subid=4798e777-48d1-48bb-89f2-2eb1c784eb42&query=bcda=1-844-645-4749&user_ip=[info removed]&
+  ua=Mozilla/5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit/537.36%20
+  %28KHTML%2C%20like%20Gecko%29%20Chrome/131.0.0.0%20Safari/537.36&
+  url=hxxps[:]//sidyg8-secondary.z7.web.core.windows[.]net/merrx01usahtml/?bcda=1-844-645-4749&
+  count=1
+
+- Note: In the above example, the user's browser is Chrome, and user's IP address has been removed.
+
