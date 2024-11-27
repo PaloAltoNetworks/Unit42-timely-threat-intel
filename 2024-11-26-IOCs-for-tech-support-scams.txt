@@ -50,7 +50,7 @@ DOMAINS FOR AD TRAFFIC THAT HAVE LED TO TECH SUPPORT SCAM PAGES IN RECENT MONTHS
 - xml.webmedxml[.]com
 - xml.rtxplatform[.]com
 
-- Note: Although the above domains are for ad traffic, they are not inherently malicious.
+- Note: Although the above domains are for ad traffic, they may not all be inherently malicious.
 
 EXAMPLE OF AN AD TRAFFIC URL LEADING TO A TECH SUPPORT SCAM PAGE:
 
