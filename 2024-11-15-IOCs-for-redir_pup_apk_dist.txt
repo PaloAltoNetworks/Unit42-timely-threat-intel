@@ -7,12 +7,12 @@ AUTHOR:
 REFERENCES:
 
 - https://www.linkedin.com/posts/unit42_androidpups-activity-7264428436427874304-1c4i/
-- https://x.com/Unit42_Intel/status/1858523099026669742
+- https://x.com/Unit42_Intel/status/1858662812412747825
 
 NOTES:
 
 - We're currently tracking a campaign distributing potentially unwanted programs (PUP) through Android .apk files.
-- Our designator for this campaingn is: redir_pup_apk_dist
+- Our designator for this campaign is: redir_pup_apk_dist
 - During the past 3 months, we've detected 1,346 domains redirecting to pages distributing these PUA/PUP .apk files.
 - Domain registration for this campaign peaked on 2024-11-03.
 - Landing pages associated with this campaign advertise adult applications or gambling applications and follow the same set of design templates.
@@ -62,7 +62,7 @@ EXAMPLES OF FQDNS AND TCP PORTS FOR THE FINAL LANDING PAGES:
 - terwtwregr.a1lag8[.]wang - root domain registered 2024-11-10 (port unknown)
 - uuuuuyuyuyuyuy.w5mokm[.]top:5001 - root domain registered 2024-11-13
 
-FIVE EXAMPLES OF TRAFFIC FROM INTIAL DOMAIN TO LANDING PAGE:
+FIVE EXAMPLES OF TRAFFIC FROM INITIAL DOMAIN TO LANDING PAGE:
 
 - hxxps[:]//18103[.]me/   <--- initial domain
 - hxxps[:]//uuuuuyuyuyuyuy[.]w5mokm.top:5001/?cid=825910&currency=CNY&id=883734028   <--- landing page: gambling site
