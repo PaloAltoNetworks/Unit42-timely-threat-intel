@@ -1,0 +1,665 @@
+2025-01-09 (THURSDAY): STOCKPILED DOMAINS DELIVERING SUSPICIOUS ANDROID APP
+
+AUTHOR:
+
+- Reethika Ramesh
+
+NOTES:
+
+- We have discovered a campaign using hundreds of stockpiled domains leading to a suspicious Android app.
+- This campaign has registered and stockpiled hundreds of domains, with new domains added almost daily.
+- Traffic to these domains redirect to URLs that deliver a pornography-themed Android with a file name of 78.apk.
+- The .apk file generates suspicious network traffic indicating it is either adware or possible malware.
+- These stockpiled domains appear to be automatically generated and follow specific naming patterns.
+- We have traced this campaign back to 2024-09-26, and it remains active as we post this information.
+
+404 DOMAINS REGISTERED FOR THIS CAMPAIGN FROM 2024-09-28 THROUGH 2025-01-09:
+
+- apkproxy928a[.]top - registration date: 2024-09-28
+- apkproxy928b[.]top - registration date: 2024-09-28
+- apkproxy928c[.]top - registration date: 2024-09-28
+- apkproxy928d[.]top - registration date: 2024-09-28
+- apkproxy929a[.]top - registration date: 2024-09-28
+- apkproxy929b[.]top - registration date: 2024-09-28
+- apkproxy929c[.]top - registration date: 2024-09-28
+- apkproxy929d[.]top - registration date: 2024-09-28
+- apkproxy930a[.]top - registration date: 2024-09-30
+- apkproxy930b[.]top - registration date: 2024-09-30
+- apkproxy930c[.]top - registration date: 2024-09-30
+- apkproxy930d[.]top - registration date: 2024-09-30
+- apkproxy101a[.]top - registration date: 2024-09-30
+- apkproxy101b[.]top - registration date: 2024-09-30
+- apkproxy101c[.]top - registration date: 2024-09-30
+- apkproxy101d[.]top - registration date: 2024-09-30
+- apkproxy102a[.]top - registration date: 2024-10-02
+- apkproxy102b[.]top - registration date: 2024-10-02
+- apkproxy102c[.]top - registration date: 2024-10-02
+- apkproxy102d[.]top - registration date: 2024-10-02
+- apkproxy103a[.]top - registration date: 2024-10-02
+- apkproxy103b[.]top - registration date: 2024-10-02
+- apkproxy103c[.]top - registration date: 2024-10-02
+- apkproxy103d[.]top - registration date: 2024-10-02
+- apkproxy104a[.]top - registration date: 2024-10-02
+- apkproxy104b[.]top - registration date: 2024-10-02
+- apkproxy104c[.]top - registration date: 2024-10-02
+- apkproxy104d[.]top - registration date: 2024-10-02
+- proxyapk104a[.]top - registration date: 2024-10-04
+- proxyapk104b[.]top - registration date: 2024-10-04
+- proxyapk104c[.]top - registration date: 2024-10-04
+- proxyapk104d[.]top - registration date: 2024-10-04
+- proxyapk105a[.]top - registration date: 2024-10-04
+- proxyapk105b[.]top - registration date: 2024-10-04
+- proxyapk105c[.]top - registration date: 2024-10-04
+- proxyapk105d[.]top - registration date: 2024-10-04
+- proxyapk106a[.]top - registration date: 2024-10-05
+- proxyapk106b[.]top - registration date: 2024-10-05
+- proxyapk106c[.]top - registration date: 2024-10-05
+- proxyapk106d[.]top - registration date: 2024-10-05
+- apkproxy107a[.]top - registration date: 2024-10-06
+- apkproxy107b[.]top - registration date: 2024-10-06
+- apkproxy107c[.]top - registration date: 2024-10-06
+- apkproxy107d[.]top - registration date: 2024-10-06
+- apkproxy108a[.]top - registration date: 2024-10-06
+- apkproxy108b[.]top - registration date: 2024-10-06
+- apkproxy108c[.]top - registration date: 2024-10-06
+- apkproxy108d[.]top - registration date: 2024-10-06
+- apkproxy109a[.]top - registration date: 2024-10-09
+- apkproxy109b[.]top - registration date: 2024-10-09
+- apkproxy109c[.]top - registration date: 2024-10-09
+- apkproxy109d[.]top - registration date: 2024-10-09
+- apkproxy110a[.]top - registration date: 2024-10-09
+- apkproxy110b[.]top - registration date: 2024-10-09
+- apkproxy110c[.]top - registration date: 2024-10-09
+- apkproxy110d[.]top - registration date: 2024-10-09
+- apkproxy1011a[.]top - registration date: 2024-10-10
+- apkproxy1011b[.]top - registration date: 2024-10-10
+- apkproxy1011c[.]top - registration date: 2024-10-10
+- apkproxy1011d[.]top - registration date: 2024-10-10
+- apkproxy1012a[.]top - registration date: 2024-10-11
+- apkproxy1012b[.]top - registration date: 2024-10-11
+- apkproxy1012c[.]top - registration date: 2024-10-11
+- apkproxy1012d[.]top - registration date: 2024-10-11
+- apkproxy1013a[.]top - registration date: 2024-10-13
+- apkproxy1013b[.]top - registration date: 2024-10-13
+- apkproxy1013c[.]top - registration date: 2024-10-13
+- apkproxy1013d[.]top - registration date: 2024-10-13
+- apkproxy1014a[.]top - registration date: 2024-10-14
+- apkproxy1014b[.]top - registration date: 2024-10-14
+- apkproxy1014c[.]top - registration date: 2024-10-14
+- apkproxy1014d[.]top - registration date: 2024-10-14
+- apkproxy1015a[.]top - registration date: 2024-10-15
+- apkproxy1015b[.]top - registration date: 2024-10-15
+- apkproxy1015c[.]top - registration date: 2024-10-15
+- apkproxy1015d[.]top - registration date: 2024-10-15
+- apkproxy1016a[.]top - registration date: 2024-10-15
+- apkproxy1016b[.]top - registration date: 2024-10-15
+- apkproxy1016c[.]top - registration date: 2024-10-15
+- apkproxy1016d[.]top - registration date: 2024-10-15
+- apkproxy1017a[.]top - registration date: 2024-10-16
+- apkproxy1017b[.]top - registration date: 2024-10-16
+- apkproxy1017c[.]top - registration date: 2024-10-16
+- apkproxy1017d[.]top - registration date: 2024-10-16
+- apkproxy1018a[.]top - registration date: 2024-10-17
+- apkproxy1018b[.]top - registration date: 2024-10-17
+- apkproxy1018c[.]top - registration date: 2024-10-17
+- apkproxy1018d[.]top - registration date: 2024-10-17
+- apkproxy1019a[.]top - registration date: 2024-10-19
+- apkproxy1019b[.]top - registration date: 2024-10-19
+- apkproxy1019c[.]top - registration date: 2024-10-19
+- apkproxy1019d[.]top - registration date: 2024-10-19
+- apkproxy1020a[.]top - registration date: 2024-10-20
+- apkproxy1020b[.]top - registration date: 2024-10-20
+- apkproxy1020c[.]top - registration date: 2024-10-20
+- apkproxy1020d[.]top - registration date: 2024-10-20
+- apkproxy1021a[.]top - registration date: 2024-10-21
+- apkproxy1021b[.]top - registration date: 2024-10-21
+- apkproxy1021c[.]top - registration date: 2024-10-21
+- apkproxy1021d[.]top - registration date: 2024-10-21
+- apkproxy1022a[.]top - registration date: 2024-10-22
+- apkproxy1022b[.]top - registration date: 2024-10-22
+- apkproxy1022c[.]top - registration date: 2024-10-22
+- apkproxy1022d[.]top - registration date: 2024-10-22
+- apkproxy1023a[.]top - registration date: 2024-10-23
+- apkproxy1023b[.]top - registration date: 2024-10-23
+- apkproxy1023c[.]top - registration date: 2024-10-23
+- apkproxy1023d[.]top - registration date: 2024-10-23
+- apkproxy1024a[.]top - registration date: 2024-10-23
+- apkproxy1024b[.]top - registration date: 2024-10-23
+- apkproxy1024c[.]top - registration date: 2024-10-23
+- apkproxy1024d[.]top - registration date: 2024-10-23
+- apkproxy1025a[.]top - registration date: 2024-10-25
+- apkproxy1025b[.]top - registration date: 2024-10-25
+- apkproxy1025c[.]top - registration date: 2024-10-25
+- apkproxy1025d[.]top - registration date: 2024-10-25
+- apkproxy1026a[.]top - registration date: 2024-10-26
+- apkproxy1026b[.]top - registration date: 2024-10-26
+- apkproxy1026c[.]top - registration date: 2024-10-26
+- apkproxy1026d[.]top - registration date: 2024-10-26
+- apkproxy1027a[.]top - registration date: 2024-10-27
+- apkproxy1027b[.]top - registration date: 2024-10-27
+- apkproxy1027c[.]top - registration date: 2024-10-27
+- apkproxy1027d[.]top - registration date: 2024-10-27
+- apkproxy1028a[.]top - registration date: 2024-10-27
+- apkproxy1028b[.]top - registration date: 2024-10-27
+- apkproxy1028c[.]top - registration date: 2024-10-27
+- apkproxy1028d[.]top - registration date: 2024-10-27
+- apkproxy1029a[.]top - registration date: 2024-10-29
+- apkproxy1029b[.]top - registration date: 2024-10-29
+- apkproxy1029c[.]top - registration date: 2024-10-29
+- apkproxy1029d[.]top - registration date: 2024-10-29
+- apkproxy1030a[.]top - registration date: 2024-10-30
+- apkproxy1030b[.]top - registration date: 2024-10-30
+- apkproxy1030c[.]top - registration date: 2024-10-30
+- apkproxy1030d[.]top - registration date: 2024-10-30
+- apkproxy1031a[.]top - registration date: 2024-10-30
+- apkproxy1031b[.]top - registration date: 2024-10-30
+- apkproxy1031c[.]top - registration date: 2024-10-30
+- apkproxy1031d[.]top - registration date: 2024-10-30
+- apkproxy1101a[.]top - registration date: 2024-10-31
+- apkproxy1101b[.]top - registration date: 2024-10-31
+- apkproxy1101c[.]top - registration date: 2024-10-31
+- apkproxy1101d[.]top - registration date: 2024-10-31
+- apkproxy1102a[.]top - registration date: 2024-11-02
+- apkproxy1102b[.]top - registration date: 2024-11-02
+- apkproxy1102c[.]top - registration date: 2024-11-02
+- apkproxy1102d[.]top - registration date: 2024-11-02
+- apkproxy1103a[.]top - registration date: 2024-11-02
+- apkproxy1103b[.]top - registration date: 2024-11-02
+- apkproxy1103c[.]top - registration date: 2024-11-02
+- apkproxy1103d[.]top - registration date: 2024-11-02
+- apkproxy1104a[.]top - registration date: 2024-11-03
+- apkproxy1104b[.]top - registration date: 2024-11-03
+- apkproxy1104c[.]top - registration date: 2024-11-03
+- apkproxy1104d[.]top - registration date: 2024-11-03
+- apkproxy1105a[.]top - registration date: 2024-11-04
+- apkproxy1105b[.]top - registration date: 2024-11-04
+- apkproxy1105c[.]top - registration date: 2024-11-04
+- apkproxy1105d[.]top - registration date: 2024-11-04
+- apkproxy1106a[.]top - registration date: 2024-11-05
+- apkproxy1106b[.]top - registration date: 2024-11-05
+- apkproxy1106c[.]top - registration date: 2024-11-05
+- apkproxy1106d[.]top - registration date: 2024-11-05
+- apkproxy1107a[.]top - registration date: 2024-11-07
+- apkproxy1107b[.]top - registration date: 2024-11-07
+- apkproxy1107c[.]top - registration date: 2024-11-07
+- apkproxy1107d[.]top - registration date: 2024-11-07
+- apkproxy1108a[.]top - registration date: 2024-11-08
+- apkproxy1108b[.]top - registration date: 2024-11-08
+- apkproxy1108c[.]top - registration date: 2024-11-08
+- apkproxy1108d[.]top - registration date: 2024-11-08
+- apkproxy1109a[.]top - registration date: 2024-11-08
+- apkproxy1109b[.]top - registration date: 2024-11-08
+- apkproxy1109c[.]top - registration date: 2024-11-08
+- apkproxy1109d[.]top - registration date: 2024-11-08
+- apkproxy1110a[.]top - registration date: 2024-11-09
+- apkproxy1110b[.]top - registration date: 2024-11-09
+- apkproxy1110c[.]top - registration date: 2024-11-09
+- apkproxy1110d[.]top - registration date: 2024-11-09
+- apkproxy1111a[.]top - registration date: 2024-11-11
+- apkproxy1111b[.]top - registration date: 2024-11-11
+- apkproxy1111c[.]top - registration date: 2024-11-11
+- apkproxy1111d[.]top - registration date: 2024-11-11
+- apkproxy1112a[.]top - registration date: 2024-11-12
+- apkproxy1112b[.]top - registration date: 2024-11-12
+- apkproxy1112c[.]top - registration date: 2024-11-12
+- apkproxy1112d[.]top - registration date: 2024-11-12
+- apkproxy1113a[.]top - registration date: 2024-11-12
+- apkproxy1113b[.]top - registration date: 2024-11-12
+- apkproxy1113c[.]top - registration date: 2024-11-12
+- apkproxy1113d[.]top - registration date: 2024-11-12
+- apkproxy1114a[.]top - registration date: 2024-11-13
+- apkproxy1114b[.]top - registration date: 2024-11-13
+- apkproxy1114c[.]top - registration date: 2024-11-13
+- apkproxy1114d[.]top - registration date: 2024-11-13
+- apkproxy1115a[.]top - registration date: 2024-11-14
+- apkproxy1115b[.]top - registration date: 2024-11-14
+- apkproxy1115c[.]top - registration date: 2024-11-14
+- apkproxy1115d[.]top - registration date: 2024-11-14
+- apkproxy1116a[.]top - registration date: 2024-11-15
+- apkproxy1116b[.]top - registration date: 2024-11-15
+- apkproxy1116c[.]top - registration date: 2024-11-15
+- apkproxy1116d[.]top - registration date: 2024-11-15
+- apkproxy1117a[.]top - registration date: 2024-11-17
+- apkproxy1117b[.]top - registration date: 2024-11-17
+- apkproxy1117c[.]top - registration date: 2024-11-17
+- apkproxy1117d[.]top - registration date: 2024-11-17
+- apkproxy1118a[.]top - registration date: 2024-11-17
+- apkproxy1118b[.]top - registration date: 2024-11-17
+- apkproxy1118c[.]top - registration date: 2024-11-17
+- apkproxy1118d[.]top - registration date: 2024-11-17
+- apkproxy1119a[.]top - registration date: 2024-11-18
+- apkproxy1119b[.]top - registration date: 2024-11-18
+- apkproxy1119c[.]top - registration date: 2024-11-18
+- apkproxy1119d[.]top - registration date: 2024-11-18
+- apkproxy1120a[.]top - registration date: 2024-11-19
+- apkproxy1120b[.]top - registration date: 2024-11-19
+- apkproxy1120c[.]top - registration date: 2024-11-19
+- apkproxy1120d[.]top - registration date: 2024-11-19
+- apkproxy1121a[.]top - registration date: 2024-11-21
+- apkproxy1121b[.]top - registration date: 2024-11-21
+- apkproxy1121c[.]top - registration date: 2024-11-21
+- apkproxy1121d[.]top - registration date: 2024-11-21
+- apkproxy1122a[.]top - registration date: 2024-11-22
+- apkproxy1122b[.]top - registration date: 2024-11-22
+- apkproxy1122c[.]top - registration date: 2024-11-22
+- apkproxy1122d[.]top - registration date: 2024-11-22
+- apkproxy1123a[.]top - registration date: 2024-11-22
+- apkproxy1123b[.]top - registration date: 2024-11-22
+- apkproxy1123c[.]top - registration date: 2024-11-22
+- apkproxy1123d[.]top - registration date: 2024-11-22
+- apkproxy1124a[.]top - registration date: 2024-11-23
+- apkproxy1124b[.]top - registration date: 2024-11-23
+- apkproxy1124c[.]top - registration date: 2024-11-23
+- apkproxy1124d[.]top - registration date: 2024-11-23
+- apkproxy1125a[.]top - registration date: 2024-11-24
+- apkproxy1125b[.]top - registration date: 2024-11-24
+- apkproxy1125c[.]top - registration date: 2024-11-24
+- apkproxy1125d[.]top - registration date: 2024-11-24
+- apkproxy1126a[.]top - registration date: 2024-11-25
+- apkproxy1126b[.]top - registration date: 2024-11-25
+- apkproxy1126c[.]top - registration date: 2024-11-25
+- apkproxy1126d[.]top - registration date: 2024-11-25
+- apkproxy1127a[.]top - registration date: 2024-11-25
+- apkproxy1127b[.]top - registration date: 2024-11-25
+- apkproxy1127c[.]top - registration date: 2024-11-25
+- apkproxy1127d[.]top - registration date: 2024-11-25
+- apkproxy1128a[.]top - registration date: 2024-11-27
+- apkproxy1128b[.]top - registration date: 2024-11-27
+- apkproxy1128c[.]top - registration date: 2024-11-27
+- apkproxy1128d[.]top - registration date: 2024-11-27
+- apkproxy1129a[.]top - registration date: 2024-11-28
+- apkproxy1129b[.]top - registration date: 2024-11-28
+- apkproxy1129c[.]top - registration date: 2024-11-28
+- apkproxy1129d[.]top - registration date: 2024-11-28
+- apkproxy1130a[.]top - registration date: 2024-11-29
+- apkproxy1130b[.]top - registration date: 2024-11-29
+- apkproxy1130c[.]top - registration date: 2024-11-29
+- apkproxy1130d[.]top - registration date: 2024-11-29
+- apkproxy1131a[.]top - registration date: 2024-11-30
+- apkproxy1131b[.]top - registration date: 2024-11-30
+- apkproxy1131c[.]top - registration date: 2024-11-30
+- apkproxy1131d[.]top - registration date: 2024-11-30
+- apkmain1202a[.]top - registration date: 2024-12-02
+- apkmain1202b[.]top - registration date: 2024-12-02
+- apkmain1202c[.]top - registration date: 2024-12-02
+- apkmain1202d[.]top - registration date: 2024-12-02
+- apkmain1203a[.]top - registration date: 2024-12-02
+- apkmain1203b[.]top - registration date: 2024-12-02
+- apkmain1203c[.]top - registration date: 2024-12-02
+- apkmain1203d[.]top - registration date: 2024-12-02
+- apkmain1204a[.]top - registration date: 2024-12-04
+- apkmain1204b[.]top - registration date: 2024-12-04
+- apkmain1204c[.]top - registration date: 2024-12-04
+- apkmain1204d[.]top - registration date: 2024-12-04
+- apkmain1205a[.]top - registration date: 2024-12-05
+- apkmain1205b[.]top - registration date: 2024-12-05
+- apkmain1205c[.]top - registration date: 2024-12-05
+- apkmain1205d[.]top - registration date: 2024-12-05
+- apkmain1206a[.]top - registration date: 2024-12-06
+- apkmain1206b[.]top - registration date: 2024-12-06
+- apkmain1206c[.]top - registration date: 2024-12-06
+- apkmain1206d[.]top - registration date: 2024-12-06
+- apkmain1208a[.]top - registration date: 2024-12-08
+- apkmain1208b[.]top - registration date: 2024-12-08
+- apkmain1208c[.]top - registration date: 2024-12-08
+- apkmain1208d[.]top - registration date: 2024-12-08
+- apkmain1210a[.]top - registration date: 2024-12-10
+- apkmain1210b[.]top - registration date: 2024-12-10
+- apkmain1210c[.]top - registration date: 2024-12-10
+- apkmain1210d[.]top - registration date: 2024-12-10
+- apkmain1212a[.]top - registration date: 2024-12-11
+- apkmain1212b[.]top - registration date: 2024-12-11
+- apkmain1212c[.]top - registration date: 2024-12-11
+- apkmain1212d[.]top - registration date: 2024-12-11
+- apkmain1213a[.]top - registration date: 2024-12-12
+- apkmain1213b[.]top - registration date: 2024-12-12
+- apkmain1213c[.]top - registration date: 2024-12-12
+- apkmain1213d[.]top - registration date: 2024-12-12
+- apkmain1214a[.]top - registration date: 2024-12-14
+- apkmain1214b[.]top - registration date: 2024-12-14
+- apkmain1214c[.]top - registration date: 2024-12-14
+- apkmain1214d[.]top - registration date: 2024-12-14
+- apkmain1215a[.]top - registration date: 2024-12-14
+- apkmain1215b[.]top - registration date: 2024-12-14
+- apkmain1215c[.]top - registration date: 2024-12-14
+- apkmain1215d[.]top - registration date: 2024-12-14
+- apkmain1216a[.]top - registration date: 2024-12-16
+- apkmain1216b[.]top - registration date: 2024-12-16
+- apkmain1216c[.]top - registration date: 2024-12-16
+- apkmain1216d[.]top - registration date: 2024-12-16
+- apkmain1217a[.]top - registration date: 2024-12-17
+- apkmain1217b[.]top - registration date: 2024-12-17
+- apkmain1217c[.]top - registration date: 2024-12-17
+- apkmain1217d[.]top - registration date: 2024-12-17
+- apkmain1218a[.]top - registration date: 2024-12-17
+- apkmain1218b[.]top - registration date: 2024-12-17
+- apkmain1218c[.]top - registration date: 2024-12-17
+- apkmain1218d[.]top - registration date: 2024-12-17
+- apkmain1219a[.]top - registration date: 2024-12-18
+- apkmain1219b[.]top - registration date: 2024-12-18
+- apkmain1219c[.]top - registration date: 2024-12-18
+- apkmain1219d[.]top - registration date: 2024-12-18
+- apkmain1220a[.]top - registration date: 2024-12-19
+- apkmain1220b[.]top - registration date: 2024-12-19
+- apkmain1220c[.]top - registration date: 2024-12-19
+- apkmain1220d[.]top - registration date: 2024-12-19
+- apkmain1221a[.]top - registration date: 2024-12-21
+- apkmain1221b[.]top - registration date: 2024-12-21
+- apkmain1221c[.]top - registration date: 2024-12-21
+- apkmain1221d[.]top - registration date: 2024-12-21
+- apkmain1222a[.]top - registration date: 2024-12-21
+- apkmain1222b[.]top - registration date: 2024-12-21
+- apkmain1222c[.]top - registration date: 2024-12-21
+- apkmain1222d[.]top - registration date: 2024-12-21
+- apkmain1223a[.]top - registration date: 2024-12-22
+- apkmain1223b[.]top - registration date: 2024-12-22
+- apkmain1223c[.]top - registration date: 2024-12-22
+- apkmain1223d[.]top - registration date: 2024-12-22
+- apkmain1224a[.]top - registration date: 2024-12-23
+- apkmain1224b[.]top - registration date: 2024-12-23
+- apkmain1224c[.]top - registration date: 2024-12-23
+- apkmain1224d[.]top - registration date: 2024-12-23
+- apkmain1225a[.]top - registration date: 2024-12-25
+- apkmain1225b[.]top - registration date: 2024-12-25
+- apkmain1225c[.]top - registration date: 2024-12-25
+- apkmain1225d[.]top - registration date: 2024-12-25
+- apkmain1226a[.]top - registration date: 2024-12-26
+- apkmain1226b[.]top - registration date: 2024-12-26
+- apkmain1226c[.]top - registration date: 2024-12-26
+- apkmain1226d[.]top - registration date: 2024-12-26
+- apkmain1227a[.]top - registration date: 2024-12-27
+- apkmain1227b[.]top - registration date: 2024-12-27
+- apkmain1227c[.]top - registration date: 2024-12-27
+- apkmain1227d[.]top - registration date: 2024-12-27
+- apkmain1228a[.]top - registration date: 2024-12-28
+- apkmain1228b[.]top - registration date: 2024-12-28
+- apkmain1228c[.]top - registration date: 2024-12-28
+- apkmain1228d[.]top - registration date: 2024-12-28
+- apkmain1229a[.]top - registration date: 2024-12-29
+- apkmain1229b[.]top - registration date: 2024-12-29
+- apkmain1229c[.]top - registration date: 2024-12-29
+- apkmain1229d[.]top - registration date: 2024-12-29
+- apkmain1230a[.]top - registration date: 2024-12-30
+- apkmain1230b[.]top - registration date: 2024-12-30
+- apkmain1230c[.]top - registration date: 2024-12-30
+- apkmain1230d[.]top - registration date: 2024-12-30
+- apkmain1231a[.]top - registration date: 2024-12-31
+- apkmain1231b[.]top - registration date: 2024-12-31
+- apkmain1231c[.]top - registration date: 2024-12-31
+- apkmain1231d[.]top - registration date: 2024-12-31
+- apkmain0102a[.]top - registration date: 2025-01-01
+- apkmain0102b[.]top - registration date: 2025-01-01
+- apkmain0102c[.]top - registration date: 2025-01-01
+- apkmain0102d[.]top - registration date: 2025-01-01
+- apkmain0103a[.]top - registration date: 2025-01-03
+- apkmain0103b[.]top - registration date: 2025-01-03
+- apkmain0103c[.]top - registration date: 2025-01-03
+- apkmain0103d[.]top - registration date: 2025-01-03
+- apkmain0104a[.]top - registration date: 2025-01-04
+- apkmain0104b[.]top - registration date: 2025-01-04
+- apkmain0104c[.]top - registration date: 2025-01-04
+- apkmain0104d[.]top - registration date: 2025-01-04
+- apkmain0105a[.]top - registration date: 2025-01-05
+- apkmain0105b[.]top - registration date: 2025-01-05
+- apkmain0105c[.]top - registration date: 2025-01-05
+- apkmain0105d[.]top - registration date: 2025-01-05
+- apkmain0106a[.]top - registration date: 2025-01-06
+- apkmain0106b[.]top - registration date: 2025-01-06
+- apkmain0106c[.]top - registration date: 2025-01-06
+- apkmain0106d[.]top - registration date: 2025-01-06
+- apkmain0107a[.]top - registration date: 2025-01-06
+- apkmain0107b[.]top - registration date: 2025-01-06
+- apkmain0107c[.]top - registration date: 2025-01-06
+- apkmain0107d[.]top - registration date: 2025-01-06
+- apkmain0108a[.]top - registration date: 2025-01-08
+- apkmain0108b[.]top - registration date: 2025-01-08
+- apkmain0108c[.]top - registration date: 2025-01-08
+- apkmain0108d[.]top - registration date: 2025-01-08
+- apkmain0109a[.]top - registration date: 2025-01-09
+- apkmain0109b[.]top - registration date: 2025-01-09
+- apkmain0109c[.]top - registration date: 2025-01-09
+- apkmain0109d[.]top - registration date: 2025-01-09
+
+241 URLS HOSTING A FILE NAMED 78.APK FROM 2024-09-28 THROUGH 2025-01-09:
+
+- hxxps[:]//qdhph926am[.]top/a/10d4/78.apk
+- hxxps[:]//qdhph1013[.]top/a/1205/78.apk
+- hxxps[:]//qdhph1013[.]top/a/1215/78.apk
+- hxxps[:]//qdhph1014[.]top/a/120d/78.apk
+- hxxps[:]//qdcdn1015[.]top/a/1235/78.apk
+- hxxps[:]//qdhph1015[.]top/a/12115/78.apk
+- hxxps[:]//qdhph1015[.]top/a/1215/78.apk
+- hxxps[:]//qdhph1015[.]top/a/121d/78.apk
+- hxxps[:]//qdhph1015[.]top/a/1225/78.apk
+- hxxps[:]//qdhph1015[.]top/a/122d/78.apk
+- hxxps[:]//qdhph1016[.]top/a/12215/78.apk
+- hxxps[:]//qdhph1016[.]top/a/1235/78.apk
+- hxxps[:]//qdhph1017[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1017am[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1018am[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1020[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1022am[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1023am[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1024[.]top/a/1235/78.apk
+- hxxps[:]//qdwlj1024am[.]top/a/12711/78.apk
+- hxxps[:]//qdwlj1027am[.]top/a/12e4/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/12e14/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/12e4/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/12ec/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/12f14/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/12f4/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/12fc/78.apk
+- hxxps[:]//qdwlj1028am[.]top/a/1304/78.apk
+- hxxps[:]//qdwlj1030am[.]top/a/13014/78.apk
+- hxxps[:]//qdwlj1031am[.]top/a/13114/78.apk
+- hxxps[:]//qdwlj1031am[.]top/a/1324/78.apk
+- hxxps[:]//qdwlj1101am[.]top/a/13214/78.apk
+- hxxps[:]//qdwlj1101am[.]top/a/1334/78.apk
+- hxxps[:]//qdwlj1102am[.]top/a/13314/78.apk
+- hxxps[:]//qdwlj1102am[.]top/a/1334/78.apk
+- hxxps[:]//qdwlj1102am[.]top/a/133c/78.apk
+- hxxps[:]//qdwlj1102am[.]top/a/1344/78.apk
+- hxxps[:]//qdwlj1103am[.]top/a/13414/78.apk
+- hxxps[:]//qdwlj1103am[.]top/a/134c/78.apk
+- hxxps[:]//qdwlj1103am[.]top/a/1354/78.apk
+- hxxps[:]//qdwlj1104am[.]top/a/13514/78.apk
+- hxxps[:]//qdwlj1104am[.]top/a/135c/78.apk
+- hxxps[:]//qdwlj1105am[.]top/a/13614/78.apk
+- hxxps[:]//qdwlj1105am[.]top/a/136c/78.apk
+- hxxps[:]//qdwlj1105am[.]top/a/1374/78.apk
+- hxxps[:]//qdwlj1106am[.]top/a/13714/78.apk
+- hxxps[:]//qdwlj1106am[.]top/a/137c/78.apk
+- hxxps[:]//qdwlj1106am[.]top/a/1384/78.apk
+- hxxps[:]//qdwlj1107am[.]top/a/13814/78.apk
+- hxxps[:]//qdwlj1107am[.]top/a/1394/78.apk
+- hxxps[:]//qdwlj1108am[.]top/a/13914/78.apk
+- hxxps[:]//qdwlj1108am[.]top/a/13b4/78.apk
+- hxxps[:]//qdwlj1109am[.]top/a/13a4/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13b4/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13bc/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13c4/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13cc/78.apk
+- hxxps[:]//qdwlj1111am[.]top/a/13d4/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13d14/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13d4/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13dc/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13e4/78.apk
+- hxxps[:]//qdwlj1113am[.]top/a/13ec/78.apk
+- hxxps[:]//qdwlj1113am[.]top/a/13f4/78.apk
+- hxxps[:]//qdwlj1114am[.]top/a/13f14/78.apk
+- hxxps[:]//qdwlj1114am[.]top/a/13fc/78.apk
+- hxxps[:]//qdwlj1114am[.]top/a/1404/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/14014/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/1404/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/140c/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/1414/78.apk
+- hxxps[:]//qdwlj1116am[.]top/a/141c/78.apk
+- hxxps[:]//qdwlj1116am[.]top/a/1424/78.apk
+- hxxps[:]//qdwlj1117am[.]top/a/142c/78.apk
+- hxxps[:]//qdwlj1117am[.]top/a/1434/78.apk
+- hxxps[:]//qdwlj1118am[.]top/a/14314/78.apk
+- hxxps[:]//qdwlj1118am[.]top/a/1444/78.apk
+- hxxps[:]//qdwlj1118am[.]top/a/144c/78.apk
+- hxxps[:]//qdwlj1121am[.]top/a/145e/78.apk
+- hxxps[:]//qdwlj1121am[.]top/a/1472/78.apk
+- hxxps[:]//qdwlj1122am[.]top/a/14712/78.apk
+- hxxps[:]//qdwlj1122am[.]top/a/147a/78.apk
+- hxxps[:]//qdwlj1122am[.]top/a/1482/78.apk
+- hxxps[:]//qdwlj1123am[.]top/a/14812/78.apk
+- hxxps[:]//qdwlj1123am[.]top/a/148a/78.apk
+- hxxps[:]//qdwlj1123am[.]top/a/1492/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/14912/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/149a/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/14a1/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/14aa/78.apk
+- hxxps[:]//qdwlj1125am[.]top/a/14a12/78.apk
+- hxxps[:]//qdwlj1125am[.]top/a/14b2/78.apk
+- hxxps[:]//qdwlj1125am[.]top/a/14ba/78.apk
+- hxxps[:]//qdwlj1126am[.]top/a/14b12/78.apk
+- hxxps[:]//qdwlj1126am[.]top/a/14c2/78.apk
+- hxxps[:]//qdwlj1127am[.]top/a/14ca/78.apk
+- hxxps[:]//qdwlj1127am[.]top/a/14d2/78.apk
+- hxxps[:]//qdwlj1128am[.]top/a/14d12/78.apk
+- hxxps[:]//qdwlj1128am[.]top/a/14da/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14e12/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14e2/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14ea/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14f2/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/14f2/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/14fa/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/1502/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/150a/78.apk
+- hxxps[:]//qdwlj1131am[.]top/a/1512/78.apk
+- hxxps[:]//qdwlj1104am[.]top/a/135c/78.apk
+- hxxps[:]//qdwlj1105am[.]top/a/13614/78.apk
+- hxxps[:]//qdwlj1105am[.]top/a/136c/78.apk
+- hxxps[:]//qdwlj1105am[.]top/a/1374/78.apk
+- hxxps[:]//qdwlj1106am[.]top/a/13714/78.apk
+- hxxps[:]//qdwlj1106am[.]top/a/137c/78.apk
+- hxxps[:]//qdwlj1106am[.]top/a/1384/78.apk
+- hxxps[:]//qdwlj1107am[.]top/a/13814/78.apk
+- hxxps[:]//qdwlj1107am[.]top/a/1394/78.apk
+- hxxps[:]//qdwlj1108am[.]top/a/13914/78.apk
+- hxxps[:]//qdwlj1108am[.]top/a/13b4/78.apk
+- hxxps[:]//qdwlj1109am[.]top/a/13a4/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13b4/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13bc/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13c4/78.apk
+- hxxps[:]//qdwlj1110am[.]top/a/13cc/78.apk
+- hxxps[:]//qdwlj1111am[.]top/a/13d4/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13d14/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13d4/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13dc/78.apk
+- hxxps[:]//qdwlj1112am[.]top/a/13e4/78.apk
+- hxxps[:]//qdwlj1113am[.]top/a/13ec/78.apk
+- hxxps[:]//qdwlj1113am[.]top/a/13f4/78.apk
+- hxxps[:]//qdwlj1114am[.]top/a/13f14/78.apk
+- hxxps[:]//qdwlj1114am[.]top/a/13fc/78.apk
+- hxxps[:]//qdwlj1114am[.]top/a/1404/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/14014/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/1404/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/140c/78.apk
+- hxxps[:]//qdwlj1115am[.]top/a/1414/78.apk
+- hxxps[:]//qdwlj1116am[.]top/a/141c/78.apk
+- hxxps[:]//qdwlj1116am[.]top/a/1424/78.apk
+- hxxps[:]//qdwlj1117am[.]top/a/142c/78.apk
+- hxxps[:]//qdwlj1117am[.]top/a/1434/78.apk
+- hxxps[:]//qdwlj1118am[.]top/a/14314/78.apk
+- hxxps[:]//qdwlj1118am[.]top/a/1444/78.apk
+- hxxps[:]//qdwlj1118am[.]top/a/144c/78.apk
+- hxxps[:]//qdwlj1121am[.]top/a/145e/78.apk
+- hxxps[:]//qdwlj1121am[.]top/a/1472/78.apk
+- hxxps[:]//qdwlj1122am[.]top/a/14712/78.apk
+- hxxps[:]//qdwlj1122am[.]top/a/147a/78.apk
+- hxxps[:]//qdwlj1122am[.]top/a/1482/78.apk
+- hxxps[:]//qdwlj1123am[.]top/a/14812/78.apk
+- hxxps[:]//qdwlj1123am[.]top/a/148a/78.apk
+- hxxps[:]//qdwlj1123am[.]top/a/1492/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/14912/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/149a/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/14a1/78.apk
+- hxxps[:]//qdwlj1124am[.]top/a/14aa/78.apk
+- hxxps[:]//qdwlj1125am[.]top/a/14a12/78.apk
+- hxxps[:]//qdwlj1125am[.]top/a/14b2/78.apk
+- hxxps[:]//qdwlj1125am[.]top/a/14ba/78.apk
+- hxxps[:]//qdwlj1126am[.]top/a/14b12/78.apk
+- hxxps[:]//qdwlj1126am[.]top/a/14c2/78.apk
+- hxxps[:]//qdwlj1127am[.]top/a/14ca/78.apk
+- hxxps[:]//qdwlj1127am[.]top/a/14d2/78.apk
+- hxxps[:]//qdwlj1128am[.]top/a/14d12/78.apk
+- hxxps[:]//qdwlj1128am[.]top/a/14da/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14e12/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14e2/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14ea/78.apk
+- hxxps[:]//qdwlj1129am[.]top/a/14f2/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/14f2/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/14fa/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/1502/78.apk
+- hxxps[:]//qdwlj1130am[.]top/a/150a/78.apk
+- hxxps[:]//qdwlj1131am[.]top/a/1512/78.apk
+- hxxps[:]//qdmainam1202[.]top/a/1522/78.apk
+- hxxps[:]//qdmainam1203[.]top/a/15212/78.apk
+- hxxps[:]//qdmainam1203[.]top/a/152a/78.apk
+- hxxps[:]//qdmainam1203[.]top/a/1542/78.apk
+- hxxps[:]//qdmainam1204[.]top/a/153a/78.apk
+- hxxps[:]//qdmainam1205[.]top/a/15612/78.apk
+- hxxps[:]//qdmainam1205[.]top/a/156a/78.apk
+- hxxps[:]//qdmainam1205[.]top/a/157a/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/15712/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/1582/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/158a/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/15912/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/159a/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/15a2/78.apk
+- hxxps[:]//qdmainam1207[.]top/a/15b2/78.apk
+- hxxps[:]//qdwlj1212[.]top/a/15b12/78.apk
+- hxxps[:]//qdwlj1212[.]top/a/15c2/78.apk
+- hxxps[:]//qdwlj1213[.]top/a/15c12/78.apk
+- hxxps[:]//qdwlj1213[.]top/a/15ca/78.apk
+- hxxps[:]//qdwlj1214[.]top/a/15d12/78.apk
+- hxxps[:]//qdwlj1214[.]top/a/15e2/78.apk
+- hxxps[:]//qdwlj1214[.]top/a/15ea/78.apk
+- hxxps[:]//qdwlj1215[.]top/a/15f2/78.apk
+- hxxps[:]//qdwlj1215[.]top/a/15fa/78.apk
+- hxxps[:]//qdwlj1216[.]top/a/15f12/78.apk
+- hxxps[:]//qdwlj1216[.]top/a/1602/78.apk
+- hxxps[:]//qdwlj1217[.]top/a/16012/78.apk
+- hxxps[:]//qdwlj1217[.]top/a/160a/78.apk
+- hxxps[:]//qdwlj1217[.]top/a/1612/78.apk
+- hxxps[:]//qdwlj1218[.]top/a/16112/78.apk
+- hxxps[:]//qdwlj1218[.]top/a/161a/78.apk
+- hxxps[:]//qdwlj1218[.]top/a/1622/78.apk
+- hxxps[:]//qdwlj1219[.]top/a/162a/78.apk
+- hxxps[:]//qdwlj1219[.]top/a/1632/78.apk
+- hxxps[:]//qdwlj1220[.]top/a/163a/78.apk
+- hxxps[:]//qdwlj1220[.]top/a/163c/78.apk
+- hxxps[:]//qdwlj1221[.]top/a/16410/78.apk
+- hxxps[:]//qdwlj1224[.]top/a/16410/78.apk
+- hxxps[:]//qdwlj1224[.]top/a/16716/78.apk
+- hxxps[:]//qdwlj1224[.]top/a/1686/78.apk
+- hxxps[:]//qdwlj1225[.]top/a/16816/78.apk
+- hxxps[:]//qdwlj1225[.]top/a/168e/78.apk
+- hxxps[:]//qdwlj1225[.]top/a/1696/78.apk
+- hxxps[:]//qdwlj1226[.]top/a/16916/78.apk
+- hxxps[:]//qdwlj1226[.]top/a/16a5/78.apk
+- hxxps[:]//qdwlj1227[.]top/a/16a16/78.apk
+- hxxps[:]//qdwlj1227[.]top/a/16b5/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16c16/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16ce/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16d16/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16d6/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16de/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16e6/78.apk
+- hxxps[:]//qdcdn1228[.]top/a/16ee/78.apk
+- hxxps[:]//qdwlj1228[.]top/a/16c6/78.apk
+- hxxps[:]//qdwlj1229[.]top/a/16ce/78.apk
+- hxxps[:]//qdhph1231[.]top/a/116/78.apk
+- hxxps[:]//qdhph1231[.]top/a/16e16/78.apk
+- hxxps[:]//qdhph1231[.]top/a/1e/78.apk
+- hxxps[:]//qdhph1231[.]top/a/216/78.apk
+- hxxps[:]//qdhph1231[.]top/a/2e/78.apk
+- hxxps[:]//qdhph1231[.]top/a/26/78.apk
+- hxxps[:]//qdhph1231[.]top/a/36/78.apk
+- hxxps[:]//qdmain0106[.]top/a/76/78.apk
+- hxxps[:]//qdmain0106[.]top/a/716/78.apk
+- hxxps[:]//qdmain0106[.]top/a/916/78.apk
