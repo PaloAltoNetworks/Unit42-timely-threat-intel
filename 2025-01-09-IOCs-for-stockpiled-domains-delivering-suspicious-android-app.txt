@@ -9,7 +9,7 @@ NOTES:
 - We have discovered a campaign using hundreds of stockpiled domains leading to a suspicious Android app.
 - This campaign has registered and stockpiled hundreds of domains, with new domains added almost daily.
 - Traffic to these domains redirect to URLs that deliver a pornography-themed Android with a file name of 78.apk.
-- The .apk file generates suspicious network traffic indicating it is either adware or possible malware.
+- The .apk file generates suspicious network traffic indicating it is likely adware.
 - These stockpiled domains appear to be automatically generated and follow specific naming patterns.
 - We have traced this campaign back to 2024-09-26, and it remains active as we post this information.
 
