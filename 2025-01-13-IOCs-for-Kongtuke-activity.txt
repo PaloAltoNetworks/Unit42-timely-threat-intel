@@ -6,7 +6,7 @@ AUTHOR:
 
 NOTES:
 
-- The KongTuke involves injected script that currently causes associated websites to display fake "verify you are human" pages.
+- KongTuke involves injected script that currently causes associated websites to display fake "verify you are human" pages.
 - These fake verification pages load a potential victim's Windows copy/paste buffer with malicious PowerShell script.
 - The page also gives detailed instructions asking potential victims to paste and execute the script in a Run window.
 - This lure is used in a campaign frequently tracked as #KongTuke by sources like @monitorsg on Mastodon and ThreatFox:
