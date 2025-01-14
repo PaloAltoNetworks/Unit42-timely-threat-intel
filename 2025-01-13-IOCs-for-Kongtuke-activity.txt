@@ -4,6 +4,11 @@ AUTHOR:
 
 - Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_kongtuke-boinc-activity-7284986403476717568-InKv/
+- https://x.com/Unit42_Intel/status/1879220778173870556
+
 NOTES:
 
 - KongTuke involves injected script that currently causes associated websites to display fake "verify you are human" pages.
