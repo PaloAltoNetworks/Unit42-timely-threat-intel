@@ -21,17 +21,17 @@ DETAILS:
 - Email bombing is generally used to potentially hide security alerts or other notifications.
 - However, these attacks use email bombing to create an IT issue by making targeted email clients unusable.
 - After email bombing, attackers initiate a Microsoft Teams chat session pretending to be the victim's help desk or IT department.
-- Offering to fix the email problem, attakers instruct victims to install a remote management tool like Microsoft Quick Assist.
+- Offering to fix the email problem, attackers instruct victims to install a remote management tool like Microsoft Quick Assist.
 - If successful, attackers download a zip archive to the targeted host and extract its contents using Tar for Windows.
 - The zip archive contains a copy of Microsoft's Onedrive Standalone Updater, Onedrivestandaloneupdater.exe, and other files that include a malicious DLL named winhttp.dll.
-- In an exmaple of DLL side loading, Onedrivestandaloneupdater.exe loads the malicious file named winhttp.dll.
+- In an example of DLL side loading, Onedrivestandaloneupdater.exe loads the malicious file named winhttp.dll.
 - This malware potentially beacons out to multiple C2 IP addresses.
 - We have also observed an added registry key at HKCU\SOFTWARE\TitanPlus storing these C2 IP addresses.
 - In at least one instance, this activity led to the deployment of Black Basta ransomware.
 
 IP ADDRESSES ASSOCIATED WITH THE ATTACK INFRASTRUCTURE:
 
-- Our analysis reaveals at least 20 IP addresses associated with the infrastructure behind these attacks.
+- Our analysis reveals at least 20 IP addresses associated with the infrastructure behind these attacks.
 - The following are 20 IP addresses that we believe are used for this campaign.
 
 - 5.78.41[.]255
