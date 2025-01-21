@@ -1,5 +1,7 @@
 CLUSTER OF INFRASTRUCTURE LIKELY USED BY AFFILIATE OF DARK SCORPIUS (BLACK BASTA)
 
+2025-01-21 update: Added 5 additional IP addresses to the C2 server list.
+
 AUTHOR:
 
 - Richard Emmerson
@@ -37,25 +39,30 @@ DETAILS:
 IP ADDRESSES ASSOCIATED WITH THE ATTACK INFRASTRUCTURE:
 
 - Our analysis reveals at least 20 IP addresses associated with the infrastructure behind these attacks.
-- The following are 20 IP addresses that we believe are used for this campaign.
+- The following are 25 IP addresses that we believe are used for this campaign.
 
 - 5.78.41[.]255
+- 5.181.3[.]164
 - 5.181.159[.]48
+- 38.180.25[.]3
 - 38.180.135[.]232
 - 38.180.138[.]15
 - 38.180.192[.]243
 - 45.8.157[.]146
 - 45.8.157[.]158
 - 45.8.157[.]162
+- 45.8.157[.]199
 - 45.128.149[.]32
 - 89.185.80[.]86
 - 89.185.80[.]170
 - 89.185.80[.]251
 - 91.90.195[.]91
 - 178.236.247[.]173
+- 185.190.251[.]16
 - 195.123.233[.]19
 - 195.123.233[.]148
 - 195.123.241[.]24
 - 195.211.96[.]135
 - 207.90.238[.]46
+- 207.90.238[.]52
 - 207.90.238[.]67
