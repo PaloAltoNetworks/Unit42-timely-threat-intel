@@ -10,14 +10,14 @@ ORIGINAL REFERENCE:
 
 NOTES:
 
-- This campaign consists of script using wp3[.]xyz as a domain name found in pages on compromised WordPress sites.
+- This campaign consists of script using wp3[.]xyz as a domain injected in pages of compromised WordPress sites.
 - The campaign is designed to steal sensitive data like administrative login credentials.
 - Based on our telemetry, activity from this campaign started as early as October 2024
 - We've found 10K+ websites compromised since October with infections spiking in December 2024.
 - We discovered more than a dozen JavaScript samples using polymorphism to stay undetected.
 - Variations in script content can be as little as changing log statements.
 - These variations keep varying the hash and help the samples avoid detection.
-- wp3[.]xyz was re-registered on 10/3/2024, and earlier registrations suggest a different party.
+- wp3[.]xyz was re-registered on 2024-10-03, and earlier registrations suggest this is a new registrant.
 - wp3[.]xyz was recently hosted on 192.142.10[.]6 (Ultrahost, Inc. NL).
 - This IP address is known to host several other .xyz malicious domains.
 
