@@ -23,8 +23,8 @@ EXAMPLE OF HTTP POST REQUEST TO SEND LOGIN CREDENTIALS BACK TO THE WEB SERVER:
 
 DOMAIN NAMES AND NUMBER OF DETECTIONS SINCE NOVEMBER 2024:
 
-Domain name        Number of detections
------------------   --------------------
+Domain name           Number of detections
+-----------------     --------------------
 3chvt[.]shop          1
 6at3[.]com            11
 7uzx[.]com            13
