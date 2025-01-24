@@ -1,0 +1,54 @@
+2025-01-23 (FRIDAY): ONGOING "WP3[.]XYZ" CAMPAIGN ACTIVITY
+
+AUTHORS:
+
+- Shehroze Farooqi, Nabeel Mohamed
+
+ORIGINAL REFERENCE:
+
+- https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack 
+
+NOTES:
+
+- This campaign consists of script using wp3[.]xyz as a domain name found in pages on compromised WordPress sites.
+- The campaign is designed to steal sensitive data like administrative login credentials.
+- Based on our telemetry, activity from this campaign started as early as October 2024
+- We've found 10K+ websites compromised since October with infections spiking in December 2024.
+- We discovered more than a dozen JavaScript samples using polymorphism to stay undetected.
+- Variations in script content can be as little as changing log statements.
+- These variations keep varying the hash and help the samples avoid detection.
+- wp3[.]xyz was re-registered on 10/3/2024, and earlier registrations suggest a different party.
+- wp3[.]xyz was recently hosted on 192.142.10[.]6 (Ultrahost, Inc. NL).
+- This IP address is known to host several other .xyz malicious domains.
+
+ASSOCIATED URLS:
+
+- wp3[.]xyz/a.js
+- wp3[.]xyz/a.js
+- wp3[.]xyz/aok.js
+- wp3[.]xyz/g7.js
+- wp3[.]xyz/g7.js
+- wp3[.]xyz/g8.js
+- wp3[.]xyz/g8.js
+- wp3[.]xyz/plugin.php
+- wp3[.]xyz/tdw.js
+- wp3[.]xyz/tdw.js
+- wp3[.]xyz/tdwx.js
+
+IP ADDRESS FOR WP3[.]XYZ DOMAIN:
+
+- 192.142.10[.]6
+
+SHA256 HASHES FOR EXAMPLES OF WP3[.]XYZ SCRIPT:
+
+- 019d52c689ccff70be8368e1aa277953818747e5b156002ff2e2174847eec6b3
+- 0787e48cfc94bceddd7eeeaa86851f85754eb832ae90a0e98af9c288c8b842aa
+- 4c13d452dd5d49671bd93ca32f2b4f85c78e39b6ab0ad1f38d98ed267f8fd896
+- 4e90c55877e907f8661bde60e88f91a3e3585cc681302b6e9b5befe5c9446cb5
+- 90dec6770153604ff7cf540f07e605be04d0db20286445bbc6663ace531637a7
+- a089f0e9525fe2df4f6a6b722f958f4dcccb9b1afff138fcc20a39585c99daf9
+- a2ce9b0f328753bc97c634a049623aa22b505c8444f9970b2e84c2e5c80078c3
+- c71469841afdd4be5fd6ef5825242de88fb339f1b00e002a62c346a69a99a3c0
+- e2b007d1590d0657a329a332f0186a92f8a64e23f0ad021b688578505c11330d
+- f03c0670f568500be8ad9222830517bb88ffa539ded1a5f988cb2ff103ceb3bb
+- f6ea414298f8f7343c7f27b0b0c3b448e3b4afc7afaf4c7773b42fc1f1fe63dc
