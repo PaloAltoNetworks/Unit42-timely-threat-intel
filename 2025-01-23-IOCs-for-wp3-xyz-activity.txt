@@ -11,7 +11,6 @@ ORIGINAL REFERENCE:
 NOTES:
 
 - This campaign consists of script using wp3[.]xyz as a domain injected in pages of compromised WordPress sites.
-- The campaign is designed to steal sensitive data like administrative login credentials.
 - Based on our telemetry, activity from this campaign started as early as October 2024
 - We've found 10K+ websites compromised since October with infections spiking in December 2024.
 - We discovered more than a dozen JavaScript samples using polymorphism to stay undetected.
