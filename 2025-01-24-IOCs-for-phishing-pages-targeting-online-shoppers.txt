@@ -1,0 +1,45 @@
+2025-01-24 (FRIDAY): PHISHING PAGES TARGETING ONLINE SHOPPERS
+
+AUTHOR:
+
+- Zeyu You
+
+NOTES:
+
+- This campaign spoofs various popular online shopping sites, providing a fake login page.
+- These fake login pages all use the same design template and ask for a phone number and password.
+- Our telemetry reveales web pages using this design template began as early as November 2024.
+- After a victim enters login credentials, these web pages return a hard-coded response of "The account does not exist"
+- After submission, code in the web page sends user information to the local host (the web server) instead of authenticating to the actual online shopping site.
+
+EXAMPLES OF PHISHING PAGE URLS:
+
+- hxxps[:]//[domain name]/index/user/login.html
+- hxxps[:]//[domain name]/h5/index/user/login.html
+
+EXAMPLE OF HTTP POST REQUEST TO SEND LOGIN CREDENTIALS BACK TO THE WEB SERVER:
+
+- https[:]//[domain name]/index/user/do_login.html
+
+DOMAIN NAMES AND NUMBER OF DETECTIONS SINCE NOVEMBER 2024:
+
+Domain name        Number of detections
+-----------------   --------------------
+3chvt.shop          1
+6at3.com            11
+7uzx.com            13
+7uzx.shop           11
+ama-zon-pk.club     2
+amwv10.top          90
+bjggc.vip           46
+dewgmee.vip         23
+gateeioe.com        260
+meescnja.top        90
+noon368.cc          1
+uyugg.vip           12
+www.ababao678.com   3
+www.gateeioe.com    335
+www.goodmallc.com   18
+www.nu9hh.com       2
+ynjfs.vip           46
+
