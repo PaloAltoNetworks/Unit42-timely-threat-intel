@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shehroze Farooqi, Nabeel Mohamed
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ongoing-wp3xyz-campaign-loads-javascript-activity-7288579815459196929-bEc5/
+- https://x.com/Unit42_Intel/status/1882814159756112383
+
 ORIGINAL REFERENCE:
 
 - https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack 
