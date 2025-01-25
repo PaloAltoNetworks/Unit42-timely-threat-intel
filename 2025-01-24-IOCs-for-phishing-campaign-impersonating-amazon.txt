@@ -1,0 +1,92 @@
+2025-01-24 (FRIDAY): PDF FILES WITH LINKS TO PHISHING SITES IMPERSONATING AMAZON
+
+AUTHORS:
+
+- Vishwa Thothathri, Aiden Huang, Shehroze Farooqi
+
+CHAIN OF EVENTS:
+
+- email --> PDF attachment --> link from PDF --> Initial URL --> redirects to phishing site impersonating Amazon
+
+NOTES:
+
+- We recently collected 31 PDF files with links to phishing sites impersonating Amazon.
+- During our investigation, none of the associated PDF documents we found had yet been submitted to VirusTotal.
+- Initial URLs from the PDF files redirect to sub-domains of duckdns[.]org that hosts the phishing website.
+- These phishing websites use cloaking to redirect scans and other analysis attempts to benign domains.
+- Domains for most of the initial URLs and intermediate staging URLs are hosted on the same IP address.
+
+SHA256 HASHES FOR 31 EXAMPLES OF PDF FILES WITH LINKS FOR THIS PHISHING CAMPAIGN:
+
+- 0d30813426132eb0e7058776f336be1ed788adb40429e1f14808c82cefb71cc0
+- 0f6fb7fac3185c6993ab0a95021aa45b597a53face177233e110a94563e2d94b
+- 11d5a4be70b5370f70a2f9539f6a6e23f4393bc047147eda18992754b62993c4
+- 22fab6e48be2beb9cf4837a840be6e0345e7d9027c4da5168d6120bd725833c8
+- 2f123f63b17c65ebdcf9bb517bd25b2a13c319979368404d2688a69a7367a4d4
+- 32e802617c978e2afa1052c565efb060bdbfff633988066587acd2a228a1e964
+- 35a0cf22be7fb938b18f85292a00a6a576916065555b63d4bcb224b8a2e7d812
+- 3b824f2a7d27bf4ab264064c5716dcedf8cfb83aa8ec7ce1670c94b43508904c
+- 42655606bf51695fc6b4d9afb597132626aa04497d256bd84aef406a8e8b061d
+- 4b5670c72b54b6e2b45ab143ca0fd8d75a28663a8141135e717b528beb4ac97f
+- 4edd8546455b3cfdfdc90b062c43da8ce253379dfe83ea8957234cad067966d7
+- 4f90e88d593e9ba8e6e67e8e1cbb4c9cbb5c58f3e515d46835865414eaa8f0b3
+- 53c9b76a227904618cdb97a33fbec3a503a444434418dd8d91372d800778e63d
+- 5a64f6c88d894e172ab3ed07938eafcf01ccfafea31d272dc06b0ebdc658f94d
+- 5d96918ca4adebbb3d594b36acf0f9198a952c50aa82047aafe854c957a82840
+- 5e8a50781d4238a324cba432d081e881f1e2ea7b2a3ae5851373094cecf7b41b
+- 62cd345de8457a373bbc13a79436238eedba1f43e871418def1769f0f2502d0c
+- 64d1c6685ca0e2c8ca327e17cea16bbad3ae791cf03c6c2ea22d361f7b0d0338
+- 76fb339b8014534f85f9fe64e3eec279fe26098b60d255ceaa0ee177587e8b9e
+- 78fcaf119b365d4171011dfdfa4ea4d5acd6c9656cd882418462ff6567cca00f
+- 858dc5420867b6824de8143456ff521461cec1330d7d48ff0ea07a02056f1a4a
+- 8d4fd20207ee690561f5282a26b2374dff036a579527e8b1244fc6f1766c3bb2
+- 9add5bcfbd46b52744b6c02e829d815d3fdcd0a9221852c7254d892c4f5f984f
+- a1e3214afad9332327283c956990ae0e8ddf8084c5dd5d5fde605462ebd7e45d
+- a5f468421c9b3d66ed67c7accfb13ae19d6b1cee4050bdb505feea0d85161e9a
+- beeefae8f969bb3b749a505afd53ad2bad2eb301eab28466cf4a0ed6d9da81bc
+- cd0b45c96062c804ff3903065d68348494db6375679e369916fdcf0b3d17f262
+- D00800e8fdfa6564bed0c5b0a76091a34753cf5c6d63c81441f8c8214afcb58e
+- e117c21bdcd5564b4a68b26d7148d2a073009b78485f42c4b5507723835663a0
+- eafc7707cdbd1936f5312491dd6c6f0726f1c04ca2dd44421ba79e9d010cee2a
+- fa5aaf381d82aafca3ecabbece1cc2ff37401ec104e694b73e87bf02a9ef071a
+
+INITIAL LINKS FROM THE ABOVE PDF FILES:
+
+- 24 link to: hxxps[:]//redirjhmxnasmdhuewfmkxchbnvjxfasdfasd.duckdns[.]org/XOZLaMh
+- 3 link to: hxxps[:]//redixajcdkashdufzxcsfgfasd.duckdns[.]org/CCq8SKn
+- 3 link to: hxxps[:]//zmehiasdhg7uw.redirectme[.]net/xn28lGa
+- 1 links to: hxxps[:]//rediahxjasdusgasdzxcsdefwgasdgasdasdzxdz.duckdns[.]org/agungggg1298w862847
+
+EXAMPLE OF URL SEQUENCE FROM INITIAL URL TO ENTERING CREDIT CARD INFORMATION ON 2025-01-24:
+
+- hxxps[:]//redixajcdkashdufzxcsfgfasd.duckdns[.]org/CCq8SKn
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/?verify
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/signin?secure=fms_42642
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/css/amz.css
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/css/amzz.css
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/css/log.css
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/css/jol.css
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/css/spinner.css
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/favicons/favicon.ico
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/signin/pwd?verify=42839
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/css/spinner.css
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/signin/process
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/secure?_ts=e69618fc92cbc931017769d63be1bbdd
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/img/logo-a.png
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/img/shield24.png
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/secure/process
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/billing?_ts=48d0e1b75b0470dc888e9d68ac4e94c5
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/img/bill.png
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/js/jquery-3.3.1.min.js
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/js/jquery.mask.min.js
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/js/jquery.validate.min.js
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/js/validate.min.js
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/js/jquery.creditCardValidator.js
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/billing/first
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/FAMOUS/Gens/img/c4.png
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/billing/process
+- hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/payment/
+
+SHA256 HASH FOR THE ASSOCIATED PHISHING KIT:
+
+- d49e6ae0d4887490c18ef9a2d2a1b658e3164a08a2d22a1fb535bd237b594f20
