@@ -2,7 +2,7 @@
 
 AUTHOR:
 
-- Zeyu You
+- Zeyu You, Jingwei Fan, Ritesh Nanda, Wei Wang
 
 NOTES:
 
