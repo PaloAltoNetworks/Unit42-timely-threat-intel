@@ -4,6 +4,11 @@ AUTHORS:
 
 - Vishwa Thothathri, Aiden Huang, Shehroze Farooqi
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7289714546305314817-6NHB/
+- https://x.com/Unit42_Intel/status/1883948928602644785
+
 CHAIN OF EVENTS:
 
 - email --> PDF attachment --> link from PDF --> Initial URL --> redirects to phishing site impersonating Amazon
