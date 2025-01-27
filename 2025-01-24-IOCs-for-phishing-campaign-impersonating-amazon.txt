@@ -87,6 +87,6 @@ EXAMPLE OF URL SEQUENCE FROM INITIAL URL TO ENTERING CREDIT CARD INFORMATION ON 
 - hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/billing/process
 - hxxps[:]//ahyewifjksdhfjhjgsdfhjdsasdzxcs.duckdns[.]org/security-check/payment/
 
-SHA256 HASH FOR THE ASSOCIATED PHISHING KIT:
+SHA256 HASH FOR A PHISHING KIT LIKELY USED OR MODIFIED FOR THIS ACTIVITY:
 
 - d49e6ae0d4887490c18ef9a2d2a1b658e3164a08a2d22a1fb535bd237b594f20
