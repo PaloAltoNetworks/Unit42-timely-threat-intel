@@ -28,14 +28,10 @@ NOTES:
 ASSOCIATED URLS:
 
 - wp3[.]xyz/a.js
-- wp3[.]xyz/a.js
 - wp3[.]xyz/aok.js
 - wp3[.]xyz/g7.js
-- wp3[.]xyz/g7.js
-- wp3[.]xyz/g8.js
 - wp3[.]xyz/g8.js
 - wp3[.]xyz/plugin.php
-- wp3[.]xyz/tdw.js
 - wp3[.]xyz/tdw.js
 - wp3[.]xyz/tdwx.js
 
