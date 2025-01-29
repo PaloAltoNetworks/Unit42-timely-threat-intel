@@ -1,0 +1,20 @@
+2025-01-29 (WEDNESDAY): NEWLY-REGISTERED DOMAINS FOR PHISHING PAGES MIMICKING DEEPSEEK
+
+AUTHOR:
+
+- Shu Wang
+
+REFERENCES:
+
+- 
+- 
+
+NOTES:
+
+- Since DeepSeek released its LLM, multiple newly registered domains (NRDs) for phishing sites have surfaced.
+- Domains like deepseeklogin[.]com are used for sites that mimic the DeepSeek home page.
+- These sites include login pages that ask potential victims for their credentials.
+
+INDICATORS:
+
+- deepseeklogin[.]com
