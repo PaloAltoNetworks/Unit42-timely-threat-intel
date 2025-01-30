@@ -6,14 +6,14 @@ AUTHOR:
 
 REFERENCES:
 
-- 
-- 
+- https://www.linkedin.com/posts/unit42_deepseek-llm-nrd-activity-7290836255263596544-yMIp/
+- https://x.com/Unit42_Intel/status/1885070635413418175
 
 NOTES:
 
-- Since DeepSeek released its LLM, multiple newly registered domains (NRDs) for phishing sites have surfaced.
-- Domains like deepseeklogin[.]com are used for sites that mimic the DeepSeek home page.
-- These sites include login pages that ask potential victims for their credentials.
+- Since DeepSeek released its LLM, multiple newly registered domains (NRDs) using the string "deepseek" have surfaced.
+- Beware of phishing sites like deepseeklogin[.]com that mimic the DeepSeek home page.
+- These types of sites include login pages that ask potential victims for their credentials.
 
 INDICATORS:
 
