@@ -1,0 +1,62 @@
+2025-02-03 (MONDAY): NETFLIX-THEMED SURVEY SCAM/PHISHING CAMPAIGN
+
+AUTHORS:
+
+- Zeyu You, Jingwei Fan, Ritesh Nanda, Wei Wang
+
+NOTES:
+
+- A recent scam/phishing campaign has been utilizing fake Netflix surveys. 
+- Using api.trackszz[.]com and monthly-prizes[.]com, this scam asks users to complete a survey
+- Finishing the survey leads to a fake payment page asking potential victims to enter their credit card details.
+- After a victim inputs credit card information, the browser redirects to a winner page. 
+- If a potential victim does not interact with the survey page, after 2 minutes it will redirect to a different scam page.
+- trackszz[.]com was re-registered on 2024-07-07. Since then, PDNS indicates a notable change in activity for this domain.
+- PDNS for trackszz[.]com shows peaks in activity in October 2024 and January 2025, likely related to scam/phishing.
+
+EXAMPLE OF INITIAL URL FOR THE FAKE SURVEY:
+
+- hxxps[:]//monthly-prizes[.]com/sweepflix/?ept2=029a7532-1ce2-4bb2-b1d8-2f9636478813	
+
+EXAMPLE OF URL GENERATED AFTER ANSWERING THE FAKE SURVEY SITE::
+
+- hxxps[:]//api.trackszz[.]com/click/vP1lZtn4NE?c1=ES6579&
+  c2=ccsubmit&
+  c3=200347&
+  c4=4c1b72a1&
+  c5=58e06ae2-1ab3-4bf0-8874-885eff72c8f1&
+  c6=subid&c10=ES_ccsubmit/main/d.php?s=1&
+  link=hxxps[:]//bbtl.trkwebz03[.]com//t/clk?id=RlGXHgYLS0LXnUpZ8AHz&
+  s1=4c1b72a1&
+  s2=Pn8eteZcax-655ab44646b6c82169438873&
+  /main/d.php?s=1&
+  link=hxxps[:]//bbtl.trkwebz03[.]com//t/clk?id=RlGXHgYLS0LXnUpZ8AHz&
+  s1=4c1b72a1&
+  s2=Pn8eteZcax-655ab447a3696f0b7843ccc9&
+  link=hxxps[:]//bbtl.trkwebz03[.]com//t/clk?id=RlGXHgYLS0LXnUpZ8AHz&
+  s1=4c1b72a1&
+  s2=Pn8eteZcax-655ab44646b6c82169438873/main/d.php?s=1&
+  link=hxxps[:]//get.hundredpercentmargin[.]com/click?pid=1336&
+  offer_id=77990&
+  sub1=Pn8eteZcax-655ab44774da20545923e87f&sub5=4c1b72a1&
+  link=hxxps[:]//bbtl.trkwebz03[.]com//t/clk?id=RlGXHgYLS0LXnUpZ8AHz&
+  s1=4c1b72a1&
+  s2=Pn8eteZcax-655ab44646b6c82169438873&
+  /main/d_php?s=1	
+	
+EXAMPLE OF FAKE PAYMENT PAGE:
+
+- hxxps[:]//www.assuredpaymentportal[.]com/checkoutsecure1?first_name=&
+  last_name=&
+  shipping_address=&
+  shipping_zip=&
+  shipping_city=&
+  phone_number=&
+  email=&
+  config=282&
+  clickid=67898b444325360346a864dc&
+  ref_id=67898b444325360346a864dc&
+  sub1=1348_3991&
+  CID=11256&
+  p11=&
+  p12=m
