@@ -4,6 +4,11 @@ AUTHORS:
 
 - Zeyu You, Jingwei Fan, Ritesh Nanda, Wei Wang
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-scam-activity-7292579683819208705-QWTa/
+- https://twitter.com/Unit42_Intel/status/1886814060995285206
+
 NOTES:
 
 - A recent scam/phishing campaign has been utilizing fake Netflix surveys. 
