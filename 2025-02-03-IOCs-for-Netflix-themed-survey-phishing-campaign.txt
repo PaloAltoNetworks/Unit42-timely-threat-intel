@@ -12,7 +12,7 @@ NOTES:
 - After a victim inputs credit card information, the browser redirects to a winner page. 
 - If a potential victim does not interact with the survey page, after 2 minutes it will redirect to a different scam page.
 - trackszz[.]com was re-registered on 2024-07-07. Since then, PDNS indicates a notable change in activity for this domain.
-- PDNS for trackszz[.]com shows peaks in activity in October 2024 and January 2025, likely related to scam/phishing.
+- PDNS for trackszz[.]com shows peaks in activity in December 2024 and January 2025, likely related to scam/phishing.
 
 EXAMPLE OF INITIAL URL FOR THE FAKE SURVEY:
 
