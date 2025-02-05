@@ -7,8 +7,8 @@ AUTHOR:
 NOTES:
 
 - We recently found 276 #Stockpiled domains in a gift card scam campaign.
-- This scam that advertises gift cards for popular services such as Google Play, Amazon and Roblox. 
-- To receive the gift cards, this campaign redirects users to download extensions, purchase services thru affiliate links, and divulge personal information.
+- This scam advertises gift cards for popular services such as Google Play, Amazon and Roblox. 
+- To receive the gift cards, this campaign redirects users to download extensions, purchase services through affiliate links, and divulge personal information.
 - The stockpiled domains are auto-generated following one of these six patterns, where the blanks correspond to three random letters: 
 
   _ _ _deal.com
@@ -27,7 +27,7 @@ NOTES:
   -- Use affiliate links to sign up for services including USA Today and Freecash[.]com 
   -- Download browser extensions 
   -- Navigate to a page where users are asked to divulge personal information and contact details to continue
-We track this campaign as: gift_card_scam
+- We track this campaign as: gift_card_scam
 
 EXAMPLES OF THE DOMAINS:
 
