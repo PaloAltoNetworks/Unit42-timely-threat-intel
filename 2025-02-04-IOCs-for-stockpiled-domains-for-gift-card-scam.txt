@@ -4,6 +4,11 @@ AUTHOR:
 
 - Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_stockpiled-scam-activity-7292937549319131137-XfdN/
+- https://x.com/Unit42_Intel/status/1887171930744131644
+
 NOTES:
 
 - We recently found 276 #Stockpiled domains in a gift card scam campaign.
