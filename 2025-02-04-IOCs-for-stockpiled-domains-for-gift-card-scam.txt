@@ -61,5 +61,32 @@ REDIRECTION CHAIN EXAMPLE 1 OF 2:
 REDIRECTION CHAIN EXAMPLE 2 OF 2:
 
 - hxxps[:]//ctadeal[.]com/tools/free-google-play-gift-cards.html
-- hxxps[:]//affgo[.]xyz/click?p=18005&t=623b5b3aabb58&o=23184&r=aHR0cHM6Ly9jdGFkZWFsLmNvbS90b29scy9mcmVlLWdvb2dsZS1wbGF5LWdpZnQtY2FyZHMuaHRtbA%3D%3D&c=1&s1=
-- hxxps[:]//24.primerewardspot[.]com/?cid=z218a-2153&t1=241845&t2=&t3=10256a83600965cf6bda7e96336401&t4=&t5=&t6=%7Baff_sub6%7D&t7=%7Baff_sub7%7D&t8=750CashApp&transaction_id=102602a84878f8143f796240ccedb9&email=%7Bemail%7D&userFname=%7Bfirst_name%7D&last=%7Blast_name%7D&userAddress=%7Baddress%7D&cityName=%7BcityName%7D&stateName=%7Bstate%7D&stateCode=%7Bstate_code%7D&zipcode=%7Bzip%7D&countryName=%7Bcountry%7D&mobile=%7Bphone%7D&dobdate=%7Bdobdate%7D&dobmonth=%7Bdobmonth%7D&dobyear=%7Bdobyear%7D&gender=%7Bgender%7D&isr=true&sessionid=0a8ea215-a21e-4b1e-bb0e-0354d7118ed2
+- hxxps[:]//affgo[.]xyz/click?p=18005&t=623b5b3aabb58&o=23184&
+  r=aHR0cHM6Ly9jdGFkZWFsLmNvbS90b29scy9mcmVlLWdvb2dsZS1wbGF5LWdpZnQtY2FyZHMuaHRtbA%3D%3D&
+  c=1&
+s1=
+- hxxps[:]//24.primerewardspot[.]com/?cid=z218a-2153&
+  t1=241845&
+  t2=&
+  t3=10256a83600965cf6bda7e96336401&
+  t4=&
+  t5=&
+  t6=%7Baff_sub6%7D&
+  t7=%7Baff_sub7%7D&
+  t8=750CashApp&transaction_id=102602a84878f8143f796240ccedb9&
+  email=%7Bemail%7D&
+  userFname=%7Bfirst_name%7D&
+  last=%7Blast_name%7D&
+  userAddress=%7Baddress%7D&
+  cityName=%7BcityName%7D&
+  stateName=%7Bstate%7D&
+  stateCode=%7Bstate_code%7D&
+  zipcode=%7Bzip%7D&
+  countryName=%7Bcountry%7D&
+  mobile=%7Bphone%7D&
+  dobdate=%7Bdobdate%7D&
+  dobmonth=%7Bdobmonth%7D&
+  dobyear=%7Bdobyear%7D&
+  gender=%7Bgender%7D&
+  isr=true&
+  sessionid=0a8ea215-a21e-4b1e-bb0e-0354d7118ed2
