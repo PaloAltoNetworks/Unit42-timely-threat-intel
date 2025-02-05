@@ -56,7 +56,11 @@ REDIRECTION CHAIN EXAMPLE 1 OF 2:
   campaign=054d44&
   pid=4766-5349350z
 - NOTE: We've seen an alternate URL from teedrowed[.]co[.]in:
-  -- hxxps[:]//teedrowed[.]co[.]in/click.php?key=ls9yc3ivpkcbp3geh7vr&cid=M7463578220344901656&pad=4766&campaign=be0f75&pid=4766-5349350z 
+  -- hxxps[:]//teedrowed[.]co[.]in/click.php?key=ls9yc3ivpkcbp3geh7vr&
+     cid=M7463578220344901656&
+     pad=4766&
+     campaign=be0f75&
+     pid=4766-5349350z 
 
 REDIRECTION CHAIN EXAMPLE 2 OF 2:
 
@@ -64,7 +68,7 @@ REDIRECTION CHAIN EXAMPLE 2 OF 2:
 - hxxps[:]//affgo[.]xyz/click?p=18005&t=623b5b3aabb58&o=23184&
   r=aHR0cHM6Ly9jdGFkZWFsLmNvbS90b29scy9mcmVlLWdvb2dsZS1wbGF5LWdpZnQtY2FyZHMuaHRtbA%3D%3D&
   c=1&
-s1=
+  s1=
 - hxxps[:]//24.primerewardspot[.]com/?cid=z218a-2153&
   t1=241845&
   t2=&
