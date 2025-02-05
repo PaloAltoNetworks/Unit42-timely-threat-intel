@@ -1,0 +1,65 @@
+2025-02-04 (TUESDAY): STOCKPILED DOMAINS FOR GIFT CARD SCAM
+
+AUTHOR:
+
+- Reethika Ramesh
+
+NOTES:
+
+- We recently found 276 #Stockpiled domains in a gift card scam campaign.
+- This scam that advertises gift cards for popular services such as Google Play, Amazon and Roblox. 
+- To receive the gift cards, this campaign redirects users to download extensions, purchase services thru affiliate links, and divulge personal information.
+- The stockpiled domains are auto-generated following one of these six patterns, where the blanks correspond to three random letters: 
+
+  _ _ _deal.com
+  _ _ _selling.com
+  _ _ _codes.com
+  offer_ _ _.com
+  _ _ _offer.com
+  _ _ _eshop.com 
+
+- These websites all resolve to the same IP address: 198.12.86[.]90 and use the same set of four nameservers.
+- This campaign also uses intermediate TDS domains such as affgo[.]xyz to redirect to a final site at one of the following three domains:
+ -- 24.primerewardspot[.]com
+ -- teedrowed[.]co[.]in
+ -- gounrical[.]com 
+- These sites ask users to complete tasks to obtain the gift cards. These tasks can be:
+  -- Use affiliate links to sign up for services including USA Today and Freecash[.]com 
+  -- Download browser extensions 
+  -- Navigate to a page where users are asked to divulge personal information and contact details to continue
+We track this campaign as: gift_card_scam
+
+EXAMPLES OF THE DOMAINS:
+
+- kgmdeal[.]com
+- rgndeal[.]com
+- ctadeal[.]com
+- gtzdeal[.]com
+- qrmselling[.]com
+- stecodes[.]com
+- offerdcm[.]com
+- mpdoffer[.]com
+- prveshop[.]com
+
+REDIRECTION CHAIN EXAMPLE 1 OF 2:
+
+- hxxps[:]//ctadeal[.]com/tools/free-google-play-gift-cards.html
+- hxxps[:]//affgo[.]xyz/click?p=18005&
+  t=623b5b3aabb58&
+  o=22130&
+  r=aHR0cHM6Ly9jdGFkZWFsLmNvbS8%3D&
+  c=1&
+  s1=
+- hxxps[:]//gounrical[.]com/click.php?key=ls9yc3ivpkcbp3geh7vr&
+  cid=M7462396954014646294&
+  pad=4766&
+  campaign=054d44&
+  pid=4766-5349350z
+- NOTE: We've seen an alternate URL from teedrowed[.]co[.]in:
+  -- hxxps[:]//teedrowed[.]co[.]in/click.php?key=ls9yc3ivpkcbp3geh7vr&cid=M7463578220344901656&pad=4766&campaign=be0f75&pid=4766-5349350z 
+
+REDIRECTION CHAIN EXAMPLE 2 OF 2:
+
+- hxxps[:]//ctadeal[.]com/tools/free-google-play-gift-cards.html
+- hxxps[:]//affgo[.]xyz/click?p=18005&t=623b5b3aabb58&o=23184&r=aHR0cHM6Ly9jdGFkZWFsLmNvbS90b29scy9mcmVlLWdvb2dsZS1wbGF5LWdpZnQtY2FyZHMuaHRtbA%3D%3D&c=1&s1=
+- hxxps[:]//24.primerewardspot[.]com/?cid=z218a-2153&t1=241845&t2=&t3=10256a83600965cf6bda7e96336401&t4=&t5=&t6=%7Baff_sub6%7D&t7=%7Baff_sub7%7D&t8=750CashApp&transaction_id=102602a84878f8143f796240ccedb9&email=%7Bemail%7D&userFname=%7Bfirst_name%7D&last=%7Blast_name%7D&userAddress=%7Baddress%7D&cityName=%7BcityName%7D&stateName=%7Bstate%7D&stateCode=%7Bstate_code%7D&zipcode=%7Bzip%7D&countryName=%7Bcountry%7D&mobile=%7Bphone%7D&dobdate=%7Bdobdate%7D&dobmonth=%7Bdobmonth%7D&dobyear=%7Bdobyear%7D&gender=%7Bgender%7D&isr=true&sessionid=0a8ea215-a21e-4b1e-bb0e-0354d7118ed2
