@@ -1,0 +1,66 @@
+2025-02-06 (THURSDAY): CRYPTO INVESTMENT SCAM/PHISHING CAMPAIGN
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Alex Starov
+
+NOTES:
+
+- We've identified 42 malicious domains impersonating various cryptocurrency related entities.
+- The hosting infrastructure consists of 7 domain groups hosted on 4 clusters of IP addresses.
+- These domains share a strong association in hosting infrastructure and reuse content in their web pages.
+- Most of these domains were registered in Oct-Nov 2024 with a few registered in March-May 2024.
+- While these domains impersonate different platforms, they all feature pages the same lead market analyst.
+  -- The stolen identity for this "Lead Analyst" is copied from a real person named Chris Weston.
+- This campaign uses "noindex" directives to prevent search engines from indexing its pages to hide from regular search results.
+  -- This implies the campaign likely uses targeted URLs to lure victims, making accidental discovery difficult.
+
+ACTIVE DOMAINS:
+
+- bestindependentreserve[.]com - registered 2024-10-24
+- boredapeex[.]com - registered 2024-10-26
+- boredapein[.]com - registered 2024-10-26
+- boredapepro[.]com - registered 2024-10-26
+- boredapest[.]com - registered 2024-10-26
+- boredapew[.]com - registered 2024-10-26
+- coinbaseproce[.]com - registered 2024-03-14
+- coinbaseprowl[.]com - registered 2024-03-14
+- encryptcoinex[.]com - registered 2024-11-04
+- encryptcoinit[.]com - registered 2024-11-04
+- encryptcoinpro[.]com - registered 2024-11-04
+- encryptcointo[.]com - registered 2024-11-04
+- gcmlco[.]com - registered 2024-10-29
+- gcmlex[.]com - registered 2024-10-29
+- gcmlin[.]com - registered 2024-10-29
+- gcmlpro[.]com - registered 2024-10-29
+- hibtco[.]com - registered 2024-05-14
+- hibtex[.]com - registered 2024-05-14
+- hibtig[.]com - registered 2024-05-14
+- hibtil[.]com - registered 2024-05-14
+- hibtin[.]com - registered 2024-05-14
+- hibtit[.]com - registered 2024-05-14
+- hibtop[.]com - registered 2024-05-14
+- hibtpro[.]com - registered 2024-05-14
+- independentreservea[.]com - registered 2024-10-23
+- independentreserveco[.]com - registered 2024-10-19
+- independentreserveg[.]com - registered 2024-10-24
+- independentreserveig[.]com - registered 2024-10-19
+- independentreserveil[.]com - registered 2024-10-23
+- independentreservemax[.]com - registered 2024-10-23
+- independentreservemg[.]com - registered 2024-10-23
+- independentreserveo[.]com - registered 2024-10-24
+- independentreserver[.]com - registered 2024-10-23
+- independentreservese[.]com - registered 2024-10-23
+- independentreservet[.]com - registered 2024-10-23
+- independentreserveto[.]com - registered 2024-10-24
+- independentreserveup[.]com - registered 2024-10-23
+- independentreservew[.]com - registered 2024-10-23
+
+DOMAINS NOT YET USING AN ACTIVE WEBSITE:
+
+- coinhakoex[.]com - registered 2024-10-31
+- coinhakoin[.]com - registered 2024-10-31
+- coinhakoit[.]com - registered 2024-10-31
+- coinhakopro[.]com - registered 2024-10-31
+
+- Note: The above domains show an error code 409 (domain not configured) when checked in a web browser.
