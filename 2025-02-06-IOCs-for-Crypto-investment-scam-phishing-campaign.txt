@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_cryptoscamalert-scam-phishing-activity-7293690750926565376-GeGV/
+- https://x.com/Unit42_Intel/status/1887925128106844183
+
 NOTES:
 
 - We've identified 42 malicious domains impersonating various cryptocurrency-related entities.
