@@ -6,11 +6,12 @@ AUTHORS:
 
 NOTES:
 
-- We've identified 42 malicious domains impersonating various cryptocurrency related entities.
+- We've identified 42 malicious domains impersonating various cryptocurrency-related entities.
+  -- Impersonated entities include Independent Reserve, Coinbase, Coinhako, Enkrypt, HiBT and others.
 - The hosting infrastructure consists of 7 domain groups hosted on 4 clusters of IP addresses.
-- These domains share a strong association in hosting infrastructure and reuse content in their web pages.
+- These domains share a strong association in hosting infrastructure and reuse of content in their web pages.
 - Most of these domains were registered in Oct-Nov 2024 with a few registered in March-May 2024.
-- While these domains impersonate different platforms, they all feature pages the same lead market analyst.
+- While these domains impersonate different platforms, they all feature pages with the same lead market analyst.
   -- The stolen identity for this "Lead Analyst" is copied from a real person named Chris Weston.
 - This campaign uses "noindex" directives to prevent search engines from indexing its pages to hide from regular search results.
   -- This implies the campaign likely uses targeted URLs to lure victims, making accidental discovery difficult.
