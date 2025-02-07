@@ -12,7 +12,7 @@ NOTES:
 - These domains share a strong association in hosting infrastructure and reuse of content in their web pages.
 - Most of these domains were registered in Oct-Nov 2024 with a few registered in March-May 2024.
 - While these domains impersonate different platforms, they all feature pages with the same lead market analyst.
-  -- The stolen identity for this "Lead Analyst" is copied from a real person named Chris Weston.
+  -- The stolen identity for this "Lead Analyst" is copied from a real person.
 - This campaign uses "noindex" directives to prevent search engines from indexing its pages to hide from regular search results.
   -- This implies the campaign likely uses targeted URLs to lure victims, making accidental discovery difficult.
 
