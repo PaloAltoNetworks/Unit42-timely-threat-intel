@@ -37,7 +37,7 @@ GET enable=aaa;[payload]
 - CVE-2009-4487 nginx 0.7.64 Terminal Escape Sequence in Logs Command Injection
 - CVE-2020-28188 TerraMaster TOS RCE
 - CVE-2020-26919 Netgear ProSAFE RCE
-- CVE-2021-25502 Micro Focus Operation Bridge Reporter (OBR) RCE
+- CVE-2021-22502 Micro Focus Operation Bridge Reporter (OBR) RCE
 - CVE-2020-25506 D-Link DNS-320 Firewall RCE
 - VisualDoor SonicWall SSL-VPN RCE
 - CVE-2021-27561 & CVE-2021-27562 Yealink Device Management Pre-Auth ‘root’ Level RCE
