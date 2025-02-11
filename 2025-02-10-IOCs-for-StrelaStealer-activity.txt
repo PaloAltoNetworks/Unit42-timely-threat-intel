@@ -6,7 +6,7 @@ AUTHOR:
 
 REFERENCES:
 
-- https://www.linkedin.com/posts/unit42_cryptoscamalert-scam-phishing-activity-7293690750926565376-GeGV/
+- https://www.linkedin.com/posts/unit42_strelastealer-malspam-webdav-activity-7295144078428491776-vyqY/
 - https://x.com/Unit42_Intel/status/1889378454287581678
 
 NOTES:
