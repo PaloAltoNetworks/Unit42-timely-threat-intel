@@ -10,6 +10,14 @@ NOTES:
 - Since the end of January 2025, we have begun seeing decoy PDF files used during the infection process.
 - The WebDAV and C2 server at 193.143.1[.]205 is still actively hosting the decoy PDF and StrelaStealer malware as of Monday 2025-02-10.
 
+- The decoy PDF is not malicious, but it has a blurred image, and it acts as a misdirect for potential victims.
+- The .js files only execute if the victim's Windows host uses the following languages and locales:
+  - German (Austria)
+  - German (Germany)
+  - German (Liechtenstein)
+  - German (Luxembourg)
+  - German (Switzerland)
+
 RECENT INFECTION CHAIN:
 
 - email --> attached zip archive --> extracted JavaScript (.js) file --> wscript.exe runs .js file if double-clicked:
