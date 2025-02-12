@@ -1,16 +1,21 @@
-2025-02-11 (TUESDAY): NEWLY REGISTERED DOMAINS FOR SPORTS THEMED CRYPTO SCAMS
+2025-02-11 (TUESDAY): NEWLY REGISTERED DOMAINS FOR SPORTS-THEMED CRYPTO SCAMS
 
 AUTHORS:
 
 - Shu Wang, Daiping Liu, Fan Fei
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_unit42-timely-threat-intel2025-02-11-iocs-for-sports-themed-crypto-scamstxt-activity-7295520817356881923-HamA/
+- https://x.com/Unit42_Intel/status/1889755124416889116
+
 NOTES:
 
-- We found new sports meme themed domains active in the 2 weeks leading to the 2025 Super Bowl.
+- We found new sports meme-themed domains active in the 2 weeks leading to the 2025 Super Bowl.
 - The newly registered domains (NRDs) are pushing fraudulent meme coins and pump-and-dump crypto schemes.
 - These scams use celebrity imagery, misleading tokenomics and aggressive marketing to lure victims.
 
-LIST OF NEWLY-REGISTERED DOMAINS:
+LIST OF NEWLY REGISTERED DOMAINS:
 
 - nflsuperbowlsol[.]xyz
 - rflsuperbowl[.]xyz
