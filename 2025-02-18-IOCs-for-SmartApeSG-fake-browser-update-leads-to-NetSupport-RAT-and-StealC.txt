@@ -1,4 +1,4 @@
-2025-02-18 (TUESDAY): SMARTAPESG SCRIPT FAKE BROWSER UPDATE LEADS TO NETSUPPORT RAT AND STEALC
+2025-02-18 (TUESDAY): SMARTAPESG SCRIPT FOR FAKE BROWSER UPDATE LEADS TO NETSUPPORT RAT AND STEALC
 
 AUTHOR:
 
@@ -65,9 +65,9 @@ LEGITIMATE FILE FROM THE ABOVE ZIP ARCHIVE USED FOR DLL SIDE LOADING:
 - File name: mfpmp.exe
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows
 - File description: Legitimate Windows file for Media Foundation Protected Pipeline EXE
-- Note: This file is not malicious, but an old Windows system EXE used to side load a malware DLL named rtworkq.dll 
+- Note: This file is not malicious, but an old Windows system EXE used to side-load a malware DLL named rtworkq.dll 
 
-MALICIOUS DLL FOR STEALC USED SIDE LOADED BY THE ABOVE LEGITIMATE EXE:
+MALICIOUS DLL FOR STEALC SIDE-LOADED BY THE ABOVE LEGITIMATE EXE:
 
 - SHA256 hash: 021bb478b704abb95ac2040061b7d47d8e4b491e6d2633adb010c3b8b08bb4f4
 - File size: 725,127,168 bytes
