@@ -60,7 +60,7 @@ ZIP ARCHIVE FOR STEALC MALWARE SENT THROUGH NETSUPPORT RAT C2 TRAFFIC:
 
 LEGITIMATE FILE FROM THE ABOVE ZIP ARCHIVE USED FOR DLL SIDE LOADING:
 
-- SHA256 hash: 021bb478b704abb95ac2040061b7d47d8e4b491e6d2633adb010c3b8b08bb4f4  <-- not malicious
+- SHA256 hash: ff7e8ccc41bc3a506103bdd719a19318bf711351ac0e61e1f1cf00f5f02251d5  <-- not malicious
 - File size: 40,480 bytes
 - File name: mfpmp.exe
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows
