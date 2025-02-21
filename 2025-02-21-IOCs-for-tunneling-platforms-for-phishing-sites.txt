@@ -1,4 +1,4 @@
-2025-02-21 (FRIDAY): CRIMINALS ABUSING TUNNELING SERVICES TO HOST PHISHING WEBSITES
+2025-02-21 (FRIDAY): CRIMINALS ABUSING TUNNELING SERVICES FOR PHISHING WEBSITES
 
 AUTHORS:
 
@@ -8,7 +8,7 @@ DETAILS:
 
 - Tunnel services often include a free tier that criminals often abuse to host phishing pages.
 - These tunnels share internal resources without having to host the data on a public server.
-- Open source phishing kits include features to use some of these popular tunneling platforms.
+- Open-source phishing kits include features to use some of these popular tunneling platforms.
 - This simplifies the process for attackers to exploit these popular services. 
 - We continue finding examples of phishing sites abusing tunneling services before they are publicly reported.
 
