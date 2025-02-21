@@ -1,0 +1,33 @@
+2025-02-21 (FRIDAY): CRIMINALS ABUSING TUNNELING SERVICES TO HOST PHISHING WEBSITES
+
+AUTHORS:
+
+- Howard Tong, Shehroze Farooqi, Alex Starov
+
+DETAILS:
+
+- Tunnel services often include a free tier that criminals often abuse to host phishing pages.
+- These tunnels share internal resources without having to host the data on a public server.
+- Open source phishing kits include features to use some of these popular tunneling platforms.
+- This simplifies the process for attackers to exploit these popular services. 
+- We continue finding examples of phishing sites abusing tunneling services before they are publicly reported.
+
+- More information on tunneling services at:
+ -- https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/
+ -- https://localxpose.io/docs/tunnels/http
+ -- https://ngrok.com/blog-post/data-at-ngrok
+
+OPEN SOURCE PHISHING KITS WITH OPTIONS TO USE TUNNELING PLATFORMS:
+
+- github[.]com/Ignitetch/AdvPhishing
+- github[.]com/CodingRanjith/autophisher
+
+EXAMPLES OF PHISHING URLS ABUSING THESE TUNNELING SERVICES:
+
+(Read: Date first reported to VirusTotal - URL)
+
+- 2025-02-05 - hxxps://attached-together-illustrated-packaging[.]trycloudflare[.]com
+- 2025-01-31 - hxxps://donna-depends-mls-referring[.]trycloudflare[.]com
+- 2025-02-06 - hxxps://paypalsecu[.]ngrok[.]dev/home/
+
+- Note: The above URLs have been reported and are no longer active.
