@@ -4,6 +4,11 @@ AUTHORS:
 
 - Howard Tong, Shehroze Farooqi, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_open-source-phishing-kits-include-features-activity-7299835749103759361-RhRK/
+- https://x.com/Unit42_Intel/status/1894070131086471241
+
 DETAILS:
 
 - Tunnel services often include a free tier that criminals often abuse to host phishing pages.
