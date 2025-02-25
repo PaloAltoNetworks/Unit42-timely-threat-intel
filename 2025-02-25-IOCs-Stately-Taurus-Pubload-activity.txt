@@ -1,0 +1,20 @@
+2025-02-25 (TUESDAY): PUBLOAD MALWARE FROM STATELY TAURUS
+
+AUTHOR:
+
+- Unit 42
+
+NOTES:
+
+- Stately Taurus is our designator for a China-based cyberespionage threat actor first observed in 2017, but possibly active since at least 2012.
+- This group has recently targeted government and military entities in Myanmar, Nepal, the Philippines, and Sri Lanka.
+- A file masquerading as CCleanerReactivator has been observed leading to PubLoad malware infection. 
+- We continue to track infrastructure and malware associated with this group.
+
+SHA256 HASH FOR PUBLOAD SAMPLE:
+
+- d665f55555f87b515cb8ef1adce9592a83662a8c4efa34f6ffdd022475bd176a
+
+IP ADDRESS FOR COMMAND AND CONTROL SERVER:
+
+- 103.234.54[.]179
