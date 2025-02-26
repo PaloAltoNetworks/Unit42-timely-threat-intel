@@ -1,0 +1,85 @@
+2025-02-26 (WEDNESDAY): DLL SIDE-LOADING FOR XLOADER (FORMBOOK) INFECTION
+
+AUTHOR:
+
+- Bradley Duncan
+
+INFECTION CHAIN:
+
+- email --> attached PDF --> link to zip archive --> zip contains legitimate EXE that side-loads malware DLL for XLoader
+
+NOTES:
+
+- XLoader is a rebrand of Formbook that started in October 2020.  More info on the rebrand at: 
+  -- https://www.acronis.com/en-us/cyber-protection-center/posts/trojan-as-a-service-from-formbook-to-xloader/ 
+- This infection chain uses DLL side-loading. More info on side-loading at:
+  -- https://attack.mitre.org/techniques/T1574/002/
+
+EMAIL INFORMATION:
+
+- Received: from 5350184.suv4x4custom[.]com (5350184.suv4x4custom[.]com [162.241.139[.]204]) 
+          [information removed]; Wed, 26 Feb 2025 02:23:00 +0000 (UTC)
+- Subject: Re: RFQ-PR 1-62557 & 38929 CÔNG TY TNHH TECH BINH THANH ORDER
+- Date: Wed, 26 Feb 2025 02:22:52 +0000
+- From: Fahad RT <noreply@sima[.]com>
+- X-PHP-Script: basurishop[.]com/wp-includes/bestmailer.php for 173.225.105[.]73, 162.158.159[.]20
+- X-PHP-Originating-Script: 1006:bestmailer.php
+- Message-ID: <JMTob8otwuh3c4H1oWDEvYIx4MAyM5w1wYficVj7DM@basurishop[.]com>
+- X-Mailer: PHPMailer 6.0.7
+- Attachment filename: Revised Order for United for Electromech.pdf
+
+ASSOCIATED FILES:
+
+- SHA256 hash: a32093a900a13c4812ec5cd176f1aee4340b7d88322f41d07d7e0348d897e746
+- File size: 202,394 bytes
+- File name: Revised Order for United for Electromech.pdf
+- File type: PDF document, version 1.7
+- File description: PDF document with links to download malicious zip archive
+
+- SHA256 hash: 5807b25a7c109110ba44e9828852111a10e7beb3f85b1af8af81a9d6ec1369c5
+- File size: 6,391,442 bytes
+- File name: Scan_document0021000900000000.zip
+- File location: hxxps[:]//ucarecdn[.]com/284fd1ce-7457-44c8-a85c-8eea6e7f15ea/Scan_document0021000900000000.zip
+- File type: Zip archive data, at least v2.0 to extract
+- File description: Malicious zip archive containing files for XLoader
+
+- File name: Scan_document0021000900000000.exe
+- File size: 648,552 bytes
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- File description: Legitimate 64-bit EXE used for side-loading malicious DLL for XLoader
+
+- File name: tier0_s64.dll
+- File size: 420,712 bytes
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: 64-bit DLL, not malicious, but possibly included so the above EXE will run properly
+
+- SHA256 hash: 3aa5e5fe507a59cbdb3f47dadf16f4609f079383a4471e3a18aa6dbed398b71a
+- File size: 12,995,584 bytes
+- File name: vstdlib_s64.dll
+- File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
+- File description: Malicious 64-bit DLL side-loaded by the legitimate EXE
+
+
+LINKS FROM THE PDF DOCUMENT:
+
+- hxxps[:]//ucarecdn[.]com/284fd1ce-7457-44c8-a85c-8eea6e7f15ea/Scan_document0021000900000000.zip
+- hxxps[:]//sustainabuz[.]com/redir.html  <-- redirects to the above URL
+
+XLOADER C2 DOMAINS ACTIVE DURING A LIVE TEST RUN OF THE MALWARE:
+
+- www.autoabmeldung[.]net
+- www.awhgfr[.]info
+- www.camgirlsporn[.]xyz
+- www.carfie[.]xyz
+- www.covsds[.]info
+- www.dilgxp[.]info
+- www.enkisan[.]xyz
+- www.fz977[.]xyz
+- www.gr-realty[.]online
+- www.inegatu[.]info
+- www.journeyahead[.]life
+- www.ladies[.]center
+- www.maceoconsultores[.]net
+- www.superhoroz[.]xyz
+- www.tokosayur[.]shop
+- www.yusufzdemir[.]xyz
