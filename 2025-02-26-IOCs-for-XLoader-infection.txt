@@ -64,7 +64,6 @@ ASSOCIATED FILES:
 - File type: PE32+ executable (DLL) (GUI) x86-64, for MS Windows
 - File description: Malicious 64-bit DLL side-loaded by the legitimate EXE
 
-
 LINKS FROM THE PDF DOCUMENT:
 
 - hxxps[:]//ucarecdn[.]com/284fd1ce-7457-44c8-a85c-8eea6e7f15ea/Scan_document0021000900000000.zip
