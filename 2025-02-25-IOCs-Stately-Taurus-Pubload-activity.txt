@@ -4,6 +4,11 @@ AUTHOR:
 
 - Unit 42
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_statelytaurus-pubload-infrastructure-activity-7300939017640886272-QmqA/
+- https://x.com/Unit42_Intel/status/1895173340374999145
+
 NOTES:
 
 - Stately Taurus is our designator for a China-based cyberespionage threat actor first observed in 2017, but possibly active since at least 2012.
