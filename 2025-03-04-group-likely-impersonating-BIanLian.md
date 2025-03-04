@@ -12,11 +12,11 @@ While BianLian has at times used phone calls to pressure victims into paying the
 
 These letters did not provide a means to contact the threat actor for negotiations, which is often a central piece of any extortion note. Additionally, the letters did not provide any evidence data was actually exfiltrated, which is sometimes provided with an extortion note or during further contact with the threat actor. Finally, the organizations targeted were not aware of any active or recent incidents involving data exfiltration the letters could be referring to.  
 
-Additionally, the composition of the extortion note differs significantly from more recent notes dropped by BianLian in confirmed incidents (see examples below). Previously confirmed Bianlian extortion notes instruct victims to contact the threat actor using Tox messenger or via an Onionmail account. Furthermore, the actual BianLian group has at times provided evidence of specific folders or systems exfiltrated in the extortion note itself. Finally, the language in BianLian notes uses more broken English than the relatively well formatted and well written physical letters we have investigated. 
+Additionally, the composition of the extortion note differs significantly from more recent notes dropped by BianLian in confirmed incidents (see examples below). Previously confirmed Bianlian extortion notes instruct victims to contact the threat actor using Tox messenger or via an Onionmail account. Furthermore, the actual BianLian group has at times provided evidence of specific folders or systems exfiltrated in the extortion note itself. Finally, the language in BianLian notes uses more broken English than the relatively well-formatted and well-written physical letters we have investigated. 
 
 Unit 42 will continue to monitor the situation, and we recommend organizations contact law enforcement if they receive one of these physical letters.
 
-# Example of Recent Confirmed Extortion Note from BianLain Ransomware (Published in CISA Advisory)
+## Example of Recent Confirmed Extortion Note from BianLain Ransomware (Published in CISA Advisory)
 
 ```
 This report is left in <redacted> internal network.
@@ -91,7 +91,7 @@ Now you should contact us.
 [Link to CISA Advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-136a)
 
 
-# Text From A Recent Physical Letter Received by A US Organization
+## Text From A Recent Physical Letter Received by A US Organization
 
 Dear `REDACTED`,
 
