@@ -4,6 +4,11 @@
 
 - Richard Emerson
 
+## References
+
+- https://www.linkedin.com/posts/unit42_unit42-timely-threat-intel2025-03-04-group-likely-impersonating-bianlianmd-activity-7302829709472452608-bk6e/
+- https://x.com/Unit42_Intel/status/1897064011553812808
+
 ## Notes
 
 We are investigating paper-based extortion letters mailed through the postal service to multiple executives at US-based organizations. These letters claim to be the threat actor we track as Bitter Scorpius, publicly known as BianLian. However, we currently have no evidence confirming this is actually BianLian. In the letters, the threat actor demands a ransom to prevent the disclosure of allegedly exfiltrated data. The letter instructs payment within 10 days to a Bitcoin wallet address listed in the letter, or else the threat actor will leak the stolen data on the BianLian leak site. The letter lists TOR links for BianLian’s leak site to add legitimacy to the claims. Extortion amounts range from 200,000 to 500,000 US dollars, and the Bitcoin wallets have differed in each letter.
