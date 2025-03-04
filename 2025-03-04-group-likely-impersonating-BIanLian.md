@@ -113,7 +113,7 @@ We are not a politically motivated group and we want nothing more than money. Ou
 
 As proof that we are serious, below is our website with published data from prior victims who did not comply with our demands. If you do not pay us on time all of the data in our possession will be leaked to the public to abuse.
 
-- Download and install Tor Browser from this website: hxxps://www.torproject[.]org
+- Download and install Tor Browser from this website: hxxps://www[.]torproject[.]org
 - Open one of the below links in Tor Browser
   - bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad[.]onion (Main)
   - bianlivemqbawcco4cx4a672k2fip3guyxudzurfqvdszafam3ofqgqd[.]onion (Backup)
