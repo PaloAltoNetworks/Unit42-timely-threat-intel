@@ -1,4 +1,4 @@
-# 2025-03-04 (Tuesday): Group Claiming to Be BianLian Sends Physical Extortion Letters via Postal Service
+# 2025-03-04 (Tuesday): Group Claiming to Be BianLian Sends Paper-Based Extortion Letters via Postal Service
 
 ## Author
 
