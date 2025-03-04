@@ -1,4 +1,4 @@
-# 2025-03-04 (Tuesday): Group Claiming to Be BianLian Sends Physical Extortion Letters Via USPS
+# 2025-03-04 (Tuesday): Group Claiming to Be BianLian Sends Physical Extortion Letters via USPS
 
 ## Author
 
@@ -16,7 +16,7 @@ Additionally, the composition of the extortion note differs significantly from m
 
 Unit 42 will continue to monitor the situation, and we recommend organizations contact law enforcement if they receive one of these physical letters.
 
-## Example of Recent Confirmed Extortion Note from BianLain Ransomware (Published in CISA Advisory)
+## Example of Recently Confirmed Extortion Note from BianLian Ransomware (Published in CISA Advisory)
 
 ```
 This report is left in <redacted> internal network.
@@ -91,7 +91,7 @@ Now you should contact us.
 [Link to CISA Advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-136a)
 
 
-## Text From A Recent Physical Letter Received by A US Organization
+## Text From a Recent Physical Letter Received by a US Organization
 
 Dear `REDACTED`,
 
