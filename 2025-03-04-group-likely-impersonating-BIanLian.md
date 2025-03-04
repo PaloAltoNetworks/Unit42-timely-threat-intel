@@ -1,22 +1,22 @@
-# 2025-03-04 (TUESDAY): GROUP CLAIMING TO BE BIANLIAN SENDS PHYSICAL EXTORTION LETTERS VIA USPS
+# 2025-03-04 (Tuesday): Group Claiming to Be BianLian Sends Physical Extortion Letters Via USPS
 
-## AUTHOR
+## Author
 
 - Richard Emerson
 
-## NOTES
+## Notes
 
-We are investigating extortion letters physically mailed through the US Postal Service (USPS) to multiple executives at US based organizations. These letters claim to be the threat actor we track as Bitter Scorpius, publicly known BianLian. However we currently have no evidence confirming this is actually BianLian. In the letters, the threat actor demands a ransom for alleged exfiltration of data. The threat actor claims instructs payment within 10 days to a Bitcoin wallet address listed in the letter, or else the threat actor will leak the stolen data on the BianLian leak site. The letter lists BianLian’s public leak site TOR links in an attempt to add legitimacy to the claims. Extortion amounts range from $200,000 to $500,000 USD, and the Bitcoin wallets have differed in each letter.
+We are investigating extortion letters physically mailed through the US Postal Service (USPS) to multiple executives at US-based organizations. These letters claim to be the threat actor we track as Bitter Scorpius, publicly known BianLian. However, we currently have no evidence confirming this is actually BianLian. In the letters, the threat actor demands a ransom to prevent alleged data exfiltration. The letter instructs payment within 10 days to a Bitcoin wallet address listed in the letter, or else the threat actor will leak the stolen data on the BianLian leak site. The letter lists TOR links for BianLian’s leak site to add legitimacy to the claims. Extortion amounts range from 200,000 to 500,000 USD, and the Bitcoin wallets have differed in each letter.
  
 While BianLian has at times used phone calls to pressure victims into paying the ransom, several aspects of these letters suggest they are not the actual threat actor known as BianLian, but an imposter. 
 
 These letters did not provide a means to contact the threat actor for negotiations, which is often a central piece of any extortion note. Additionally, the letters did not provide any evidence data was actually exfiltrated, which is sometimes provided with an extortion note or during further contact with the threat actor. Finally, the organizations targeted were not aware of any active or recent incidents involving data exfiltration the letters could be referring to.  
 
-Additionally, the composition of the extortion note differs significantly from more recent notes dropped by BianLian in confirmed incidents (see examples below). Previously confirmed Bianlian extortion notes instruct the victim to contact the threat actor using Tox messenger or via an Onionmail account. The actual BianLian group has also at times provided evidence of specific folders or systems exfiltrated in the extortion note itself. Finally, the language in BianLian notes uses more broken English than the relatively well formatted and well written physical letters we have investigated. 
+Additionally, the composition of the extortion note differs significantly from more recent notes dropped by BianLian in confirmed incidents (see examples below). Previously confirmed Bianlian extortion notes instruct victims to contact the threat actor using Tox messenger or via an Onionmail account. Furthermore, the actual BianLian group has at times provided evidence of specific folders or systems exfiltrated in the extortion note itself. Finally, the language in BianLian notes uses more broken English than the relatively well formatted and well written physical letters we have investigated. 
 
 Unit 42 will continue to monitor the situation, and we recommend organizations contact law enforcement if they receive one of these physical letters.
 
-#EXAMPLE OF RECENT CONFIRMED EXTORTION NOTE BY BIANLIAN (PUBLISHED IN CISA ADVISORY)
+# Example of Recent Confirmed Extortion Note from BianLain Ransomware (Published in CISA Advisory)
 
 ```
 This report is left in <redacted> internal network.
@@ -88,10 +88,10 @@ Your ID: <redacted>
 Now you should contact us.
 ```
 
-[Link to CISA advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-136a)
+[Link to CISA Advisory](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-136a)
 
 
-#TEXT FROM A RECENT PHYSICAL LETTER RECEIVED BY A US ORGANIZATION
+# Text From A Recent Physical Letter Received by A US Organization
 
 Dear `REDACTED`,
 
