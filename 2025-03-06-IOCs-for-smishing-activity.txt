@@ -8,14 +8,14 @@ AUTHOR:
 NOTES:
 
 - A Threat actor leveraging the same domain pattern has registered over 10k domains for various SMS phishing (smishing) scams.
-- These domain names begin all being with with the string: com-
+- These domain names all begin with the string: com-
 - The domain names indicate pages impersonate toll services in at least 10 US states and one Canadian province.
   -- US states: California, Florida, Illinois, Kansas, Massachusetts, Pennsylvania, New Jersey, New York, Texas, Virginia
   -- Canada province: Ontario
-- The smishing attempts entice users into revealing personal and/or financial information, including credit or debit card and account information.
+- The smishing entices users to reveal personal and/or financial information, including credit or debit card and account information.
 - These smishing text messages originate from email addresses or phone numbers.
 - Apple iMessage does not allow links in messages received from unknown senders.
-  -- To bypass this, these smishing texts ask users to reply with "Y" then reopen the text.
+  -- To bypass this, these smishing texts ask users to reply with "Y" and reopen the text.
   -- Such interaction from the user allows iMessage to enable links in the smishing texts. 
   -- More info: https://www.bleepingcomputer.com/news/security/phishing-texts-trick-apple-imessage-users-into-disabling-protection/
 - Over 70% of these domains use the same two name servers and resolve to IP addresses from popular hosting providers.
