@@ -14,7 +14,7 @@ NOTES:
   -- Registering domain names that mimic domain names used by legitimate services.
   -- Impersonating different legitimate services to convince users to paste malicious script into a run window.
   -- Also abusing legitimate services like Google Sites to host these malicious pages.
-  -- Using data binaries that contain a combination of text binary data that execute as PowerShell script.
+  -- Using data binaries that contain a combination of text and binary data that execute as PowerShell script.
   -- Using zip archives that contain decoy files and a legitimate EXE to side-load a Lumma Stealer DLL.
 
 - This post contains some recent indicators and two examples of malicious pages impersonating legitimate services.
