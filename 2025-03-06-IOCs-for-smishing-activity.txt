@@ -9,6 +9,7 @@ NOTES:
 
 - A Threat actor leveraging the same domain pattern has registered over 10k domains for various SMS phishing (smishing) scams.
 - The root domain names all begin with the string: com-
+- Since the root domain begins with "com-" next to a subdomain, the full domain might trick potential victims doing a casual inspection.
 - The domain names indicate pages impersonate toll services and package delivery services in at least 10 US states and one Canadian province.
   -- US states: California, Florida, Illinois, Kansas, Massachusetts, Pennsylvania, New Jersey, New York, Texas, Virginia
   -- Canada province: Ontario
