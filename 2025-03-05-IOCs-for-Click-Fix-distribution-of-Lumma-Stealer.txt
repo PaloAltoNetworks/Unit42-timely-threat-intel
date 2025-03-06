@@ -91,7 +91,7 @@ ASSOCIATED MALWARE:
 - File type: UTF-8 Unicode text, with CRLF line terminators
 - File description: PowerShell script retrieved and run by copy/pasted PowerShell command
 
- SHA256 hash: 0608775a345c5a0869418ffddd1f694cb888fe8acde6d34543516db1a01e3ef8
+- SHA256 hash: 0608775a345c5a0869418ffddd1f694cb888fe8acde6d34543516db1a01e3ef8
 - File size: 7,714,905 bytes
 - File location: hxxps[:]//plsverif[.]cfd/1.zip
 - File location: C:\Users\[username]\AppData\Local\Temp\download.zip
