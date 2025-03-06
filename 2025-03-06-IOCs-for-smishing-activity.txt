@@ -1,0 +1,36 @@
+2025-03-06 (THURSDAY): OVER 10K DOMAINS REGISTERED FOR SMISHING IMPERSONATING TOLL SERVICES
+
+AUTHOR:
+
+- Reethika Ramesh
+
+
+NOTES:
+
+- A Threat actor leveraging the same domain pattern has registered over 10k domains for various SMS phishing (smishing) scams.
+- These domain names begin all being with with the string: com-
+- The domain names indicate pages impersonate toll services in at least 10 US states and one Canadian province.
+  -- US states: California, Florida, Illinois, Kansas, Massachusetts, Pennsylvania, New Jersey, New York, Texas, Virginia
+  -- Canada province: Ontario
+- The smishing attempts entice users into revealing personal and/or financial information, including credit or debit card and account information.
+- These smishing text messages originate from email addresses or phone numbers.
+- Apple iMessage does not allow links in messages received from unknown senders.
+  -- To bypass this, these smishing texts ask users to reply with "Y" then reopen the text.
+  -- Such interaction from the user allows iMessage to enable links in the smishing texts. 
+  -- More info: https://www.bleepingcomputer.com/news/security/phishing-texts-trick-apple-imessage-users-into-disabling-protection/
+- Over 70% of these domains use the same two name servers and resolve to IP addresses from popular hosting providers.
+  -— 93% of the resolved IP addresses belong to AS13335 (Cloudflare).
+- We will continue to track and block this campaign, which we have named: com_smishing
+
+10 RANDOM EXAMPLES OF DOMAINS RELATED TO THIS CAMPAIGN:
+
+- com-2h98[.]xin
+- com-citations-etc[.]xin
+- com-courtfees[.]xin
+- com-fastrakeu[.]xin
+- com-penalty[.]xin
+- com-securebill[.]xin
+- com-securetta[.]xin
+- com-ticketd[.]xin
+- com-tickeuz[.]xin
+- com-ucla[.]xin
