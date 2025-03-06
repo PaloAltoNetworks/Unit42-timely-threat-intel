@@ -26,7 +26,7 @@ ACTIVE DOMAIN AND URL HOSTING PAGES IMPERSONATING LEGITIMATE SERVICES:
 - windows-update[.]site  <-- site active, domain registered on 2025-02-19
 - sites[.]google[.]com/view/get-access-now-test/verify-your-account
 
-OTHER DOMAINS ASSOCIATED WITH THIS CAMPAIGN:
+OTHER DOMAINS ASSOCIATED WITH THESE CAMPAIGNS:
 
 (Read: date registered: domain name)
 
