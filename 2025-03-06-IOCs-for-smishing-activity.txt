@@ -9,7 +9,7 @@ NOTES:
 
 - A Threat actor leveraging the same domain pattern has registered over 10k domains for various SMS phishing (smishing) scams.
 - These domain names all begin with the string: com-
-- The domain names indicate pages impersonate toll services in at least 10 US states and one Canadian province.
+- The domain names indicate pages impersonate toll services and package delivery services in at least 10 US states and one Canadian province.
   -- US states: California, Florida, Illinois, Kansas, Massachusetts, Pennsylvania, New Jersey, New York, Texas, Virginia
   -- Canada province: Ontario
 - The smishing entices users to reveal personal and/or financial information, including credit or debit card and account information.
