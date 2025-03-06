@@ -8,7 +8,7 @@ AUTHOR:
 NOTES:
 
 - A Threat actor leveraging the same domain pattern has registered over 10k domains for various SMS phishing (smishing) scams.
-- These domain names all begin with the string: com-
+- The root domain names all begin with the string: com-
 - The domain names indicate pages impersonate toll services and package delivery services in at least 10 US states and one Canadian province.
   -- US states: California, Florida, Illinois, Kansas, Massachusetts, Pennsylvania, New Jersey, New York, Texas, Virginia
   -- Canada province: Ontario
@@ -22,7 +22,7 @@ NOTES:
   -— 93% of the resolved IP addresses belong to AS13335 (Cloudflare).
 - We will continue to track and block this campaign, which we have named: com_smishing
 
-10 RANDOM EXAMPLES OF DOMAINS RELATED TO THIS CAMPAIGN:
+10 RANDOM EXAMPLES OF ROOT DOMAINS RELATED TO THIS CAMPAIGN:
 
 - com-2h98[.]xin
 - com-citations-etc[.]xin
