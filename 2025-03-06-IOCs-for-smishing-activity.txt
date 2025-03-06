@@ -36,12 +36,17 @@ NOTES:
 - com-tickeuz[.]xin
 - com-ucla[.]xin
 
-7 EXAMPLES OF FULLY QUALIFIED DOMAIN NAMES (FQDNs) FROM THIS CAMPAIGN:
+12 EXAMPLES OF FULLY QUALIFIED DOMAIN NAMES (FQDNs) FROM THIS CAMPAIGN:
 
+- dhl.com-new[.]xin
+- driveks.com-jds[.]xin
 - ezdrive.com-2h98[.]xin
 - ezdrivema.com-citations-etc[.]xin
-- e-zpassiag.com-courtfees[.]xin
-- thetollroads.com-fastrakeu[.]xin
 - ezdrivema.com-securetta[.]xin
+- e-zpassiag.com-courtfees[.]xin
 - e-zpassny.com-ticketd[.]xin
+- fedex.com-fedexl[.]xin
 - getipass.com-tickeuz[.]xin
+- sunpass.com-ticketap[.]xin
+- thetollroads.com-fastrakeu[.]xin
+- usps.com-tracking-helpsomg[.]xin
