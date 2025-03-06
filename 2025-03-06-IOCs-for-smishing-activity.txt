@@ -34,3 +34,13 @@ NOTES:
 - com-ticketd[.]xin
 - com-tickeuz[.]xin
 - com-ucla[.]xin
+
+7 EXAMPLES OF FULLY QUALIFIED DOMAIN NAMES (FQDNs) FROM THIS CAMPAIGN:
+
+- ezdrive.com-2h98[.]xin
+- ezdrivema.com-citations-etc[.]xin
+- e-zpassiag.com-courtfees[.]xin
+- thetollroads.com-fastrakeu[.]xin
+- ezdrivema.com-securetta[.]xin
+- e-zpassny.com-ticketd[.]xin
+- getipass.com-tickeuz[.]xin
