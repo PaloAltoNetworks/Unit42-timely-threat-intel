@@ -4,6 +4,11 @@ AUTHOR:
 
 - Billy Melicher
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_clickfix-lummastealer-activity-7303479506592243712-2Ncf/
+- https://x.com/Unit42_Intel/status/1897713868463358020
+
 NOTES:
 
 - Campaigns continue using "click fix" style distribution tactics to distribute Lumma Stealer malware.
