@@ -4,6 +4,11 @@ AUTHOR:
 
 - Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_remcos-rat-keylogger-activity-7304958245322768385-tu-a/
+- https://x.com/Unit42_Intel/status/1899192623966867511
+
 NOTES:
 
 - Email remains a consistent vector for malware distribution.
