@@ -53,7 +53,7 @@ FOLLOW-UP BROWSER PASSWORD VIEWER TOOL SENT THROUGH REMCOS RAT C2 TRAFFIC:
 - SHA256 hash: 1b0eb55bb50d0286b192accbe408826c4c2e6c59a78d52743ce4f84ac0b1d6d0
 - File size: 698,895 bytes
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows
-- File description: 
+- File description: Web Browser Password Viewer
 
 COPIES OF THE ORIGINAL SCRIPT FILE FOUND ON AN INFECTED WINDOWS HOST:
 
