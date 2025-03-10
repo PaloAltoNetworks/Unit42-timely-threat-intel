@@ -10,9 +10,9 @@ NOTES:
 - Most of these emails are caught by spam traps and other security filters.
 - Criminals continue trying different methods to sneak malware past this filtering.
 - One such method is using a different file extension for an attached zip archive.
-- In this example, the email attachment is a zip archive with a file extension for a 7-Zip archive.
-- On a Windows 11 host, File manager extracted the malware from the zip archive, 
-  even though the file archive a .7z file extension, and 7-Zip was not installed on the system.
+- In this example, the email attachment is a zip archive that uses a file extension for a 7-Zip archive.
+- On a Windows 11 host, File Manager extracted the malware from the zip archive, 
+  even though the file archive used a .7z file extension, and 7-Zip was not installed on the system.
 
 INFECTION CHAIN:
 
