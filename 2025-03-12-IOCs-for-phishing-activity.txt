@@ -4,7 +4,6 @@ AUTHORS:
 
 - Jingwei Fan, Zeyu You, Ritesh Nanda, Wei Wang
 
-
 NOTES:
 
 - We are currently tracking a phishing campaign with the following characteristics:
