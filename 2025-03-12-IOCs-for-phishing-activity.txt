@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- We are currently tracking a phishing campaign with the following characteristics:
+- We are currently tracking a long-running phishing campaign with the following characteristics:
   -- A specific design template for the login window
   -- Consistent use of Clearbit's free Company Logo API
   -- Frequent use of obfuscated JavaScript to render the phishing pages
