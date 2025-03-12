@@ -13,7 +13,7 @@ NOTES:
   -- Can sometimes display the spoofed organization's web page as a background of the phishing page
 
 - Clearbit's "Company Logo API" is a free service that displays logos for many organizations. (More info at: https://clearbit.com/blog/logo)
-- Unfortunately, like many free services, this company logo API is frequently abused by criminals in phishing campaigns.
+- Unfortunately, like many other free services, this API is frequently abused by criminals in phishing campaigns.
 - We've noticed a significant percentage of phishing URLs from this campaign sent to Japan-based email addresses.
 - However, recipients of these phishing URLs include various nationalities and industry vectors.
 
