@@ -13,11 +13,11 @@ NOTES:
   -- Can sometimes display the spoofed organization's web page as a background of the phishing page
 
 - Clearbit's "Company Logo API" is a free service that displays logos for many organizations. (More info at: https://clearbit.com/blog/logo)
-- Unfortunately, like many other free services, this API is frequently abused by criminals in phishing campaigns.
+- Unfortunately, like many other free services available to anyone, this API is frequently abused by criminals in phishing campaigns.
 - We've noticed a significant percentage of phishing URLs from this campaign sent to Japan-based email addresses.
 - However, recipients of these phishing URLs include various nationalities and industry vectors.
 
-28 EXAMPLES OF URLS ASSOCIATED WITH THIS CAMPAIGN:
+23 EXAMPLES OF URLS ASSOCIATED WITH THIS CAMPAIGN:
 
 - alex-photographer[.]co[.]il/new/indesx.htm#[recipient's email address]
 - bafkreidhpfo5zkesu6ij5uyyizpvf54q52ianh5mz7kjqr3w5ckdij4mhy.ipfs.flk-ipfs[.]xyz/#[recipient's email address]
