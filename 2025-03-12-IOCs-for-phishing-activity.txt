@@ -1,0 +1,47 @@
+2025-03-12 (WEDNESDAY): PHISHING ACTIVITY
+
+AUTHORS:
+
+- Jingwei Fan, Zeyu You, Ritesh Nanda, Wei Wang
+
+
+NOTES:
+
+- We are currently tracking a phishing campaign with the following characteristics:
+  -- A specific design template for the login window
+  -- Consistent use of Clearbit's free Company Logo API
+  -- Frequent use of obfuscated JavaScript to render the phishing pages
+  -- Can sometimes display the spoofed organization's web page as a background of the phishing page
+
+- Clearbit's "Company Logo API" is a free service that displays logos for many organizations. (More info at: https://clearbit.com/blog/logo)
+- Unfortunately, like many free services, this company logo API is frequently abused by criminals in phishing campaigns.
+- We've noticed a significant percentage of phishing URLs from this campaign sent to Japan-based email addresses.
+- However, recipients of these phishing URLs include various nationalities and industry vectors.
+
+28 EXAMPLES OF URLS ASSOCIATED WITH THIS CAMPAIGN:
+
+- alex-photographer[.]co[.]il/new/indesx.htm#[recipient's email address]
+- bafkreidhpfo5zkesu6ij5uyyizpvf54q52ianh5mz7kjqr3w5ckdij4mhy.ipfs.flk-ipfs[.]xyz/#[recipient's email address]
+- bafkreidlrvqd22xpjynhp7ysv7kkvcda2ouf6vwq2t372abdxnwsmhfjve.ipfs.flk-ipfs[.]xyz/#[recipient's email address]
+- bloqueado.canoasnet[.]com[.]br/jp/indesx.htm#[recipient's email address] **
+- ciudapp[.]com[.]ar/sx/indesx.htm#[recipient's email address]
+- daffy-precious-barge.glitch[.]me/#[recipient's email address]
+- elton.fluirpublicidade[.]com/wp-content/webmail/#[recipient's email address]
+- email-authenticationaccessvalidationprocess47358f83948of.quercus[.]org?#[recipient's email address] **
+- goproinfotech[.]com/Web3/index.htm#[recipient's email address]
+- inovtecautomacao[.]com[.]br/jp/indesx.htm#[recipient's email address]
+- newverificationsrequi.blob.core.windows[.]net/newverificationsrequireds/newverificationsrequireds.html?#[recipient's email address]
+- onedrive-files.mos.ap-southeast-2.sufybkt[.]com/webmail%20successful.html#[recipient's email address]
+- pub-0798b167efe449f3bd2a046e446b8a39.r2[.]dev/session3/AuthRq.html?[info removed] **
+- pub-4cd90db9d4b14c9e955a0578e3e56332.r2[.]dev/session2/AuthQr.html?[recipient's email address] **
+- road-unleashed-chasmosaurus.glitch[.]me/#[recipient's email address]
+- shade-silken-navy.glitch[.]me/?email=[recipient's email address]
+- spiral-military-bait.glitch[.]me/#[recipient's email address]
+- storage.bunnycdn[.]com/crazesk/crazesk/scr.htm?accessKey=f5d95962-0a9b-4878-a9e379726aec-54cf-476d&amp;#[recipient's email address]
+- storage.bunnycdn[.]com/crazesk/doomp/scr.htm?accessKey=f5d95962-0a9b-4878-a9e379726aec-54cf-476d&amp;#[recipient's email address]
+- storage.bunnycdn[.]com/crazesk/lastly/scr.htm?accessKey=f5d95962-0a9b-4878-a9e379726aec-54cf-476d&amp;#[recipient's email address]
+- storage.bunnycdn[.]com/crazesk/passion/scr.htm?accessKey=f5d95962-0a9b-4878-a9e379726aec-54cf-476d&amp;#[recipient's email address]
+- webauthmailjp.agerespais[.]com#[recipient's email address]
+- webmail-settings-493843.mos.ap-southeast-2.sufybkt[.]com/russian%20successful%20login.html#[recipient's email address] **
+
+** Notes the 5 pages that still displayed phishing content as of this writing.
