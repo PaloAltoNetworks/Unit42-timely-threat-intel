@@ -4,6 +4,11 @@ AUTHORS:
 
 - Jingwei Fan, Zeyu You, Ritesh Nanda, Wei Wang
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7306013718927089664-3Raf/
+- https://x.com/Unit42_Intel/status/1900248096811925772
+
 NOTES:
 
 - We are currently tracking a long-running phishing campaign with the following characteristics:
