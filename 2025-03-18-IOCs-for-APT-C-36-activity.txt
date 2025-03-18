@@ -1,0 +1,99 @@
+2025-03-18 (TUESDAY): APT-C-36 (BLIND EAGLE) ACTIVITY IN MARCH 2025
+
+AUTHOR:
+
+- Chris Astacio
+
+
+NOTES:
+
+- Also known as Blind Eagle, APT-C-36 is a suspected South America espionage group first noted in 2018.
+- Following reports of APT-C-36 campaigns in November and December of 2024, we found more recent campaigns in March 2025.
+- These recent campaigns follow the same methods outlined by Checkpoint earlier this month:
+  -- https://research.checkpoint.com/2025/blind-eagle-and-justice-for-all/
+- The attacks start with .url files which pull down an initial downloader from a WebDAV server. 
+- The downloader checks in with a C2 server then pulls down a final payload hosted on a Github repository.
+- The final payload is typically Remcos RAT.
+- The Github repository is actively updating its files used for the final payload. 
+- We also found a shared SSH key used by this threat actor in its infrastructure.
+
+SHARED SSH KEY OBSERVED:
+
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHBbh48Fw679dkqkqWL6+e7v4dOq7Gd+6pRptPTznl28cBE2FY3X4nJgnLUQuJRzcGhEOSCDU8cp7P7El2ZNQfY=
+
+OBSERVED IP ADDRESSES:
+
+- 62.60.226[.]112
+- 191.88.252[.]140
+
+7 EXAMPLES OF SHA256 HASHES FOR URL FILES:
+
+- 47569431f421ff3ecf20a7898515ef4af78c27f3d53303a57f7c4f4225787191
+- 5335603a304e42c6fef4d2fe76cbb92cf1b136d2ec9bea5a648fc002f392f2b1
+- 5590b65c4114fc8bb0eecad6cfe83b5efb1c667e57507a2c699812e282563f13
+- 82788e1057e5d1634e5aa3d33b15b44899635a93c7da02ec96f6c793031b4dd1
+- a08f11d4a8fd48e6f2dd5a3b1ea281e579f3f04293e67da8adb2ccd7b74acedb
+- cec6dceccc5b3937ab34de1bdd3c66cfa58875459fc5174194c89b5c4fa133d6
+- f7cc357c11576175e97990254bbb03e9764879a47e6dfd1ffcf06fb1dd192aad
+
+7 SHORTCUTS FROM THE ABOVE URL FILES:
+
+- file[:]//\\62.60.226[.]112\file\590_9883.exe
+- file[:]//\\62.60.226[.]112\file\2430_1471.exe
+- file[:]//\\62.60.226[.]112\file\877_6120.exe
+- file[:]//\\62.60.226[.]112\file\932_6199.exe
+- file[:]//\\62.60.226[.]112\file\2744_6673.exe
+- file[:]//\\62.60.226[.]112\file\4917_8531.exe
+- file[:]//\\62.60.226[.]112\file\7309_9071.exe
+
+SHA256 HASHES FOR EXE FILES RETRIEVED FROM THE ABOVE URLS:
+
+- 157f03405b2658baa1ee8f76f4801403ffdeb217df37d8d95e867787608de6e3
+- 346530ea86a7fb02e7184736ed67363d736ba4fab6ab70f79129a962e61dd8fa
+- 61fb41b9fcf85698908bd772155e7a3e27c8cc33e1ed233b67a3a3063f522b63
+- 7234b5f14e83326a2f3db2c5180624c8c30da0495020caa4c80e5d03f14ebb56
+- 83cc9395582825c673c7738afbb9f53a95b83aeb21365ad42703bcedf1ded219
+- bf4ce102f2685d5c2e1096de43ea95c8eeaebb7378486ed02541226f1c1ada83
+- e9df6fc0cd0fb856bd15a378653b76b33e9620735474daec01a413a205cf0832
+
+DOMAINS FOR C2 SERVERS OBSERVED FROM THE ABOVE EXE FILES:
+
+- computador12.ddns-ip[.]net
+- venitocamelo25.ddns-ip[.]net
+
+- Note: Both of the above domains resolved to 191.88.252[.]140.
+
+EXAMPLES OF FURTHER PAYLOAD URLS CALLED BY THE ABOVE EXE FILES:
+
+- hxxps[:]//github[.]com/fresas2025/fresa/raw/refs/heads/main/agropecuario.exe
+- hxxps[:]//github[.]com/fresas2025/fresa/raw/refs/heads/main/CON3.exe
+- hxxps[:]//github[.]com/fresas2025/fresa/raw/refs/heads/main/DesignsCornwall.exe
+- hxxps[:]//github[.]com/fresas2025/fresa/raw/refs/heads/main/frutas.exe
+- hxxps[:]//github[.]com/fresas2025/fresa/raw/refs/heads/main/salmon.exe
+
+SHA256 HASHES FOR EXE FILES RETRIEVED FROM THE ABOVE URLS:
+
+- 2ab78e5d801c37d36d0941f74105bbb49917a89761b104527acc594faf95dc3a
+- 4deec3644eb9b38695579cd49eed7628d750d49b8c3ea59ce3e4989a823813bf
+- 65d4f56e2813800de90ba1a3cbf13054fa238f233fc7b9db6a8caf1f2f987a90
+- ab9e926e4df55e4791b87167c7af7d58817e9b69b55cbaa8b54ce1ed3b032736
+- dd3706144ba3f88dd1606e7d06e6b0ecc4b848108a5eb6c5612b8912da3bc6c2 
+
+DOMAINS FOR C2 SERVERS OBSERVED FROM THE ABOVE EXE FILES:
+
+- asdasdsf.con-ip[.]com
+- usuariofebrero25.dedyn[.]io
+
+- Note: Like the other C2 domains, both of the above domains also resolved to 191.88.252[.]140.
+
+ADDITIONAL C2 SERVER INFORMATION ASSOCIATED WITH THIS ACTIVITY:
+
+- activistascol25.myonlineportal[.]net
+- Camino003.duia[.]eu
+- 177.255.84[.]37
+
+MORE INFO ON APT-C-36:
+
+- https://attack.mitre.org/groups/G0099/
+- https://web.archive.org/web/20190625182633if_/https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/
+- https://malpedia.caad.fkie.fraunhofer.de/actor/apt-c-36
