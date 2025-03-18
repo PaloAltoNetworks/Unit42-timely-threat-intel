@@ -4,7 +4,6 @@ AUTHOR:
 
 - Chris Astacio
 
-
 NOTES:
 
 - Also known as Blind Eagle, APT-C-36 is a suspected South America threat actor first noted in 2018.
