@@ -7,14 +7,14 @@ AUTHOR:
 
 NOTES:
 
-- Also known as Blind Eagle, APT-C-36 is a suspected South America espionage group first noted in 2018.
+- Also known as Blind Eagle, APT-C-36 is a suspected South America threat actor first noted in 2018.
 - Following reports of APT-C-36 campaigns in November and December of 2024, we found more recent campaigns in March 2025.
 - These recent campaigns follow the same methods outlined by Checkpoint earlier this month:
   -- https://research.checkpoint.com/2025/blind-eagle-and-justice-for-all/
 - The attacks start with .url files which pull down an initial downloader from a WebDAV server. 
-- The downloader checks in with a C2 server then pulls down a final payload hosted on a Github repository.
+- The downloader checks in with a C2 server then pulls down a final from a Github repository.
 - The final payload is typically Remcos RAT.
-- The Github repository is actively updating its files used for the final payload. 
+- The associated Github repository is actively updating its files used for the final payload. 
 - We also found a shared SSH key used by this threat actor in its infrastructure.
 
 SHARED SSH KEY OBSERVED:
