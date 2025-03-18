@@ -21,10 +21,11 @@ SHARED SSH KEY OBSERVED:
 
 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHBbh48Fw679dkqkqWL6+e7v4dOq7Gd+6pRptPTznl28cBE2FY3X4nJgnLUQuJRzcGhEOSCDU8cp7P7El2ZNQfY=
 
-OBSERVED IP ADDRESSES:
+OBSERVED IP ADDRESSES AND TCP PORTS:
 
-- 62.60.226[.]112
-- 191.88.252[.]140
+- 62.60.226[.]112:80
+- 191.88.252[.]140:30204
+- 191.88.252[.]140:30805
 
 7 EXAMPLES OF SHA256 HASHES FOR URL FILES:
 
@@ -38,13 +39,13 @@ OBSERVED IP ADDRESSES:
 
 7 SHORTCUTS FROM THE ABOVE URL FILES:
 
-- file[:]//\\62.60.226[.]112\file\590_9883.exe
-- file[:]//\\62.60.226[.]112\file\2430_1471.exe
-- file[:]//\\62.60.226[.]112\file\877_6120.exe
-- file[:]//\\62.60.226[.]112\file\932_6199.exe
-- file[:]//\\62.60.226[.]112\file\2744_6673.exe
-- file[:]//\\62.60.226[.]112\file\4917_8531.exe
-- file[:]//\\62.60.226[.]112\file\7309_9071.exe
+- file[:]//\\62.60.226[.]112@80\file\590_9883.exe
+- file[:]//\\62.60.226[.]112@80\file\2430_1471.exe
+- file[:]//\\62.60.226[.]112@80\file\877_6120.exe
+- file[:]//\\62.60.226[.]112@80\file\932_6199.exe
+- file[:]//\\62.60.226[.]112@80\file\2744_6673.exe
+- file[:]//\\62.60.226[.]112@80\file\4917_8531.exe
+- file[:]//\\62.60.226[.]112@80\file\7309_9071.exe
 
 SHA256 HASHES FOR EXE FILES RETRIEVED FROM THE ABOVE URLS:
 
