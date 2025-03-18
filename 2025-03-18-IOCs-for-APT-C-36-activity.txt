@@ -7,7 +7,7 @@ AUTHOR:
 NOTES:
 
 - Also known as Blind Eagle, APT-C-36 is a suspected South America threat actor first noted in 2018.
-- We track this group as TGR-UNK-0044.
+- We're currently tracking activity from a group we've named TGR-UNK-0044, which we associated with high confidence to APT-C-36.
 - Following reports of APT-C-36 campaigns in November and December of 2024, we found more recent campaigns in March 2025.
 - These recent campaigns follow the same methods outlined by Checkpoint earlier this month:
   -- https://research.checkpoint.com/2025/blind-eagle-and-justice-for-all/
