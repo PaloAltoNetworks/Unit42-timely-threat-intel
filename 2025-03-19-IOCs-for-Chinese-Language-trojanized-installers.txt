@@ -12,7 +12,7 @@ NOTES:
   -- i4Tools (i4 Aisi Assistant, PC version) for Windows
   -- Youdao Dictionary Desktop Edition for Windows
 - While providing legitimate software, these trojanized installers also infect a Windows host with malware.
-- Preliminary analysis indicates the malware might be Ghost RAT.
+- Preliminary analysis indicates the malware might be Ghost RAT (gh0st RAT).
 - Based on our telemetry, this campaign primarily affects users in the United States and China.
 - Our telemetry also indicates the most affected industry vector is Professional and Legal Services.
 
