@@ -18,7 +18,7 @@ NOTES:
 
 HOSTING AND REGISTRATION INFO:
 
-- Of the 2,000+ domains, 1,400+ impersonate the i4 website for i4tools, 600+ impersonate Youdao and 5 impersonate DeepSeek.
+- Of the 2,000+ domains, 1,400+ impersonate the i4 website for i4Tools, 600+ impersonate Youdao and 5 impersonate DeepSeek.
 - Malicious websites using these 2,000+ domains have been hosted on 3 IP addresses from the same hosting provider.
 - Based on shared WHOIS registrant details, these domains were likely created through automation.
 - New domains for this campaign have been registered daily, with a surge in early February 2025 and in early March 2025.
