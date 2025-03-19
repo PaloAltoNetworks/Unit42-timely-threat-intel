@@ -1,0 +1,157 @@
+2025-03-19 (WEDNESDAY): CAMPAIGN DISTRIBUTING CHINESE LANGUAGE TROJANIZED INSTALLERS
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Nabeel Mohamed, Shehroze Farooqi, Vishwa Thothathri, Bradley Duncan, Fang Liu, Alex Starov
+
+NOTES:
+
+- We've identified over 2,000 malicious domains registered in February and March 2025 associated with a single campaign.
+- This campaign impersonates Chinese language webites to distribute trojanized installers for the following software:
+  -- DeepSeek AI Assistant for Windows
+  -- i4Tools (i4 Aisi Assistant, PC version) for Windows
+  -- Youdao Dictionary Desktop Edition for Windows
+- White providing the legitimate software, these trojanized installers also infect a Windows host with malware.
+- The malware appears to be a version of Ghost RAT.
+- Based on our telemetry, this campaign primarily affects users in the United States and China.
+- Our telemetry also indicates the most affected industry vector is Professional and Legal Services.
+
+HOSTING AND REGISTRATION INFO:
+
+- Of the 2,000+ domains, 1,400+ impersonate the i4 website for i4tools, 600+ impersonate Youdao and 5 impersonate DeepSeek.
+- Malicious web sites using these 2,000+ domains have been hosted on 3 IP addresses from the same hosting provider.
+- Based on shared WHOIS registrant details, these domains were likely created through automation.
+- New domains for this campaign have been registered daily, with a surge in early February 2025 and in early March 2025.
+
+INITIAL MALWARE DISTRIBUTION:
+
+- The initial trojanized installers are contained in zip archives downloaded from a link on the malicious web page.
+- These links are either hosted on xiazailianjieoss[.]com, or they are hosted on the same domain as the malicious web page.
+- The trojanized installer for DeepSeek is an EXE file, but trojanized installers for i4Tools and Youdao are MSI files.
+- The trojanized EXE installer for DeepSeek has been consistent since 2025-03-12, but the MSI files change on at least a daily basis.
+- Design templates for all three trojanized installers are similar, only having different software names.
+
+POST-INFECTION ACTIVITY:
+
+- The trojanized installers drop the malware EXE for Ghost RAT at C:\Users\Public\Documents\MM\svchos1.exe
+- With each update of the trojanized MSI installers, they drop malware EXE files with different file hashes.
+- Since the trojanized EXE installer for DeepSeek has not changed since 2025-03-12, its malware EXE files have been identical.
+
+POST-INFECTION TRAFFIC:
+
+- Post infection traffic includes encrypted TCP traffic over TCP port 80 and web traffic over HTTPS.
+  -- tcp[:]//xiaobaituziha[.]com:8080/
+  -- Two URLS: hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/[unix timestamp]/[3 or 4 or 7].txt
+- The two URLs to fs-im-kefu.7moor-fs1[.]com return an obfuscated binary that is saved under C:\Users\Public\Documents\MM\
+
+INDICATORS FROM THIS CAMPAIGN:
+
+28 EXAMPLES OF DOMAINS REGISTERED FOR THESE MALICIOUS WEB SITES: 
+
+- deep-seek[.]bar   Registration date: 2025-02-23
+- deep-seek[.]bond  Registration date: 2025-02-23
+- deep-seek[.]cfd   Registration date: 2025-02-23
+- deep-seek[.]qpon  Registration date: 2025-02-23
+- deep-seek[.]rest  Registration date: 2025-02-23
+
+- i4toolsearch[.]vip  Registration date: 2025-02-10
+- i4toolssddsl[.]top  Registration date: 2025-03-12
+- i4toolssddzp[.]top  Registration date: 2025-03-12
+- i4toolssddzq[.]top  Registration date: 2025-03-12
+- i4toolssddzr[.]top  Registration date: 2025-03-12
+- i4toolssddzt[.]top  Registration date: 2025-03-12
+- i4toolssddzu[.]top  Registration date: 2025-03-12
+- i4toolssddzw[.]top  Registration date: 2025-03-12
+- i4toolssddzy[.]top  Registration date: 2025-03-12
+- i4toolssffna[.]top  Registration date: 2025-03-12
+- i4toolssffnd[.]top  Registration date: 2025-03-12
+- i4toolssffnf[.]top  Registration date: 2025-03-12
+- i4toolssffng[.]top  Registration date: 2025-03-12
+- i4toolssffnh[.]top  Registration date: 2025-03-12
+- i4toolssffnj[.]top  Registration date: 2025-03-12
+- i4toolssffnl[.]top  Registration date: 2025-03-12
+
+- youdaohhnf[.]top  Registration date: 2025-03-04																									
+- youdaohhsh[.]top  Registration date: 2025-03-04																									
+- youdaohhvw[.]top  Registration date: 2025-03-04																									
+- youdaohhvy[.]top  Registration date: 2025-03-04																									
+- youdaohhxf[.]top  Registration date: 2025-03-04																									
+- youdaohhzi[.]top  Registration date: 2025-03-04																									
+- youdaohhzy[.]top  Registration date: 2025-03-04
+
+THREE IP ADDRESSES HOSTING WEB SITES USING THE ABOVE DOMAINS:
+
+- 154.82.84[.]227
+- 156.251.25[.]43
+- 156.251.25[.]112
+
+EXAMPLES OF URLS HOSTING ZIP ARCHIVES CONTAINING THE TROJANIZED INSTALLERS:
+
+- https[:]//xiazailianjieoss[.]com/baidu/deepseek_release_X64[.]zip
+- https[:]//xiazailianjieoss[.]com/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//xiazailianjieoss[.]com/YoudaoDictSetup[.]zip
+
+- https[:]//i4toolssddzp[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssddzq[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssddzr[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssddzt[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssddzu[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssddzw[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssddzy[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffna[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffnd[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffnf[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffng[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffnh[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffnj[.]top/i4Tools8_v8.33_Setup_x64[.]zip
+- https[:]//i4toolssffnl[.]top/i4Tools8_v8.33_Setup_x64[.]zip																
+
+POST-INFECTION TRAFFIC OVER TCP PORT 8080:
+
+- 103.181.134[.]138:8080 - xiaobaituziha[.]com - encoded or encrypted TCP traffic
+
+EXAMPLES OF POST-INFECTION HTTPS URLS:
+
+- Note: 
+  -- These URLs below are dated as early as 2025-03-03.
+  -- They appear to be encoded or obfuscated binaries for Windows EXE or DLL files.
+  -- Similar URLs have been submitted to VirusTotal with different Unix timestamps dating as early as 2024-07-12.
+
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741001373486/7.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741012778019/3.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741071075846/3.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741277757095/3.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741437627318/3.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741507677489/4.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741598298161/3.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741766977268/4.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741854013752/4.txt
+- hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1742300995084/3.txt
+
+EXAMPLES OF DOWNLOADED ZIP ARCHIVES AND EXTRACTED TROJANIZED INSTALLERS:
+
+- 61bb32673e33c7aa1a0825e18629880b4d870fdeb4666d8b0ca954866d110a07  50,399,126 bytes  deepseek_release_X64.zip
+- c37d0c9c9da830e6173b71a3bcc5203fbb66241ccd7d704b3a1d809cadd551b2  55,591,250 bytes  deepseek_release_X64.exe
+
+- 7a4d5219956854db9581c98d9cee7d6ebe61c5498988ec2655cd80f3548f7bed  250,833,827 bytes  i4Tools8_v8.33_Setup_x64.zip
+- af1a08578a5ebb02835cf10a9a45393349bcaa2caa6eb9e823e7fc08db37da66  254,775,296 bytes  i4Tools8_v8.33_Setup_x64.msi
+
+- 23a96252ba2a3cff76158fa598f4de904780f24fbbd426f36258077628e8cfc2  250,211,654 bytes  i4Tools8_v8.33_Setup_x64.zip
+- d9efd833d31365c25bc10bb2a34845add5ff89bd660da1d9405dea82d035a308  254,149,120 bytes  i4Tools8_v8.33_Setup_x64.msi
+
+- 33414abc9d5d4767a2612f85fe3b0555f3cbef646163ef3d1d9ddb753df5efbf  120,228,619 bytes  YoudaoDictSetup.zip
+- 1a13dc5488612aff33c3ad378d6b06b76551a2c6defb30b132547a633df03076  123,508,224 bytes  YoudaoDictSetup.msi
+
+- d44603abdcd6a4eb3283d5d4be88b93cc359d6f0efaccfd546c10e3349ccb4ed  119,605,378 bytes  YoudaoDictSetup.zip
+- e5d6f7138fcccd1a579d681ef354c4660deab3c216f3db1a330a8212d99fbea1  122,882,560 bytes  YoudaoDictSetup.msi
+
+ADDITIONAL FILE:
+
+- Notes: 
+  -- The following file was dropped by the deepseek_release_X64.exe listed above.
+  -- This file is an APK file containing an app to root Android devices.
+  -- It was dropped at C:\Program Files (x86)\deepseek_release_X64\deepseek_release_X64\com.qihoo.appstore_300101314.apk.
+  -- This was probably accidentally included when the malware author created the deepseek_release_X64.exe binary.
+  -- Therefore, it is only an indicator for the above deepseek_release_X64.exe file.
+
+- 2232612b09b636698afcdb995b822adf21c34fb8979dd63f8d01f0d038acb454  43,589,162 bytes  com.qihoo.appstore_300101314.apk
