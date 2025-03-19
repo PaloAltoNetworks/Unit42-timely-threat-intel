@@ -7,11 +7,11 @@ AUTHORS:
 NOTES:
 
 - We've identified over 2,000 malicious domains registered in February and March 2025 associated with a single campaign.
-- This campaign impersonates Chinese language webites to distribute trojanized installers for the following software:
+- This campaign impersonates Chinese language websites to distribute trojanized installers for the following software:
   -- DeepSeek AI Assistant for Windows
   -- i4Tools (i4 Aisi Assistant, PC version) for Windows
   -- Youdao Dictionary Desktop Edition for Windows
-- White providing the legitimate software, these trojanized installers also infect a Windows host with malware.
+- While providing legitimate software, these trojanized installers also infect a Windows host with malware.
 - The malware appears to be a version of Ghost RAT.
 - Based on our telemetry, this campaign primarily affects users in the United States and China.
 - Our telemetry also indicates the most affected industry vector is Professional and Legal Services.
@@ -19,7 +19,7 @@ NOTES:
 HOSTING AND REGISTRATION INFO:
 
 - Of the 2,000+ domains, 1,400+ impersonate the i4 website for i4tools, 600+ impersonate Youdao and 5 impersonate DeepSeek.
-- Malicious web sites using these 2,000+ domains have been hosted on 3 IP addresses from the same hosting provider.
+- Malicious websites using these 2,000+ domains have been hosted on 3 IP addresses from the same hosting provider.
 - Based on shared WHOIS registrant details, these domains were likely created through automation.
 - New domains for this campaign have been registered daily, with a surge in early February 2025 and in early March 2025.
 
@@ -39,14 +39,14 @@ POST-INFECTION ACTIVITY:
 
 POST-INFECTION TRAFFIC:
 
-- Post infection traffic includes encrypted TCP traffic over TCP port 80 and web traffic over HTTPS.
+- Post-infection traffic includes encrypted TCP traffic over TCP port 80 and web traffic over HTTPS.
   -- tcp[:]//xiaobaituziha[.]com:8080/
   -- Two URLS: hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/[unix timestamp]/[3 or 4 or 7].txt
 - The two URLs to fs-im-kefu.7moor-fs1[.]com return an obfuscated binary that is saved under C:\Users\Public\Documents\MM\
 
 INDICATORS FROM THIS CAMPAIGN:
 
-28 EXAMPLES OF DOMAINS REGISTERED FOR THESE MALICIOUS WEB SITES: 
+28 EXAMPLES OF DOMAINS REGISTERED FOR THESE MALICIOUS WEBSITES: 
 
 - deep-seek[.]bar   Registration date: 2025-02-23
 - deep-seek[.]bond  Registration date: 2025-02-23
@@ -79,7 +79,7 @@ INDICATORS FROM THIS CAMPAIGN:
 - youdaohhzi[.]top  Registration date: 2025-03-04																									
 - youdaohhzy[.]top  Registration date: 2025-03-04
 
-THREE IP ADDRESSES HOSTING WEB SITES USING THE ABOVE DOMAINS:
+THREE IP ADDRESSES HOSTING WEBSITES USING THE ABOVE DOMAINS:
 
 - 154.82.84[.]227
 - 156.251.25[.]43
