@@ -4,6 +4,11 @@ AUTHOR:
 
 - Chris Astacio
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_2025-03-18-tuesday-weve-found-new-infrastructure-activity-7307918496909139968-CWf7/
+- https://x.com/Unit42_Intel/status/1902152877608497605
+
 NOTES:
 
 - We're currently tracking activity from a group we've designated as TGR-UNK-0044, which we associate with high confidence to APT-C-36.
