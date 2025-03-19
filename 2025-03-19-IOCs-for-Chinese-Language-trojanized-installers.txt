@@ -114,7 +114,7 @@ EXAMPLES OF POST-INFECTION HTTPS URLS:
 
 - Notes: 
   -- These URLs below are dated as early as 2025-03-03.
-  -- They appear to be encoded or obfuscated binaries for Windows EXE or DLL files.
+  -- They appear to host encoded or obfuscated binaries for Windows EXE or DLL files.
   -- Similar URLs have been submitted to VirusTotal with different Unix timestamps dating as early as 2024-07-12.
 
 - hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1741001373486/7.txt
