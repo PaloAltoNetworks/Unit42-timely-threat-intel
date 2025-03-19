@@ -112,7 +112,7 @@ POST-INFECTION TRAFFIC OVER TCP PORT 8080:
 
 EXAMPLES OF POST-INFECTION HTTPS URLS:
 
-- Note: 
+- Notes: 
   -- These URLs below are dated as early as 2025-03-03.
   -- They appear to be encoded or obfuscated binaries for Windows EXE or DLL files.
   -- Similar URLs have been submitted to VirusTotal with different Unix timestamps dating as early as 2024-07-12.
