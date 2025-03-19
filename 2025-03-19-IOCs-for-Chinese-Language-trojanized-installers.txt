@@ -12,7 +12,7 @@ NOTES:
   -- i4Tools (i4 Aisi Assistant, PC version) for Windows
   -- Youdao Dictionary Desktop Edition for Windows
 - While providing legitimate software, these trojanized installers also infect a Windows host with malware.
-- The malware appears to be a version of Ghost RAT.
+- Preliminary analysis indicates the malware might be Ghost RAT.
 - Based on our telemetry, this campaign primarily affects users in the United States and China.
 - Our telemetry also indicates the most affected industry vector is Professional and Legal Services.
 
@@ -144,6 +144,15 @@ EXAMPLES OF DOWNLOADED ZIP ARCHIVES AND EXTRACTED TROJANIZED INSTALLERS:
 
 - d44603abdcd6a4eb3283d5d4be88b93cc359d6f0efaccfd546c10e3349ccb4ed  119,605,378 bytes  YoudaoDictSetup.zip
 - e5d6f7138fcccd1a579d681ef354c4660deab3c216f3db1a330a8212d99fbea1  122,882,560 bytes  YoudaoDictSetup.msi
+
+EXAMPLES OF POSSIBLE GHOST RAT FROM TROJANIZED INSTALLERS:
+
+- 0076f6ea4346af5ae43db08205664092029e06bb353e3406ee649e98723182eb  1,792,000 bytes  C:\Users\Public\Documents\MM\svchos1.exe
+- 1395627eca4ca8229c3e7da0a48a36d130ce6b016bb6da750b3d992888b20ab8  1,816,576 bytes  C:\Users\Public\Documents\MM\svchos1.exe
+- 299e6791e4eb85617c4fab7f27ac53fb70cd038671f011007831b558c318b369  1,756,160 bytes  C:\Users\Public\Documents\MM\svchos1.exe
+- 45c62ebe5cd2441ca25a86ddc7023bc938c8d47f12ea626d5245875bf0a13c02  374,272 bytes    C:\Users\Public\Documents\MM\svchos1.exe
+- 77c12dcdacd58f1f0cbf032fcf52b18aa06cd30c8a763a4dd3b2216f9c78e9a4  504,320 bytes    C:\Users\Public\Documents\MM\svchos1.exe
+- c333e4ed8e0d5c3b1f26fa12f51a1dc66db4cca344a646061e2c95f305560aa9  1,759,744 bytes  C:\Users\Public\Documents\MM\svchos1.exe
 
 ADDITIONAL FILE:
 
