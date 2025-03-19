@@ -41,7 +41,7 @@ POST-INFECTION TRAFFIC:
 
 - Post-infection traffic includes encrypted TCP traffic over TCP port 80 and web traffic over HTTPS.
   -- tcp[:]//xiaobaituziha[.]com:8080/
-  -- Two URLS: hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/[unix timestamp]/[3 or 4 or 7].txt
+  -- Two URLS: hxxps[:]//fs-im-kefu.7moor-fs1[.]com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/[Unix timestamp]/[3 or 4 or 7].txt
 - The two URLs to fs-im-kefu.7moor-fs1[.]com return an obfuscated binary that is saved under C:\Users\Public\Documents\MM\
 
 INDICATORS FROM THIS CAMPAIGN:
