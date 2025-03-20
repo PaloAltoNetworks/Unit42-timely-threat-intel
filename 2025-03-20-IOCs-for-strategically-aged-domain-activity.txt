@@ -31,7 +31,7 @@ ADDITIONAL DETAILS:
 - On 2024-08-26 we saw 7,987 domains registered.
 - We will continue to track and block this campaign, which we internally track as "linksapp_redir"
 
-10 EXAMPLES OF STRATEGICALLY-AGED DOMAINS USED IN THIS CAMPAIGN:
+11 EXAMPLES OF STRATEGICALLY-AGED DOMAINS USED IN THIS CAMPAIGN:
 
 - aalhr-wonder[.]xyz
 - awbgsd-lawyer[.]xyz
