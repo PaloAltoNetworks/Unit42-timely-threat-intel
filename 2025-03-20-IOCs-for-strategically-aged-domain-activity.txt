@@ -7,7 +7,7 @@ AUTHORS:
 NOTES:
 
 - We've discovered an active campaign that uses strategically aged domains in Traffic Direction System (TDS) activity.
-- The final landing pages feature investment scams and part-time job or work from home scams.
+- The final landing pages feature investment scams and part-time job or work-from-home scams.
 - Attackers register new domains and delay using them for at least 1 month to evade blocking.
 — We found over 80k domains that redirect to URLs under linksapp[.]top after the dormant period. 
 - This campaign has targeted Japanese and South African users, and it remains active.
@@ -17,7 +17,7 @@ ADDITIONAL DETAILS:
 - Approximately 58,000 of these 80,000 domains are under the .xyz TLD.
 - The domains appear to be automatically generated.
 - Most of these domains are a combination of English words and random letters. 
-- Some of these are domains have registration dates are as early as 1997, but:
+- Some of these domains have registration dates as early as 1997, but:
   -- Their WHOIS records show the initial registration date, likely from a different person or organization.
   -- Nameserver records for these domains have been updated in the past few months.
   -- Since the nameserver updates, these domains started redirecting to links under this campaign. 
