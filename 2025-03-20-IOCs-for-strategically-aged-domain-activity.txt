@@ -4,6 +4,11 @@ AUTHORS:
 
 - Reethika Ramesh, Zhanhao Chen
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_scams-strategicallyaged-activity-7308866269410115587-h7TO/
+- https://x.com/Unit42_Intel/status/1903100647593087479
+
 NOTES:
 
 - We've discovered an active campaign that uses strategically aged domains in Traffic Direction System (TDS) activity.
