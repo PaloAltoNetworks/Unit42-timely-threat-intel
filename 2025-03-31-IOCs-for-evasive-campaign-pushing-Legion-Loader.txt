@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shehroze Farooqi, Keerthiraj Nagaraj, Shaown Sarker, Nabeel Mohamed, Chi-Wei Liu
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_pastejacking-clipboardhijacking-legionloader-activity-7312586510409572353-OH4t/
+- https://x.com/Unit42_Intel/status/1906820885865988184
+
 NOTES:
 
 - A highly evasive web campaign hijacks a viewer's clipboard to lure viewers into running MSI files for Legion Loader malware.
