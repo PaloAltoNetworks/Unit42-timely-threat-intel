@@ -1,4 +1,4 @@
-2025-03-31 (MONDAY): EVASIVE CAMPAIGN PUSHING LEGION LOADER
+2025-03-31 (MONDAY): EVASIVE CAMPAIGN PUSHING LEGION LOADER MALWARE
 
 AUTHORS:
 
@@ -6,12 +6,13 @@ AUTHORS:
 
 NOTES:
 
-- A highly evasive campaign is using the copy/paste technique to lure victims into running MSI files for Legion Loader malware.
+- A highly evasive web campaign hijacks a viewer's clipboard to lure viewers into running MSI files for Legion Loader malware.
+- This campaign uses a method called "pastejacking" or "clipboard hijacking" because viewers are instructed to paste content into a Run window.
 - This campaign attempts to evade detection through multiple cloaking strategies:
   -- Turnstile/captcha pages lead to the final copy/paste malware download pages.
   -- Malware download pages are disguised as blog sites when investigating the URLs.
   -- URLs to download the MSI file are different for each download.
-  -- URLs to download the MSI file will not work on their own, if tried outside of the infection chain.
+  -- URLs to download the MSI file will not work on their own if tried outside of the infection chain.
 
 DETAILS:
 
@@ -21,8 +22,8 @@ DETAILS:
   -- Use Win+R to open a Run window and paste malicious script into it.
   -- The instructions say Win+R opens a terminal, but that is incorrect.
 - The malicious script uses curl to download the MSI file and open the download folder to display the downloaded file.
-- TDS traffic or affiliate links lead potential victims are to these malicious download pages.
-- TDS and intermediate redirects also enforce various cloaking mechanisms such as captcha and Cloudflare turnstile pages.
+- TDS traffic or affiliate links lead potential victims to these malicious download pages.
+- TDS and intermediate redirects also enforce various cloaking mechanisms such as CAPTCHA and Cloudflare turnstile pages.
 - These TDS or affiliate links have parameters that are extremely short-lived.
 - When accessed without a valid short-lived parameter, the same URL displays benign content.
 - This content is a fake blog post, and the sites on 188.72.236[.]249 are all disguised as blog sites.
