@@ -7,6 +7,7 @@ AUTHORS:
 NOTES:
 
 - A highly evasive web campaign hijacks a viewer's clipboard to lure viewers into running MSI files for Legion Loader malware.
+- Downloaded MSI files are attributed as Klio Verfair Tools, which is known to be used for Legion Loader malware MSI files.
 - This campaign uses a method called "pastejacking" or "clipboard hijacking" because viewers are instructed to paste content into a Run window.
 - This campaign attempts to evade detection through multiple cloaking strategies:
   -- Turnstile/captcha pages lead to the final copy/paste malware download pages.
