@@ -8,7 +8,7 @@ NOTES:
 
 - We've seen several recently-registered domains using the string "nintendo" in their names.
 - These domains appeared shortly after Nintendo announced its Switch 2 gaming console.
-- We found several scams, phishing pages, and monetized parking pages associated with these domains.
+- We found phishing sites and monetized parking pages associated with these domains.
 - The phishing pages use copies of Nintendo's logos and character images to trick users.
 
 DETAILS:
