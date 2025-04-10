@@ -6,14 +6,14 @@ AUTHORS:
 
 NOTES:
 
-- We've seen a number of recently-registered domains using "nintendo" in their names.
-- These domains appeared shortly after Nintendo's announcement of its Switch 2 gaming console.
+- We've seen several recently-registered domains using the string "nintendo" in their names.
+- These domains appeared shortly after Nintendo announced its Switch 2 gaming console.
 - We found several scams, phishing pages, and monetized parking pages associated with these domains.
-- The phishing pages use copies of Nintento's logos and character images to trick users.
+- The phishing pages use copies of Nintendo's logos and character images to trick users.
 
 DETAILS:
 
-- The phishing domains use the same template, and present a customer service chatbot.
+- The phishing domains use the same template and present a customer service chatbot.
 - These phishing domain chatbots ask for a viewer's name and email address.
 - The domains for monetized parked pages present links to related content under the same domain.
   -- Example: hxxps[:]//ww16.nintendothailand[.]com/?sub1=20250410-0702-18b4-876d-4d080b7aafe0
@@ -22,9 +22,9 @@ DETAILS:
 RELATED ACTIVITY:
 
 - Other Nintendo-themed domains have been registered in the past year, before the Switch 2 announcements.
-- Some of these domains Nintendo-themed domains host sites that generate Traffic Direction System (TDS) traffic.
+- Some of these Nintendo-themed domains host sites that generate Traffic Direction System (TDS) traffic.
 - Two examples are classicnintendo[.]com and nintendobro[.]com.
-- The final pages from the TDS traffic are often unwanted content like scareware and suspcious antivirus sites.
+- The final pages from the TDS traffic often contain unwanted content like scareware and suspicious antivirus sites.
 
 INDICATORS:
 
