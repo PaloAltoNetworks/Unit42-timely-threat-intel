@@ -1,0 +1,48 @@
+2025-04-10 (THURSDAY): PHISHING PAGES IMPERSONATING NINTENDO 
+
+AUTHORS:
+
+- Reethika Ramesh, Shu Wang
+
+NOTES:
+
+- We've seen a number of recently-registered domains using "nintendo" in their names.
+- These domains appeared shortly after Nintendo's announcement of its Switch 2 gaming console.
+- We found several scams, phishing pages, and monetized parking pages associated with these domains.
+- The phishing pages use copies of Nintento's logos and character images to trick users.
+
+DETAILS:
+
+- The phishing domains use the same template, and present a customer service chatbot.
+- These phishing domain chatbots ask for a viewer's name and email address.
+- The domains for monetized parked pages present links to related content under the same domain.
+  -- Example: hxxps[:]//ww16.nintendothailand[.]com/?sub1=20250410-0702-18b4-876d-4d080b7aafe0
+- Registration peaked on 2025-04-03 with 15 newly registered domains, compared to a daily average of 3.
+
+RELATED ACTIVITY:
+
+- Other Nintendo-themed domains have been registered in the past year, before the Switch 2 announcements.
+- Some of these domains Nintendo-themed domains host sites that generate Traffic Direction System (TDS) traffic.
+- Two examples are classicnintendo[.]com and nintendobro[.]com.
+- The final pages from the TDS traffic are often unwanted content like scareware and suspcious antivirus sites.
+
+INDICATORS:
+
+EXAMPLES OF DOMAINS USED FOR PHISHING PAGES IMPERSONATING NINTENDO:
+
+- nintendo-club[.]top — Registered on 2025-03-07
+- nintendo-games[.]click — Registered on 2025-03-12
+- nintendo-games[.]top — Registered on 2025-03-12
+
+EXAMPLES OF PARKED PAGES AND MONETIZED PARKED LANDING PAGES:
+
+- htnintendo[.]com – Registered on 2024-08-24
+- httnintendo[.]com – Registered on 2024-08-24
+- nintendogamersguide[.]com — Registered on 2025-03-10
+- nintendogiftcard[.]com – Registered on 2025-03-18
+- nintendothailand[.]com – Registered on 2024-08-24
+
+SITES GENERATING TDS TRAFFIC TO UNWANTED CONTENT:
+
+- classicnintendo[.]com - registered on 2024-07-23
+- nintendobro[.]com - registered on 2024-06-13
