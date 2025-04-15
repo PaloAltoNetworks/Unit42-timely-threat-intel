@@ -4,6 +4,11 @@ AUTHORS:
 
 - Reethika Ramesh, Zhanhao Chen
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_pastehijacking-activity-7318017292108185600-TEH_/
+- https://x.com/Unit42_Intel/status/1912251671066947928
+
 NOTES:
 
 - Our telemetry reveals a malicious campaign that uses domains impersonating the United States IRS.
