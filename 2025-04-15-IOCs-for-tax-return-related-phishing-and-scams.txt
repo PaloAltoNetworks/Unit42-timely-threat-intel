@@ -1,4 +1,4 @@
-2025-04-15 (TUESDAY): TAX-THEMED SCAMS AND PHISHING
+2025-04-15 (TUESDAY): TAX RETURN-THEMED SCAMS AND PHISHING
 
 AUTHORS:
 
@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- Several tax-themed newly registered domains have appeared in the past 4 months
+- Several tax return-themed newly registered domains have appeared in the past 4 months
 - Among these domains, we've found multiple #phishing and #scam campaigns taking advantage of the US tax return season.
 - Stay alert! Verify sources of emails, links and attachments claiming to be from the IRS or any tax service.
 
