@@ -55,7 +55,7 @@ FQDNS SEEN FROM THE ABOVE ROOT DOMAINS:
 - irs.gov-selecting[.]com - 2025-01-20
 - irs.gov-subsidy[.]com - 2025-01-19
 - irs.gov-system[.]com - 2025-01-19
-- irs.gov-tax[.]cfd - 2024-02-15
+- irs.gov-tax[.]cfd - 2025-02-15
 - irs.gov-taxpa[.]com - 2025-01-20
 - irs.gov-understanding[.]com - 2025-01-20
 - irs.gov-update[.]xyz - 2025-03-17
