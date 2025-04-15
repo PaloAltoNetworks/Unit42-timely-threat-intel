@@ -15,7 +15,7 @@ NOTES:
 - These domain names contain both "irs" and "gov" as part of the FQDN.
 - Malicious sites for these domains were active starting in January 2025, but they are no longer online.
 
-- These domains resolve to a German IP address associated with malicious activity.
+- These domains resolved to a German IP address associated with malicious activity.
 - Several malware file samples not associated with this campaign contact this IP address.
   -- Samples include Mirai Botnet files and other types of malware.
 
