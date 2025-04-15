@@ -1,0 +1,37 @@
+2025-04-15 (TUESDAY): TAX-THEMED SCAMS AND PHISHING
+
+AUTHORS:
+
+- Shu Wang, Zhanhao Chen
+
+NOTES:
+
+- Several tax-themed newly-registered domains have appeared in the past 4 months
+- Among these domains we've found multiple #phishing and #scam campaigns taking advantage of the US tax return season.
+- Stay alert! Verify sources of emails, links and attachments claiming to be from the IRS or any tax service.
+
+14 EXAMPLES OF QUESTIONABLE TAX ADVISORY SITES THAT COLLECT VISITORS' CONTACT INFORMATION:
+
+- besttaxreturnprep[.]com
+- besttaxreturnpreparation[.]com
+- besttaxreturnpreparer[.]com
+- besttaxreturnpreparers[.]com
+- bestincometaxreturnprep[.]com
+- bestincometaxreturnpreparation[.]com
+- bestincometaxreturnpreparer[.]com
+- bestincometaxreturnpreparers[.]com
+- bettertaxreturnprep[.]com
+- bettertaxreturnpreparation[.]com
+- cpataxreturnpreparer[.]com
+- experttaxreturnpreparer[.]com
+- superiortaxreturnprep[.]com
+- superiortaxreturnpreparation[.]com
+
+FOUR EXAMPLES OF DOMAINS HOSTING PAGES IMPERSONATING TURBOTAX:
+
+- activetax[.]pro
+- activetaxt[.]pro
+- taxs-active[.]pro
+- taxsactive[.]pro
+- turbotax-2024[.]com
+- turbotax2025[.]com
