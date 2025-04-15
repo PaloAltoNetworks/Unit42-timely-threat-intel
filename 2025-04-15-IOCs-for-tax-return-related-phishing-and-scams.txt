@@ -6,8 +6,8 @@ AUTHORS:
 
 NOTES:
 
-- Several tax-themed newly-registered domains have appeared in the past 4 months
-- Among these domains we've found multiple #phishing and #scam campaigns taking advantage of the US tax return season.
+- Several tax-themed newly registered domains have appeared in the past 4 months
+- Among these domains, we've found multiple #phishing and #scam campaigns taking advantage of the US tax return season.
 - Stay alert! Verify sources of emails, links and attachments claiming to be from the IRS or any tax service.
 
 14 EXAMPLES OF QUESTIONABLE TAX ADVISORY SITES THAT COLLECT VISITORS' CONTACT INFORMATION:
