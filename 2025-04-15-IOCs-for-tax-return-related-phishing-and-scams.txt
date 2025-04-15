@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shu Wang, Zhanhao Chen
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-scam-taxreturn-activity-7317952896019378178-btP1/
+- https://x.com/Unit42_Intel/status/1912187271874334930
+
 NOTES:
 
 - Several tax return-themed newly registered domains have appeared in the past 4 months
