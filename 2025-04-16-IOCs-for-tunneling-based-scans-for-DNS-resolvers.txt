@@ -10,14 +10,14 @@ NOTES:
 - These domains have been used in scans for DNS resolvers hosted on public IPv4 and IPv6 addresses.
 - The source IP address is spoofed as an adjacent destination IP address to bypass source IP address-based access control.
 - The domain owner uses the IP 209.141.56[.]200 and 2605:6400:20:9d:2d8c:6f33:f4db[:]ab02 to host their nameservers.
-- The FQDN encodes its destination IP as a hexdecimal string in the domain name. 
+- The FQDN encodes its destination IP as a hexadecimal string in the domain name. 
   -- For example, in the FQDN kugmx.c66e76fb.0.v4.isavscan[.]baby, c66e76fb equates to and IPv4 address of 198.110.118[.]251.
 - Attackers can obtain the vulnerability information of a specific resolver by decoding the received FQDN from their controlled nameserver.
 - We cannot determine the reason behind these scans.
 - If this activity is for research purposes, then the absence of TXT/PTR records or websites to explain the research raises significant ethical concerns.
 - The scanning technique in this campaign is similar to the SecShow campaign we previously reported. 
   -- https://unit42.paloaltonetworks.com/three-dns-tunneling-campaigns/
-- Unlike the previously-reported activity, in addition to IPv4, the attackers are additionally scanning for IPv6 addresses.
+- Unlike the previously reported activity, in addition to IPv4, the attackers are additionally scanning for IPv6 addresses.
 
 11 EXAMPLES OF ROOT DOMAINS USED FOR THIS ACTIVIY:
 
