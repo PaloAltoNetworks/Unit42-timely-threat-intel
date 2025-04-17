@@ -22,7 +22,7 @@
 
 IngressNightmare is the nickname for a series of vulnerabilities that can allow unauthenticated remote code execution (RCE) in outdated versions of the Ingress NGINX Controller for Kubernetes.
 
-We've seen scans and probes for these vulnerabilities. See the [Observed in the Wild](https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-17-Testing-ingressNightmare.md#observed-in-the-wild) section for a list of 2,371 IP addresses noted in scanning/probing for servers with vulnerable Ingress NGINX Controllers.
+We've seen scans and probes for these vulnerabilities. See the [Observed in the Wild](https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-17-Testing-ingressNightmare.md#observed-in-the-wild) section for a list of 2,369 IP addresses noted in scanning/probing for servers with vulnerable Ingress NGINX Controllers.
 
 Although the Ingress NGINX Controller for Kubernetes has been patched/updated since 2025-03-24, we have noted attempts/probes to exploit CVE-2025-1097 and CVE-2025-1974 in the wild.
 
@@ -201,8 +201,9 @@ We can exploit CVE-2025-1097 to inject malicious code into the configuration fil
 
 ## Observed in the Wild
 
-2,371 examples of IP addresses noted as the source of scans/probes for ingressNightmare
+2,369 examples of IP addresses noted as the source of scans/probes for ingressNightmare
 
+```
 2.16.1[.]134
 2.16.1[.]174
 2.16.142[.]79
@@ -2572,3 +2573,4 @@ We can exploit CVE-2025-1097 to inject malicious code into the configuration fil
 2604:a880:400:d1:0:1:6f4c[:]b001
 2604:a880:400:d1:0:1:6f4c:[e]001
 2a03:b0c0:1:e0::6134[:]e001
+```
