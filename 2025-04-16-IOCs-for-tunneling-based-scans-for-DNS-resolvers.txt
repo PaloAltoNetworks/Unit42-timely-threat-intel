@@ -20,7 +20,7 @@ NOTES:
 - This is an ongoing activity that is being publicly questioned.
   -- https://www.reddit.com/r/paloaltonetworks/comments/1jto6wm/seeing_dns_tunnel_traffic_tofrom_our_public_ranges/
   -- https://live.paloaltonetworks.com/t5/threat-vulnerability-discussions/seeing-dns-tunnel-traffic-to-from-our-public-ranges/td-p/1225728
-- Unlike the previously reported activity, in addition to IPv4, the attackers are now additionally scanning for IPv6 addresses.
+- Unlike the previously reported activity, in addition to IPv4, the attackers are now also scanning for IPv6 addresses.
 
 11 EXAMPLES OF ROOT DOMAINS USED FOR THIS ACTIVIY:
 
