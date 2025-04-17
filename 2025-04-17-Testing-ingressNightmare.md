@@ -29,11 +29,11 @@ We have have successfully tested a method to exploit an out-of-date/vulnerable v
 See hhttps://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-17-Testing-ingressNightmare.md#observed-in-the-wild)
 
 ## Announced Vulnerabilities
-
-[CVE-2025-1097](https://nvd.nist.gov/vuln/detail/CVE-2025-1097)
-[CVE-2025-1098](https://nvd.nist.gov/vuln/detail/CVE-2025-1098)
-[CVE-2025-1974](https://nvd.nist.gov/vuln/detail/CVE-2025-1974)
-[CVE-2025-24514](https://nvd.nist.gov/vuln/detail/CVE-2025-24514)
+ 
+- [CVE-2025-1097](https://nvd.nist.gov/vuln/detail/CVE-2025-1097)
+- [CVE-2025-1098](https://nvd.nist.gov/vuln/detail/CVE-2025-1098)
+- [CVE-2025-1974](https://nvd.nist.gov/vuln/detail/CVE-2025-1974)
+- [CVE-2025-24514](https://nvd.nist.gov/vuln/detail/CVE-2025-24514)
 
 ## Versions Affected
 
