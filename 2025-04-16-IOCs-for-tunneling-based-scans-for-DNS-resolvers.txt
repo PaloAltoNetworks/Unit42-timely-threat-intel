@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- For the past several months, multiple domains have been noted using DNS tunneling techniques in scanning activity.
+- Since January 2025, multiple domains have been noted  in scanning activity using DNS tunneling techniques.
 - These domains have been used in scans for DNS resolvers hosted on public IPv4 and IPv6 addresses.
 - The source IP address is spoofed as an adjacent destination IP address to bypass source IP address-based access control.
 - The domain owner uses the IP 209.141.56[.]200 and 2605:6400:20:9d:2d8c:6f33:f4db[:]ab02 to host their nameservers.
