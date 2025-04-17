@@ -79,7 +79,8 @@ We can exploit CVE-2025-1097 to inject malicious code into the configuration fil
 
 #### Example of admission.json to exploit CVE-2025-24514 (`auth-url` Annotation Injection)
 
-```{
+```
+{
   "kind": "AdmissionReview",
   "apiVersion": "admission.k8s.io/v1",
   "request": {
@@ -157,7 +158,8 @@ We can exploit CVE-2025-1097 to inject malicious code into the configuration fil
       "apiVersion": "meta.k8s.io/v1"
     }
   }
-}```
+}
+```
 
 
 ## Examples of variations that can be used in the 'admission.json' File
