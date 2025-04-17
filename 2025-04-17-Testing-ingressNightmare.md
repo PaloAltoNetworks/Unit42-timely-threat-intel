@@ -1,4 +1,4 @@
-# 2025-04-17 (Thursday): Testing IngressNightmare Exploitation
+# 2025-04-17 (Thursday): IngressNightmare Scans and Testing
 
 ## Authors
 
@@ -22,11 +22,11 @@
 
 IngressNightmare is the nickname for a series of vulnerabilities that can allow unauthenticated remote code execution (RCE) in outdated versions of the Ingress NGINX Controller for Kubernetes.
 
+We've seen scans and probes for these vulnerabilities. See the [Observed in the Wild](https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-17-Testing-ingressNightmare.md#observed-in-the-wild) section for a list of 2,371 IP addresses noted in scanning/probing for servers with vulnerable Ingress NGINX Controllers.
+
 Although the Ingress NGINX Controller for Kubernetes has been patched/updated since 2025-03-24, we have noted attempts/probes to exploit CVE-2025-1097 and CVE-2025-1974 in the wild.
 
-We have have successfully tested a method to exploit an out-of-date/vulnerable version of the Ingress NGINX Controller in an isolated environment through CVE-2025-1097 and CVE-2025-1974.
-
-See hhttps://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-17-Testing-ingressNightmare.md#observed-in-the-wild)
+We have successfully tested a method to exploit an out-of-date/vulnerable version of the Ingress NGINX Controller in an isolated environment through CVE-2025-1097 and CVE-2025-1974.
 
 ## Announced Vulnerabilities
  
