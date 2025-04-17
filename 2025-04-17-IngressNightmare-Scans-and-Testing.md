@@ -55,11 +55,11 @@ Then, use the vulnerability below to execute the malicious code injected.
 
 #### Details
 
-We can exploit CVE-2025-1097 to inject malicious code into the configuration file, followed by CVE-2025-1974 to execute the malicious file. We will not cover the other two configuration injection vulnerabilities, as only the auth-tls-match-cn annotation injection has been observed being actively exploited in the wild.
+We can exploit a vulnerable server for CVE-2025-1097 by injecting malicious code into the Ingress NGINX controller's configuration file, followed by CVE-2025-1974 to execute the malicious file. We will not cover the other two configuration injection vulnerabilities, as only the auth-tls-match-cn annotation injection has been observed being actively exploited in the wild.
 
 #### Steps
 
-1. Set up two Ubuntu Servers, one running Kubernetes (k8s) master, and one running k8s worker.
+1. Set up two Ubuntu Servers, one running a Kubernetes (k8s) master, and one a running k8s worker.
 2. Installed `ingress-nginx` and `calico`.
 3. Create an Ubuntu pod as to act as an attacker.
 4. Craft a malicious [shared object](https://askubuntu.com/questions/690631/executables-vs-shared-objects) (`.so`) file; ensure it is compatible with the running environment.
