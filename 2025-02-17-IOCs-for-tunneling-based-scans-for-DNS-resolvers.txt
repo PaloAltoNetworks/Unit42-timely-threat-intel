@@ -1,0 +1,42 @@
+2025-04-16 (WEDNESDAY): TUNNELING-BASED SCANS FOR DNS RESOLVERS
+
+AUTHORS:
+
+- Ruian Duan, Shu Wang
+
+NOTES:
+
+- For the past several months, a number of domains have been noted using DNS tunneling techniques in scanning activity.
+- These domains have been used in scans for DNS resolvers hosted on public IPv4 and IPv6 addresses.
+- The source IP address is spoofed as an adjacent destination IP address to bypass source IP address-based access control.
+- The domain owner uses the IP 209.141.56[.]200 and 2605:6400:20:9d:2d8c:6f33:f4db[:]ab02 to host their nameservers.
+- The FQDN encodes its destination IP as a hexdecimal string in the domain name. 
+  -- For example, in the FQDN kugmx.c66e76fb.0.v4.isavscan[.]baby, c66e76fb equates to and IPv4 address of 198.110.118[.]251.
+- Attackers can obtain the vulnerability information of a specific resolver by decoding the received FQDN from their controlled nameserver.
+- We cannot determine the reason behind these scans.
+- If this activity is for research purposes, then the absence of TXT/PTR records or websites to explain the research raises significant ethical concerns.
+- The scanning technique in this campaign is similar to the SecShow campaign we previously reported. 
+  -- https://unit42.paloaltonetworks.com/three-dns-tunneling-campaigns/
+- Unlike the previously-reported activity, in addition to IPv4, the attackers are additionally scanning for IPv6 addresses.
+
+11 EXAMPLES OF ROOT DOMAINS USED FOR THIS ACTIVIY:
+
+- isavscan[.]autos
+- isavscan[.]baby
+- isavscan[.]beauty
+- isavscan[.]biz
+- isavscan[.]boats
+- isavscan[.]bond
+- isavscan[.]cfd
+- isavscan[.]christmas
+- isavscan[.]click
+- isavscan[.]college
+- oeikdidmgx[.]online
+
+EXAMPLE OF FQDN USED FOR IPV4 SCANNING:
+
+- kugmx.c66e76fb.0.v4.isavscan[.]baby
+
+EXAMPLE OF FQDN USED FOR IPV6 SCANNING:
+
+- owkky.c8030120000007210000000025000000.0.v6.isavscan[.]biz
