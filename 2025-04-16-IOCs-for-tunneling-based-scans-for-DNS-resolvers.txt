@@ -4,6 +4,11 @@ AUTHORS:
 
 - Ruian Duan, Shu Wang
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_dns-tunneling-scans-activity-7318711123665461248-fhk6/
+- https://x.com/Unit42_Intel/status/1912945468801233208
+
 NOTES:
 
 - Since January 2025, multiple domains have been noted  in scanning activity using DNS tunneling techniques.
