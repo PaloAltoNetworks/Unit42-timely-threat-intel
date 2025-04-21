@@ -6,8 +6,8 @@
 
 # References
 
-- [Unit 42 social media post on LinkedIn]
-- [Unit 42 social media post on X]
+- [Unit 42 social media post on LinkedIn](https://www.linkedin.com/posts/unit42_scans-probes-ingressnightmare-activity-7320128200540327937-lpuf/)
+- [Unit 42 social media post on X](https://x.com/Unit42_Intel/status/1914362520728465771)
 
 # Original References
 
