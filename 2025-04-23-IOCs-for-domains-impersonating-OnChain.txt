@@ -1,0 +1,86 @@
+2025-04-23 (WEDNESDAY): DOMAINS IMPERSONATING ONCHAIN TO STEAL WALLETCONNECT CREDENTIALS
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Shehroze Farooqi, Nabeel Mohamed, Alex Starov, Vishwa Thothathri
+
+NOTES:
+
+- We've identified at least 45 domains in a campaign that impersonates a blockchain development platform named OnChain.
+- The purpose of this campain appears to be stealing WalletConnect credentials used for the OnChain ecosystem.
+- Sites using these domains share hosting infrastructure and similar file interactions.
+- Login pages from these domains have a QR code sign in to trick the users.
+
+DETAILS:
+
+- We identified 45 malicious domains in Apr 2025.
+- Hosting and registration information:
+  -- All 45 domains have been hosted on the same IP address.
+  -- These domains share WHOIS registrant details, likely created through automation.
+     --- An initial 13 domains were registered in December 2024 under the .xyz top level domain (TLD).
+     --- 30 more domains were registered in April 2025 under the .cfd TLD.
+     --- We discovered two additional domains that do not follow the same nameing conventions.
+         ---- One was registered in November 2024.
+         ---- One was registered in March 2025.
+- Pages share similar content and show a strong correlation in file interactions (file loads/downloads).
+- Pages show QR code in the login page and a suspicious "Copy to Clipboard" text.
+- Each of the login page QR codes under these domains point to different WalletConnect URLs.
+  -- Outdated Protocol: The links use the deprecated WalletConnect v1 protocol, which was officially shut down in June 2023.
+  -- Expired Bridge URL: The bridge URL is no longer legitimate due to an expired SSL certificate.
+  -- Phishing Attempt: The QR code initiates a connection request, potentially leading to a wallet phishing attack if approved.
+  -- Risk: Approving the connection request could expose blockchain ID and wallet account information.
+- Based on our telemetry, the primary targets of this campaign are users in the United States.
+  -- Professional & Legal Services is the most commonly targeted industry.
+
+IP ADDRESS HOSTING SITES USING THESE DOMAINS:
+
+- 156.251.27[.]213
+
+45 EXAMPLES OF DOMAINS FROM THIS CAMPAIGN (READ DOMAIN NAME - REGISTRATION DATE):
+
+- onchain10[.]cfd - 2025-04-05
+- onchain11[.]cfd - 2025-04-05
+- onchain12[.]cfd - 2025-04-05
+- onchain13[.]cfd - 2025-04-05
+- onchain14[.]cfd - 2025-04-05
+- onchain15[.]cfd - 2025-04-05
+- onchain16[.]cfd - 2025-04-05
+- onchain17[.]cfd - 2025-04-05
+- onchain18[.]cfd - 2025-04-05
+- onchain19[.]cfd - 2025-04-05
+- onchain20[.]cfd - 2025-04-05
+- onchain21[.]cfd - 2025-04-05
+- onchain22[.]cfd - 2025-04-05
+- onchain23[.]cfd - 2025-04-05
+- onchain24[.]cfd - 2025-04-05
+- onchain24[.]xyz - 2024-12-19
+- onchain25[.]cfd - 2025-04-05
+- onchain26[.]cfd - 2025-04-05
+- onchain27[.]cfd - 2025-04-05
+- onchain28[.]cfd - 2025-04-05
+- onchain29[.]cfd - 2025-04-05
+- onchain30[.]cfd - 2025-04-05
+- onchain31[.]cfd - 2025-04-05
+- onchain31[.]xyz - 2024-12-19
+- onchain32[.]cfd - 2025-04-05
+- onchain33[.]cfd - 2025-04-05
+- onchain34[.]cfd - 2025-04-05
+- onchain35[.]cfd - 2025-04-05
+- onchain36[.]cfd - 2025-04-05
+- onchain37[.]cfd - 2025-04-05
+- onchain38[.]cfd - 2025-04-05
+- onchain39[.]cfd - 2025-04-05
+- onchain46[.]xyz - 2024-12-19
+- onchain47[.]xyz - 2024-12-19
+- onchain48[.]xyz - 2024-12-19
+- onchain49[.]xyz - 2024-12-19
+- onchain50[.]xyz - 2024-12-19
+- onchain51[.]xyz - 2024-12-19
+- onchain52[.]xyz - 2024-12-19
+- onchain53[.]xyz - 2024-12-19
+- onchain54[.]xyz - 2024-12-19
+- onchain55[.]xyz - 2024-12-19
+- onchain56[.]xyz - 2024-12-19
+- ht888888[.]xyz - 2024-11-29
+- ht666888[.]cfd - 2025-03-10
+
