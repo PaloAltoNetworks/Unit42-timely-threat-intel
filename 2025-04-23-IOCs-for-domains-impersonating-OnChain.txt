@@ -32,6 +32,22 @@ DETAILS:
 - Based on our telemetry, the primary targets of this campaign are users in the United States.
   -- Professional & Legal Services is the most commonly targeted industry.
 
+QR CODE INFO:
+
+QR codes under different login pages lead to different URLs, for example:
+
+The QR code presented at:
+- hxxps[:]//www.ht666888[.]cfd/#/pages/login/login 
+
+Translates to the following text:
+wc:d785ed5a-c896-4088-a7e7-11d809643768@1?bridge=hxxps%3A%2F%2Fbridge.walletconnect[.]org&key=855576dbee6c517b5fa953403378e6989333836cfd8d53baa365494874847aab
+
+The QR code presented at:
+- hxxps[:]//onchain10[.]cfd/#/pages/login/login
+
+Translates to the following text:
+wc:f22a086d-3ee8-4b51-a275-0b4cb5dbc1ea@1?bridge=hxxps%3A%2F%2Fbridge.walletconnect[.]org&key=a58fac4c490c477f9fe6bd8ac9dc2fd44c6d2291fb34381f6a394bc7be1d0825
+
 IP ADDRESS HOSTING SITES USING THESE DOMAINS:
 
 - 156.251.27[.]213
