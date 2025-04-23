@@ -1,0 +1,46 @@
+2025-04-23 (TUESDAY): SMISHING ACTIVTY UPDATE
+
+AUTHORS:
+
+- Reethika Ramesh, Zhanhao Chen, Shehroze Farooqi, Chi-Wei Liu, Moe Ghasemisharif, Daiping Liu
+
+ORIGINAL REFERENCE:
+
+- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-03-06-IOCs-for-smishing-activity.txt
+
+NOTES:
+
+- Since the FBI announcement 1 year ago, we have found and blocked over 91,500 root domains used for SMS phishing (smishing).
+- This activity has gained more momentum in the previous month with a peak in registration of 26k domains in March 2025. 
+- This activity generally matches four unique domain naming patterns:
+  -- com-[a-z0-9]*.(xin|top|vip|cc|sbs|cfd|xyz|cyou|icu|info|world|live|win|homes|help|one|us|shop|fun|life)
+  -- paytoll[a-z0-9].(top|vip|xin|world|icu|com)
+  -- delivery[a-z0-9]*.*
+  -- gov-[a-z0-9]*.(cc|com|xin|top|online|org|site)
+- NOTE: The above search expressions are not an exhaustive lists of top level domains (TLDs), but they give a general idea of the root domain name patterns.
+
+DETAILS:
+
+- We've observed a continuously high volume of smishing domains registered so far in April 2025.
+- The number of domains registered peaked in March 2025 with 26,328 domain for the month.
+- In the past three months alone, our telemetry reveals over 31 million queries for domains involved in this activity.
+- 75.4% of these domains have the same registrar: Hong Kong (Dominet (HK) Limited).
+- We observed increasingly more smishing traffic from this campaign in 2025 compared to 2024.
+- The smishing domains are short-lived, with 70% of the traffic happening within 7 days of the domain's registration. 
+- Blocking Newly Registered Domains (NRDs) for a month can effectively filter out 85% of this smishing traffic.
+- Attackers use cloaking techniques for this activity, and they increasingly tailor the lures based on area code geolocation of the recipients' phone numbers.
+- Initial FBI announcement in April 2024 is available at: https://www.ic3.gov/PSA/2024/PSA240412
+
+FOUR RECENT EXAMPLES:
+
+- Root domain: gov-mfc[.]com - registered 2025-04-23
+- URL example: https://driveky.gov-mfc.com/pay
+
+- Root domain: com-ikbf[.]win - registered 2025-04-22
+- URL example: hxxps[:]//ncquickpass.com-ikbf[.]win/us
+
+- Root doamin: com-ic1[.]top - registered 2025-04-22
+- URL example: hxxps[:]//usps. com-ic1[.]top/us
+
+- Root domain: paytollwec.vip - registered 2025-03-11
+- URL example: hxxps[:]//paytollwec[.]vip/ezdrivema
