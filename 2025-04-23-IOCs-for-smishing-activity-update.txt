@@ -34,7 +34,7 @@ DETAILS:
 FOUR RECENT EXAMPLES:
 
 - Root domain: gov-mfc[.]com - registered 2025-04-23
-- URL example: https://driveky.gov-mfc.com/pay
+- URL example: hxxps[:]//driveky.gov-mfc[.]com/pay
 
 - Root domain: com-ikbf[.]win - registered 2025-04-22
 - URL example: hxxps[:]//ncquickpass.com-ikbf[.]win/us
