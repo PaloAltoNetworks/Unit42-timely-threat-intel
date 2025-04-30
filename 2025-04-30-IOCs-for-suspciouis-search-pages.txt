@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shresta Bellary Seetharam, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_browserhijacking-activity-7323459147633430529-nXko/
+- https://x.com/Unit42_Intel/status/1917693528894767164
+
 NOTES:
 
 - We've seen an increase in domain infrastructure for deceptive search sites that mimic Google Chrome's "New Tab" page.
@@ -17,7 +22,7 @@ NOTES:
 DETAILS:
 
 - Our findings reveal a new generation of deceptive search sites used by browser hijackers.
-- These sites closely resemble the Google Chrome’s New Tab page.
+- These sites closely resemble Google Chrome’s New Tab page.
 - The associated browser hijacking activity may present the following risks:
   -- Track a user's browsing habits and search queries
   -- Redirect a user's browser to malicious content
