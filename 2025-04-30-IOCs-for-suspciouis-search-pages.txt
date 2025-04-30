@@ -1,12 +1,16 @@
 2025-04-30 (WEDNESDAY) - BROWSER HIJACKING: INCREASE IN DOMAINS FOR DECEPTIVE SEARCH SITES
 
+AUTHORS:
+
+- Shresta Bellary Seetharam, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
+
 NOTES:
 
-- We've seen an increase of domain infrastructure for deceptive search sites that mimic Google Chrome's "New Tab" page.
+- We've seen an increase in domain infrastructure for deceptive search sites that mimic Google Chrome's "New Tab" page.
 - These domains are associated with browser hijacking.
 - Browser hijacking is typically defined as unwanted modifications to a web browser through settings, extensions, plugins or malware.
 - This type of activity can lead to malicious redirects during normal web browsing, and it can also steal sensitive data.
-- More information on browser hijackers see:
+- More information on browser hijackers can be found at:
   -- https://www.microsoft.com/en-us/microsoft-365-life-hacks/privacy-and-safety/what-is-browser-hijacker-how-remove
   -- https://support.mozilla.org/en-US/kb/what-search-hijacking
 
@@ -21,13 +25,13 @@ DETAILS:
 
 - A spike in domain registrations for the previous generation of search hijacking pages happened in Q3 of 2022.
 - The previous generation of search hijacking pages have been very plain with no images.
-- The current generation of search hijacking pages mimic a "New Tab" page for the Chrome browser.
+- The current generation of search hijacking pages mimics a "New Tab" page for the Chrome browser.
 - Despite the appearance, these pages are careful to avoid any outright branding for Google or Chrome.
 - A spike in domain registrations for the current generation of search hijacking pages happened in Q4 of 2024.
-- We've been tracking this new generation of sear since then, and we've seen:
+- We've been tracking this new generation since then, and we've seen:
   -- 80k+ visits from customer environments to these domains
   -- 100k+ passive DNS resolutions
-- We can confirm at least 70 domains hosting pages mimicking Chrome's New Tab page.
+- We can confirm at least 70 domains have been hosting pages mimicking Chrome's New Tab page.
 - These domains have prefixes (subdomains) of drop. or cast.
 - The associated URLs share the same pattern of /query/p/to. 
 - The associated servers collect search strings and platform info before redirecting to search engines like Bing, Yahoo and Google.
