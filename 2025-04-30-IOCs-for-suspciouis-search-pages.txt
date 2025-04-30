@@ -1,0 +1,138 @@
+2025-04-30 (WEDNESDAY) - BROWSER HIJACKING: INCREASE IN DOMAINS FOR DECEPTIVE SEARCH SITES
+
+NOTES:
+
+- We've seen an increase of domain infrastructure for deceptive search sites that mimic Google Chrome's "New Tab" page.
+- These domains are associated with browser hijacking.
+- Browser hijacking is typically defined as unwanted modifications to a web browser through settings, extensions, plugins or malware.
+- This type of activity can lead to malicious redirects during normal web browsing, and it can also steal sensitive data.
+- More information on browser hijackers see:
+  -- https://www.microsoft.com/en-us/microsoft-365-life-hacks/privacy-and-safety/what-is-browser-hijacker-how-remove
+  -- https://support.mozilla.org/en-US/kb/what-search-hijacking
+
+DETAILS:
+
+- Our findings reveal a new generation of deceptive search sites used by browser hijackers.
+- These sites closely resemble the Google Chrome’s New Tab page.
+- The associated browser hijacking activity may present the following risks:
+  -- Track a user's browsing habits and search queries
+  -- Redirect a user's browser to malicious content
+  -- Deploy potentially-unwanted programs (PUPs).
+
+- A spike in domain registrations for the previous generation of search hijacking pages happened in Q3 of 2022.
+- The previous generation of search hijacking pages have been very plain with no images.
+- The current generation of search hijacking pages mimic a "New Tab" page for the Chrome browser.
+- Despite the appearance, these pages are careful to avoid any outright branding for Google or Chrome.
+- A spike in domain registrations for the current generation of search hijacking pages happened in Q4 of 2024.
+- We've been tracking this new generation of sear since then, and we've seen:
+  -- 80k+ visits from customer environments to these domains
+  -- 100k+ passive DNS resolutions
+- We can confirm at least 70 domains hosting pages mimicking Chrome's New Tab page.
+- These domains have prefixes (subdomains) of drop. or cast.
+- The associated URLs share the same pattern of /query/p/to. 
+- The associated servers collect search strings and platform info before redirecting to search engines like Bing, Yahoo and Google.
+
+RECENT SUSPICIOUS SEARCH PAGE ACTIVITY (READ: DOMAIN - FIRST SEEN IN TELEMETRY - NUMBER OF DETECTIONS)
+
+- cast.avilornik[.]com - 2025-03-11 - 2,408
+- cast.larianiot[.]com - 2025-03-27 - 2,614
+- cast.sarchcrystal[.]com - 2025-02-20 - 6,138
+- drop.bringithis[.]com - 2024-10-29 - 9,520
+- grt.thisbrng[.]com - 2024-11-14 - 28,995
+
+OLDER DOMAINS FOR THIS ACTIVITY (NOTE: SOME OF THESE DOMAINS ARE NO LONGER ACTIVE):
+
+- dsc.searcharchiver[.]com - 2022-07-28 - 1,809
+- lookup.searchitfalc[.]com - 2023-10-01 - 76,914
+- lookup.searchitziptech[.]com - 2023-10-02 - 3,276
+- lookup.searchitral[.]com - 2023-09-29 - 2,840
+- lookup.seekittral[.]com - 2023-11-03 - 2,189
+
+LIST OF 86 DOMAIN NAMES FOR SUSPICIOUS SEARCH PAGES:
+
+  cast.avilornik[.]com
+    go.bonefreeze[.]com
+   fuo.brgtitnow[.]com
+  drop.bringcntrl[.]com
+  drop.bringithis[.]com
+  pack.brisrch[.]com
+ explr.brngmypdf[.]com
+ bring.buddychck[.]com
+  lock.checkitley[.]com
+       coastalvibesapp[.]com
+    ab.cococococ[.]com
+   eli.comoneet[.]com
+   nor.convertitmas[.]com
+    go.deepteep[.]com
+   hpy.diamondcry[.]com
+  ishi.dorbani[.]com
+  stat.download.xunlei[.]com
+  goto.easysearchonline[.]com
+  cast.explrskills[.]com
+   run.fastsrch[.]com
+lookup.findmyscreen[.]com
+  goto.genisrch[.]com
+   nsp.gifsearchutils[.]com
+   der.gotojcf[.]com
+  lack.gotosrch[.]com
+  loli.gradilsk[.]com
+   ful.hartonly[.]com
+  cast.imgothis[.]com
+  goci.iminogco[.]com
+   grt.imsrcgo[.]com
+   nex.justitsrch[.]com
+lookup.justsrch[.]com
+    go.knightsearcher[.]com
+  laki.kolkolif[.]com
+  cast.larianiot[.]com
+  gato.liveligoto[.]com
+   per.loringoit[.]com
+  shok.lostient[.]com
+  cast.martelok[.]com
+    go.mennythanks[.]com
+    go.normandoh[.]com
+  opit.othersar[.]com
+    go.paradiskus[.]com
+   row.pltcli[.]com
+       retrorevivesearch[.]com
+  riki.rikodis[.]com
+  pont.romiron[.]com
+  cast.sarchcrystal[.]com
+   hub.scoutitech[.]com
+   juv.scoutjcf[.]com
+   nsp.screensearchutils[.]com
+   dsc.searcharchiver[.]com
+lookup.searchconapp[.]com
+lookup.searchexfree[.]com
+   dsc.searchfpapp[.]com
+lookup.searchitfalc[.]com
+lookup.searchitnext[.]com
+lookup.searchitral[.]com
+lookup.searchitziptech[.]com
+   www.searchletter[.]com
+lookup.searchlig[.]com
+  zsrc.searchmagiconline[.]com
+  find.searchmyhub[.]com
+lookup.searchmyppro[.]com
+  goto.searchpoweronline[.]com
+  goto.searchproonline[.]com
+lookup.searchshar[.]com
+  find.searchtoolshub[.]com
+  goto.searchwithtabatoo[.]com
+   nsp.searchziputils[.]com
+lookup.searchzr[.]com
+   get.seekentral[.]com
+lookup.seekittral[.]com
+lookup.seekitzip[.]com
+  brng.seekmanager[.]com
+   dsc.sharksearchonline[.]com
+  cast.skillsfnder[.]com
+  cast.sklitright[.]com
+ misho.sodirant[.]com
+  ella.solognei[.]com
+   tlh.srchconv[.]com
+  cast.srchiced[.]com
+   grt.thisbrng[.]com
+    go.trawanan[.]com
+  seek.xplrthis[.]com
+   dsc.zoremov[.]com
