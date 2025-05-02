@@ -47,19 +47,22 @@ ASSOCIATED FILES
 - File name: netsh.zip
 
 - SHA256 hash: 4dfecfbd6317f82743e65dffea5bfd3650dd28e524e711d88d184fe80ff02576
-- File name: Zoogbaertdend.pgym (HijackLoader)
+- File name/description: Zoogbaertdend.pgym (HijackLoader)
 
 - SHA256 hash: f7ab4efbff4604ef22672b24d4d6b45227d0dca7f4ef72eed63379b45ac382c2
-- File name: Jiekeeddait.czqk (HijackLoader)
+- File name/description: Jiekeeddait.czqk (HijackLoader)
 
 - SHA256 hash: 55ea17a44d7a9882236b5cda25fa844e62cb1a4fe8d5cdc17b3591f4f98aa802
-- File name: CodedDi.exe
+- File description: CodedDi.exe
 
 - SHA256 hash: cfb4fbdb7c6537006e385c058a992b62ca4590356d3480b4b0ba6e5b19be3209
-- File name: DUHECNXC.zip (HijackLoader)
+- File name/description: DUHECNXC.zip (HijackLoader)
 
 - SHA256 hash: 9861d60cf037963fadb463d2f46621839071712791be7388dbfede1520315d0f
-- File name: DUHECNXC.exe (HijackLoader)
+- File name/description: DUHECNXC.exe (HijackLoader)
+
+- SHA256 hash: b1b91744707a9e9e2c226710645a12315adefa0f51a5ca4555d39df706de3ed8
+- File description: DeerStealer
 
 DEERSTEALER C2 SERVER:
 
@@ -135,4 +138,3 @@ RELATED DOMAINS FROM ADDITIONAL OSINT SEARCH:
 - f75da3a8499f34c29c1c8ab834d4446843815d4d2f2ea331a2593ea27e23e13a
 - f8691139a087bb88d113046b9e950c66ad56ce91dc27a7d0f51539026c0ad57f
 - f946567c5199244b8be5fc3843826ad97c31ee11753e26dbdc57689d443163e8
-
