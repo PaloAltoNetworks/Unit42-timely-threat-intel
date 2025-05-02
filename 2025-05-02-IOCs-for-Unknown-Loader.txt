@@ -1,0 +1,135 @@
+2025-05-02 (FRIDAY): DISCOVERY OF PREVIOUSLY  UNKNOWN LOADER
+
+AUTHOR:
+
+- Anna Pham
+
+NOTES:
+
+- We discovered a previously unknown loader that leverages the Pascal scripting engine integrated within Inno Setup. 
+- This loader distributes infostealers including LummaC2, DeerStealer, Rhadamanthys and StealC. 
+- We often see this loader from malicious websites that impersonate legitimate applications.
+- The loader contains anti-VM functionality
+- It encrypts the strings via simple XOR
+- The loader retrieves the payloads from tinyurl[.]com using an authentication token.
+- Subsequent payloads are often hosted on compromised WordPress websites.
+
+EXAMPLE:
+
+- The fake software site leads to the initial downloader hosted at:
+  -- hxxps[:]//markethub[.]sbs/Setup_last_update_package_build_runtime_v7.13_final_edition.exe
+- The loader retrieves a file named netsh.zip from:
+  -- hxxps[:]//tinyurl[.]com/26ztenjm
+- The loader needs an authentication token to retrieve the secondary payload ('rentry-auth': '43de110e576b521c5ec5cd65')
+- The third payload (HijackLoader) is retrieved from:
+ -- hxxps[:]//getwheretostay[.]com/wp-content/uploads/2025/04/DUHECNXC.zip 
+ -- The above zip file is protected with password: aa5A506Fb104406E305d728A795a665ABFb105A3DaBF5bCF987Eb24052C2df8E
+- Dropped payloads reside at: C:\ProgramData\serviceSuperxw
+
+INDICATORS:
+
+ASSOCIATED DOMAINS OR URLS FOR INITIAL DOWNLOADS:
+
+- manageenglne[.]com
+- markethub[.]sbs
+- getwheretostay[.]com
+- tinyurl[.]com/26ztenjm
+
+ASSOCIATED FILES
+
+- SHA256 hash: 8f55ad8c8dec23576097595d2789c9d53c92a6575e5e53bfbc51699d52d0d30a
+- File name: Setup_last_update_package_build_runtime_v7.13_final_edition.exe (initial payload)
+
+- SHA256 hash: 28b62bf4f31cb322bbbb5f5d133e4268663f44bbe9efea1b3eaff44cf9990740
+- File name: netsh.zip
+
+- SHA256 hash: 4dfecfbd6317f82743e65dffea5bfd3650dd28e524e711d88d184fe80ff02576
+- File name: Zoogbaertdend.pgym (HijackLoader)
+
+- SHA256 hash: f7ab4efbff4604ef22672b24d4d6b45227d0dca7f4ef72eed63379b45ac382c2
+- File name: Jiekeeddait.czqk (HijackLoader)
+
+- SHA256 hash: 55ea17a44d7a9882236b5cda25fa844e62cb1a4fe8d5cdc17b3591f4f98aa802
+- File name: CodedDi.exe
+
+- SHA256 hash: cfb4fbdb7c6537006e385c058a992b62ca4590356d3480b4b0ba6e5b19be3209
+- File name: DUHECNXC.zip (HijackLoader)
+
+- SHA256 hash: 9861d60cf037963fadb463d2f46621839071712791be7388dbfede1520315d0f
+- File name: DUHECNXC.exe (HijackLoader)
+
+DEERSTEALER C2 SERVER:
+
+- softserver[.]cfd
+
+RELATED DOMAINS FROM ADDITIONAL OSINT SEARCH:
+
+- bamboohr-en[.]com
+- cllcktime[.]com
+- metatradar5[.]com
+- metatradar5[.]store
+- ninjaone-en[.]com
+- openofflce[.]com
+- optislgns[.]com
+- password-en[.]com
+
+58 ADDTIOINAL SHA256 HASHES FOR EXAMPLES OF THIS UNKNOWN LOADER:
+
+- 0d5311014c66423261d1069fda108dab33673bd68d697e22adb096db05d851b7
+- 0ee63776197a80de42e164314cea55453aa24d8eabca0b481f778eba7215c160
+- 12876f134bde914fe87b7abb8e6b0727b2ffe9e9334797b7dcbaa1c1ac612ed6
+- 1dcd05d854d54136010cdca282d99ce9ff87f778ef6400d49c56f9aabf7c0bdf
+- 269f16510e12acc4fdacb0891c605e944cce9845517ec817ea5a06f0c6c362f5
+- 281b6d45bd5149adf0c099dc2b4fb83bad5064063d18c7d88f1310956cb081e1
+- 331ce8282198f11733a5c643f8d9c9a0f44bfd111db7b1783c155d7a8b1f0724
+- 3530939adf7b42ff8886cfdd25cd08d86570025e1e88be920528b45579139801
+- 39a5d10c83bcf30e0d187be60db8792d589d3e8ca4bda2754660914032be744b
+- 3d4cbb25ea5319b9e4f6eba93973b65635baba7fbecd5cdd9670e5283a462f14
+- 3daf4e83cee3e0180b371e336223086449b771fe2ca472db0531b2479b86633a
+- 410a0dd78f3e0654483e61d563f23b9d74627db848295358986ecfe721b0e4cc
+- 43b9bb932501d8d186d9fd49ee5fa1a1c47283e1db898a68b5c846eb7b971aee
+- 460a652936880f83a75c2c913b345cf16859790225c57d97dedee9f907907aff
+- 4645c34b63cfe2e839c31994ae00756b38bae0212aceaa8875d69c176e14de3c
+- 47ed954f5d68fa32ec1d013d39d9f96266b7f6a3eeeffbf627aad564a8b3e7e9
+- 4bf87afb8e9321d5831d37ee4a54994fe61e6579d9493722d3b4d85c20cc3dc9
+- 5333f38cc4572c374eb1e3a08c1af6c2de17578a65464d45e3ba67948b199d35
+- 54ee66a5fdf59ff0ec43361107db55e4d2f44e7da3b745104470c041a79ce048
+- 5ff677ef9a829aaacf13a0254461fe40e8b0a20056644e4a3ee16e879e0eb533
+- 636c256c29ebf0bfe2fb4d8e258deece499a634a3c19a33ef9691912465220b7
+- 64a003f26e9f563bf68b1980fd015f5389ccf2f8285281b064a8117a245a2df1
+- 69c9904393e60a0453066d880cf94aa808cff4242f0cff3d3eccb84e70428080
+- 6b03dc7d14f22151777bc710a9b0a642292e66710cbe97495c75012c9b82c7f4
+- 6f4a0cc0fa22b66f75f5798d3b259d470beb776d79de2264c2affc0b5fa924a2
+- 6fdd12c30b3db365214a0c7bf6e10801c792cfd7fbb791944eaa042355dd2d0b
+- 7abfb1283250c346c86bc94aac469626c4aa6b5e58561afd47a034e661bc3136
+- 8378c6faf198f4182c55f85c494052a5288a6d7823de89914986b2352076bb12
+- 83fd8e0d5eaa9f5dce717db4b33adbb36b464bbcdc9ff91a0e4f060e92d73975
+- 85f109f10597a76a4117d6f0076af78ab9b75bdc5136088c5e6cce417d196fdf
+- 87e0fe63dc505fd3190b6448f4950d60de8b55422fac5b8c4df991ee9b545b20
+- 8f55ad8c8dec23576097595d2789c9d53c92a6575e5e53bfbc51699d52d0d30a
+- 908f80a9f9d4365b8348572aea358a41bf03f490e0c25c1fa8b1aae8655c1414
+- 90a6d0f62beed5411805473a26142ae3233795a46aeaf69a12bcf61e00210073
+- 9791c5e718d4b2f15fae318c64f2bc17a94f8750270218d023ead9d539f8ed96
+- 983138449a49c9e190979753c4f4081790a750c7175c59342a854905308ec037
+- 9ced6d79862a22648f56106f67ce2d6975dcda103b411933baf9866a9dfe8bab
+- a4e14d3f790c94be2f461406cfdc854db343057e4e11dc28e7d270df34210f21
+- a868bccf04b183bba622403edad3efcb0fb78691086ec8901ac5600b54514ec9
+- a9de27c594b4a15efa7af25c3b649b8fd04c6d3d5c2386b224da8fabfe685d0f
+- abb3b093bea395593eb63864ae4333d98c5da4a585cdd4a170b23836077ae100
+- b1a7bcbb7a39b469f1664a3697b651cb63404466cdf8ff0eb95c54f49c9ad912
+- bb42022e85d01864b72ab8f90798ce3ba57ceac7547738616a72ba6b171504af
+- bb63820ed0e2ededc13c201f71d318b9db713e1b33d4dfbe9a07fa372ca8fab4
+- bfa4519d56a3d7d59eb66ee60c0c63a059767d44a2f925720f07257839848e7c
+- c39ed32b41c2e88ca57069ced2175fbdcbb100e11e5df62717bfbf199d285ad1
+- c428b62f4e75234e529cb221587436fe954cb2b15e188565aee61dadc17b4e9c
+- c4b636b74f24b75f50d9e0fc879fec644c8b43464bc238335ac14f4fc8ee4712
+- cd7aee034b9705798b830d9e311614d54ba860db627e6f40ea50c4672882bc69
+- d5fa2160e74fee9501759e2766793cf35282fcc9dc5e1db5d8e7ac3e5b69007a
+- d60fb96437b9e2818eb6baf2183d2aa989c8f2adab597ea61b4611a0c6c98270
+- e318b2c1693bc771dfe9a66ee2cebcc2b426b01547bb0164d09d025467cb9ee3
+- e5a2167c544fa8a9ed0ad1057784c131fe2c6ba2264c288c38dd22073e238791
+- e9e6b5e24455aa3fd0542c63d9c87c1f9054ed51e65f100332964e8e56e1b121
+- f75da3a8499f34c29c1c8ab834d4446843815d4d2f2ea331a2593ea27e23e13a
+- f8691139a087bb88d113046b9e950c66ad56ce91dc27a7d0f51539026c0ad57f
+- f946567c5199244b8be5fc3843826ad97c31ee11753e26dbdc57689d443163e8
+
