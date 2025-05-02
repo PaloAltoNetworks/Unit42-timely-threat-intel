@@ -1,4 +1,4 @@
-2025-05-02 (FRIDAY): DISCOVERY OF PREVIOUSLY  UNKNOWN LOADER
+2025-05-02 (FRIDAY): DISCOVERY OF PREVIOUSLY UNKNOWN LOADER
 
 AUTHOR:
 
@@ -13,6 +13,9 @@ NOTES:
 - It encrypts the strings via simple XOR
 - The loader retrieves the payloads from tinyurl[.]com using an authentication token.
 - Subsequent payloads are often hosted on compromised WordPress websites.
+- This leads to HijackLoader for DeerStealer
+  -- For more info on HijackLoader, see: https://malpedia.caad.fkie.fraunhofer.de/details/win.hijackloader
+  -- For more info on DeerStealer, see: https://any.run/cybersecurity-blog/deerstealer-campaign-analysis/
 
 EXAMPLE:
 
@@ -73,7 +76,7 @@ RELATED DOMAINS FROM ADDITIONAL OSINT SEARCH:
 - optislgns[.]com
 - password-en[.]com
 
-58 ADDTIOINAL SHA256 HASHES FOR EXAMPLES OF THIS UNKNOWN LOADER:
+58 ADDITIONAL SHA256 HASHES FOR EXAMPLES OF THIS UNKNOWN LOADER:
 
 - 0d5311014c66423261d1069fda108dab33673bd68d697e22adb096db05d851b7
 - 0ee63776197a80de42e164314cea55453aa24d8eabca0b481f778eba7215c160
