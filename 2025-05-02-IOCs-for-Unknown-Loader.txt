@@ -4,6 +4,11 @@ AUTHOR:
 
 - Anna Pham
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malicious-webpages-impersonating-legitimate-activity-7325183783983337473-nPp7/
+- https://x.com/Unit42_Intel/status/1919418143476199869
+
 NOTES:
 
 - We discovered a previously unknown loader that leverages the Pascal scripting engine integrated within Inno Setup. 
