@@ -2,7 +2,7 @@
 
 AUTHOR:
 
-- Richard Emerson
+- Daniel Bunce, Jerome Tujague, Richard Emerson
 
 ORIGINAL REFERENCES:
 
@@ -11,7 +11,7 @@ ORIGINAL REFERENCES:
 NOTES:
 
 - We have investigated several recent cases involving attackers abusing Microsoft Teams.
-- The attackers contact potential victims through Teams and impersonating the victim's Help Desk.
+- The attackers contact potential victims through Teams and impersonate the victim's Help Desk.
 - They attempt to convince potential victims to run a Trojanized installer for GlobalProtect.
 - GlobalProtect is a secure VPN/remote access solution for Palo Alto Networks customers.
 - This wave of attack involves the following domains and fully qualified domain names (FQDNs):
@@ -37,7 +37,7 @@ DETAILS:
 - After accessing a victim host, the attacker downloads and runs a file named globalprotect.msi.
 - This is a Trojanized installer with a legitimate version of Global Protect.
 - This installer is configured via the command line to use a C2 server at live-up[.]co.
-- live-up[.]co was originally registered in 2013 and has resolved to a variety of hosting providers since then.
+- live-up[.]co was first registered in 2013 and has resolved to IP addresses from different hosting providers since then.
 - On 2025-04-08, live-up[.]co started resolving to 164.92.67[.]56 shortly before these attacks started.
 - The globalprotect.msi file spawns encoded PowerShell script to download additional malware that leads to MadMXShell. 
 - We've identified new MadMxShell samples that use either HTTPS or DNS over HTTPS for C2 traffic.
@@ -61,7 +61,7 @@ RELATED DOMAINS:
 
 - Pivoting on characteristics from the server at 164.92.67[.]56 for live-up[.]co, we found:
 
-  (Read: IP adddres - domain name -- registry date or date domain resolved to IP address)
+  (Read: IP address - domain name -- registry date or date domain resolved to IP address)
 
   -- 45.61.136[.]238 - vpn-pa[.]com - registered 2025-04-22
   -- 45.61.136[.]214 - vpnpalo[.]com - registered 2025-04-22
