@@ -41,7 +41,6 @@ DETAILS:
 - On 2025-04-08, live-up[.]co started resolving to 164.92.67[.]56 shortly before these attacks started.
 - The globalprotect.msi file spawns encoded PowerShell script to download additional malware that leads to MadMXShell. 
 - We've identified new MadMxShell samples that use either HTTPS or DNS over HTTPS for C2 traffic.
-- The specific MadMxShell C2 domains we've identified so far are:
 
 SHA256 HASHES NOTED FOR TROJANIZED MSI FILES:
 
