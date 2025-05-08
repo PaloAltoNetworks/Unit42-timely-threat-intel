@@ -1,0 +1,69 @@
+2025-05-07 (WEDNESDAY): MADMXSHELL DEPLOYED VIA TROJANIZED INSTALLER FOR GLOBALPROTECT
+
+AUTHOR:
+
+- Richard Emerson
+
+ORIGINAL REFERENCES:
+
+- https://www.zscaler.com/blogs/security-research/malvertising-campaign-targeting-it-teams-madmxshell
+
+NOTES:
+
+- We have investigated several recent cases involving attackers abusing Microsoft Teams.
+- The attackers contact potential victims through Teams and impersonating the victim's Help Desk.
+- They attempt to convince potential victims to run a Trojanized installer for GlobalProtect.
+- GlobalProtect is a secure VPN/remote access solution for Palo Alto Networks customers.
+- This wave of attack involves the following domains and fully qualified domain names (FQDNs):
+
+  DOMAINS FROM LEGITIMATE SERVERS COMPROMISED BY ATTACKERS:
+
+  -- cristox[.]cl
+  -- deuscapacitaciones[.]cl
+  -- parusiafm[.]cl
+  -- pathernostrum[.]org
+  -- sancupertino[.]cl
+
+  FQDNS FROM LEGITIMATE SERVICES ABUSED BY ATTACKERS: 
+
+  -- helpdesklocal.onmicrosoft[.]com - first publicly reported: 2025-04-24
+  -- ithelpdepartment.onmicrosoft[.]com - not yet publicly reported
+  -- pathernostrum.onmicrosoft[.]com - not yet publicly reported
+
+- We observed email addresses starting with "andrewhelpdesk” from the associated Teams calls. 
+
+DETAILS:
+
+- After accessing a victim host, the attacker downloads and runs a file named globalprotect.msi.
+- This is a Trojanized installer with a legitimate version of Global Protect.
+- This installer is configured via the command line to use a C2 server at live-up[.]co.
+- live-up[.]co was originally registered in 2013 and has resolved to a variety of hosting providers since then.
+- On 2025-04-08, live-up[.]co started resolving to 164.92.67[.]56 shortly before these attacks started.
+- The globalprotect.msi file spawns encoded PowerShell script to download additional malware that leads to MadMXShell. 
+- We've identified new MadMxShell samples that use either HTTPS or DNS over HTTPS for C2 traffic.
+- The specific MadMxShell C2 domains we've identified so far are:
+
+MADMXSHELL DOMAIN FOR HTTPS C2 TRAFFIC:
+
+- vaihonet[.]com - registered 2025-04-10
+
+MADMXSHELL DOMAINS FOR DNS OVER HTTPS C2 TRAFFIC:
+
+- dnscomp[.]com - registered 2025-04-22
+- leafinet[.]com - registered 2025-04-21
+- netsapi[.]com - registered 2025-04-28
+- nodicomtel[.]com - registered 2025-04-28
+- okoqi[.]com - registered 2025-04-11
+- webtpd[.]com - registered 2025-04-22
+- zehful[.]com - registered 2025-04-11
+
+RELATED DOMAINS:
+
+- Pivoting on characteristics from the server at 164.92.67[.]56 for live-up[.]co, we found:
+
+  (Read: IP adddres - domain name -- registry date or date domain resolved to IP address)
+
+  -- 45.61.136[.]238 - vpn-pa[.]com - registered 2025-04-22
+  -- 45.61.136[.]214 - vpnpalo[.]com - registered 2025-04-22
+  -- 107.170.37[.]233 - helpdesk-rating[.]com - date resolved 2025-04-24
+  -- 161.35.151[.]75 - vpn.fastcall[.]cc - date resolved 2025-04-27
