@@ -43,6 +43,11 @@ DETAILS:
 - We've identified new MadMxShell samples that use either HTTPS or DNS over HTTPS for C2 traffic.
 - The specific MadMxShell C2 domains we've identified so far are:
 
+SHA256 HASHES NOTED FOR TROJANIZED MSI FILES:
+
+- e3fb13568f34db8de9f9d2bd6d50b7a22fb2a9bc58d700e3e51facdef0444f59
+- f3b9fc8b857a1d9357700b1cb4e57bc0ae4882222777004bcaff37f4ef9e5e5d
+
 MADMXSHELL DOMAIN FOR HTTPS C2 TRAFFIC:
 
 - vaihonet[.]com - registered 2025-04-10
