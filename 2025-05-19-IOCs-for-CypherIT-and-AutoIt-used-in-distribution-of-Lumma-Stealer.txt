@@ -4,6 +4,11 @@ AUTHOR:
 
 - Anna Pham
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_cypherit-lummastealer-activity-7330667644213231617-z0Ek/
+- https://x.com/Unit42_Intel/status/1924902007686533219
+
 INFECTION CHAIN:
 
 - Page for initial lure --> link --> redirect to download link --> password-protected 7-zip archive -->
