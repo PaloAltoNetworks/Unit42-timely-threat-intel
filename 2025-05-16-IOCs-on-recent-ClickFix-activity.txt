@@ -97,7 +97,7 @@ FILES SEEN DURING THIS INFECTION:
 - File size: 3,633,424 bytes
 - File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
 - Revoked certificate includes the following signer: Wuxi Weitai Nano Technology Co., Ltd.
-- File description: 64-bit Windows DLL side-loaded by NVIDIA Notification.exe ????
+- File description: 64-bit Windows DLL side-loaded by legitimate file NVIDIA Notification.exe
 
 - SHA256 hash: 6c94c9d7e231523e06b41275ab208e42cdd39278f341123b066b05a0a6830e4d
 - File size: 3,342,376 bytes
