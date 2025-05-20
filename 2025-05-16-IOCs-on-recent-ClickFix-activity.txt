@@ -12,7 +12,7 @@ BACKGROUND:
 
 - "ClickFix" is a technique using legitimate but compromised websites that lead to malicious pages.
 - These malicious pages have messages instructing victims to paste script into a run window.
-- This script is most often malicious PowerShell script designed to infect Windows computers with malware.
+- This script is most often a malicious PowerShell script designed to infect Windows computers with malware.
 
 NOTES:
 
@@ -96,8 +96,16 @@ FILES SEEN DURING THIS INFECTION:
 - SHA256 hash: 5070cc64b72062e18baa2ba164e1fef9d9a57a9962a64738d8405cd8c3af5101
 - File size: 3,633,424 bytes
 - File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
+- File location: C:\Users\%USER%\AppData\Roaming\nvidia\libcef.dll
 - Revoked certificate includes the following signer: Wuxi Weitai Nano Technology Co., Ltd.
-- File description: 64-bit Windows DLL side-loaded by legitimate file NVIDIA Notification.exe
+- File description: 64-bit Windows DLL side-loaded by legitimate file NVIDIA Notification.exe, example 1 of 2
+
+- SHA256 hash: 69af1d10dd1dacae362ab8fd4e5bcc97ddb363cdeb06a4bf1bc3db4dfc68b1e1
+- File size: 1,907,472 bytes
+- File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
+- File location: C:\Users\%USER%\AppData\Roaming\nvidia\libcef.dll
+- Revoked certificate includes the following signer: Wuxi Weitai Nano Technology Co., Ltd.
+- File description: 64-bit Windows DLL side-loaded by legitimate file NVIDIA Notification.exe, example 2 of 2
 
 - SHA256 hash: 6c94c9d7e231523e06b41275ab208e42cdd39278f341123b066b05a0a6830e4d
 - File size: 3,342,376 bytes
