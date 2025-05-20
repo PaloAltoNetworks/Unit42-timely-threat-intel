@@ -7,20 +7,20 @@ AUTHORS:
 NOTES:
 
 - Attackers are impersonating targeted organizations' help desks via Teams to deliver AdaptixC2 malware.
-- Attackers utilize Window's Quick Assist feature to run a malicious PowerShell script on a victim's host.
+- Attackers utilize Windows' Quick Assist feature to run a malicious PowerShell script on a victim's host.
 - A recent example of this malicious PowerShell script we saw on 2025-05-13 is named Update.ps1.
 - The update.ps1 file downloads a file that is converted to shellcode for an AdaptixC2 beacon.
 
 ADAPTIXC2 DETAILS:
 
-- Often called "AdaptixC2" "Adaptix C2" is a publicly-available post-exploitation framework.
+- Often called "AdaptixC2" or "Adaptix C2," the name refers to a publicly available post-exploitation framework.
 - This framework is intended for red team members and penetration testers.
-- Adaptix C2 is relatively new, and it has been available on Github since August 2024.
+- Adaptix C2 is relatively new, and it has been available on GitHub since August 2024.
 - Like Cobalt Strike and other red team tools, Adaptix C2 can be abused for malicious purposes.
 - More information on Adaptix C2 and the Adaptix Framework is available at:
   -- https://adaptix-framework.gitbook.io/adaptix-framework
   -- https://github.com/Adaptix-Framework/AdaptixC2
-- So for, very few samples have been publicly identified as AdaptixC2:
+- So far, very little malware has been publicly identified as AdaptixC2:
   -- https://bazaar.abuse.ch/browse/tag/AdaptixC2/
   
 ASSOCIATED FILES:
