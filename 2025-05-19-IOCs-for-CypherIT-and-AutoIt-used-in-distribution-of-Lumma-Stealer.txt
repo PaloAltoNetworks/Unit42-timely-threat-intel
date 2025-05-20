@@ -14,21 +14,21 @@ NOTES:
 - A variant of the CypherIT crypter is being used in the distribution of a Lumma Stealer variant via fake cracked software. 
 - This campaign leverages AutoIt scripts and NSIS self-extracting archives for initial infection.
 - The lures are spread through various sources, like social media platforms and files posted through online shared drives.
-- This malware claims to be cracked versions of popular software like Siemen's data transfer tool WinPCIN or the CAD tool CATIA.
+- This malware claims to be cracked versions of popular software like Siemens' data transfer tool WinPCIN or the CAD tool CATIA.
 
 BACKGROUND:
 
-- Sometimes called "CypherIt," CypherIT is an encryter originally sold through cypherit[.]org starting in 2018.
+- Sometimes called "CypherIt," CypherIT is an encrypter originally sold through cypherit[.]org starting in 2018.
 - CypherIT has been advertised as an encryption software to secure EXE files and evade antivirus detection.
-- Cypherit[.]org's domain registration expired in 2020, but we still continue to see CypherIT used in recent malware samples.
+- Cypherit[.]org's domain registration expired in 2020, but we continue to see CypherIT used in recent malware samples.
 - AutoIt is a free and legitimate scripting language that is commonly abused by various malware developers.
 - More info on AutoIt at https://www.autoitscript.com/wiki/Main_Page
 
 DETAILS:
 
 - In this campaign, CypherIT leverages an NSIS script to drop the batch file.
-- This batch file is responsible for combining all malicious content into a malicious AutoIt script and the AutoIt3.exe file to run it.
-- The newly-created AutoIt script contains embedded shell code responsible for decrypting the final payload.
+- This batch file combines various dropped content into a malicious AutoIt script and the AutoIt3.exe file to run it.
+- The newly created AutoIt script contains embedded shell code that is responsible for decrypting the final payload.
 - The final payload is encrypted using an RC4 key and compressed using LZNT1 compression.
 - This AutoIt script creates an explorer.exe process in a suspended state.
 - The script then uses process hollowing to inject the decrypted and decompressed Lumma Stealer payload into the explore.exe process.
@@ -64,7 +64,7 @@ ASSOCIATED FILES:
 
 - SHA256 hash: b0baec0c7b466bea4c48903ef2cb243e28a2aafcab0a58c8306d41cb5a7c0c9c
 - File size: 31,736,040 bytes
-- File description: Example of above installer for Lumma Stealer infection with most of the padding removed
+- File description: Example of the above installer for Lumma Stealer infection with most of the padding removed
 
 LUMMA STEALER C2 URLS:
 
@@ -137,7 +137,7 @@ ASSOCIATED FILES:
 
 - SHA256 hash: 12d0fd9e0d4688ff75bc17b80d627f4ec2b398878cec2487af8c4f4ff1de2bf0
 - File size: 36,976,542 bytes
-- File description: Example of above installer for Lumma Stealer infection with most of the padding removed
+- File description: Example of the above installer for Lumma Stealer infection with most of the padding removed
 
 LUMMA STEALER C2 URLS:
 
