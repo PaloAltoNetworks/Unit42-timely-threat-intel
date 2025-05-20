@@ -1,0 +1,161 @@
+2025-05-19 (MONDAY): CYPHERIT CRYPTER USED IN DISTRIBUTION OF LUMMA STEALER VARIANT
+
+AUTHOR:
+
+- Anna Pham
+
+INFECTION CHAIN:
+
+- Page for initial lure --> link --> redirect to download link --> password-protected 7-zip archive -->
+  extracted Nullsoft installer for Lumma Stealer infection
+
+NOTES:
+
+- A variant of the CypherIT crypter is being used in the distribution of a Lumma Stealer variant via fake cracked software. 
+- This campaign leverages AutoIt scripts and NSIS self-extracting archives for initial infection.
+- The lures are spread through various sources, like social media platforms and files posted through online shared drives.
+- This malware claims to be cracked versions of popular software like Siemen's data transfer tool WinPCIN or the CAD tool CATIA.
+
+BACKGROUND:
+
+- Sometimes called "CypherIt," CypherIT is an encryter originally sold through cypherit[.]org starting in 2018.
+- CypherIT has been advertised as an encryption software to secure EXE files and evade antivirus detection.
+- Cypherit[.]org's domain registration expired in 2020, but we still continue to see CypherIT used in recent malware samples.
+- AutoIt is a free and legitimate scripting language that is commonly abused by various malware developers.
+- More info on AutoIt at https://www.autoitscript.com/wiki/Main_Page
+
+DETAILS:
+
+- In this campaign, CypherIT leverages an NSIS script to drop the batch file.
+- This batch file is responsible for combining all malicious content into a malicious AutoIt script and the AutoIt3.exe file to run it.
+- The newly-created AutoIt script contains embedded shell code responsible for decrypting the final payload.
+- The final payload is encrypted using an RC4 key and compressed using LZNT1 compression.
+- This AutoIt script creates an explorer.exe process in a suspended state.
+- The script then uses process hollowing to inject the decrypted and decompressed Lumma Stealer payload into the explore.exe process.
+- In one of our tests, the Lumma Stealer variant delivered an additional "clipper" payload designed to steal cryptocurrency.
+- This clipper payload performs clipboard hijacking to redirect cryptocurrency transactions to attacker-controlled wallets.
+
+EXAMPLE OF FAKE WINPCIN SIEMENS DOWNLOAD:
+
+DATE/TIME:
+
+- Tuesday, 2025-05-20 at approximately 03:10 UTC
+
+PATH TO INITIAL Z-ZIP ARCHIVE DOWNLOAD:
+
+- hxxps[:]//drive.google[.]com/file/d/15xOJiwcbcMusVVu19GSUw5SWjx23-hqT
+- hxxps[:]//werhey[.]com/2G206c
+- hxxps[:]//media.dow034[.]sbs/Winpcin+Siemens+Download.zip
+
+ASSOCIATED FILES:
+
+- SHA256 hash: af0bc229802a513b27120bf18b693389cfdfa1d0ab198d015927d0138e807d49
+- File size: 18,487,395 bytes
+- File name: winpcin siemens download.7z
+- File type:  7-zip archive data, version 0.4
+- File description: Password-protected 7-zip archive containing installer for Lumma Stealer
+- Password: 5735
+
+- SHA256 hash: 755143c1aa818f7be4405e0f52827d2b4ea0d72d7dcccbd6c6e789dfa787222b
+- File size: 943,943,207 bytes
+- File name: winpcin siemens download.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive
+- File description: Inflated Installer for Lumma Stealer infection padded with null-bytes
+
+- SHA256 hash: b0baec0c7b466bea4c48903ef2cb243e28a2aafcab0a58c8306d41cb5a7c0c9c
+- File size: 31,736,040 bytes
+- File description: Example of above installer for Lumma Stealer infection with most of the padding removed
+
+LUMMA STEALER C2 URLS:
+
+- hxxps[:]//snakerjs[.]run/fkui
+- hxxps[:]//narrathfpt[.]top/tekq
+- hxxps[:]//jackthyfuc[.]run/xpas
+- hxxps[:]//gettoknwg[.]life/xapd
+- hxxps[:]//leasegjjr[.]digital/iwi
+- hxxps[:]//ehaircuirfm[.]top/aldk
+- hxxps[:]//threatqjqy[.]top/nybe
+- hxxps[:]//8winterghzp[.]digital/ywq
+- hxxps[:]//5bubblezdjw[.]live/kudf
+
+POST-INFECTION ARTIFACTS:
+
+- C:\Users\[username]\AppData\Local\Temp\157629\Merry.com   <-- copy of AutoIt3.exe
+- C:\Users\[username]\AppData\Local\Temp\Behind.m4a
+- C:\Users\[username]\AppData\Local\Temp\Blake.m4a
+- C:\Users\[username]\AppData\Local\Temp\Christianity.m4a
+- C:\Users\[username]\AppData\Local\Temp\Conf.m4a
+- C:\Users\[username]\AppData\Local\Temp\Field.m4a
+- C:\Users\[username]\AppData\Local\Temp\iv.m4a
+- C:\Users\[username]\AppData\Local\Temp\Influenced.m4a
+- C:\Users\[username]\AppData\Local\Temp\Newspapers.m4a
+- C:\Users\[username]\AppData\Local\Temp\Newspapers.m4a.bat   <-- script to create .cab & extract/use content
+- C:\Users\[username]\AppData\Local\Temp\Welsh.m4a
+- C:\Users\[username]\AppData\Local\Temp\Wt.m4a   <-- .cab file
+
+CONTENT FROM THE ABOVE .CAB FILE:
+
+-   68,174 bytes - Accuracy
+-   70,656 bytes - Accurately
+-  151,552 bytes - Better
+-    1,552 bytes - Cw
+-   86,016 bytes - Dress
+-   91,136 bytes - Hidden
+-  116,736 bytes - Oakland
+-  118,784 bytes - Performed
+-  102,400 bytes - Postcards
+-  140,288 bytes - Str
+
+
+EXAMPLE OF FAKE CATIA CRACK DOWNLOAD:
+
+DATE/TIME:
+
+- Tuesday, 2025-05-20 at approximately 14:50 UTC
+
+PATH TO INITIAL Z-ZIP ARCHIVE DOWNLOAD:
+
+- hxxps[:]//www.facebook[.]com/media/set/?set=a.1989152548132335&1UuUSzl3y=S7qQ5y&_rdr
+- hxxps[:]//t[.]co/RrEVOGlKpW   <-- X (Twitter) has flagged this link as malicious
+- hxxps[:]//vittuv[.]com/2wynIB
+- hxxps[:]//media.kot3jsd[.]cyou/Download+catia+v6+2012+full+crack+Full.zip
+
+ASSOCIATED FILES:
+
+- SHA256 hash: 4293ee2f174d940aea1fc6c22cda22b67775982d310f2049cf7450e34de3ec89
+- File size: 21,502,883 bytes
+- File name: Download catia v6 2012 full crack Full.7z
+- File type:  7-zip archive data, version 0.4
+- File description: Password-protected 7-zip archive containing installer for Lumma Stealer
+- Password: 6292
+
+- SHA256 hash: 595b1b24c50874e57741c251de7b7cf2db0c2d4804ea8b1c194a41dbe6806113
+- File size: 828,599,766 bytes
+- File name: download catia v6 2012 full crack full.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive
+- File description: Inflated installer for Lumma Stealer padded with null-bytes
+
+- SHA256 hash: 12d0fd9e0d4688ff75bc17b80d627f4ec2b398878cec2487af8c4f4ff1de2bf0
+- File size: 36,976,542 bytes
+- File description: Example of above installer for Lumma Stealer infection with most of the padding removed
+
+LUMMA STEALER C2 URLS:
+
+- Same as seen in the fake Winpcin Siemens download
+
+POST-INFECTION ARTIFACTS:
+
+- Same as seen in the fake Winpcin Siemens download
+
+SHA256 HASH FOR CLIPPER MALWARE SEEN FROM LUMMA STEALER INFECTION:
+
+- 83f4cfad4525e51378c7793c6d42c390da6554ab43ce7106ab2fd37c64d228b6
+
+THREAT ACTOR'S CRYPTOCURRENCY WALLET ADDRESSES:
+
+-  BTC: bc1qg4zndrsatg0j6xzdc5czs9l3vntz5gwwsrp6py
+-  ETH: 0x7e022F7d612a50CA8cA7B25c5dedCbfD93848175
+-  LTC: ltc1q9haa6sxqrvd4x5fcpzm4pj62sl7z3q4ugzwtdx
+-  SOL: 2jsCcTeDVzBViNScuDK5UKoGVGL1UbfE3sgnkTXzvBdV
+- TRON: TUnmp5doDv8frZpazFVCMkVKduAwpshmdo
+-  XRP: rJKEN4BhW25nHLgjc6CCVXiN9rXjhXjD5U
