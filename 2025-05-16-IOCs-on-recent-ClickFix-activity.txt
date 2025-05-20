@@ -4,6 +4,11 @@ AUTHOR:
 
 - Zack Fink
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_clickfix-dllsideloading-activity-7330632165598154753-vLAh/
+- https://x.com/Unit42_Intel/status/1924866530195427372
+
 ORIGINAL REFERENCE:
 
 - https://x.com/SquiblydooBlog/status/1922375875548320203
