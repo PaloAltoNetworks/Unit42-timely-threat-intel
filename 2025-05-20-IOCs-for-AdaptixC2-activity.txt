@@ -4,6 +4,11 @@ AUTHORS:
 
 - Ofek Lahiani, Itay Cohen
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_adaptixc2-quickassist-activity-7330971914544336898-kgwJ/
+- https://x.com/Unit42_Intel/status/1925206262184026156
+
 NOTES:
 
 - Attackers are impersonating targeted organizations' help desks via Teams to deliver AdaptixC2 malware.
