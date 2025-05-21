@@ -15,7 +15,7 @@ DETAILS:
 - Since March 2023, the UP-X gambling service has registered 1,125 DGA domains following the same patterns. 
 - All of the active domains currently resolve to a Belize IP address at 190.115.31[.]140.
 - The domains follow consistent lexical patterns: up[0-9]([a-z]{3}|[a-z]{2})[0-9]x.(top|space|life|tech|xyz)
-- The domains have short lifespans, and most become inactive a year after registration.
+- The domains have short lifespans; most become inactive a year after registration.
 - A direct visit to any of these domains will be randomly redirected to another domain.
   -- This highly connected TDS network is designed for resilience. 
 - If any domain is taken down, traffic is instantly forwarded to a live domain.
