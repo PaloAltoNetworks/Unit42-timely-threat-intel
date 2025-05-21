@@ -4,6 +4,11 @@ AUTHORS:
 
 - Zhanhao Chen, Daiping Liu, Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_we-uncovered-a-sophisticated-tds-supporting-activity-7331012187198480385-cnqA/
+- https://x.com/Unit42_Intel/status/1925246566589145432
+
 NOTES:
 
 - We uncovered a sophisticated Traffic Distribution System (TDS) supporting UP-X, a Russian language gambling platform.
