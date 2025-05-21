@@ -3,7 +3,7 @@
 NOTES:
 
 - We have identified new samples of BTMOB RAT Android malware distributed through sites impersonating legitimate services.
-- These apps and web pages impersonate legitimate services including Starlink, Google Chrome, Avast Antivirus, Roku, Amazon and several others.
+- These apps and web pages impersonate legitimate services, including Starlink, Google Chrome, Avast Antivirus, Roku, Amazon and several others.
 - These apps are targeting Latin American users.
 
 MORE INFORMATION ON BTMOB RAT ANDROID MALWARE:
@@ -11,7 +11,7 @@ MORE INFORMATION ON BTMOB RAT ANDROID MALWARE:
 - https://cyble.com/blog/btmob-rat-newly-discovered-android-malware/
 - https://www.linkedin.com/pulse/critical-android-malware-alert-btmobrat-hijacks-accessibility-jkswc/
 
-IP ADDRESSES AND DOMAIN ASSOCIATED NOTED FROM THIS CANOUGB:
+IP ADDRESSES AND DOMAIN ASSOCIATED NOTED FROM THIS CAMPAIGN:
 
 - 77.111.101[.]185
 - 78.135.93[.]123
