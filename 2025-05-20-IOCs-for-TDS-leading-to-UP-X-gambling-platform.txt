@@ -26,7 +26,7 @@ DETAILS:
 - The UP-X platform has a Telegram channel with over 8,500 members. 
   -- Some users reported difficulties withdrawing money from the platform.
 
-SELECT DOMAINS
+48 EXAMPLES OF DOMAINS USED FOR THIS TDS:
 
 - up0axu8x[.]space
 - up0ec4x[.]tech
