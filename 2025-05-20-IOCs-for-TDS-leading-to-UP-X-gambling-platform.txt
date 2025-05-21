@@ -1,0 +1,78 @@
+2025-05-20 (TUESDAY): TDS LEADING TO ONLINE GAMBLING PLATFORM UP-X
+
+AUTHORS:
+
+- Zhanhao Chen, Daiping Liu, Reethika Ramesh
+
+NOTES:
+
+- We uncovered a sophisticated Traffic Distribution System (TDS) supporting UP-X, a Russian language gambling platform.
+- This platform uses a dynamic redirection network of more than 1,000 short-lived DGA domains.
+- The fluid nature of these TDS domains helps the platform evade detection and resist takedowns.
+
+DETAILS:
+
+- Since March 2023, the UP-X gambling service has registered 1,125 DGA domains following the same patterns. 
+- All of the active domains currently resolve to a Belize IP address at 190.115.31[.]140.
+- The domains follow consistent lexical patterns: up[0-9]([a-z]{3}|[a-z]{2})[0-9]x.(top|space|life|tech|xyz)
+- The domains have short lifespans, and most become inactive a year after registration.
+- A direct visit to any of these domains will be randomly redirected to another domain.
+  -- This highly connected TDS network is designed for resilience. 
+- If any domain is taken down, traffic is instantly forwarded to a live domain.
+  -- More details about malicious TDS at: https://unit42.paloaltonetworks.com/detect-block-malicious-traffic-distribution-systems/
+- If a visitor's IP address does not match the target region, the site immediately redirects to a blocking page.
+  -- The blocking page promotes installing the gambling app. 
+  -- This cloaking behavior prevents crawlers from detecting gambling content.
+- The UP-X platform has a Telegram channel with over 8,500 members. 
+  -- Some users reported difficulties withdrawing money from the platform.
+
+SELECT DOMAINS
+
+- up0axu8x[.]space
+- up0ec4x[.]tech
+- up0pg4x[.]xyz
+- up1gt5x[.]xyz
+- up1oz4x[.]tech
+- up1qrp6x[.]top
+- up1qsw9x[.]top
+- up1xav8x[.]space
+- up1zf9x[.]life
+- up2gtj3x[.]space
+- up2ng1x[.]xyz
+- up2nrp5x[.]top
+- up2vk8x[.]life
+- up2zo3x[.]tech
+- up3aic4x[.]space
+- up3azw5x[.]top
+- up3bk3x[.]xyz
+- up3iox6x[.]top
+- up3sm8x[.]life
+- up3to0x[.]tech
+- up4cq5x[.]tech
+- up4fme8x[.]top
+- up4mf2x[.]life
+- up4nuz6x[.]space
+- up4vs8x[.]xyz
+- up5eof4x[.]top
+- up5mfh2x[.]top
+- up5so2x[.]life
+- up5xdz4x[.]space
+- up6ah2x[.]tech
+- up6nk1x[.]life
+- up6nsy9x[.]top
+- up6zbh9x[.]space
+- up7eec9x[.]top
+- up7gw2x[.]tech
+- up7sui6x[.]space
+- up7tg4x[.]life
+- up8icc4x[.]top
+- up8ll3x[.]tech
+- up8mt6x[.]life
+- up8vpu3x[.]space
+- up8zy0x[.]xyz
+- up9as3x[.]tech
+- up9ggs1x[.]top
+- up9jgj3x[.]space
+- up9ktw2x[.]top
+- up9wz4x[.]life
+- up9zh2x[.]xyz
