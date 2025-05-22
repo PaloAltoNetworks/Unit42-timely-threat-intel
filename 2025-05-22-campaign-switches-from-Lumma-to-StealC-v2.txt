@@ -1,0 +1,97 @@
+2025-05-22 (THURSDAY): CAMPAIGN SWITCHES TO STEALC V2 AFTER LUMMA STEALER DISRUPTION
+
+AUTHORS:
+
+- Bradley Duncan, Anna Pham
+
+ORIGINAL REFERENCES:
+
+- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-19-IOCs-for-CypherIT-and-AutoIt-used-in-distribution-of-Lumma-Stealer.txt
+- https://blogs.microsoft.com/on-the-issues/2025/05/21/microsoft-leads-global-action-against-favored-cybercrime-tool/
+- https://www.justice.gov/opa/pr/justice-department-seizes-domains-behind-major-information-stealing-malware-operation
+
+INFECTION CHAIN:
+
+- Page for initial lure --> link --> redirect to download link --> password-protected 7-zip archive -->
+  extracted Nullsoft installer for StealC v2 infection
+
+NOTES:
+
+- This is a follow-up to our post earlier this week about a campaign distributing Lumma Stealer:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-19-IOCs-for-CypherIT-and-AutoIt-used-in-distribution-of-Lumma-Stealer.txt
+
+- Yesterday, we saw reports of a disruption of Lumma Stealer:
+  -- https://blogs.microsoft.com/on-the-issues/2025/05/21/microsoft-leads-global-action-against-favored-cybercrime-tool/
+  -- https://www.justice.gov/opa/pr/justice-department-seizes-domains-behind-major-information-stealing-malware-operation
+
+- This same campaign is still using a variant of the CypherIT crypter.
+- But now the campaign is distributing StealC v2 instead of a Lumma Stealer. 
+- This campaign still leverages AutoIt scripts and NSIS self-extracting archives for the initial infection.
+- The lures are still spread through various sources, like social media platforms and online shared drives.
+- This malware still claims to be cracked versions of popular software.
+
+EXAMPLE OF FAKE SOFTWARE CRACK DOWNLOAD FROM THIS CAMPAIGN:
+
+DATE/TIME:
+
+- 2025-05-22 15:30 UTC
+
+PATH TO INITIAL Z-ZIP ARCHIVE DOWNLOAD:
+
+- hxxps[:]//www.facebook[.]com/media/set/?set=a.2968760456587536
+- hxxps[:]//fancli[.]com/2wAHl6
+- hxxps[:]//media.kot3jsd[.]cyou/FULL+Internet+Download+Manager+IDM+6.21+Build+9+Final+Crack+%5BATOM%5D.zip
+- hxxps[:]//arch2.kot3jsd[.]cyou/bridge/u/OgbpXZ87abIvv7WIcu01JOAO/application.zip
+
+- SHA256 hash: 99db1906316443e3e44383075dc83cbcab1485176e1651824377f8358ae67ca7
+- File size: 21,559,875 bytes
+- File name: application.7z
+- File type: 7-zip archive data, version 0.4
+- File description: Password-protected 7-zip archive downloaded from application.zip URL
+- Password: 9602
+
+- SHA256 hash: 0f6a501ed28bc75e32c50e5aa8aa1e75938fcc562665649ca45539267098c841
+- File size: 977,594,926 bytes
+- File name: application.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive
+- File description: Extracted from 7-zip archive, and inflated installer for StealC v2, padded with null-bytes
+
+- SHA256 hash: 35a1ccb6ea8a426386d923c61f170c009f172e971ebff35ab02b93d395a0cb3f
+- File size: 37,022,818 bytes
+- File name: application.exe-deflated
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive
+- File description: Example of the above installer with most of the null-bytes removed.
+
+STEALC V2 POST-INFECTION TRAFFIC:
+
+- hxxp[:]//62.60.226[.]188/e9591576f6114884.php  <-- repeated HTTP POST requests
+
+POST-INFECTION ARTIFACTS:
+
+- C:\Users\[username]\AppData\Local\Temp\610696\Everyone.com   <-- copy of AutoIt3.exe
+- C:\Users\[username]\AppData\Local\Temp\Collapse.jpg
+- C:\Users\[username]\AppData\Local\Temp\Filling.jpg
+- C:\Users\[username]\AppData\Local\Temp\Guam.jpg
+- C:\Users\[username]\AppData\Local\Temp\Judicial.jpg
+- C:\Users\[username]\AppData\Local\Temp\Kb.jpg
+- C:\Users\[username]\AppData\Local\Temp\Pioneer.jpg
+- C:\Users\[username]\AppData\Local\Temp\Problem.jpg
+- C:\Users\[username]\AppData\Local\Temp\Problem.jpg.bat   <-- script to create .cab & extract/use content
+- C:\Users\[username]\AppData\Local\Temp\Routes.jpg
+- C:\Users\[username]\AppData\Local\Temp\Upset.jpg
+- C:\Users\[username]\AppData\Local\Temp\Venezuela.jpg   <-- .cab file
+- C:\Users\[username]\AppData\Local\Temp\Weights.jpg
+
+CONTENT FROM THE ABOVE .CAB FILE:
+
+- 139,264 bytes - Appearance
+-  84,992 bytes - Arthur
+-  57,344 bytes - Blowjob
+-  67,584 bytes - Collections
+-  81,920 bytes - Decrease
+- 112,640 bytes - Installed
+- 129,024 bytes - Medicare
+-  89,088 bytes - Others
+-  70,448 bytes - Posts
+-   2,355 bytes - Programme
+- 112,640 bytes - Stylish
