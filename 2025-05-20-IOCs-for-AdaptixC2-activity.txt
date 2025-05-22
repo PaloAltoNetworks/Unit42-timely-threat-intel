@@ -37,7 +37,7 @@ ASSOCIATED FILES:
 - File size: 107,898 bytes
 - File name: sx.txt
 - File type: ASCII text
-- Location: https://drive.google[.]com/uc?export=download&id=1x0-5EVyz2qanm_l4uZW-B3S8ZxKOIz3n
+- Location: hxxps[:]//drive.google[.]com/uc?export=download&id=1x0-5EVyz2qanm_l4uZW-B3S8ZxKOIz3n
 - File description: Base64 text for shellcode binary ( XOR-ed with ASCII character: Z )
 
 - SHA256 hash: 9e3a0d2f85148ea520cdfd9709b26d817287b8c0c37c22623cd06cda8a80ba8b
