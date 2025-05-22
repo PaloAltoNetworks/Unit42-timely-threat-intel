@@ -28,7 +28,7 @@ NOTES:
 - But now the campaign is distributing StealC v2 instead of a Lumma Stealer. 
 - This campaign still leverages AutoIt scripts and NSIS self-extracting archives for the initial infection.
 - The lures are still spread through various sources, like social media platforms and online shared drives.
-- This malware still claims to be cracked versions of popular software.
+- These malware samples are still presented as cracked versions of popular software.
 
 EXAMPLE OF FAKE SOFTWARE CRACK DOWNLOAD FROM THIS CAMPAIGN:
 
@@ -58,7 +58,6 @@ PATH TO INITIAL Z-ZIP ARCHIVE DOWNLOAD:
 
 - SHA256 hash: 35a1ccb6ea8a426386d923c61f170c009f172e971ebff35ab02b93d395a0cb3f
 - File size: 37,022,818 bytes
-- File name: application.exe-deflated
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive
 - File description: Example of the above installer with most of the null-bytes removed.
 
