@@ -65,6 +65,13 @@ PATH TO INITIAL Z-ZIP ARCHIVE DOWNLOAD:
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive
 - File description: Example of the above installer with most of the null-bytes removed.
 
+SHA256 HASH AND CONFIG OF THE STEALC V2 PAYLOAD FROM THE INSTALLER:
+
+- SHA256 hash: fd858b1bc9c008624214efeb20a916b93dd92af6f9f49e93924842b94d075287
+- build_id": "default",
+- "rc4_key": "53K5tNnomb",
+- "c2": "62.60.226[.]188/e9591576f6114884.php"
+
 STEALC V2 POST-INFECTION TRAFFIC:
 
 - hxxp[:]//62.60.226[.]188/e9591576f6114884.php  <-- repeated HTTP POST requests
