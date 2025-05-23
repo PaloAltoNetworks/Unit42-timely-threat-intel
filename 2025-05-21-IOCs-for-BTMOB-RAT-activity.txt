@@ -1,5 +1,10 @@
 2025-05-21 (WEDNESDAY): CAMPAIGN TARGETING LATIN AMERICAN USERS DISTRIBUTING BTMOB RAT ANDROID MALWARE 
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_unit-42-has-identified-new-samples-of-btmob-activity-7331710618242039808-tCqZ/
+- https://x.com/Unit42_Intel/status/1925944984550727717
+
 NOTES:
 
 - We have identified new samples of BTMOB RAT Android malware distributed through sites impersonating legitimate services.
