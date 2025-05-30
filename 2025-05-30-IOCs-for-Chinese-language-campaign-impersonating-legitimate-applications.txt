@@ -1,0 +1,183 @@
+2025-05-30 (FRIDAY): CHINESE LANGUAGE CAMPAIGN IMPERSONATING LEGITIMATE APPLICATIONS
+
+AUTHORS:
+
+- Keerthiraj Nagaraj, Vishwa Thothathri, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
+
+NOTES:
+
+- A malware distribution campaign is active, impersonating over 40 software applications.
+- The sites impersonating these applications use Chinese language characters.
+- We've seen 2 separate waves of activity during May 2025.
+- We've identified 91 domains, all hosted on 95.173.197[.]195.
+- Shared registration details on the domains indicate the domains were likely created through automation.
+
+DETAILS:
+
+- 40 domains registered on 2025-05-15 starting with ‘guwaanzh’ are the first wave of activity. 
+- The download button on these 40 domains starting with ‘guwaanzh’ redirect to:
+  -- hxxps[:]//djbzdhygj[.]com/
+- For this wave of activity, the page at djbzdhygj[.]com leads to the file download.
+
+- 51 domains registered on 2025-05-26 and 28 starting with ‘xiazaizhadia’ are the second wave of activity.
+- The download button on these 51 domains starting with ‘xiazaizhadia’ redirects to:
+  -- hxxps[:]//yqmqhjgn[.]com/
+- For this wave of activity, the page at yqmqhjgn[.]com leads to the file download.
+
+- Names and hashes change for the downloaded files.
+change periodically, and so do the hashes of the dropped files. We have also seen that the zip files change independently of the filehash. The inner file is the same, but under different names.
+
+- Three examples of URLs for the downloaded zip archive are:
+  -- hxxps[:]//adf6bf286e3b4fc5.s3.ap-east-1.amazonaws[.]com/f3b3530fd6.zip?X-Amz-Security-Token=[long string and other variables]
+  -- hxxps[:]//c34b2bc447b548718390.s3.ap-northeast-2.amazonaws[.]com/f83acd4249e44e.zip?X-Amz-Security-Token=[long string and other variables]
+  -- hxxps[:]//a0e1370b276549.s3.ap-southeast-1.amazonaws[.]com/a08325fd688b43819d1fc.zip?X-Amz-Security-Token=[long string and other variables]
+  
+- The downloaded zip archives contain a Microsoft Installer (.msi) file.
+
+INDICATORS:
+
+HOSTING IP ADDRESS:
+
+- 95.173.197[.]195
+
+40 DOMAINS REGISTERED ON 2025-05-15 FOR THE FIRST WAVE OF ACTIVITY:
+
+- guwaanzh1[.]cyou
+- guwaanzh2[.]cyou
+- guwaanzh3[.]cyou
+- guwaanzh4[.]cyou
+- guwaanzh5[.]cyou
+- guwaanzh6[.]cyou
+- guwaanzh7[.]cyou
+- guwaanzh8[.]cyou
+- guwaanzh9[.]cyou
+- guwaanzh10[.]cyou
+- guwaanzh11[.]cyou
+- guwaanzh12[.]cyou
+- guwaanzh13[.]cyou
+- guwaanzh14[.]cyou
+- guwaanzh15[.]cyou
+- guwaanzh16[.]cyou
+- guwaanzh17[.]cyou
+- guwaanzh18[.]cyou
+- guwaanzh19[.]cyou
+- guwaanzh20[.]cyou
+- guwaanzh21[.]cyou
+- guwaanzh22[.]cyou
+- guwaanzh23[.]cyou
+- guwaanzh24[.]cyou
+- guwaanzh25[.]cyou
+- guwaanzh26[.]cyou
+- guwaanzh27[.]cyou
+- guwaanzh28[.]cyou
+- guwaanzh29[.]cyou
+- guwaanzh30[.]cyou
+- guwaanzh31[.]cyou
+- guwaanzh32[.]cyou
+- guwaanzh33[.]cyou
+- guwaanzh34[.]cyou
+- guwaanzh35[.]cyou
+- guwaanzh36[.]cyou
+- guwaanzh37[.]cyou
+- guwaanzh38[.]cyou
+- guwaanzh39[.]cyou
+- guwaanzh40[.]cyou
+
+51 DOMAINS REGISTERED ON 2025-05-26 AND 28 FOR THE SECOND WAVE OF ACTIVITY:
+
+- xiazaizhadia1[.]cyou
+- xiazaizhadia2[.]cyou
+- xiazaizhadia3[.]cyou
+- xiazaizhadia4[.]cyou
+- xiazaizhadia5[.]cyou
+- xiazaizhadia6[.]cyou
+- xiazaizhadia7[.]cyou
+- xiazaizhadia8[.]cyou
+- xiazaizhadia9[.]cyou
+- xiazaizhadia10[.]cyou
+- xiazaizhadia11[.]cyou
+- xiazaizhadia12[.]cyou
+- xiazaizhadia13[.]cyou
+- xiazaizhadia14[.]cyou
+- xiazaizhadia15[.]cyou
+- xiazaizhadia16[.]cyou
+- xiazaizhadia17[.]cyou
+- xiazaizhadia18[.]cyou
+- xiazaizhadia19[.]cyou
+- xiazaizhadia20[.]cyou
+- xiazaizhadia21[.]cyou
+- xiazaizhadia22[.]cyou
+- xiazaizhadia23[.]cyou
+- xiazaizhadia24[.]cyou
+- xiazaizhadia25[.]cyou
+- xiazaizhadia26[.]cyou
+- xiazaizhadia27[.]cyou
+- xiazaizhadia28[.]cyou
+- xiazaizhadia29[.]cyou
+- xiazaizhadia30[.]cyou
+- xiazaizhadia31[.]cyou
+- xiazaizhadia32[.]cyou
+- xiazaizhadia33[.]cyou
+- xiazaizhadia34[.]cyou
+- xiazaizhadia35[.]cyou
+- xiazaizhadia36[.]cyou
+- xiazaizhadia37[.]cyou
+- xiazaizhadia38[.]cyou
+- xiazaizhadia39[.]cyou
+- xiazaizhadia40[.]cyou
+- xiazaizhadia41[.]cyou
+- xiazaizhadia42[.]cyou
+- xiazaizhadia43[.]cyou
+- xiazaizhadia44[.]cyou
+- xiazaizhadia45[.]cyou
+- xiazaizhadia46[.]cyou
+- xiazaizhadia47[.]cyou
+- xiazaizhadia48[.]cyou
+- xiazaizhadia49[.]cyou
+- xiazaizhadia50[.]cyou
+- xiazaizhadia51[.]cyou
+
+4 EXAMPLES OF DOWNLOADED ZIP ARCHIVES:
+
+(READ: SHA256 HASH - FILE NAME)
+
+- 18a21dbc327484b8accbd4a6d7b18608390a69033647099f807fdbfdcfff7e6d - aa84e841b4.zip
+- dbe70991750c6dd665b281c27f7be40afea8b5718b097e43cd041d698706ade4 - f5c84e20eca5434a8f7661d26565.zip 
+- e8c058acfa2518ddc7828304cf314b6dd49717e9a291ca32ba185c44937c422b - f83acd4249e44e.zip
+- dbe70991750c6dd665b281c27f7be40afea8b5718b097e43cd041d698706ade4 - C67576f55a764a66bb1f0.zip
+
+EXAMPLE OF MSI FILE EXTRACTED FROM THE ABOVE ZIP ARCHIVES:
+
+- SHA256 hash: 491872a50b8db56d6a5ef1ccabe8702fb7763da4fd3b474d20ae0c98969acfe5
+- File name: win64wsotusapdeuw.msi
+- File name: win64stgudsmbnrhujsd.msi
+- File name: vrwusdhgfvfkghedweyuri.msi
+
+EXAMPLE OF DOWNLOADED ZIP ARCHIVE AND EXTRACTED MSI FILE FROM 2025-05-30:
+
+- SHA256: 1481c92661c19f0bb8c32233ad85fef4a62c353404425179187f0ad88611752c
+- File size: 26,384,835 bytes
+- File name: a08325fd688b43819d1fc.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+
+- SHA256: bc6fb2eab9ed8d9eb405f6186d08e85be8b1308d207970cc41cf90477aa79064
+- File size: 26,431,488 bytes
+- File name: WindowsX64sipwgwudtrsu.msi
+- File type: MSI Installer
+
+NOTES FROM PRELIMINARY ANALYSIS OF MSI FILE:
+
+- This .msi file contains a VBscript custom action to install the malware.
+- An .cab file within the MSI file contains malicious content used for the infection.
+
+POST INFECTION TRAFFIC:
+
+TRAFFIC FROM RUNNING THE MSI FILE ON A WINDOWS HOST:
+
+- DNS query for www.hao123[.]com
+- 154.19.85[.]229 port 80 - GET hxxp[:]//1235saddfs[.]icu/kk1/95.173.197.195/code32
+- Note: The above URL returns an encoded or otherwise encrypted binary
+
+POST-INFECTION TRAFFIC AFTER A REBOOT:
+
+- 95.173.197[.]195 port 15245 - TCP traffic to xiaofeige[.]icu
