@@ -14,18 +14,17 @@ NOTES:
 
 DETAILS:
 
-- 40 domains registered on 2025-05-15 starting with ‘guwaanzh’ are the first wave of activity. 
-- The download button on these 40 domains starting with ‘guwaanzh’ redirect to:
+- 40 domains registered on 2025-05-15 starting with 'guwaanzh' are the first wave of activity. 
+- The download button on these 40 domains starting with ‘guwaanzh’ redirects to:
   -- hxxps[:]//djbzdhygj[.]com/
 - For this wave of activity, the page at djbzdhygj[.]com leads to the file download.
 
-- 51 domains registered on 2025-05-26 and 28 starting with ‘xiazaizhadia’ are the second wave of activity.
-- The download button on these 51 domains starting with ‘xiazaizhadia’ redirects to:
+- 51 domains registered on 2025-05-26 and 28 starting with 'xiazaizhadia' are the second wave of activity.
+- The download button on these 51 domains starting with 'xiazaizhadia' redirects to:
   -- hxxps[:]//yqmqhjgn[.]com/
 - For this wave of activity, the page at yqmqhjgn[.]com leads to the file download.
 
 - Names and hashes change for the downloaded files.
-change periodically, and so do the hashes of the dropped files. We have also seen that the zip files change independently of the filehash. The inner file is the same, but under different names.
 
 - Three examples of URLs for the downloaded zip archive are:
   -- hxxps[:]//adf6bf286e3b4fc5.s3.ap-east-1.amazonaws[.]com/f3b3530fd6.zip?X-Amz-Security-Token=[long string and other variables]
