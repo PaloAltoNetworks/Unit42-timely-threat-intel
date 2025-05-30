@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Vishwa Thothathri, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_campaign-malware-activity-7334295314608136192-8J_I/
+- https://x.com/Unit42_Intel/status/1928529684343501093
+
 NOTES:
 
 - A malware distribution campaign is active, impersonating over 40 software applications.
