@@ -1,0 +1,21 @@
+2025-06-03 (TUESDAY): IRANIAN THREAT GROUP AGENT SERPENS OBSERVED USING GENAI 
+
+
+AUTHORS:
+- Unit 42
+
+
+REFERENCES:
+- 
+-
+
+
+NOTES:
+- 686c40fd7bd9cacd9a9a40dffcc12000f9e3ce6aacfe7d261411ff34e576dcbe 
+- - RAND Discussion Topics.lnk 
+- 33ea3a8e535e7eea71ffaaab83abef7cea776fcb23376a71c37977ae4be23778 
+ - - sin[.]dll 
+- 0e2e5c126987fe81b7eab1b7f9b53ab66fdcceb064279125f8ca67cdac329e8b 
+- - sst[.]dll 
+- 7f183724120f6e1dc75e8522040c8849a326b62ca40cca43f9bff1c8c00e5c3e 
+- - ssts[.]dll
