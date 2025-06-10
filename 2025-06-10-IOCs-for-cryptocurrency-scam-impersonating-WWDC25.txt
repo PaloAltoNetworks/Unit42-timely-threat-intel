@@ -7,11 +7,10 @@ AUTHOR:
 NOTES:
 
 - A scam site wwdc25[.]com, which is registered on 2025-06-07, is impersonating the official WWDC25 event.
-- This site is impersonating Apple's 2025 World Wide Developer's Conference.
+- This site is impersonating Apple's 2025 Worldwide Developers' Conference.
 - This site is promoting a fake cryptocurrency giveaway to steal funds from potential victims.
-- The scam asks victims to transfer cryptocurrency to a wallet the scammers control
-- The scam claims victims will receive double their cryptocurrency amount sent to any of the scammers wallets.
-- The site currently impersonates or uses a CloudFlare platform challenge to avoid detection through web crawlers.
+- The scam asks victims to transfer cryptocurrency to a wallet that the scammers control
+- The scam claims that victims will receive double the amount of cryptocurrency sent to any of the scammers' wallets.
 
 CRYPTOCURRENCY WALLETS USED FOR THIS SCAM:
 
