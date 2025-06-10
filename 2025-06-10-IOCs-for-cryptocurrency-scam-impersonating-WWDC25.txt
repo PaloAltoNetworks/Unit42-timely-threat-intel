@@ -4,6 +4,11 @@ AUTHOR:
 
 - Shu Wang
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_scam-cryptocurrency-activity-7338309501265027072-Ghq8/
+- https://x.com/Unit42_Intel/status/1932543863194886318
+
 NOTES:
 
 - A scam site wwdc25[.]com, which is registered on 2025-06-07, is impersonating the official WWDC25 event.
