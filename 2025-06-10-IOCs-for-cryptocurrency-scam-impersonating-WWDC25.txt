@@ -1,0 +1,22 @@
+2025-06-10 (TUESDAY): CRYPTOCURRENCY SCAM SITE IMPERSONATING WWDC25
+
+AUTHOR:
+
+- Shu Wang
+
+NOTES:
+
+- A scam site wwdc25[.]com, which is registered on 2025-06-07, is impersonating the official WWDC25 event.
+- This site is impersonating Apple's 2025 World Wide Developer's Conference.
+- This site is promoting a fake cryptocurrency giveaway to steal funds from potential victims.
+- The scam asks victims to transfer cryptocurrency to a wallet the scammers control
+- The scam claims victims will receive double their cryptocurrency amount sent to any of the scammers wallets.
+- The site currently impersonates or uses a CloudFlare platform challenge to avoid detection through web crawlers.
+
+CRYPTOCURRENCY WALLETS USED FOR THIS SCAM:
+
+- BTC: bc1qkusetpytrvd8dhz4wal2475n8p4f8y9eyn93pf
+- ETC: 0x9291ca29c2989FFdaE05843966430B36d2b3A587
+- DOGE: D7Jg5ENvftsCUeJexp8zNyQg6G4XSek536
+- XRP: r4WrYDg3e2hyHJiaJyxfnwFd4BLNaTLn4h
+- SOL: 2nGBTvWPvyvQE7LysWoDjhe3aqXtgqw8Rwb6rEcb7rHc
