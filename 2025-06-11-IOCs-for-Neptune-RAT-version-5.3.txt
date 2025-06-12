@@ -1,0 +1,71 @@
+2025-06-11 (WEDNESDAY): NEPTUNE RAT (MASON RAT) VERSION 5.3 SPREAD THROUGH JS FILES
+
+AUTHOR:
+
+- Vishwa Tothathri
+
+NOTES:
+
+- We've discovered a new version of Neptune RAT, at version 5.3.
+- Previous analysis revealed this RAT is created by the Mason Team, and configuration data from our analysis shows the name "Mason RAT."
+- The initial lure for this infection is a JavaScript (.js) file that is urn by wscript.exe when double-clicked.
+- The .js file drops a .bat file to disk, and subsequent files are not saved to disk, but run from system memory.
+- The infection is kept persistent by copying the .bat file to C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\
+
+DETAILS:
+
+- The .js and .bat files contain: 
+  -- Base64-encoded text for PowerShell script for the following:
+  	 --- Patch ASMI.dll to disable Microsoft's Anti-Malware Scan Interface (AMSI)
+  	 --- Patch/disable Event Tracing for Windows (ETW)
+  -- Base64-encoded text for two encoded/encrypted binaries that represent two .NET executable files
+  -- An obfuscated decoder/decryptor to create the .NET executable files from the above two binaries
+
+- This latest version of Neptune RAT can receive a variety of commands from its C2 server: 
+  -- system data exfiltration
+  -- crypto clipper
+  -- screenshot
+  -- mouse movement
+  -- keyboard activity logger
+  -- download additional .dll files for additional plugin functionality
+
+INDICATORS:
+
+ASSOCIATED FILES:
+
+- SHA256 hash: 0e5c2dc881698eddca82990a30bb2f734065b2eb9ea329b03fbf454e43a254e8
+- File size: 114,592 bytes
+- File name: Payment Slip.js
+- File type: ASCII text, with very long lines (22494), with CRLF line terminators 
+- File description: Initial JavaScript (.js) file, run by wscript.exe when double-clicked
+
+- SHA256 hash: bd2cc2f1f25b5f520a87068475247dd5611ab9f199ed3264983d720e016acf66
+- File size: 103,413 bytes
+- File location example: C:\Users\[username]\AppData\Local\Temp\temp_179745.bat
+- Persistent file location example: C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\1f9d.bat
+- File type: ASCII text, with very long lines (22467), with CRLF line terminators
+- File description: Batch (.bat) file created by the above .js file 
+
+- SHA256 hash: ef7f1ff249b03f69993926e01bb4b5e0055aa897634f8a10f24968b514d96b40
+- File size: 16,846 bytes
+- File type: data
+- File description: One of the PowerShell scripts deobfuscated from the above .bat file
+
+- SHA256 hash: 8fa3103bcd5d7d097dddcd0b1d56614b9787a019cfad2af0b5e24cd7f4b49e7a
+- File size: 4,096 bytes
+- File type: .NET Windows executable
+- File description: Windows executable file (.exe) created during the infection process, not malicious on its own
+
+- SHA256 hash: 3d8c31a68e3fab61212af7ebb3024c5ab079cd205a9297333824f342113b6058
+- File size: 31,232 bytes
+- File type: .NET Windows executable
+- File description: Windows executable file (.exe) created during the infection process
+
+- SHA256 hash: 9d86ea12e0643cd79f6f97202716d6e7b2a0f2dc81b9255719bb5ca7aaeebd12
+- File size: 49,664 bytes
+- File type: .NET Windows executable
+- File description: Neptune RAT (Mason RAT) version 5.3
+
+NEPTUNE RAT COMMAND AND CONTROL (C2) TRAFFIC:
+
+- 107.172.232[.]84:2468 - apostlejob3.duckdns[.]org
