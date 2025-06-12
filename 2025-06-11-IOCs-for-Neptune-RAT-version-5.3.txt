@@ -4,6 +4,11 @@ AUTHOR:
 
 - Vishwa Thothathri
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_neptunerat-masonrat-activity-7338987724680400896-L3aJ/
+- https://x.com/Unit42_Intel/status/1933222103659978921
+
 NOTES:
 
 - We've discovered a new version of Neptune RAT, at version 5.3 seen in the wild as early as 2025-05-27.
