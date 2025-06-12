@@ -7,15 +7,15 @@ AUTHOR:
 NOTES:
 
 - We've discovered a new version of Neptune RAT, at version 5.3.
-- Previous analysis revealed this RAT is created by the Mason Team, and configuration data from our analysis shows the name "Mason RAT."
-- The initial lure for this infection is a JavaScript (.js) file that is urn by wscript.exe when double-clicked.
+- The Mason Team created this RAT, and configuration data from our analysis of this sample indicates it is named "Mason RAT."
+- The initial lure for this infection is a JavaScript (.js) file that is run by wscript.exe when double-clicked.
 - The .js file drops a .bat file to disk, and subsequent files are not saved to disk, but run from system memory.
 - The infection is kept persistent by copying the .bat file to C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\
 
 DETAILS:
 
 - The .js and .bat files contain: 
-  -- Base64-encoded text for PowerShell script for the following:
+  -- Base64-encoded text for a PowerShell script that performs the following functions:
   	 --- Patch ASMI.dll to disable Microsoft's Anti-Malware Scan Interface (AMSI)
   	 --- Patch/disable Event Tracing for Windows (ETW)
   -- Base64-encoded text for two encoded/encrypted binaries that represent two .NET executable files
