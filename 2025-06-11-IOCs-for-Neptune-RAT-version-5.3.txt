@@ -6,7 +6,7 @@ AUTHOR:
 
 NOTES:
 
-- We've discovered a new version of Neptune RAT, at version 5.3.
+- We've discovered a new version of Neptune RAT, at version 5.3 seen in the wild as early as 2025-05-27.
 - The Mason Team created this RAT, and configuration data from our analysis of this sample indicates it is named "Mason RAT."
 - The initial lure for this infection is a JavaScript (.js) file that is run by wscript.exe when double-clicked.
 - The .js file drops a .bat file to disk, and subsequent files are not saved to disk, but run from system memory.
