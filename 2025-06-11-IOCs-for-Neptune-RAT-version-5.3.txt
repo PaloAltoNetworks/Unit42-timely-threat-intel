@@ -16,7 +16,7 @@ DETAILS:
 
 - The .js and .bat files contain: 
   -- Base64-encoded text for a PowerShell script that performs the following functions:
-  	 --- Patch ASMI.dll to disable Microsoft's Anti-Malware Scan Interface (AMSI)
+  	 --- Patch AMSI.dll to disable Microsoft's Anti-Malware Scan Interface (AMSI)
   	 --- Patch/disable Event Tracing for Windows (ETW)
   -- Base64-encoded text for two encoded/encrypted binaries that represent two .NET executable files
   -- An obfuscated decoder/decryptor to create the .NET executable files from the above two binaries
