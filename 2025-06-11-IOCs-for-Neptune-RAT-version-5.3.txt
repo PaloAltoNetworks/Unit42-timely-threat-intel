@@ -53,17 +53,17 @@ ASSOCIATED FILES:
 
 - SHA256 hash: 8fa3103bcd5d7d097dddcd0b1d56614b9787a019cfad2af0b5e24cd7f4b49e7a
 - File size: 4,096 bytes
-- File type: .NET Windows executable
+- File type: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
 - File description: Windows executable file (.exe) created during the infection process, not malicious on its own
 
 - SHA256 hash: 3d8c31a68e3fab61212af7ebb3024c5ab079cd205a9297333824f342113b6058
 - File size: 31,232 bytes
-- File type: .NET Windows executable
+- File type: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
 - File description: Windows executable file (.exe) created during the infection process
 
 - SHA256 hash: 9d86ea12e0643cd79f6f97202716d6e7b2a0f2dc81b9255719bb5ca7aaeebd12
 - File size: 49,664 bytes
-- File type: .NET Windows executable
+- File type: PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows
 - File description: Neptune RAT (Mason RAT) version 5.3
 
 NEPTUNE RAT COMMAND AND CONTROL (C2) TRAFFIC:
