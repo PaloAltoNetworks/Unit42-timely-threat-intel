@@ -17,7 +17,7 @@ NOTES:
 
 TOP TEN COUNTRIES WITH DEVICES CONTACTING SYSUPDATE C2 INFRASTRUCTURE DURING THE PAST TWO YEARS:
 
-- (Read: Ranking - Country Code - Country Name)
+(Read: Ranking - Country Code - Country Name)
 
  1 - TW - Taiwan
  2 - AF - Afghanistan
