@@ -1,0 +1,31 @@
+2025-06-12 (WEDNESDAY): IRON TAURUS REMAINS AN ACTIVE THREAT
+
+AUTHOR:
+
+- Unit 42
+
+NOTES:
+
+- Known as APT 27 and other designators, the threat actor we track as Iron Taurus is a well-known China-based threat group. 
+  -- https://malpedia.caad.fkie.fraunhofer.de/actor/apt27
+
+- Iron Taurus remains an active threat, and this group uses a custom malware family called SysUpdate.
+  -- https://www.trendmicro.com/en_us/research/23/c/iron-tiger-sysupdate-adds-linux-targeting.html
+  -- https://www.security.com/threat-intelligence/budworm-tool-update-telecoms-govt
+
+- During the past two years, we've observed devices in 45 countries connecting to C2 infrastructure for SysUpdate malware.
+
+TOP TEN COUNTRIES WITH DEVICES CONTACTING SYSUPDATE C2 INFRASTRUCTURE DURING THE PAST TWO YEARS:
+
+- (Read: Ranking - Country Code - Country Name)
+
+ 1 - TW - Taiwan
+ 2 - AF - Afghanistan
+ 3 - IN - India
+ 4 - CN - China
+ 5 - LT - Lithuania
+ 6 - PK - Pakistan
+ 7 - US - United States
+ 8 - HK - Hong Kong
+ 9 - SG - Singapore
+10 - IR - Iran
