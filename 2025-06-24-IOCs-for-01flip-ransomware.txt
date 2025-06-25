@@ -1,0 +1,55 @@
+2025-06-24 (TUESDAY): 01FLIP RANSOMWARE
+
+REFERENCE:
+
+- https://www.bleepingcomputer.com/forums/t/808867/unknown-01flip-ext-ransomware-attack-zimbra-server/
+
+NOTES:
+
+- We've observed a new ransomware nicknamed "01flip" because of the .01flip file extension for its encrypted files. 
+- The sample of 01flip ransomware we've seen is fully written in Rust.
+- Using lesser-common programming languages in malware development like Rust is a possible strategy to evade detection.
+- So far, 01flip ransomware appears to have been deployed to a very limited set of targets.
+- This limited distribution indicates 01flip ransomware is not a part of the Ransomware-as-a-Service (RaaS) ecosystem.
+- 01flip ransomware does not have capability to exfiltrate files. 
+- We confirmed that the threat actor behind this ransomware contacted a victim through a private chat to pay 1 BTC for decryption.
+
+OPERATIONS:
+
+- Once 01flip ransomware is executed, it enumerates files across specific drives.
+- If the files have targeted extensions in their file names, 01flip ransomware encrypts them.
+- The ransomware also creates ransom notes, RECOVER-YOUR-FILE.TXT, in the targeted folders.
+- Encrypted file names use the following format: 
+
+  <ORIGINAL_FILENAME>.<UNIQUE_ID>.<COUNT>.01flip
+
+- After completing encryption, 01flip ransomware erases itself from the disk using the following command:
+
+  ping 127.0.0.7 -n 5 > Nul & fsutil file setZeroData offset=0 length=4194303 [MALWARE_FILEPATH] > Nul & Del /f /q [MALWARE_FILEPATH]
+
+INDICATORS:
+
+- SHA256 hash: 6aad1c36ab9c7c44350ebe3a17178b4fd93c2aa296e2af212ab28d711c0889a3
+- File size: 741,888 bytes
+- File type: PE64 (exe)
+- File description: 64-bit Windows executable (.exe) file for 01Flip ransomware
+
+- SHA256 hash: 036e4fd7acc65c9410b4c1f8f420bbfbf648f896a0bc2f371ad0a83c727137b4
+- File size: 458 bytes
+- File type:  ASCII text, with very long lines (351)
+- File name: RECOVER-YOUR-FILE.TXT
+- File description: Example of 01flip ransom note
+
+01FLIP RANSOMWARE NOTE:
+
+== IMPORTANT ==
+Your files have been encrypted. Do not attempt to recover them yourself, as this may cause irreversible damage.
+Once we receive payment, we will immediately provide the decryption key to restore your data. 
+Every hour of delay increases the risk of permanent data loss.
+
+Email:
+    >> 01Flip@proton[.]me
+Session (https://getsession.org, copy and paste to send a friend request):
+    >> [Note: information removed]
+Cipher:
+    >> [Note: information removed]
