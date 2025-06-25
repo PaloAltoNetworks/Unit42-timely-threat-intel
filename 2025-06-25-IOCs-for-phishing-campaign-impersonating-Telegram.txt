@@ -1,12 +1,12 @@
 2025-06-25 (WEDNESDAY): 54K+ DOMAINS USED FOR PHISHING SITES IMPERSONATING TELEGRAM
 
-AHTORS:
+AUTHORS:
 
 - Reethika Ramesh, Zhanhao Chen
 
 NOTES:
 
-- We recently identified 54,446 domains hosting phishing sites impersonating Telegram accounts campaign.
+- We recently identified 54,446 domains hosting phishing sites in a campaign impersonating Telegram.
 - These pages collect Telegram login credentials submitted and real-time one-time passcodes (OTPs) to hijack user accounts.
 
 DETAILS:
@@ -17,12 +17,12 @@ DETAILS:
 - If the user enters the OTP, the attacker can use the stolen credentials and OTP to hijack the user's session on Telegram web.
 - We tested one of the phishing sites by submitting a phone number and typing the wrong OTP code multiple times
   -- This prevented a web login through the phishing site, citing "Too many attempts. Try again in 24 hours." 
-  -- Following this, we tried logging in to the Telegram account via the legitimate Telegram web login.
+  -- Following this, we tried logging in to the same Telegram account via the legitimate Telegram web login.
   -- Through the legitimate Telegram site, the phone number was still flagged for too many login attempts.
-  -- This show the phishing page actually submits the victim’s phone number to the Telegram login API via WebSocket. 
+  -- This shows the phishing page submits the victim’s phone number to the Telegram login API via WebSocket. 
 - Some domains for this campaign host Android application (.apk) files that impersonate the Telegram app.
   -- Example: SHA256 hash: 141b2f58d730a6875b9214bfd152283282ca0e0ad88d5bfc6843bd7fb5beda3b) 
-- The number of domains registered for this campaign peaked in March 2025 with 16.1k domains registered in that month alone.
+- The number of domains registered for this campaign peaked in March 2025, with 16.1k domains registered in that month alone.
 - We have seen approximately 17.3K domains registered since then.
 - In the last month, we saw an average of almost 200 domains registered every day.
 - Domain registrars include:
