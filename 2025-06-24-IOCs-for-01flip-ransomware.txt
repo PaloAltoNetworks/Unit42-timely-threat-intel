@@ -8,10 +8,10 @@ NOTES:
 
 - We've observed a new ransomware nicknamed "01flip" because of the .01flip file extension for its encrypted files. 
 - The sample of 01flip ransomware we've seen is fully written in Rust.
-- Using lesser-common programming languages in malware development like Rust is a possible strategy to evade detection.
+- Using less-common programming languages in malware development like Rust is a possible strategy to evade detection.
 - So far, 01flip ransomware appears to have been deployed to a very limited set of targets.
 - This limited distribution indicates 01flip ransomware is not a part of the Ransomware-as-a-Service (RaaS) ecosystem.
-- 01flip ransomware does not have capability to exfiltrate files. 
+- 01flip ransomware does not have the capability to exfiltrate files. 
 - We confirmed that the threat actor behind this ransomware contacted a victim through a private chat to pay 1 BTC for decryption.
 
 OPERATIONS:
@@ -49,7 +49,7 @@ Every hour of delay increases the risk of permanent data loss.
 
 Email:
     >> 01Flip@proton[.]me
-Session (https://getsession.org, copy and paste to send a friend request):
+Session (hxxps[:]//getsession[.]org, copy and paste to send a friend request):
     >> [Note: information removed]
 Cipher:
     >> [Note: information removed]
