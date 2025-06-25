@@ -1,6 +1,10 @@
 2025-06-24 (TUESDAY): 01FLIP RANSOMWARE
 
-REFERENCE:
+AUTHOR:
+
+- Hiroaki Hara
+
+ORIGINAL REFERENCE:
 
 - https://www.bleepingcomputer.com/forums/t/808867/unknown-01flip-ext-ransomware-attack-zimbra-server/
 
