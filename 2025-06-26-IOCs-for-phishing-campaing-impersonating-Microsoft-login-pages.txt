@@ -8,29 +8,29 @@ NOTES:
 
 - We've seen over 500 newly registered domains (NRDs) in a phishing campaign impersonating Microsoft login pages. 
 - Attackers are continuously registering the domains in batches.
-- The root domain contains 10 characters and uses a top level domain (TLD) of .shop.
-- The fully qualified domain name (FQDN) includes a 10 character subdomain as a prefix.
+- The root domain contains 10 characters and uses a top-level domain (TLD) of .shop.
+- The fully qualified domain name (FQDN) includes a 10-character subdomain as a prefix.
 - These domain names are likely created through a domain generation algorithm (DGA).
-- The characteristics of domain infrastructure will change for phishing attacks after registration.
+- The characteristics of a domain's infrastructure (nameserver) will change for phishing attacks after registration.
 
-EXAMPLE OF PHISHING INFRASTRUCTURE JUST AFTER REGISTRATION:
+EXAMPLE OF PHISHING INFRASTRUCTURE (NAMESERVER) FOR A DOMAIN JUST AFTER REGISTRATION:
 
-- poructablo[.s]hop  NS ns1.nsdjj[.]xyz
+- poructablo[.]shop  NS ns1.nsdjj[.]xyz
 - poructablo[.]shop  NS ns2.nsdjj[.]xyz
 - ns1.nsdjj[.]xyz     A 84.200.17[.]195
 - ns2.nsdjj[.]xyz     A 84.200.17[.]195
 - www.nsdjj[.]xyz     A 84.32.84[.]32 
 
-WHEN PERFORMING THE PHISHING ACTIVITY:
+EXAMPLE NAMESERVER SERVER IP ADDRESS WHEN PERFORMING THE PHISHING ACTIVITY:
 
 - poructablo[.]shop           21600 IN  NS  ns2.maindksdns[.]com
 - poructablo[.]shop           21600 IN  NS  ns1.maindksdns[.]com
 - aab4hjsehl.poructablo[.]shop  300 IN  A   162.0.233[.]153
 
-- This campaign shares the same characteristics of an AiTM attack reported in Feb 2025:
+- This campaign shares the same characteristics of an AiTM attack reported in Feburary 2025:
   -- https://www.invictus-ir.com/news/locked-out-dropboxed-in-when-bec-threats-innovate
 - Domains from the Feb 2025 activity share the same nameserver of ns*.maindksdns[.]com
-- The domains from Feb 2025 also follow the similar naming patterns.
+- The domains from Feb 2025 also follow similar naming patterns.
 
 6 NAMESERVERS ASSOCIATED WITH THIS CAMPAIGN:
 
