@@ -4,6 +4,11 @@ AUTHOR:
 
 - Hiroaki Hara
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ransomware-01flip-activity-7344063426295418882-UZcl/
+- https://x.com/Unit42_Intel/status/1938297790632763595
+
 ORIGINAL REFERENCE:
 
 - https://www.bleepingcomputer.com/forums/t/808867/unknown-01flip-ext-ransomware-attack-zimbra-server/
