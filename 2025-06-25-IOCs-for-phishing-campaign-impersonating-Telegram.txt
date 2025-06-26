@@ -28,6 +28,7 @@ DETAILS:
 - Domain registrars include:
   -- 48.6% of the domains were registered through Dynadot LLC 
   -- 32.6% of the domains were registered through Chengdu West Dimension Digital Technology Co., Ltd.
+- 94.4% of these domains use nameservers from the same provider.
 - We track this campaign as "telegram_acc_hijack"
 
 15 EXAMPLES OF DOMAINS FROM THIS CAMPAIGN
