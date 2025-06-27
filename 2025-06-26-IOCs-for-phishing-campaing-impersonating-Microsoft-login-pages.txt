@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Ruian Duan, Shu Wang
+- Shu Wang, Ruian Duan
 
 NOTES:
 
