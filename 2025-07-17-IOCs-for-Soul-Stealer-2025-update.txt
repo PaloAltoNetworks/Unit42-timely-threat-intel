@@ -1,0 +1,39 @@
+2025-07-17 (THURSDAY): 2025 UPDATE OF BUILDER FOR SOUL STEALER (BLANK GRABBER)
+
+AUTHOR:
+
+- Anmol Maurya
+
+NOTES:
+
+- Soul Stealer is an information stealer that is a fork of Blank Grabber.
+- Both Soul Stealer and Blank Grabber have disclaimers that they are for educational and research purposes only.
+- Alerts on Soul Stealer samples still identify the samples as Blank Grabber.
+
+ARCHIVED REPOSITORY FOR BLANK GRABBER, ACTIVE - JULY 2022 THROUGH AUG 2023:
+
+- hxxps[:]//github[.]com/Blank-c/Blank-Grabber
+
+PREVIOUS REPOSITORY FOR SOUL STEALER IN 2024:
+
+- hxxps[:]//github[.]com/SLShinis/Soul_stealer
+
+CURRENT REPOSITORY FOR SOUL STEALER AS OF 2025-06-22:
+
+- hxxps[:]//github[.]com/idkkkshadoww/Soul-Stealer
+
+2024 ZIP ARCHIVE OF BUILDER FOR SOUL STEALER
+
+- SHA256 hash: d49d6f48c8f34584d09ea6ece0a9bf2196a40f090aa6a195f95bc720cecde3f5
+- File size: 7,061,897 bytes
+- File name: Soul_Stealer-main.zip
+- File type: Zip archive data, at least v1.0 to extract, compression method=store
+- File description: Zip archive of builder for Soul Stealer, content modified on 2024-06-1
+
+2025 ZIP ARCHIVE OF BUILDER FOR SOUL STEALER
+
+- SHA256 hash: b876579c081c28ca0b203ef770b64e7adeb9ed9dce4b6ad7aaa5b07451a2ef2c
+- File size: 999,109 bytes
+- File name: Soul-Stealer-main.zip
+- File type: Zip archive data, at least v1.0 to extract, compression method=store
+- File description: Zip archive of builder for Soul Stealer, content modified on 2025-06-28
