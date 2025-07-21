@@ -28,7 +28,7 @@ CURRENT REPOSITORY FOR SOUL STEALER AS OF 2025-06-22:
 - File size: 7,061,897 bytes
 - File name: Soul_Stealer-main.zip
 - File type: Zip archive data, at least v1.0 to extract, compression method=store
-- File description: Zip archive of builder for Soul Stealer, content modified on 2024-06-1
+- File description: Zip archive of builder for Soul Stealer, content modified on 2024-06-14
 
 2025 ZIP ARCHIVE OF BUILDER FOR SOUL STEALER:
 
