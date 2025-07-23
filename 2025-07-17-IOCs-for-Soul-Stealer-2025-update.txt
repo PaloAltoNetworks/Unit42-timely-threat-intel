@@ -4,6 +4,11 @@ AUTHOR:
 
 - Anmol Maurya
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_soulstealer-infostealer-activity-7353794544049532929-roQA/
+- https://x.com/Unit42_Intel/status/1948028925457621404
+
 NOTES:
 
 - Soul Stealer is an information stealer that is a fork of Blank Grabber.
