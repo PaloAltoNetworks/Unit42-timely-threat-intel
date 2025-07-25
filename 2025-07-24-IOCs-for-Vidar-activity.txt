@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shelly Markus, Itay Cohen
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_vidar-infostealer-activity-7354550534906802178-XuEy/
+- https://twitter.com/Unit42_Intel/status/1948784902763151659
+
 NOTES:
 
 - Unit 42 detected a website impersonating Disney+ being used to distribute Vidar infostealer malware. 
@@ -14,7 +19,7 @@ NOTES:
 - This activity occurred as early as 2025-07-05, and many of the associated URLs are no longer active.
 - However, the disneyplus[.]business site impersonating Disney+ remains active and could possibly be used in future campaigns.
 
-SITE IMPRESONATING DISNEY PLUS:
+SITE IMPRESSIONING DISNEY PLUS:
 
 - disneyplus[.]business
 
@@ -47,7 +52,7 @@ LOCATION OF DECOY PDF FILES USED DURING THE INFECTIONS (NOT MALICIOUS):
 - hxxps[:]//squeakiekids[.]com/Brief_Disney.pdf
 - hxxps[:]//www.localmais[.]com[.]br/disney.pdf
 
-LOCATION OF THE FINALY PAYOAD (VIDAR INFOSTEALER):
+LOCATION OF THE FINAL PAYLOAD (VIDAR INFOSTEALER):
 
 - hxxps[:]//dansorium[.]gr/DarkCyan-fa1d3_Install.exe
 - hxxps[:]//www.localmais[.]com[.]br/PlacedExotic.exe
