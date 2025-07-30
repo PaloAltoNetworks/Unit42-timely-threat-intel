@@ -11,7 +11,7 @@ REFERENCES:
 
 NOTES:
 
-- A new #phishing campaign uses lures mimicking legitimate messages from online services, but sent from compromised emails. 
+- A new phishing campaign uses lures mimicking legitimate messages from online services, but sent from compromised emails. 
 - Embedded links in the email body lead to malicious content hosted on Replit's AI cloud platform, to harvest credentials.
 
 TWO EXAMPLES OF URLS HOSTING PHISHING CONTENT TARGETING CREDENTIALS:
