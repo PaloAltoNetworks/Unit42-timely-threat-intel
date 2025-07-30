@@ -1,12 +1,20 @@
-TTI post, 2025-07-29: Replit
+2025-07-29 (TUESDAY): ABUSE OF REPLIT PLATFORM FOR PHISHING CONTENT
 
-Author: Amanda Tanner
-Senior Threat Intelligence Researcher
+AUTHOR:
 
+- Amanda Tanner
 
-IOCs:
+REFERENCES:
 
-These URLS host phishing content targeting credentials.
+- https://www.linkedin.com/posts/unit42_phishing-activity-7356022976200232961-TjF3/
+- https://x.com/Unit42_Intel/status/1950257339149295666
 
-hxxp://2574e6fa-0ac8-45da-a81e-c2d8242e899e-00-1el123ht9sjh1.janeway.replit[.]dev
-hxxps://86a9bcee-a1fd-4ab3-9d27-411c1593c6c2-00-2jzuiw40hbg69.riker.replit[.]dev
+NOTES:
+
+- A new #phishing campaign uses lures mimicking legitimate messages from online services, but sent from compromised emails. 
+- Embedded links in the email body lead to malicious content hosted on Replit's AI cloud platform, to harvest credentials.
+
+TWO EXAMPLES OF URLS HOSTING PHISHING CONTENT TARGETING CREDENTIALS:
+
+- hxxp[:]//2574e6fa-0ac8-45da-a81e-c2d8242e899e-00-1el123ht9sjh1.janeway.replit[.]dev
+- hxxps[:]//86a9bcee-a1fd-4ab3-9d27-411c1593c6c2-00-2jzuiw40hbg69.riker.replit[.]dev
