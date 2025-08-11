@@ -1,0 +1,30 @@
+2025-08-11 (MONDAY): CONCERNING TREND WITH AI-SUMMARY BROWSER EXTENSION TOOLS
+
+AUTHORS:
+
+- Shresta Bellary Seetharam, Shehroze Farooqi, Nabeel Mohamed, Qinge Xie, Fang Liu, Alex Starov
+
+NOTES:
+
+- Increasing Number of AI-Summary Browser Extensions: 
+  -- There has been a notable rise in the availability and adoption of AI-powered browser extensions. 
+  -- As per chrome-stats[.]com, approximately 40 AI-powered Chrome extensions for summarization have appeared so far this year. 
+  -- Created every week, these type of Chrome extensions account for several thousands of user downloads. 
+  -- This gives threat actors an opportunity to collect sensitive information from unsuspecting users. 
+- Unintended Data Exposure: 
+  -- Such extensions share user data from applications like WhatsApp and Gmail to low reputed websites like:
+     --- askyumawebapp.fly[.]dev  (passive-DNS age of 1 day when we investigated)
+     --- gosupersonic[.]email  (passive-DNS age of 55 days when we investigated)
+- Recommendation: 
+  -- Users are advised to investigate any installed AI browser extensions to mitigate potential data leakage.
+  -- Review the permissions, reputation, and developer reputation and functionality of these AI browser extensions.
+
+INDICATORS:
+
+- Examples of Chrome browser extension IDs:
+  -- eebihieclccoidddmjcencomodomdoei - Supersonic AI
+  -- fahgecbhaoedbchcmhakmjbfbfhgjmbl - WhatsApp Message Summary
+
+- Associated domains:
+  -- askyumawebapp.fly[.]dev - registered 2025-08-07 (from pDNS data)
+  -- gosupersonic[.]email - registered 2025-06-09
