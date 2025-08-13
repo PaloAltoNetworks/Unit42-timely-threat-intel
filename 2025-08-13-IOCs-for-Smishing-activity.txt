@@ -1,0 +1,24 @@
+2025-08-13 (WEDNESDAY): SMISHING CAMPAIGN USING FINANCIAL AID-THEMED LURES 
+
+AUTHOR:
+
+- Amanda Tanner
+
+NOTES:
+
+- A new SMS phishing (smishing) campaign has appeared targeting the new school season.
+- This campaign leverages student financial aid-themed lures to redirect victims to compromised domains hosting phishing content.
+- The associated phishing pages collect credentials, banking, and other sensitive information.  
+
+INDICATORS:
+
+- hxxp[:]//cakedeco[.]lk/fde62/idbb (link from smish)
+- hxxp[:]//elsaeeda[.]com/english/64fjko/login.html
+- hxxp[:]//elsaeeda[.]com/english/64fjko/sst.php
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/index.html
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/index1.html
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/ldn.html
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/index2.html
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/ldn2.html
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/otp.html
+- hxxp[:]//elsaeeda[.]com/english/M0NNET/c.html
