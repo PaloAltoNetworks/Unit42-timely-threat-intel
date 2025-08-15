@@ -6,13 +6,13 @@ AUTHOR:
 
 INFECTION CHAIN:
 
-- User downloaded fake cracked game --> installed Lumma Stealer --> retrieves and installed SectopRAT
+- User downloaded fake cracked game --> installed Lumma Stealer --> retrieved and installed SectopRAT
 
 NOTES:
 
 - This is an example of Lumma Stealer distributed to people searching for cracked software.
 - This infection chain misuses the AutoIt scripting language to conceal malicious activity.
-- Obfuscated batch scripts, .cab files, and misleading file extensions are also attempts evade detection.
+- Obfuscated batch scripts, .cab files, and misleading file extensions are also attempts to evade detection.
 - Both the Lumma Stealer installer and the SectopRAT installer utilize copies of AutoIt3.exe.
 - After its installation, the persistent SectopRAT also uses a copy of AutoIt3.exe.
 
@@ -75,6 +75,7 @@ PATH TO INITIAL DOWNLOAD:
   V0hl1BTA5JDzitLWoyumGfCeXdaUjbxpc9OE7gYr62PkwqS&mPJuQUFgvh9DeW2wXbYcTKBOxEC536tikZjd7AN41ry
 - hxxps[:]//mega[.]nz/file/mopXnaID#ugwPkVobK_Hy2_6r2oILrqiMSkx6cMeq3M80t1jfpVI
 
+
 FILES FROM THE INITIAL DOWNLOAD:
 
 - SHA256 hash: 7b7ec8854865f7ae46f665686e7943615c5242622e7851b3a396f7011783b528
@@ -101,13 +102,13 @@ FILES FROM THE INITIAL DOWNLOAD:
 - File size: 131,071,992 bytes
 - File name: setup.exe
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows
-- File description: Extracted from SETUP.zip this is an inflated EXE installer for Lumma Stealer
+- File description: Extracted from SETUP.zip, this is an inflated EXE installer for Lumma Stealer
 
 - SHA256 hash: c09255d1b0b54132c0d40502ad635bcff41a9a3f92427b39879d620e96eb387d
 - File size: 1,152,540 bytes
 - File name: set-up.exe
 - File type: PE32 executable (GUI) Intel 80386, for MS Windows
-- File description: The above EXE file without the padding, also included in the SETUP.zip archive
+- File description: The above EXE file, without the padding, is also included in the SETUP.zip archive
 
 LIST OF LUMMA STEALER FILES FROM AN INFECTED WINDOWS HOST:
 
@@ -188,14 +189,14 @@ A3X FILE FOR SECTOP RAT:
 - SHA256 hash: a481fc21d48417179c01bc83de2da277d888a6afa6818222de99f5882753f816
 - File size: 1,282,956 bytes
 - File type: data
-- File description: Data binary for SectopRAT run as .a3x file by copy of AutoIt3.exe
+- File description: Data binary for SectopRAT run as .a3x file by a copy of AutoIt3.exe
 
 SECTOP RAT C2 TRAFFIC:
 
 - hxxp[:]//5.10.250[.]239:9000/wmglb
 - hxxp[:]//5.10.250[.]239:9000/wbinjget?q=0123456789ABCDF0123456789ABCDF01  <-- repeats approximately every 10 minutes
 
-- NOTE: The above 32 character ASCII string represents a hex value, and the string is different for each infection or infected host.
+- NOTE: The above 32-character ASCII string represents a hex value, and the string is different for each infection or infected host.
 
 SECTOP RAT PERSISTENT ON AN INFECTED HOST:
 
@@ -207,7 +208,7 @@ SECTOP RAT PERSISTENT ON AN INFECTED HOST:
 - File location: C:\Users\[username]\AppData\Local\NanoInnovate Labs\NanoCraft.lnk
 - File size: 1,151 bytes
 - File type: MS Windows shortcut
-- File description: Windows shortcut that runs copy of AutoIt3.exe and .a3x binary for SectopRAT
+- File description: Windows shortcut that runs a copy of AutoIt3.exe and .a3x binary for SectopRAT
 
 - File location: C:\Users\[username]\AppData\Local\NanoInnovate Labs\NanoCraft.bat
 - File size: 1,108,064 bytes
@@ -217,5 +218,5 @@ SECTOP RAT PERSISTENT ON AN INFECTED HOST:
 - File location: C:\Users\[username]\AppData\Local\NanoInnovate Labs\Z
 - File size: 1,282,956 bytes
 - File type: data
-- File description: data binary run as .a3x by copy of AutoIt3.exe for SectopRAT
+- File description: data binary run as .a3x by a copy of AutoIt3.exe for SectopRAT
 - NOTE: This is the same SHA256 hash as the initial .a3x file for Sectop RAT
