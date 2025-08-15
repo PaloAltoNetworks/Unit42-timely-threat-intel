@@ -199,6 +199,7 @@ A3X FILE FOR SECTOP RAT:
 SECTOP RAT C2 TRAFFIC:
 
 - hxxp[:]//5.10.250[.]239:9000/wmglb
+- 5.10.250[.]239:443 - encoded/encrypted TCP traffic
 - hxxp[:]//5.10.250[.]239:9000/wbinjget?q=0123456789ABCDF0123456789ABCDF01  <-- repeats approximately every 10 minutes
 
 - NOTE: The above 32-character ASCII string represents a hex value, and the string is different for each infection or infected host.
@@ -225,4 +226,5 @@ SECTOP RAT PERSISTENT ON AN INFECTED HOST:
 - File type: data
 - File description: data binary run as .a3x by a copy of AutoIt3.exe for SectopRAT
 - NOTE: This is the same SHA256 hash as the initial .a3x file for Sectop RAT
+
 
