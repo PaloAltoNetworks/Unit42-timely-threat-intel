@@ -1,0 +1,221 @@
+2025-08-15 (FRIDAY): LUMMA STEALER INFECTION WITH SECTOP RAT (ARECHCLIENT2)
+
+AUTHOR:
+
+- Bradley Duncan
+
+INFECTION CHAIN:
+
+- User downloaded fake cracked game --> installed Lumma Stealer --> retrieves and installed SectopRAT
+
+NOTES:
+
+- This is an example of Lumma Stealer distributed to people searching for cracked software.
+- This infection chain misuses the AutoIt scripting language to conceal malicious activity.
+- Obfuscated batch scripts, .cab files, and misleading file extensions are also attempts evade detection.
+- Both the Lumma Stealer installer and the SectopRAT installer utilize copies of AutoIt3.exe.
+- After its installation, the persistent SectopRAT also uses a copy of AutoIt3.exe.
+
+==============================================================================================
+INDICATORS OF COMPROMISE:
+==============================================================================================
+
+SHA256 HASHES OF MALICIOUS FILES FROM THIS ACTIVITY:
+
+- 12140efda5651d6796bd19644933a1693f105b34c00de01f1fe048c9e0d796e1
+- 333cea532ff231a81b5900a7e5fb26c07208fbfc2681b1f0f5e5dfe40f6f513e
+- 5542f2410318bae89c35842ea4e8e5fbd95a8ff3c898d0f7770a3caeae38d09f
+- 7b7ec8854865f7ae46f665686e7943615c5242622e7851b3a396f7011783b528
+- a481fc21d48417179c01bc83de2da277d888a6afa6818222de99f5882753f816
+- a7ffc16672e6f9eda716a3020fdd6c579d300895b4d8169939ac2eb8290bb739
+- c09255d1b0b54132c0d40502ad635bcff41a9a3f92427b39879d620e96eb387d
+- eafd64c21e2642be2cea38cdbc328d24e6f0f8cdbdbbf48b9231be6af29a1af1
+
+MALICIOUS DOMAINS HOSTING CONTENT USED FOR THIS ACTIVITY:
+
+- filesclosedset[.]icu
+- keygen-win[.]org
+- lokrlogalshit[.]icu
+- media98pc4[.]info
+- winsofthub[.]com
+- desk-app-now[.]com
+
+MALICIOUS URLS HOSTED ON LEGITIMATE DOMAINS:
+
+- hxxps[:]//www.facebook[.]com/media/set/?set=a.122162683814544874&type=3
+- hxxps[:]//mega[.]nz/file/mopXnaID#ugwPkVobK_Hy2_6r2oILrqiMSkx6cMeq3M80t1jfpVI  <-- no longer active
+
+LUMMA STEALER C2 DOMAINS:
+
+- kletkamozga[.]ru
+- mastwin[.]in
+- ordinarniyvrach[.]ru
+- stolewnica[.]ru
+- vishneviyjazz[.]ru
+- visokiywkaf[.]ru
+- yamakrug[.]ru
+- yrokistorii[.]ru
+
+SECTOP RAT C2 IP ADDRESS AND PORT:
+
+- 5.10.250[.]239:9000
+
+==============================================================================================
+DETAILS:
+==============================================================================================
+
+PATH TO INITIAL DOWNLOAD:
+
+- hxxps[:]//www.facebook[.]com/media/set/?set=a.122162683814544874&type=3
+- hxxps[:]//winsofthub[.]com/dld/
+- hxxps[:]//keygen-win[.]org/
+- hxxps[:]//media98pc4[.]info/?h=ba2f39ce88153a2bf090d048fe3f25a4&user=44
+- hxxps[:]//lokrlogalshit[.]icu/?z=44&n=--Direct-Link
+- hxxps[:]//filesclosedset[.]icu/?0k6hXBdusTapP8CYMJmcNAUKybLjRxfl7GWFOz3i=
+  V0hl1BTA5JDzitLWoyumGfCeXdaUjbxpc9OE7gYr62PkwqS&mPJuQUFgvh9DeW2wXbYcTKBOxEC536tikZjd7AN41ry
+- hxxps[:]//mega[.]nz/file/mopXnaID#ugwPkVobK_Hy2_6r2oILrqiMSkx6cMeq3M80t1jfpVI
+
+FILES FROM THE INITIAL DOWNLOAD:
+
+- SHA256 hash: 7b7ec8854865f7ae46f665686e7943615c5242622e7851b3a396f7011783b528
+- File size: 2,270,236 bytes
+- File name: @❖P₳2S!ɯ0ɾ1D--2118__ꜰull1--⚝Şē1นp#@!!.zip
+- File location: hxxps[:]//mega[.]nz/file/mopXnaID#ugwPkVobK_Hy2_6r2oILrqiMSkx6cMeq3M80t1jfpVI
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: Initial downloaded zip archive
+
+- SHA256 hash: 333cea532ff231a81b5900a7e5fb26c07208fbfc2681b1f0f5e5dfe40f6f513e
+- File size: 2,264,235 bytes
+- File name: 𝗗𝗢𝗪@𝗡𝗟𝗢𝗔𝗗$_𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗘❏⤖𝗦𝗘𝗧3𝗨𝗣✷𝗖𝗢2𝗗𝗘1#$!.zip
+- File type: Zip archive data, at least v5.1 to extract, compression method=AES Encrypted
+- File description: Password-protected zip archive extracted from the above zip archive
+- Password: 2118
+
+- SHA256 hash: eafd64c21e2642be2cea38cdbc328d24e6f0f8cdbdbbf48b9231be6af29a1af1
+- File size: 2,701,701 bytes
+- File name: SETUP.zip
+- File type: Zip archive data, at least v2.0 to extract, compression method=deflate
+- File description: zip archive extracted from the above zip archive
+
+- SHA256 hash: a7ffc16672e6f9eda716a3020fdd6c579d300895b4d8169939ac2eb8290bb739
+- File size: 131,071,992 bytes
+- File name: setup.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Extracted from SETUP.zip this is an inflated EXE installer for Lumma Stealer
+
+- SHA256 hash: c09255d1b0b54132c0d40502ad635bcff41a9a3f92427b39879d620e96eb387d
+- File size: 1,152,540 bytes
+- File name: set-up.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: The above EXE file without the padding, also included in the SETUP.zip archive
+
+LIST OF LUMMA STEALER FILES FROM AN INFECTED WINDOWS HOST:
+
+- C:\Users\[username]\AppData\Local\Temp\Enclosed.mpg  <-- obfuscated script to create copy of AutoIt3.exe and .a3x for Lumma Stealer
+- C:\Users\[username]\AppData\Local\Temp\Fusion.mpg  <-- .cab file containing files used to create copy of AutoIt3.exe
+- C:\Users\[username]\AppData\Local\Temp\Optimal.mpg
+- C:\Users\[username]\AppData\Local\Temp\Revealed.mpg
+- C:\Users\[username]\AppData\Local\Temp\Asking
+- C:\Users\[username]\AppData\Local\Temp\Configuring
+- C:\Users\[username]\AppData\Local\Temp\Crack
+- C:\Users\[username]\AppData\Local\Temp\Disabilities
+- C:\Users\[username]\AppData\Local\Temp\Gardening
+- C:\Users\[username]\AppData\Local\Temp\Love
+- C:\Users\[username]\AppData\Local\Temp\Methods
+- C:\Users\[username]\AppData\Local\Temp\Political
+- C:\Users\[username]\AppData\Local\Temp\Serbia
+- C:\Users\[username]\AppData\Local\Temp\Wallet
+- C:\Users\[username]\AppData\Local\Temp\162936\Dept.pif  <-- copy of AutoIt3.exe
+
+A3X FILE FOR LUMMA STEALER:
+
+- SHA256 hash: 12140efda5651d6796bd19644933a1693f105b34c00de01f1fe048c9e0d796e1
+- File size: 533,009 bytes
+- File type: data
+- File description: Data binary for Lumma Stealer run as .a3x file by copy of AutoIt3.exe
+
+LUMMA STEALER C2 URLS EXTRACTED FROM THE MALWARE CONFIGURATION:
+
+- hxxps[:]//vishneviyjazz[.]ru/neco
+- hxxps[:]//mastwinp[.]in/qsaz
+- hxxps[:]//ordinarniyvrach[.]ru/xiur
+- hxxps[:]//yamakrug[.]ru/lzka
+- hxxps[:]//yrokistorii[.]ru/uqya
+- hxxps[:]//stolewnica[.]ru/xjuf
+- hxxps[:]//visokiywkaf[.]ru/mmtn
+- hxxps[:]//kletkamozga[.]ru/iwyq
+
+SECTOP RAT (ARECHCLIENT2) INSTALLER RETRIEVED BY LUMMA STEALER-INFECTED HOST:
+
+- SHA256 hash: 5542f2410318bae89c35842ea4e8e5fbd95a8ff3c898d0f7770a3caeae38d09f
+- File size: 1,909,498 bytes
+- File location: hxxps[:]//desk-app-now[.]com/lander/domain/StoriesLovers.exe
+- File location: C:\Users\[username]\AppData\Local\Temp\Z5JWETVIPQPX1UAQN5PNUYTB71JFPG8.exe
+- File type: PE32 executable (GUI) Intel 80386, for MS Windows
+- File description: Installer for SectopRAT (Arechclient2)
+
+LIST OF SECTOP RAT FILES FROM AN INFECTED WINDOWS HOST:
+
+- C:\Users\[username]\AppData\Local\Temp\Aerospace.cda
+- C:\Users\[username]\AppData\Local\Temp\Bloomberg.cda	
+- C:\Users\[username]\AppData\Local\Temp\Definitions.cda  <-- obfuscated script to create copy of AutoIt3.exe and .a3x for SectopRAT
+- C:\Users\[username]\AppData\Local\Temp\Exclusion.cda
+- C:\Users\[username]\AppData\Local\Temp\Individuals.cda
+- C:\Users\[username]\AppData\Local\Temp\Shoot.cda  <-- .cab file containing files used to create copy of AutoIt3.exe
+- C:\Users\[username]\AppData\Local\Temp\Slight.cda
+- C:\Users\[username]\AppData\Local\Temp\Springer.cda
+- C:\Users\[username]\AppData\Local\Temp\Warriors.cda
+- C:\Users\[username]\AppData\Local\Temp\Analyze
+- C:\Users\[username]\AppData\Local\Temp\Benchmark
+- C:\Users\[username]\AppData\Local\Temp\Decline
+- C:\Users\[username]\AppData\Local\Temp\Dvds
+- C:\Users\[username]\AppData\Local\Temp\Graduation
+- C:\Users\[username]\AppData\Local\Temp\Helicopter
+- C:\Users\[username]\AppData\Local\Temp\Humanity
+- C:\Users\[username]\AppData\Local\Temp\Intervals
+- C:\Users\[username]\AppData\Local\Temp\Keeps
+- C:\Users\[username]\AppData\Local\Temp\Olympus
+- C:\Users\[username]\AppData\Local\Temp\Phone
+- C:\Users\[username]\AppData\Local\Temp\Releases
+- C:\Users\[username]\AppData\Local\Temp\Represented
+- C:\Users\[username]\AppData\Local\Temp\Silicon
+- C:\Users\[username]\AppData\Local\Temp\Venture
+- C:\Users\[username]\AppData\Local\Temp\761118\Star.pif  <-- copy of AutoIt3.exe
+- C:\Users\[username]\AppData\Local\Temp\761118\RegAsm.exe
+
+A3X FILE FOR SECTOP RAT:
+
+- SHA256 hash: a481fc21d48417179c01bc83de2da277d888a6afa6818222de99f5882753f816
+- File size: 1,282,956 bytes
+- File type: data
+- File description: Data binary for SectopRAT run as .a3x file by copy of AutoIt3.exe
+
+SECTOP RAT C2 TRAFFIC:
+
+- hxxp[:]//5.10.250[.]239:9000/wmglb
+- hxxp[:]//5.10.250[.]239:9000/wbinjget?q=0123456789ABCDF0123456789ABCDF01  <-- repeats approximately every 10 minutes
+
+- NOTE: The above 32 character ASCII string represents a hex value, and the string is different for each infection or infected host.
+
+SECTOP RAT PERSISTENT ON AN INFECTED HOST:
+
+- File location: C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Start\NanoCraft.url
+- File size: 92 bytes
+- File type: ASCII text, with CRLF line terminators
+- File description: Internet shortcut used to keep SectopRAT infection persistent after rebooting or logging off
+
+- File location: C:\Users\[username]\AppData\Local\NanoInnovate Labs\NanoCraft.lnk
+- File size: 1,151 bytes
+- File type: MS Windows shortcut
+- File description: Windows shortcut that runs copy of AutoIt3.exe and .a3x binary for SectopRAT
+
+- File location: C:\Users\[username]\AppData\Local\NanoInnovate Labs\NanoCraft.bat
+- File size: 1,108,064 bytes
+- File type: PE32+ executable (GUI) x86-64, for MS Windows
+- File description: Copy of AutoIt3.exe
+
+- File location: C:\Users\[username]\AppData\Local\NanoInnovate Labs\Z
+- File size: 1,282,956 bytes
+- File type: data
+- File description: data binary run as .a3x by copy of AutoIt3.exe for SectopRAT
+- NOTE: This is the same SHA256 hash as the initial .a3x file for Sectop RAT
