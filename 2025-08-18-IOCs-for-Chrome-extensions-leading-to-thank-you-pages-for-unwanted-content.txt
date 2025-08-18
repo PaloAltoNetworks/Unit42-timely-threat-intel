@@ -1,0 +1,167 @@
+2025-08-18 (MONDAY): CHROME EXTENSIONS LEAD TO "THANK YOU" PAGES FOR ADWARE/PUP
+
+AUTHORS:
+
+- Shresta Bellary Seetharam, Shehroze Farooqi, Nabeel Mohamed, Qinge Xie, Fang Liu, Alex Starov
+
+NOTES:
+
+- A new Chrome extension campaign abuses the extension's onInstalled event to open post-install "thank you" pages.
+- These "thank you" pages secretly load iframes from suspicious domains, exposing users to adware and Potentially Unwanted Programs (PUPs).
+
+DETAILS:
+
+- Campaign Overview: Dozens of Chrome extensions (60+ observed) are using their install pages to embed hidden iframes.
+- When the browser triggers the onInstalled event after installation, the extension opens a thankyou.html or similar page.
+- Embedded iframes in these "thank you" pages load content from suspicious URLs via such as:
+  -- hxxps[:]//newextensioninstallweb[.]com/
+  -- hxxps[:]//extensioninstallnotifer[.]com/
+  -- hxxps[:]//xuix[.]top/qrcode-verifychrome-extension
+- These iframes fetch content from suspicious third-party domains, often delivering adware or PUPs.
+- Some of these extensions have a "Featured" flag, high ratings and reviews on the Chrome Web Store.
+- Some of these extensions have been available for more than a year.
+
+71 EXAMPLES OF DOMAINS OR URLS ASSOCIATED WITH THIS ACTIVITY:
+
+america-best-exten[.]uno
+b-12-editorexten[.]uno
+b-eauty-plus-extension[.]uno
+can-va-for-chrome-extension[.]uno
+canv3app.chrome-app-ext[.]online
+deez-for-chrome[.]uno
+domainpeackand[.]uno
+extensioninstallnotifer[.]com
+face-editorextension[.]uno
+film-ora-extension[.]uno
+gmetextension333[.]online
+hidecommentse-extension[.]online
+hypi-photo-editor[.]uno
+ineditor.chrome-app-ext[.]online
+light-roomeditor[.]uno
+meit-app-chrome[.]uno
+messageextensionforchromeee[.]uno
+mextension555[.]uno
+paint-shop333[.]uno
+phot-exp-editor-ext[.]uno
+photo-lab-ext[.]uno
+photor-extens[.]uno
+pic-editor-chromeextension[.]uno
+redirector.ext1webred[.]online
+robloxgenerator[.]uno
+roktv-extension[.]uno
+sna-privacy0extension[.]online
+snap-seed-extension-edit[.]uno
+starmovie.chrome-app-ext[.]online
+t[.]ly/adobe-thank-you-install
+t[.]ly/adscopypasteinstall33
+t[.]ly/among-us-install
+t[.]ly/amzoninstall33
+t[.]ly/archivedownloader3333install
+t[.]ly/babbel-install
+t[.]ly/bininstallchataibrowser333
+t[.]ly/capcut-bonnie06
+t[.]ly/cashsendmoneyinstall333
+t[.]ly/castplayerinstal33
+t[.]ly/dctoogggleinstall333
+t[.]ly/discor-thabkotyyinsta
+t[.]ly/dropshipingalie3insta
+t[.]ly/DxOphotoaaap
+t[.]ly/eventrackinginstall333
+t[.]ly/exce-extension
+t[.]ly/facetime-install
+t[.]ly/hideshotrtsytinstall333
+t[.]ly/kine-extens
+t[.]ly/like-install
+t[.]ly/omeinstallapp333
+t[.]ly/photo-express
+t[.]ly/PictureThis-install
+t[.]ly/pivix-filt3333instal
+t[.]ly/rad-pandora-app-ext
+t[.]ly/saveins333instlal
+t[.]ly/scannerextenion
+t[.]ly/snapchat-install
+t[.]ly/strava-installeext
+t[.]ly/tabsilencerinstal3333
+t[.]ly/thankpok
+t[.]ly/vinkle-install
+t[.]ly/wwor-extension
+t[.]ly/ytvideoinstall222
+tech-snagitscreenshot[.]uno
+tu-tv.chrome-app-ext[.]online
+videoeditorextension[.]uno
+wps-extensioninstall[.]uno
+www.newextensioninstallweb[.]com
+xuix.top/qrcode-verifychrome-extension
+z-a-extensionapp[.]uno
+zoomextensionuno[.]uno
+
+68 EXAMPLES OF EXTENSIONS FROM THIS ACTIVITY (READ: EXTENSION ID - EXTENSION NAME):
+
+abgcmfemdmcmbkejjdfhpfojkmanppjl - AmazonSeller Filter
+adbkmnjpohaofhdfjlkhhljplkloceml - Roku TV for Chrome
+aiplpkidjcpbjopeallglaenfaipioko - Babbel - Learn Languages for Chrome
+anhjgljaheineabnonjadiflkaagfokj - Deezer Music & Podcast Player
+baojmlgpmdcjjmaeljbaogakllakiigm - Cash App - Do more with your money
+bgeoifdgcnafonfffcmlcjbeldhocnpd - Hide YouTube Comments
+cahiacbilnjhofnmcoboghfaphoogkdn - FaceTime Quick Call
+cghihblibekkgbbgkdidobaolahhdedo - Likee - Short Video Community
+cjlhobnbcccholccmbmldkmljpcomeed - Roblox Code Generator - 2024 Edition
+cmkoiggpbaihjjoepeeemnadgfljhgce - DropshipMeta - Download Aliexpress images & description
+dcjfbgppfdokmjgajnnkgdmkdeiloigh - Picsart: AI Photo Video Editor
+djlbebjngkeppffodchflfhafmmeceoc - Lightroom Photo Editor for Chrome
+dogbgifloijmmnnehjfpepdfjpjjmcfi - TechSmith Snagit for Chrome
+ebofegihefblgildgndojdabepjmkdbf - Extension Meitu for Chrome
+edindlabbmapcfpihjcfnkkeanlcbdhk - Hypic - Photo Editor
+eebagoopeibddoicipkajpdpogoffoon - WPS Office for Chrome
+eefampjmgmpmglccekaanhopjfhmafld - Extension Excel Spreadsheets for Chrome
+efpkbbhmfgmcaimcehbojooppjkogjpk - Event Tracking Tracker
+ehkijipaaenenlhkaimpceckalmlmfdi - PictureThis - Plant Identifier for Chrome
+ehpejpjfeifejjhccccigpcimipmkbne - Discord Privacy Extension
+eiokiikcmmbmkboojnmjnhkibdnpeamc - FaceApp for Chrome
+ffehilkggmnjbmcpcbknfnkojmnmgeke - Pokemon TCG Pocket Online
+ffkhjnlfjbgljofdaogfcjmcjokhlhkk - ADP Copy & Paste
+fhecadckkcelbodcopcpmppdedgjhnob - Vinkle Video Editor
+fkdidnbnhoglefobeageimpefmgnjfbk - Starz for Chrome
+fkpdmnllplmdeopieofgfighgcchagel - McDonald's Browser Extension
+fpmdblcjhncmgeimkfmfmlcmpefpchml - PaintShop Pro for Chrome
+ghhhfgpngiooinjeiamkcijmpdhdgidb - Peacock TV Stream TV & Movies
+ghmoladlnkoehcepohdpaglmfhplmfkp - B612 for Chrome
+gmeeeonagfgjjaliakkkfbgjbagnkmmg - Snapchat - Online Privacy Extension
+gniocjpkmpggmpaelmjdpekbjmchdhci - Tubi Movies & Live TV
+gnmdllojolkjkmgkcpoidgjkoegodnll - Omegle - OmeTV IP locator
+hcpncginlblddendcdnpockbjmojfpbj - Tab Silencer Pro
+hglpafopgdpcgegbiccbpmimjdghagjf - Canva app
+hgphdkomkmjcaonfcijgbfemjfbjagbj - Extension Word Edit Documents for Chrome
+hlcjombmdmnbilkfhcjdaefgllbcfela - Google Meet Grid View
+hmioahjpdeinblnhlcmaglhbbkmcpepk - Redirector
+hoogdcdejjakfcholdbhhddoplcfoppj - Discord Message Logger
+iiipdgihibeefajenabgmimpocgncnhd - Pixiv Filter
+ijhbioflmfpgfmgapjnojopobfncdeif - Extension Canva for Chrome | Design, Art & AI Editor
+jaallccopdnbeomcnmleelehelbicjdo - Strava GPX downloader
+jafococjldenjimekckbidpieekjagef - Extension iMessage for Chrome
+jcoalibkflfdjjaldjobodcmgjmljfdf - Among Us Unblocked
+jdagdhhgaljeajmjdgldpbgbbiakdjdm - cast player
+jgjeheokdgenniggodfoheoklihijcbm - CamScanner Extension
+jjbnimknldmndoffkccbmjhfdlneiapp - Adobe Premiere Pro Extension
+jkojgmebbdagchpibcgaglghfejkkjmo - VivaVideo - Video Editor&Maker
+jnkbjjbonlldehfppipjklokcoldmkkg - PhotoEdit Express
+kbaofbaehfbehifbkhplkifihabcicoi - PhotoExpress Editor
+kbpjlgdakcecpkdhpfkjmicpgjdhkbpp - Extension Zoom Workplace for Chrome
+kcjlhnbjmnhpmehndjgnbhanjnjonhmd - Hide YouTube Shorts
+khggmpoiighnlkmppaofcklcpiclaelb - Photoroom AI Photo Editor
+kjbpjdklnajlbnmaamncenafodoikakp - ABPV America's best pics&vids
+kpccfpbaheeamkjkcgedklfmcgmckcik - DxO PhotoLab 8: RAW photo editing at its finest
+lgnnkihpnbnifngajpnlgheppighgjgl - Bing Chat for All Browsers
+lifjpamfjcekmkaaagcmkhnjoifpcgga - Save for Instagram
+lmfpffkdhfklmcchmbgepbhjcddcdkfn - BeautyPlus for Chrome
+mhlimdngcoapeiclnpipknneeahhlido - Extension KineMaster for Chrome
+nbboeebkcbmofcppbbjbkmnbdnpkmcpl - Zara for Chrome
+ncammloaampoflcfebafbkaafikagjpi - InShot - Powerful all-in-one
+nfadifbdnjaeelbcjpllmlegedjlgaob - YouTube Full Screen Video
+nhlkodgllgofeknifhfbhinidlhpimcp - Filmora for Chrome | Photo & V Editor
+nimnhhcainjoacphlmhbkodofenjgobh - Internet Archive Saver
+njajnpniamhehlljdganpikbmgdnjjjc - Pandora for Chrome
+ocdpjmmibmnajfkkbihijjnpcenffnao - Cap Cut Video Editor
+ocohphohhbkcebbfoffeobdiamhckojh - Snapseed for Chrome
+ofgiijkcgodogbeidgbkmhjpajnapfkc - Extension Photo Lab Picture Editor & Art
+pgfjnclkpdmocilijgalomiaokgjejdm - SnapConnect for Chrome
