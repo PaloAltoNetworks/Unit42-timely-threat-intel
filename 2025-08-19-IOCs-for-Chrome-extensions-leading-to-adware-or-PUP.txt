@@ -14,7 +14,7 @@ NOTES:
   -- owhit[.]com
   -- pixatab[.]xyz
 - Many of these extensions share identical source code, 
-- These extensio ns often including permissive features such as MutationObserver and differ only in the themed cursors.
+- These extensions often include permissive features such as MutationObserver and differ only in the themed cursors.
 
 RECOMMENDATIONS FOR USERS:
 
