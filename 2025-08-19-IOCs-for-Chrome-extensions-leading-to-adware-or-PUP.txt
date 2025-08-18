@@ -1,0 +1,109 @@
+2025-08-19 (TUESDAY): CHROME EXTENSIONS FOR CUSTOMIZED CURSORS LEAD TO ADWARE/PUP
+
+AUTHORS:
+
+- Shresta Bellary Seetharam, Zhanhao Chen, Nabeel Mohamed, Qinge Xie, Shehroze Farooqi, Fang Liu
+
+NOTES:
+
+- We found 100+ Chrome extensions that customize cursors in the browser window. 
+- These extensions have appeared in the Chrome Web Store during the last 60 days and have 1000+ installs.
+- These extensions appear benign, offering themed cursors (cartoon, anime, Pokémon, etc.) to entice users. 
+- Each extension comes pre-packaged with a few cursors but includes a "Download more cursors" button for additional cursors.
+- Clicking this button redirects to pages that deliver adware or potentially unwanted programs (PUPs), using domains such as:
+  -- owhit[.]com
+  -- pixatab[.]xyz
+- Many of these extensions share identical source code, 
+- These extensio ns often including permissive features such as MutationObserver and differ only in the themed cursors.
+
+RECOMMENDATIONS FOR USERS:
+
+- Avoid installing cursor-modifying extensions from unverified sources. 
+
+RECOMMENDATIONS FOR ADMINISTRATORS: 
+
+- Enforce policies that define allowed extensions and block installation of potentially harmful extensions in enterprise browsers. 
+
+ASSOCIATED DOMAINS:
+
+- owhit[.]com
+- pixatab[.]xyz
+
+75 EXAMPLES OF EXTENSIONS ASSOCIATED WITH THIS CAMPAIGN:
+
+dgfaekieonkobpaklglncjmjibbbpnod - Anime Cursor ★ Custom Cursor for Chrome™
+blibecomdmpcndbgkinclhaokmaheild - KPop Demon Hunters Cursor ★ Custom Cursor for Chrome™
+eenfkghojihnhnninifhndjilpibchki - Peanuts Cursor ★ Custom Cursor for Chrome™
+cembgjjgklolpjnbjmemmfmlkfmklood - Lilo & Stitch Cursor ★ Custom Cursor for Chrome™
+eljclcigelmfnomncdefdkbgnbbilnel - Hello Kitty Cursor ♥ Custom Cursor for Chrome™
+jddaakabhmcbgfnbkgcjfeigbnbcdjgn - BTS Cursor ★ Custom Cursor for Chrome™
+domdcfhmjfdchcegjmnjbioejdphmnio - Cinnamoroll Cursor ★ Custom Cursor for Chrome™
+nlppklcmgfgaploglaakimdlfgeinajj - Blue Lock Cursor ★ Custom Cursor for Chrome™
+pahlnbfkogncdbkaeaamcmpmhjecicmh - Capybara Cursor ★ Custom Cursor for Chrome™
+enemknlfbkchplbhdflblafnpfmgdpib - My Hero Academia Cursor ★ Custom Cursor for Chrome™
+aobjbhiaoljpdpeappmepnhdhklkijjp - Cat Cursor ♥ Custom Cursor for Chrome™
+ldonikoaoafdiccjpkpcgplphedemnma - Pochacco Cursor ★ Custom Cursor for Chrome™
+midamgpdhbehjnjchnegghbhnpkcljmd - Chiikawa Cursor ★ Custom Cursor for Chrome™
+ihpaojljekidelbeegeekmkinheehbje - SpongeBob SquarePants Cursor ★ Custom Cursor for Chrome™
+lcahlhmejfgofgednancmbfmflaoihld - Jujutsu Kaisen Cursor ★ Custom Cursor for Chrome™
+gpacldldkpfobgbdabaollodfoilfela - Pokemon Cursor ★ Custom Cursor for Chrome™
+jfliobjbgdclhcjgpgimckaijlcbkmdk - Haikyuu Cursor ★ Custom Cursor for Chrome™
+dobjkkoopofegeinkiepblgidnigchoo - Preppy Cursor ★ Custom Cursor for Chrome™
+nichemncnkkplpkgpndnnedokokhoeam - Pusheen Cursor ★ Custom Cursor for Chrome™
+elfcaiclmhkioadcpikkonlnanaakmem - Solo Leveling Cursor ★ Custom Cursor for Chrome™
+ahofgjkfjljcliehioeefaanagffnffa - Star Wars Cursor ★ Custom Cursor for Chrome™
+pmlcfgndjofkkpimdenhpkmdbmnbfend - Sonic the Hedgehog Cursor ★ Custom Cursor for Chrome™
+fkbjmjplmceabidmaloaffkmanglpfoe - Soccer Cursor ★ Custom Cursor for Chrome™
+gkbilebmkjlflcijbecemkmgkhnenakm - Brawl Stars Cursor ★ Custom Cursor for Chrome™
+caeneogdipddninidgnoamjaglmmlmoo - Dandadan Cursor ★ Custom Cursor for Chrome™
+flpfhaclifodhjecdjjdnefcjfnflcpp - Harry Potter Cursor ★ Custom Cursor for Chrome™
+ofjldebeoclakifeeoidicojpinkllmc - Hollow Knight Cursor ★ Custom Cursor for Chrome™
+ajcnllagebcaahcdfbappndlmhmpdhif - Avengers Cursor ★ Custom Cursor for Chrome™
+oodhphlpepgoccemjgpedagbpfelcpdl - Hunter x Hunter Cursor ★ Custom Cursor for Chrome™
+amomkbhjghmegifhopipecfioeelecal - Plants vs. Zombies Cursor ★ Custom Cursor for Chrome™
+boolceociingmfoakiaiikpcnbcbajfm - Blackpink Cursor ★ Custom Cursor for Chrome™
+gdnhbhfhnjcfhakagfdeeblhnpjcfjnn - Winnie The Pooh Cursor ★ Custom Cursor for Chrome™
+fphiegmeigkjnjcpmdoecllfeanfbbhd - Squid Game Cursor ★ Custom Cursor for Chrome™
+mifleipondphdoaampgmkndjjkfldmdb - Super Mario Cursor ★ Custom Cursor for Chrome™
+maookbdaoegaepgklgimmakbcfjdmbhf - Peppa Pig Cursor ★ Custom Cursor for Chrome™
+jddgindpdjdojhenigliipabmmckcofh - Supercars Cursor ★ Custom Cursor for Chrome™
+cfolcjmcamelkgoopjddgbnaobjihmcn - Kirby Cursor ★ Custom Cursor for Chrome™
+mpidnflfogjjkchbllplcpcdoifgnjjj - Spy x Family Cursor ★ Custom Cursor for Chrome™
+jalaoplogcelljfhlodnagfepednmilm - Dragon Ball Cursor ★ Custom Cursor for Chrome™
+dbjpighofpljmoogjcbhghlnlnepmmie - Back to School Cursor ★ Custom Cursor for Chrome™
+iglgfjffffiknjajejaleginhanmejec - Naruto Cursor ★ Custom Cursor for Chrome™
+mndeiclfmpndlbkklepkbjihkaccfcod - The Simpsons Cursor ★ Custom Cursor for Chrome™
+cbgmidgpbbholpniehflilcaacpfipob - Musicians and Singers Cursor ★ Custom Cursor for Chrome™
+knomkjoeecgejmhchcpmpbdpfdphpgpo - Poppy Playtime Cursor ★ Custom Cursor for Chrome™
+ondkeebbobdggpgmdnimdcnopmckcabp - Five Nights at Freddy's Cursor ★ Custom Cursor for Chrome™
+anjoapnmcdcndaagonoiindlklkpmnmh - Brawl Stars Cursor - Custom Game Cursor for Chrome
+bjacehmkdjdpknkoomphgfheehjfiocg - Black Clover Cursor - Custom Anime Cursor for Chrome
+cckgnbinkelflpimkpadlfmlpbbagmka - Bleach Cursor - Custom Anime Cursor for Chrome
+dnfjhcohapaoibiekobphekeohdamjbi - Futurama Cursor - Custom Cartoon Cursor for Chrome
+eioefbifkjcfpkdoghnndbceebbohkcd - Genshin Impact Cursor - Custom Cartoon Cursor for Chrome
+fghhbjaoopknmbecbghnhnfapabhjhhg - Dragon Ball Cursor - Custom Anime Cursor for Chrome
+gkjbbfabeojdbiabpjapkjnhpnjcckbf - FNaF Cursor - Custom Horror Cursor for Chrome
+gmjibldihkpammmelmkiipjcgmhdcdmb - Dogs Cursor - Custom Dog Cursor for Chrome
+hdholjicmhinpjcbmigoffjedkiihlen - Death Note Cursor - Custom Anime Cursor for Chrome
+igmblpicjfppdloljoabpiafdlokogno - Fallout Cursor - Custom Game Cursor for Chrome
+kfnphajojmcoapplfnocpegelkfjndom - Country Flags Cursor - Custom Flag Cursor for Chrome
+lmjdeimbphcbnfekpgblhlbhknpmaoij - Hello Kitty Cursor - Custom Kawaii Cursor for Chrome
+lmnmfkhppclolpdbdabpbhladegibpgi - Demon Slayer Cursor - Custom Anime Cursor for Chrome
+mopjnoodlnbnkocfefcgnmnlbcmgekof - Spiderman Cursor - Custom Cursor for Chrome
+pgmiigclfodaendfgenfbmcfoefaljda - Attack on Titan Cursor - Custom Anime Cursor for Chrome
+bhcjjbencodlgfoneipfnnpclempbdka - One Piece Cursor - Custom Anime Cursor for Chrome
+dnhfbehomlbkmimmmoejcmcondhmebia - Kirby Cursor Cursor for Chrome
+emekjhecncemhkpoolndbgmbgfieipdh - Pac-Man Cursor - Custom Retro Cursor for Chrome
+ijccagageaijbfaefkflkepnglppdlnn - Hunter x Hunter Cursor - Custom Anime Cursor for Chrome
+kdnnogfmhpppncphlnecbdhoggpmbkci - Squid Game Cursor - Custom Korean Drama Cursor for Chrome
+kkchefmfekacdingcjkgiaggdafolhen - Minecraft Cursor for Chrome
+lalcmboamkljbdlgjfockddndpfoiojc - One-Punch Man Cursor - Custom Anime Cursor for Chrome
+lmjocpjbilfamkogfpbecdhefcjffbhb - Soccer Cursor - Custom Sports Cursor for Chrome
+ngiaafjblpmiejfgcnfcolhdccmaafjg - Basketball Cursor - Custom Sports Game Cursor for Chrome
+nmkpckdpiikfoenhfaognmajhpgpoobg - Animal Crossing Cursor - Custom Nintendo Game Cursor for Chrome
+oalffknmmdipjphppkcnffnfefljelcm - My Hero Academia Cursor - Custom Anime Cursor for Chrome
+oiogpbnonmepejhhmhgnmmpofkknomcf - Spy x Family Cursor - Custom Anime Cursor for Chrome
+pdneeecaedebfjpkhdobgcnapfdffbbk - South Park Cursor - Custom Cartoon Cursor for Chrome
+pgbhmanighehdihhgcfodcecphdakkgn - Naruto Cursor - Custom Anime Cursor for Chrome
+pjfjconkopcckeanlhklghfogkdhnegk - Pusheen Cursor - Custom Kawaii Cursor for Chrome
+
