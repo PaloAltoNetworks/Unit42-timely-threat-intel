@@ -1,0 +1,31 @@
+2025-08-28 (THURSDAYS) EMPLOYEES TARGETED VIA VISHING LEADING TO PAYROLL REDIRECTION
+
+AUTHOR:
+
+- Navin Thomas
+
+NOTES:
+
+- Vishing is using phone calls for social engineering/phishing activity. The "v" in vishing stands for "voice."
+- We have investigated several recent vishing cases targeting organizations through their IT helpdesks.
+- Attackers initiate contact and impersonate company employees and claim to have lost access to their accounts.
+- Attackers attempt to persuade IT help desk technicians to reset passwords or change the phone number associated with the targeted account.
+- If the attempt is successful, the technician provides a temporary password or updates the account with an attacker-controlled phone number, or both.
+- Attackers would next register their own devices for multi-factor authentication (MFA).
+- Finally, attackers access the targeted organization's payroll portal to modify payroll elections
+- The goal is to redirect targeted employees' salaries to bank accounts the attackers control.
+
+ADDITIONAL DETAILS:
+
+- We observed targets primarily in the manufacturing and retail sectors, though other industries may also be at risk.
+- Attackers possessed sufficient personally identifiable information (PII) to pass help desk identity verification
+  -- This PII includes the targeted employee's full name, email address, employee ID and manager's name.
+- Post-compromise activity extends beyond payroll fraud, including abuse of access to sensitive employee files and corporate email.
+- To evade detection, attackers delete automated notification emails related to MFA enrollment and payroll system changes.
+- Analysis of user-agent strings and MFA application logs indicates the attackers may have used iPhones as their devices for MFA enrollment.
+- Analysis of call recordings indicates the attackers did not attempt to mask their voices.
+  -- No voice modulation or attempt to hide the attackers' accents.
+  -- These characteristics were consistent across multiple incidents.
+- Analysis of IP addresses associated with this activity indicates the attackers predominantly used a VPN service when accessing targeted accounts.
+- The attackers favor Voice Over IP (VOIP)/virtual phone numbers for these vishing attacks.
+- All of the attacker-controlled bank accounts we have discovered so far are from a single, popular online-only bank.
