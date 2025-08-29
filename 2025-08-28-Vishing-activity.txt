@@ -4,6 +4,11 @@ AUTHOR:
 
 - Navin Thomas
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_vishing-mfa-activity-7367259518306566144-eqaC/
+- https://x.com/Unit42_Intel/status/1961493831867584871
+
 NOTES:
 
 - Vishing is using phone calls for social engineering/phishing activity. The "v" in vishing stands for "voice."
