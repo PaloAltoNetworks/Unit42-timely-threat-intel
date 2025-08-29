@@ -6,8 +6,8 @@ AUTHORS:
 
 NOTES:
 
-- We discovered a phishing campaign that uses email to distribute links to fraudulent shopping sites claiming to sell luxury goods.
-- The websites use similar phishing page templates and direct payments through PayPal using different company names on the invoices.
+- We discovered an email campaign that distributes links to fraudulent shopping sites claiming to sell luxury goods.
+- The websites use similar page templates and direct payments through PayPal, using different company names on the associated invoices.
 
 DETAILS:
 
@@ -18,8 +18,8 @@ DETAILS:
 - The sender’s email addresses belong to domains that are either NXDOMAINs now or resolve to malicious IP addresses.
   -- The following Autonomous Systems (AS) for these IP addresses are in Vietnam (AS 149137, AS 149123, AS 149125). 
 - Most of the initial entry websites are under the .ru and .рф TLDs. 
-- These initial websites redirect users to the main phishing website hosting the fake shopping pages.
-- The initial entry domains and the phishing sites resolve to IP addresses in popular cloud providers in the US. 
+- These initial URLs from the emails redirect to the fraudulent shopping pages.
+- The initial entry domains and the fraudulent sites resolve to IP addresses in popular cloud providers in the US. 
 - These pages show luxury products such as watches and handbags with large discounts. 
 - These shopping pages do not use any input validation on the user information and shipping address entered for an order.
 - Upon advancing to the "confirm order" page, the site redirects users to PayPal to pay the invoice.
@@ -31,7 +31,7 @@ DETAILS:
 
 INDICATORS:
 
-SIX EXAMPLES OF SENDING ADDRESSES FROM THE PHISHING EMAILS:
+SIX EXAMPLES OF SENDING ADDRESSES FROM THE EMAILS:
 
 - custom@ppqp[.]net
 - freturbqa@5igy[.]net
@@ -40,7 +40,7 @@ SIX EXAMPLES OF SENDING ADDRESSES FROM THE PHISHING EMAILS:
 - tom@t-dom[.]net
 - yhusefourth@lutoneglobal[.]net
 
-THREE EXAMPLES OF IP ADDRESSES FROM THE SENDER'S EMAIL DOMAINS:
+THREE EXAMPLES OF IP ADDRESSES THE SENDER'S EMAIL DOMAINS RESOLVE TO:
 
 - 103.146.122[.]54
 - 103.149.86[.]145
@@ -63,7 +63,7 @@ EXAMPLE OF REDIRECTION CHAIN:
 - HTTP 200 OK —> HTML META redirect (after 1 second)
 - hxxp[:]//www.luxroxs[.]com/
 
-15 EXAMPLES OF FINAL PAGES SPOOFING SHOPS FOR LUXURY GOODS:
+15 EXAMPLES OF FINAL PAGES OF FRAUDULENT SITES FOR LUXURY GOODS:
 
 - hot-lvs[.]com
 - hottest-bags[.]com
