@@ -1,0 +1,82 @@
+2025-08-29 (FRIDAY): PHISHING CAMPAIGN SPOOFING LUXURY GOODS
+
+AUTHORS:
+
+- Reethika Ramesh, Zhanhao Chen, Daiping Liu
+
+NOTES:
+
+- We discovered a phishing campaign that uses email to distribute links to fraudulent shopping sites claiming to sell luxury goods.
+- The websites use similar phishing page templates and direct payments through PayPal using different company names on the invoices.
+
+DETAILS:
+
+- Example Email subjects:
+  -- 0MEGA & R0LEX from $250 - Timeless Elegance
+  -- Discover Luxury Watches at Unbeatable Prices!
+  -- Exclusive Luxury Bags at Only $200!
+- The sender’s email addresses belong to domains that are either NXDOMAINs now or resolve to malicious IP addresses.
+  -- The following Autonomous Systems (AS) for these IP addresses are in Vietnam (AS 149137, AS 149123, AS 149125). 
+- Most of the initial entry websites are under the .ru and .рф TLDs. 
+- These initial websites redirect users to the main phishing website hosting the fake shopping pages.
+- The initial entry domains and the phishing sites resolve to IP addresses in popular cloud providers in the US. 
+- These pages show luxury products such as watches and handbags with large discounts. 
+- These shopping pages do not use any input validation on the user information and shipping address entered for an order.
+- Upon advancing to the "confirm order" page, the site redirects users to PayPal to pay the invoice.
+- The fake luxury product  pages are registered through “CNOBIN INFORMATION TECHNOLOGY LIMITED". 
+- Over 40% of domains registered with this registrar are malicious, which gives this registrar a high malicious reputation.
+- This campaign has been active over the past three months.
+- Passive DNS traffic shows that traffic towards these domains peaked around July 17, 2025.
+- We track this campaign as luxury_shop_fraud.
+
+INDICATORS:
+
+SIX EXAMPLES OF SENDING ADDRESSES FROM THE PHISHING EMAILS:
+
+- custom@ppqp[.]net
+- freturbqa@5igy[.]net
+- karly@7eh3q[.]com	
+- pcmg@0kvv[.]net
+- tom@t-dom[.]net
+- yhusefourth@lutoneglobal[.]net
+
+THREE EXAMPLES OF IP ADDRESSES FROM THE SENDER'S EMAIL DOMAINS:
+
+- 103.146.122[.]54
+- 103.149.86[.]145
+- 103.209.34[.]205
+
+- Note: The above three IP addresses are flagged as malicious by some vendors in VirusTotal
+
+SIX EXAMPLES OF INITIAL ENTRY PAGES:
+
+- aa.xn----vtbhaakd8a4a6c[.]xn--p1ai/s45dfg6we5/sd65f49we61bre.html
+- bedrf.dsgveeryrt7[.]ru/dsfkgwetr/fg4hrty.html
+- c.xn----7sbbaibjhb9cejra7dq5mvc[.]xn--p1ai/5b46er48bf/sdf57we65b.html
+- dd.xn--80auldd3a[.]xn--p1ai/jsdyfuibrhjgerfgnqaw/sdf57we65b.html
+- fer.ipqgckbgjf[.]ru/4hg45er/fg5hrty.html
+- i.r0dxjuw[.]ru/fdghkiret/23.html
+
+EXAMPLE OF REDIRECTION CHAIN:
+
+- hxxps[:]//mm.wwwtabumaks999[.]ru/pl%20mkjsd%20jdu7w%2029fj%20ciwol/連絡先、夕食会、華中師範大学%20cjkwq.html
+- HTTP 200 OK —> HTML META redirect (after 1 second)
+- hxxp[:]//www.luxroxs[.]com/
+
+15 EXAMPLES OF FINAL PAGES SPOOFING SHOPS FOR LUXURY GOODS:
+
+- hot-lvs[.]com
+- hottest-bags[.]com
+- hottest-rox[.]com
+- hottest-watch[.]com
+- hottest-watches[.]com
+- hottop-watches[.]com
+- hottst-watches[.]com
+- lux-roxs[.]com
+- luxlvs[.]com
+- luxroxclub[.]com
+- luxroxs[.]com
+- lxrox[.]com
+- lzrox[.]com
+- lux-lv[.]com
+- sophialuxbags[.]com
