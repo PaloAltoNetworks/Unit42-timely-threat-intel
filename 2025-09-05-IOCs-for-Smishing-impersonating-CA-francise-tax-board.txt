@@ -26,7 +26,7 @@ DETAILS:
 
 17 EXAMPLES OF DOMAINS USED IN THIS CAMPAIGN:
 
-(Read registration date - domain name):
+Read: registration date of root domain - fully qualified domain name (FQDN) for phishing site:
 
 - Registered: 2025-08-28 - ftb.gov-ca-ly[.]bar
 - Registered: 2025-08-28 - ftb.gov-ca-os[.]bar
@@ -50,3 +50,5 @@ DETAILS:
 - Registered: 2025-09-03 - ftb.ca-lf[.]cc
 - Registered: 2025-09-03 - ftb.ca-ra[.]cc
 - Registered: 2025-09-03 - ftb.cagov-zbv[.]cc
+
+- Registered: 2025-09-04 - ftb.ca-zxc[.]cc
