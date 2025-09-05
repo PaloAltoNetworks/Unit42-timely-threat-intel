@@ -26,7 +26,7 @@ DETAILS:
 - Smishing messages are now more frequently sent from US phone numbers.
 - This is a shift from previous instances where the text messages were sent from foreign numbers or even email addresses.
 - Most of the phishing domains resolve to two IP addresses: 43.153.19[.]10 and 170.106.140[.]181.
-- Over 56% of the domains were registered through Dominet (HK) Limited, and 33% through Namesilo
+- Over 56% of the domains were registered through Dominet (HK) Limited, and 33% were registered through Namesilo.
 - This follows the domain registration trend observed in the prior campaigns impersonating toll services we track: com_smishing and gov_smishing.
 - We track indicators for this activity under the gov_smishing campaign.
 
