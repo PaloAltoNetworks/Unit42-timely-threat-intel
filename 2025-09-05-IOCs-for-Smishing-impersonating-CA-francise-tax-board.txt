@@ -1,4 +1,4 @@
-2025-09-05 (FRIDAY): SMISHING CAMPAIGN IMPERSONATING CALIFORNIA'S FRANCHISE TAX BOARD
+2025-09-05 (FRIDAY): SMISHING CAMPAIGN IMPERSONATING CALIFORNIA FRANCHISE TAX BOARD
 
 AUTHORS:
 
@@ -12,7 +12,7 @@ ORIGINAL REFERENCES:
 
 NOTES:
 
-- We've noted an SMS phishing (smishing) campaign impersonating California's Franchise Tax Board.
+- We've noted an SMS phishing (smishing) campaign impersonating the California Franchise Tax Board.
 - Domain names for the associated websites use combinations of "FTB," "CA" and "gov" to trick users. 
 - These sites claim to offer tax refunds, but only collect sensitive information from victims.
 - Collected data includes SSN, address and payment information.
