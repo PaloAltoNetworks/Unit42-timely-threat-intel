@@ -4,6 +4,12 @@ AUTHORS:
 
 -  Reethika Ramesh, Zhanhao Chen, Daiping Liu
 
+ORIGINAL REFERENCES:
+
+- https://www.ftb.ca.gov/about-ftb/newsroom/news-releases/2025-08-the-ftb-warns-californians.html
+- https://securityboulevard.com/2025/09/california-tax-refund-mobile-phish/
+- https://www.reddit.com/r/tax/comments/1jezt0w/is_this_text_from_the_state_of_california/
+
 NOTES:
 
 - We've noted an SMS phishing (smishing) campaign impersonating California's Franchise Tax Board.
@@ -13,7 +19,7 @@ NOTES:
 
 DETAILS:
 
-- These text messages are a new wave of smishing targeting services and government organizations in the US and worldwide.
+- These text messages are the latest wave of smishing targeting services and government organizations in the US and worldwide.
 - Over 400 domains were registered in the past week alone for this campaign.
 - URLs from these texts lead to phishing pages that masquerade as California’s Franchise Tax Board government website.
 - Phishing pages ask users to submit their SSN, address and other information such as debit card numbers.
