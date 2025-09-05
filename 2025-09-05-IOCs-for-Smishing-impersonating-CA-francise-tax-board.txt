@@ -1,0 +1,52 @@
+2025-09-05 (FRIDAY): SMISHING CAMPAIGN IMPERSONATING CALIFORNIA'S FRANCHISE TAX BOARD
+
+AUTHORS:
+
+-  Reethika Ramesh, Zhanhao Chen, Daiping Liu
+
+NOTES:
+
+- We've noted a SMS phishing (smishing) campaign impersonating California's Franchise Tax Board.
+- Domains names for the associated websites use combinations of "FTB," "CA" and "gov" to trick users. 
+- These sites claim to offer tax refunds, but only collect sensitive information from victims.
+- Collected data includes SSN, address and payment information.
+
+DETAILS:
+
+- These text messages are a new wave of smishing targeting services and government organizations in the US and worldwide.
+- Over 400 domains were registered in the past week alone for this campaign.
+- URLs from these texts lead to phishing pages that masquerade as California’s Franchise Tax Board government website.
+- Phishing pages ask users to submit their SSN, address and other information such as debit card numbers.
+- Smishing messages are now more frequently sent from US phone numbers.
+- This is a shift from previous instances where the text messages were sent from foreign numbers or even email addresses.
+- Most of the phishing domains resolve to two IP addresses: 43.153.19[.]10 and 170.106.140[.]181.
+- Over 56% of the domains were registered through Dominet (HK) Limited, and 33% through Namesilo
+- This follows the domain registration trend observed in the prior campaigns impersonating toll services we track: com_smishing and gov_smishing.
+- We track indicators for this activity under the gov_smishing campaign.
+
+17 EXAMPLES OF DOMAINS USED IN THIS CAMPAIGN:
+
+(Read registration date - domain name):
+
+- Registered: 2025-08-28 - ftb.gov-ca-ly[.]bar
+- Registered: 2025-08-28 - ftb.gov-ca-os[.]bar
+- Registered: 2025-08-28 - ftb.gov-ca-ul[.]bar
+- Registered: 2025-08-28 - ftb.gov-ca-wv[.]bar
+
+- Registered: 2025-08-30 - ftb.cagov-alo[.]cc
+
+- Registered: 2025-08-31 - ftb.ca-ne[.]cc
+- Registered: 2025-08-31 - ftb.ca-nu[.]cc
+
+- Registered: 2025-09-01 - ftb.cagov-bd[.]cfd
+- Registered: 2025-09-01 - ftb.cagov-lba[.]cc
+- Registered: 2025-09-01 - ftb.cagov-ose[.]cc
+
+- Registered: 2025-09-02 - ftb.ca-gov-qn[.]cfd
+- Registered: 2025-09-02 - ftb.cagov-tug[.]cc
+
+- Registered: 2025-09-03 - ftb.ca-gov-xq[.]top
+- Registered: 2025-09-03 - ftb.ca-lb[.]cc
+- Registered: 2025-09-03 - ftb.ca-lf[.]cc
+- Registered: 2025-09-03 - ftb.ca-ra[.]cc
+- Registered: 2025-09-03 - ftb.cagov-zbv[.]cc
