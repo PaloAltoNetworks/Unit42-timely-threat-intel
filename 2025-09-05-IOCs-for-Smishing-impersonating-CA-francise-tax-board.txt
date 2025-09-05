@@ -14,7 +14,7 @@ NOTES:
 
 - We've noted an SMS phishing (smishing) campaign impersonating the California Franchise Tax Board.
 - Domain names for the associated websites use combinations of "FTB," "CA" and "gov" to trick users. 
-- These sites claim to offer tax refunds, but only collect sensitive information from victims.
+- These sites claim to offer tax refunds, but they only collect sensitive information from victims.
 - Collected data includes SSN, address and payment information.
 
 DETAILS:
