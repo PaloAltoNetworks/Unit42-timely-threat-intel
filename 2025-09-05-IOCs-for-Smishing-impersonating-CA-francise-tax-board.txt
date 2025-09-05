@@ -30,7 +30,7 @@ DETAILS:
 - This follows the domain registration trend observed in the prior campaigns impersonating toll services we track: com_smishing and gov_smishing.
 - We track indicators for this activity under the gov_smishing campaign.
 
-17 EXAMPLES OF DOMAINS USED IN THIS CAMPAIGN:
+18 EXAMPLES OF DOMAINS USED IN THIS CAMPAIGN:
 
 Read: registration date of root domain - fully qualified domain name (FQDN) for phishing site:
 
