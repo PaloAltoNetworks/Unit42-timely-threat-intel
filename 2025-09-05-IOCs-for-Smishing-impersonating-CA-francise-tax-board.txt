@@ -1,4 +1,4 @@
-2025-09-05 (FRIDAY): SMISHING CAMPAIGN IMPERSONATING CALIFORNIA FRANCHISE TAX BOARD
+2025-09-05 (FRIDAY): SMISHING CAMPAIGN IMPERSONATING TAX BOARDS
 
 AUTHORS:
 
@@ -16,6 +16,7 @@ NOTES:
 - Domain names for the associated websites use combinations of "FTB," "CA" and "gov" to trick users. 
 - These sites claim to offer tax refunds, but they only collect sensitive information from victims.
 - Collected data includes SSN, address and payment information.
+- - This campaign is expanding to target tax departments in other U.S. states such as North Dakota and Ohio.
 
 DETAILS:
 
@@ -58,3 +59,9 @@ Read: registration date of root domain - fully qualified domain name (FQDN) for 
 - Registered: 2025-09-03 - ftb.cagov-zbv[.]cc
 
 - Registered: 2025-09-04 - ftb.ca-zxc[.]cc
+
+- Registered: 2025-09-08 - ohio-gov-na[.]bar  <-- Ohio
+- Registered: 2025-09-08 - ohio-gov-tc[.]bar  <-- Ohio
+- Registered: 2025-09-08 - ohio-gov-df[.]bar  <-- Ohio
+
+- Registered: 2025-09-09 - payoehl[.]cc  <-- North Dakota
