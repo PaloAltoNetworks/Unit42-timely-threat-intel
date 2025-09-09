@@ -16,7 +16,7 @@ NOTES:
 - Domain names for the associated websites use combinations of "FTB," "CA" and "gov" to trick users. 
 - These sites claim to offer tax refunds, but they only collect sensitive information from victims.
 - Collected data includes SSN, address and payment information.
-- - This campaign is expanding to target tax departments in other U.S. states such as North Dakota and Ohio.
+- This campaign is expanding to target tax departments in other U.S. states such as North Dakota and Ohio.
 
 DETAILS:
 
@@ -31,7 +31,7 @@ DETAILS:
 - This follows the domain registration trend observed in the prior campaigns impersonating toll services we track: com_smishing and gov_smishing.
 - We track indicators for this activity under the gov_smishing campaign.
 
-18 EXAMPLES OF DOMAINS USED IN THIS CAMPAIGN:
+22 EXAMPLES OF DOMAINS USED IN THIS CAMPAIGN:
 
 Read: registration date of root domain - fully qualified domain name (FQDN) for phishing site:
 
