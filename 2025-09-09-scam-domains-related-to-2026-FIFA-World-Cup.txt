@@ -7,24 +7,24 @@ AUTHORS:
 NOTES:
 
 - Threat actors are registering domains that seem related to the 2026 FIFA World Cup. 
-- Sites for these domains often promote suspcious or malicious activity
+- Sites for these domains often promote suspicious or malicious activity
 
 DETAILS:
 
-- Access to tickets for the upcoming FIFA World Cup in 2026 are being conducted in phases.
+- Access to tickets for the upcoming FIFA World Cup in 2026 is being conducted in phases.
 - These phases start over a year before the event.
-- So attackers are starting to ramp up early with fraudulent web sites.
-- We observed a peak in the number of FIFA World Cup related domain registrations in June 2025.
-  -- This is a year before before the tournament starts in June 2026. 
+- So attackers are starting to ramp up early with fraudulent websites.
+- We observed a peak in the number of FIFA World Cup-related domain registrations in June 2025.
+  -- This is a year before the tournament starts in June 2026. 
 - Not all registered domains are malicious, but we find suspicious behavior from them, including:
   -- monetized parking sites
   -- domain squatting,
-  -- domain resellin
+  -- domain reselling
   -- betting
   -- gambling
   -- pirated streams
   -- distributing gambling apps and other potentially unwanted applications
-- These domains resolve to cloud hosted IP addresses, many having malicious verdicts on VirusTotal: 
+- These domains resolve to cloud-hosted IP addresses, many having malicious verdicts on VirusTotal: 
   -- 13.248.169[.]48
   -- 76.223.54[.]146
   -- 104.21.96[.]1
@@ -37,7 +37,7 @@ DETAILS:
 - These unofficial ticket websites mimic secondary reselling markets:
   -- They do not validate user information beyond credit card details. 
   -- They claim tickets will be delivered through the official 2026 World Cup ticketing app.
-  -- They directly collect payment information and may charge victims from their sites.
+  -- They directly collect payment information and may charge victims on their sites.
 
 EXAMPLES OF ASSOCIATED DOMAINS:
 
@@ -63,8 +63,7 @@ GAMBLING:
 - 520worldcup[.]com
 - fifacwc-zq-shijubei[.]com
 - klikfifafun[.]club
-zh-fifaclub-cwc[.]com
-
+- zh-fifaclub-cwc[.]com
 
 DISTRIBUTING POTENTIALLY UNWANTED APPLICATIONS/PROGRAMS:
 
