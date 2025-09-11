@@ -1,4 +1,7 @@
 2025-09-11: MALVERTISING CAMPAIGN PUSHING DANGLING COMMITS IN OFFICIAL GITHUB REPO 
+References:
+X: https://twitter.com/Unit42_Intel/status/1966180481407263207
+LinkedIn: https://www.linkedin.com/feed/update/urn:li:ugcPost:7371946133910114305
 
 AUTHORS:
 
@@ -12,7 +15,7 @@ NOTES:
 
 DETAILS:
 
-- Since early August we've identified at least four different cases where a threat actor leveraged dangling commits in accordance with a malvertising campaign to push a fake GitHub desktop client
+- Since early August, we've identified at least four different cases where a threat actor leveraged dangling commits in accordance with a malvertising campaign to push a fake GitHub desktop client
 - Our telemetry revealed victims in the United States, Europe, South America, and Asia. Affected industries included communication, tourism, software, public services, e-commerce, and retail.
 - The overall scheme was as follows:
   -- Creating a disposable GitHub user
@@ -21,7 +24,7 @@ DETAILS:
   –  Deleting the user
   -- The attacker abuses the forking functionality and introduces the malicious commit into the legitimate repository, e.g. https://www.github.com/desktop/desktop/tree/{insert malicious commit hash here}
  - This link leads to the malicious commit although one may be convinced to think it is part of the verified desktop repository 
- - Since GitHub does present a warning at the top of the page the threat actor used an anchor to link to the middle of the page so the potential victim effectively misses the warning
+ - Since GitHub presents a warning at the top of the page, the threat actor used an anchor to link to the middle of the page so the potential victim effectively misses the warning
 
 INDICATORS OF COMPROMISE:
 
@@ -54,4 +57,5 @@ INDICATORS OF COMPROMISE:
  --  ad07ffab86a42b4befaf7858318480a556a2e7c272604c3f1dcae0782339482e
  --  efcf5fe467f0ba8f990bcdfc063290b2cf3e8590455e6c7c8fe0f7373a339f36
  --  ed1811c16a91648fe60f5ee7d69fe455d0a3855eebb2f3d56909b7912de172fd
+
  --  2a1c127683dba19399cc6516d5700d4e756933889dad156cd62b992aaf732816 
