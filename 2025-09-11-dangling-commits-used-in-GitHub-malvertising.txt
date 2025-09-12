@@ -15,7 +15,7 @@ NOTES:
 
 DETAILS:
 
-- Since early August, we've identified at least four different cases where a threat actor leveraged dangling commits in accordance with a malvertising campaign to push a fake GitHub desktop client
+- Since early August, we've identified at least eight different cases where a threat actor leveraged dangling commits in accordance with a malvertising campaign to push a fake GitHub desktop client
 - Our telemetry revealed victims in the United States, Europe, South America, and Asia. Affected industries included communication, tourism, software, public services, e-commerce, and retail.
 - The overall scheme was as follows:
   -- Creating a disposable GitHub user
@@ -59,3 +59,4 @@ INDICATORS OF COMPROMISE:
  --  ed1811c16a91648fe60f5ee7d69fe455d0a3855eebb2f3d56909b7912de172fd
 
  --  2a1c127683dba19399cc6516d5700d4e756933889dad156cd62b992aaf732816 
+
