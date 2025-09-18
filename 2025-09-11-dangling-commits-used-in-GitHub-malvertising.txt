@@ -4,6 +4,11 @@ AUTHORS:
 
 - Yoav Zemah, Omer Gil, Asi Greenholts, Gal Bitensky
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malvertising-activity-7371946134786940930-GRvM/
+- https://x.com/Unit42_Intel/status/1966180481407263207
+
 NOTES:
 
 - Dangling commit is a technique where a commit to a forked repository is presented as if it was part of the original repository.
@@ -64,4 +69,5 @@ SHA256 HASHES FOR 7 ASSOCIATED MALWARE FILES:
 - ad07ffab86a42b4befaf7858318480a556a2e7c272604c3f1dcae0782339482e
 - efcf5fe467f0ba8f990bcdfc063290b2cf3e8590455e6c7c8fe0f7373a339f36
 - ed1811c16a91648fe60f5ee7d69fe455d0a3855eebb2f3d56909b7912de172fd
+
 
