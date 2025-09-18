@@ -1,0 +1,66 @@
+2025-09-18 (THURSDAY): MALVERTISING CAMPAIGN USES DANGLING COMMITS IN OFFICIAL GITHUB REPOSITORY
+
+AUTHORS:
+
+- Yoav Zemah, Omer Gil, Asi Greenholts, Gal Bitensky
+
+NOTES:
+
+- Dangling commit is a technique where a commit to a forked repository is presented as if it was part of the original repository.
+- For an earlier example of dangling commits see:
+  -- https://unit42.paloaltonetworks.com/github-actions-supply-chain-attack/#post-138681-_5bj9rp99k4ek
+
+DETAILS:
+
+- Since early August 2025, we've identified at least four different cases where a threat actor leveraged dangling commits.
+- This activity is part of a malvertising campaign to push malware disguised as a GitHub desktop client.
+- Our telemetry reveals potential victims in the United States, Europe, South America and Asia. 
+- Affected industries included communication, tourism, software, public services, e-commerce and retail.
+- The overall scheme was as follows:
+  -- Create a disposable GitHub user account
+  –- Fork the target repository
+  –- Create a malicious commit 
+  –- Delete the disposable GitHub user account
+- This technique abuses the forking functionality and introduces a link for a malicious commit into the legitimate repository
+  -- For example: hxxps[:]//www.github[.]com/desktop/desktop/tree/{insert malicious commit hash here}
+- The above example might convince victims that it is part of the verified desktop repository, but this link leads to the malicious commit.
+- Since GitHub presents a warning at the top of the page, the threat actor used an anchor to link to the middle of the page.
+  -- Because of this, potential victims effectively miss the warning.
+
+INDICATORS OF COMPROMISE:
+
+KNOWN MALICIOUS COMMIT HASHES:
+
+- 3b3e14cec9f2c7f9567bb1a50ece12d4eb337305
+- 629f3ab77b0c6840618029d39869d078f8a5a694
+- 636f5d478fa774635da5b25ecb842822ab444009 (associated with @HTarehu)
+- a48188b0d5bdc3e8728cb37619cc51f7392b086f
+
+URL FORMAT USED IN MALVERTISEMENTS:
+
+- hxxps://github[.]com/desktop/desktop/tree/636f5d478fa774635da5b25ecb842822ab444009?tab=readme-ov-file&gad_source=1&gad_campaignid={redacted}&gclid={redacted}#download-github-desktop
+
+ASSOCIATED DISPOSABLE GITHUB USER ACCOUNT:
+
+- HTarehu (vilenakoroleva000@rambler.ru)
+
+DOMAINS FOR SERVERS HOSTING THE MALWARE:
+
+- downloadingpage[.]my
+- feelsifuyerza[.]com
+- git-desktop[.]app
+- gitpage[.]app
+- oguiuweyqwe[.]online
+- poiwerpolymersinc[.]online
+- powiquwieree[.]com
+- slepseetwork[.]online
+
+SHA256 HASHES FOR 7 ASSOCIATED MALWARE FILES:
+
+- 0b9afc9019f3074c429025e860294cb9456510609dd1dca8e8378753ade5a17e
+- 2a1c127683dba19399cc6516d5700d4e756933889dad156cd62b992aaf732816 
+- ec89c0ffc755eafc61bbf3b9106e0d9d7cbfaa9e70fbe17d9e4fbb9a7d38be64
+- e252bb114f5c2793fc6900d49d3c302fc9298f36447bbf242a00c10887c36d71
+- ad07ffab86a42b4befaf7858318480a556a2e7c272604c3f1dcae0782339482e
+- efcf5fe467f0ba8f990bcdfc063290b2cf3e8590455e6c7c8fe0f7373a339f36
+- ed1811c16a91648fe60f5ee7d69fe455d0a3855eebb2f3d56909b7912de172fd
