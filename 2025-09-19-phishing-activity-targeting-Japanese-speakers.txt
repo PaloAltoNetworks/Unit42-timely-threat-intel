@@ -1,0 +1,132 @@
+2025-09-19 (FRIDAY): PHISHING CAMPAIGN TARGETING JAPANESE SPEAKERS
+
+AUTHOR:
+
+- Reethika Ramesh, Zhanhao Chen, Daiping Liu
+
+NOTES:
+
+- We've been tracking recent wave of email-based phishing activity targeting Japanese speakers.
+- These phishing campaigns impersonate companies like Amazon and Apple, banks and other airlines.
+- Attackers craft emails disguised as notices on safety or fake purchases with convincing URLs to phishing sites.
+
+DETAILS:
+
+- Since April 2025, we have observed phishing emails impersonating many popular companies in Japan.
+  -- The list of impersonated companies includes Amazon, Apple and Japan Airlines, among others. 
+  -- Initial waves of these emails contained URLs that directed users to fraudulent Amazon CAPTCHA pages.
+  -- These pages were likely designed to harvest user credentials and other sensitive data.
+- In August 2025, we observed a second wave of emails where the URLs embedded in the email use the following format:
+  jump.gdblmc[.]com/RAIMyn?www.amazon[.]co[.]jp/ap/signin. 
+- The above URL redirects to the final landing page at www.amazon[.]co[.]jp.gearheinz[.]com/ap/signin,
+  -- This URL mimics Amazon's domain name in its subdomain. 
+  -- These landing pages are cloaked, directing visits to this site to a 404 error when crawled.
+- In September 2025, we observed two different types of URLs embedded in the newest wave of phishing emails. 
+  -- One set of URLs contains parameters that mimic real Amazon web URLs (/ap/signin/openid/net2F). 
+     -- Like the August 2025 wave, associated landing pages for these URLs are also heavily cloaked. 
+     -- However, we observe API calls made through a JavaScript are called from in the webpage. 
+     -- For example, URL hxxps[:]//vlupe[.]cn/ap/signin/openid/net2F/ makes API calls to the following url:
+        hxxps[:]//vlupe[.]cn/open/?apiName=8F1C1nStkUrc8hsCSVns9JXVnQ9jB8ORjLCU3x1z3otqPKYDQMAfLNKqXLfOflnz 
+        which returns a 404 Not Found error.
+  -- The second set of URLs use the format: secure.oamzon[.]co[.]jp.<DOMAIN>[.]<TLD>. 
+     -- The subdomain secure.oamzon[.]co[.]jp in the above URL is a typosquatted domain, mispelling "amazon" as "oamzon" 
+     -- Senders for this wave of emails have "Amazon.co.jp" listed in the sender’s name.
+     -- But the sender’s email addresses belonged to other different domain names.
+- These phishing email campaigns are continuously evolving and continue employing cloaking techniques to hide their landing pages.
+- For emails impersonating Amazon, the senders always have "Amazon" as the beginning characters of the email addresses. 
+  -- Examples: Amazon.yumoka3@rflt[.]com and Amazon.ai_iii@vftvhnw[.]com. 
+- Domains for these email sending addresses are a mix of older registered domains and more recently registered ones. 
+- The associated domains also under a range of different TLDs including .com, .net, .jp, .co.id, .cn, etc.  
+- We have observed similar phishing emails impersonating technology, travel, banking and investment sites, such as:
+  -- Apple
+  -- Mitsubishi UFJ Bank
+  -- Sumitomo Mitsui Card Co
+  -- Japan Airlines (JAL)
+  -- ANA Airlines
+- We track this campaign as: japan_phishcloak
+
+INDICATORS OF COMPROMISE:
+
+EXAMPLES OF APRIL 2025 URLS LEADING TO FAKE CAPTCHA PAGES IMPERSONATING AMAZON (INITIAL WAVE):
+
+- jp.tsity[.]com/token?token=3DZcfA7BJe=
+- piy.wjzmzp[.]com/token?token=3DW0bVUzYu4T4Q64E=
+- telogin.jjh521[.]com/token?token=3Dv4jl4FxperZa=
+
+EXAMPLES OF AUGUST 2025 URLS FROM EMAILS IMPERSONATING AMAZON (SECOND WAVE):
+
+- jump.activeeve[.]com/IHdPmS?amazon.co.jp/amazon_update&amp
+- jump.gdblmcp[.]com/RAIMyn?www.amazon.co.jp/ap/signin
+
+- Note: While active, the above URLs redirected to:
+  -- hxxps[:]//www.amazon.co.jp.gearheinz[.]com/ap/signin/
+
+EXAMPLES OF SEPTEMBER 2025 URLS (THIRD WAVE):
+
+- aqielaxi[.]cn/ap/signin/openid/net2F
+- cfsrvbu[.]cn/ap/signin/openid/net2F
+- moqcxu[.]cn/ap/signin/openid/net2F
+- orqiwiaa[.]cn/ap/signin/openid/net2F
+- nmfoq[.]cn/ap/signin/openid/net2F
+- pspmdeeo[.]cn/ap/signin/openid/net2F
+- rnctj[.]cn/ap/signin/openid/net2F
+- rxupja[.]cn/ap/signin/openid/net2F
+- snrmfxko[.]cn/ap/signin/openid/net2F
+- uxfjl[.]cn/ap/signin/openid/net2F
+- vlupe[.]cn/ap/signin/openid/net2F
+
+- Note 1: The majority of these domains were registered over a year ago
+- Note 2: These domains changed nameservers and hosting IP address between 2025-09-01 to 2025-09-02.
+
+MOST RECENT EXAMPLES OF SEPTEMBER 2025 URLS (LATEST WAVE):
+
+- secure.oamzon[.]co[.]jp.icatlar[.]net
+- secure.oamzon[.]co[.]jp.ideeco[.]net
+- secure.oamzon[.]co[.]jp.ispol[.]net
+- secure.oamzon[.]co[.]jp.itbdqn[.]net
+- secure.oamzon[.]co[.]jp.jiahongdiban[.]com
+- secure.oamzon[.]co[.]jp.kamicop[.]net
+- secure.oamzon[.]co[.]jp.largessemedia[.]com
+- secure.oamzon[.]co[.]jp.leaderga[.]com
+- secure.oamzon[.]co[.]jp.linefilm[.]net
+- secure.oamzon[.]co[.]jp.lmsconsult[.]net
+
+- IP addresses the above FQDNs resolve to:
+  -- 43.165.185[.]55 (Japanese IP, AS 132203 (Tencent))
+  -- 47.79.145[.]68 (Japanese IP, AS 45102 (Alibaba))
+  -- 47.79.150[.]163 (Japanese IP, AS 45102 (Alibaba))
+
+- Targeting other services:
+  -- Apple
+     --- 78jn0dq[.]cn/puvxrokt
+     --- a8wcinm[.]cn/puvxrokt
+     --- drsxsz[.]cn/puvxrokt
+     --- ksh3c3n[.]cn/signIn/account/ssi=
+     --- mqccf[.]cn/puvxrokt
+  -- Banking
+     --- fhrkn[.]cn/koljin/tep/direct/loging/shink=A4MzY
+     --- e-t-c-meisai3.an4yu[.]cyou/wfuucigy
+  -- ANA and JAL
+     --- jump.smxxns[.]com/jloxWv?hxxps[:]//www.ana[.]co[.]jp/ja/jp/
+     --- track.darack[.]com/zX440m?www.jal[.]com//up
+
+EMAIL SENDERS OBSERVED:
+
+- Amazon.ai_iii@vftvhnw[.]com
+- Amazon.asa.e@futagawa-foods.co[.]jp
+- Amazon.cetoru@gyutan[.]jp
+- Amazon.embutsu@nypf[.]com
+- Amazon.kainanatai@news.wowma[.]jp
+- Amazon.kiyoantx10@f65eqr.kyxbe[.]cn
+- Amazon.ktakeru@azsia[.]net
+- Amazon.nimdras@ld-lab.co[.]jp
+- Amazon.syatem@kucek[.]net
+- Amazon.tetsu-i@elkns[.]com
+- Amazon.tolui@api.youvit.co[.]id
+- Amazon.yumoka3@rflt[.]com
+- Apple.bonkin@jgau[.]com
+- Apple.kiraku@fzIm[.]com
+- Apple.jv0159nh@dutts[.]net
+- Apple.sankyu@zoLK[.]com
+
+- Note: Amazon.embutsu@nypf[.]com was observed sending a phishing email impersonating Mitsubishi UFJ Financial Group (MUFG) bank.
