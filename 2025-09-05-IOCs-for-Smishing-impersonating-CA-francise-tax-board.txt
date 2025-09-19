@@ -4,6 +4,11 @@ AUTHORS:
 
 -  Reethika Ramesh, Zhanhao Chen, Daiping Liu
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_smishing-activity-7371528038871691264-LS_V/
+- https://x.com/Unit42_Intel/status/1965762380589130231
+
 ORIGINAL REFERENCES:
 
 - https://www.ftb.ca.gov/about-ftb/newsroom/news-releases/2025-08-the-ftb-warns-californians.html
