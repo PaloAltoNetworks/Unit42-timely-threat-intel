@@ -6,7 +6,7 @@ AUTHOR:
 
 NOTES:
 
-- We've been tracking recent wave of email-based phishing activity targeting Japanese speakers.
+- We've been tracking a recent wave of email-based phishing activity targeting Japanese speakers.
 - These phishing campaigns impersonate companies like Amazon and Apple, banks and other airlines.
 - Attackers craft emails disguised as notices on safety or fake purchases with convincing URLs to phishing sites.
 
@@ -24,19 +24,19 @@ DETAILS:
 - In September 2025, we observed two different types of URLs embedded in the newest wave of phishing emails. 
   -- One set of URLs contains parameters that mimic real Amazon web URLs (/ap/signin/openid/net2F). 
      -- Like the August 2025 wave, associated landing pages for these URLs are also heavily cloaked. 
-     -- However, we observe API calls made through a JavaScript are called from in the webpage. 
+     -- However, we observe API calls made through JavaScript are called from within the webpage. 
      -- For example, URL hxxps[:]//vlupe[.]cn/ap/signin/openid/net2F/ makes API calls to the following url:
         hxxps[:]//vlupe[.]cn/open/?apiName=8F1C1nStkUrc8hsCSVns9JXVnQ9jB8ORjLCU3x1z3otqPKYDQMAfLNKqXLfOflnz 
         which returns a 404 Not Found error.
-  -- The second set of URLs use the format: secure.oamzon[.]co[.]jp.<DOMAIN>[.]<TLD>. 
+  -- The second set of URLs uses the format: secure.oamzon[.]co[.]jp.<DOMAIN>[.]<TLD>. 
      -- The subdomain secure.oamzon[.]co[.]jp in the above URL is a typosquatted domain, mispelling "amazon" as "oamzon" 
      -- Senders for this wave of emails have "Amazon.co.jp" listed in the sender’s name.
-     -- But the sender’s email addresses belonged to other different domain names.
+     -- But the sender’s email addresses belonged to different domain names.
 - These phishing email campaigns are continuously evolving and continue employing cloaking techniques to hide their landing pages.
 - For emails impersonating Amazon, the senders always have "Amazon" as the beginning characters of the email addresses. 
   -- Examples: Amazon.yumoka3@rflt[.]com and Amazon.ai_iii@vftvhnw[.]com. 
 - Domains for these email sending addresses are a mix of older registered domains and more recently registered ones. 
-- The associated domains also under a range of different TLDs including .com, .net, .jp, .co.id, .cn, etc.  
+- The associated domains are also under a range of different TLDs, including .com, .net, .jp, .co.id, .cn, etc.  
 - We have observed similar phishing emails impersonating technology, travel, banking and investment sites, such as:
   -- Apple
   -- Mitsubishi UFJ Bank
