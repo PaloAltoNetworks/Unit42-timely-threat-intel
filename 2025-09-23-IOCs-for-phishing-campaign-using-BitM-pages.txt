@@ -27,7 +27,7 @@ DETAILS:
 - The fake browser window impersonates a Facebook login page and displays a legitimate Facebook login URL.
 - This fake browser window is used to collect login credentials for Facebook accounts.
 - This campaign occasionally changes the domains of its URLs for the BitM landing pages.
-- Therefore, the same link from a phishing email may not land on the same BitM page from one day to the next.
+- Therefore, the same link from a phishing email may not land on the same BitM page from one week to the next.
 - Pivoting on current information shows indicators of this campaign as early as April 2025.
 
 INDICATORS:
@@ -43,20 +43,24 @@ INDICATORS:
 - hxxps[:]//loanch46.short[.]gy/a38
 - hxxps[:]//lYNFdb.short[.]gy/PInYEM
 
-EIGHT EXAMPLES OF LINKS THAT REDIRECT TO THE FINAL BITM URLS:
+TWELVE EXAMPLES OF LINKS THAT REDIRECT TO THE FINAL BITM URLS:
 
 - hxxps[:]//162.245.238[.]224/  **
+- hxxps[:]//ananmajsna[.]com/
 - hxxps[:]//cammeorio2[.]xyz/
+- ​​hxxps[:]//capchametahozion-12[.]top/  **
 - hxxps[:]//chickken[.]top/  **
 - hxxps[:]//chickken1[.]top/  **
 - hxxps[:]//chickenkentou12[.]pics/
 - hxxps[:]//chickenkentou12[.]top/  **
+- hxxps[:]//cunharamos123[.]com/
 - hxxps[:]//habanacuba83s[.]info/
 - hxxps[:]//roadmaps12[.]com/
+- hxxps[:]//thuramkia123[.]com/
 
 - Note: URLs marked ** are currently active and redirect to the capchametasite125[.]icu URL below.
 
-TWO EXAMPLES OF FINAL BITM URLS ACTIVE ON 2025-09-23:
+TWO EXAMPLES OF FINAL BITM URLS CURRENTLY ACTIVE AS OF 2025-09-23:
 
 - hxxps[:]//capchametasite125[.]icu/two_stepz_verytfications/authentication
 - hxxps[:]//captcha-metacloudm[.]com/two_step_verification/authentication
@@ -248,6 +252,7 @@ TWO EXAMPLES OF FINAL BITM URLS ACTIVE ON 2025-09-23:
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
 
 
 
