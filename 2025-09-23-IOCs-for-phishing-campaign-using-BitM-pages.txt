@@ -32,8 +32,8 @@ DETAILS:
 
 INDICATORS:
 
-Note: Most of the phishing emails contain URL-shortener links that lead to a redirect URL or the final BitM URL.  
-      7 recent examples follow:
+Most of the phishing emails contain URL-shortener links that lead to a redirect URL or the final BitM URL.  
+7 recent examples follow:
 
 - hxxps[:]//0wtsid.short[.]gy/8OfS3G
 - hxxps[:]//481g2g.short[.]gy/JSHTu8
@@ -67,7 +67,7 @@ TWO EXAMPLES OF FINAL BITM URLS ACTIVE ON 2025-09-23:
 
 18 HISTORICAL EXAMPLES OF DOMAINS FOR "TWO_STEPZ_VERYTFICATIONS/AUTHENTSTICATION" BITM PHISHING URLS AS EARLY AS 2025-06-17:
 
-Note: none of these domains currently resolve to an IP address.
+- Note: none of these domains currently resolve to an IP address.
 
 - auth-meta[.]top
 - authmeta[.]biz
@@ -90,7 +90,7 @@ Note: none of these domains currently resolve to an IP address.
 
 156 HISTORICAL EXAMPLES OF DOMAINS FOR "TWO_STEP_VERIFICATION/AUTHENTICATION" BITM PHISHING URLS AS EARLY AS 2025-04-16:
 
-Note: none of these domains currently resolve to an IP address.
+- Note: none of these domains currently resolve to an IP address.
 
 - anmanianer412[.]com
 - antibot-meta[.]com
@@ -248,4 +248,5 @@ Note: none of these domains currently resolve to an IP address.
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
 
