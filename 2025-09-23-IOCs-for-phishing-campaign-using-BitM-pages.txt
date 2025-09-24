@@ -32,8 +32,8 @@ DETAILS:
 
 INDICATORS:
 
-Most of the phishing emails contain URL-shortener links that lead to a redirect URL or the final BitM URL.  
-7 recent examples follow:
+- Most of the phishing emails contain URL-shortener links that lead to a redirect URL or the final BitM URL.  
+- 7 recent examples follow:
 
 - hxxps[:]//0wtsid.short[.]gy/8OfS3G
 - hxxps[:]//481g2g.short[.]gy/JSHTu8
@@ -248,5 +248,6 @@ TWO EXAMPLES OF FINAL BITM URLS ACTIVE ON 2025-09-23:
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
 
 
