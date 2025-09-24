@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Beliz Kaleli, Alex Starov, Lucas Hu, Shawn Huang, Nabeel Mohamed
+- Beliz Kaleli, Alex Starov, Lucas Hu, Shawn Huang, Nabeel Mohamed, Bradley Duncan
 
 NOTES:
 
@@ -252,5 +252,6 @@ TWO EXAMPLES OF FINAL BITM URLS CURRENTLY ACTIVE AS OF 2025-09-23:
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
 
 
