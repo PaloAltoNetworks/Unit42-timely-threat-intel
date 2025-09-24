@@ -23,7 +23,7 @@ DETAILS:
 - BitM is a technique that displays a fake browser window within a potential victim's legitimate browser window.
 - These fake browser windows display a legitimate URL, but the content is used to steal login credentials.
 - In this particular campaign, the phishing emails contain links that lead to a Meta-themed fake CAPTCHA page.
-- Clicking the "I'm not a robot" box on fake CAPTCHA page will display the fake browser window.
+- Clicking the "I'm not a robot" box on the fake CAPTCHA page will display the fake browser window.
 - The fake browser window impersonates a Facebook login page and displays a legitimate Facebook login URL.
 - This fake browser window is used to collect login credentials for Facebook accounts.
 - This campaign occasionally changes the domains of its URLs for the BitM landing pages.
@@ -32,7 +32,7 @@ DETAILS:
 
 INDICATORS:
 
-Note: Most of the phishing emails contain URL-shortener links that led to a redirect URL or the final BitM URL.  
+Note: Most of the phishing emails contain URL-shortener links that lead to a redirect URL or the final BitM URL.  
       7 recent examples follow:
 
 - hxxps[:]//0wtsid.short[.]gy/8OfS3G
@@ -248,3 +248,4 @@ Note: none of these domains currently resolve to an IP address.
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
