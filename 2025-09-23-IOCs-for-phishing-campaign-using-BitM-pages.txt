@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- We're tracking a phishing activity active as early as April 2025 that uses the browser-in-the-middle (BitM) technique.
+- We're tracking a phishing campaign active as early as April 2025 that uses the browser-in-the-middle (BitM) technique.
 - This campaign is impersonating Meta and Facebook for its phishing pages.
 - We have found copyright infringement notices used as phishing emails with the initial URLs for this activity.
 - This campaign remains active, as we continue to find new domains and URLs. 
@@ -252,3 +252,4 @@ TWO EXAMPLES OF FINAL BITM URLS CURRENTLY ACTIVE AS OF 2025-09-23:
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
