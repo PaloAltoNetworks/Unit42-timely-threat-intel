@@ -1,0 +1,250 @@
+2025-09-23 (TUESDAY): ONGOING PHISHING CAMPAIGN USING BROWSER-IN-THE-MIDDLE (BITM) TECHNIQUE
+
+AUTHORS:
+
+- Beliz Kaleli, Alex Starov, Lucas Hu, Shawn Shuang, Nabeel Mohamed
+
+NOTES:
+
+- We're tracking a phishing activity active as early as April 2025 that uses the browser-in-the-middle (BitM) technique.
+- This campaign is impersonating Meta and Facebook for its phishing pages.
+- We have found copyright infringement notices used as phishing emails with the initial URLs for this activity.
+- This campaign remains active, as we continue to find new domains and URLs. 
+
+CURRENT CHAIN OF EVENTS:
+
+- email --> URL from message --> redirect URL --> Phishing page using BitM
+
+- Note: We found variations of this chain
+  For example, at least one phishing email from 2025-04-19 linked directly to the BitM page.
+
+DETAILS:
+
+- BitM is a technique that displays a fake browser window within a potential victim's legitimate browser window.
+- These fake browser windows display a legitimate URL, but the content is used to steal login credentials.
+- In this particular campaign, the phishing emails contain links that lead to a Meta-themed fake CAPTCHA page.
+- Clicking the "I'm not a robot" box on fake CAPTCHA page will display the fake browser window.
+- The fake browser window impersonates a Facebook login page and displays a legitimate Facebook login URL.
+- This fake browser window is used to collect login credentials for Facebook accounts.
+- This campaign occasionally changes the domains of its URLs for the BitM landing pages.
+- Therefore, the same link from a phishing email may not land on the same BitM page from one day to the next.
+- Pivoting on current information shows indicators of this campaign as early as April 2025.
+
+INDICATORS:
+
+Note: Most of the phishing emails contain URL-shortener links that led to a redirect URL or the final BitM URL.  
+      7 recent examples follow:
+
+- hxxps[:]//0wtsid.short[.]gy/8OfS3G
+- hxxps[:]//481g2g.short[.]gy/JSHTu8
+- hxxps[:]//481g2g.short[.]gy/WevH0X
+- hxxps[:]//481g2g.short[.]gy/zQmPm8
+- hxxps[:]//deextq.short[.]gy/ELK5GG
+- hxxps[:]//loanch46.short[.]gy/a38
+- hxxps[:]//lYNFdb.short[.]gy/PInYEM
+
+EIGHT EXAMPLES OF LINKS THAT REDIRECT TO THE FINAL BITM URLS:
+
+- hxxps[:]//162.245.238[.]224/  **
+- hxxps[:]//cammeorio2[.]xyz/
+- hxxps[:]//chickken[.]top/  **
+- hxxps[:]//chickken1[.]top/  **
+- hxxps[:]//chickenkentou12[.]pics/
+- hxxps[:]//chickenkentou12[.]top/  **
+- hxxps[:]//habanacuba83s[.]info/
+- hxxps[:]//roadmaps12[.]com/
+
+- Note: URLs marked ** are currently active and redirect to the capchametasite125[.]icu URL below.
+
+TWO EXAMPLES OF FINAL BITM URLS ACTIVE ON 2025-09-23:
+
+- hxxps[:]//capchametasite125[.]icu/two_stepz_verytfications/authentication
+- hxxps[:]//captcha-metacloudm[.]com/two_step_verification/authentication
+
+- Note: The above URLS are followed by "?encrypted_context=" 
+  "?encrypted_context=" is followed by a long string of characters, followed by other parameters.
+  However, this additional information is not necessary to load the final BitM page.
+
+18 HISTORICAL EXAMPLES OF DOMAINS FOR "TWO_STEPZ_VERYTFICATIONS/AUTHENTSTICATION" BITM PHISHING URLS AS EARLY AS 2025-06-17:
+
+Note: none of these domains currently resolve to an IP address.
+
+- auth-meta[.]top
+- authmeta[.]biz
+- authmeta.pro
+- authmeta[.]top
+- authmeta1[.]top
+- authmeta12[.]top
+- authz-api[.]my
+- kareyphatameta12[.]top
+- loginmeta234[.]top
+- loginmetastar12[.]top
+- metahagrandview12[.]top
+- metahozion12[.]top
+- metahozion12homes[.]top
+- metahozion12homes[.]top
+- metahozzizon-12[.]top
+- thealaska[.]info
+- thelinkedup123[.]top
+- thespirup123[.]top
+
+156 HISTORICAL EXAMPLES OF DOMAINS FOR "TWO_STEP_VERIFICATION/AUTHENTICATION" BITM PHISHING URLS AS EARLY AS 2025-04-16:
+
+Note: none of these domains currently resolve to an IP address.
+
+- anmanianer412[.]com
+- antibot-meta[.]com
+- antibotverify[.]com
+- apicaptcha-meta[.]com
+- apicaptcha-metahorizon[.]com
+- apicaptcha-metaquest[.]com
+- app.vericapcha-metacrescent[.]org
+- app.vericapcha-metahoriapp[.]org
+- app.vericapcha-metahorizonfb[.]org
+- app.vericapcha-metahunched[.]org
+- app.vericapcha-metaresults[.]com
+- app.vericaptchas-matamore[.]xyz
+- app.vericaptchas-metahorizon[.]xyz
+- authapi-meta[.]com
+- authcaptcha-meta[.]com
+- authen-bot[.]com
+- authen-meta[.]com
+- authen-metaquest[.]com
+- authent-metacloud[.]com
+- authgate-meta[.]com
+- authnet-hyperhorizon[.]net
+- authrecaptcha-meta[.]com
+- authz-meta[.]com
+- autobypass-meta[.]com
+- autocaptcha-meta[.]com
+- bot-blocker[.]com
+- bot-meta[.]com
+- bot-secure[.]com
+- botcaptcha-meta[.]com
+- botdetectcaptcha[.]com
+- botverifyanalytics[.]com
+- business-meta[.]com
+- businesshorizon[.]net
+- bypass-meta[.]com
+- bypasscaptcha-meta[.]com
+- capcha-metaquest[.]com
+- captcha-app-login[.]com
+- captcha-confirm.live
+- captcha-facebook[.]com
+- captcha-human[.]com
+- captcha-login-website[.]com
+- captcha-meta-login[.]com
+- captcha-meta[.]com
+- captcha-meta[.]org
+- captcha-metacloud[.]com
+- captcha-metacloudl[.]com
+- captcha-metacloudn[.]com
+- captcha-metahorizon[.]com
+- captcha-metaquest[.]com
+- captchabot-meta[.]com
+- captchasure-meta[.]com
+- certify-meta[.]com
+- clearcapcha[.]com
+- confirm-meta[.]com
+- confirm-recaptcha[.]com
+- confirm-recaptcha[.]live
+- confirm.botrecaptcha-metaquest[.]com
+- confirm.captcha-metalogin[.]com
+- confirm.human-metaquest[.]com
+- confirm.login-metacloud[.]com
+- confirm.notcaptcha-metaquest[.]com
+- confirm.recaptcha-metacloud[.]com
+- confirm.robotcaptcha-metaquest[.]com
+- confrim-captcha[.]com
+- copyright-businessfacebok[.]com
+- copyright-videofb[.]com
+- firewall-meta[.]com
+- gateverify-meta[.]com
+- guard-meta[.]com
+- login-metaquest[.]com
+- loginpage-meta[.]com
+- mb-meta[.]com
+- meta-captcha[.]com
+- metaquest-captcha[.]com
+- ncaptcha-meta[.]com
+- nobotverify[.]com
+- nocapcha-meta[.]com
+- nocaptcha-meta[.]com
+- nocaptcha-metacloud[.]com
+- nocaptcha-metaquest[.]com
+- norobot-meta[.]com
+- norotbot-meta[.]com
+- not-capcha[.]com
+- notcaptcha-meta[.]com
+- notcaptcha-metacloud[.]com
+- notcaptcha-metahorizon[.]com
+- notcaptcha-metaquest[.]com
+- notrobot-metahorizon[.]com
+- noverify-bot[.]com
+- oauth.recaptcha-metacloud[.]com
+- oauth2-verify[.]com
+- oauthcaptcha-metaquest[.]com
+- outh.captcha-metalogin[.]com
+- rcaptcha-meta[.]com
+- recaptcha-businessfacebook[.]com
+- recaptcha-confirm[.]com
+- recaptcha-confirm[.]live
+- recaptcha-human[.]com
+- recaptcha-login[.]com
+- recaptcha-meta[.]org
+- recaptcha-metacloud[.]com
+- recaptcha-metahorizon[.]com
+- recaptcha-metahorizon[.]org
+- recaptcha-metaquest[.]com
+- recaptcha.accountscenter-metaquest[.]com
+- recaptcha.confirm-metaquest[.]com
+- recaptcha.login-businessfacebook[.]com
+- recaptcha.login-metaquest[.]com
+- recaptcha.robot-metalogin[.]com
+- recaptchav2-meta[.]com
+- report-businessfacebok[.]com
+- report-copyright-metaplanet[.]com
+- report-copyright-metaplanet[.]net
+- report-media-content[.]com
+- robot-metaquest[.]com
+- robotapi-meta[.]com
+- robotcaptcha-meta[.]com
+- rotbotath-meta[.]com
+- safehumancheck[.]com
+- secureverifybot[.]com
+- shield-meta[.]com
+- smartcaptcha-meta[.]com
+- suite-meta[.]com
+- supportmeta-horizon[.]net
+- supportmeta-horizonusa[.]org
+- valid-meta[.]com
+- validate-api[.]com
+- veri-facebook[.]com
+- vericaptcha-businessfacebook[.]com
+- vericaptcha-metahorizon[.]eu
+- vericaptcha-metahorizon[.]net
+- vericaptcha-metahorizon[.]org
+- vericaptcha-metahorizonau[.]org
+- vericaptcha-metahorizonca[.]org
+- vericaptcha-metahorizonfb[.]net
+- vericaptcha-metahorizonfb[.]org
+- vericaptcha-metahorizonit[.]org
+- vericaptcha-metahorizonsa[.]org
+- vericaptcha-metahorizonus[.]org
+- vericaptcha-metahorizonusa[.]org
+- verifier-meta[.]com
+- verify-bot[.]com
+- verify-captcha.pages[.]dev
+- verify-facebook[.]com
+- verify-meta[.]com
+- verify.captcha-metalogin[.]com
+- verify.recaptcha-metacloud[.]com
+- verify.recaptcha-metalogin[.]com
+- verifycaptcha-businessfacebook[.]com
+- verifycaptcha-meta[.]com
+- verifyhuman-meta[.]com
+- very-capcha[.]com
+- very-captcha[.]com
+- verycapcha[.]com
+- verycaptcha[.]com
+- veryfy-recaptcha[.]com
