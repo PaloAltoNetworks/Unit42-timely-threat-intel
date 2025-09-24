@@ -4,6 +4,11 @@ AUTHORS:
 
 - Beliz Kaleli, Alex Starov, Lucas Hu, Shawn Shuang, Nabeel Mohamed, Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-bitm-activity-7376692047900184577-q9m1/
+- https://x.com/Unit42_Intel/status/1970926427819106392
+
 NOTES:
 
 - We're tracking a phishing campaign active as early as April 2025 that uses the browser-in-the-middle (BitM) technique.
@@ -252,6 +257,7 @@ TWO EXAMPLES OF FINAL BITM URLS CURRENTLY ACTIVE AS OF 2025-09-23:
 - verycapcha[.]com
 - verycaptcha[.]com
 - veryfy-recaptcha[.]com
+
 
 
 
