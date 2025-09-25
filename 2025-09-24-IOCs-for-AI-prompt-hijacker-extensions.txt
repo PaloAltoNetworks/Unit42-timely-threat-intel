@@ -30,16 +30,16 @@ DETAILS:
 
 INDICATORS:
 
-EIGHT EXAMPLES AI-THEMED MALCIOUS CHROME EXTENSIONS:
+EIGHT EXAMPLES AI-THEMED MALICIOUS CHROME EXTENSIONS:
 
 - akfnjopjnnemejchppfpomhnejoiiini (Claude search)
 - boofekcjiojcpcehaldjhjfhcienopme (AI ChatGPT - previously reported)
-- bpeheoocinjpbchkmddjdaiafjkgdgoi (Chatgpt for chrome, AI extension for Chrome)
-- ecimcibolpbgimkehmclafnifblhmkkb (Perplexity search)
+- bpeheoocinjpbchkmddjdaiafjkgdgoi (ChatGPT for Chrome, AI extension for Chrome)
+- ecimcibolpbgimkehmclafnifblhmkkb (Perplexity Search)
 - jhhjbaicgmecddbaobeobkikgmfffaeg (Chat AI for Chrome)
 - jijilhfkldabicahgkmgjgladmggnkpb (GenAISearch)
-- lnjebiohklcphainmilcdoakkbjlkdpn (Chatgpt search)
-- pjcfmnfappcoomegbhlaahhddnhnapeb (Meta Llama search)
+- lnjebiohklcphainmilcdoakkbjlkdpn (ChatGPT Search)
+- pjcfmnfappcoomegbhlaahhddnhnapeb (Meta Llama Search)
 
 MALICIOUS DOMAINS USED BY THE ABOVE EXTENSIONS:
 
