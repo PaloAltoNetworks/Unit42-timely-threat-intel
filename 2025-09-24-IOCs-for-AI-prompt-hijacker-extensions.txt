@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shresta Bellary Seetharam, Nabeel Mohamed, Shehroze Farooqi, Qinge Xie, Fang Liu, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_browserextensions-prompthijacker-searchhijacker-activity-7377017825179324416-J7pq/
+- https://x.com/Unit42_Intel/status/1971252186030981140
+
 NOTES:
 
 - Threat actors are distributing fake Chrome extensions posing as AI tools.
