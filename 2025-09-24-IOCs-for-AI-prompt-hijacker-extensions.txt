@@ -1,0 +1,48 @@
+2025-09-24 (WEDNESDAY): AI PROMPT HIJACKER EXTENSIONS FOR CHROME
+
+AUTHORS:
+
+- Shresta Bellary Seetharam, Nabeel Mohamed, Shehroze Farooqi, Qinge Xie, Fang Liu, Alex Starov
+
+NOTES:
+
+- Threat actors are distributing fake Chrome extensions posing as AI tools.
+- These extensions let users type prompts in the Chrome search bar, but will hijack the prompts.
+- Redirecting queries to attacker-controlled domains and tracking search activity.
+
+DETAILS:
+
+- We are observing a rise in malicious AI-themed browser extensions previously reported last month at:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-08-11-AI-summary-browser-extensions.txt 
+​​- Threat actors publish Chrome extensions mimicking ChatGPT, Llama, Perplexity and Claude.
+- This is part of a broader trend of impersonating AI extensions that are used for malicious redirects and search activity tracking.
+- These extensions let users type prompts directly in the Chrome search bar, but hijack the data.
+— The malicious extensions:
+  -- Override the default search engine settings via the chrome_settings_overrides manifest key
+  -- Redirecting queries to attacker-controlled domains like chatgptforchrome[.]com, dinershtein[.]com and gen-ai-search[.]com
+  -- Track browser activity
+- In 2023, we observed an extension called 'AI ChatGPT' that was tied to the domain chatgptforchrome[.]com:
+  -- This extension had reached 15,800 users, and it contained obfuscated JavaScript to steal Facebook account details.
+  -- More info at: https://unit42.paloaltonetworks.com/chatgpt-scam-attacks-increasing
+- We found a new prompt-hijacking extension named ‘Chat AI for Chrome’ tied to the same chatgptforchrome[.]com domain:
+  -- This extension is distributed through lures similar to the earlier 2023 'AI ChatGPT' extension.
+  -- It has been promoted via YouTube to entice users into installation.
+
+INDICATORS:
+
+EIGHT EXAMPLES AI-THEMED MALCIOUS CHROME EXTENSIONS:
+
+- akfnjopjnnemejchppfpomhnejoiiini (Claude search)
+- boofekcjiojcpcehaldjhjfhcienopme (AI ChatGPT - previously reported)
+- bpeheoocinjpbchkmddjdaiafjkgdgoi (Chatgpt for chrome, AI extension for Chrome)
+- ecimcibolpbgimkehmclafnifblhmkkb (Perplexity search)
+- jhhjbaicgmecddbaobeobkikgmfffaeg (Chat AI for Chrome)
+- jijilhfkldabicahgkmgjgladmggnkpb (GenAISearch)
+- lnjebiohklcphainmilcdoakkbjlkdpn (Chatgpt search)
+- pjcfmnfappcoomegbhlaahhddnhnapeb (Meta Llama search)
+
+MALICIOUS DOMAINS USED BY THE ABOVE EXTENSIONS:
+
+- chatgptforchrome[.]com
+- dinershtein[.]com
+- gen-ai-search[.]comf
