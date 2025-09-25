@@ -50,4 +50,4 @@ MALICIOUS DOMAINS USED BY THE ABOVE EXTENSIONS:
 
 - chatgptforchrome[.]com
 - dinershtein[.]com
-- gen-ai-search[.]comf
+- gen-ai-search[.]com
