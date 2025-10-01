@@ -1,0 +1,209 @@
+2025-10-01 (WEDNESDAY): POSSIBLE RHADAMANTHYS FROM INSTALLER DISGUISED AS CRACKED VERSION OF POPULAR SOFTWARE
+
+AUTHORS:
+
+- Shaown Sarker, Nabeel Mohammed, Shresta Bellary Seetharam, Chi-Wei Liu, Shehroze Farooqi, Alex Starov, Bradley Duncan
+
+NOTES:
+
+- This is a long-running campaign has distributed malware disguised as:
+  -- Cracked versions of popular software
+  -- Other copyright-protected material
+- This campaign uses password-protected 7-zip archives to avoid detection.
+- The extracted EXE misuses AutoIt with CypherIT encryption to install possible Rhadamthys malware.
+- This particular infection chain has previously distributed Lumma Stealer.
+- We originally reported on this activity in May 2025, although it has been active before that:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-19-IOCs-for-CypherIT-and-AutoIt-used-in-distribution-of-Lumma-Stealer.txt
+
+ADDITIONAL NOTES:
+
+- This infrastructure represents one of many URL chains that push malware or unwanted applications/programs.
+- When later attempting the URL chain example below, we saw different domains, URLs and files presented for download.
+
+12 RECENT EXAMPLES OF URLS FOR INITIAL FILE DOWNLOADS:
+
+- arch.cloud341[.]click/request/media/F1vBsGt6QptOiS2xEFlaGWqX/utep_first-year_composition_handbook_pdf.zip
+- arch.cloud341[.]click/request/media/xC6a6sbtPdwr1NledTqmxo7Y/file.zip
+- arch.cloud9342111[.]lol/request/media/VUjCyZNpV2NXWhOiJAduDT20/Need_For_Speed_Underground_2_PC_Full_Espa%C3%B1ol.zip
+- arch2.cloud341[.]click/request/media/8yqXScQ0B0MdD5NN0dMtVVoH/Festo_Fluidsim_4.5_Full_Multilenguaje_Espa%C3%B1ol_[Mega].zip
+- media.cloud341[.]click/Acronis_True_Image_Build_42072_Bootable_ISO.zip?c=AJ3Ew2gvYwUA_YUCAElUFwAGAAAAAABl&s=353071
+- media.cloud341[.]monster/fl+studio+20+license+file+free+download.zip
+- media.cloud341[.]xyz/file.zip?c=AIY4xWhYdAUAXFgCAE9NFwASAAAAAAD6&s=357464
+- media.cloud3413[.]click/ByJusticeorMercy-v14-pc.zip.zip?c=AF_CwWgCeAUAXFgCAE5PFwASAAAAAAD8&s=358402
+- media.cloud9342[.]homes/Hollow-Knight-Silksong-SteamRIP.com.rar.zip?c=AHfS3GgCeAUACocCAEtaFwASAAAAAABS&s=358402
+- media.cloud9342[.]quest/Download.zip?c=AIbc3GjrdAUAXFgCAE1YFwASAAAAAADI&s=357611
+- media.cloud93421[.]click/Download_DreamWorks_Madagascar_(USA)_(v3.01).zip?c=AIb9yWiKcwUAn4ICAElRFwASAAAAAABe&s=357258
+- media.cloud934221[.]baby/COMO_INSTALAR.zip?c=ALfN3GiKcwUA_YUCAE1YFwASAAAAAAAm&s=357258
+
+- Note: see the "campaign domain list" below for 72 domains used for the initial file download.
+
+EXAMPLE OF URL CHAIN ON 2025-10-01 FOR THE INITIAL DOWNLOAD:
+
+- hxxps[:]//www.zdescargas[.]org/adobe-premiere-pro-2024-full-x64-espanol-up4/
+
+- hxxps[:]//afile2[.]com/distinct-features-of-ratio-mercatoris-in-map-projections/?
+  utm_source={CID}&
+  utm_term=Adobe%20Premiere%20Pro%20(2025)%20Full%20Multilenguaje%20[Mega]&
+  utm_content={SUBID1}&
+  utm_medium={SUBID2}
+
+- hxxps[:]//afile2[.]com/distinct-features-of-ratio-mercatoris-in-map-projections/?
+  utm_term=Adobe+Premiere+Pro+%282025%29+Full+Multilenguaje+%5BMega%5D&
+  utm_content=%7BSUBID1%7D&
+  utm_medium=%7BSUBID2%7D&
+  utm_source=9uqNe044201ec0000000008066419&
+  referer=https%3A%2F%2Fwww.zdescargas[.]org%2F&
+  jtd=[long base64 string, removed from this post]
+
+- hxxps[:]//media.mydrive[.]beauty/Adobe_Premiere_Pro_%282025%29_Full_Multilenguaje_%5BMega%5D.zip?
+  c=AIk73WiZbAUA_YUCAFVTFwASAAAAAAD5&s=355481
+
+- hxxps[:]//arch.cloud341[.]click/request/media/7pOtO44kg3fGrWo6tjl2kprV/
+  Adobe_Premiere_Pro_(2025)_Full_Multilenguaje_%5BMega%5D.zip
+
+DOWNLOADED FILE:
+
+- SHA256 hash: 5df7d64dc8f4bf02a6d6955519ca2b8b2fa16c0067d8afe26b2561df21ced981
+- File size: 14,166,963 bytes
+- File name: adobe_premiere_pro_(2025)_full_multilenguaje_[mega].7z
+- File description: Password-protected 7-Zip archive downloaded file from the above link
+- Password: 9404
+
+- SHA256 hash: cb0d93731fcdf83c28b4debe3556c12270196ca4aadc04385ed6959d865a4c76
+- File size: 950,651,898 bytes
+- File name: adobe_premiere_pro_(2025)_full_multilenguaje_[mega].exe
+- File description: Inflated Windows EXE installer, padded with over 900 MB of null-bytes
+
+- SHA256 hash: eae2f1b0f822cd81954fb2d6237d0a8dbf8e8b759912561ce1c00862c552d02d
+- File size: 32,101,434 bytes
+- File description: Example of the above EXE installer with most of the null-byte padding removed
+
+FILES GENERATED FROM RUNNING THE EXE INSTALLER:
+
+FILES USED TO CREATE .A3X FILE AND COPY OF AUTOIT3.EXE:
+
+- C:\Users\[username]\AppData\Local\Temp\Developed.xltm
+- C:\Users\[username]\AppData\Local\Temp\Job.xltm  <-- obfuscated script for installation
+- C:\Users\[username]\AppData\Local\Temp\Overcome.xltm  <-- Cab file with content for creating copy of AutoIt3.exe
+- C:\Users\[username]\AppData\Local\Temp\Passport.xltm
+- C:\Users\[username]\AppData\Local\Temp\Petroleum.xltm
+- C:\Users\[username]\AppData\Local\Temp\Secret.xltm
+- C:\Users\[username]\AppData\Local\Temp\Tackle.xltm
+- C:\Users\[username]\AppData\Local\Temp\Unfortunately.xltm
+
+CONTENT FOR CREATING COPY OF AUTOIT3.EXE:
+
+- C:\Users\[username]\AppData\Local\Temp\Assumptions
+- C:\Users\[username]\AppData\Local\Temp\Avon
+- C:\Users\[username]\AppData\Local\Temp\Builds
+- C:\Users\[username]\AppData\Local\Temp\Chad
+- C:\Users\[username]\AppData\Local\Temp\Distributor
+- C:\Users\[username]\AppData\Local\Temp\Electrical
+- C:\Users\[username]\AppData\Local\Temp\Finding
+- C:\Users\[username]\AppData\Local\Temp\Initiated
+- C:\Users\[username]\AppData\Local\Temp\Opportunity
+- C:\Users\[username]\AppData\Local\Temp\Recordings
+- C:\Users\[username]\AppData\Local\Temp\Opportunity
+- C:\Users\[username]\AppData\Local\Temp\Supervisors
+
+COPY OF AUTOIT3.EXE:
+
+- C:\Users\[username]\AppData\Local\Temp\764467\Armed.scr
+- SHA256 hash: 881619a47b62b52305d92640cc4d4845a279c23a5a749413785fc8fcb0fdf7fb
+- File size: 1,108,064 bytes
+
+.A3X FILE CREATED BY THE INSTALLER AND RUN BY COPY OF AUTOIT3.EXE:
+
+- SHA256 hash: ef8d1d0fc3ce83d5f8ec9ca74355d5c214004a6c05972051df62e4a4a7bc9be9
+- File size: 929,853 bytes
+- File type: data
+- File description: .a3x file, possibly for Rhadamanthys
+- Note: This is not saved to disk, that I can find, so I manually recreated it
+
+C2 TRAFFIC FOR POSSIBLE RHADAMANTHYS:
+
+- 104.164.55[.]44:443 - HTTPS, TLSv1.2 traffic (server shows nginx page and uses a self-signed certificate)
+
+====================
+CAMPAIGN DOMAIN LIST
+====================
+
+72 DOMAINS SEEN IN THIS CAMPAIGN FOR THE INITIAL FILE DOWNLOADS:
+
+- Note: Prefixes (subdomains) for the fully qualified domain names (FQDNs) are:
+  -- arch.
+  -- arch2.
+  -- media.
+  
+- cloud341[.]autos
+- cloud341[.]baby
+- cloud341[.]cfd
+- cloud341[.]click
+- cloud341[.]icu
+- cloud341[.]lat
+- cloud341[.]lol
+- cloud341[.]monster
+- cloud341[.]pics
+- cloud341[.]xyz
+- cloud3413[.]baby
+- cloud3413[.]cfd
+- cloud3413[.]click
+- cloud3413[.]icu
+- cloud3413[.]pics
+- cloud3413[.]sbs
+- cloud34221[.]autos
+- cloud34221[.]baby
+- cloud34221[.]cfd
+- cloud34221[.]forum
+- cloud34221[.]hair
+- cloud34221[.]homes
+- cloud34221[.]icu
+- cloud34221[.]lat
+- cloud34221[.]lol
+- cloud34221[.]monster
+- cloud34221[.]pics
+- cloud34221[.]quest
+- cloud34221[.]sbs
+- cloud34221[.]xyz
+- cloud343[.]boats
+- cloud9342[.]autos
+- cloud9342[.]baby
+- cloud9342[.]beauty
+- cloud9342[.]click
+- cloud9342[.]pics
+- cloud9342[.]quest
+- cloud93421[.]autos
+- cloud93421[.]baby
+- cloud93421[.]beauty
+- cloud93421[.]cfd
+- cloud93421[.]click
+- cloud93421[.]homes
+- cloud93421[.]icu
+- cloud93421[.]lat
+- cloud93421[.]lol
+- cloud93421[.]monster
+- cloud93421[.]pics
+- cloud93421[.]quest
+- cloud93421[.]sbs
+- cloud9342111[.]autos
+- cloud9342111[.]cfd
+- cloud9342111[.]icu
+- cloud9342111[.]lat
+- cloud9342111[.]lol
+- cloud9342111[.]mom
+- cloud9342111[.]monster
+- cloud9342111[.]pics
+- cloud9342111[.]quest
+- cloud9342111[.]rest
+- cloud9342111[.]sbs
+- cloud9342111[.]xyz
+- cloud934221[.]baby
+- cloud934221[.]beauty
+- cloud934221[.]click
+- cloud934221[.]forum
+- cloud934221[.]homes
+- cloud934221[.]icu
+- cloud934221[.]lat
+- cloud934221[.]lol
+- cloud934221[.]pics
+- cloud934221[.]xyz
