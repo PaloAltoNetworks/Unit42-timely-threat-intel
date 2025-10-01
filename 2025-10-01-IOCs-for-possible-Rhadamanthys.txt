@@ -6,13 +6,13 @@ AUTHORS:
 
 NOTES:
 
-- This is a long-running campaign has distributed malware disguised as:
+- This is a long-running campaign that has distributed malware disguised as:
   -- Cracked versions of popular software
   -- Other copyright-protected material
-- This campaign uses password-protected 7-zip archives to avoid detection.
+- This campaign uses password-protected 7-Zip archives to avoid detection.
 - The extracted EXE misuses AutoIt with CypherIT encryption to install possible Rhadamthys malware.
 - This particular infection chain has previously distributed Lumma Stealer.
-- We originally reported on this activity in May 2025, although it has been active before that:
+- We originally reported on this activity in May 2025, although it was active before that:
   -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-19-IOCs-for-CypherIT-and-AutoIt-used-in-distribution-of-Lumma-Stealer.txt
 
 ADDITIONAL NOTES:
@@ -91,7 +91,8 @@ FILES USED TO CREATE .A3X FILE AND COPY OF AUTOIT3.EXE:
 - C:\Users\[username]\AppData\Local\Temp\Tackle.xltm
 - C:\Users\[username]\AppData\Local\Temp\Unfortunately.xltm
 
-CONTENT FOR CREATING COPY OF AUTOIT3.EXE:
+
+CONTENT FOR CREATING THE COPY OF AUTOIT3.EXE:
 
 - C:\Users\[username]\AppData\Local\Temp\Assumptions
 - C:\Users\[username]\AppData\Local\Temp\Avon
@@ -112,7 +113,7 @@ COPY OF AUTOIT3.EXE:
 - SHA256 hash: 881619a47b62b52305d92640cc4d4845a279c23a5a749413785fc8fcb0fdf7fb
 - File size: 1,108,064 bytes
 
-.A3X FILE CREATED BY THE INSTALLER AND RUN BY COPY OF AUTOIT3.EXE:
+.A3X FILE CREATED BY THE INSTALLER AND RUN BY THE COPY OF AUTOIT3.EXE:
 
 - SHA256 hash: ef8d1d0fc3ce83d5f8ec9ca74355d5c214004a6c05972051df62e4a4a7bc9be9
 - File size: 929,853 bytes
