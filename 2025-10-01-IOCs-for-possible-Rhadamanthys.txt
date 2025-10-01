@@ -18,7 +18,7 @@ NOTES:
 ADDITIONAL NOTES:
 
 - This infrastructure represents one of many URL chains that push malware or unwanted applications/programs.
-- When later attempting the URL chain example below, we saw different domains, URLs and files presented for download.
+- When later attempting the URL chain example shown later in this post, we saw different domains, URLs and files presented for download.
 
 12 RECENT EXAMPLES OF URLS FOR INITIAL FILE DOWNLOADS:
 
@@ -208,3 +208,4 @@ CAMPAIGN DOMAIN LIST
 - cloud934221[.]lol
 - cloud934221[.]pics
 - cloud934221[.]xyz
+
