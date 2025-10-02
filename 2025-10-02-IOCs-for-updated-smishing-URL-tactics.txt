@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Reethika Ramesh, Zhanhao Chen, Daiping Liu, Keerthiraj Nagaraj, Anton Ohorodnyk,  Fan Fei
+- Reethika Ramesh, Zhanhao Chen, Daiping Liu, Keerthiraj Nagaraj, Anton Ohorodnyk, Fan Fei
 
 NOTES:
 
