@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shaown Sarker, Nabeel Mohammed, Shresta Bellary Seetharam, Chi-Wei Liu, Shehroze Farooqi, Alex Starov, Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_rhadamanthys-activity-7379294568921456640-dcVw/
+- https://x.com/Unit42_Intel/status/1973528967408706
+
 NOTES:
 
 - This is a long-running campaign that has distributed malware disguised as:
@@ -90,7 +95,6 @@ FILES USED TO CREATE .A3X FILE AND COPY OF AUTOIT3.EXE:
 - C:\Users\[username]\AppData\Local\Temp\Secret.xltm
 - C:\Users\[username]\AppData\Local\Temp\Tackle.xltm
 - C:\Users\[username]\AppData\Local\Temp\Unfortunately.xltm
-
 
 CONTENT FOR CREATING THE COPY OF AUTOIT3.EXE:
 
@@ -208,4 +212,3 @@ CAMPAIGN DOMAIN LIST
 - cloud934221[.]lol
 - cloud934221[.]pics
 - cloud934221[.]xyz
-
