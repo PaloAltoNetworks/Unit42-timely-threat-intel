@@ -1,0 +1,78 @@
+2025-10-02 (THURSDAY): PHISHING PAGES USING BLOB URLS
+
+AUTHORS:
+
+- Peng Peng, Alex Starov, Beliz Kaleli, Lucas Hu, Shawn Shuang
+
+NOTES: 
+
+- We observed several active phishing campaigns using blob URLs to deliver the final phishing pages. 
+- Blob pages dynamically construct malicious content in a browser's memory at runtime to bypass network analyzers.
+
+DETAILS:
+
+- A blob URL is a temporary web address that references data stored in the browser’s memory.
+- This allows developers to access and manipulate data on a client without requesting the data from a server.
+- Blob URLs typically appear in a browser's navigation bar starting with "blob:" and ending with a UUID.
+- These UUID values in blob URLs are different for each attempt accessing the parent URL.
+- Blob URLs use the following format:
+
+  blob:https://maliciousdomain[.]tld/01234567-89ab-cdef-0123-456789abcded
+
+- Some phishing sites implement blob URLs through base64 text that represents the final phishing page. 
+- Upon site access, the base64 text is decoded and assembled into a blob object within the victim's browser.
+
+- For example the following URL:
+  -- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/wp-admin/js/cgi-/trade/blob.html
+- Generated this blob URL in the web browser when we checked on 2025-10-02:
+  -- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/d9d26e2c-fac8-41eb-8e7d-2630b138a5cd
+
+- Some URL chains from this activity leverage meta refresh for malicious redirection.
+
+- For example, the following URL:
+  -- hxxps[:]//abctraveladvisor[.]com/wp-admin/css/red/wx.htm returned the following HTML text:
+- Returned the following text (defanged here) as recently as 2025-10-02:
+  <META HTTP-EQUIV="refresh" CONTENT="0.1;URL=hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/wp-admin/js/cgi-/trade/blob.html">
+
+- Some URLs from this activity abuse 3rd-party storage services to host the malicious content.
+- A chain of events active as of 2025-10-02 using a 3rd-party storage service for a blob URL follows:
+  -- hxxps[:]//curly-sky-464f.ivelissayed74236719.workers[.]dev
+  -- hxxps[:]//firebasestorage.googleapis[.]com/v0/b/my-office-documents.appspot[.]com/o/my-oned2023.html?
+     alt=media&token=c894f398-084a-46d2-ab5f-e1d5457fe3f7
+  -- blob:hxxps[:]//firebasestorage.googleapis[.]com/c894f398-084a-46d2-ab5f-e1d5457fe3f7
+
+- We have seen these blob URLs used to mimic a variety of companies and organizations.
+- These may be a company's login page, or it could be for services, like email providers.
+
+INDICATORS:
+
+16 examples of phishing URLs for blob pages that impersonate financial organizations:
+
+- hxxps[:]//abctraveladvisor[.]com/wp-admin/css/red/wx.htm
+- hxxps[:]//curly-sky-464f.ivelissayed74236719.workers[.]dev/
+- hxxps[:]//exadigital[.]com[.]ar/5c9fd126/osc/fid.html
+- hxxps[:]//exadigital[.]com[.]ar/5c9fd126/osc/fid.html
+- hxxps[:]//inclar[.]com/yyygid/amex31/link.html
+- hxxps[:]//mcdonoughandcompany[.]com/wp-content/uploads/elementor/thumbs/wabmailg.php
+- hxxps[:]//nonyanefoundation[.]org[.]za/wp-includes/cgi-/amex-online/blob.html
+- hxxps[:]//primo[.]ro/images/chi/blob.html
+- hxxps[:]//pub-2e654109d15e4d5da41bb6ff6043162e.r2[.]dev/blob.html
+- hxxps[:]//pub-5bbea12868924b21b6373c7db5ea4d9f.r2[.]dev/blob.html
+- hxxps[:]//pub-8df862c960c24690b029d17914cec0fb.r2[.]dev/ablob.html
+- hxxps[:]//pub-d8bf19d68ef3433e8384b6f5fae7cf83.r2[.]dev/blob.html
+- hxxps[:]//pub-dbe35a2011974d0292f79e5dc68e4594.r2[.]dev/blob.html
+- hxxps[:]//snowy-kumejima-9716.lolipopmc[.]jp/wp-admin/js/cgi-/blob.html
+- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/wp-admin/js/cgi-/trade/blob.html
+- hxxps[:]//winvestment[.]ae/cgi-/blob.html
+
+4 examples of phishing URLs for blob pages that impersonate email service providers:
+
+- hxxps[:]//pub-a26ed424731f4c07ad2dcb7653497632.r2[.]dev/vmo.html
+- hxxps[:]//gqr[.]sh/tQyk
+- hxxps[:]//surfacedesigners.us/wp-includes/images/Wetr/index.html
+- hxxps[:]//yellow-sunset-c6b3.page1-c31.workers[.]dev/
+
+2 examples of phishing URLs for blob pages that impersonate cryptocurrency organizations:
+
+- hxxps[:]//pub-4bd13616d08c483c8994ae6a05bd5994.r2[.]dev/index.html
+- hxxps[:]//pub-845232413d77493aa1b626f5186dadae.r2[.]dev/index.html
