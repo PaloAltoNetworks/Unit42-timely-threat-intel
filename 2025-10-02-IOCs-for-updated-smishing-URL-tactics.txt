@@ -4,6 +4,11 @@ AUTHORS:
 
 - Reethika Ramesh, Zhanhao Chen, Daiping Liu, Keerthiraj Nagaraj, Anton Ohorodnyk, Fan Fei
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_smishing-activity-7379632545480716288-eAyB/
+- https://x.com/Unit42_Intel/status/1973866907909398771
+
 NOTES:
 
 - We've seen an increase in smishing URLs with the name of a trusted entity before an "@" symbol followed by the true domain.
