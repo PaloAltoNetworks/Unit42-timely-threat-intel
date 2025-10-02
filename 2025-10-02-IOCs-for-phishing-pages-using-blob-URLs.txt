@@ -13,18 +13,18 @@ DETAILS:
 
 - A blob URL is a temporary web address that references data stored in the browser’s memory.
 - This allows developers to access and manipulate data on a client without requesting the data from a server.
-- Blob URLs typically appear in a browser's navigation bar starting with "blob:" and ending with a UUID.
-- These UUID values in blob URLs are different for each attempt accessing the parent URL.
+- Blob URLs typically appear in a browser's navigation bar, starting with "blob:" and ending with a UUID.
+- These UUID values in blob URLs are different for each attempt at accessing the parent URL.
 - Blob URLs use the following format:
 
   blob:https://maliciousdomain[.]tld/01234567-89ab-cdef-0123-456789abcded
 
-- Some phishing sites implement blob URLs through base64 text that represents the final phishing page. 
+- Phishing sites can implement blob URLs through base64 text that represents the final phishing page. 
 - Upon site access, the base64 text is decoded and assembled into a blob object within the victim's browser.
 
-- For example the following URL:
+- For example, the following URL:
   -- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/wp-admin/js/cgi-/trade/blob.html
-- Generated this blob URL in the web browser when we checked on 2025-10-02:
+- generated this blob URL in the web browser when we checked on 2025-10-02:
   -- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/d9d26e2c-fac8-41eb-8e7d-2630b138a5cd
 
 - Some URL chains from this activity leverage meta refresh for malicious redirection.
@@ -41,8 +41,8 @@ DETAILS:
      alt=media&token=c894f398-084a-46d2-ab5f-e1d5457fe3f7
   -- blob:hxxps[:]//firebasestorage.googleapis[.]com/c894f398-084a-46d2-ab5f-e1d5457fe3f7
 
-- We have seen these blob URLs used to mimic a variety of companies and organizations.
-- These may be a company's login page, or it could be for services, like email providers.
+- We have seen blob URL-based phishing used to mimic a variety of companies and organizations.
+- These may mimic a company's login page, or they could mimic web-based services, like email providers.
 
 INDICATORS:
 
