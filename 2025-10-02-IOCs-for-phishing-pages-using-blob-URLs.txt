@@ -25,7 +25,7 @@ DETAILS:
 - For example, the following URL:
   -- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/wp-admin/js/cgi-/trade/blob.html
 - generated this blob URL in the web browser when we checked on 2025-10-02:
-  -- hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/d9d26e2c-fac8-41eb-8e7d-2630b138a5cd
+  -- blob:hxxps[:]//trungtamdulieu.khaihoanprime[.]vn/d9d26e2c-fac8-41eb-8e7d-2630b138a5cd
 
 - Some URL chains from this activity leverage meta refresh for malicious redirection.
 
