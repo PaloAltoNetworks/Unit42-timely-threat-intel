@@ -46,11 +46,10 @@ DETAILS:
 
 INDICATORS:
 
-16 examples of phishing URLs for blob pages that impersonate financial organizations:
+15 examples of phishing URLs for blob pages that impersonate financial organizations:
 
 - hxxps[:]//abctraveladvisor[.]com/wp-admin/css/red/wx.htm
 - hxxps[:]//curly-sky-464f.ivelissayed74236719.workers[.]dev/
-- hxxps[:]//exadigital[.]com[.]ar/5c9fd126/osc/fid.html
 - hxxps[:]//exadigital[.]com[.]ar/5c9fd126/osc/fid.html
 - hxxps[:]//inclar[.]com/yyygid/amex31/link.html
 - hxxps[:]//mcdonoughandcompany[.]com/wp-content/uploads/elementor/thumbs/wabmailg.php
