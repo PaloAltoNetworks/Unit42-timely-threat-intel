@@ -41,7 +41,7 @@ DETAILS:
      alt=media&token=c894f398-084a-46d2-ab5f-e1d5457fe3f7
   -- blob:hxxps[:]//firebasestorage.googleapis[.]com/c894f398-084a-46d2-ab5f-e1d5457fe3f7
 
-- We have seen blob URL-based phishing used to mimic a variety of companies and organizations.
+- We have seen blob URL-based phishing pages mimic a variety of companies and organizations.
 - These may mimic a company's login page, or they could mimic web-based services, like email providers.
 
 INDICATORS:
