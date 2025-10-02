@@ -19,7 +19,7 @@ DETAILS:
   -- In this case, the browser directly makes a connection to the domain servicece[.]co.
   -- This pattern was initially designed for HTTP Basic Authentication, and these are valid URLs based on RFC-1738. 
      --- However, this pattern was abandoned due to the security implications of exposing usernames and/or passwords.
-     --- It could lead to account compromises due to logging in browser history, or through network sniffing.
+     --- It could lead to account compromises due to logging in browser history or through network sniffing.
      --- As a result, this syntax no longer works as originally intended on modern browsers. 
      --- Browsers strip the username and password from the URL before generating the web traffic.
   -- Of note: Over 30% of the domain names from this campaign have high lexical similarity.
@@ -38,15 +38,15 @@ DETAILS:
   -- But attackers rename the group message with a 6-digit number to resemble SMS short codes. 
      --- These SMS short codes are typically used by businesses and others organizations.
      --- They are used to send one-time passwords (OTPs), marketing texts, and confirmation messages. 
-  -- If recipients only notice the 6-digit group name, they might believe it comes from trusted source.
+  -- If recipients only notice the 6-digit group name, they might believe it comes from a trusted source.
   -- More info on SMS short codes at: https://en.wikipedia.org/wiki/Short_code
   
 - Strategically Aged Hostnames: 
 
   -- Many of the domains observed in this campaign are strategically aged. 
   -- Domains in this campaign have been registered as early as one year before their use in this campaign. 
-  -- A majority of these domains were aged between 3 and 12 months, with a peak amount of registration in June 2025.
-  -- Although most were strategically aged, at least 302 domains in this campaign were registered and used in September 2025.
+  -- A majority of these domains were aged between 3 and 12 months, with a peak registration in June 2025.
+  -- Although most were strategically aged, at least 302 domains were registered and used in September 2025.
   
 INDICATORS:
 
