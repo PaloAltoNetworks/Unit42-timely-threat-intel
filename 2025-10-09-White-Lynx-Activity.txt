@@ -1,0 +1,26 @@
+2025-10-09 (THURSDAY): WHITE LYNX ACTIVITY
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_apt-whitelynx-infoops-activity-7382455411574018048-uDyJ/
+- https://x.com/Unit42_Intel/status/1976689778000105666
+
+MALICIOUS DOMAINS FROM THIS ACTIVITY:
+
+- euromaidanwarszawa[.]org
+- standwukrain[.]org
+
+DETAILS:
+
+- Suspected Belarus-based threat actor White Lynx was observed establishing typo-squatted domains masquerading as legitimate pro-Ukraine organizations in Poland. 
+- The threat actor established two domains, euromaidanwarszawa[.]org and standwukrain[.]org, which appear related to recent information operations observed on social media.
+
+  -- Malicious domain euromaidanwarszawa[.]org - Imitates Euromaidan-Warszawa
+  -- Real domain: euromaidan-warszawa[.]org
+
+  -- Malicious domain standwukrain[.]org - Imitates Stand with Ukraine Foundation
+  -- Real domain: standwukraine[.]org
+
+- These domains overlap with recently observed information operations attempting to degrade relationships between Poland and Ukraine. 
+- The information operations were conducted on social media and included AI-generated videos.
+- The AI-generated videos attempt to impersonate the President of Euromaidan-Warszawa and the Stand with Ukraine Foundation.
