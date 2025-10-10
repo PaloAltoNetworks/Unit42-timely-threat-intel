@@ -1,0 +1,27 @@
+2025-10-10 (FRIDAY): DOMAINS IMPERSONATING SORA 2 SITES
+
+AUTHORS:
+
+- Shu Wang, Daiping Liu, Fan Fei
+
+NOTES:
+
+- Beware of domains impersonating OpenAI's Sora services following the Sora 2 AI release.
+- These sites are being used for scams, tracking and crypto fraud.
+
+14 EXAMPLES OF THESE DOMAINS:
+
+- aisora2[.]com
+- freesora2[.]site
+- gptsora2[.]com
+- openaisora2[.]com
+- sora2[.]live
+- sora2[.]tech
+- sora2[.]vip
+- sora2ai[.]io
+- sora2app[.]com
+- sora2pro[.]net
+- sora2token[.]fun
+- sora2vid[.]com
+- sora2video[.]app
+- sosora2[.]com
