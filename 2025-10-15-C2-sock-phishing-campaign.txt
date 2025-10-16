@@ -111,7 +111,6 @@ OTHER DOMAINS IN PHISHING URLS WE'VE SEEN FROM THIS CAMPAIGN:
 - rgfdd[.]cn
 - tnfpx1[.]cn
 - wdxocrh[.]cn
-- wdxocrh[.]cn
 - rufeng.kngnj[.]cn
 - vljuguyn.iicmv11[.]cn
 - yumen.qccgl[.]cn
@@ -241,5 +240,6 @@ NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/
         },
         //...
     });
+
 
 
