@@ -4,6 +4,11 @@ AUTHORS:
 
 - Howard Tong, Keerthiraj Nagaraj, Shehroze Farooqi, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-keylog-websockets-activity-7384641303621464064-Ssu1/
+- https://x.com/Unit42_Intel/status/1978875677962088507
+
 NOTES:
 
 - We have identified phishing activity that we've nicknamed the "C2-Sock" campaign.
@@ -240,6 +245,7 @@ NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/
         },
         //...
     });
+
 
 
 
