@@ -72,7 +72,7 @@ hxxp[:]//193427865.jfkxn[.]cn/?name=[recipient's email address]
 hxxp[:]//285122977.jfkxn[.]cn/?name=[recipient's email address]
 hxxp[:]//820483838.jfkxn[.]cn/?name=[recipient's email address]
 
-18 EXAMPLES OF C2-SOCK ßPHISHING URLS SEEN AS EARLY AS 2025-10-09:
+18 EXAMPLES OF C2-SOCK PHISHING URLS SEEN AS EARLY AS 2025-10-09:
 
       hxxp[:]//10.nkcrb[.]cn/?name=[recipient's email address]
       hxxp[:]//30.nkcrb[.]cn/?name=[recipient's email address]
@@ -241,4 +241,5 @@ NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/
         },
         //...
     });
+
 
