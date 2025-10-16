@@ -9,7 +9,7 @@ NOTES:
 - We have identified phishing activity that we've nicknamed the "C2-Sock" campaign.
 - The campaign uses a malicious script for activities like keylogging and stealing credentials.
 - It also allows changing web content (redirects/popups) in real-time via WebSockets by building a persistent connection. 
-- This campaign's phishing content streams everything you type, and it fingerprints your device for tracking.
+- This campaign's phishing content streams everything you type in the phishing page, and it fingerprints your device for tracking.
 
 DETAILS:
 
@@ -241,3 +241,4 @@ NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/
         },
         //...
     });
+
