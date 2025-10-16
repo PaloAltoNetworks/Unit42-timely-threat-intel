@@ -164,8 +164,6 @@ WEBSOCKETS TRAFFIC TO C2 SERVER CAUSED BY THE ABOVE PHISHING PAGE EXAMPLE:
 - hxxps[:]//rtwmh[.]cn:2012/chuanshu1/chuanshu?qishixianshi=13
 - hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
 
-- hxxps[:]//rtwmh[.]cn:2012/zhilingtai1/zhilingtai
-
 CODE SNIPPETS FROM PAGE:
 
 NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/js/xm.js on 2025-10-15.
@@ -245,6 +243,7 @@ NOTES: The following is from script returned from hxxp[:]//7565906.jfkxn[.]cn/1/
         },
         //...
     });
+
 
 
 
