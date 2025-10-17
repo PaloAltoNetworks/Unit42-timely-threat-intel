@@ -13,13 +13,13 @@ NOTES:
 DETAILS:
 
 - The associated phishing emails read as business requests to review orders and respond with quotes for pricing.
-- The attachment are HTML pages that display logins for legitimate online services like:
+- The attachments are HTML pages that display logins for legitimate online services like:
   -- Microsoft Excel
   -- Adobe Reader 
   -- Zimbra (an email platform).
-- These HTML files are tailored the individual recipients, using prefilled email address.
+- These HTML files are tailored to the individual recipients, using prefilled email addresses.
 - If victims submit their login credentials in these pages, the data is sent to the attacker using a legitimate web form service.
-- Web form services abused by the attackers include:
+- Web form services abused by attackers include:
   -- smartforms[.]dev
   -- submit-form[.]com (formspark[.]io)
 - In some cases, these HTML files employ a cloaking technique by redirecting to a legitimate page of the impersonated service provider.
@@ -31,7 +31,7 @@ SANITIZED EMAIL EXAMPLE:
 - File type: RFC 822 mail, ASCII text, with CRLF line terminators
 - Send date of email: 2025-10-14
 - Subject: RE: Proforma Invoice 9894963869
-- Sender (likely spoofed): Lee Wang <be.marinatown@proexcel.com.ph>
+- Sender (likely spoofed): Lee Wang <be.marinatown@proexcel[.]com[.]ph>
 
 SANITIZED HTML ATTACHMENT:
 
