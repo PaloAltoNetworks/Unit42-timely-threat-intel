@@ -4,6 +4,11 @@ AUTHOR:
 
 - Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7386123815937855488-kr1b/
+- https://x.com/Unit42_Intel/status/1980358196695806420
+
 NOTES:
 
 - This email-based phishing activity uses HTML attachments that abuse popular web form services.
