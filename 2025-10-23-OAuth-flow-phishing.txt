@@ -1,0 +1,55 @@
+2025-11-23 (THURSDAY): OAUTH FLOW PHISHING AND BRAND IMPERSONATION TO HIJACK MICROSOFT ACCOUNTS
+
+AUTHORS:
+
+- Beliz Kaleli, Alex Starov
+
+NOTES:
+
+- Phishing campaigns continue abusing Open Authorization (OAuth) flows to hijack accounts. 
+- Attackers impersonate major business and investment platforms.
+- This tricks users into entering codes or approving access that silently grants account control.
+- Two recent examples targeting Microsoft accounts involve impersonating the following companies:
+  -- SAP Concur
+  -- Vanguard Funds
+- These two examples The two examples use some of the same domains and appear related to each other.
+- For more information on the OAuth standard see: 
+  -- https://www.microsoft.com/en-us/security/business/security-101/what-is-oauth
+- For more information on phishing involving OAuth, see:
+  -- https://appomni.com/blog/oauth-grants-and-phishing-a-deadly-combination/
+  -- https://www.proofpoint.com/us/blog/threat-insight/microsoft-oauth-app-impersonation-campaign-leads-mfa-phishing
+
+PHISHING ACTIVITY IMPERSONATING SAP CONCUR:
+
+- Example of initial phishing URL:
+  -- hxxps[:]//clientlogin.sapconcurrentservices[.]help/?applicationId=3a1cb776-5d4d-49cf-9d6f-ea8d24e2819c&
+     hostname=apps.concur[.]com&br=cf8140cd0a5118120d46b3b3601098b3
+- The initial phishing URL impersonates SAP Concur. 
+- After a user enters their email address, the page instructs the use to copy and paste a code to:
+  -- hxxps[:]//login.microsoftonline[.]com/common/oauth2/deviceauth 
+- Pasting this attacker-generated code into the above URL authorizes an attacker-controlled device to access the victim's Microsoft account.
+
+
+PHISHING ACTIVITY IMPERSONATING VANGUARD FUNDS:
+
+- The email impersonates Vanguard Funds and masks an OAuth link to make it look like it is a link for a pdf file. 
+- This OAuth authorization link contains an attacker-owned redirect URI. 
+- The redirect URI will receive the access tokens with the permission requested in the scope parameter.
+- Example of link from an email:
+  -- hxxps[:]//login.microsoftonline[.]com/common/oauth2/v2.0/authorize?
+     client_id=e40de0db-0bb9-4d48-bcd5-57147ae3281f&
+     response_type=code&
+     redirect_uri=hxxps[:]//principalglobalinvestors.z13.web.core.windows[.]net&
+     scope=https%3A%2F%2Fmanagement.core.windows[.]net%2F%2F.default
+
+INDICATORS:
+
+- agimplfundmgt.z13.web.core[.]windows[.]net
+- aresffundmgt.z13.web.core.windows[.]net
+- auth.concurrentservices[.]top
+- blackrockfundmgt.z13.web.core.windows[.]net
+- clientlogin.sapconcurrentservices[.]help
+- lobominesapp.z13.web.core.windows[.]net
+- pgimglobalinvest.z13.web.core.windows[.]net
+- principalglobalinvestors.z13.web.core.windows[.]net
+- spreecapital[.]com
