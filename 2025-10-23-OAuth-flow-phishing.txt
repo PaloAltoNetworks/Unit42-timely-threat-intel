@@ -43,7 +43,9 @@ PHISHING ACTIVITY IMPERSONATING VANGUARD FUNDS:
 
 INDICATORS:
 
-- agimplfundmgt.z13.web.core[.]windows[.]net
+DOMAINS USED IN THIS ACTIVITY:
+
+- agimplfundmgt.z13.web.core.windows[.]net
 - aresffundmgt.z13.web.core.windows[.]net
 - auth.concurrentservices[.]top
 - blackrockfundmgt.z13.web.core.windows[.]net
