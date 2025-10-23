@@ -8,12 +8,12 @@ NOTES:
 
 - Phishing campaigns continue abusing Open Authorization (OAuth) flows to hijack accounts. 
 - Attackers impersonate major business and investment platforms.
-- This tricks users into entering codes or approving access that silently grants account control.
+- This can trick users into entering codes or approving access that silently grants account control.
 - Two recent examples targeting Microsoft accounts involve impersonating the following companies:
   -- SAP Concur
   -- Vanguard Funds
-- These two examples The two examples use some of the same domains and appear related to each other.
-- For more information on the OAuth standard see: 
+- These two examples use some of the same domains and appear related to each other.
+- For more information on the OAuth standard, see: 
   -- https://www.microsoft.com/en-us/security/business/security-101/what-is-oauth
 - For more information on phishing involving OAuth, see:
   -- https://appomni.com/blog/oauth-grants-and-phishing-a-deadly-combination/
@@ -35,7 +35,7 @@ PHISHING ACTIVITY IMPERSONATING VANGUARD FUNDS:
 - The email impersonates Vanguard Funds and masks an OAuth link to make it look like it is a link for a pdf file. 
 - This OAuth authorization link contains an attacker-owned redirect URI. 
 - The redirect URI will receive the access tokens with the permission requested in the scope parameter.
-- Example of link from an email:
+- Example of a link from an email:
   -- hxxps[:]//login.microsoftonline[.]com/common/oauth2/v2.0/authorize?
      client_id=e40de0db-0bb9-4d48-bcd5-57147ae3281f&
      response_type=code&
