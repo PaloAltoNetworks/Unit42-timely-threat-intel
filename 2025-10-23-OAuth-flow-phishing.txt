@@ -29,7 +29,6 @@ PHISHING ACTIVITY IMPERSONATING SAP CONCUR:
   -- hxxps[:]//login.microsoftonline[.]com/common/oauth2/deviceauth 
 - Pasting this attacker-generated code into the above URL authorizes an attacker-controlled device to access the victim's Microsoft account.
 
-
 PHISHING ACTIVITY IMPERSONATING VANGUARD FUNDS:
 
 - The email impersonates Vanguard Funds and masks an OAuth link to make it look like it is a link for a pdf file. 
