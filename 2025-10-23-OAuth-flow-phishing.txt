@@ -4,6 +4,11 @@ AUTHORS:
 
 - Beliz Kaleli, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-oauth-activity-7387241439509893120-U9B6/
+- https://x.com/Unit42_Intel/status/1981475756254322972
+
 NOTES:
 
 - Phishing campaigns continue abusing Open Authorization (OAuth) flows to hijack accounts. 
