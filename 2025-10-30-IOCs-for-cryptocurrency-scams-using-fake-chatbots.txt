@@ -16,18 +16,19 @@ DETAILS:
 - These scams abuse telegra[.]ph and graph[.]org, two sites that act as minimalist publishing platforms.
 - Anyone can use these sites to publish a simple web page very quickly.
 - Scammers have leveraged these sites to create web pages that link to the scam content.
-- These scams involve a long and interactive chain of events that lead to cryptocurrency payment page.
+- These scams involve a long and interactive chain of events that lead to a cryptocurrency payment page.
 - These scams require considerable user interaction to be successful.
 - Below is a scam from an active graph[.]org URL impersonating Binance
 - The scam is a supposed cryptocurrency giveaway that victims are supposed to pay a tax on.
-- This fake tax amount would be sent to a bitcoin address controlled by the scammers.
+- This fake tax amount would be sent to a Bitcoin address controlled by the scammers.
 
 CHAIN OF EVENTS SEEN ON 2025-10-30:
  
 - hxxps[:]//graph[.]org/Get-your-BTC-09-04   <-- still active page
-- hxxps[:]//goprox[.]cc/go/y2b403/33f4   <-- link from the above page, redirected to scam site
-- s-ua.eu[.]org    <-- scam site with fake crypto give away and fake chatbot
+- hxxps[:]//goprox[.]cc/go/y2b403/33f4   <-- link from the above page, redirected to a scam site
+- s-ua.eu[.]org    <-- scam site with fake crypto giveaway and fake chatbot
 - hxxps[:]//bimaster[.]cc/payform/y2b403/33f4/33d4v2/?csrf=d1e34   <-- page for victim to pay tax
+
 
 SCAMMER CONTROLLED BITCOIN ADDRESS FROM THE ABOVE PAYMENT PAGE:
 
