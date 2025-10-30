@@ -1,0 +1,69 @@
+2025-10-30 (THURSDAY): CRYPTOCURRENCY-THEMED SCAMS USE FAKE CHATBOTS TO LURE VICTIMS
+
+AUTHORS:
+
+- Beliz Keleli, Alex Starov
+
+NOTES:
+
+- Attackers are sending crypto-themed emails with links to pages posing as cryptocurrency platforms.
+- However, this activity may also appear in traffic generated through web browsing.
+- The long chain of events for this scam activity includes a fake specialist chatbot.
+- Ultimately, the scam requires victims to transfer money to a bitcoin address controlled by the scammers.
+
+DETAILS:
+
+- These scams abuse telegra[.]ph and graph[.]org, two sites that act as minimalist publishing platforms.
+- Anyone can use these sites to publish a simple web page very quickly.
+- Scammers have leveraged these sites to create web pages that link to the scam content.
+- These scams involve a long and interactive chain of events that lead to cryptocurrency payment page.
+- These scams require considerable user interaction to be successful.
+- Below is a scam from an active graph[.]org URL impersonating Binance
+- The scam is a supposed cryptocurrency giveaway that victims are supposed to pay a tax on.
+- This fake tax amount would be sent to a bitcoin address controlled by the scammers.
+
+CHAIN OF EVENTS SEEN ON 2025-10-30:
+ 
+- hxxps[:]//graph[.]org/Get-your-BTC-09-04   <-- still active page
+- hxxps[:]//goprox[.]cc/go/y2b403/33f4   <-- link from the above page, redirected to scam site
+- s-ua.eu[.]org    <-- scam site with fake crypto give away and fake chatbot
+- hxxps[:]//bimaster[.]cc/payform/y2b403/33f4/33d4v2/?csrf=d1e34   <-- page for victim to pay tax
+
+SCAMMER CONTROLLED BITCOIN ADDRESS FROM THE ABOVE PAYMENT PAGE:
+
+- bc1qf5x4jag30mzny7nvthapnefrhf5qx6j0w7a2cs
+
+OTHER URLS SEEN FOR THIS ACTIVITY:
+
+- hxxps[:]//graph[.]org/Payout-from-Blockchaincom-06-26?f4p
+- hxxps[:]//graph[.]org/ACCESS-CRYPTO-REWARDS-07-23?hs=99fa83af6bbd4efc6881a8c3fecb0330&
+- hxxps[:]//telegra[.]ph/2CydA3vPY0-10-29
+- hxxps[:]//telegra[.]ph/BITCOIN-01-08-15?251429873
+- hxxps[:]//telegra[.]ph/BTC-Transaction--56762-06-24?29cu7
+- hxxps[:]//telegra[.]ph/Information-No-qNoc2UICi-09-12
+
+OTHER DOMAINS ASSOCIATED WITH THIS ACTIVITY:
+
+- bimaster[.]cc
+- gubezand[.]cc
+- rolastopas[.]cc
+
+FOUR EXAMPLES OF THESE SCAM EMAILS FROM THE PAST YEAR:
+
+(Read: SHA256 hash - Send date of email)
+
+634e273923329d387bab4fafb34df26bdbada58b7e99cdb3cadc7c4eefdcd7f7 - 2025-08-08
+baad04327c43ef7cf0459c2312ad78bfb398faf09940e64bf7ea428d84dac771 - 2025-07-16
+3bf291b45422f2960a0eb7507fce602abb45d11c0189b7d18ddc925414caf143 - 2025-03-01
+c29ce094d7fb75d3ba7055e1065b6a098f22c1da71623e6f0781f4601584ec3d - 2024-10-30
+
+URLS THAT REDIRECT TO THE INITIAL SCAM PAGES:
+
+- The following URLs redirect to: hxxps[:]//graph[.]org/Get-your-BTC-09-04?[string]
+- All are live, and they must include the query parameter, or they generate a "wrong link" error.
+
+- hxxp[:]//url6235.managers[.]org[.]uk/ls/click?upn=u001.3BZDjnvGnr5Wno7JOg7on8EOySPT9TY8mJd-2F0UjkXdid-2FK3PUC-2B2iixCAi6XTTn3QMNclb47zXmEDjLaKCpNNiziaFZzBi1rg2U9zfU5AzkYhw9sXqjkFYTYEqlWITGQ_rIL_5Y9C-2B-2Fzbmi1Z8AZ1P0Xb4-2FmIpGb6zjcgTuxQl5Yu3UUhI2W32NMcEOnjL8REc2NWU4U2-2FXglCNZdkqnA0I4Soj0ad9qYKgZgvd24hH2Z2ktmE0D1eblwt1QVVtnghv8Q2Imh3uyqL54-2F-2BUt1BHkaSUithQ4AjBPocVo90eiYT579sFT3BZMhMla4-2FznwOloNKFJg-2FLfexqoe0SQGCmyrzA-3D-3D
+
+- hxxp[:]//url4859.tigerfxtrading[.]com/ls/click?upn=u001.j-2FIpOj1FMyDJkJ8qqBChG8A4on-2FqLR8TD5PAisRYpEcnLxjBJ6F-2Bpo-2ByRAHwDrNA0UAm8RV4J-2BO17n8MkQFuNA-3D-3D75-u_S8t0Rflk5E9Ko5gJ9ADZJdppnIrBKLa5vWBEleQ2nZefjr-2FNE-2BTDAbSpnCg075THrsMDgsH69IWSP8P04pe6-2FsaSx5cpsuUbeJh17a8mnQVzn6LtMmJcBJzUvSL-2B6oBSX-2B5czHp-2FPZsMUrApNilWZvJT2by6r9Wt40KPwaeAzM1cc7byn5A-2BJG2HxrrlPBdgQ-2BLu8DYa6tsyk0iCPnYeLw-3D-3D
+
+- hxxps[:]//u48600742.ct.sendgrid[.]net/ls/click?upn=u001.8seWY2EqxIVTf6dw3MN7exC1Xub2SiAQdl1Odaz-2Fefw4sW8Jc-2FQAlz7-2BLuKJJLp3bSj0NSFDSNDTbDgfgPYH2jBi8kW1qPzDQnn5Xf0n5dJDc7hedDn1HmZ-2FgU9xuJnjFeDT_-2BfvDFm8rLlMG3DiFVwLpkqbHTWMtv41fThUO2OgTksEHc0YULMl1RWuaflipuZTX4b4M5ts66MtBl-2FNP-2BJllc-2BWMsbcg7smuxpQ47pNKCQShi3iYzgZDGQe0lkOL-2BH0tD6BWPlVhwAtvJFSuf5AmC8H3wjXrDAVGiTZojUCxuqpZ81XvJ4KUn3TgIYiBaMJRWfo5J9YhCD-2BwFgCScSKG9Q-3D-3D
