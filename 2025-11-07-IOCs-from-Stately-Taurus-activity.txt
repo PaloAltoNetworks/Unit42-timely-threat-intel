@@ -1,0 +1,70 @@
+2025-11-07 (FRIDAY): STATELY TAURUS ACTIVITY
+
+NOTES:
+
+- Stately Taurus (aka Mustang Panda) remains active in globally spanning espionage operations.
+- See below for domains from various Stately Taurus campaigns in the last 90 days.
+- For background on Stately Taurus see:
+ -- https://unit42.paloaltonetworks.com/threat-actor-groups-tracked-by-palo-alto-networks-unit-42/#post-135181-_wfgy859vfe4q
+ 
+DOMAINS:
+
+- admin.tbh[.]beauty
+- aihkstore[.]com
+- atravelingwitch[.]com
+- buzzurro[.]net
+- canaisdetv[.]net
+- cdn.agadatacenter[.]com
+- cn-mircosoft[.]cc
+- cofei[.]net
+- colorflee[.]org
+- crossfitolathe[.]com
+- cseconline[.]org
+- cubukluescort[.]com
+- d32tpl7xt7175h.cloudfront[.]net
+- designehair[.]com
+- dest-working[.]com
+- dorareco[.]net
+- download-updata[.]com
+- ecomputers[.]org
+- economiamc[.]org
+- findnextfriend[.]com
+- fuyuju[.]com
+- google-jp[.]com
+- harrietmwelch[.]com
+- healthydietes[.]com
+- howtotopics[.]com
+- images.kiidcloud[.]com
+- kentscaffolders[.]com
+- loginge[.]com
+- mediareleaseupdates[.]com
+- microsoft-windows[.]cc
+- mintstartups[.]com
+- mirocsoft-update[.]com
+- mydownfiles.z11.web.core.windows[.]net
+- napasbdc[.]org
+- naturadeco[.]net
+- news.oiadnoigc[.]com
+- nvofficespace[.]com
+- paquimetro[.]net
+- photo.kozow[.]com
+- phpthemes[.]net
+- premegalithic[.]com
+- racineupci[.]org
+- relivonline[.]com
+- renxinguo[.]com
+- rhklineco[.]net
+- rpcgenetics[.]com
+- service-microsoft[.]net
+- singtelcom.site
+- smldatacenter[.]com
+- supplementsoftheyear[.]com
+- thecamco[.]net
+- theprmummy[.]com
+- thisisymem.site
+- updatecloud9.avatarstor[.]com
+- updater-browser[.]com
+- vabercoach[.]com
+- vnptgroup.it[.]com
+- welnetsanda[.]org
+- windows-microsoft[.]cc
