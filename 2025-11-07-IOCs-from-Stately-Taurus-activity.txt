@@ -4,7 +4,7 @@ NOTES:
 
 - Stately Taurus (aka Mustang Panda) remains active in globally spanning espionage operations.
 - See below for domains and IP addresses from various Stately Taurus campaigns in the last 90 days.
-- For background on Stately Taurus see:
+- For background on Stately Taurus, see:
  -- https://unit42.paloaltonetworks.com/threat-actor-groups-tracked-by-palo-alto-networks-unit-42/#post-135181-_wfgy859vfe4q
  
 DOMAINS:
