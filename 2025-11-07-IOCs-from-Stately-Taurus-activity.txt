@@ -1,0 +1,115 @@
+2025-11-07 (FRIDAY): STATELY TAURUS ACTIVITY
+
+NOTES:
+
+- Stately Taurus (aka Mustang Panda) remains active in globally spanning espionage operations.
+- See below for domains and IP addresses from various Stately Taurus campaigns in the last 90 days.
+- For background on Stately Taurus see:
+ -- https://unit42.paloaltonetworks.com/threat-actor-groups-tracked-by-palo-alto-networks-unit-42/#post-135181-_wfgy859vfe4q
+ 
+DOMAINS:
+
+- admin.tbh[.]beauty
+- aihkstore[.]com
+- atravelingwitch[.]com
+- buzzurro[.]net
+- canaisdetv[.]net
+- cdn.agadatacenter[.]com
+- cn-mircosoft[.]cc
+- cofei[.]net
+- colorflee[.]org
+- crossfitolathe[.]com
+- cseconline[.]org
+- cubukluescort[.]com
+- d32tpl7xt7175h.cloudfront[.]net
+- designehair[.]com
+- dest-working[.]com
+- dorareco[.]net
+- download-updata[.]com
+- ecomputers[.]org
+- economiamc[.]org
+- findnextfriend[.]com
+- fuyuju[.]com
+- google-jp[.]com
+- harrietmwelch[.]com
+- healthydietes[.]com
+- howtotopics[.]com
+- images.kiidcloud[.]com
+- kentscaffolders[.]com
+- loginge[.]com
+- mediareleaseupdates[.]com
+- microsoft-windows[.]cc
+- mintstartups[.]com
+- mirocsoft-update[.]com
+- mydownfiles.z11.web.core.windows[.]net
+- napasbdc[.]org
+- naturadeco[.]net
+- news.oiadnoigc[.]com
+- nvofficespace[.]com
+- paquimetro[.]net
+- photo.kozow[.]com
+- phpthemes[.]net
+- premegalithic[.]com
+- racineupci[.]org
+- relivonline[.]com
+- renxinguo[.]com
+- rhklineco[.]net
+- rpcgenetics[.]com
+- service-microsoft[.]net
+- singtelcom.site
+- smldatacenter[.]com
+- supplementsoftheyear[.]com
+- thecamco[.]net
+- theprmummy[.]com
+- thisisymem.site
+- updatecloud9.avatarstor[.]com
+- updater-browser[.]com
+- vabercoach[.]com
+- vnptgroup.it[.]com
+- welnetsanda[.]org
+- windows-microsoft[.]cc
+
+IP ADDRESSES:
+ 
+- 23.27.24[.]173
+- 23.27.28[.]130
+- 23.27.48[.]26
+- 23.27.48[.]64
+- 23.27.48[.]94
+- 23.27.98[.]150
+- 23.236.66[.]135
+- 38.181.35[.]129
+- 38.211.230[.]5
+- 38.211.230[.]187
+- 38.211.230[.]245
+- 38.54.85[.]64
+- 38.54.113[.]102
+- 38.54.119[.]136
+- 38.60.203[.]197
+- 38.246.73[.]120
+- 45.134.36[.]185
+- 45.147.26[.]117
+- 45.152.65[.]199
+- 50.114.59[.]69
+- 85.203.39[.]49
+- 96.126.191[.]202
+- 101.78.209[.]42
+- 103.238.225[.]248
+- 108.61.160[.]194
+- 108.165.100[.]65
+- 111.217.141[.]70
+- 116.206.178[.]33
+- 136.0.11[.]77
+- 136.0.11[.]122
+- 149.104.2[.]7
+- 166.88.2[.]53
+- 166.88.2[.]90
+- 166.88.55[.]154
+- 166.88.97[.]22
+- 166.88.97[.]138
+- 166.88.97[.]163
+- 166.88.97[.]233
+- 166.88.99[.]210
+- 176.96.226[.]28
+- 198.105.126[.]116
+
