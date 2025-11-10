@@ -61,7 +61,6 @@ CHARACTERISTICS OF PAGES THAT IMPERSONATE WEBMAIL LOGIN SITES:
   -- For example, if the login credentials are sent to another malicious website,
   -- This likely means the web server hosting the phishing is misconfigured. For example:
      --- The code to generate the HTTP traffic does not contain an ​​Access-Control-Allow-Origin header.
-These types of phishing (using screenshots and logos belonging to the victim's email domain) debuted over three years ago, but we are seeing 
 
 FINAL NOTES:
 
