@@ -4,6 +4,11 @@ AUTHOR:
 
 - Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-activity-7393767679263764481-7XKd/
+- https://x.com/Unit42_Intel/status/1988002020465192985
+
 NOTES:
 
 - We are currently tracking phishing activity disguised as email security alerts. 
