@@ -13,12 +13,12 @@ NOTES:
 
 DETAILS:
 
-- This campaign takes advantage of people searching for free versions of copyrighted material
-  -- Includes cracked versions of popular software or video games
+- This campaign takes advantage of people searching for free versions of copyrighted material.
+  -- Searches include PDF copies of popular books and cracked versions of popular software or video games.
 - Initial websites in this URL chain often use CAPTCHA pages to avoid web crawlers and other types of automated scans.
 - These websites often have additional fingerprinting and bot detection using multiple fingerprinting libraries.
 - Once the traffic passes fingerprinting and anti-bot requirements, it triggers a redirection chain to the final download.
-- The redirection chain uses intermediary URLs that lead, and to the final download download pages.
+- The redirection chain uses intermediary URLs that lead to the final download pages.
   -- intermediary URLs hosted on mqdownload[.]com or yuishare[.]com
   -- Final download pages hosted on locked-link[.]com, installxcheck[.]com or ggclicker[.]com
 - Upon clicking a download button, the page guides the visitor to finish an offer before downloading the file. 
