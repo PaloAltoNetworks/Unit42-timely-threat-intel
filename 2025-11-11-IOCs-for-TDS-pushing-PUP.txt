@@ -1,0 +1,127 @@
+2025-11-11 (TUESDAY): TDS ACTIVITY LEADING TO PUP
+
+AUTHORS:
+
+- Shaown Sarker, Shehroze Farooqi, Nabeel Mohammed, Chi-Wei Liu, Alex Starov
+
+NOTES:
+
+- We've been investigating traffic direction system (TDS) activity pushing potentially unwanted programs (PUP)
+- This TDS activity features multi-layer anti-bot protection to evade detection, which includes:
+  -- anti-bot captcha
+  -- multiple fingerprinting libraries (ThumbmarkJS and FingerprintJS)
+
+DETAILS:
+
+- This campaign takes advantage of people searching for free versions of copyrighted material
+  -- Includes cracked versions of popular software or video games
+- Initial websites in this URL chain often use CAPTCHA pages to avoid web crawlers and other types of automated scans.
+- These websites often have additional fingerprinting and bot detection using multiple fingerprinting libraries.
+- Once the traffic passes fingerprinting and anti-bot requirements, it triggers a redirection chain to the final download.
+- The redirection chain uses intermediary URLs that lead, and to the final download download pages.
+  -- intermediary URLs hosted on mqdownload[.]com or yuishare[.]com
+  -- Final download pages hosted on locked-link[.]com, installxcheck[.]com or ggclicker[.]com
+- Upon clicking a download button, the page guides the visitor to finish an offer before downloading the file. 
+- Downloads are usually specialized versions of web browsers or browser extensions.
+
+INDICATORS:
+
+76 DOMAINS NOTED FOR THIS ACTIVITY:
+
+- afile2[.]com
+- allfile[.]me
+- approximum[.]com
+- batoidpredetainheild[.]com
+- benozoxev.mofien[.]co[.]za
+- berapt-medii[.]com
+- bitira.ragaz[.]co[.]za
+- buyfile-enter-net[.]com
+- click.tmatrack[.]online
+- click.trackamour[.]click
+- cloudcrategen[.]store
+- cloudfreefiles[.]info
+- creamy[.]net[.]ru
+- cycasinrobotlikescapement[.]com
+- dallesmisalignedvirginia[.]com
+- dashastore[.]top
+- dicyclistclokemyoneure[.]com
+- dosya-indirici[.]online
+- downloadsum[.]com
+- downstack[.]space
+- driptrip.trckswrm[.]com
+- drivebeam[.]cyou
+- epirotemidmonthsbeadroll[.]com
+- fastsbasicsmakes.pics
+- file-enter-web[.]com
+- gatosrestaurante[.]com
+- gostoragefile[.]forum
+- grabflow[.]cyou
+- hookcheckmicrocodechilte[.]com
+- installxcheck[.]com
+- launchingsdrynessesblinds[.]com
+- leadgainz[.]com
+- links.m2mediagroup.mkt5930[.]com
+- locked-link[.]com
+- maundiesbondocmetalize[.]com
+- mauthernarghilesenergized[.]com
+- maworopane.nurepikis[.]com
+- mqdownload[.]com
+- misclassecruszoonomy[.]com
+- nonepost[.]com
+- outardesynchysisuruguayans[.]com
+- outslipoopackshampooers[.]com
+- overfearpeonageschitosans[.]com
+- pinkypie[.]net[.]ru
+- pixeltrey[.]com
+- preshowstophwhillikins[.]com
+- prurientreplaygoings[.]com
+- pythogenicwagangoptimizes[.]com
+- quiddanyvinhaticobagwigs[.]com
+- realmoreupload[.]com
+- rebiayarnersdistillage[.]com
+- recasketmoropuscoshery[.]com
+- redirwise[.]com
+- result2.jeeadv[.]ac[.]in
+- severancepichurimaval[.]com
+- sheratanteethyknevel[.]com
+- spitkidphantastsguitarlike[.]com
+- spooniestaversjuggling[.]com
+- storageshq[.]com
+- storageshub[.]com
+- strobilusvocaliseleucitis[.]com
+- thefile-share-every-fun[.]com
+- thenadrattlenarcotical[.]com
+- track.safechecklink[.]com
+- tracki[.]click
+- tracking.pretrackings[.]com
+- trxadx[.]com
+- unreasonsjewelhousecommodatum[.]com
+- usedownloads[.]com
+- usestorages[.]com
+- wainscotedpolygraphchiromancy[.]com
+- wenuwibefu.nurepikis[.]com
+- winkraven[.]com
+- wubagojobazu.nurepikis[.]com
+- yuishare[.]com
+- zutaguganonepij.eelruxe[.]com
+
+EXAMPLE OF INITIAL URL IN THIS CHAIN:
+
+- hxxps[:]/batoidpredetainheild[.]com/DSrK4fc708fd2eb998a7b115061c20778631065981bc3?
+  q=Goat%20Simulator%203
+
+EXAMPLE OF INTERMEDIATE URL:
+
+- hxxps[:]//mqdownload[.]com/x/QDHKGKH?source=353529&
+  title=install+full+video2187&
+  tracker=AOFZAmn5ZAUAXlYCAFVTOQASAAAAAACO
+
+EXAMPLE OF URL TO DOWNLOAD PUP:
+
+- hxxps[:]//locked-link[.]com/JXNjsy291OskMZJxnYYsax?a=0&
+  u=180990&
+  t=the_associated_press_stylebook_2024_2026_pdf_epub.zip&
+  tracker=ds2-1-Android&
+  f=126
+  &m=126
+  &c2=MTQ4NTA2MjQ3
