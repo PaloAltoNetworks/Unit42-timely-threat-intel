@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shaown Sarker, Shehroze Farooqi, Nabeel Mohammed, Chi-Wei Liu, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_tds-cloaking-captcha-activity-7394849084790095872-9f0e/
+- https://x.com/Unit42_Intel/status/1989083447248240981
+
 NOTES:
 
 - We've been investigating traffic direction system (TDS) activity pushing potentially unwanted programs (PUP)
