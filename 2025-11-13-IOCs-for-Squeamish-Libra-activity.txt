@@ -1,0 +1,33 @@
+2025-11-13 (FRIDAY): SUSPECTED SQUEAMISH LIBRA (FIN7) MALWARE
+
+AUTHOR:
+
+- Matt Brady
+
+NOTES:
+
+- Unit 42 recently identified several suspicious files while investigating a report on an SSH-based backdoor linked to the cybercrime group FIN7, which we track as Squeamish Libra.
+- The malware has likely been used in the wild since at least 2022 and is seemingly downloaded from a remote server hosting a ZIP file containing a script labeled "install.bat."
+- Based on open source reporting, the malware enables its operators to establish a persistent mechanism, create reverse SSH tunnels for command-and-control (C2) communications and exfiltrate data via SFTP.
+- We continue to hunt for additional samples and other indicators associated with this ongoing threat activity.
+
+BACKGROUND:
+
+- FIN7 has likely been active since at least 2013 and previously targeted a number of different sectors including retail, hospitality, and financial services.
+- The group has evolved its monetization tactics over the years from using point-of-sale (POS) malware to big game hunting (BGH) ransomware.
+- The malware has previously been analyzed by a number of reputable sources and there have seemingly been few changes to its code base from inception to now.
+  -- https://www.sentinelone.com/labs/fin7-reboot-cybercrime-gang-enhances-ops-with-new-edr-bypasses-and-automated-attacks/
+  -- https://x.com/PRODAFT/status/1985731361492050255
+  -- https://catalyst.prodaft.com/public/report/ssh-based-backdoor/overview
+
+INDICATORS:
+
+3 RECENT SAMPLES (READ SHA256 HASH - FILE NAME - FIRST SEEN DATE):
+
+- 2a0078b20b94c1346b85aba80db76ba07c5ccbcb78de53fac9d177d48afd8d4c - Backdoor Installation ZIP - 2025-09-16
+- bd9bad7c6ab35355dd29ac177fc6d9f732705cafb246ed37da303ddab31ade99 - Backdoor Installation Batch Script - 2025-09-16
+- 126ceb09a96fe13f76929f2139a813f8c950059108038a8dc4ece1905577c7f6 - Archived SSH Backdoor Configs - 2025-09-16
+
+IP ADDRESSES FOR DELIVERY SERVERS:
+
+- 38.135.54[.]20
