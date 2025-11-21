@@ -7,7 +7,8 @@ AUTHOR:
 NOTES:
 
 - Unit 42 recently identified numerous malicious files while investigating a report on ShinySp1d3r ransomware, which is linked to the cybercrime group ShinyHunters.
-- We track this group as Bling Libra
+- The ransomware name is spelled as "ShinySp1d3r" or "Sh1nySp1d3r"
+- We track this group as Bling Libra.
 - Several of the samples analyzed contain an embedded URL that is likely serving as a placeholder for a future Tor-based data leak site hxxp://sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz[.]onion/
 - Based on open source reporting, the ransomware encryptor was built from scratch and is likely still under active development, meaning that its current name and capabilities may change in the near future.
 - We continue to hunt for additional samples and other indicators associated with this form of ransomware.
