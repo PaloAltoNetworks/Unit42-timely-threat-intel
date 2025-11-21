@@ -1,0 +1,29 @@
+2025-11-21 (FRIDAY): SUSPECTED SHINYSP1DER RANSOMWARE SAMPLES
+
+AUTHOR:
+
+- Matt Brady
+
+NOTES:
+
+- Unit 42 recently identified numerous malicious files while investigating a report on ShinySp1d3r ransomware, which is linked to the cybercrime group ShinyHunters.
+- We track this group as Bling Libra
+- Several of the samples analyzed contain an embedded URL that is likely serving as a placeholder for a future Tor-based data leak site hxxp://sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz[.]onion/
+- Based on open source reporting, the ransomware encryptor was built from scratch and is likely still under active development, meaning that its current name and capabilities may change in the near future.
+- We continue to hunt for additional samples and other indicators associated with this form of ransomware.
+
+BACKGROUND:
+
+- Bling Libra has likely been active since at least 2020 and previously targeted a number of different industries across the globe.
+- The group has evolved its monetization tactics over the years from using ransomware (ShinyHunters) to data theft and extortion targeting customer SaaS tenants.
+- Bling Libra is allegedly part of a broader criminal syndicate known as Scattered Lapsus$ Hunters (SLSH).
+-- https://www.bleepingcomputer.com/news/security/meet-shinysp1d3r-new-ransomware-as-a-service-created-by-shinyhunters/
+-- https://unit42.paloaltonetworks.com/scattered-lapsus-hunters-updates/
+
+INDICATORS:
+
+RECENT SAMPLES (READ SHA256 HASH - FIRST SEEN DATE):
+
+670a269d935f1586d4f0e5bed685d15a38e6fa790f763e6ed5c9fdd72dce3cf2 - 2025-11-19
+62dc6ed7c83769648b5c59ad9cc2a4e26daec96a952eb44c93fd45f2011a3444 - 2025-11-11
+3bf53cddf7eb98d9cb94f9aa9f36c211a464e2c1b278f091d6026003050281de - 2025-11-07
