@@ -11,6 +11,7 @@ NOTES:
 - We track this group as Bling Libra.
 - Several of the samples analyzed contain an embedded URL that is likely serving as a placeholder for a future Tor-based data leak site hxxp://sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz[.]onion/
 - Based on open source reporting, the ransomware encryptor was built from scratch and is likely still under active development, meaning that its current name and capabilities may change in the near future.
+- Open-source reporting also indicates this ransomware has a Linux version on the way.
 - We continue to hunt for additional samples and other indicators associated with this form of ransomware.
 
 BACKGROUND:
