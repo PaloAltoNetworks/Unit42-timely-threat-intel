@@ -4,6 +4,11 @@ AUTHOR:
 
 - Matt Brady
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ransomware-blinglibra-shinyhunters-activity-7397685748688220160-Tgq5/
+- https://x.com/Unit42_Intel/status/1991920111758856567
+
 NOTES:
 
 - Unit 42 recently identified numerous malicious files while investigating a report on ShinySp1d3r ransomware, which is linked to the cybercrime group ShinyHunters.
