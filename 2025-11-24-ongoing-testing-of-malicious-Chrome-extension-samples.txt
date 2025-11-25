@@ -13,7 +13,7 @@ NOTES:
 
 DETAILS:
 
-- The legitimate extention being impersonated is Norton Safe Search Enhanced
+- The legitimate extension being impersonated is Norton Safe Search Enhanced
   -- The legitimate Norton extension ID is eoigllimhcllmhedfbmahegmoakcdakd
   -- It currently reports 100k+ users.
 - The malicious samples use the same icons, name and description as the legitimate extension. 
@@ -50,7 +50,7 @@ PRELIMINARY ANALYSIS OF THE EXTENSIONS:
          ---- periodInMinutes = 363 : dsue.crx (),
          ---- periodInMinutes = 330 : dsuc.crx ()
 - C (C2) traffic consists of GET requests over HTTPS to attacker-controlled servers.
-- This malicious extension re-uses part of the official Norton extension's implementation. 
+- This malicious extension reuses part of the official Norton extension's implementation. 
   -- This tactic is likely used to make samples of this malicious extension appear more legitimate.
 
 LINKS TO OTHER MALICIOUS EXTENSIONS:
