@@ -86,6 +86,6 @@ EXAMPLE OF A REDIRECTION CHAIN:
 THE ABOVE REDIRECTION CHAIN LED TO THE FOLLOWING FILE:
 
 - SHA256 hash: fc577d03d84db5fd5f973afcf3e595d4471244d7bb71566b1dcf490e161aad2b
-- FIle size: 123,354,598 bytes
+- File size: 123,354,598 bytes
 - File name: StealthGuard.Msix
 - File description: MSIX Windows app package for unwanted program/application 
