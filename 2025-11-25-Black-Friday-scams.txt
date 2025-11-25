@@ -1,0 +1,91 @@
+2025-11-25 (TUESDAY): DOMAINS USED FOR BLACK FRIDAY SCAMS
+
+AUTHORS:
+
+- Reethika Ramesh, Daiping Liu
+
+NOTES:
+
+- Beware of scams related to Black Friday (the Friday after the US Thanksgiving holiday).
+- On this day, retailers often offer sales and discounts for the upcoming holiday season.
+- Known threat actors are increasing their phishing emails related to Black Friday.
+- These emails often link to fraudulent luxury shopping sites. 
+- We have also noticed a rise in the registration of new domains used for suspicious or malicious activities.
+
+DETAILS:
+
+- Known threat actors, like those associated with luxury shopping fraud, are intensifying their phishing efforts.
+- We've noticed an increasing volume of spam and phishing emails tailored for Black Friday.
+- Subject lines include:
+  -- Subject: ROLEX WATCHES: Pre-Black Friday Sale
+  -- Subject: [Black Friday 2025] Louis Vuitton Bags Starting at Only $200
+  -- Subject: [Black Friday 2025] Louis Vuitton Bags You’ll Love - Starting at Just $200!
+  -- Subject: [Black Friday 2025] Discover Timeless Luxury - Watches Starting at Just $250
+  -- Subject: [Black Friday 2025] Discover Your New Favorite Louis Vuitton Bag - Elegance Starts at $200
+  -- Subject: [Black Friday 2025] Timeless Luxury - Louis Vuitton Handbags Starting at $200
+  -- Subject: [Black Friday 2025] Redefine Luxury - Bold Watches from $250
+  -- Subject: [Black Friday 2025] Shop Elegant Luxury Watches from $250
+  -- Subject: [Black Friday 2025] Louis Vuitton Bags from $200!
+  -- Subject: [Black Friday 2025] Luxury Watches Starting at $250
+  -- Subject: [Black Friday 2025] Exclusive Louis Vuitton Handbags - Elegance Starts at $200
+  -- Subject: [Black Friday 2025] Rolex Starting at $250
+  -- Subject: [Black Friday 2025] Elevate Every Moment - Luxury Watches from $250
+  -- Subject: [Black Friday 2025] Discover Timeless Luxury Watches Starting from $250
+  -- Subject: [Black Friday 2025] Louis Vuitton Bags Starting at $200 - Elevate Your Style Today.
+- These emails often masquerade as popular brands for:
+  -- Luxury goods
+  -- Makeup
+  -- Shoes and athletic gear
+  -- Popular e-commerce platforms
+- Many of the associated websites collect login credentials, emails, addresses and payment information.
+- As always, people should avoid entering personal or payment information on unfamiliar websites.
+
+- In addition to Black Friday scams, we've seen an increase in domain registration for the following activities:
+  -- Phishing
+  -- Malicious redirections
+  -- Scams
+
+INDICATORS:
+
+DOMAINS USED FOR PHISHING EMAIL CAMPAIGNS:
+
+- Registered on 2025-10-01: bookddchot[.]ru 
+- Registered on 2025-10-01: wwwhotddcbook[.]ru
+- Registered on 2025-10-11: wwwtopaaabook[.]ru
+- Registered on 2025-10-11: wwwtopeeebook[.]ru
+- Registered on 2025-10-11: xn--80aaae9btead2a[.]xn--p1ai
+- Registered on 2025-10-11: xn--90ahaa0atead2a[.]xn--p1ai
+- Registered on 2025-10-17: wwwtopcccbook[.]ru
+- Registered on 2025-10-17: xn--90araabtead2a[.]xn--p1ai
+- Registered on 2025-10-19: wwwhotsalebooks[.]ru
+- Registered on 2025-10-19: wwwtophosbook[.]ru
+- Registered on 2025-10-19: xn--90askabadrf6a[.]xn--p1ai
+- Registered on 2025-10-21: wwwtopsalebook[.]ru
+- Registered on 2025-10-21: wwwtopsalebooks[.]ru
+- Registered on 2025-10-21: xn--80aclvcqeaduhb[.]xn--p1ai
+
+DOMAINS USED FOR REDIRECTION OR PHISHING SITES:
+
+- Registered on 2025-01-06: onrunningblackfriday[.]com
+- Registered on 2025-02-17: blackfridaysus[.]com
+- Registered on 2025-03-12: blackfridaydeals[.]space
+- Registered on 2025-10-20: blackfridaysalele[.]club
+- Registered on 2025-10-21: blackfridayshopping[.]shop
+- Registered on 2025-10-28: oferta-blackfriday[.]com
+- Registered on 2025-11-19: blackfridaydailydeal[.]com
+- Registered on 2025-11-22: blackfridayofertas[.]online
+- Registered on 2025-11-22: glamblackfriday[.]com
+
+EXAMPLE OF A REDIRECTION CHAIN:
+
+- blackfridaysus[.]com
+- hipiyk[.]com/int?dat=[information removed]
+- ocalesit[.]com/xfc/sfclick?u=[information removed]
+- cint2.stlt-grd[.]online/?clickid=
+
+THE ABOVE REDIRECTION CHAIN LED TO THE FOLLOWING FILE:
+
+- SHA256 hash: fc577d03d84db5fd5f973afcf3e595d4471244d7bb71566b1dcf490e161aad2b
+- FIle size: 123,354,598 bytes
+- File name: StealthGuard.Msix
+- File description: MSIX Windows app package for unwanted program/application 
