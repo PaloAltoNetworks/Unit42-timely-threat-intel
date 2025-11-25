@@ -47,8 +47,8 @@ PRELIMINARY ANALYSIS OF THE EXTENSIONS:
   -- The extension uses the chrome.alarms API to schedule part of the JS code to run periodically.
      --- The same patterns and specific periods are shared among the versions as follows:
          ---- periodInMinutes = 720 : cworld.crx, cworld.crx0, norton, notron.crx0
-         ---- periodInMinutes = 363 : dsue.crx (),
-         ---- periodInMinutes = 330 : dsuc.crx ()
+         ---- periodInMinutes = 363 : dsue.crx
+         ---- periodInMinutes = 330 : dsuc.crx
 - C (C2) traffic consists of GET requests over HTTPS to attacker-controlled servers.
 - This malicious extension reuses part of the official Norton extension's implementation. 
   -- This tactic is likely used to make samples of this malicious extension appear more legitimate.
