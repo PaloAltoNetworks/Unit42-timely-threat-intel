@@ -54,7 +54,7 @@ PRELIMINARY ANALYSIS OF THE EXTENSIONS:
          ---- periodInMinutes = 720 : cworld.crx, cworld.crx0, norton, notron.crx0
          ---- periodInMinutes = 363 : dsue.crx
          ---- periodInMinutes = 330 : dsuc.crx
-- C (C2) traffic consists of GET requests over HTTPS to attacker-controlled servers.
+- C2 traffic consists of GET requests over HTTPS to attacker-controlled servers.
 - This malicious extension reuses part of the official Norton extension's implementation. 
   -- This tactic is likely used to make samples of this malicious extension appear more legitimate.
 
