@@ -4,6 +4,11 @@ AUTHORS:
 
 - Qinge Xie, Fang Liu, Nabeel Mohamed, Claud Xiao, Shresta Bellary Seetharam, Billy Melicher, Shehroze Farooqi, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_were-tracking-ongoing-sample-testing-of-activity-7399216635716431872-r9KV/
+- https://x.com/Unit42_Intel/status/1993451014129684558
+
 NOTES:
 
 - We're tracking a threat actor who is testing samples of a malicious Chrome extension on VirusTotal.
