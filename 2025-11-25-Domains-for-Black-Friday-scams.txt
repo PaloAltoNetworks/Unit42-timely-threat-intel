@@ -32,18 +32,17 @@ DETAILS:
   -- Subject: [Black Friday 2025] Elevate Every Moment - Luxury Watches from $250
   -- Subject: [Black Friday 2025] Discover Timeless Luxury Watches Starting from $250
   -- Subject: [Black Friday 2025] Louis Vuitton Bags Starting at $200 - Elevate Your Style Today.
-- These emails often masquerade as popular brands for:
-  -- Luxury goods
-  -- Makeup
-  -- Shoes and athletic gear
-  -- Popular e-commerce platforms
 - Many of the associated websites collect login credentials, emails, addresses and payment information.
 - As always, people should avoid entering personal or payment information on unfamiliar websites.
-
 - In addition to Black Friday scams, we've seen an increase in domain registration for the following activities:
   -- Phishing
   -- Malicious redirections
   -- Scams
+- These domains host pages often masquerading as popular brands for: 
+  -- Luxury goods
+  -- Makeup
+  -- Shoes and athletic gear
+  -- Popular e-commerce platforms
 
 INDICATORS:
 
