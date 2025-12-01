@@ -4,6 +4,11 @@ AUTHORS:
 
 - Reethika Ramesh, Daiping Liu
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_scams-blackfriday-phishing-activity-7399926518480748546-cAP2/
+- https://x.com/Unit42_Intel/status/1994160897007198637
+
 NOTES:
 
 - Beware of scams related to Black Friday (the Friday after the US Thanksgiving holiday).
