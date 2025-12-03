@@ -18,9 +18,9 @@ NOTES:
 
 BACKGROUND:
 
-- FIN7 has likely been active since at least 2013 and previously targeted a number of different sectors including retail, hospitality, and financial services.
+- FIN7 has likely been active since at least 2013 and previously targeted a number of different sectors, including retail, hospitality, and financial services.
 - The group has evolved its monetization tactics over the years from using point-of-sale (POS) malware to big game hunting (BGH) ransomware.
-- The malware has previously been analyzed by a number of reputable sources and there have seemingly been few changes to its code base from inception to now.
+- The malware has previously been analyzed by a number of reputable sources, and there have seemingly been few changes to its code base from inception to now.
   -- https://www.sentinelone.com/labs/fin7-reboot-cybercrime-gang-enhances-ops-with-new-edr-bypasses-and-automated-attacks/
   -- https://x.com/PRODAFT/status/1985731361492050255
   -- https://catalyst.prodaft.com/public/report/ssh-based-backdoor/overview
@@ -32,6 +32,9 @@ INDICATORS:
 - 2a0078b20b94c1346b85aba80db76ba07c5ccbcb78de53fac9d177d48afd8d4c - Backdoor Installation ZIP - 2025-09-16
 - bd9bad7c6ab35355dd29ac177fc6d9f732705cafb246ed37da303ddab31ade99 - Backdoor Installation Batch Script - 2025-09-16
 - 126ceb09a96fe13f76929f2139a813f8c950059108038a8dc4ece1905577c7f6 - Archived SSH Backdoor Configs - 2025-09-16
+- dd6ce426f8fb1847c45effd3d2ce4233c0103cf857e7de1295f6ff1bd0b4f9ae - Backdoor Installation ZIP - 2025-11-18
+- 901c26a40d799e027b063eb511c2d144f296bbab35a2fbff372e2f41d2947146 - Backdoor Installation Batch Script - 2025-11-18
+- d1459157c0cac782ec5454d2e43dbba735aaf925cd2c5a186f2973c94c241741 - Archived SSH Backdoor Configs - 2025-11-18
 
 IP ADDRESSES FOR DELIVERY SERVERS:
 
