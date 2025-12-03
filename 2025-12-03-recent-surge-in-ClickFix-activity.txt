@@ -54,5 +54,7 @@ TWO RECENT EXAMPLES OF MALWARE DELIVERED THROUGH CLICKFIX ACTIVITY:
 
 (Read: SHA256 hash - file name)
 
-- 4853a6eed666bd3ed28653de68576948d72e54df00adf3d49de63400bf728baa - thunderbird.exe
 - 39eba783cb48bd00415b75f5b9d0678c4508d2ba0970c394913df3d38c652cf2 - r9.exe
+- 4853a6eed666bd3ed28653de68576948d72e54df00adf3d49de63400bf728baa - thunderbird.exe
+- 4574c18b6c8aad7d36939a7a19cc8103d2adb093a1f70f2ae54cd97c44b9b22c - extension.zip (note: for Chrome)
+- 05bfa05140fffee6027d23a926c37d0e8cf88079bb51b01eb190f5aaaec9b946 - extension.zip (note: for Edge)
