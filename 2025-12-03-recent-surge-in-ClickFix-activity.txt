@@ -15,12 +15,13 @@ DETAILS:
 - ClickFix is a social engineering technique to convince potential victims to run a malicious script that will infect their computers.
 - These web pages inject the malicious content into a user's clipboard in a technique referred to as pastejacking.
 - ClickFix pages display instructions directing the user to paste content into a run window or terminal window.
-- Since September 2025, our telemetry revealed at least 200 detections of compromised sites every day, showing a surge in activity.
+- Since September 2025, our telemetry has revealed at least 200 detections of compromised sites every day, showing a surge in activity.
 - Attackers are utilizing various lures for the ClickFix pages, including:
   -- Mimicking Google's "Aw Snap!" error
   -- Mimicking browser updates
-- We noted fake "Aw Snap!" pages that ask uses to paste script into 'Windows Power Shell Admin' ('Windows Terminal').
-- Pages mimicking browser updates present additional screens before displaying the ClickFix instructions.
+- We noted fake "Aw Snap!" pages that ask users to paste script into 'Windows Power Shell Admin' ('Windows Terminal').
+- Pages mimicking browser updates present multiple screens before displaying ClickFix instructions.
+- A variety of malware is delivered through these ClickFix lures, including droppers, downloaders and malicious browser extensions.
 
 INCICATORS:
 
