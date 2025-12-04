@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shresta Bellary Seetharam, Billy Melicher, Shehroze Farooqi, Nabeel Mohamed, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_clickfix-pastejacking-activity-7402128778161750016-O4RU/
+- https://x.com/Unit42_Intel/status/1996363155237187909
+
 NOTES:
 
 - Browser update lures are fueling a recent surge in ClickFix activity
