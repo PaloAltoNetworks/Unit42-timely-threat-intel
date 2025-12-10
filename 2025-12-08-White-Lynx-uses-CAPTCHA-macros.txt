@@ -2,7 +2,7 @@
 
 NOTES:
 
-- We discovered a new social engineering technique used by the Bealrus threat actor White Lynx (Ghostwriter, Storm-0257, UNC1151).
+- We discovered a new social engineering technique used by the Belarus-based threat actor White Lynx (Ghostwriter, Storm-0257, UNC1151).
 - This technique uses a malicious macro in a Word document to evade detection and analysis.
 - Enabling macros will display a fake CAPTCHA window requesting users to validate a 6-character string.
 - This verification process adds a layer of human interaction required before the macro will proceed.
