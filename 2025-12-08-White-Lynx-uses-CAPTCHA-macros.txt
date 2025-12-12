@@ -1,5 +1,10 @@
 2025-12-08 (MONDAY): WHITE LYNX USES NEW "CAPTCHA MACRO" SOCIAL ENGINEERING TECHNIQUE
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_whitelynx-macros-captchamacro-activity-7404924969165582336-M7Pu/
+- https://x.com/Unit42_Intel/status/1999156076592177351
+
 NOTES:
 
 - We discovered a new social engineering technique used by the Belarus-based threat actor White Lynx (Ghostwriter, Storm-0257, UNC1151).
