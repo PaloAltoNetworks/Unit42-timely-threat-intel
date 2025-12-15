@@ -2,7 +2,7 @@
 
 ## Authors:
 
-- Beliz Kaleli, Shehroze Farooqi, Oleksii, Alex Starov
+- Beliz Kaleli, Shehroze Farooqi, Alex Starov
 
 ## Notes:
 
