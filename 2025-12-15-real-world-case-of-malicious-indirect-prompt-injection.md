@@ -63,7 +63,7 @@ Example methods attacker used to hide their prompt and bypass security tools:
 
 Prompt injection methods have not been clearly defined in existing literature yet. However, some methods we observed in this case are mentioned as "payload splitting" and "multilingual/obfuscated attack" in [https://genai.owasp.org/llmrisk/llm01-prompt-injection/](https://genai.owasp.org/llmrisk/llm01-prompt-injection/).
 
-Attackers labeled (e.g., `Layer 1: font-size 0 basic injection`) the methods they used within the HTML code. We found 24 layers (or attempts) of prompt injection in the page.
+Attackers labeled (e.g., `Layer 1: font-size 0 basic injection`) the methods they used within the HTML code. We found 24 attempts of prompt injection within the page.
 
 The image below shows parts of the HTML code returned by the URL with the malicious indirect prompt injection, and it notes some of the techniques to hide the injected LLM prompts.
 
