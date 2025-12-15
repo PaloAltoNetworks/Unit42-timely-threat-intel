@@ -19,4 +19,4 @@
 
 - `hxxps[:]//reviewerpress[.]com/advertorial-maxvision-can/?lang=en`
 
-![image](https://github.com/user-attachments/assets/3caf8681-b665-461c-98bf-3fe3360fe572")
+!(https://github.com/user-attachments/assets/3caf8681-b665-461c-98bf-3fe3360fe572")
