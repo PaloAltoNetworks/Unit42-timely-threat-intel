@@ -4,6 +4,11 @@
 
 - Beliz Kaleli, Shehroze Farooqi, Alex Starov
 
+## References:
+
+- [https://www.linkedin.com/posts/unit42_promptinjection-activity-7406438921041018881-OKa5/](https://www.linkedin.com/posts/unit42_promptinjection-activity-7406438921041018881-OKa5/)
+- [https://x.com/Unit42_Intel/status/2000673264658481581](https://x.com/Unit42_Intel/status/2000673264658481581)
+
 ## Notes:
 
 - We've identified a recent real-world example of malicious indirect prompt injection.
