@@ -19,4 +19,4 @@
 
 - `hxxps[:]//reviewerpress[.]com/advertorial-maxvision-can/?lang=en`
 
-![image](<img alt="2025-12-15-real-world-case-of-malicious-indirect-prompt-injection-image-01" src="https://github.com/user-attachments/assets/3caf8681-b665-461c-98bf-3fe3360fe572" />)
+![image](https://github.com/user-attachments/assets/3caf8681-b665-461c-98bf-3fe3360fe572")
