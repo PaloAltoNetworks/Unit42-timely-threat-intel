@@ -9,11 +9,11 @@
 - We identified a real-world example of malicious indirect prompt injection.
 - In this example, the actors attempted to bypass AI-based ad reviewers and promote scam products.
 - This case uses multiple evasion techniques to hide its injected LLM prompts from security checks.
-  -- encoding
-  -- dynamic execution
-  -- obfuscation
-  -- semantic tricks
-  -- visually concealing
+  - encoding
+  - dynamic execution
+  - obfuscation
+  - semantic tricks
+  - visually concealing
 
 # URL FOR THIS EXAMPLE:
 
