@@ -4,6 +4,11 @@ AUTHORS:
 
 - Lucas Hu, Fang Liu, Billy Melicher, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_phishing-verified-activity-7407566617821446144-Umsl/
+- https://x.com/Unit42_Intel/status/2001800979486814703
+
 NOTES:
 
 - This campaign lures social media content creators by claiming they are eligible for free verified badges.
