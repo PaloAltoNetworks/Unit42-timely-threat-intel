@@ -1,5 +1,9 @@
 20925-12-18 (THURSDAY): PHISHING TECHNIQUE TO COPY/PASTE AUTHENTICATION TOKENS FROM BROWSER CACHE
 
+AUTHORS:
+
+- Lucas Hu, Fang Liu, Billy Melicher, Alex Starov
+
 NOTES:
 
 - This campaign lures social media content creators by claiming they are eligible for free verified badges.
