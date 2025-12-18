@@ -1,0 +1,50 @@
+20925-12-18 (THURSDAY): PHISHING TECHNIQUE TO COPY/PASTE AUTHENTICATION TOKENS FROM BROWSER CACHE
+
+NOTES:
+
+- This campaign lures social media content creators by claiming they are eligible for free verified badges.
+- The phishing content is hidden behind a human verification page to evade web crawlers
+- These pages are designed to steal victims’ authentication tokens in order to bypass MFA.
+
+DETAILS:
+
+- This campaign has been active since at least September 2025.
+- The attacks abuse a variety of web hosting platforms.
+- Rather than stealing the victim’s username and password, these phishing pages use a different tactic: 
+  -- An embedded video instructs users to copy authentication tokens from their browser cookies
+  -- Users are instructed to paste the data into a popup form to complete the verification
+- The video ends by instructing the user to "not log out for at least 24 hours" in order to keep the authentication tokens valid
+
+30 EXAMPLES OF DOMAINS HOSTING THE SITES:
+
+- 1-free-reward.netlify[.]app
+- activation-form.vercel[.]app
+- appeals.neocities[.]org
+- apply-get-badge[.]org
+- apply-get-tick.netlify[.]app
+- applyfor-bluebadge.vercel[.]app
+- badge-apply-free[.]surge[.]sh
+- chatbot.pagehelppro[.]xyz/required
+- click-here-a.netlify[.]app
+- collact-reward.netlify[.]app
+- fb-badge-reward.netlify[.]app
+- fb-terms.vercel[.]app
+- fil-here.netlify[.]app
+- file-panel.netlify[.]app
+- free-blue-tick-get-now[.]org
+- free-get-badge.netlify[.]app
+- free-get-reward.netlify[.]app
+- free-reward-m.netlify[.]app
+- free-rewards-h.wasmer[.]app
+- free-verifications.netlify[.]app
+- get-blue-badge1066843.vercel[.]app
+- get-blue-program.vercel[.]app
+- get-permanent-badge[.]org
+- getbadge-case2343531[.]online
+- inf0-applying-center.vercel[.]app
+- lifetime-free-blue-page-f.surge[.]sh
+- now-blue-tick-get-free.vercel[.]app
+- request-for-review-remove-here.wasmer[.]app
+- tick-badge-approval.surge[.]sh
+- tick-trust-verify.surge[.]sh
+- yingvera12345.github[.]io
