@@ -4,7 +4,7 @@ NOTES:
 
 - This campaign lures social media content creators by claiming they are eligible for free verified badges.
 - The phishing content is hidden behind a human verification page to evade web crawlers
-- These pages are designed to steal victims’ authentication tokens in order to bypass MFA.
+- These pages are designed to steal victims’ authentication tokens to bypass MFA.
 
 DETAILS:
 
@@ -12,8 +12,8 @@ DETAILS:
 - The attacks abuse a variety of web hosting platforms.
 - Rather than stealing the victim’s username and password, these phishing pages use a different tactic: 
   -- An embedded video instructs users to copy authentication tokens from their browser cookies
-  -- Users are instructed to paste the data into a popup form to complete the verification
-- The video ends by instructing the user to "not log out for at least 24 hours" in order to keep the authentication tokens valid
+  -- Users are instructed to paste the data into a pop-up form to complete the verification
+- The video ends by instructing the user to "not log out for at least 24 hours" to keep the authentication tokens valid
 
 30 EXAMPLES OF DOMAINS HOSTING THE SITES:
 
