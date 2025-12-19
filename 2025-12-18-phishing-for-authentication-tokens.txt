@@ -33,7 +33,7 @@ DETAILS:
 - apply-get-tick.netlify[.]app
 - applyfor-bluebadge.vercel[.]app
 - badge-apply-free[.]surge[.]sh
-- chatbot.pagehelppro[.]xyz/required
+- chatbot.pagehelppro[.]xyz
 - click-here-a.netlify[.]app
 - collact-reward.netlify[.]app
 - fb-badge-reward.netlify[.]app
