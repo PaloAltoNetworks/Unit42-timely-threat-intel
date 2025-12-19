@@ -24,7 +24,7 @@ DETAILS:
   -- Users are instructed to paste the data into a pop-up form to complete the verification
 - The video ends by instructing the user to "not log out for at least 24 hours" to keep the authentication tokens valid
 
-30 EXAMPLES OF DOMAINS HOSTING THE SITES:
+31 EXAMPLES OF DOMAINS HOSTING THE SITES:
 
 - 1-free-reward.netlify[.]app
 - activation-form.vercel[.]app
