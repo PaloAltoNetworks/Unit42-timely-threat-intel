@@ -1,0 +1,39 @@
+2026-01-07 (TUESDAY): INCREASE IN SCAMS USING CALENDAR INVITES
+
+THE SCAM:
+
+- These scam messages falsely claim that recipients have been charged for a product or billed for a subscription.
+- They include a support number for recipients to call for any issues.
+- Scammers wait for potential victims to call the support number to cancel the claimed charge.
+- These support numbers lead to operators who ask potential victims to provide credit card or other sensitive info.
+
+SCAM VIA CALENDAR INVITES:
+
+- Recent months have seen an increase in these types of scams using calendar invites.
+- We occasionally detect these in Google Calendar invites, but these are not limited to Google's ecosystem.
+- .ics files use a standardized format that can be imported into any calendar app, like Apple, Google or Outlook.
+
+- Several sources have recently highlighted this growing calendar invite threat, for example:
+  - https://it.lbl.gov/cyber-alert-phishing-scams-using-google-calendar-invites/
+  - https://www.cyber.nj.gov/Home/Components/News/News/1861/214
+  - https://www.malwarebytes.com/blog/news/2025/11/fake-calendar-invites-are-spreading-heres-how-to-remove-them-and-prevent-more
+  - https://hoxhunt.com/blog/calendar-invite-phishing
+
+THE RISK FROM MALICIOUS CALENDAR INVITES:
+
+- This method increases the chance that unsuspecting victims will add the fraudulent invite to their calendars.
+- A calendar invite could give the scam messaging a false sense of legitimacy and urgency.
+- Furthermore, if a victim's calendar syncs across devices, that calendar invite could appear on multiple hosts.
+
+PROTECTION TIPS:
+
+- Crucial Step: Check your email settings and turn off automated adding of invitations to your calendar.
+- Immediate Action: If you spot a suspicious invite, immediately delete it from your calendar and block the sender. 
+  - Do not engage with the sender or call the provided phone number.
+
+SHA256 HASHES FOR 3 RECENT EXAMPLES OF CALENDAR INVITE (.ICS) FILES:
+
+- 693c8b753ab926327ee17f35876296c0ae7a7ec6bfeb1254bcf21e84cfbe8659
+- 72d1dde2016a7fcbd69f73de3e29b5d8988e1c3ae00e92080ec5db011db9f4a1
+- 9f6ed37ca59d1a1dde397b7453600b52885a203b1e6a7f36f1cde27993fa84f4
+
