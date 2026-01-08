@@ -1,5 +1,9 @@
 2026-01-07 (TUESDAY): INCREASE IN SCAMS USING CALENDAR INVITES
 
+AUTHORS:
+
+-  Shehroze Farooqi, Alex Starov, Chi-Wei Liu
+
 THE SCAM:
 
 - These scam messages falsely claim that recipients have been charged for a product or billed for a subscription.
