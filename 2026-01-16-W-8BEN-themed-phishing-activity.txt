@@ -1,0 +1,89 @@
+2026-01-16 (FRIDAY): W-8BEN THEMED PHISHING ACTIVITY
+
+AUTHOR:
+
+- Reethika Ramesh
+
+NOTES:
+
+- We've observed a phishing emails impersonating financial services.
+- These emails pose as alerts for expired W-8BEN tax forms. 
+- Attackers for this campaign rapidly churn through domains to evade detection.
+
+DETAILS:
+
+- These phishing pages use cloaking techniques to evade detection and are only active for brief periods.
+  -- Most of the phishing domains were registered on the same day or day before the email was sent.
+- These pages reportedly collect user login information and redirect users to tax-related FAQ pages.
+- All domains for the phishing pages were registered through Gname.com Pte. Ltd. 
+- Most of these domains were registered between 2025-10-13 and 2025-11-07 and use Cloudflare nameservers.
+- The email subject lines convey a false sense of urgency and start with one of the following: 
+  -- Mandatory Action
+  -- Important Withholding Tax Notice
+  -- Official IRS Compliance Update
+  -- Formal Advisory
+  -- Mandatory Renewal of Expired W-8BEN Documentation
+  -- Tax Residency Compliance Update
+- The impersonated financial services include: Interactive Brokers and E-Trade.
+- Domains used by the email senders and domains for the phishing pages linked in the emails do not match.
+- Sending email addresses use support@, noreply@, order@, transaction@, finance@ as the username. 
+- Some of the domains observed include hijacked or drop-catch websites, like:
+  -- ohenvironmental[.]com
+  -- rogerfreemanlaw[.]com
+- We track this campaign as: fake_tax_form_phishcloak
+
+LIST OF 53 DOMAINS ASSOCIATED WITH THIS CAMPAIGN:
+
+rogerfreemanlaw[.]com   Registered on: 2025-01-14
+ohenvironmental[.]com   Registered on: 2025-01-24
+markmcmurray[.]com      Registered on: 2025-03-01
+avgaffiliates[.]com     Registered on: 2025-03-01
+us-etrade-access[.]com  Registered on: 2025-10-07
+zemnlip[.]com           Registered on: 2025-10-08
+qxcship[.]com           Registered on: 2025-10-09
+mrjsmip[.]com           Registered on: 2025-10-09
+ijdjgf[.]com            Registered on: 2025-10-13
+dzjplpl[.]com           Registered on: 2025-10-13
+daoaycz[.]com           Registered on: 2025-10-13
+ltokuz[.]com            Registered on: 2025-10-13
+wxydjha[.]com           Registered on: 2025-10-13
+fuhmmip[.]com           Registered on: 2025-10-15
+chqibip[.]com           Registered on: 2025-10-15
+eorojkq[.]com           Registered on: 2025-10-21
+batdnwi[.]com           Registered on: 2025-10-21
+ftmpdtkv[.]com          Registered on: 2025-10-22
+qczprfva[.]com          Registered on: 2025-10-22
+tcirfray[.]com          Registered on: 2025-10-22
+ufwycwdd[.]com          Registered on: 2025-10-22
+bdshxuen[.]com          Registered on: 2025-10-22
+oyedujxigl[.]com        Registered on: 2025-10-24
+wckaxzuhq[.]com         Registered on: 2025-10-24
+ycrlzerap[.]com         Registered on: 2025-10-24
+llmkitkha[.]com         Registered on: 2025-10-24
+xlakzip[.]com           Registered on: 2025-10-30
+oztyrfw[.]com           Registered on: 2025-10-30
+kmnwqdw[.]com           Registered on: 2025-10-30
+fcettmf[.]com           Registered on: 2025-10-31
+qobyzwd[.]com           Registered on: 2025-10-31
+orkwmpd[.]com           Registered on: 2025-10-31
+wbnoebe[.]com           Registered on: 2025-10-31
+jildpwgip[.]com         Registered on: 2025-11-04
+zrimeonk[.]com          Registered on: 2025-11-04
+eyrlkeip[.]com          Registered on: 2025-11-04
+dnzumsip[.]com          Registered on: 2025-11-04
+boswlxtip[.]com         Registered on: 2025-11-04
+ffmzdnip[.]com          Registered on: 2025-11-04
+ncnhreip[.]com          Registered on: 2025-11-04
+yzjiuzxs[.]com          Registered on: 2025-11-04
+urtfwbnn[.]com          Registered on: 2025-11-05
+tyowgtni[.]com          Registered on: 2025-11-05
+hlnwtuxu[.]com          Registered on: 2025-11-06
+zltkttzp[.]com          Registered on: 2025-11-06
+jdbnfxzi[.]com          Registered on: 2025-11-06
+cdzietsr[.]com          Registered on: 2025-11-06
+eupciepv[.]com          Registered on: 2025-11-06
+uaxaeixc[.]com          Registered on: 2025-11-06
+papigwp[.]com           Registered on: 2025-11-06
+qhpxhiqp[.]com          Registered on: 2025-11-06
+gcbwiujs[.]com          Registered on: 2025-11-07
+wnppffd[.]com           Registered on: 2025-11-07
