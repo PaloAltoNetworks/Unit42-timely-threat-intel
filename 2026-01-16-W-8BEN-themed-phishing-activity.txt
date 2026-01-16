@@ -6,17 +6,17 @@ AUTHOR:
 
 NOTES:
 
-- We've observed a phishing emails impersonating financial services.
+- We've observed phishing emails impersonating financial services.
 - These emails pose as alerts for expired W-8BEN tax forms. 
 - Attackers for this campaign rapidly churn through domains to evade detection.
 
 DETAILS:
 
 - These phishing pages use cloaking techniques to evade detection and are only active for brief periods.
-  -- Most of the phishing domains were registered on the same day or day before the email was sent.
+  -- Most of the phishing domains were registered on the same day or the day before the email was sent.
 - These pages reportedly collect user login information and redirect users to tax-related FAQ pages.
 - All domains for the phishing pages were registered through Gname.com Pte. Ltd. 
-- Most of these domains were registered between 2025-10-13 and 2025-11-07 and use Cloudflare nameservers.
+- Most of these domains were registered between 2025-10-13 and 2025-11-07.
 - The email subject lines convey a false sense of urgency and start with one of the following: 
   -- Mandatory Action
   -- Important Withholding Tax Notice
@@ -24,7 +24,6 @@ DETAILS:
   -- Formal Advisory
   -- Mandatory Renewal of Expired W-8BEN Documentation
   -- Tax Residency Compliance Update
-- The impersonated financial services include: Interactive Brokers and E-Trade.
 - Domains used by the email senders and domains for the phishing pages linked in the emails do not match.
 - Sending email addresses use support@, noreply@, order@, transaction@, finance@ as the username. 
 - Some of the domains observed include hijacked or drop-catch websites, like:
