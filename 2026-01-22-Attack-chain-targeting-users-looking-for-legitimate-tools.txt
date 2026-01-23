@@ -11,7 +11,7 @@ NOTES:
 - These ZIP archives masquerade as legitimate programs and contain a malicious batch (.bat) file.
 - Executing the .bat file exfiltrates host details to a C2 server via cURL.
 - This is followed by encoded PowerShell script for system reconnaissance.
-- In at least one occasion, a C2 server deployed a TeamViewer binary as a remote admin tool.
+- On at least one occasion, a C2 server deployed a TeamViewer binary as a remote admin tool.
 
 DETAILS:
 
@@ -22,7 +22,7 @@ DETAILS:
 - As a result, we have found no new malware from this attack chain.
 - However, existing infrastructure remains, and we will monitor for further examples of the malware.
 
-CURRENTLY ACTIVE REPOSITORIES THAT MACH THIS ATTACK CHAIN:
+CURRENTLY ACTIVE REPOSITORIES THAT MATCH THIS ATTACK CHAIN:
 
 - NOTE: ZIP archives on these repositories do not contain .bat malware, but legitimate files/installers.
 
@@ -40,7 +40,7 @@ REPOSITORIES PREVIOUSLY HOSTING MALWARE FOR THIS ATTACK CHAIN:
 - hxxps[:]//github[.]com/querymesh/ScreenConnect-Client/releases  ****
 - hxxps[:]//github[.]com/regfile/RDCMan/releases/  ****
 
-- *** No longer hosting malware, but legitimate file.
+- *** No longer hosting malware, but a legitimate file.
 - **** No longer online.
 
 EXAMPLES OF MALICIOUS ZIP ARCHIVES FROM THIS ATTACK CHAIN:
