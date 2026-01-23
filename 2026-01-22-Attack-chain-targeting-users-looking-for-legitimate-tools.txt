@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Shelly Markus, Manbendra Satpathy
+- Shelly Markus, Manbendra Satpathy, Saide Sheikh
 
 NOTES:
 
