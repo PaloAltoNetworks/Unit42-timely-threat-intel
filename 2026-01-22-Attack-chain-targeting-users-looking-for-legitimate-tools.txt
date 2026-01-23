@@ -1,0 +1,77 @@
+2026-01-22 (THURSDAY): ATTACK CHAIN TARGETS USERS SEARCHING FOR LEGITIMATE TOOLS
+
+AUTHORS:
+
+- Shelly Markus, Manbendra Satpathy
+
+NOTES:
+
+- We identified an attack chain leveraging SEO poisoning to target users searching for legitimate tools. 
+- Attackers have abused GitHub to create repositories hosting malicious ZIP archives.
+- These ZIP archives masquerade as legitimate programs and contain a malicious batch (.bat) file.
+- Executing the .bat file exfiltrates host details to a C2 server via cURL.
+- This is followed by encoded PowerShell script for system reconnaissance.
+- In at least one occasion, a C2 server deployed a TeamViewer binary as a remote admin tool.
+
+DETAILS:
+
+- Malicious ZIP archives from this attack chain have appeared in the wild as recently as November 2025.
+- Examples of SEO poisoning and associated repositories remain active as of January 2026.
+- However, the ZIP archives on the associated repositories no longer contain malicious .bat files.
+- Instead, these ZIP archives now contain copies of the legitimate files or installers for these tools.
+- As a result, we have found no new malware from this attack chain.
+- However, existing infrastructure remains, and we will monitor for further examples of the malware.
+
+CURRENTLY ACTIVE REPOSITORIES THAT MACH THIS ATTACK CHAIN:
+
+- NOTE: ZIP archives on these repositories do not contain .bat malware, but legitimate files/installers.
+
+- hxxps[:]//github[.]com/avdhost/Azure-Virtual-Desktop/releases/tag/1.0.118
+- hxxps[:]//github[.]com/msrdesktop/Microsoft-Remote-Desktop/releases/tag/v1.2.6
+- hxxps[:]//github[.]com/konvyr/GlobalProtect/releases/tag/6.1.9
+- hxxps[:]//github[.]com/ntfsid/RDCMan/releases/tag/v3.1  **
+- hxxps[:]//github[.]com/taskp/PsExec/releases/tag/v2.43  **
+
+- ** Found through a Bing search for the associated application
+
+REPOSITORIES PREVIOUSLY HOSTING MALWARE FOR THIS ATTACK CHAIN:
+
+- hxxps[:]//github[.]com/regpx/Intune-Company-Portal/releases  ***
+- hxxps[:]//github[.]com/querymesh/ScreenConnect-Client/releases  ****
+- hxxps[:]//github[.]com/regfile/RDCMan/releases/  ****
+
+- *** No longer hosting malware, but legitimate file.
+- **** No longer online.
+
+EXAMPLES OF MALICIOUS ZIP ARCHIVES FROM THIS ATTACK CHAIN:
+
+(Read: - SHA256 hash - modification date - file name)
+
+- 5e784d9dcdf69fd3bc0d59f94e1fbdc05f83fc5d7ba44e6be51ec3e4d3d0ac38 - 2025-11-18 - RDCMan_Windows_Setup.zip
+- 32999b06c7bb172bbbba46018caad8cdfe6ccd3c84eee08232ff7944680caa37 - 2025-11-14 - PsExec.zip
+- 27f3bd706e1a348f17b2b652f889bf576e5ccd31d3742a9b560f01b7f7d0f022 - 2025-11-14 - Azure-Virtual-Desktop-Client.zip
+- 7d955361c3d264097ee0622b42d40671a8c63098f59986e4c89f4aaec236f638 - 2025-11-12 - GlobalProtect-win-6.3.zip
+- 717f41263c630b22264936f8737db51169d9947231390a9c1fbf931642ac36af - 2025-11-08 - Company-Portal-x64.zip
+- cdd0250c6894180d6c3462d2e01fd82ade61a0e2660baac886c5d96460fc4507 - 2025-11-04 - MSRemoteDesktopSetup_x64.zip
+
+EXAMPLES OF MALICIOUS .BAT FILES FROM THIS ATTACK CHAIN:
+
+- 18f708032d184fafd9bbbe21863e07081b2a3cab5c130c953281bb67d4e48ff0 - StorageExplorer_Windows_Setup.bat
+- 23d260b2709be0a4d8acff4eafabc8f90b66553e2a4c72aa368260cefb8a7772 - Azure_Virtual_Desktop_Windows_Setup.bat
+- 3a978ffb4931a9441c963c011e4b2b434e860b8d492740acf376b683dcbf314a - MSRemoteDesktop_Windows_Setup.bat
+- 3e86e50cd29c266813f1167448be817acfee1c7416062d5836f094bedf1d56eb - GlobalProtect_Windows_Setup.bat
+- 555a54ab1a29d069bd0138731849d0ae55cdd67a8733de6fb9f5de0a3feefbfc - PBIDesktop_Windows_Setup.bat
+- 5bd813331102e380851b9549cb85e00a6a1ffc0bfa3d7a6aa292a339693bf668 - MSRemoteDesktop_Windows_Setup.bat
+- 9513fd19cff090402ccf0f776ed140a9dfa4a296a75480d2130e9420ac2165a0 - PsExec_Windows_Setup.bat
+- d003f07424b89f05b508e589ea077a074933029d8162e4f3cf97567a1e99b497 - VMware_Horizon_Client_Windows_Setup.bat
+- ee403407691a1630baad10b91acde2d5040b7173dd967cc456d60382ee9723a3 - RDCMan_Windows_Setup.bat
+- fe4301d5a21c1fc81ad56c4b7806c54c9a7d82221b6566562df2b4bfbad27462 - Company_Portal_Windows_Setup.bat
+
+EXAMPLES OF C2 DOMAINS USED IN THIS ATTACK CHAIN:
+
+- 2tnl[.]digital
+- ankaraotogaleri[.]com
+- antipolitical[.]com
+- base22[.]digital
+- brandingsolutions[.]com
+- rasprod[.]com
