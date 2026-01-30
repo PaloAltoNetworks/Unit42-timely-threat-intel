@@ -1,4 +1,4 @@
-2026-01-30 (FRIDAY): "TRAFFIC TICKET SEARCH PORTAL" PHISHING CAMPAIGN
+2026-01-30 (FRIDAY): CANADIAN TRAFFIC TICKET SEARCH PORTAL PHISHING THROUGH SEO POISONING
 
 AUTHORS:
 
@@ -6,7 +6,9 @@ AUTHORS:
 
 NOTES: 
 
-We identified a sophisticated phishing campaign impersonating the Government of Canada and specific provincial agencies (Ontario, Quebec, British Columbia, Alberta, Manitoba, Saskatchewan). 
+We identified a sophisticated phishing campaign that utilizes SEO poisoning to direct search engine results to fake traffic ticket portals.
+
+These portals impersonate the Government of Canada and specific provincial agencies (Ontario, Quebec, British Columbia, Alberta, Manitoba, Saskatchewan). 
 
 The campaign lures victims to a fake "Traffic Ticket Search Portal" under the pretense of paying outstanding traffic violations.
 
@@ -73,4 +75,3 @@ Hostnames (Phishing Domains):
 - ticket-search-violations[.]com - registered 2025-11-29
 - search-portal-ticket[.]com - registered 2025-11-29
 - ticket-portal-violation[.]com - registered 2025-11-29
-
