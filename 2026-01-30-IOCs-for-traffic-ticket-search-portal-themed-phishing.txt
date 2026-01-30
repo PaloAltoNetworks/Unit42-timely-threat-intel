@@ -6,54 +6,67 @@ AUTHORS:
 
 NOTES: 
 
-We identified a sophisticated phishing campaign that utilizes SEO poisoning to direct search engine results to fake traffic ticket portals.
-
-These portals impersonate the Government of Canada and specific provincial agencies (Ontario, Quebec, British Columbia, Alberta, Manitoba, Saskatchewan). 
-
-The campaign lures victims to a fake "Traffic Ticket Search Portal" under the pretense of paying outstanding traffic violations.
+- We identified a phishing campaign that utilizes SEO poisoning to direct search engine results to fake traffic ticket portals.
+- These portals impersonate the Government of Canada and specific provincial agencies.
+  -- Provincial agencies: Ontario, Quebec, British Columbia, Alberta, Manitoba, Saskatchewan. 
+- The campaign lures victims to a fake "Traffic Ticket Search Portal" under the pretense of paying outstanding traffic violations.
 
 DETAILS:
 
 Impersonation Targets: 
 
-The campaign features a central landing page that redirects users to province-specific sub-pages (e.g., /on/ for Ontario, /ab/ for Alberta) mimicking the branding of local provincial governments.
+- The campaign features a central landing page that redirects users to province-specific sub-pages
+- Sub-pages mimic the branding of local provincial governments.
+- URLs contain the two-letter code for each province. For example:
+  -- URLs for an Ontario page contain: /on/
+  -- URLs for an Alberta page contain: /ab/
 
 SEO Poisoning & Search Indexing: 
 
-The attackers have successfully indexed their malicious domains on major search engines. Evidence shows the phishing domain my-traffic-ticket-portal[.]com appearing as a top search result (2nd ranking) for queries such as "traffic ticket search portal government of Canada," significantly increasing the campaign's reach and credibility.
+- The attackers successfully indexed their malicious domains on major search engines. 
+- Queries such as "traffic ticket search portal government of Canada" significantly increased this campaign's reach and credibility.
+- For example, the domain my-traffic-ticket-portal[.]com appeared as a top search result (2nd ranking) in November 2025.
 
 Infrastructure & Patterns:
 
-All identified domains contain ‘ticket’ substring in it and are hosted on a single IP address: 198.23.156.130.
+- All identified domains contain a substring of the term ‘ticket’ and were hosted on a single IP address: 198.23.156[.]130.
 
 WHOIS Registration: 
 
-WHOIS data reveals a cluster of registrations occurring on November 29 2025. The primary registrar used is MAT BAO CORPORATION (Registrant Country: Malaysia). 
-
-Older domains in this campaign used "Global Domain Group LLC" for registration and were registered in September-October (likely for early testing before before 10 more domains were registered in November 2025)
+- WHOIS data reveals a cluster of registrations occurred on 2025-11-29. 
+- The primary registrar used is MAT BAO CORPORATION (Registrant Country: Malaysia). 
+- Older domains in this campaign used "Global Domain Group LLC" for registration and were registered in September-October 2025.
+  -- These were likely for early testing before 10 more domains were registered in November 2025.
 
 Data Exfiltration: 
 
-Victim data (license plates, address, date of birth, phone/email, credit card numbers) is intercepted via JavaScript and asynchronously POSTed to a backend controller located at ../ipanel/inc/action.php rather than legitimate government servers.
+- Submitted data includes license plates, address, date of birth, phone/email and credit card numbers
+- This data is intercepted via JavaScript and asynchronously POSTed to a backend controller rather than legitimate government servers.
+- The URL for the backend controller is located at ../ipanel/inc/action.php
 
 Real-Time Control ("Waiting Room"):
 
-The kit utilizes a "waiting room" tactic where the victim's browser polls the server (status.php?type=getstatus) every 2 seconds.
-
-This allows the attacker to hold the victim on a loading screen and manually trigger redirects based on specific status codes (e.g., status '9' redirects to sms.php for OTP interception, status '81' redirects to mfa.php).
+- The kit for these phishing pages utilizes a "waiting room" tactic
+- In this tactic, the viewer's browser polls the server (status.php?type=getstatus) every 2 seconds.
+- This allows the attacker to hold viewers on a loading screen and manually trigger redirects based on specific status codes.
+  -- For example
+     --- Status code '9' redirects to a URL ending in sms.php for OTP interception
+     --- Status '81' redirects to a URL ending in mfa.php.
 
 Liveness Checks ("Heartbeat"): 
 
-The pages include a "heartbeat" function (pinger) that sends a request to action.php?type=ping every second. This provides the attacker with live feedback that a victim is currently active and ready to be manipulated.
+- These phishing pages include a "heartbeat" function that acts as a pinger
+- This pinger sends a request to action.php?type=ping every second. 
+- The pinger provides the attacker with live feedback that a viewer is currently active and ready to be manipulated.
 
 Data Theft Flow: 
 
-The attack follows a multi-stage theft process:
+- The attack follows a multi-stage theft process:
 
-1) License Plate Harvest: User enters a license plate number.
-2) PII: Collects name, address, email, phone number, birthdate 
-3) Fake Debt Display: The site displays a fabricated "ticket amount" (e.g., $55.00).
-4) Financial Theft: User is directed to a payment page to enter Credit Card Number, Expiry, and CVV.
+  1) License Plate Harvest: User enters a license plate number.
+  2) PII: Collects name, address, email, phone number, birthdate 
+  3) Fake Debt Display: The site displays a fabricated "ticket amount" (e.g., $55.00).
+  4) Financial Theft: User is directed to a payment page to enter Credit Card Number, Expiry, and CVV.
 
 INDICATORS:
 
