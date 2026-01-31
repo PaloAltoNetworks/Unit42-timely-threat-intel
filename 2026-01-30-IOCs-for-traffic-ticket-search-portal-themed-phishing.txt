@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Shehroze Farooqi
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_we-identified-an-seo-poisoning-campaign-pushing-activity-7423130915578658816-A3Ts/
+- https://x.com/Unit42_Intel/status/2017365295145381998
+
 NOTES: 
 
 - We identified a phishing campaign that utilizes SEO poisoning to direct search engine results to fake traffic ticket portals.
