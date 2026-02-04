@@ -54,4 +54,4 @@ POWERSHELL SCRIPT RETURNED FROM URL IN THE DNS TXT RECORD:
 - File size: 16,790 bytes
 - File location: hxxps[:]//hermisron[.]com/agent?token=c98348aa5479df05dae407a4c8771f66ff1f8f0708357037
 - File type: ASCII text, with very long lines (354)
-= File description: PowerShell script
+- File description: PowerShell script file
