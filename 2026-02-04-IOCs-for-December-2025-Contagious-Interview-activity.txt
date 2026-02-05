@@ -1,0 +1,42 @@
+2026-02-04 (WEDNESDAY): CONTAGIOUS INTERVIEW CAMPAIGN ACTIVITY
+
+AUTHOR:
+
+- Raz Rubin
+
+ORIGINAL REFERENCE:
+
+- https://unit42.paloaltonetworks.com/north-korean-threat-actors-lure-tech-job-seekers-as-fake-recruiters/
+
+NOTES:
+
+- As recently as December 2025, the Contagious Interview campaign has remained active. 
+- North Korea (DPRK) actors have continued using fake recruiter personas since our 2024 threat research article.
+- This campaign abuses GitHub when attackers create repositories to host malware.
+- Fake recruiters lure job seekers to these repositories during their recruitment process.
+- Actors behind this activity continue targeting people seeking jobs in crypto and tech. 
+- These attacks attempt to deploy the InvisibleFerret Python backdoor for the following functions:
+  -- Remote Code Execution (RCE)
+  -- Keylogging
+  -- Cryptocurrency wallet theft
+- For background on this activity, see:
+  -- https://unit42.paloaltonetworks.com/north-korean-threat-actors-lure-tech-job-seekers-as-fake-recruiters/
+
+SHA256 HASHES FOR FILES ASSOCIATED WITH THIS ACTIVITY IN DECEMBER 2025:
+
+- 17eeae8ac77d6b866651356b60646f0c33b481228e42f807269813b03e98e3a3 - pay (python payload)
+- a04d5e05fdd89099a7c1759c679fcf2c34d8de0b6b1b0b247c9e925ee144b052 - .npl (python payload)
+- a31325d140903e8be2217b56756c449e5ea20ec836154334ad3a5473b7f29ed9 - test.js
+- 8c63faeb6cdf21d981d9f424dd599a4e349e70f852c897117baa515a367cb1b4 - p.js
+- 7bd7c41bc5b91cced6630cfc64c595ec149c115ad98de1d346d48497b38cefa5 - n.js
+
+IP ADDRESSES ASSOCIATED WITH THIS ACTIVITY:
+
+- 67.203.7[.]205
+- 45.43.11[.]199
+
+REPOSITORY ASSOCIATED WITH THIS ACTIVITY:
+
+- hxxps[:]//github[.]com/michalcaladanxyz/caladanecomvp
+
+- Note: The repository was active as recently as mid-December 2025, but it has been taken offline.
