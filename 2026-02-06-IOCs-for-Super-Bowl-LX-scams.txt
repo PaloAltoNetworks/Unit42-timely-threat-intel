@@ -1,0 +1,44 @@
+2026-02-06 (FRIDAY): SCAMS AND PREDATORY SERVICES RELATED TO THE 2026 SUPER BOWL
+
+AUTHORS:
+
+- Reethika Ramesh, Daiping Liu
+
+NOTES:
+
+- Beware of scam sites and predatory services related to Super Bowl LX.
+- These sites include several unofficial ticket websites.
+- These also include predatory services claim to help with cancelling streaming services. 
+- Stay vigilant and only use official and verified vendors!
+
+DETAILS:
+
+- Predatory services have appeared that claim to send official account cancellation notices to streaming services related to the Super Bowl including Peacock and YoutubeTV.
+- They collect user information along with a payment of $21.95 to send cancellation notices to the companies.
+- While these services are not necessarily malicious, monetized landing pages that link to these services are designed to take advantage of the buzz surrounding the Super Bowl event.
+- Several unofficial ticket websites may lead to malicious pages or collect payment without actually giving you any tickets.
+- Several websites advertising tickets may lead to unauthorized vendors that disclose they are unofficial sites.
+- Users should attempt to procure tickets exclusively through authorized, verified vendors and official platforms for a safe experience.
+
+INDICATORS:
+
+EXAMPLES OF DOMAINS FOR MONETIZED LANDING PAGES:
+
+- superbowl[.]best           Updated On: 2026-02-03
+- superbowlcommercials[.]co  Registered On: 2026-01-14
+- superbowl2026[.]org        Registered On: 2025-02-10 (Day after previous Super Bowl)
+- superbowl-2026[.]com       Registered On: 2025-02-10 (Day after previous Super Bowl)
+
+EXAMPLES OF DOMAINS FOR UNOFFICIAL TICKET SITES:
+
+- superbowltickets[.]us       WHOIS Updated On:2025-11-12
+- nfcchampionship2026[.]com   WHOIS Updated On: 2025-11-07
+- 2026superbowl[.]com         WHOIS Updated On: 2025-08-01
+- superbowltickets2026[.]com  WHOIS Updated On: 2025-08-01
+- 2026superbowltickets[.]com  Registered On: 2025-01-03
+
+
+EXAMPLES OF URLS FOR POTENTIALLY PREDATORY SERVICES:
+
+- hxxps[:]//unsubby[.]com/en-us/cancel-peacock?msclkid=<id>
+- hxxps[:]//xpendy[.]com/us/free-time-us/peacock/?gad_source=5&gad_campaignid=15926673795&gclid=<id>
