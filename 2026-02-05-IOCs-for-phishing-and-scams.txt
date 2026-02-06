@@ -1,0 +1,32 @@
+2026-02-05 (THURSDAY): ABUSE OF GOOGLE FIREBASE DEVELOPER ACCOUNZTS FOR PHISHING AND SCAMS
+
+AUTHOR:
+
+- Amanda Tanner
+
+NOTES:
+
+- Scammers are abusing free Google Firebase developer accounts to send phishing and scam emails.
+- These emails impersonate popular bands and use common lures used to steal sensitive data. 
+- Some of the messages use scare tactics, such as urgent alerts about fraudulent account use.
+- Other messages offer free giveaways of high-value items.
+
+SEVEN EXAMPLES OF SENDING EMAIL ADDRESSES:
+
+- noreply@pr01-1f199.firebaseapp[.]com
+- noreply@pr02-5b383.firebaseapp[.]com
+- noreply@pr14-4139c.firebaseapp[.]com
+- noreply@pro01-30b51.firebaseapp[.]com
+- noreply@pro04-4a08a.firebaseapp[.]com
+- noreply@pro12-e24fc.firebaseapp[.]com
+- noreply@zamkksdjauys.firebaseapp[.]com
+
+SEVEN EXAMPLES OF PHISHING PAGE URLS FROM LINKS IN THE EMAILS:
+
+- hxxp[:]//clouud.thebatata[.]org/click[.]php?
+- hxxp[:]//clouud.thebatata[.]org/click[.]php?
+- hxxp[:]//clouud.thebatata[.]org/click[.]php?
+- hxxps[:]//rebrand[.]ly/auj0ngh
+- hxxps[:]//rebrand[.]ly/dijqjx6
+- hxxps[:]//revoz.britishbushcraft[.]com/dashho[.]php?
+- hxxps[:]//www.servercrowdmanage[.]com/5N98X9F/21NRJNSZ/
