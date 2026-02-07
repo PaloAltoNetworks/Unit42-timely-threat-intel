@@ -4,6 +4,11 @@ AUTHOR:
 
 - Amanda Tanner
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_scammers-phishing-activity-7425676942294708224-A1LK/
+- https://x.com/Unit42_Intel/status/2019911322138280191
+
 NOTES:
 
 - Scammers are abusing free Google Firebase developer accounts to send phishing and scam emails.
