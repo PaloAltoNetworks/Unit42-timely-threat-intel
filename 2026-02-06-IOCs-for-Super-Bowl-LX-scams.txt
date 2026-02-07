@@ -4,16 +4,21 @@ AUTHORS:
 
 - Reethika Ramesh, Daiping Liu
 
+REFERENCES:
+
+- 
+- 
+
 NOTES:
 
 - Beware of scam sites and predatory services related to Super Bowl LX.
 - These sites include several unofficial ticket websites.
-- These also include predatory services claim to help with cancelling streaming services. 
+- These also include predatory services that claim to help with cancelling streaming services. 
 - Stay vigilant and only use official and verified vendors!
 
 DETAILS:
 
-- Predatory services have appeared that claim to send official account cancellation notices to streaming services related to the Super Bowl including Peacock and YoutubeTV.
+- Predatory services have appeared that claim to send official account cancellation notices to streaming services related to the Super Bowl, including Peacock and YoutubeTV.
 - They collect user information along with a payment of $21.95 to send cancellation notices to the companies.
 - While these services are not necessarily malicious, monetized landing pages that link to these services are designed to take advantage of the buzz surrounding the Super Bowl event.
 - Several unofficial ticket websites may lead to malicious pages or collect payment without actually giving you any tickets.
