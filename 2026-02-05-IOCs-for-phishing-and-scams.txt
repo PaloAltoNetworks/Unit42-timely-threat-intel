@@ -29,8 +29,6 @@ SEVEN EXAMPLES OF SENDING EMAIL ADDRESSES:
 SEVEN EXAMPLES OF PHISHING PAGE URLS FROM LINKS IN THE EMAILS:
 
 - hxxp[:]//clouud.thebatata[.]org/click[.]php?
-- hxxp[:]//clouud.thebatata[.]org/click[.]php?
-- hxxp[:]//clouud.thebatata[.]org/click[.]php?
 - hxxps[:]//rebrand[.]ly/auj0ngh
 - hxxps[:]//rebrand[.]ly/dijqjx6
 - hxxps[:]//revoz.britishbushcraft[.]com/dashho[.]php?
