@@ -1,0 +1,50 @@
+2026-02-10 (TUESDAY): SMISHING IMPERSONATING U.S. WIRELESS CARRIERS
+
+AUTHOR:
+
+- Reethika Ramesh
+
+NOTES:
+
+- We are tracking widespread smishing activity impersonating U.S. wireless carriers.
+- This activity represents another evolution in smishing activity we have previously reported. 
+- Lures use an "expiring reward points" theme to steal credentials via fraudulent web pages.
+
+DETAILS:
+
+- The smishing campaign is expanding and shifting tactics to impersonate U.S. wireless carriers. 
+- We are seeing a surge in "Reward Point" lures targeting Verizon, ATT, and T-Mobile customers.
+- We have found over 21,000 hostnames involved in this campaign
+  -- An average of 268 new root domains being registered every day in the week of Jan 12th - 19th.
+  -- A peak of 348 root domains registered on 2026/01/12.
+- The bait messages claim a large amount of points expiring in the next few days. 
+- The links lead to convincing but fake "Member Verification" portals.
+- These portals ask for the user's phone number, after which they may send account access requests in an attempt to compromise the user's account.
+= The messages originate from a variety of different phone numbers.
+- Attackers are sending these smishing texts as group texts to a number of users, but they rename the group message with SMS short codes. 
+- The actual message senders have numbers with country codes from:
+  -- Democratic Republic of the Congo (+243)
+  -- Morocco (+212)
+- Som of the SMS messages are sent through email addresses.
+- These websites are hosted on popular CDN IP addresses (ASN: AS 16509).
+- All three carrier-specific pages include the identical string: 
+  "To find out your remaining points and exchange them for prizes, please enter your mobile number."
+- This identical string indicates the same threat actor is behind them all.
+- This observed smishing campaign has several attributes:
+  -- Consistent Infrastructure: The campaign utilizes the same domain registrars, similar hosting infrastructure, and similar landing page cloaking techniques. 
+  -- High-Quality Phishing Kits: The phishing kits are of high quality and targeted the different US carriers around the same time.
+
+12 EXAMPLES OF URLS FOR THE ASSOCIATED PHISHING PAGES:
+
+- hxxps[:]//att.yjmtag[.]icu/pay – Root domain registered: 2026-01-14
+- hxxps[:]//att.lqoue[.]icu/pay - Root domain registered: 2026-01-19
+- hxxps[:]//att.aiphy[.]cc/pay - Root domain registered: 2026-01-16
+- hxxps[:]//verizon.xtqaa[.]icu/pay?qr=69ec19 - Root domain registered: 2025-12-25
+- hxxps[:]//verizon.com-kiv[.]top/run/home.html - Root domain registered: 2026-01-04
+- hxxps[:]//verizon.wlonfdk[.]cc/2blKawZX?GTYJ=ZMSLYk/ - Root domain registered: 2026-01-08
+- hxxps[:]//verizon.bsdfy[.]cc/Ih1fFA3W - Root domain registered: 2026-01-10
+- hxxps[:]//verizon.com-aaz[.]com/A1HATiJ4?KPBO=ygJiam - Root domain registered: 2026-01-11
+- hxxps[:]//verizon.com-aba[.]com/3IcOv0np?FKUR=ZDLzgb - Root domain registered: 2026-01-15
+- hxxps[:]//t-mobile.rikiho[.]icu/pay - Root domain registered: 2025-12-29
+- hxxps[:]//t-mobile.awfxb[.]cc/pay?qr=gsmx7a - Root domain registered: 2026-01-15
+- hxxps[:]//t-mobile.butiz[.]cc/pay?qr=6m68j5 - Root domain registered: 2026-01-16
