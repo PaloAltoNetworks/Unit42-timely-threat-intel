@@ -15,7 +15,7 @@ DETAILS:
 - The smishing campaign is expanding and shifting tactics to impersonate U.S. wireless carriers. 
 - We are seeing a surge in "Reward Point" lures targeting Verizon, ATT, and T-Mobile customers.
 - We have found over 21,000 hostnames involved in this campaign
-  -- An average of 268 new root domains being registered every day in the week of Jan 12th - 19th.
+  -- An average of 268 new root domains is being registered every day in the week of Jan 12th - 19th.
   -- A peak of 348 root domains registered on 2026/01/12.
 - The bait messages claim a large amount of points expiring in the next few days. 
 - The links lead to convincing but fake "Member Verification" portals.
@@ -32,7 +32,7 @@ DETAILS:
 - This identical string indicates the same threat actor is behind them all.
 - This observed smishing campaign has several attributes:
   -- Consistent Infrastructure: The campaign utilizes the same domain registrars, similar hosting infrastructure, and similar landing page cloaking techniques. 
-  -- High-Quality Phishing Kits: The phishing kits are of high quality and targeted the different US carriers around the same time.
+  -- High-Quality Phishing Kits: The phishing kits are of high quality and targeted different US carriers around the same time.
 
 12 EXAMPLES OF URLS FOR THE ASSOCIATED PHISHING PAGES:
 
