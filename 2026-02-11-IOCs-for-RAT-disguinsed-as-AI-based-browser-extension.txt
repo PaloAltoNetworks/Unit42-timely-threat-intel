@@ -21,7 +21,7 @@ NOTES:
   -- form filling
   -- screenshot capture
   -- browsing history access
-  -- authenticated request replay with the brower cookies
+  -- authenticated request replay with the browser cookies
 - The remote code execution vector at background.js uses: new Function("return " + data.params.script)()
   -- This string from the remote server is executed as JavaScript in the context of the victim's active tab. 
 
@@ -53,7 +53,7 @@ DETAILS:
 
 LIVE SANDBOX VERIFICATION:
 
-- WebSocket connection to wss[:]//mcp-browser.qubecare[.]ai/chrome` returned readyState 1 (OPEN).
+- WebSocket connection to wss[:]//mcp-browser.qubecare[.]ai/chrome returned readyState 1 (OPEN).
 - The extension's connection_info handshake produced a server response: 
 
   {"type":"session_info","sessionInfo":{"userId":"user_1707700000000_sandbox",
@@ -61,7 +61,7 @@ LIVE SANDBOX VERIFICATION:
   "connectionId":"conn_cdcd5f47-1afc-4b77-8068-00adb0f29c17"},"timestamp":1770832821745}. 
 
 - The server accepts any WebSocket client and assigns sessions without authentication.
-- The HTTP endpoint returns openresty server headers with access-control-allow-credentials: true
+- The HTTP endpoint returns OpenResty server headers with access-control-allow-credentials: true
   -- This is consistent with the extension's cross-origin authenticated request patterns.
 
 INDICATORS OF COMPROMISE:
