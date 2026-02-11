@@ -1,0 +1,92 @@
+2026-02-11 (WEDNESDAY): REMOTE ACCESS TROJAN (RAT) DISGUISED AS AI-BASED BROWSER CONTROL EXTENSION
+
+AUTHORS:
+
+- Shresta Bellary Seetharam, Billy Melicher, Oleksii Alex Starov, Nabeel Mohamed, Qinge Xie
+
+NOTES:
+
+- A browser extension called "Chrome MCP Server - AI Browser Control" is a fully functional browser-based Remote Access Trojan (RAT).
+  -- It's disguised as an AI automation tool using the Model Context Protocol (MCP).
+  -- Extension ID: fpeabamapgecnidibdmjoepaiehokgda
+- The listing for this extension falsely claims "100% local processing - your data never leaves your browser."
+- When enabled, the extension establishes a WebSocket connection to a remote C2 server at wss[:]//mcp-browser.qubecare[.]ai/chrome.
+  -- The C2 server is currently live and operational.
+  -- The server is set up to receive information from a host with this browser extension.
+- When connected from a sandbox, the C2 server assigned a unique sessionId and connectionId with no authentication required
+  -- This confirms a purpose-built session management infrastructure for controlling victim browsers.
+- The extension accepts 30+ remote commands, including:
+  -- arbitrary JavaScript execution via new Function()
+  -- Chrome Debugger Protocol attachment for HTTPS traffic interception
+  -- form filling
+  -- screenshot capture
+  -- browsing history access
+  -- authenticated request replay with the brower cookies
+- The remote code execution vector at background.js uses: new Function("return " + data.params.script)()
+  -- This string from the remote server is executed as JavaScript in the context of the victim's active tab. 
+
+DETAILS:
+
+- The extension requests an aggressive permission set, such as:
+  -- debugger
+  -- webRequest
+  -- scripting
+  -- tabs
+  -- history
+  -- bookmarks
+  -- host_permissions on <all_urls>
+- In addition to the aggressive permission set, this extension results in a content script injected into every page.
+- The chrome.debugger API is used to attach the Chrome DevTools Protocol to any tab.
+  -- This enables Network.enable and Network.getResponseBody to read decrypted HTTPS response bodies 
+  -- This results in bypassing all transport security.
+- Network surveillance is implemented via chrome.webRequest listeners on <all_urls>.
+  -- It captures request bodies, request headers (including cookies and auth tokens), and response headers from every tab.
+- An inject script (network-helper.js) uses fetch with credentials: 'include' to replay network requests with the victim's cookies.
+  -- This allows remote operators to make authenticated API calls as the user to any service they are logged into.
+- A persistent user ID is generated, stored in chrome.storage.local, and injected into every webpage.
+  -- This is accomplished via window.chromeExtensionUserId and sessionStorage
+  -- This enables cross-site tracking of victims.
+- The root C2 domain qubecare[.]ai was registered 2025-03-24 and appears to host a legitimate websites.
+- The C2 server at mcp-browser.qubecare[.]ai is hosted on 162.245.187[.]98.
+- The C2 server uses a Let's Encrypt TLS certificate for its HTTPS traffic.
+- No public source code repository exists for this extension despite its open source claim on the web store page.
+
+LIVE SANDBOX VERIFICATION:
+
+- WebSocket connection to wss[:]//mcp-browser.qubecare[.]ai/chrome` returned readyState 1 (OPEN).
+- The extension's connection_info handshake produced a server response: 
+
+  {"type":"session_info","sessionInfo":{"userId":"user_1707700000000_sandbox",
+  "sessionId":"session_user_1707700000000_sandbox",
+  "connectionId":"conn_cdcd5f47-1afc-4b77-8068-00adb0f29c17"},"timestamp":1770832821745}. 
+
+- The server accepts any WebSocket client and assigns sessions without authentication.
+- The HTTP endpoint returns openresty server headers with access-control-allow-credentials: true
+  -- This is consistent with the extension's cross-origin authenticated request patterns.
+
+INDICATORS OF COMPROMISE:
+
+SAMPLES:
+
+- SHA256 hash: 0cbf101e96f6d5c4146812f07105f8b89bd76dd994f540470cd1c4bc37df37d5
+- File size: 9,488,476 bytes
+- File name: FPEABAMAPGECNIDIBDMJOEPAIEHOKGDA_1_0_1_0.crx
+- File type: Google Chrome extension, version 3
+- File description: Malicious Chrome extension
+- Extension ID: fpeabamapgecnidibdmjoepaiehokgda
+- First submitted to VirusTotal: 2025-11-04
+
+- SHA256 hash: 81716da5b6de987436bacae526b4e4a59e80f7f2897d1541716a6d11e2261acd
+- File size: 2,354,538 bytes
+- File name: background.js
+- File type: ASCII text, with very long lines (798)
+- File description: JavaScript file contained in the above Chrome extension
+- First submitted to VirusTotal: 2025-11-04
+
+C2 SERVER INFORMATION:
+
+- WebSocket URL: wss://mcp-browser.qubecare[.]ai/chrome
+- HTTPS web request hxxps://mcp-browser.qubecare[.]ai/mcp
+- Domain: mcp-browser.qubecare[.]ai
+- Parent domain: qubecare[.]ai
+- IP address: 162.245.187[.]98
