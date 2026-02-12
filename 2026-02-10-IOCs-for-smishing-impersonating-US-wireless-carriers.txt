@@ -4,6 +4,11 @@ AUTHOR:
 
 - Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_smishing-activity-7427498710030499840-leB6/
+- https://x.com/Unit42_Intel/status/2021733083951546607
+
 NOTES:
 
 - We are tracking widespread smishing activity impersonating U.S. wireless carriers.
