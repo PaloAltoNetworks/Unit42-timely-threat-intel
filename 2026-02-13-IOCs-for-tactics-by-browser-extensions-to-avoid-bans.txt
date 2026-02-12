@@ -1,0 +1,59 @@
+2026-02-13 (FRIDAY): TACTICS TO EVADE WEB STORE BANS ON MALICIOUS BROWSER EXTENSIONS
+
+AUTHORS: 
+
+- Qinge Xie, Nabeel Mohamed, Shresta Bellary Seetharam, Fang Liu, Billy Melicher, Alex Starov
+
+NOTES:
+
+- We keep track of new samples from malicious Chrome extension campaigns. 
+- We've seen 2 different "flip-to-clean" tactics to evade bans: 
+  -- One only scrubbed its AI conversation scraping code after public exposure. 
+  -- The other evaded previous reports by flipping back to "clean" rapidly before researchers could act. 
+- Don't be fooled by a "clean" update; stay vigilant for their future updates!!
+
+DETAILS:
+
+- Known Campaign: 
+ -- The "Urban" Case: We found three extensions "Urban VPN Proxy", "Urban Ad Blocker" and "Urban Browser Guard (by Urban VPN) remain on the Chrome Web Store despite previously being identified by Koi Security for scraping AI conversations while the developer framing it as "AI protection"[1].
+ -- RedDirection Campaign: We newly found an extension ("Palette Creator") with 100K+ users whose previous version communicated with known RedDirection network indicators [2] to perform browser hijacking. 
+ -- Technique: Urban VPN extensions’ malicious version adds JS files in its executors directory to scraping user’s full AI conversations with different LLM services (including gemini, chatGPT, claude, etc.). Palette Creator injects 'search.js' to exfiltrate visited URLs to C2 domains, enabling server-instructed redirections for browser hijacking.
+ -- Shifting Timeline: The Urban VPN extensions updated to their malicious versions in June 2025 (June 6 and June 26) and August 2025 (August 1). Following the public disclosure of the campaign on December 15, 2025, the developer updated benign versions in January 2026, likely in response to the report. Palette Creator’s two-day 'quick-flip' allowed it to evade the mid-2025 RedDirection campaign disclosure and remain on the Chrome Web Store until now, whereas other identified extensions were removed. 
+- Easy Shift Away from Benign: Our observations prove that threat actors can alter extension behavior with minimal effort. By toggling small scripts, malicious developers can switch popular extensions such as Urban VPN Proxy (2.2M users) and Palette Creator (100K users) between benign and malicious states. This tactic allows them to keep their presence on millions of devices.
+- Stay Vigilant: Current clean status does not guarantee future safety. Security audits could include continuous tracking of version history to detect flips and unauthorized exfiltration regardless of the popularity of extensions.
+
+- Original References: 
+  [1] https://www.koi.ai/blog/urban-vpn-browser-extension-ai-conversations-data-collection 
+  [2] https://www.koi.ai/blog/google-and-microsoft-trusted-them-2-3-million-users-installed-them-they-were-malware
+
+EXAMPLES OF MALICIOUS CHROME EXTENSIONS:
+
+(read: extension ID "extension name")
+
+iofmialeiddolmdlkbheakaefefkjokp "palette creator"
+version 2.3.6 - C2 domain: admiitad[.]com 
+
+feflcgofneboehfdeebcfglbodaceghj "urban ad blocker"
+version 2.6.6
+version 2.6.7
+
+almalgbpmcfpdaopimbdchdliminoign "urban browser guard"
+version 7.3.5
+version 7.3.6
+version 7.3.7
+
+eppiocemhmnlbhjplcgkofciiegomcon "urban vpn proxy"
+version 5.3.0 
+version 5.4.0 
+version 5.5.0 
+version 5.6.0 
+version 5.7.0 
+version 5.8.0 
+version 5.8.1
+version 5.9.0
+version 5.9.1
+version 5.9.2
+version 5.10.0
+version 5.10.1
+version 5.10.2
+version 5.10.3
