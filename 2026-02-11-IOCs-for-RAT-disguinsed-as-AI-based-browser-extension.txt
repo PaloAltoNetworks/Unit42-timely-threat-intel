@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shresta Bellary Seetharam, Billy Melicher, Oleksii Alex Starov, Nabeel Mohamed, Qinge Xie
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_mcp-agentic-browsersecurity-activity-7427762221243621376-VaF8/
+- https://twitter.com/Unit42_Intel/status/2021996582481064327
+
 NOTES:
 
 - A browser extension called "Chrome MCP Server - AI Browser Control" is a fully functional browser-based Remote Access Trojan (RAT).
