@@ -4,6 +4,11 @@ AUTHORS:
 
 - Qinge Xie, Nabeel Mohamed, Shresta Bellary Seetharam, Fang Liu, Billy Melicher, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malicious-browser-extensions-use-2-flip-to-clean-activity-7428171632235511808-YKL0/
+- https://x.com/Unit42_Intel/status/2022406009273061441
+
 NOTES:
 
 - We keep track of new samples from malicious Chrome extension campaigns. 
