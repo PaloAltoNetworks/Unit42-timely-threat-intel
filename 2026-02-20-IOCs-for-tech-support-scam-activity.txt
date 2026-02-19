@@ -1,0 +1,60 @@
+2026-02-20 (FRIDAY): TECH SUPPORT SCAM ACTIVITY
+
+AUTHORS:
+
+- Shawn Shuang, Shehroze Farooqi, Keerthiraj Nagaraj, Alex Starov
+
+NOTES:
+
+- A tech support scam campaign displays web pages targeting Japanese speakers.
+- These web pages leverage multiple browser APIs for victim containment, including:
+  -- full-screen API lock
+  -- keyboard API hijacking
+  -- Web Worker (JavaScript API) resource exhaustion
+  -- Browser window re-spawning on close attempts
+- These tech support scam web pages use encrypted JavaScript to evade detection.
+
+DETAILS:
+
+- Infrastructure Mimicry: Leverages SaaS hosting on web.core.windows[.]net 
+  -- Spoofs official Windows domains, lending a false sense of legitimacy to the URL.
+- Resource Exhaustion: Spawns a significant number of Web Workers containing infinite loops.
+  -- Effectively freezes the browser, preventing users from closing the tab or navigating away.
+- Fragment-Based Encryption: The malicious payload remains encrypted until a specific URL fragment key is provided. 
+  -- This tactic bypasses static detection tools and complicates manual sandbox analysis.
+- Interface Hijacking: Employs click hijacking to force the browser into full-screen mode and trigger keyboard lock APIs.
+  -- This strips the user of control over their own hardware.
+- Heuristic Evasion: Embeds "noise" content into the HTML code of the page.
+  -- The noise content concerns benign topics like cooking, gardening, and music theory. 
+  -- This hidden text is designed to trick content-based security filters into classifying the page as harmless.
+- Scale: We have observed 2,366 hits of URLs for this activity.
+  -- Timeframe: From 2026-01-13 to 2026-02-09.
+  -- Scope: From 285 unique IP addresses. 
+
+INDICATORS:
+
+10 EXAMPLES OF URLS THAT HAVE HOSTED THESE TECH SUPPORT SCAM PAGES:
+
+- hxxps[:]//cibibiros.z1.web.core.windows[.]net
+- hxxps[:]//dacenasi.z22.web.core.windows[.]net
+- hxxps[:]//dacezita.z9.web.core.windows[.]net
+- hxxps[:]//fofanelef.z1.web.core.windows[.]net
+- hxxps[:]//gemasoso.z1.web.core.windows[.]net
+- hxxps[:]//irmopawep.z11.web.core.windows[.]net
+- hxxps[:]//riphurcudi[.]z4.web.core.windows[.]net
+- hxxps[:]//rusubayole.z31.web.core.windows[.]net
+- hxxps[:]//vufiyisot.z22.web.core.windows[.]net
+- hxxps[:]//womoturepi.z36.web.core.windows[.]net
+
+10 EXAMPLES OF HOSTING IP ADDRESSES:
+
+- 20.60.13[.]228
+- 20.60.131[.]225
+- 20.150.4[.]33
+- 20.150.14[.]1 
+- 20.150.53[.]1
+- 20.150.121[.]129
+- 20.209.29[.]2
+- 20.209.60[.]196
+- 20.209.87[.]196 
+- 20.209.168[.]98
