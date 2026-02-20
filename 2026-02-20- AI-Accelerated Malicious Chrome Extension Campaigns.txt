@@ -1,0 +1,59 @@
+2026-02-20 (FRIDAY): AI-Accelerated Malicious Chrome Extension Campaigns
+
+AUTHOR(S):
+
+ Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Oleksii Alex Starov
+
+
+NOTES:
+
+We keep track of LLM/AI-generated malicious Chrome extensions. Threat actors are increasingly weaponizing LLM/AI code-generation tools to mass-produce malware.
+We identified two different campaigns that were using code generation to accelerate their attacks.
+  -- 6 malicious Chrome extensions that are being used in an affiliate hijacking campaign
+  -- 4 malicious extensions providing dual functionality of GenAI productivity tool and sensitive data exfiltration
+ Attackers are moving at the speed of AI. Our defense must too.
+
+DETAILS:
+
+ These extensions are AI-generated and malicious, affecting users across multiple e-commerce platforms. As mentioned in the below reference, all extensions inject affiliate tracking links into the traffic to shopping sites without explicit user consent.
+ AI-Generated Tell-Tale Signs:
+  -- Overly verbose explanatory comments: AI language models tend to generate excessive comments that explain obvious operations in unnecessary detail.
+Examples: aohfjaadlbiifnnajpobdhokecjokhab, gjlbbcimkbncedhofeknicfkhgaocohl, dkhpgbbhlnmjbkihoeniojpkggkabbbl
+  -- Strategy labeling with section headers: AI  models often organize code with elaborate section headers using dashes or numbered steps mimicking tutorial-style code.
+Example: aohfjaadlbiifnnajpobdhokecjokhab
+  -- Generic error handling with minimal logging: AI-generated code often includes try-catch blocks that simply log or ignore errors without proper recovery logic.
+Example: mpgaodghdhmeljgogbeagpbhgdbfofgb
+  -- Defensive coding patterns: AI models tend to add unnecessary defensive checks that protect against edge cases that cannot realistically occur given the calling context.
+Example: mpgaodghdhmeljgogbeagpbhgdbfofgb
+  -- Template-like structure with generic naming: AI-generated code often uses generic, textbook style conventions and structural patterns that feel like they came from documentation examples rather than real-world applications.
+Example: mcaihdkeijgfhnlfcdehniplmaapadgb, eebihieclccoidddmjcencomodomdoei
+  -- Unfinished patterns and placeholder comments: AI-generated code sometimes includes comments suggesting future implementations or expressing uncertainty.
+Example: mpgaodghdhmeljgogbeagpbhgdbfofgb
+  -- Systematic naming conventions: AI tends to use systematic naming that follows strict patterns across the codebase, lacking the organic variation found in human-written code.
+Examples: All affiliate hijacking extensions mentioned
+  -- Identical code patterns across extensions: Multiple extensions share nearly identical code structures for the same functionality, suggesting that they were generated from similar prompts.
+Example: mcaihdkeijgfhnlfcdehniplmaapadgb, mpgaodghdhmeljgogbeagpbhgdbfofgb, nppjmiadmakeigiagilkfffplihgjlec
+Some strategies to defend against AI-generated malicious extension threats:
+  -- Deploy code signatures to spot AI patterns in suspicious extensions
+  -- AST (Abstract Syntax Tree) analysis to detect comment-to-code ratio, systematic naming pattern compliance
+  -- Similarity detection across known AI-generated malicious extensions and new extensions
+
+
+INDICATORS:
+
+IOCs - Extension IDs for Affiliate Hijacking Campaign:
+aohfjaadlbiifnnajpobdhokecjokhab
+gjlbbcimkbncedhofeknicfkhgaocohl
+hkhmodcdjhcidbcncgmnknjppphcpgmh
+mcaihdkeijgfhnlfcdehniplmaapadgb
+mpgaodghdhmeljgogbeagpbhgdbfofgb
+nppjmiadmakeigiagilkfffplihgjlec
+IOCs - Malicious GenAI Extension IDs:
+bonhfflnjgdbnhcpjemkknlhimceckgb
+dkhpgbbhlnmjbkihoeniojpkggkabbbl
+eebihieclccoidddmjcencomodomdoei
+iefpkdilnfhogjbkhgnliaomoldgkdlj
+
+REFERENCES:
+
+https://socket.dev/blog/malicious-chrome-extension-performs-hidden-affiliate-hijacking
