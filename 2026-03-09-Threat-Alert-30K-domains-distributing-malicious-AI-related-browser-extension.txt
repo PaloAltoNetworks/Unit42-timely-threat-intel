@@ -24,7 +24,7 @@ NOTES:
 -- Although the search API currently points to legitimate services to build trust, the endpoint is controlled by the attacker. By routing traffic through their own API first (rather than pointing directly to the widely known search engines and Gen AI services), the attacker maintains a "remote switch." This allows them to instantly pivot the redirection to malicious payloads or phishing sites at any time, without updating the extension’s code or alerting the user.
 
 - High-risk extensions from the same developer: ​​Given that the campaign is actively distributing multiple extensions from its developer, we conducted a broader investigation into other extensions by the same author. We identified additional high-risk extensions from the developer, including: 
--- Search interception: We identify that the "serpey.com official extension" exhibits browser-hijacking behavior similar to the OmniBar extension, including home page override and search interception. Its Chrome Web Store description also mentions OmniBar search: "This simple extension alters your default search engine so that omni bar searches use serpey[.]com."
+-- Search interception: We identify that the "serpey.com official extension" exhibits browser-hijacking behavior similar to the OmniBar extension with home page override and search interception. Its Chrome Web Store description also mentions OmniBar search: "This simple extension alters your default search engine so that omni bar searches use serpey[.]com."
 -- Affiliate adware: Extension "Care.Sale" and "giant Coupons Official Extension" track user browsing activity to inject affiliate markers and redirect traffic. 
 -- Data exfiltration: Extension "Consensus - Reddit Comment Summarizer" extracts and transmits user Reddit comment threads to a developer-controlled API endpoint. 
 
@@ -91,4 +91,5 @@ Domains identified from extensions:
 - api.giantcoupons[.]net
 - giant[.]coupons 
 - aiconnect.chromiumextensions[.]com
+
 
