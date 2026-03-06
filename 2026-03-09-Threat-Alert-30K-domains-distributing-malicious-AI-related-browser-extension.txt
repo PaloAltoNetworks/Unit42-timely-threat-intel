@@ -1,0 +1,92 @@
+2026-03-09 (MONDAY): Threat Alert: 30K+ Domains Distributing Malicious AI-Related Browser Extension
+
+AUTHOR(S):
+
+- Qinge Xie, Shehroze Farooqi, Nabeel Mohamed, Shresta Bellary Seetharam, Fang Liu, Gaurav Rane
+
+NOTES:
+- Campaign distributes extension:
+-- We discovered 30K+ domains that perform multiple redirects before they eventually route traffic to a landing page used for distributing a browser extension named "OmniBar AI Chat and Search". 
+-- The final landing web page is hosted at the malicious IOC ansiblealgorithm[.]com. 
+-- We observe the utm_campaign parameter is present in the final web page URL (example URL:hxxps[:]//ansiblealgorithm[.]com/new/?a=static-clean-aisrch&utm_campaign=69948c5fd82a7bd9c6520c49), which suggests this activity is likely part of a large-scale affiliate marketing scheme. 
+
+- The "OmniBar AI extension" behavior: 
+-- HomePage Override: The extension overrides Chrome settings (via chrome_settings_overrides API) to force the browser homepage to omnibar[.]ai and sets the default search provider to a custom URL (go.omnibar[.]ai/?api=omni&sub1=omnibar.ai&q={searchTerms}​​) that tracks queries via an API parameter.
+-- Search Interception: The background.js file in the extension utilizes the chrome.search API to intercept user search inputs. It redirects the browser to a developer-controlled endpoint (hxxps[:]//go.omnibar[.]ai/?api=ai&q={searchTerms}), allowing the threat actor to monetize traffic and log sensitive data.
+
+- The campaign is scaling: 
+-- Following the discovery of the "OmniBar AI Chat and Search" extension, our engine later observed a second extension, "AI Output Algo Tool," being distributed via the same campaign. This extension exhibits browser-hijacking behavior similar to the OmniBar extension, including homepage override and search interception. Chrome Web Store data shows the user base doubled from 1K users on February 18, 2026, to 2K users by March 2026. This rapid increase suggests the campaign is effectively luring more users into installing these extensions.
+
+- Deceptive legitimacy & attacker-controlled domain: 
+-- The extension’s behavior matches its Web Store description. By overriding settings to provide "AI features," it appears to be "working as intended" to the user, effectively minimizing suspicion and bypassing traditional behavioral detections. We identified this campaign as our engine correlated the extension’s distribution layer with a known malicious IOC. 
+-- Our testing observed that the developer-controlled endpoint is redirected to legitimate search engines and Gen AI services to build trust while maintaining control. 
+-- Although the search API currently points to legitimate services to build trust, the endpoint is controlled by the attacker. By routing traffic through their own API first (rather than pointing directly to the widely known search engines and Gen AI services), the attacker maintains a "remote switch." This allows them to instantly pivot the redirection to malicious payloads or phishing sites at any time, without updating the extension’s code or alerting the user.
+
+- High-risk extensions from the same developer: ​​Given that the campaign is actively distributing multiple extensions from its developer, we conducted a broader investigation into other extensions by the same author. We identified additional high-risk extensions from the developer, including: 
+-- Search interception: We identify that the "serpey.com official extension" exhibits browser-hijacking behavior similar to the OmniBar extension, including home page override and search interception. Its Chrome Web Store description also mentions OmniBar search: "This simple extension alters your default search engine so that omni bar searches use serpey[.]com."
+-- Affiliate adware: Extension "Care.Sale" and "giant Coupons Official Extension" track user browsing activity to inject affiliate markers and redirect traffic. 
+-- Data exfiltration: Extension "Consensus - Reddit Comment Summarizer" extracts and transmits user Reddit comment threads to a developer-controlled API endpoint. 
+
+
+INDICATORS: 
+
+Examples of domains distributing the extension (30k+): 
+
+- propertyusainc[.]org
+- staging.eventlogicinc[.]com
+- www.truefan[.]site
+- mailadmin.hochblutdruck[.]de
+- biilliger-fliegen[.]de
+- modeop[.]site
+- dslindhandy[.]de
+- 1-800-contactssucks[.]net
+- pod51011.outloo[.]com
+- app.relationshipgps[.]org
+
+Final destination domain:
+
+- ansiblealgorithm[.]com
+
+Example of final destination Webpage URL:
+
+- ansiblealgorithm[.]com/new/?a=static-clean-aisrch&utm_campaign=69948c5fd82a7bd9c6520c49
+
+Chrome extensions: 
+
+- Extension ID: ajfanjhcdgaohcbphpaceglgpgaaohod 
+  -- Extension Name: "OmniBar AI Chat and Search"
+  -- CRX File SHA256: 21dd863ff9bbd15da01c1218bf92bd65eeae04a41876e10c41733b58035414c4
+  -- File Name (ID+Version): ajfanjhcdgaohcbphpaceglgpgaaohod_4_0_0_0.crx
+
+- Extension ID: eeoonfhmbjlmienmmbgapfloddpmoalh 
+  -- Extension Name: "AI Output Algo Tool"
+  -- CRX File SHA256: 9d0f550ac883455ed64da402cdb0c822c90de405c540678e0697b77fe20de3cf
+  -- File Name (ID+Version): eeoonfhmbjlmienmmbgapfloddpmoalh_1_0_0_0.crx
+
+- Extension ID: hokdpdlchkgcenfpiibjjfkfmleoknkp 
+  -- Extension Name: "Serpey.com official extension"
+  -- CRX File SHA256: a25a3e108f62a10caa2b736123ca7350e9dbc1b888c44e909cbd6866205ca671
+  -- File Name (ID+Version): hokdpdlchkgcenfpiibjjfkfmleoknkp_7_0_0_0.crx
+
+- Extension ID: jaioobipjdejpeckgojiojjahmkiaihp 
+  -- Extension Name: "Care.Sale"
+  -- CRX File SHA256: 4a2f0f1893527e4c419f36c2e4f95a61617074200bb67218fb96ae74125e433b
+  -- File Name (ID+Version): jaioobipjdejpeckgojiojjahmkiaihp_1_0_0_0.crx
+
+- Extension ID: akdajpomgjgldidenledjjiemgkjcchc 
+  -- Extension Name: "Giant Coupons Official Extension"
+  -- CRX File SHA256: 5629be21869a83e9b9da86ab16a2d9cebd0aed2c04a9efe2ac044dfe0d5db6b9
+  -- File Name (ID+Version): akdajpomgjgldidenledjjiemgkjcchc_1_1_0_0.crx
+
+- Extension ID: mkkfklcadlnkhgapjeejemflhamcdjld 
+  -- Extension Name: "Consensus - Reddit Comment Summarizer"
+  -- CRX File SHA256: cdae573ab468b24c28a42d6078daf2da1a4b4c5657a4146ad966e2fe8340cb49
+  -- File Name (ID+Version): mkkfklcadlnkhgapjeejemflhamcdjld_1_0_1_0.crx
+
+Domains identified from extensions: 
+
+- go.omnibar[.]ai
+- search.serpey[.]com
+- api.giantcoupons[.]net
+- giant[.]coupons 
+- aiconnect.chromiumextensions[.]com
