@@ -1,10 +1,11 @@
 2026-03-09 (MONDAY): Threat Alert: 30K+ Domains Distributing Malicious AI-Related Browser Extension
 
-AUTHOR(S):
+AUTHORS:
 
 - Qinge Xie, Shehroze Farooqi, Nabeel Mohamed, Shresta Bellary Seetharam, Fang Liu, Gaurav Rane
 
 NOTES:
+
 - Campaign distributes extension:
 -- We discovered 30K+ domains that perform multiple redirects before they eventually route traffic to a landing page used for distributing a browser extension named "OmniBar AI Chat and Search". 
 -- The final landing web page is hosted at the malicious IOC ansiblealgorithm[.]com. 
@@ -90,3 +91,4 @@ Domains identified from extensions:
 - api.giantcoupons[.]net
 - giant[.]coupons 
 - aiconnect.chromiumextensions[.]com
+
