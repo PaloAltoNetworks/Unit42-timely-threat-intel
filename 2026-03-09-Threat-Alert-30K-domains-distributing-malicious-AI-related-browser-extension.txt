@@ -4,6 +4,11 @@ AUTHORS:
 
 - Qinge Xie, Shehroze Farooqi, Nabeel Mohamed, Shresta Bellary Seetharam, Fang Liu, Gaurav Rane
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_browserextension-searchhijacking-activity-7436835068137971713-GyM_/
+- https://x.com/Unit42_Intel/status/2031069363822813372
+
 NOTES:
 
 - Campaign distributes extension:
@@ -91,5 +96,6 @@ Domains identified from extensions:
 - api.giantcoupons[.]net
 - giant[.]coupons 
 - aiconnect.chromiumextensions[.]com
+
 
 
