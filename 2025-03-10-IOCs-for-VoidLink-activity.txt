@@ -1,0 +1,41 @@
+2026-03-10 (TUESDAY): VOIDLINK MALWARE ACTIVITY
+
+AUTHORS:
+
+- Joseph Ganter, David Lord
+
+ORIGINAL REFERENCE:
+
+- https://research.checkpoint.com/2026/voidlink-the-cloud-native-malware-framework/
+
+NOTES:
+
+- We recently investigated an open web directory on a C2 server for VoidLink malware.
+- This activity has possible overlaps with an activity cluster we track as CL-STA-1015. 
+- Previous versions of VoidLink malware have been seen in the wild as early as 2025-12-02.  
+
+(Read: SHA256 hash - description)
+
+- 0ec9d6f3852f591041f58ff090ae766249e27dfb09fabdebe55008ca913879ad - Second stage collected from VoidLink dropper
+- 11ad850cc312ba7255ae3e906f4ccdfca1cb1f8109d7a20f660ec3c8c5ae1d72 - VoidLink Implant
+- 15cb93d38b0a4bd931434a501d8308739326ce482da5158eb657b0af0fa7ba49 - VoidLink V3 Binary - Internal C2 address 172.20.0.10
+- 16f255b4ad4de9c70794425ddb4b7ff4b2b89c1fc538fca635f564dbeaf835e8 - VoidLink Implant
+- 173bd2fc717b38527a57fad443aac11c49aef61f5f84e175872db53a99d2fd4e - Cobalt Strike Implant deployed from Known VoidLink C2 address
+- 3be0d7880800042d6f4aca2472befec3330d91581ecbf1fbe547fcfdd6e7b5d5 - loader_go_upx
+- 4d2274f9fb360c23a06cf30b8b62540befe695a1c14d27f9b7ab2d91027b6ffc - VoidLink Stager
+- 7b9890fa8004569b0801b2736b0ae4438f851369f3b358128846e7151c1f909b - vShell Second stage collected from VoidLink dropper
+- 8a5175036316cf8fd92551b400a3b062c6e48e0da3cda66dcf95ab2305aa8dfe - MetaSploit Payload
+- be7076eb75e566b3d9005e4e62cbb3ce48eaf6e3553680367ed1f92ea78099ce - loader_go_upx
+- c1a51530279973c01c149bbe71a365f9178bfb85d6c6468e8638246d3491728d - VoidLink Implant
+- d37879fef9f49e37efc6f28aa32df10faf2b0bc147d7914a313d7886408b524b - C variant VoidLink Implant
+
+(Read: IP address - description)
+
+- 1.12.64[.]161 - VoidLink Testing Server
+- 8.149.128[.]10 - VoidLink Test C2 Server - Open Directory Identified
+- 112.74.39[.]165 - VoidLink Testing Server
+- 116.62.172[.]147 - VoidLink Testing Server
+- 121.37.219[.]253 - VoidLink Testing Server
+- 121.89.84[.]19 - VoidLink Testing Server
+- 142.171.114[.]190 - Potential VoidLink Nginx Proxy Node
+- 159.75.233[.]220 - VoidLink Test C2 Server
