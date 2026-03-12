@@ -4,6 +4,11 @@ AUTHORS:
 
 Matt Brady and Cuong Dinh
 
+REFERENCES:
+
+-LinkedIn URL: https://www.linkedin.com/feed/update/urn:li:ugcPost:7437948304451170304
+-X URL: https://twitter.com/Unit42_Intel/status/2032182688224858413
+
 NOTES:
 
 - Since late December 2025, Unit 42 has responded to numerous incidents across various industries involving voice-based phishing (vishing) that led to data theft and extortion.
@@ -81,4 +86,5 @@ INDICATORS:
 -75.250.181.136
 -45.134.26.68
 -73.51.249.216
+
 
