@@ -1,0 +1,84 @@
+2026-03-12 (THURSDAY): Vishing Campaigns Lead to Data Theft and Extortion
+
+AUTHORS:
+
+Matt Brady and Cuong Dinh
+
+NOTES:
+
+- Since late December 2025, Unit 42 has responded to numerous incidents across various industries involving voice-based phishing (vishing) that led to data theft and extortion.
+- We've observed activity targeting organizations within the Financial Services, Manufacturing, Professional & Legal Services, and Wholesale & Retail sectors
+- Based on our observations, most of this activity is likely associated with Bling Libra (aka ShinyHunters) or threat actors affiliated with the broader Scattered LAPSUS$ Hunters alliance.
+- In one 2025 case, we saw the threat actors move from access to impact (data exfiltration) in less than 60 seconds.
+
+BACKGROUND:
+
+- We recently released our 2026 edition of the Global Incident Response Report, with several key findings overlapping with this ongoing financially-motivated threat activity.
+One of the key findings was that, of the extortion cases we investigated, the usage of encryption dropped from 92% in 2024 to 78% in 2025. It also represented the first year since prior to 2021 where the use of encryption dropped below 89%. 
+- Another key finding was that identity weakness played a role in 89% of the cases we responded to in 2025, with 65% of cases involving the use of identity-based initial access techniques. 33% involved a form of social engineering such as vishing.
+- The effectiveness of these attacks relies on the gap between identity verification and SaaS-level data permissions.
+ANATOMY OF AN ATTACK:
+The typical attack lifecycle is characterized by a “low and slow” approach to technical exploitation, instead choosing to weaponize the human element to gain a foothold.
+1. Initial Access: Strategic Vishing
+The threat actors initiate contact through highly targeted vishing, typically sourcing employee details from professional social networks.
+- The “Passkey” Lure: Attackers impersonate internal IT staff, greeting employees by name and citing a mandatory deadline to set up an SSO “passkey.”
+- Mobile Redirection: To evade corporate firewalls and URL inspection tools, victims are instructed to use a mobile device to navigate to a visually identical phishing domain.
+- STIR/SHAKEN Compliance: Rather than spoofing numbers, which often triggers “Potential Spam” alerts, they use legitimate numbers with fraudulent Caller Name (CNAM) records to appear as “IT Staff.”
+2. Persistence via Adversary-in-the-Middle (AiTM)
+Once a victim interacts with the phishing site, the threat actors utilize an Adversary-in-the-Middle (AiTM) framework to bypass Multi-Factor Authentication (MFA) in real-time.
+- Real-Time Relay: As the employee enters credentials, the attacker relays them to the authentic SSO portal using anti-detect browsers and residential proxies to mimic a local login and avoid detection.
+- MFA Bypass: When prompted for 2FA, the attacker selected the SSO - Verify TOTP option. The phishing page then mirrored this request, capturing the code from the employee and allowing the attacker to complete the login.
+- Ghost Device MFA Enrollment: The attackers used an intentionally sluggish "passkey setup" page to buy time to navigate the victim's actual SSO dashboard and add a new MFA instance — often an Android emulator.
+- Obfuscation: The rogue device is often named “Passkey” within the system settings. This ensures that any “New Device Added” notifications are dismissed by the user as a byproduct of their “setup.”
+3. Living off the SaaS & Data Exfiltration
+The threat actors move laterally not through the network, but through the SaaS dashboard.
+- Email Sanitization: Upon gaining access, the first step is often to delete “New Device” or “Login” alerts from the victim's inbox to prevent discovery.
+- VPN Hijacking: If internal resources are required, they use the compromised credentials to authenticate through enterprise VPN clients.
+- Data Harvesting: The group prioritizes applications with inherent bulk-export capabilities. SaaS platforms like CRMs are a primary target; attackers frequently generate unfiltered “Contacts & Accounts” reports, maximizing field counts to ensure total data exfiltration. With other SaaS platforms, attackers prioritize downloading files with keywords or labeled as “confidential” or “sensitive.”
+
+INDICATORS:
+
+-199.127.61.200
+-173.247.193.250
+-212.247.150.205
+-73.170.199.103
+-185.209.199.104
+-98.27.195.220
+-73.159.223.249
+-73.218.14.2
+-198.54.111.37
+-146.70.172.156
+-173.53.121.241
+-141.98.255.243
+-174.244.18.160
+-173.49.144.24
+-71.233.191.224
+-172.56.199.200
+-70.237.135.82
+-185.209.199.77
+-173.11.73.245
+-24.237.69.80
+-23.234.100.235
+-149.75.194.213
+-76.127.241.83
+-31.57.147.125
+-45.84.107.17
+-104.175.82.79
+-179.43.185.226
+-23.93.251.87
+-23.234.100.212
+-185.195.233.152
+-104.193.195.200
+-138.199.6.209
+-193.138.218.218
+-76.152.11.158
+-98.26.99.167
+-141.224.140.62
+-185.231.32.34
+-70.109.196.15
+-23.234.100.107
+-172.56.195.164
+-75.250.181.136
+-45.134.26.68
+-73.51.249.216
+
