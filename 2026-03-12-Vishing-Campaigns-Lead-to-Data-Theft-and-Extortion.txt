@@ -14,7 +14,7 @@ NOTES:
 - Since late December 2025, Unit 42 has responded to numerous incidents across various industries involving voice-based phishing (vishing) that led to data theft and extortion.
 - We've observed activity targeting organizations within the Financial Services, Manufacturing, Professional & Legal Services, and Wholesale & Retail sectors
 - Based on our observations, most of this activity is likely associated with Bling Libra (aka ShinyHunters) or threat actors affiliated with the broader Scattered LAPSUS$ Hunters alliance.
-- In one 2025 case, we saw the threat actors move from access to impact (data exfiltration) in less than 60 seconds.
+- In one 2025 case, we saw the threat actors move from access to impact (data exfiltration) in less than 60 minutes.
 
 BACKGROUND:
 
