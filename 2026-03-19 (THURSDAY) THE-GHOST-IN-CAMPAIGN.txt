@@ -1,0 +1,59 @@
+2026-03-19 (THURSDAY): THE "GHOST IN THE IT" CAMPAIGN: SIGNED RMM & WORD-MASHUP DOMAIN
+
+AUTHOR(S):
+
+- Jingwen Shi, Zong-Yu Wu, Shu Wang, Tyler Halfpop
+
+NOTES:
+
+- A new malicious campaign is leveraging digitally signed, remote access software to bypass detection and maintain a stealthy, persistent foothold in target networks. 
+
+- The attack triggers a popular file-hosting service's updater to launch its associated cloud-syncing executable whenever the host is online, facilitating traffic masquerading and potential data exfiltration.
+
+- A significant portion of the attack infrastructure uses word-mashup domains—randomly combined English words (e.g., strongfitdealsforman[.]top) designed to appear benign to human eyes and bypass basic heuristic filters.
+
+- Timeline: The campaign maintained a low-level baseline of activity starting in July 2024, followed by a rapid surge in detections beginning in August 2025.
+
+- Scale: Identified 340 related samples and 224 unique domains/IP addresses associated with this campaign.
+
+
+DETAILS:
+
+- Signed RMM (Remote Monitoring and Management) Hijacking: Exploits the legitimate Remote Access tool.
+  -- Leverages valid digital signatures to bypass reputation-based security filters and EDR (Endpoint Detection and Response) alerts.
+
+- Word-Mashup Infrastructure: Employs semantically plausible English combinations for C2 domains (e.g., greenlandsforcowfoods[.]top, mensshoppinguputfitsdeals[.]shop).
+  -- Uses low-cost TLDs (.top, .info, .shop) for rapid, disposable failover to bypass DGA (Domain Generation Algorithm) detection.
+
+- Process Tree Decoupling via Legitimate Proxies: Instead of spawning the content-sharing service directly, the attack triggers a trusted updater binary to initiate the process. This orphans the malicious activity from the primary RMM process, effectively defeating heuristic monitoring.
+  -- Defeats heuristic monitoring by isolating malicious operations from the primary RMM "Remote Access.exe" process.
+  -- SaaS Traffic Masquerading: Abuses the popular content sharing service to generate high-volume HTTPS noise to a major cloud service provider (CSP). Uses /silentConfig to hide unauthorized data synchronization within routine cloud traffic.
+
+- Aggressive Hardening & Persistence: Automates system-wide permission and network changes to maintain access.
+  -- Manipulates native firewall rules via netsh to permit remote IP ingress and uses icacls to grant Users group permanent execution rights.
+
+
+INDICATORS:
+
+
+EXAMPLES OF MALICIOUS SAMPLES:
+
+SHA256 hash: 
+- 0e3689992d777f511103e9692ae294ac6a06eabcd9e93296b93307a153b5f734
+- 5d735a005e96b32029101eb00b88ebae6e837a8573a6218ef1417836033ec5a9
+- 0546656a1c33d0a625af88b81956e5221890bc15dd1afe0f70be169134f7ba04
+- eb6d0b0cdf97f4e932548f19ae10ce7a2f59007686972a2456d8bbe08115411f
+- a851240b0283561d207ba2721c20c1fd78deefd2fd8d0ee03088a97f5e439c9d
+- 17465b9af3af8fadb441ff59ba703de3e5d5574a633d822b727c8fe3bfbb3efa
+- 1de17aa9b846203402adb255444976558feb4330b0122cac254a729b328021a7
+- 28b233759ef83f7841eb8916767539b5c166e1f65c31bc39152791736a07143f
+
+
+
+EXAMPLES OF MALICIOUS DOMAIN INFORMATION:
+
+- strongfitdealsforman[.]top
+- greenlandsforcowfoods[.]top
+- mensshoppinguputfitsdeals[.]shop
+- glutebikes[.]top
+- snakeintheeagleshadow[.]top
