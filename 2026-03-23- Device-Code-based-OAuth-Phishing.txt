@@ -1,0 +1,106 @@
+2026-03-23 [MONDAY] Device Code-based OAuth Phishing
+
+AUTHOR(S):
+- Shawn Shuang, Diva-Oriane Marty, Beliz Kaleli, Oleksii Alex Starov
+
+
+NOTES:
+
+Active device code phishing campaign impersonating a popular cloud-based file storage service and two prominent electronic signature and document workflow platforms. Instead of harvesting credentials, it abuses Microsoft's legitimate Device Code OAuth flow: victims are shown a verification code and directed to paste it into Microsoft's real login page. The attacker's server captures the resulting OAuth tokens in the background. OAuth tokens grant direct application-level access to the victim's account, giving the attacker long-term access to email, files, and identity. Evasion techniques include obfuscated web payload, DevTools detection, debugger traps and other advanced methods. 
+
+DETAILS:
+
+Microsoft Device Code Phishing — Variant Workflow
+- Malicious Link Delivery 
+-- Phishing links tailored to specific customers embedded in phishing emails. 
+-- Victim clicks it
+- Obfuscated HTML Delivery    
+-- Attacker server serves a page containing an encrypted payload with an embedded decryption key 
+-- The visible shell shows only the legitimate branding
+-Client-Side Decryption    
+-- Browser uses the embedded key to decrypt the payload in-browser
+-- Real page content replaces the placeholder shell
+- Device Code Request    
+-- Browser sends attacker server a "start session" request
+-- Attacker server initiates a Microsoft Device Code flow with Microsoft OAuth
+-- Microsoft returns the user code, which the attacker's server then relays to the browser
+- Code Displayed to Victim
+-- Browser displays user code and instructs victim to: 
+--- Copy the code
+--- Go to microsoft[.]com/devicelogin
+ -- Sign in with their Microsoft account
+-- Browser auto-copies user code to clipboard
+-Victim Authenticates    
+-- Victim opens microsoft.com/devicelogin 
+-- Victim pastes user code and signs in 
+-Token Harvest(server-side behavior)
+-- Attacker server polls Microsoft repeatedly
+-- Once victim completes login, Microsoft returns access token to attacker server
+-- Attacker server stores the tokens and notifies browser: session complete
+- Cover Redirect    
+-- Browser receives "session complete" from attacker server
+-- Browser shows "Verification Complete!" then redirects victim to the legitimate brand page
+-- Victim believes they completed a legitimate verification step
+- Post-Compromise (server-side behavior)
+-- The access token provides immediate access to the victim's Microsoft account
+-- Resources at risk: email (Outlook), files (OneDrive), chat (Teams), identity (Azure AD)
+
+The campaign includes several sophistications worth noting:
+- Three versions of the attack targeting three services
+- Obfuscated delivery: one variant was delivered as an AES-GCM encrypted blob via Cloudflare Workers to evade static content scanners
+- Cookie exfiltration: browser cookies are also sent to the attacker on page load
+- Anti-bot: the page stays completely invisible until the server confirms a human visitor; bots and crawlers are silently redirected to the real OneDrive
+- Anti-analysis techniques
+-- Disables right-click functionality, text selection, and drag operations.
+-- Blocks keyboard shortcuts for developer tools (F12, Ctrl+Shift+I/C/J) and source viewing (Ctrl+U).
+-- Detects active developer tools by utilizing a window size heuristic, which subsequently initiates an infinite debugger loop.
+-- Attempts to intercept screen capture functions (PrintScreen / Win+Shift+S).
+-- Obfuscates the Uniform Resource Locator (URL) with a randomly generated 132-character string following the retrieval of the email address from URL parameters.
+- Scale:
+-- Earliest observation on Feb 18 2026
+
+
+INDICATORS
+URLs
+
+- securviews[.]calangodesign[.]com
+- index-v0c[.]11alia-tiffincrane-com-s-account[.]workers[.]dev
+- c2a2c75c3979[.]pages[.]dev
+- Docu-signatureeuser-accessnet[.]customerserredr[.]click
+- veriqoe[.]dev/new
+- esmen[.]sbs/AI2zzh-bhOZId-R2d9vE-O63r9b-Vbvkl5-csIhSs-2I97hD-OyViP8-VVLefo-wpqiHu-n45G
+- index-r3t[.]ohbagski601-quicksend-ch-s-account[.]workers[.]devcom[.]up[.]microsoft-device-login-adobe[.]boloniai[.]com
+- logost[.]cfd/F3kL8m-N0pQ4r-T6uV9w-X1yZ2a-B5cD7e-F9gH0i-J2kL4m-N6oP8q-R0sT3u-V5wX7y-Z9aB1c-D4eF
+- index-328[.]223bad1b7ee1b4341dc280c5[.]workers[.]dev/
+- index-w3h[.]223bad1b7ee1b4341dc280c5[.]workers[.]dev/
+- index-u76[.]mercedes-hcandersonroofing-com-s-account[.]workers[.]dev/
+- index-ap3[.]tyler2miler-proton-me-s-account[.]workers[.]dev/
+- com[.]up[.]microsoft-device-login-adobe[.]boloniai[.]com
+- adobes-secureedocument[.]hestra65kidig[.]click
+- chronos-sarl-xbw[.]1c4a473a7a5c2da254228e99[.]workers[.]dev
+- Index-81n[.]account-valuation-statement[.]workers[.]dev
+- dataroom-access-ymo[.]1c4a473a7a5c2da254228e99[.]workers[.]dev
+- adobe-qox[.]jermaine-totalwarehouse-com-s-account[.]workers[.]dev
+- page-adobe-hx0[.]kay-7b4[.]workers[.]dev/46da9899
+- adobe-5zj[.]nova-tooleyoil-com-s-account[.]workers[.]dev
+- adobe-t6u[.]kira-schneider-sanjunranchtx-com-s-account[.]workers[.]dev
+- jtkmetalcraft[.]com[.]au/wp-admin/wp-userfiles
+- Index-xx3[.]mathieu-renon-lachal-org-s-account[.]workers[.]dev
+- index-uk3[.]arianewman33-proton-me-s-account[.]workers[.]dev
+
+Additional URLs that redirect to attacker page
+-www[.]vranet[.]site
+-click[.]mg[.]gorilladesk[.]com/c/eJwczktyhCAQANDTyE4LuvkuWGTjNVJAN44lykTNTI6fSk7wHsWiA1YjOCrnUDpECWKhz7tvfERT2RinVCnVSpC-OKkDO9a1YkIH4hGldagcWXIcKtqqbYUE3ivy5DBnsUaQYCXKoCwoDZPOCrPxTAapWpKDlvsyLf1cW0vE1zaVvosWH_f9vAb8GGAeYK7pZ_RnmxLt6zHS1916f46l7-M1plL693FP735ufF4T8WuAOefgSQGaZK3VgUV_H3xGr2UA76w447a2nvlOf4VlT2v7l18RfgMAAP__sQJTiw
+-www[.]glitter[.]io/guides/cdb21b00-a14b-4313-96fb-7612f4c33538
+
+Phishing Email SHA256
+- ec60df6045e6f347a9237a5c7d60db0ccf0bac39c4484fc1dba50be39b7c6452
+
+REFERENCE: 
+
+- learn.microsoft[.]com/en-us/entra/identity-platform/v2-oauth2-device-code
+- github[.]com/nromsdahl/squarephish2
+- blog[.]knowbe4.com/uncovering-the-sophisticated-phishing-campaign-bypassing-m365-mfa
+- www[.]microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/
+- www[.]proofpoint.com/us/blog/threat-insight/access-granted-phishing-device-code-authorization-account-takeover
+
