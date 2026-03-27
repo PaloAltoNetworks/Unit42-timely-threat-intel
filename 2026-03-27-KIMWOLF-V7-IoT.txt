@@ -1,0 +1,71 @@
+2026-03-27: (FRIDAY) KIMWOLF V7 IoT BOTNET EVOLUTION
+
+AUTHOR(S): Asher Davila Loranca, Chris Navarrete, Doel Santos
+
+NOTES:
+
+- We identified a new version of the Kimwolf Android botnet (v7) that introduces enhancements to both DDoS attack capabilities and command-and-control (C2) infrastructure resilience. 
+- Kimwolf v7 evolves from previous versions with new capabilities, including HTTP/2-based DDoS floods, Tor hidden service backup C2, and multiple Ethereum RPC endpoints for decentralized C2 resolution.
+
+
+DETAILS:
+
+- In this Kimwolf variant, we observed several notable upgrades to its C2 infrastructure and attack capabilities. 
+- For C2, the malware includes 5 hardcoded public Ethereum RPC endpoints, used to query the blockchain for ENS (Ethereum Name Service) domain resolution to obtain the actual C2 IP address. 
+
+- A hardcoded v3 Tor .onion address present in this malware provides a backup C2 channel via a SOCKS5 proxy state machine, which activates when primary ENS resolution fails. 
+- All C2 traffic routes through a local proxy at 127[.]0.0[.]1:23075 before reaching the external C2 server, a modular design that allows the proxy component to be updated independently and provides flexibility to switch between clearnet and Tor routing. 
+- Its dispatch table supports 15 DDoS methods, including TCP SYN/ACK/RST floods, multiple UDP flood variants, DNS query floods, ICMP floods, an epoll-based TCP connection flood, a TLS/HTTPS flood , and a game server UDP flood targeting port 27015. 
+-- The most significant addition is an HTTP/2 flood. 
+- This attack constructs complete Chrome browser fingerprints, including sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform, sec-fetch-site, sec-fetch-mode, sec-fetch-user, sec-fetch-dest, and priority: u=0, i headers, with dynamically generated user-agent strings, making the flood traffic difficult to distinguish from legitimate browser requests. 
+- A high-performance UDP flood variant uses a Xorshift256 PRNG, with ARM NEON SIMD instructions accelerating IP/UDP checksum computation to maximize packet throughput.
+
+
+INDICATORS:
+
+- SHA256 Hash (Kimwolf v7 ELF binary): 406647de09a0ffa279756b4ccb344b1b76a333320c5b50fd367901fa006cf0ff
+- Tor Hidden Service (Backup C2): edctgwib2n5l34t525zkxqzk5bqb6e5il2yiq5r6zu7gtlxa4uosn3qd[.]onion
+
+- Ethereum RPC Endpoints (C2 Resolution Infrastructure):
+-- hxxps://0xrpc[.]io/eth
+-- hxxps://eth[.]llamarpc[.]com
+-- hxxps://ethereum-rpc[.]publicnode[.]com
+-- hxxps://eth-protect[.]rpc[.]blxrbdn[.]com
+-- hxxps://eth[.]merkle[.]io
+
+NOTE: These are legitimate public Ethereum RPC services used by the malware to resolve ENS domains. Monitor for unusual query patterns from IoT/Android devices rather than blanket blocking.
+
+- STUN Servers:
+	stun[.]cloudflare[.]com
+	74[.]125[.]250[.]129
+
+- Host Indicators:
+	Version string: niggaboxv7
+	Unix socket: @niggaboxv7
+	Process name: netd_service
+	Local proxy port: 23075
+
+- Additional SHA256 hashes:
+-- f7fa18599bfac9b7123f0348136caf5cce67ef8e3ba261c5ecf1dda84daa0373
+-- d338ace9e55e3f694f7130ad56e9bdd4af587c6ac819cbe9127a66f810863051
+-- 567f6768e37a014bff65195f0e971457cee35d908fdf12269b0d534450783504
+-- 42e0ace9e10e531584d158e290bd9357747f174ff82ef64443674e7631bb3995
+-- 42ca5385fddf77c9a033b25c6a939e0ad1308a3f732d5468300993e70aae156b
+-- ea06e68269daf763c546559a100048916c166622de6d7da7108f3d4ba1230184
+-- b947049e5d95d6ab93c5d628a09f477d9a6cf8df0f3a23cf4e7c525eccbbed92
+-- 84cf4aac1e063394be3be68fea3cb9526e567c0aeaaf39b4834411970c00921e
+-- 5d20d2942d39c79e971bac7de90de11b23308195b0ea06d4009fc561c6da7199
+
+ADDITIONAL DETAILS:
+
+- The Kimwolf botnet (also tracked as AISURU) has been active since August 2024 and targets Android TV boxes, primarily cheap uncertified smart TVs and set-top boxes. 
+- It monetizes through DDoS-for-hire services, residential proxy bandwidth sales via ByteConnect SDK, and app installation revenue.
+- v7 was discovered on February 3, 2026, through threat hunting activities following public disclosures by XLab, Synthient, Infoblox, and KrebsOnSecurity in December 2025 through January 2026. 
+- The development of v7, with its enhanced infrastructure resilience, directly responds to takedown efforts during that period.
+- Organizations should monitor Ethereum RPC traffic and Tor circuit establishment from IoT and Android devices, which are strong behavioral indicators of Kimwolf infection.
+
+REFERENCES:
+- VirusTotal: https://www.virustotal.com/gui/file/406647de09a0ffa279756b4ccb344b1b76a333320c5b50fd367901fa006cf0ff
+- AISURU/Kimwolf botnet background and Android TV targeting:
+-- Xlab: https://blog.xlab.qianxin.com/kimwolf-botnet-en/
+-- KrebsOnSecurity: https://krebsonsecurity.com/tag/kimwolf/
