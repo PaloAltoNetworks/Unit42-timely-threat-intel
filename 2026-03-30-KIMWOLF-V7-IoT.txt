@@ -2,6 +2,11 @@
 
 AUTHOR(S): Asher Davila Loranca, Chris Navarrete, Doel Santos
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_kimwolf-iot-botnet-activity-7444475568328351744-li_w/
+- https://x.com/Unit42_Intel/status/2038709947387576597
+
 NOTES:
 
 - We identified a new version of the Kimwolf Android botnet (v7) that introduces enhancements to both DDoS attack capabilities and command-and-control (C2) infrastructure resilience. 
