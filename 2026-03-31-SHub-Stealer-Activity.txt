@@ -1,5 +1,10 @@
 2026-03-31 (TUESDAY): Malicious Ads Leading to SHub Stealer & Revealing Newly Registered Domains Leveraged for C2
 
+REFERENCES:
+
+- LI: https://www.linkedin.com/feed/update/urn:li:ugcPost:7444900861438304256
+- X: https://twitter.com/Unit42_Intel/status/2039135243030929579
+
 AUTHORS:
 
 - Alex Payne, Jonny Westfall, Brian Janower
