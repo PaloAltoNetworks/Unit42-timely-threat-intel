@@ -1,0 +1,31 @@
+2026-04-02 (THURSDAY): Threat Actor Targets Military Entities with NATO, Diplomatic, and Military Lures
+
+AUTHOR(S):
+
+- David Lord
+
+NOTES:
+
+- Unit 42 identified a campaign targeting military entities with NATO, diplomatic, and military lures. Lures included Exercise Steadfast Dart, an annual NATO military exercise, and the International Defence Exhibition and Seminar.
+
+
+INDICATORS:
+
+Malware
+- 06d8d105341c730905eafd3081111a25615dd96e9f60e3ea172dfa872f460594
+- 22ac86235100da817b2031a3835796b7584b2626d0a11084b8bae303c75fd088
+- 8cf9b52cb98dcbbc9e3af8c1924d2c536269871742f2ef793b5a523e641272ab
+- bc6e27303d716c288c790babb433889404e0dc7702cc2a0562a3526eb63e5f07
+- 2225a3bc676e6ae8032b316bb9d12ef0f6cd9c1820dd66ebb3e07162a9364d0b
+- f713df8ee25318637326d84bf132c1da4194e9a599a353328fa050d2bf10d423
+- 6a814363f99f742c469b37530f3b3d55488d3751c135ab902016703462279f49
+- 320a7cce21e7eb82667f50c31d06c12f5437e8d8efb1169906bc534e9fe60133
+
+
+Lures
+- 8e3504900564d524665f4862bf01e87de4a967bd8bc2c4c375d463d4a4221bd2
+- 6c3dd8a93b724bdb40ae11cb1af451274727264b245a5ce705f3786f2807ce20
+
+Infrastructure
+-91.132.94[.]156
+-95.156.205[.]106
