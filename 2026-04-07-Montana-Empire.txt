@@ -1,0 +1,106 @@
+2026-04-07 [TUESDAY] Montana Empire — AI-Assisted Phishing Kit Impersonating Turkish E-Commerce Platform
+
+AUTHORS:
+
+- Keerthiraj Nagaraj Shehroze Farooqi Joseph Pang Wanjin Li Oleksii Alex Starov
+
+
+NOTES:
+
+- Active phishing kit impersonating a national postal service’s e-commerce platform -
+-- The page mimics four storefronts (unifone, masterfone, newphone, dogabilisim)
+- We name this kit "Montana Empire" based on the phrase prominently displayed in the admin panel at pttvm[.]com/mentalite[.]php.
+- AI-assisted development: AI-assisted development: the kit was developed using an AI coding agent, confirmed by a dedicated project directory and tool session permission log found inside the phishing kit archive.
+- Server briefly exposed an open directory during weaponization, revealing:
+-- PTTAVM[.]zip (~6.7 MB) — this phishing kit
+-- letgovip[.]zip (~12.5 MB) — second kit likely impersonating another e-commerce platform for second hand goods; indicates multi-brand operation
+- A prepopulated SQLite db containing configuration settings and product information of the cloned website that can be reused to easily launch multiple fake storefronts on any PHP supported server:
+-- Telegram bot token and chat ID (attacker C2 credentials) for exfiltration
+-- Entries for 5 fake storefronts indicating that this kit is either deployed or will be deployed to impersonate other websites
+-- Admin panel’s password stored as bcrypt hash. This provides protection against unauthorized access to panel even if kit gets leaked 
+-- Fake product listing dump scraped from original website with images linking to original website
+-- EFT IBAN number for receiving payments. Note that we could not verify whether it is a money mule account or an actual attacker account IBAN details 
+
+
+DETAILS:
+
+Phishing Kit: Montana Empire (we call it as such due to the keyphrases in admin panel branding at pttvm[.]com/mentalite.php)
+- Panel tagline: "Kimseye Güvenme" (Trust No One) — "Bu dünyada emir veren tek şey cesaret" (The only thing that commands in this world is courage)
+- Panel login: "ENTER THE EMPIRE" — claims 256-bit encryption and brute-force protection
+
+Phishing Infrastructure:
+
+- Real-time scraper (mentalite.php, scraper_api.php, scraper_worker.php) clones live PTTAVM content — product listings, stores, reviews — keeping the fake site perpetually current without manual updates
+- 30 PHP/JS files, ~8.4 MB total kit size; development completed 2026-03-22 through 2026-03-27, deployed 2026-03-31
+
+Credential Harvesting — Dual Payment Channels:
+The kit offers victims two payment options — both are traps (Sources: tracker.js, helpers.php):
+
+- Credit/debit card: 
+-- Card number, cardholder name, expiry, and CVV captured field by field as the victim types, not just on form submission (Source: tracker.js — blur event listeners on each input field)
+-- Attacker receives card data even if victim abandons the page halfway through
+- EFT/Havale (bank transfer):
+-- Victim shown an attacker-controlled bank IBAN to transfer money to 
+-- IBAN silently swapped in real time without page reload via 5-second polling — attacker can rotate money mule accounts mid-session (Source: tracker.js — _updateEft())                                                           
+-- Victim uploads bank transfer receipt (dekont) — image sent directly to attacker's Telegram (Source: helpers.php — sendTelegramVerification())                                                                                       
+-- Additional PII captured: delivery address and National ID (TC Kimlik) (Source: helpers.php)
+
+Telegram C2 ("Montana Bot"):
+
+(Sources: telegram_bot.php, helpers.php, tg_send.php) 
+- Bot token stored in database.sqlite, not hardcoded — deliberate OpSec to protect credentials if kit files are exposed.
+- Per-victim Telegram message with full card details + action buttons:
+-- Approve — victim sees a success screen and believes payment went through
+-- Reject — victim shown a failure message
+-- Send OTP — attacker intercepts a real bank one-time code and relays it to the victim, silently bypassing 2FA
+-- Redirect to bank transfer — switches victim from card to IBAN transfer flow, useful if card is declined or flagged
+-- Route to live chat — connects victim to attacker posing as platform’s customer support to resolve doubts and complete the fraud
+- /iban command instantly rotates the bank account shown to all active victims — no server access needed
+- Live chat module (chat_api.php) lets attacker impersonate platform’s customer support in real time  
+
+AI-Assisted Kit Development Indicators:
+
+- An AI coding agent project directory was found inside the kit archive, containing a tool session permission log and a local PHP development server configuration file.
+- The session permission log confirms the attacker used an AI coding agent to: scrape real e-commerce site’s pages, fetch and parse CSS, develop PHP backend, query SQLite schema, visually inspect the cloned storefront, and run web searches.
+- Additional behavioral indicators of AI-assisted coding:
+-- Consistent emoji usage in Telegram button labels across all action types 
+-- Uniform PHPDoc comment blocks in Turkish across all PHP files
+-- Ephemeral helper scripts written and deleted during development (12+ temp files in session log)
+-- index_backup.php preserved before major refactors — typical AI-assisted workflow habit
+-- Clean API/helper layer over messier scraper core — characteristic of human+AI collaborative development
+
+INDICATORS:
+
+-Phishing Domain:
+
+--pttvm[.]com — registered 2026-03-31 13:47:48 UTC via Metaregistrar BV (Netherlands)
+-Related Earlier Campaign Domain:
+-- pttavm[.]magaza-tamamla[.]com — subdomain of magaza-tamamla[.]com
+--- Registered: 2026-03-26 13:32:37 UTC (5 days before pttvm[.]com; same day phishing kit files were uploaded to server)
+
+- Active URLs
+
+-- hxxps[://]pttvm[.]com/magaza/unifone
+-- hxxps[://]pttvm[.]com/magaza/newphone
+-- hxxps[://]pttvm[.]com/magaza/masterfone
+-- hxxps[://]pttvm[.]com/magaza/dogabilisim
+-- hxxp[://]pttvm[.]com/PTTAVM[.]zip — phishing kit archive
+-- hxxp[://]pttvm[.]com/letgovip[.]zip — second-brand phishing kit (currently inactive)
+-- hxxp[://]pttvm[.]com/mentalite[.]php — attacker admin panel ("Montana Empire Management")
+
+- C2 Channel: 
+- Telegram Bot API (token stored in database[.]sqlite → store_settings table)
+-- bot_token: 8529833153:AAHbI2A688Sirirsv3kQIp7yaprojL3l4t4
+-- chat_id: "-5151629563"
+
+
+- Kit Name: Montana Empire
+- Phishing kit hash: eb07edaa2786cfddfa4c15526168f2200d85300aee0a8f253b32d2462a7b0bcd
+
+Misc:
+
+- Bank details: [This could be either a fake placeholder or a money mule or the actual attacker]
+-- Bank: QNB Finansbank
+-- IBAN: TR33 zz0006xx 1005 1978 6457 8413 26
+-- Recipient: BURAK KOÇYİĞİT
+- PTTAVM (pttavm[.]com)
