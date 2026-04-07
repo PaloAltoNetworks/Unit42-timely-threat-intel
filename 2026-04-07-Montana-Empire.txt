@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Keerthiraj Nagaraj Shehroze Farooqi Joseph Pang Wanjin Li Oleksii Alex Starov
+- Keerthiraj Nagaraj, Shehroze Farooqi, Joseph Pang, Wanjin Li, Oleksii Alex Starov
 
 
 NOTES:
@@ -97,10 +97,3 @@ INDICATORS:
 - Kit Name: Montana Empire
 - Phishing kit hash: eb07edaa2786cfddfa4c15526168f2200d85300aee0a8f253b32d2462a7b0bcd
 
-Misc:
-
-- Bank details: [This could be either a fake placeholder or a money mule or the actual attacker]
--- Bank: QNB Finansbank
--- IBAN: TR33 zz0006xx 1005 1978 6457 8413 26
--- Recipient: BURAK KOÇYİĞİT
-- PTTAVM (pttavm[.]com)
