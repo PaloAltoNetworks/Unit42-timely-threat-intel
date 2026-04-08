@@ -4,6 +4,10 @@ AUTHORS:
 
 - Keerthiraj Nagaraj, Shehroze Farooqi, Joseph Pang, Wanjin Li, Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_ai-phishing-activity-7447644945215119360-3ohE/
+- https://x.com/Unit42_Intel/status/2041879323963982303
 
 NOTES:
 
