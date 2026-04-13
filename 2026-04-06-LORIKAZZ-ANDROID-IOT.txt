@@ -1,0 +1,106 @@
+2026-04-06 (MONDAY): LORIKAZZ ANDROID-IOT BOTNET
+
+AUTHOR(S):
+
+- Asher Davila Loranca, Doel Santos, Chris Navarrete 
+
+NOTES:
+
+- We identified and analyzed a botnet operation named Lorikazz that targets Android TV set-top boxes for residential proxy monetization (proxyware). The name Lorikazz comes from a comment label in Jackskid botnet stager scripts, which uninstall the Lorikazz package (com.oreo.mcflurry) as a competitor. This is the first detailed analysis of its dropper infrastructure, APK internals, and C2 architecture.
+- Lorikazz shares significant technical overlap with the Kimwolf botnet (also known as AISURU): the bundled ELF binaries contain ENS (Ethereum Name Service) resolution logic ("Empty ENS record"), Tor .onion backup C2, SOCKS5 proxy capabilities, and an HTTP/2-capable networking stack (nghttp2, curl with OpenSSL). This strongly suggests Lorikazz is either operated by the same actor behind Kimwolf, or a different threat actor used the Kimwolf codebase and repurposed it for residential proxy operations instead of DDoS.
+
+DETAILS:
+
+- Lorikazz targets the same device population as Jackskid and Kimwolf: Android TV set-top boxes with exposed ADB (Android Debug Bridge) interfaces.
+- Dropper shell scripts delivered via ADB follow a consistent pattern: download an APK via netcat (with toybox/busybox fallback chains), verify the payload's SHA-256 hash before installation, install with multiple pm/cmd fallback methods, disable APK verification, whitelist the package from battery optimization via dumpsys deviceidle, and download a secondary ELF binary via a separate port.
+- The operator rotates package names across variants while maintaining the same signing certificate (thumbprint 2a1d96f1b066877812587ac94f45f82dfff5f5f9, created 2026-02-06, issuer C=CN CN=a). Confirmed package aliases include com.oreo.mcflurry, com.android.log_handler_v2, com.android.logcatd, and com.android.boothandler. All scripts actively uninstall com.android.boothandlerv2.
+- Two distinct APK architectures exist under the same operation:
+-- DexService variant (com.oreo.mcflurry): The C2 communication logic is implemented in Java. DexService contacts a hardcoded Tor .onion C2 (mjsneyhl7gaik3dckdy3ss2vyfr6jfh4eteheu2i4bznt7sbh5zokiyd.onion/check_update) over a local SOCKS5 proxy at 127[.]0.0[.]1:9050, sending device fingerprinting data (CPU_ABI, SDK_INT, DEVICE, MODEL). The C2 returns a configuration with download entries (architecture, URL, hash triplets), which DexService downloads, hash-verifies, and executes. TorService manages the Tor SOCKS proxy by running a bundled Tor binary (libtor.so) with --SocksPort 127[.]0.0[.]1:9050. This variant contains only the Tor binary and no additional native payloads. A ConfigParser class parses a text-based config format using key=value pairs (a=architecture, u=url, h=hash).
+-- SDKService variant (com.android.log_handler_v2, com.android.logcatd): The C2 logic is delegated entirely to a bundled native ELF binary disguised as libandroid_runtime.so, executed with the argument "service". SDKService monitors the running process list for "logcat" and restarts the ELF if it is not running, providing a watchdog for native persistence. TorService runs a Tor binary disguised as libdalvik_runtime.so (with --SocksPort 127[.]0.0[.]1:9050). The com.android.log_handler_v2 variant adds optimized Tor flags for IoT devices: --HardwareAccel 1 --AvoidDiskWrites 1 --NumEntryGuards 1 --NumPrimaryGuards 1 --ConnLimit 64 --MaxClientCircuitsPending 16 --DirCache 0.
+- The Tor binary (libdalvik_runtime.so / libtor.so) is identical across all three APK variants (SHA-256: 024a427fc94e9bd34d96a447631dff75ae43a1421e174f6081aa5ad97f24fdde), confirming they share the same Tor build.
+- The native libandroid_runtime.so binaries (the C2 payload in SDKService variants) contain:
+-- A second Tor .onion address: rwbxbmflwm7andgmxeo3my7mqqs6najhou7o6f7xnxjsiuirzcnab4yd.onion (different from the .onion in the DexService variant)
+-- ENS resolution capability: the string "Empty ENS record" is present, similar to the Kimwolf botnet's documented use of Ethereum Name Service for decentralized C2 resolution
+-- SOCKS5 proxy functionality (socks5h protocol, SOCKS4/5 connect messages)
+-- HTTP/2 networking via nghttp2 library, with curl and OpenSSL
+-- The bc877d variant's ELF is UPX-packed, while the f07821 variant is uncompressed and renames its process at runtime
+- The anti-competition uninstall chain in dropper scripts targets residential proxy SDK packages (com.abcproxy.proxysdk, com.abcproxy.lolsdk, com.n2.systemservice*, com.k.sdk, com.st.stub.app) alongside com.android.docks (Snow botnet), indicating Lorikazz's primary monetization is residential proxy bandwidth rather than DDoS-for-hire.
+- Delivery infrastructure uses two IPs: 46[.]33.11[.]154 and 195[.]154.103[.]239. Download ports include 25565 and 25569 for APK delivery, 6969 for ELF binary delivery, and 1337 for the first variant.
+- SHA-256 hash verification of downloaded APK payloads before installation is a supply-chain integrity measure not observed in Jackskid or Kimwolf stager scripts.
+- A piracy IPTV application named TigerTV (com.android.tigertv), containing Latin American streaming content references and connected to the same dropper IP 46[.]33.11[.]154, suggests the operator may also use piracy TV apps as a social engineering infection vector, similar to the BigPanzi botnet's documented approach. However, no BigPanzi components (pandoraspear, pcdn) were found within the TigerTV APK.
+
+
+INDICATORS:
+
+- SHA256 Hashes (Lorikazz APKs):
+-- 261305ccbee49fc67c13d275e5788fdc3db8b6a85ec99de16130be93130bcb19 (com.oreo.mcflurry, v1.0, DexService variant - Java-based C2 with .onion URL, VT name: rythym)
+-- 1f29ad9ef32cea0d462fd3d74d7bf439757b6de28039ee7c3fcd75b122a03043 (com.oreo.mcflurry, v1.0, updated DexService variant - C2 moved to native ELF libandroid_runtime.so with argument "service2", VT name: dex.apk, 19/77 detections)
+-- bc877d871e342272ef65e4e8fd3fc5101e7447f51884705037ad67d8821d4ba1 (com.android.log_handler_v2, v1.1, SDKService variant)
+-- f07821e313c16cbbd82def45094a22c8d474164051bdbc7648d6869e012014b4 (com.android.logcatd, v1.1, SDKService variant, VT name: rythym922)
+- SHA256 Hashes (Bundled Native ELF Binaries):
+-- 024a427fc94e9bd34d96a447631dff75ae43a1421e174f6081aa5ad97f24fdde (libtor.so / libdalvik_runtime.so - Tor binary, identical across all APK variants)
+-- 5a9189bf7f420d5b6405e534d043e5485c733a8b4a6d21b4c7b9d3a6cd2532ac (libandroid_runtime.so from com.android.log_handler_v2 - C2/proxy ELF, UPX-packed)
+-- e1adf204d8d2c96885a7cdfc1befad23e6f1bee15940f2702cee34071822e197 (libandroid_runtime.so from com.android.logcatd - C2/proxy ELF, unpacked)
+- Tor Hidden Services (C2):
+-- mjsneyhl7gaik3dckdy3ss2vyfr6jfh4eteheu2i4bznt7sbh5zokiyd[.]onion (DexService variant, com.oreo.mcflurry, path: /check_update?a=)
+-- rwbxbmflwm7andgmxeo3my7mqqs6najhou7o6f7xnxjsiuirzcnab4yd[.]onion (native libandroid_runtime.so ELF binaries, SDKService variants)
+- Delivery Infrastructure:
+-- 46[.]33[.]11[.]154  - ports 25565, 25569, 6969, 1337
+-- 195[.]154[.]103[.]239  - ports 25569, 6969
+-- 185[.]244[.]104[.]206 - serves libandroid_runtime.so directly
+- APK Signing Certificate:
+-- Thumbprint: 2a1d96f1b066877812587ac94f45f82dfff5f5f9
+-- Issuer/Subject: C=CN, CN=a, L=a, O=a, ST=a, OU=a
+-- Valid from: 2026-02-06
+-- Shared across all confirmed Lorikazz APK variants
+- Android Package Names (Lorikazz variants):
+-- com.oreo.mcflurry (DexService variant, Java-based C2, contains libtor.so only)
+-- com.android.log_handler_v2 (SDKService variant, native ELF C2, contains libandroid_runtime.so + libdalvik_runtime.so)
+-- com.android.logcatd (SDKService variant, native ELF C2, contains libandroid_runtime.so + libdalvik_runtime.so)
+-- com.android.boothandler (earliest known, architecture unconfirmed)
+- Host Indicators:
+-- APK download filename: rythym or rythym922 (written to /sdcard/)
+-- ELF binary names (dropper-delivered): sqv2 (campaign tag: circle), itsthejews (campaign tag: android-tv-preboot)
+-- Bundled ELF disguise names: libandroid_runtime.so (C2/proxy payload), libdalvik_runtime.so or libtor.so (Tor binary)
+-- Tor SOCKS proxy: 127[.]0.0[.]1:9050
+-- Boot receivers: BootReceiver listening for BOOT_COMPLETED, QUICKBOOT_POWERON, LOCKED_BOOT_COMPLETED
+-- Services: DexService or SDKService + TorService
+-- WakeLock tags: LogHandler::WakeLock (DexService/SDKService), TorService::WakeLock (TorService)
+-- Notification channels: network_sync_channel (main service), network_tor_sync_channel (Tor service)
+- Anti-Competition Uninstall Targets:
+-- com.abcproxy.proxysdk
+-- com.abcproxy.lolsdk
+-- com.n2.systemservice061
+-- com.n2.systemservice062
+-- com.n2.systemservice063
+-- com.n2.systemservice0644
+-- com.a.androidsvc
+-- com.android.docks (Snow botnet)
+-- com.k.sdk
+-- com.st.stub.app
+-- com.android.boothandlerv2
+-- com.android.systemservice0644
+- SHA256 Hashes (Dropper Shell Scripts):
+-- fa72d7d9cd67de1f1312a8c200e04ce70fa5a7220b15d194526d45eeee0452c5 (earliest, 2026-01-24, com.android.boothandler, IP: 46[.]33.11[.]154)
+-- a40a1655c9ca864e2254e4db3624a91d6818db159195911e0a94ca652694b63d (2026-02-26, com.oreo.mcflurry, IP: 195[.]154.103[.]239, VT name: kys)
+-- 4f288e33f1864326160f56e7cc8ff3c19a6f12a4526a90333e3332861ceb5f6b (2026-03-06, com.android.log_handler_v2, IP: 46[.]33.11[.]154)
+-- bad329aa83a44a3cad010b15ee1b03ac8479dfd1b29318f7c4c804e29b57aaa3 (2026-03-07, com.android.logcatd, IP: 46[.]33.11[.]154, VT name: kys2)
+-- f9830820262a2061c667713280ba6fa273eafb151cbf05a2fe5c52c15e477101 (2026-03-12, com.oreo.mcflurry, IP: 46[.]33.11[.]154)
+- SHA256 Hashes (Associated APKs):
+-- 8226f44581a8bd9f1e9119a56929b9df66d725265076b7d9cdd96e8b132d8427 (TigerTV piracy IPTV app, com.android.tigertv)
+
+ADDITIONAL DETAILS:
+
+- Lorikazz operates within a highly competitive Android TV/STB botnet ecosystem alongside Jackskid, Kimwolf (AISURU), Snow, and BigPanzi. All of these operations target ADB-exposed devices and actively uninstall each other's packages.
+- The Lorikazz name originates from a comment (# lorikazz) in Jackskid's ADB stager scripts, which remove the com.oreo.mcflurry package as a competitor. The scripts analyzed in this investigation do the inverse: they install com.oreo.mcflurry.
+- Lorikazz is distinct from Jackskid: Lorikazz uses Tor-based C2 and ENS while Jackskid uses DNS-over-HTTPS and ENS; Lorikazz's primary purpose is residential proxy while Jackskid is DDoS-focused; Lorikazz uses different infrastructure providers (Packet Star / Scaleway vs. DigitalOcean); and the two operations actively remove each other's packages.
+- Lorikazz is distinct from BigPanzi despite both targeting Android STBs via piracy apps. BigPanzi uses custom encryption (Blowfish ECB) for C2, deploys dual implants (pandoraspear + pcdn), performs DNS hijacking via hosts file modification, and builds P2P CDN networks. None of these characteristics are present in Lorikazz.
+- The earliest observed Lorikazz dropper script (fa72d7d9) was first submitted to VirusTotal on January 24, 2026. The APK signing certificate was created on February 6, 2026. The Tor binary (libdalvik_runtime.so / libtor.so) was first submitted to VT on February 7, 2026.
+At the time of analysis, the dropper IP 46[.]33.11[.]154 had 0/94 detections on VirusTotal, and the Lorikazz APK 261305cc (com.oreo.mcflurry) had only 1/77 detections. The com.android.log_handler_v2 variant (bc877d) had 25/77 detections, and the com.android.logcatd variant (f07821) had 30/77 detections.
+- Organizations should monitor Tor circuit establishment (port 9050 SOCKS proxy) and ENS resolution traffic from Android TV/STB devices, which are strong behavioral indicators of infection.
+
+REFERENCES:
+
+- https://github.com/deepfield/public-research/blob/main/jackskid/report.md 
+- https://blog.xlab.qianxin.com/bigpanzi-exposed-hidden-cyber-threat-behind-your-stb/ 
+
