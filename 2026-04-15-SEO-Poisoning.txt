@@ -1,0 +1,41 @@
+2026-04-14 (TUESDAY): #SEOpoisoning leads to Sideloaded Microsoft binary and #RMM installation.
+
+AUTHOR(S):
+
+- Alex Payne, Jonny Westfall
+
+NOTES:
+
+- Users searching for 'TestDisk' a legitimate open-source data recovery software are lured to a malicious site https: //www[.]testdisk[.]dev/download[.]html via SEO poisoning
+- This site contains Javascript that generates randomized, one-time-use URLs on a dynamic DNS domain to trick users into downloading a fake "PhotoRec" installer that deploys a ScreenConnect remote access trojan.
+- This will drop a benign Microsoft binary that is DLL side-loaded, this will run installation of legitimate TestDisk software as well as ScreenConnect RMM.
+
+DETAILS:
+
+Initial Infection: User searches for "TestDisk" and downloads a malicious ZIP archive(TestDisk.zip) from testdisk[.]dev.
+Execution: User extracts the ZIP and runs testdisk-7.3.exe. (Plot twist: This was actually a renamed, legitimate Microsoft Setup binary).
+Evasion (DLL Side-Loading): The trusted Microsoft binary executes and unknowingly loads the attacker's malicious autorun.dll from a hidden Sources\ folder within the extracted directory.
+Execution: Running with elevated privileges, the DLL silently executes an embedded MSI payload (msiexec.exe /V) under the SYSTEM context.
+Persistence: The MSI drops a trojanized ScreenConnect client disguised as Visual C++ redistributables. It also registers a rogue Windows service, malicious LSA authentication packages, and a custom Credential Provider to harvest passwords.
+Command & Control: The ScreenConnect client successfully connects to directdownload[.]icu:8041 - 193.42.11[.]108, granting the attacker remote control.
+
+
+INDICATORS:
+
+Network Indicators:
+IPs:
+193.42.11[.]108
+
+Domains:
+directdownload[.]icu
+direct-download[.]gleeze[.]com
+testdisk[.]dev
+
+URLS:
+https: //www[.]testdisk[.]dev/download[.]html
+
+Host Indicators:
+
+File Hashes:
+1b2555b09ac62164638f47c8272beb6b0f97186e37d3a54cb84c723ff7a2eee5 -> Sideloaded DLL (autorun.dll)
+
