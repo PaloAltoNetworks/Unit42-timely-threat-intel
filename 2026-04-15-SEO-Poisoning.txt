@@ -1,4 +1,4 @@
-2026-04-14 (TUESDAY): #SEOpoisoning leads to Sideloaded Microsoft binary and #RMM installation.
+2026-04-15 (WEDNESDAY): #SEOpoisoning leads to Sideloaded Microsoft binary and #RMM installation
 
 AUTHOR(S):
 
