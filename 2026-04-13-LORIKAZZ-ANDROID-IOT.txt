@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Asher Davila Loranca, Doel Santos, Chris Navarrete 
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_lorikazz-android-botnet-activity-7450580287215890432-Pge_/
+- https://x.com/Unit42_Intel/status/2044764838052712660
+
 NOTES:
 
 - We identified and analyzed a botnet operation named Lorikazz that targets Android TV set-top boxes for residential proxy monetization (proxyware). The name Lorikazz comes from a comment label in Jackskid botnet stager scripts, which uninstall the Lorikazz package (com.oreo.mcflurry) as a competitor. This is the first detailed analysis of its dropper infrastructure, APK internals, and C2 architecture.
