@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Alex Payne, Jonny Westfall
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_seopoisoning-rmm-screenconnect-activity-7450619126294736897-53LN/
+- https://x.com/Unit42_Intel/status/2044853507476361343
+
 NOTES:
 
 - Users searching for 'TestDisk' a legitimate open-source data recovery software are lured to a malicious site https: //www[.]testdisk[.]dev/download[.]html via SEO poisoning
