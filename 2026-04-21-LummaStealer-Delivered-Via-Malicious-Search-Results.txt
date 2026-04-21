@@ -1,0 +1,90 @@
+2026-04-21 (TUESDAY): LummaStealer Delivered Via Malicious Search Results
+
+AUTHOR(S):
+
+- Jonny Westfall, Alex Payne
+
+NOTES:
+
+- Initial Access via SEO Poisoning: The attack chain begins by targeting users searching for YubiKey Manager, delivering a malicious ISO file.
+
+- Complex Execution Chain: The infection utilizes DLL sideloading (PYTHON311.DLL via YUBICO_SETUP.EXE) and defense evasion via PowerShell to add Windows Defender exclusions before executing the primary loader.
+- Obfuscated AutoIt Loader: A heavily obfuscated AutoIt script (masquerading as Health.exe) uses RC4 encryption and LZNT1 decompression to unpack the Lumma Stealer payload.
+-In-Memory Execution: The malware employs Process Hollowing (RunPE) to inject the C++/Qt Lumma Stealer payload directly into memory, evading traditional file-based detection.
+- Advanced Privilege Escalation: The malware duplicates winlogon tokens to gain SYSTEM privileges, allowing it to bypass and decrypt "app-bound" encrypted keys.
+-Extensive Data Theft Scope: The stealer aggressively targets 24 Chromium-based browsers, Firefox, multiple FTP/SSH clients (FileZilla, WinSCP, PuTTY), and KeePass password manager configurations.
+- Robust Backdoors: Beyond simple exfiltration, it establishes an RDP backdoor (rdpwrap.dll), a reverse tunnel via Plink, and force-installs malicious Chrome extensions.
+- Anti-Analysis & Cleanup: The malware checks for known sandbox hostnames to evade analysis and utilizes a slick RunOnce registry modification (wextract_cleanup0) to delete temporary creation files upon user logon, hindering forensic recovery.
+- LummaStealer Attribution: Attribution to the LummaStealer malware family is confirmed through several distinct characteristics and tactical overlaps observed in this sample.
+-- The reliance on AutoIt scripts for payload delivery, combined with the use of .TOP domains for infrastructure, serve as strong initial indicators. 
+-- Deeper analysis of the AutoIt payload reveals it performs environmental checks for specific sandbox hostnames historically associated with Lumma campaigns—specifically checking for test22, NfZtFbPfH, and ELICZ. 
+-- The payload is tied to the creation of a highly specific scheduled task named NeuraLogix, a recognized hallmark that firmly roots this execution chain to LummaStealer.
+
+
+DETAILS:
+
+[User Mounts Malicious ISO]
+ └─ YUBICO_SETUP.EXE (Execution)
+     │
+     └─ Loads PYTHON311.DLL (Malicious DLL Sideloading)
+         │
+         ├─> powershell.exe (Defense Evasion)
+         │    └─ Executes Base64-encoded script
+         │       └─ Adds Windows Defender Exclusions (.exe, .com, Temp directory)
+         │
+         ├─> Network Connection (Initial C2)
+         │    └─ Beacons to verifydl.top via HTTP
+         │
+         ├─> Drops f27f4ef8-e729-4b5d-b095-2a405cb3380d.exe (Persistence)
+         │    └─ Registry Modification
+         │       └─ Adds rundll32.exe to HKLM\...\RunOnce
+         │
+         └─> Drops & Executes Health.exe (Masqueraded AutoIt Interpreter)
+              └─ Executes AutoIt Script 'J'
+                  └─ Unpacks & Injects C++/Qt Payload (In-Memory Execution)
+                      │
+                      ├─> Privilege Escalation
+                      │    └─ grab::GetLocalSystemProcessToken
+                      │       └─ Duplicates winlogon token -> SYSTEM Privileges
+                      │
+                      ├─> Reconnaissance
+                      │    ├─ Generates HWID (CPU/BIOS)
+                      │    ├─ WMI Queries (OS, Antivirus, Software)
+                      │    └─ Desktop Screenshot (JPEG)
+                      │
+                      ├─> Data Theft
+                      │    ├─ Browsers: 24 Chromium variants & Firefox
+                      │    ├─ FTP/SSH: FileZilla, WinSCP, PuTTY, etc.
+                      │    └─ Password Managers: KeePass Configs
+                      │
+                      ├─> Exfiltration
+                      │    └─ Archives to [ID]_grab.zip 
+                      │       └─ HTTP POST to C2 (Spoofed Firefox User-Agent)
+                      │
+                      ├─> Backdoors & Remote Control
+                      │    ├─ Listens for C2 Commands (execute_cmd, update, etc.)
+                      │    ├─ RDP Backdoor (rdpwrap.dll)
+                      │    ├─ Reverse Tunnel (Plink)
+                      │    └─ Force-installs malicious Chrome extensions
+                      │
+                      └─> Advanced Persistence
+                           ├─ Creates hidden Scheduled Task via COM interfaces
+                           └─ WMI Provider Host (WmiPrvSE.exe) creates Scheduled Task
+                              └─ Triggers secondary payload (NeuraLogix)
+
+
+INDICATORS:
+
+SHA256 Hashes:
+- E:\PYTHON311.DLL - e70d3ebc928d2c199d7a62b130421c398b2dc89db48645585d67927b471912c4 (sideloaded DLL)- Requested malicious
+- f27f4ef8-e729-4b5d-b095-2a405cb3380d.exe - bcd08a8a103088ba2451a3a547725285a78894d71769494245c0aadf37e2e431 - malicious
+
+Domains:
+- Verifydl[.]top
+- Yubico-app[.]com - download URL - requested malicious
+
+URLs:
+- https[:]//yubico-app[.]com/yubikey-manager[.]php 
+
+
+
