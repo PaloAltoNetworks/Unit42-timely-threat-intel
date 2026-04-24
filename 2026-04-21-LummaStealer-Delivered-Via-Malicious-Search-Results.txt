@@ -1,8 +1,13 @@
-2026-04-21 (TUESDAY): LummaStealer Delivered Via Malicious Search Results
+2026-04-21 (TUESDAY): LUMMA STEALER DELIVERED VIA MALICIOUS SEARCH RESULTS
 
 AUTHOR(S):
 
 - Jonny Westfall, Alex Payne
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_seopoisoning-lummastealer-activity-7452468978544996353-pAbX/
+- https://x.com/Unit42_Intel/status/2046703360527483145
 
 NOTES:
 
