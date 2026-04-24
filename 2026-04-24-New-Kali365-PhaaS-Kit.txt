@@ -1,8 +1,13 @@
-2026-04-24 (Friday): New Kali365 PhaaS Kit Being Abused in the Wild
+2026-04-24 (Friday): NEW KALI365 PHAAS KIT BEING ABUSED IN THE WILD
 
 AUTHORS:
 
 - Joseph Ganter, Lacey Cochrane
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_kali365-activity-7453512098757853186-4d70/
+- https://x.com/Unit42_Intel/status/2047746463556333838
 
 NOTES:
 
