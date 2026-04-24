@@ -1,0 +1,257 @@
+2026-04-24 (Friday): New Kali365 PhaaS Kit Being Abused in the Wild
+
+AUTHORS:
+
+- Joseph Ganter, Lacey Cochrane
+
+NOTES:
+
+- New PhaaS kit has emerged called Kali365 
+- This kit has seen widespread abuse and leverages the OAuth device code registration flow
+- The kit is being distributed via Telegram and contains a fully featured mailbox scanning and phishing page creation features
+- AI enabled chatbot features assist with lure generation in the platform
+- Distinct from EvilTokens and sold at a lower price (~$250USD in BTC per Month)
+
+INDICATORS:
+
+- Main Panel IPs (BP hosted infrastructure)
+-- 216[.]203[.]20[.]95
+-- 199[.]91[.]220[.]111
+
+- Fronted Portal IPs (subset)
+-- 167[.]99[.]0[.]116
+-- 162[.]243[.]166[.]119
+-- 157[.]230[.]53[.]233
+-- 102[.]89[.]22[.]100
+-- 159[.]203[.]163[.]96
+
+- PhaaS Operator Panel Domain 
+-- kali365[.]xyz 
+-- v2[.]kali365[.]xyz
+-- auth[.]kali365[.]xyz
+-- api[.]kali365[.]xyz
+-- www[.]nikadent[.]icu
+-- www[.]walter-software[.]com
+-- www[.]duemineral[.]uk
+-- www[.]democrakidsradio[.]org
+-- pohlusa[.]co
+-- www[.]cecyani[.]xyz
+-- www[.]trulites[.]com
+-- www[.]abt90[.]org
+-- nysexams[.]com
+-- www[.]stpaulscathedralokc[.]org
+-- www[.]mediaplanung[.]biz
+-- api[.]duemineral[.]uk
+-- v2[.]duemineral[.]uk
+-- loadingdocuments[.]uk
+-- auth[.]loadingdocuments[.]uk
+-- panel[.]loadingdocuments[.]uk
+
+-Known Phishing Pages Hosted on Cloudflare Worker Domains 
+-- flow-open-7ff0[.]p-ygj98iy2[.]workers[.]dev
+-- note-access-nj2w[.]rob-c2d[.]workers[.]dev
+-- drive-mail-wmou[.]pwyv30sj[.]workers[.]dev
+-- store-open-rc2p[.]p-ko5g87h5[.]workers[.]dev
+-- mail-link-zkfq[.]p-qjt4uz2n[.]workers[.]dev
+-- core-box-iz5s[.]reckagrace[.]workers[.]dev
+-- form-cloud-t655[.]p-oejdzrsz[.]workers[.]dev
+-- vault-cloud-maou[.]p-afw8621d[.]workers[.]dev
+-- page-sync-4pib[.]p-qtlv10l7[.]workers[.]dev
+-- sync-vault-lpwq[.]p-zhge84gd[.]workers[.]dev
+-- file-base-ggoa[.]p-yxcqepyg[.]workers[.]dev
+-- net-web-qo53[.]p-2f5hwpkd[.]workers[.]dev
+-- page-core-sv2l[.]p-anmh2mbc[.]workers[.]dev
+-- data-form-f5at[.]p-lvqyivvk[.]workers[.]dev
+-- view-base-5vpr[.]3mdcy99f8511wpsebllpbkjizyg3run6[.]workers[.]dev
+-- access-file-z1or[.]steve-c57[.]workers[.]dev
+-- data-doc-sfym[.]p-50ds7vs5[.]workers[.]dev
+-- file-doc-uhug[.]p-ao3eomo9[.]workers[.]dev
+-- drive-edge-lzl0[.]p-8pd549l5[.]workers[.]dev
+-- access-base-yz6o[.]p-uhv4e1ee[.]workers[.]dev
+-- cloud-link-j46j[.]p-zltii3tp[.]workers[.]dev
+-- share-portal-r6le[.]p-deum4gog[.]workers[.]dev
+-- sync-store-ur85[.]p-lboid22u[.]workers[.]dev
+-- open-share-njlb[.]p-l4yg6fjb[.]workers[.]dev
+-- app-edge-8bqf[.]p-j65j3f1q[.]workers[.]dev
+-- data-drive-bd71[.]p-4bpdi3hp[.]workers[.]dev
+-- flow-store-gyoz[.]p-o9vztksz[.]workers[.]dev
+-- link-app-jhzt[.]p-ux0nzmb5[.]workers[.]dev
+-- file-share-9p2m[.]papastrious[.]workers[.]dev
+-- view-open-jiif[.]bryanray1104[.]workers[.]dev
+-- net-open-55eu[.]p-r3k6zulh[.]workers[.]dev
+-- base-mail-w7v5[.]p-onnw7z7w[.]workers[.]dev
+-- file-drive-g180[.]p-lmilwl5o[.]workers[.]dev
+-- sync-link-z79k[.]bartlett-pamela[.]workers[.]dev
+-- core-portal-g1cv[.]ran04don[.]workers[.]dev
+-- view-portal-exuw[.]b875e3d068d947ba88099fe9[.]workers[.]dev
+-- portal-cloud-cs2c[.]p-ewgaj1gg[.]workers[.]dev
+-- sync-page-pwra[.]p-rrw76os2[.]workers[.]dev
+-- box-note-1qu3[.]p-xqs8hnkj[.]workers[.]dev
+-- form-doc-wyiy[.]p-xqs8hnkj[.]workers[.]dev
+-- vault-access-pg0o[.]misty-pine-60bb[.]workers[.]dev
+-- view-sync-9r5b[.]p-y9fhvs2p[.]workers[.]dev
+-- cloud-view-hb2b[.]boom-book[.]workers[.]dev
+-- tiny-water-f307[.]eggzhan[.]workers[.]dev
+-- hub-app-8ee1[.]p-kegps6il[.]workers[.]dev
+-- cloud-access-03pv[.]bdeda974c99320a3040456b8[.]workers[.]dev
+-- doc-open-z062[.]p-4510rez0[.]workers[.]dev
+-- sync-portal-jumn[.]p-ajmeubmp[.]workers[.]dev
+-- file-sync-tczr[.]p-77iqt3w6[.]workers[.]dev
+-- doc-note-82oj[.]p-ll66wpsr[.]workers[.]dev
+-- hub-flow-2qs3[.]p-qn7zcudl[.]workers[.]dev
+-- net-web-wnqd[.]p-8r4315uz[.]workers[.]dev
+-- page-mail-vm24[.]p-8xzcvt1x[.]workers[.]dev
+-- cloud-access-uc53[.]p-vy4za09n[.]workers[.]dev
+-- form-hub-lfct[.]p-utpgo2kb[.]workers[.]dev
+-- tryingdocusign[.]pages[.]dev
+-- pwjss-npaw-3soj[.]mary-3fb[.]workers[.]dev
+-- gmkcb-bdxh-03l9[.]c-cmd509g3[.]workers[.]dev
+-- base-flow-38xb[.]p-l3bhkqec[.]workers[.]dev
+-- acqxx-nikg-5cub[.]p-8kehah0a[.]workers[.]dev
+-- chrji-fhav-oz04[.]p-qtlv10l7[.]workers[.]dev
+-- core-mail-etk1[.]p-b8eaz6oe[.]workers[.]dev
+-- rwlha-qilv-ic1v[.]p-rrw76os2[.]workers[.]dev
+-- oynfe-roik-zlpe[.]c-qtkfck53[.]workers[.]dev
+-- secure-link-ek3t[.]c-kzevzz5a[.]workers[.]dev
+-- pgfqi-epwc-d1t6[.]p-1razygxw[.]workers[.]dev
+-- egvmu-ejrp-8rmc[.]royalbase3[.]workers[.]dev
+-- vault-web-s3ue[.]p-y10utwre[.]workers[.]dev
+-- core-flow-0np5[.]pdfonlinedocsdocs-outlook-com-s-account[.]workers[.]dev
+-- portal-share-tj8e[.]p-50ds7vs5[.]workers[.]dev
+-- sharepoint-81c[.]pages[.]dev
+-- sharepoint-63m[.]pages[.]dev
+
+- Custom Phishing Domains
+-- [targeted organisation][.]sharepoint-msviewer[.]com
+-- login[.]sharepoint-msviewer[.]com
+-- ls[.]sharepoint-msviewer[.]com
+
+Discovery Regexes:
+
+- User agent string of the Kali365 mailbox GUI application
+-- kali365\-live\/1\.0\.0
+
+- Kali365 V1 and V2 - Cloudflare Worker regex 
+-- (?i)(?:flow-open|note-access|drive-mail|store-open|mail-link|form-cloud|vault-cloud|page-sync|file-base|net-web|data-form|sync-vault|file-doc|access-file|data-doc|drive-edge|access-base|cloud-link|view-sync|share-portal|sync-store|open-share|app-edge|data-drive|flow-store|link-app|file-share|view-open|net-open|base-mail|file-drive|sync-link|core-portal|portal-cloud|sync-page|view-portal|vault-access|box-note|form-doc|cloud-access|hub-app|doc-open|sync-portal|file-sync|cloud-view|doc-note|hub-flow|page-mail|form-hub|portal-share|core-mail|vault-web|base-flow|secure-link|core-flow).*\.workers\.dev 
+
+- Kali365 V3 - Cloudflare Worker regex
+-- (?i)[a-z]{5}-[a-z]{4}-[a-z0-9]{4}\.(?:mary-3fb|c-cmd509g3|c-qtkfck53|c-kzevzz5a|p-1razygxw|p-8kehah0a|p-b8eaz6oe|p-rrw76os2|royalbase3|p-l3bhkqec|p-y10utwre|p-qtlv10l7)\.workers\.dev
+
+- Recovered Kali365 v2 Panel API Endpoints - highlighting the features of the Kali365 kit
+-- Authentication:
+---  POST    /dash/auth      -  Login
+---  POST    /dash/auth/2fa  -  2FA verification
+
+- User / Profile:
+-- GET     /dash/me             -  Get current user profile
+-- POST    /dash/me/update      -  Update profile
+-- GET     /dash/me/referral    -  Get referral info
+-- POST    /dash/me/2fa/setup   -  Setup 2FA
+-- POST    /dash/me/2fa/verify  -  Verify & enable 2FA
+-- POST    /dash/me/2fa/disable -  Disable 2FA
+
+- Branding:
+-- GET     /dash/branding  -  Get panel branding
+
+- Dashboard / Stats:
+-- GET     /dash/stats     -  Get summary stats
+-- GET     /dash/overview  -  Get overview data
+
+- Token Vault:
+-- GET     /dash/tokens                          -  List all captured tokens
+-- POST    /dash/token/{id}/delete               -  Delete a single token
+-- POST    /dash/tokens/delete-revoked           -  Bulk delete all revoked tokens
+-- POST    /dash/token/{id}/share                -  Create a share link
+-- GET     /dash/token/{id}/shares               -  List active share links
+-- POST    /dash/token/{id}/unshare/{shareId}    -  Revoke a share link
+-- GET     /dash/token/{id}/raw                  -  Export raw token data as JSON
+-- POST    /dash/token/import                    -  Import a token
+
+- Lures:
+-- GET     /dash/lures              -  List all lures
+-- POST    /dash/lures/create       -  Create a new lure
+-- POST    /dash/lures/delete/{id}  -  Delete a lure
+
+- Domains:
+-- GET     /dash/domains                            -  List available domains
+-- GET     /dash/linked-domains                     -  List user's linked domains
+-- POST    /dash/linked-domains/add                 -  Link a new domain via DNS
+-- GET     /dash/server-info                        -  Get server IP
+-- POST    /dash/linked-domains/verify/{id}         -  Verify DNS for a linked domain
+-- POST    /dash/linked-domains/provision-ssl/{id}  -  Provision SSL for a linked domain
+-- POST    /dash/linked-domains/delete/{id}         -  Delete a linked domain
+
+- Cloudflare Worker:
+-- GET     /dash/my-worker           -  Get worker status
+-- POST    /dash/my-worker/setup     -  Deploy a CF Worker
+-- POST    /dash/my-worker/rotate    -  Rotate worker name
+-- POST    /dash/my-worker/delete    -  Delete the CF Worker
+-- POST    /dash/my-worker/redeploy  -  Redeploy worker code
+
+- Domain Marketplace:
+-- GET     /dash/marketplace/credits         -  Get credit balance
+-- POST    /dash/marketplace/search-domain   -  Search domain availability
+-- POST    /dash/marketplace/buy-domain      -  Purchase a domain
+-- GET     /dash/marketplace/my-domains      -  List purchased domains
+
+- Inbox / Email:
+  ---     /dash/outlook/{tokenId}  -  Open Outlook view for a captured account
+
+- B2B Sender:
+-- POST    /dash/inbox/{tokenId}/send-job   -  Create a send job
+-- GET     /dash/send-jobs                  -  List all send jobs
+-- GET     /dash/send-jobs/{jobId}          -  Get job details
+-- POST    /dash/send-jobs/{jobId}/cancel   -  Cancel a running job
+-- POST    /dash/send-jobs/{jobId}/delete   -  Delete a completed/cancelled job
+-- POST    /dash/send-jobs/{jobId}/pause    -  Pause a running job
+-- POST    /dash/send-jobs/{jobId}/resume   -  Resume a paused job
+-- GET     /dash/send-jobs/{jobId}/live     -  Get live send progress
+-- POST    /dash/ai-template                -  AI-generate email template
+
+
+- Email Extractor:
+-- POST    /dash/contacts/{tokenId}/harvest/start            -  Start email extraction
+-- GET     /dash/contacts/{tokenId}/harvest/status/{jobId}   -  Poll harvest status
+-- POST    /dash/contacts/{tokenId}/harvest/cancel/{jobId}   -  Cancel harvest and save partial results
+-- POST    /dash/contacts/verify-emails                      -  Verify email addresses
+-- POST    /dash/contacts/classify-domains                   -  Classify domains by provider
+
+- Admin Control:
+-- POST    /dash/mfa/scan                                    -  Scan all tokens for admin roles
+-- GET     /dash/mfa/cached                                  -  Get cached admin scan results
+-- GET     /dash/mfa/{tokenId}/org-users                     -  List org directory users
+-- POST    /dash/mfa/{tokenId}/user/{userId}/reset-password  -  Reset an org user's password
+-- POST    /dash/mfa/{tokenId}/user/{userId}/toggle          -  Enable/disable an org user account
+
+- Keywords:
+-- GET     /dash/keywords              -  List keyword listeners
+-- POST    /dash/keywords/add          -  Add a keyword
+-- POST    /dash/keywords/{id}/toggle  -  Enable/disable a keyword
+-- POST    /dash/keywords/{id}/delete  -  Delete a keyword
+-- GET     /dash/keywords/alerts       -  Get keyword match alerts
+-- POST    /dash/keywords/alerts/clear -  Clear all keyword alerts
+
+- Admin Panel:
+-- GET     /admin/overview                      -  Admin dashboard stats
+-- GET     /admin/users                         -  List all platform users
+-- DELETE  /admin/users/{id}                    -  Delete a platform user
+-- POST    /admin/users/{id}/reset-password     -  Reset a platform user's password
+-- POST    /admin/users/create                  -  Create a new platform user
+
+- Agent / Reseller:
+-- GET     /agent/dashboard           -  Agent dashboard
+-- GET     /agent/clients             -  List agent's clients
+-- POST    /agent/clients/create      -  Create a client under the agent
+-- POST    /agent/clients/{id}/update -  Update a client
+-- POST    /agent/clients/{id}/extend -  Extend client subscription
+
+- Agent Deployment:
+-- GET     /admin/agents                    -  List all deployed agents
+-- POST    /admin/agents/create             -  Deploy a new agent
+-- GET     /admin/agents/{slug}             -  Get agent details
+-- POST    /admin/agents/{slug}/update      -  Update agent config
+-- POST    /admin/agents/{slug}/suspend     -  Suspend an agent
+-- POST    /admin/agents/{slug}/resume      -  Resume a suspended agent
+-- POST    /admin/agents/{slug}/delete      -  Delete an agent and all their data
+
+
