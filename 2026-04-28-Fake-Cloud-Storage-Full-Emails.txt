@@ -1,0 +1,39 @@
+2026-04-28 (TUESDAY): FAKE CLOUD STORAGE FULL EMAILS
+
+AUTHOR(S):
+
+- Reethika Ramesh
+
+Notes:
+- We have discovered emails that falsely warn recipients that their mailbox storage limit has been exceeded. These emails contain links, often using shorteners, that redirect to fraudulent “Cloud” storage pages.
+- The emails create a sense of immediate threat using urgent and fear inducing language such as “Cloud storage is full”, "Permanent data loss warning" and "Cloud Services Disabled".
+- It pressures the recipient to follow their prompts, which takes them through several redirect chains and lands on pages designed to look like Cloud storage service dashboards. 
+- These pages mimic OS specific details such as having the “Activate Windows” watermark. The pop-ups on the page are designed to look like they are system dialog boxes that occupy the user’s whole screen even though they are browser based.
+- If a user follows the prompts on the page, it redirects them to websites to purchase VPN services or antivirus software.
+- These malicious emails originate from email addresses associated with different firebaseapp websites and feature noreply in the username.
+
+Indicators:
+
+Links embedded in the emails seen between Feb–Apr 2026:
+- homewattflow[.]za[.]com/iZuveeStmcREyyjOXnQDluZX19skW-dfGYXhfu43u87Meqs
+- homewattflow[.]za[.]com/oRng9xl0MaKWkEiNNavL_4D4WsZf5hVXRMU_e1NY4CYM597F
+- homewattflow[.]za[.]com/bfzRSkXoQwL2cexujOb8hyhMTey4Zp3sDa8xXRTIxTgynEIF
+- homewattflow[.]za[.]com/X2g1yMZ7mxBE2h2gtMA3IoRAmYIcfDqM9Rz4fkiCdTJU9Ac
+- www.homewattflow[.]za[.]com/jghoujrvNz4D5WdL4Be3qWQPYNxYqry8q3ghFj1YbHtxlOBg
+- redirect-system-e5318.web[.]app/#/SFUrdUdVangyY1AvcSthK2tCZ1hWWmt0eE42Y3p0ZTVVUWZMUXR1QXB1NWZvdWlVTVpUdnN3ZUk4TTU4YmY1RUllSXpBNk43WUNqQ01SbUMxaER3bHc9PQ__
+
+Link shortener service URLs embedded in the emails seen between Feb–Apr 2026:
+- is[.]gd/BlfHHN
+- is[.]gd/Tsre2w
+- is[.]gd/kBP9Am
+- is[.]gd/B4PSbB
+- is[.]gd/qCiiXyg
+- rebrand[.]ly/a0ylnkd
+
+URLs that the shortened links redirect to:
+- createnewai[.]com/4XXR4FF/27KQBZNB/?source_id=othe&sub1=C01&sub2=S1&sub3=3-8
+- recentworkcode[.]com/4SQRKGX/27FR89RQ/?sub1=sidiabdelaali
+- recentworkcode[.]com/4SQRKGX/27FR89RQ/?sub1=ouzzine1
+- artificialoiltechno[.]com/5WHF7BW/27FR89RQ/?sub1=br5
+- artificialoiltechno[.]com/5WHF7BW/27KQBZNB/?sub1=br77
+- artificialoiltechno[.]com/5WHF7BW/27KQBZNB/?sub1=krm41
