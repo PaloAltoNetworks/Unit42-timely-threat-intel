@@ -1,0 +1,39 @@
+2026-04-30 (THURSDAY): PureClaw / Adamant-Locker ClickFix Style Campaign
+
+- Nabeel Mohamed, Billy Melicher, Oleksii Alex Starov
+
+NOTES:
+- Bulk-registered DGA-style lure domains - all eight landing sites share the “588gj” prefix and with .shop TLD registered on 2025-09-08. 
+- All these .shop pages redirects to https://pureclaw-biz.purepage[.]one
+- Unlike traditional ClickFix there is no bait-and-switch clipboard paste in this attack. 
+- The attack impersonates the legitimate AI personal assistant named PureClaw and abuses the storage service purepage.one to show a legitimate looking installation script URL. There is no obfuscation involved.
+- Fake AI tool lure: Lure pages impersonates the AI assistant named PureClaw with polished-design, trust-building language (pure, safe, certified, 0 security vulnerability tolerance) and a clean install flow.
+- OS detection: JS in the lure page detects visitor’s operating system from the User-Agent and auto-selects the Windows or Linux/Max tab, servicing the appropriate clipboard command (irm|iex vs curl|bash)
+- Server-side payload rotation: All eight lure domains inject the same clipboard command but the payload diversity is controlled by the loader script. For example, 588gjasaaxax[.]shop was observed serving a “program.exe” dropper on 2026-04-17 and an Adamant-Locker dropper on 2026-04-18 without any HTML modifications.
+- Payload staging on third-party infrastructure: Final payloads are hosted purepage[.]one (storage service) and GitHub repositories, separating lure infrastructure from delivery complicating takedown
+- Persistent variant: One variant named update.zip downloads a ZIP archive, extracts it into %APPDATA%\Windows Update\ and runs update.bat with a hidden window, mimicking legitimate Windows Update directory to evade casual inspection
+- Dual function installation: The attackers claim that PureClaw is built on top of popular AI assistant OpenClaw. 
+-- The malicious install.sh actually runs to install OpenClaw software first and then silently overwrites its config to route all API traffic through the attacker’s server. 
+-- This wrap and intercept approach exploits the legitimate OpenClaw project without visually cloning it.
+
+
+IOCs:
+- Stage 1 - Lure Langing Pages:
+-- 588gjasaaxax[.]shop
+-- 588gjasayux[.]shop
+-- 588gjas2aaxx[.]shop
+-- 588gjas2vax[.]shop
+-- 588gjaoytnjax[.]shop
+-- 588gjjg2k[.]shop
+-- 588gjakt3uax[.]shop
+
+- Stage 2 - C2/Payload Staging:
+-- pureclaw-biz[.]purepage[.]one
+-- hxxps://pureclaw-biz[.]purepage[.]one/install.ps1
+-- hxxps://pureclaw-biz[.]purepage[.]one/install.sh
+-- hxxp://pureclaw-biz[.]purepage[.]one/update.zip
+
+- Stage 3 - Final payloads:
+-- https://github[.]com/LimerBoy/Adamant-Locker/releases/download/v1.0/adamant.exe
+-- https://github[.]com/ali-allam/allam/raw/main/allam.ps1
+-- https://github[.]com/damienvanrobaeys/Windows-tools/raw/main/program.exe
