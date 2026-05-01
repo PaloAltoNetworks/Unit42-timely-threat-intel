@@ -1,0 +1,71 @@
+2026-05-01 (FRIDAY): WebSocket Backdoor Campaign Injecting Credit Card Skimmers
+
+AUTHOR(S):
+
+- Billy Melicher, Nabeel Mohamed, Alex Starov
+
+NOTES:
+
+- Obfuscated JavaScript creates a WebSocket backdoor using dynamically executed JavaScript. 
+- The WebSocket sends an obfuscated JavaScript payload to inject a credit card skimmer into the webpage.
+- When entered, credit card information is sent back over the WebSocket to the attacker’s domain.
+
+DETAILS: 
+
+- The campaign uses a combination of shared dedicated infrastructure as well as CF proxies. For example, the C2 domains lgstd[.]net, lgstd[.]ws, and stores-content[.]com are hosted on the dedicated server 45.227.255[.]221 and the C2 domains logstash[.]in, logstorage[.]in, siteimproveanalytic[.]net are hosted on the dedicated server 5.188.86[.]202 whereas the C2 domains astryxrix[.]com, iconstaff[.]top, nexorxwa[.]com are using CF proxies. 
+- Monitoring dedicated IPs for new hosting may assist in uncovering new attacks belonging to the same campaign.
+- The campaign uses a few distinct masquerading themes to further evade detection. 
+--  They include JS frameworks (e.g. jqueryuslibs[.]com, jqueurystatic[.]xyz), CDN/statics (e.g. frontstatics[.]com, api-statics[.]com), Monitoring/analytics (e.g. js-agentnewrelic[.]com, hexaqon-analytics[.]com) , Site Infra/Support (e.g. sitesupport[.]vip, store-content[.]net), and Brand typosquatting (e.g. gstatlc[.]org impersonating gstatic, js-agentnewrelic[.]com impersonating New Relic).
+- We observed that domains are being registered in mini-batches on the same day, spanning across months. For example, logstash[.]in and logstorage[.]in were registered on 2025-02-19, and qetbootstrap[.]com, bootstrapcda[.]com and sitesocket[.]store were registered on 2025-05-01. 
+- Additionally, they exhibited similar NS fingerprints. Monitoring for bulk registrations with similar fingerprints would help to proactively uncover additional C2 domains in the campaign.
+
+INDICATORS:
+
+WebSocket C2 domains
+- onelitteday[.]com
+- qetbootstrap[.]com
+- restratmed[.]com
+- astryxrix[.]com
+- prosoucediesel[.]com
+- frontstatics[.]com
+- bootstrapcda[.]com
+- bootstrapgui[.]com
+- deliastamaels[.]com
+- hexaqon-analytics[.]com
+- jqueurystatic[.]xyz
+- bootstrapcmd[.]com
+- fontspace[.]us
+- gatetpere[.]space
+- beuatyplussalon[.]com
+- logstash[.]in
+- frontstatics[.]com
+- store-content[.]net
+- api-statics[.]com
+- logstorage[.]in
+- siteanallizations[.]com
+- gstatlc[.]org
+- nexorxwa[.]com
+- siteimproveanalytic[.]net
+- usps-trackin[.]us
+- mxlclinfo[.]com
+- lgstd[.]ws
+- esicm[.]biz
+- jonnienesimy[.]online
+- stores-content[.]com
+- redfromscalamandre[.]info
+- iconstaff[.]top
+- west-report[.]com
+- sitesocket[.]store
+- jqueryuslibs[.]com
+- js-agentnewrelic[.]com
+- ebatkopat[.]click
+- siteimproveanalytic[.]net
+- store-content[.]net
+- ppheaimondon[.]store
+- lgstd[.]net
+- sitesupport[.]vip
+- fallodick87-78[.]sbs
+
+
+
+
