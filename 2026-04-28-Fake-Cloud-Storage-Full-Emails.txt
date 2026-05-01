@@ -1,8 +1,13 @@
 2026-04-28 (TUESDAY): FAKE CLOUD STORAGE FULL EMAILS
 
-AUTHOR(S):
+AUTHOR:
 
 - Reethika Ramesh
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_we-discovered-phishing-emails-falsely-warning-activity-7454968449711357952-gx44/
+- https://x.com/Unit42_Intel/status/2049202832247595440
 
 Notes:
 - We have discovered emails that falsely warn recipients that their mailbox storage limit has been exceeded. These emails contain links, often using shorteners, that redirect to fraudulent “Cloud” storage pages.
