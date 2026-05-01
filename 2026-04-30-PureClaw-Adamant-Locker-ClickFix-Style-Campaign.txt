@@ -1,8 +1,16 @@
-2026-04-30 (THURSDAY): PureClaw / Adamant-Locker ClickFix Style Campaign
+2026-04-30 (THURSDAY): PURECLAW / ADAMANT-LOCKER CLICKFIX STYLE CAMPAIGN
+
+AUTHORS:
 
 - Nabeel Mohamed, Billy Melicher, Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_clickfix-activity-7455759903513534464-bmQC/
+- https://x.com/Unit42_Intel/status/2049994251857952828
+
 NOTES:
+
 - Bulk-registered DGA-style lure domains - all eight landing sites share the “588gj” prefix and with .shop TLD registered on 2025-09-08. 
 - All these .shop pages redirects to https://pureclaw-biz.purepage[.]one
 - Unlike traditional ClickFix there is no bait-and-switch clipboard paste in this attack. 
