@@ -1,6 +1,6 @@
-2026-05-01 (FRIDAY): WebSocket Backdoor Campaign Injecting Credit Card Skimmers
+2026-05-01 (FRIDAY): WEBSOCKET BACKDOOR CAMPAIGN INJECTING CREDIT CARD SKIMMERS
 
-AUTHOR(S):
+AUTHORS:
 
 - Billy Melicher, Nabeel Mohamed, Alex Starov
 
