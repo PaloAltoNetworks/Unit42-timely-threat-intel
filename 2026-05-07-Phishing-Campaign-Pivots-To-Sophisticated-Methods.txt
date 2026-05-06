@@ -1,0 +1,84 @@
+2026-05-07 (THURSDAY): PHISHING CAMPAIGN PIVOTS TO SOPHISTICATED METHODS
+
+AUTHOR(S):
+
+- Beliz Kaleli and Oleksii Alex Starov
+
+NOTES:
+
+- Phishing campaign shows victims a view/download document page. When clicked, the user is redirected to the landing phishing page.
+- Attackers evolved their phishing techniques. Second iteration of the campaign pivoted from traditional methods to sophisticated methods.
+
+DETAILS:
+
+FIRST ITERATION - TRADITIONAL PHISHING METHODS:
+
+- Used systeme.io website builder tool to generate the phishing pages. 
+-- Example initial phishing URL: officemgr.systeme[.]io
+- Embedded the landing phishing URL directly in the page.
+-- https://PC4KTPGT4KT.clarityindesign[.]de/IFARZ
+- Embedded the image source directly in the page
+-- https://d1yei2z3i6k35z.cloudfront[.]net/17460231/69f3b208ce1b82.63919580_new.jpg
+- The landing phishing page is a traditional Microsoft credential phishing
+
+SECOND ITERATION - SOPHISTICATED PHISHING METHODS:
+
+- Used retool.com website builder tool to generate the phishing pages.
+-- In Retool, apps are exportable and cloneable. Attackers potentially used this feature to create many phishing pages under retool domain.
+-- Example initial phishing URL: lignosscpa.retool[.]com/embedded/public/d8f212d3-34b5-4264-93d3-972a0e5a8c34
+- Did not directly embed the landing phishing URL. Instead, fetched a JSON. This JSON contains the landing URL parameter. When the event of a user clicking on the image happens, the user is redirected to the phishing page. 
+-- JSON fetched from https://lignosscpa.retool[.]com/api/public/d8f212d3-34b5-4264-93d3-972a0e5a8c34
+-- Relevant JSON snippet: 
+```
+"image1": {
+"id": "image1",
+"type": "widget",
+"subtype": "ImageWidget2",
+"properties": {
+"src": "https://picsum.photos/id/1025/800/600",
+"fit": "cover",
+"horizontalAlign": "center",
+"clickable": false,
+"hidden": false,
+"margin": "4px 8px"
+},
+"events": [{
+"event": "click",
+"method": "openUrl",
+"params": {
+"url": "https://c2ve-a4l9-9nrd.benchmarkbank00-lignosscpa-com-s-account.workers[.]dev/?email=target@example[.]com"
+}
+}]
+}
+```
+- Image source is not directly embedded. Instead, a blob URL is created in the browser during runtime. 
+-- BLOB URL: blob:https://lignosscpa.retool[.]com/01d96250-acfe-429a-83cd-e54120cf1053
+- The landing phishing page is not traditional Microsoft credential phishing. Instead it is device code oauth phishing.
+
+INDICATORS:
+
+DOMAINS USED IN THIS ACTIVITY:
+
+- aeroforcelogistics.retool[.]com/embedded/public/34208266-8e49-4359-bcc2-37eed62685a6
+- approvedstatement.retool[.]com/embedded/public/3c1fb86d-f604-4285-835e-0ef5ded40189/page1
+- contractingcontracts.retool[.]com/embedded/public/28fd7231-883d-437d-b6ae-12d7a7f181e4
+- docswvhocare.retool[.]com/embedded/public/568e9bce-7f22-4541-a643-f3c01a189619
+- docswvhocare.retool[.]com/embedded/public/6c5b5531-ad6a-450d-b047-b51b75842427
+- docswvhocare.retool[.]com/embedded/public/87210be1-4b87-47c5-8358-add0d76c8f57
+- employnvcareerhub.retool[.]com/embedded/public/2c787228-3501-466e-ac8c-8cb33cc199e4
+- fcsnam.retool[.]com/embedded/public/1182fcb4-9ba9-4fe4-8859-bb22a251e45d
+- fcsnam.retool[.]com/embedded/public/1430aa5f-fffb-4424-b7aa-ae7cab08c561
+- fcsnam.retool[.]com/embedded/public/d6647e96-b4b4-4ddb-99e5-af53541e1354
+- fcsnam.retool[.]com/embedded/public/f527db59-5fc5-4d9e-8c85-aec1b4260f91
+- gmiipro.retool[.]com/embedded/public/0e94706c-657c-41b0-b167-0ba623613c69
+- lignosscpa.retool[.]com/embedded/public/d8f212d3-34b5-4264-93d3-972a0e5a8c34
+- mcmaster1.retool[.]com/embedded/public/ecb6903c-419b-4fdd-88dc-55711a801083
+- novusagnourish.retool.com/embedded/public/0694c965-0626-4bb2-b84f-7133ba7eaa54
+- officemgr.systeme[.]io
+- ovvlservice.retool[.]com/embedded/public/8c55c3b7-1eda-49cc-a354-19961914c2d2
+- unitedwoundhealing.retool[.]com/embedded/public/8d3d2c66-660f-4234-b3f5-62dcd7bd715c
+- vanessa-mendez.systeme[.]io
+- wocgrp.retool[.]com/embedded/public/a15535bc-bb45-4111-9bf5-84a714e5aded"%20width=
+
+
+
