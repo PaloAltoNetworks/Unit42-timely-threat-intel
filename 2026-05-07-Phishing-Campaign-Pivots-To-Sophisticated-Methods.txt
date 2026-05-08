@@ -4,6 +4,11 @@ AUTHORS:
 
 - Beliz Kaleli and Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/oauth-ugcPost-7458596609048596480-rEZ_/
+- https://x.com/Unit42_Intel/status/2052830994885955870
+
 NOTES:
 
 - Phishing campaign shows victims a view/download document page. 
