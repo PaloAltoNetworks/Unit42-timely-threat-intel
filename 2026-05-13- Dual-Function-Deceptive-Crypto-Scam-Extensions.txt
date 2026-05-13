@@ -32,10 +32,10 @@ C2 Domains:
 
 Extensions:
 
-- koecfhecfkmjkjplbmbclgacdclnnpei - Token Rewards Claim v2.1.0 
-- pfgpfmdiepmhhhkpnciogjhccppbcfhk - OmniFlow Sidebar / Blockchain Wallet v1.1.2 
-- cdiohdbijdajffgccjmbblbikpnnnkeg - ZAP Wallet - AI-Powered Solana Wallet v1.2.1 
-- gkcamdgljboohmjlfmogjnbckhcbpdhi - L‮regde‬ L‮evi‬ v2.0.1 
-- ggijepplmdjopbidkeoeheohojgiclma - Solana Monitor v2.0.2 
-- clehpjldcdennhphcfihphbeoihllbki - ‮Braavos spoof‬ v1.1.5 
-- mgbkajajjhgmhchoajmomhcdmlndkofc - Crypto Dashboard & Calculator v1.0 
+- koecfhecfkmjkjplbmbclgacdclnnpei 
+- pfgpfmdiepmhhhkpnciogjhccppbcfhk 
+- cdiohdbijdajffgccjmbblbikpnnnkeg  
+- gkcamdgljboohmjlfmogjnbckhcbpdhi 
+- ggijepplmdjopbidkeoeheohojgiclma  
+- clehpjldcdennhphcfihphbeoihllbki  
+- mgbkajajjhgmhchoajmomhcdmlndkofc 
