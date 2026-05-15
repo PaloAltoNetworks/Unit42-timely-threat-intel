@@ -1,52 +1,80 @@
-2026-05-15 (FRIDAY): Malicious ads targeting LinkedIn leads to CastleLoader delivering AsyncRat
+2026-05-15 (FRIDAY): MALICIOUS ADS IMPERSONATING LINKEDIN LEAD TO CASTLELOADER DELIVERING ASYNCRAAT
 
-AUTHOR(S):
+AUTHORS:
 
-Thomas Story, Jonny Westfall
+- Thomas Story, Jonny Westfall
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/castleloader-asyncrat-ugcPost-7461165022337994752-0EZ9/
+- https://x.com/Unit42_Intel/status/2055399390387282242
 
 NOTES:
+
 Phase 1:
+
 - User executes obfuscated PowerShell commands via "Clickfix" lure.
--- Displays fake LinkedIn verification while downloading script. 
+  -- Displays fake LinkedIn verification while downloading script. 
 
 Phase 2: CastleLoader & Python Dropper 
+
 - NSIS installer sideloads Python 3.12. 
 - Malicious Python script injects encrypted shellcode directly into memory. 
+
 Phase 3: Downloader Shellcode • Fetches final stage from C2 using spoofed Chrome headers. 
+
 - Uses `ReplaceTextW` callback technique to evade detection. 
+
 Phase 4: Final Payload 
+
 - Reflective PE loader unpacks and runs AsyncRAT in memory. 
 
 DETAILS:
+
 Phase 1: The Lure & Initial Execution (Clickfix)
-- The attack begins with a "Clickfix" lure prompting the user to run malicious powershell commands.
--- PowerShell Obfuscation: The initial command uses string manipulation ($WarningPreference) to hide the irm (Invoke-RestMethod) command.
--- Deceptive UI: It downloads and executes a script from ookinago[.]com/manera.txt, which displays a fake "Verification complete!" message box labeled "linkedin.com" to lower the user's suspicion while the infection proceeds in the background.
+
+- The attack begins with a "Clickfix" lure prompting the user to run malicious PowerShell commands.
+  -- PowerShell Obfuscation: The initial command uses string manipulation ($WarningPreference) to hide the irm (Invoke-RestMethod) command.
+  -- Deceptive UI: It downloads and executes a script from ookinago[.]com/manera.txt
+     --- This script displays a fake "Verification complete!" message box labeled "linkedin.com" to lower the user's suspicion 
+     --- Meanwhile, the infection proceeds in the background.
+
 Phase 2: CastleLoader & Python Dropper
+
 - The PowerShell script downloads an NSIS (Nullsoft) installer, which acts as CastleLoader.
--- Sideloading: The installer bundles a legitimate Python 3.12 runtime.
--- Encrypted Script: It executes a malicious Python script (pantography.txt).
--- Shellcode Injection: This Python script contains a Base64-encoded, XOR-encrypted block of shellcode. It uses the ctypes library to allocate memory in the heap and move the shellcode into memory for execution, bypassing traditional file-on-disk detection.
+  -- Sideloading: The installer bundles a legitimate Python 3.12 runtime.
+  -- Encrypted Script: It executes a malicious Python script (pantography.txt).
+  -- Shellcode Injection: This Python script contains a Base64-encoded, XOR-encrypted block of shellcode. 
+     --- It uses the ctypes library to allocate memory in the heap and move the shellcode into memory for execution
+     --- This bypasses traditional file-on-disk detection.
+
 Phase 3: The Downloader Shellcode
+
 - Once the Python script triggers the shellcode, a sophisticated downloader takes over:
--- C2 Communication: It dynamically constructs a URL on the stack (guckevichrealestate[.]com/.../v6) to fetch the next stage.
--- Evasion: It uses WinINet APIs with a spoofed Chrome User-Agent to blend in with normal web traffic.
--- Advanced Execution: To run the downloaded payload, it uses a rare callback technique (ReplaceTextW from comdlg32.dll), which helps evade security products monitoring for standard process injection.
+  -- C2 Communication: It dynamically constructs a URL on the stack (guckevichrealestate[.]com/.../v6) to fetch the next stage.
+  -- Evasion: It uses WinINet APIs with a spoofed Chrome User-Agent to blend in with normal web traffic.
+  -- Advanced Execution: To run the downloaded payload, it uses a rare callback technique (ReplaceTextW from comdlg32.dll)
+     --- This technique helps evade security products monitoring for standard process injection.
+
 Phase 4: Final Payload (AsyncRAT)
+
 - The final stage is a Reflective PE (Portable Executable) loader that unpacks and executes the AsyncRAT malware in memory.
 
-
 INDICATORS:
+
 URLs:
-- hXXps://linkedwn.it[.]com - Social Engineering ClickFix page/fake LinkedIn
-- hXXps://ookinago[.]com/manera.txt - First Stage Payload
-- hXXps://ookinago[.]com/dondon[.]txt - Second Stage Payload
-- hXXps[://]guckevichrealestate[.]com/6b69c38e-f05d-5798-a03a-5e60ac60c6a9/dst6 - Third Stage Payload
+
+- hxxps[:]//linkedwn.it[.]com - Social Engineering ClickFix page/fake LinkedIn
+- hxxps[:]//ookinago[.]com/manera.txt - First Stage Payload
+- hxxps[:]//ookinago[.]com/dondon[.]txt - Second Stage Payload
+- hxxps[:]//]guckevichrealestate[.]com/6b69c38e-f05d-5798-a03a-5e60ac60c6a9/dst6 - Third Stage Payload
 		
 Domains:
-- Goffmanlawyer[.]com - Domain found in shellcode not observed in sandboxing
+
+- goffmanlawyer[.]com - Domain found in shellcode not observed in sandboxing
 
 Files:	
-- Ab9541ada727b4092775a220c9f32ebb0d3c096a5c7f807d3b666c94a5e25d88 - NSIS (Nullsoft Scriptable Install System) version 3 installer that bundles a legitimate Python 3.12 runtime alongside a malicious Python dropper script.
 
-
+- SHA256 hash: ab9541ada727b4092775a220c9f32ebb0d3c096a5c7f807d3b666c94a5e25d88 
+- File description: NSIS (Nullsoft Scriptable Install System) version 3 installer 
+- Note: This installer bundles a legitimate Python 3.12 runtime alongside a malicious Python dropper script.
