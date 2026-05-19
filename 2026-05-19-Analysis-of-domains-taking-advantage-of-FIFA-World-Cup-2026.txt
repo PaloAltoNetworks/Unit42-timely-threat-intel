@@ -1,0 +1,121 @@
+2026-05-19 (TUESDAY): ANALYSIS OF DOMAINS TAKING ADVANTAGE OF FIFA WORLD CUP 2026
+
+AUTHORS:
+
+- Reethika Ramesh
+
+NOTES:
+
+- We have identified several groups of malicious domains taking advantage of the 2026 FIFA World Cup buzz.
+- Fraudulent tactics include:
+  -- pirated streaming platforms
+  -- deceptive lure sites that funnel traffic toward unverified gambling services
+  -- domain squatting
+- Characteristics of the domains that redirect to gambling sites indicate algorithmic or bulk domain generation.
+  -- These combine common modifiers with FIFA World Cup 2026–related terminology. 
+- Domains targeting host cities and stadiums redirect to a page advertising AI trip planners.
+  -- These sites harvest users’ personally identifiable information (PII). 
+  -- According to our data, these pages have been active since 2026-04-05.
+- Other campaigns promote "free" streaming links that lead to:
+  -- malvertising pages 
+  -- downloads of potentially unwanted applications (PUAs)
+  -- illicit gambling operations using the "FIFA World Cup 2026" branding
+- Within the last six-month period spanning November 2025 to May 2026, 1,084 domains were registered.
+  -- This accounts for 89% of the total volume identified in these campaigns. 
+- A peak registration of 628 domains (58% of all recent domains) occurred in March 2026 alone.
+- Numerous URLs associated with stadiums and the FIFA World Cup are currently being held:
+  -- in domain parking, and 
+  -- listed on domain resale markets
+
+INDICATORS:
+
+DOMAINS FOR GAMBLING LURES:
+
+- 2026-world-cup[.]com[.]cn
+- 2026-worldcup-app[.]com
+- 2026-worldcup-score[.]com
+- 2026fifashijiebei[.]com[.]cn
+- 2026fifaworldcup[.]com[.]cn
+- 2026worldcup-sports[.]com
+- 2026worldcup-ticai[.]com
+- 2026worldcup-zucai[.]com
+- apps-2026worldcupbet[.]com
+- awesome-fifa-worldcup2026[.]com
+- chcn-wc2026fifa[.]com
+- dl-2026worldcup[.]com
+- exact-2026worldcup[.]com
+- excellent-2026-worldcup[.]com
+- ff-2026fifa[.]com
+- focus-2026worldcup[.]com
+- fresh-2026worldcup[.]com
+- home-wc2026fifa[.]com
+- info-wc2026fifa[.]com
+- intl-2026-fifacup[.]com
+
+EXAMPLES OF FINAL REDIRECTION LINKS:
+
+- www.iaht6f[.]vip:9163/55473?i_code=81061798
+- www.skqiam[.]vip:9960/register62815?i_code=4838759
+
+
+DOMAINS SELECTED AI TRIP DOMAINS:
+
+- atlworldcup26[.]com
+- cdmxworldcup26[.]com
+- cdmxworldcup[.]com
+- hardrockworldcup[.]com
+- laworldcup26[.]com
+- levisworldcup[.]com
+- mercedesworldcup[.]com
+- miaworldcup[.]com
+- newyorkcityworldcup[.]com
+- nrgworldcup[.]com
+- nyworldcup26[.]com
+- philaworldcup[.]com
+- sofiworldcup[.]com
+- unitedworldcup[.]org
+- usaworldcup26[.]com
+- usofaworldcup[.]com
+- vancityworldcup[.]com
+- vanworldcup[.]com
+- worldcup26[.]org
+- worldcup26atl[.]com
+- worldcup26bos[.]com
+- worldcup26kc[.]com
+- worldcup26la[.]com
+- worldcup26miami[.]com
+- worldcup26nrg[.]com
+- worldcup26ny[.]com
+- worldcup26nyc[.]com
+- worldcup26sf[.]com
+- worldcupca[.]com
+- worldcupcan[.]com
+- worldcupcdmx[.]com
+- worldcuphardrock[.]com
+- worldcuplevis[.]com
+- worldcuplincoln[.]com
+- worldcuplumen[.]com
+- worldcupmercedes[.]com
+- worldcupmia[.]com
+- worldcupmtry[.]com
+- worldcupmty[.]com
+- worldcupnrg[.]com
+- worldcupnyc26[.]com
+- worldcupoftheamericas[.]com
+- worldcupsofi[.]com
+- worldcupunited26[.]com
+- worldcupusofa[.]com
+
+REDIRECT DESTINATION FROM THE ABOVE DOMAINS:
+
+- project-4gioc.vercel[.]app
+
+FREE STREAMING/MALVERTISING DOMAINS:
+
+- 2026fifa-worldcup[.]com
+- worldcup-cctv[.]com
+- worldcup-download[.]com
+- worldcup-entryvideo[.]com
+- worldcup-freept[.]com
+- worldcup-kanwhere[.]com
+- worldcup-length[.]com
