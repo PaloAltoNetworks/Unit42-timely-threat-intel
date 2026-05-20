@@ -4,6 +4,11 @@ AUTHOR:
 
 - Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/macsync-clickfix-ugcPost-7462974451975028736-PW6M/
+- https://x.com/Unit42_Intel/status/2057208834012168646
+
 NOTES:
 
 - We continue to see malicious ads for Claude and Homebrew pushing malware for macOS systems.
