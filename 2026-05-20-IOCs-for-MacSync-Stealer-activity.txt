@@ -38,21 +38,21 @@ URLS FOR MACSYNC STEALER INFECTION, BUILD TAG CLD:
 - hxxp[:]//elitefenceanddeck[.]com/curl/6e2d25066bc1db68a10d55189c7c0bae6443d5178fd4310808270e261236ce30
 - hxxp[:]//elitefenceanddeck[.]com/dynamic?txd=6e2d25066bc1db68a10d55189c7c0bae6443d5178fd4310808270e261236ce30
 - hxxp[:]//elitefenceanddeck[.]com/gate?buildtxd=6e2d25066bc1db68a10d55189c7c0bae6443d5178fd4310808270e261236ce30&
-   upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
+  upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
 
 URLS FOR MACSYNC STEALER INFECTION, BUILD TAG BRE:
 
 - hxxp[:]//elitefenceanddeck[.]com/curl/5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381
 - hxxp[:]//elitefenceanddeck[.]com/dynamic?txd=5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381
-- hxxp[:]//elitefenceanddeck[.]com/gate?buildtxd=5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381
-  &upload_id=1234567890-abcdef1234567890-&chunk_index=0&total_chunks=1
+- hxxp[:]//elitefenceanddeck[.]com/gate?buildtxd=5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381&
+  upload_id=1234567890-abcdef1234567890-&chunk_index=0&total_chunks=1
 
 URLS FOR MACSYNC STEALER INFECTION, BUILD TAG ESKALOG:
 
 - hxxp[:]//cashlessend[.]com/curl/6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a
 - hxxp[:]//drivinguber[.]com/dynamic?txd=6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a
-- hxxp[:]//drivinguber[.]com/gate?buildtxd=6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a
-  &upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
+- hxxp[:]//drivinguber[.]com/gate?buildtxd=6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a&
+  upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
 
 DOMAIN AND URL BLOCK LIST FOR THIS ACTIVITY: 
 
