@@ -8,9 +8,9 @@ NOTES:
 
 - We continue to see malicious ads for Claude and Homebrew pushing malware for macOS systems.
 - Following these ads, we found four pages impersonating these brands pushing malware for MacSync Stealer.
-- These pages use a ClickFix style technique that instruction users to copy and paste code into a terminal window.
+- These pages use a ClickFix style technique that instructs users to copy and paste code into a terminal window.
 - During the infection process, victims are asked to enter their system password.
-- Pages from malicious Claude ads will push Windows malware for viewers using Windows systems.
+- Pages from malicious Claude ads will push Windows malware to viewers using Windows systems.
 - Data exfiltrated from macOS hosts by MacSync Stealer includes an "info" file with the malware name and build tag.
 - This post contains information on domains and URLs for MacSync Stealer seen as recently as Monday, 2026-05-19.
 
