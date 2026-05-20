@@ -1,0 +1,60 @@
+2026-05-20 (TUESDAY): PAGES IMPERSONATING CLAUDE AND HOMEBREW USE CLICKFIX TECHNIQUE TO PUSH MACSYNC STEALER
+
+AUTHOR:
+
+- Bradley Duncan
+
+NOTES:
+
+- We continue to see malicious ads for Claude and Homebrew pushing malware for macOS systems.
+- Following these ads, we found four pages impersonating these brands pushing malware for MacSync Stealer.
+- These pages use a ClickFix style technique that instruction users to copy and paste code into a terminal window.
+- During the infection process, victims are asked to enter their system password.
+- Pages from malicious Claude ads will push Windows malware for viewers using Windows systems.
+- Data exfiltrated from macOS hosts by MacSync Stealer includes an "info" file with the malware name and build tag.
+- This post contains information on domains and URLs for MacSync Stealer seen as recently as Monday, 2026-05-19.
+
+URLS FOR FAKE CLAUDE PAGES:
+
+- hxxps[:]//opclaude.github[.]io/app/  [MacSync Stealer, Build Tag: claude 3]
+- hxxps[:]//cloudpuput[.]com  [MacSync Stealer, Build Tag: cld]
+
+URLS FOR FAKE HOMEBREW PAGES:
+
+- hxxps[:]//whatisbred[.]com/  [MacSync Stealer, Build Tag: bre]
+- hxxps[:]//cxotoday[.]com/ote/  [MacSync Stealer, Build Tag: eskalog]
+
+URLS FOR MACSYNC STEALER INFECTION, BUILD TAG CLAUDE 3:
+
+- hxxp[:]//spotlessridesdetailing[.]com/curl/b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e
+- hxxp[:]//spotlessridesdetailing[.]com/dynamic?txd=b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e
+- hxxp[:]//spotlessridesdetailing[.]com/gate?buildtxd=b42a0ed9d1ecb72e42d6034502c304845d98805481d99cea4e259359f9ab206e&upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
+
+URLS FOR MACSYNC STEALER INFECTION, BUILD TAG CLD:
+
+- hxxp[:]//elitefenceanddeck[.]com/curl/6e2d25066bc1db68a10d55189c7c0bae6443d5178fd4310808270e261236ce30
+- hxxp[:]//elitefenceanddeck[.]com/dynamic?txd=6e2d25066bc1db68a10d55189c7c0bae6443d5178fd4310808270e261236ce30
+- hxxp[:]//elitefenceanddeck[.]com/gate?buildtxd=6e2d25066bc1db68a10d55189c7c0bae6443d5178fd4310808270e261236ce30&upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
+
+URLS FOR MACSYNC STEALER INFECTION, BUILD TAG BRE:
+
+- hxxp[:]//elitefenceanddeck[.]com/curl/5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381
+- hxxp[:]//elitefenceanddeck[.]com/dynamic?txd=5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381
+- hxxp[:]//elitefenceanddeck[.]com/gate?buildtxd=5b7250991558c1089d217b180d9418df77886996c22f8f319d7f640895e03381&upload_id=1234567890-abcdef1234567890-&chunk_index=0&total_chunks=1
+
+URLS FOR MACSYNC STEALER INFECTION, BUILD TAG ESKALOG:
+
+- hxxp[:]//cashlessend[.]com/curl/6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a
+- hxxp[:]//drivinguber[.]com/dynamic?txd=6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a
+- hxxp[:]//drivinguber[.]com/gate?buildtxd=6645bf61bd5c69d8692c5c7d4521af6143158d25d0b1b7dd213ef9757602b39a&upload_id=1234567890-abcdef1234567890&chunk_index=0&total_chunks=1
+
+DOMAIN AND URL BLOCK LIST FOR THIS ACTIVITY: 
+
+- cashlessend[.]com
+- cloudpuput[.]com
+- drivinguber[.]com
+- elitefenceanddeck[.]com
+- spotlessridesdetailing[.]com
+- whatisbred[.]com
+- hxxps[:]//cxotoday[.]com/ote/
+- hxxps[:]//opclaude.github[.]io/app/
