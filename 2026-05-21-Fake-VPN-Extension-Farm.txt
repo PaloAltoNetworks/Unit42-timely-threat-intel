@@ -1,19 +1,25 @@
-2026-05-21 (THURSDAY): Fake VPN Extension Farm
+2026-05-21 (THURSDAY): FAKE VPN EXTENSION FARM
 
-Authors: 
+AUTHORS: 
 
 - Nabeel Mohamed, Shresta Bellary Seetharam, Shehroze Farooqi, Qinge Xie, Fang Liu and Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/ai-ugcPost-7463625997138006016-Oxvv/
+- https://x.com/Unit42_Intel/status/2057860340931551588
+
 NOTES:
-- The threat actor operates a factory of dozens of fake VPN Chrome extensions that route all user browsing traffic through 15 hardcoded SOCKS5 proxy servers. Source code indicates Russian origin.
+
+- The threat actor operates a factory of dozens of fake VPN Chrome extensions that route all user browsing traffic through 15 hardcoded SOCKS5 proxy servers. The source code indicates a Russian origin.
 - At least four of these extensions directly impersonate major legitimate VPN brands (AdGuard VPN, Proton VPN, BrowSec VPN, HideMyName VPN) to deceive users searching for trusted privacy tools.
 - Every single extension in the cluster contains an identical server list embedded in its service worker JavaScript.
-- ARCHITECTURE.md file, similar code and rapid creation of extensions over span of few months, overengineered code, systematic variable naming and so on suggest that the threat actor used AI to accelerate the campaign.
-- Threat actor has created multiple Chrome Store identities further evading detection. 
+- ARCHITECTURE.md file, similar code and rapid creation of extensions over the span of a few months, overengineered code, systematic variable naming and so on suggest that the threat actor used AI to accelerate the campaign.
+- Threat actor has created multiple Chrome Store identities, further evading detection. 
 -- Example author names include ezagirace763@gmail[.]com and huepahoca@gmail[.]com.
 - Active since at least February 2026, the threat actor periodically created extensions over a three-month span, publishing the most recent one on May 18, 2026. 
-- The threat actor uses multiple identities and for each identity there are multiple VPN extensions created.
-- The threat actor maintains three distinct code templates, all sharing the same proxy IP list and sverchtun[.]store domain. Despite different variable names which is likely a deliberate obfuscation strategy, all three templates execute identical logic: 
+- The threat actor uses multiple identities, and for each identity, there are multiple VPN extensions created.
+- The threat actor maintains three distinct code templates, all sharing the same proxy IP list and sverchtun[.]store domain. Despite different variable names, which are likely a deliberate obfuscation strategy, all three templates execute identical logic: 
 -- 1. Call chrome.proxy.settings.set() with SOCKS5 config  
 -- 2. Store current server in memory.
 - Lacking actual VPN encryption, these extensions expose every visited URL and HTTP credential to the threat actor, who can actively manipulate user traffic.
@@ -21,11 +27,14 @@ NOTES:
 -- This is hardcoded in the service worker's onInstalled handler. 
 -- This is a fake monetization website containing details inconsistent with what these fake VPN extensions perform.
 
-IOCs: 
-Domain:
+INDICATORS: 
+
+DOMAIN:
+
 - sverchtun[.]store
 
-Sample Chrome Extensions:
+EXAMPLES OF CHROME EXTENSIONS:
+
 - kfhghjkddbnaphdgnajhenaacpekbdmg
 - mocbcncbleebmmnmhafgppnaocmpafne
 - oapdfflamjpbpphjjlmejjgljiiajkcf
