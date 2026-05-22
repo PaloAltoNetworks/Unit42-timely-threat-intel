@@ -1,0 +1,42 @@
+2026-05-22 (FRIDAY): RemusStealer Delivered via Software Search Redirection
+
+AUTHOR(S):
+
+Saide Sheikh, Jonny Westfall, Alex Payne
+
+
+NOTES:
+- Users attempting to download C++ IDE from an open-source site are redirected to fake MEGA Transfer pages delivering RemusStealer.
+- The redirection utilizes an on-click mechanism driven through externally loaded CloudFront-hosted JavaScript infrastructure, which contains browser fingerprinting, click instrumentation, hidden iframe functionality, and traffic-routing logic.
+- Campaign tracking identifiers (`subid`, `tid`, `session_id`) persist across multiple infrastructure stages, suggesting affiliate-style traffic routing or campaign continuity.
+- The observed activity differs from traditional SEO poisoning workflows, as users initially reached a legitimate and expected software destination before interaction-driven redirection initiated the malicious delivery chain.
+- The payload utilizes a Garble-obfuscated Go loader and relies on an Ethereum Dead Drop Resolver (smart contract) to retrieve its C2 infrastructure.
+
+DETAILS:
+- The infection chain begins with a search engine query for legitimate software (open source C++), leading the user to an open-source site.
+- The site loads externally hosted JavaScript from `d33f51dyacx7bd[.]cloudfront[.]net` which contains functionality associated with browser fingerprinting, interaction telemetry collection, hidden iframe generation, and pop-traffic execution logic. 
+- Script analysis identified functionality including FingerprintJS integration, click/mouse/scroll tracking, and product definitions such as `IS_POP_PRODUCT` and `IS_FAKE_PLAYER_PRODUCT`, indicating traffic classification and click-interception behavior rather than conventional analytics.
+- This script routes the victim through intermediary domains (e.g., `oundhertobeconsist[.]org`) to a fake "MEGA Transfer" page. Repeated access attempts produced changing content and password values, suggesting dynamic content generation and traffic profiling behavior.
+- The delivery page generates password-protected archives containing a bloated, Garble-obfuscated Go loader. The loader utilizes a custom five-stage decryption routine to reflectively load the stage-2 RemusStealer payload.
+- Upon execution, RemusStealer communicates with `shivlpf[.]shop`. For its primary C2, the malware uses an Ethereum Dead Drop Resolver, querying an RPC endpoint (`eth[.]llamarpc[.]com`) to interact with a smart contract (`0x999941b74F6bbc921D5174A5b29911562cd2D7CF`) to retrieve the actual C2 URL from the blockchain.
+- Additional shared infrastructure overlaps included Cobalt Strike, Emotet, and HijackLoader references, although these appear related to broader ecosystem usage rather than primary campaign attribution.
+
+
+
+INDICATORS:
+
+Domains:
+- oundhertobeconsist[.]org - Intermediary redirect domain
+- pulse[.]cryptowavematrix6[.]cyou - Intermediary redirect domain / dynamic password generator
+- scroogeearthbornwyson[.]com - Intermediary redirect domain
+- dwn[.]nexusriftcore9[.]cfd - Payload delivery domain
+- mascard[.]biz - Post-execution communication domain (Emotet/HijackLoader overlap)
+- shivlpf[.]shop - Post-execution communication domain (RemusStealer)
+
+IPs:
+- 104[.]21[.]72[.]4 - dwn[.]nexusriftcore9[.]cfd (Payload delivery domain)
+
+
+Payloads:
+- 0a6a792109809ef80ee6f93835aa26ead15ed0deabdcd56b0889fb92b62167a4 - RemusStealer Payload 
+
