@@ -20,7 +20,6 @@ DETAILS:
 - Additional shared infrastructure overlaps included Cobalt Strike, Emotet, and HijackLoader references, although these appear related to broader ecosystem usage rather than primary campaign attribution.
 
 
-
 INDICATORS:
 
 Domains:
