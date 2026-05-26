@@ -1,7 +1,13 @@
-2026-05-22 (FRIDAY): RemusStealer Delivered via Software Search Redirection
+2026-05-22 (FRIDAY): REMUS STEALER DELIVERED VIA SOFTWARE SEARCH REDIRECTION
 
-AUTHOR(S):
-Saide Sheikh, Jonny Westfall, Alex Payne
+AUTHORS:
+
+- Saide Sheikh, Jonny Westfall, Alex Payne
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/remusstealer-ugcPost-7463682119962214400-T04u/
+- https://x.com/Unit42_Intel/status/2057916503844933836
 
 NOTES:
 - Users attempting to download C++ IDE from an open-source site are redirected to fake MEGA Transfer pages delivering RemusStealer.
