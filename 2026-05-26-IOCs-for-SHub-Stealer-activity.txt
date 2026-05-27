@@ -49,7 +49,7 @@ FILES:
 - File size: 68,929 bytes
 - File type: ASCII text, with very long lines (3686)
 - Retrieved from: hxxps[:]//qw4c12qqqqoepwq[.]com/debug/payload.applescript?build=94dabb3c6bb6d13338b7dadcc1432c4a
-- File description: Shell script to load an AppleScript payload for SHub Stealer
+- File description: AppleScript payload for SHub Stealer
 
 SHUB STEALER INFORMATION:
 
