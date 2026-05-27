@@ -4,6 +4,11 @@ AUTHOR:
 
 - Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/shubstealer-ugcPost-7465405971884863488-ltlU/
+- https://x.com/Unit42_Intel/status/2059640356908539913
+
 NOTES:
 
 - We continue to find sites impersonating download pages for Claude designed to infect hosts with malware.
