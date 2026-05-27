@@ -7,8 +7,8 @@ AUTHOR:
 NOTES:
 
 - We continue to find sites impersonating download pages for Claude designed to infect hosts with malware.
-- These sites present ClickFix-style instructions that differ, based on the host viewing the page.
-- The instructions ask viewers to copy and past code into:
+- These sites present ClickFix-style instructions that differ based on the host viewing the page.
+- The instructions ask viewers to copy and paste code into:
   -- A PowerShell window if viewed from a Windows host
   -- A terminal window if viewed from a macOS host
 - In this example, when viewed from a macOS host, the page presented code for a SHub Stealer infection.
@@ -48,4 +48,5 @@ FILES:
 
 SHUB STEALER INFORMATION:
 
-- Variant: Meow- Build Tag: T3
+- Variant: Meow
+- Build Tag: T3
