@@ -1,0 +1,51 @@
+2026-05-26 (TUESDAY): SHUB STEALER ACTIVITY
+
+AUTHOR:
+
+- Bradley Duncan
+
+NOTES:
+
+- We continue to find sites impersonating download pages for Claude designed to infect hosts with malware.
+- These sites present ClickFix-style instructions that differ, based on the host viewing the page.
+- The instructions ask viewers to copy and past code into:
+  -- A PowerShell window if viewed from a Windows host
+  -- A terminal window if viewed from a macOS host
+- In this example, when viewed from a macOS host, the page presented code for a SHub Stealer infection.
+- This appears to be a "Meow" variant of SHub Stealer.
+
+INDICATORS:
+
+Site impersonating Claude with ClickFix-style instructions:
+
+- hxxps[:]//claudecontrol.github[.]io/mac.html
+
+Initial URL from the ClickFix-style instructions:
+
+- hxxps[:]//qw4c12qqqqoepwq[.]com/debug/loader.sh?build=94dabb3c6bb6d13338b7dadcc1432c4a
+
+Follow-up URL for the AppleScript payload:
+
+- hxxps[:]//qw4c12qqqqoepwq[.]com/debug/payload.applescript?build=94dabb3c6bb6d13338b7dadcc1432c4a
+
+Same domain for post-infection HTTPS traffic to the C2 server:
+
+- qw4c12qqqqoepwq[.]com
+
+FILES:
+
+- SHA256 hash: bac16d1f3c80f84dbc7076b7d015cf3fdc2141b9ac776ee45dd4543188d4b3d9
+- File size: 1,349 bytes
+- File type: Paul Falstad's zsh script text executable, ASCII text, with very long lines
+- Retrieved from: hxxps[:]//qw4c12qqqqoepwq[.]com/debug/loader.sh?build=94dabb3c6bb6d13338b7dadcc1432c4a
+- File description: Shell script to load an AppleScript payload for SHub Stealer
+
+- SHA256 hash: 42bf3414cf6479d2626ca2a9bd11921692da33758678f6be68714d9cb094cffc
+- File size: 68,929 bytes
+- File type: ASCII text, with very long lines (3686)
+- Retrieved from: hxxps[:]//qw4c12qqqqoepwq[.]com/debug/payload.applescript?build=94dabb3c6bb6d13338b7dadcc1432c4a
+- File description: Shell script to load an AppleScript payload for SHub Stealer
+
+SHUB STEALER INFORMATION:
+
+- Variant: Meow- Build Tag: T3
