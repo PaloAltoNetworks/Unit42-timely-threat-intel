@@ -53,5 +53,5 @@ FILES:
 
 SHUB STEALER INFORMATION:
 
-- Variant: Meow
+- Meow
 - Build Tag: T3
