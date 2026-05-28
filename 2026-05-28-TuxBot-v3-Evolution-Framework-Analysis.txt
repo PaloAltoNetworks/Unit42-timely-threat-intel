@@ -1,0 +1,173 @@
+2026-05-28 (THURSDAY): TuxBot v3 Evolution (Akiru) Framework Analysis
+
+AUTHOR(S):
+
+- Chris Navarrete and Asher Davila Loranca
+
+NOTES:
+
+- We identified a previously undocumented modular IoT botnet framework named TuxBot v3 Evolution, self-identified on infected devices as "Akiru."
+- The framework was recovered from internal telemetry and includes the full source code (C bot agent, Go CNC server, build scripts, Docker test infrastructure, and exploit VM), compiled binaries for 17 architectures, and automated DDoS performance testing reports.
+- The bot binary exploits 16 IoT device families, brute-forces telnet with 1,496 credential pairs, and communicates with the CNC over an encrypted TCP channel.
+- The CNC server is written in Go, provides an SSH admin shell, and operates a DDoS-for-hire panel with per-user quotas. 
+- OSINT pivoting from the dropper IP 185.10.68[.]127 (FlokiNET, Iceland) links TuxBot to the Keksec/AISURU ecosystem through shared infrastructure with Kaitori v3.9 samples and an AISURU yamux-based Go tool.
+- The CNC at 209[.]182.237[.]133 (Singapore) is linked to the dropper via a shared jetross[.]com TLS certificate.
+- The framework we found is approximately 70% functional.
+- The core infection loop works (scanning, exploitation, persistence, primary C2, DDoS). 
+- Broken: exploit VM (magic mismatch), IRC/HTTP fallback C2 (XOR key bug), L7 HTTP methods (never integrated), polymorphic engine (never called), CF/CAPTCHA bypass (dead code, leak test domains cfcybernews[.]eu and captcha.kanfetka[.]site), mining (placeholder).
+
+
+DETAILS:
+
+Exploitation and Scanning:
+- 16 hardcoded exploits target 13 CVEs.
+- Two dedicated exploit scanners look for a  RCE-based vulnerability and ADB (port 5555).
+- All exploits are downloaded from  http://<C2>/bins/bot.<arch>.
+- An embedded exploit VM exists but is broken due to a magic number mismatch (0x4558504C vs 0x54555845), leaving 16 additional exploits unusable. 
+- Telnet brute-forcing uses 1,496 credential pairs imported from DDOS-ROOTSEC (XOR key 0xB4). Successful logins are reported to 154[.]6.197[.]43.
+
+
+DDoS:
+- 78 attack vector IDs registered, mapping to 6 optimized handlers: UDP generic (25 vectors), TCP SYN (47 vectors, including all L7 HTTP methods which silently become SYN floods), TCP ACK (2), TCP stomp (1), UDP DNS (2), plus a mining placeholder. 
+- The IRC channel dispatches 12 named methods (udp, vse, syn, ack, stomp, greip, greeth, udpplain, bypass, std, socket, dns). 
+- 92 method implementations are compiled in but never called.
+
+C2 Protocol:
+- Primary channel: encrypted TCP. Handshake sends 0xDEADBE01 + 32-byte X25519 public key. CNC responds with its public key.
+
+Fallback C2 channels:
+- DNS TXT queries to c2.tuxbot.local (functional), SHA-512 DGA with seed "<YYYY-MM-DD>-TuxBotv3-Evolution- Seed-2025 <index>" producing 20 domains/day (functional), P2P gossip on port 13337 with Ed25519 signed commands (functional), IRC on port 6667 (broken), HTTP polling (broken).
+- The IRC and HTTP channels fail because their table entries were encrypted with the wrong XOR key (0x54 instead of runtime 0xB4).
+
+CNC Server:
+- Go binary with three listeners: bot protocol on port 1999/31337 (multiplexed with admin via magic bytes), SSH admin shell on port 2222 (banner: SSH-2.0-CNC-Control-Server, DDoS-for-hire panel with per-user quotas), and Machine API on port 9999 (TCP JSON).
+
+Persistence and Stealth:
+- 7 mechanisms: systemd service (sd-pam.service), cron (@reboot + */5), shell profile injection (.bashrc/.profile/.zshrc), hidden backup copies at 3 paths, guardian process with crash backoff, watchdog keepalive, and periodic binary relocation across 21 directories.
+- Process name mimicry using 20 system daemon names. Competitor killing via /proc memory scanning for Mirai/QBOT/Vamp/Anime/dvrHelper signatures.
+-  Anti-VM scoring (threshold 30), ptrace anti-debug, log wiping, OOM protection (-1000), core dump disabled.
+
+XOR Key Bug:
+- 58 table entries use XOR encryption (key 0xDEDEFB4F, effective 0xB4). 9 entries were encrypted with a mismatched key (0xDEDEFBAF, effective 0x54) from the offline tool, causing IRC C2, HTTP C2, and 4 exploit payloads to produce garbage at runtime. These features have never worked.
+
+AISURU/Keksec Relationship:
+- Dropper IP 185[.]10.68[.]127 is shared with Kaitori v3.9/Keksec.
+- A VT sample (yamux Go binary) communicates with both AISURU IP 194[.]46.59[.]169 and the same dropper.
+- The jetross.com TLS cert links the CNC (Singapore) to the dropper (Iceland).
+- Developer domain digikalas[.]online resolves to Iranian CDN.
+
+INDICATORS:
+
+SHA256 Hashes (confirmed TuxBot - External samples):
+- 71dfbb171eca4ef9d02ff630b56e5283bbef7b375d4dbe9e8c9531bef312fa8d
+
+SHA256 Hashes (confirmed TuxBot - Internal samples):
+- 511d3ffb4091cbcc94571d9fb3102e8cb424c6e187d01d53ff12078d54929bda
+- 6aa4034dc7a2858094ff4dc59af07d6fe31119591e41599bcc0f3d0b516ee734
+
+SHA256 Hashes (TuxBot Framework Compiled Malicious Binaries TuxBot, internal telemetry):
+- 6b7a8e0c96c2318e747f074f9a99d26738700769ac01bba692d19fc884847737
+- 146f6010f6ee082aab13e0148d39baefa77eaba4ff65817b511b08c2092bdfd2
+- bd6431fb06e4689142ef597cf00382e38ae20a5393a4d9277e45a3f5b3cbcff9
+- a03b0d41f5ef03328150331ffa0ed970998883f7e0343d79b2d3b95330d8e7c1
+- eb2fa179fde2f097c18d5d700ad87d660fc238ee14cbe5477032e60856859621
+- a8d70d16509e227d8306be361bc37a3dc9fe34bf476f51e361e55e6d293c2b3f
+- 0f8bcca3ed65e980da2a1f90a767b7d543be32eeea3e9338d09d4d635a497988
+- 96b1f96efca3b9df2dea85678d60da27e3265b4a00e39e20e64b27bb985e1561
+- c7a36d6b8128c41f93a32413675401a10a2b5769b221bbaa8c5c309585b73ceb
+- 246c97957651de568e61eba1abe572f0b0f960456209995d43d53a0d7cc494a1
+- 3ec016d637e4c9cd331edd2580a229621ad638e924a4aa29ac0342e9144ace19
+- 2f2c3551762c03da126e45dca6fc2f997c63f0f1bfc21fd0ceed680ac6f083ce
+- 9cd5e7e3c8bad321ef6c3d47fe25b3b56e9487f703a7eeee52db4067e6bafe61
+- e3a5296e762e9ee16010399666441d663beeea956382e97cca032a6a5ad06811
+- f1efb78887bb8783d7781c07cd13b53c9c79ebe5baa81f335838d0a6e73dec7e
+- f324a45fcd2a9db4e542c09486c21b08bc42d6bf76fbd5f17871090361b10815
+- 15c17dce89deccd5172285b2650de957918aa1157cde8e4633ae15dfe31f2711
+
+C2 Servers:
+- 209[.]182.237[.]133 (CNC, SSDNodes Singapore)
+-- Port 2222: SSH (SSH-2.0-CNC-Control-Server)
+-- Port 9999: Machine API (TCP JSON)
+-- Port 1999 or 31337: Bot protocol (encrypted TCP)
+- 185[.]10.68[.]127 (Dropper, FlokiNET Iceland)
+-- Port 80: Payload downloads (http://.../bins/bot.<arch>)
+
+Related IPs (Keksec/Kaitori, not TuxBot directly):
+- 45[.]145.185[.]229 (Keksec dropper, /bins/keksec.mips)
+- 107[.]174.133[.]119 (Keksec dropper, Huawei exploit)
+- 194[.]46.59[.]169 (AISURU, yamux Go tool)
+
+Dead/Historical:
+- 188[.]166.2[.]226 (Tsunami dropper, dead code, reassigned to Ubiquiti UISP. Blocking will affect legitimate services.)
+
+Domains:
+- jetross[.]com (TLS cert linking CNC to dropper)
+- digikalas[.]online (developer domain, Iranian CDN)
+
+Exploited CVEs:
+Fully Implemented (13 CVEs) 
+- CVE-2013-7471
+- CVE-2014-8361  
+- CVE-2014-2321    
+- CVE-2017-17215   
+- CVE-2017-18377   
+- CVE-2018-10561 
+- CVE-2018-10562  
+- CVE-2018-20062   
+- CVE-2020-17456
+- CVE-2022-30525   
+- CVE-2023-39780   
+- CVE-2025-34037 
+- CVE-2026-5815
+    
+Completely Broken / .pkg (13 CVEs)
+- CVE-2007-3010    
+- CVE-2007-5693    
+- CVE-2016-11021   
+- CVE-2020-5722    
+- CVE-2020-8515    
+- CVE-2021-25646    
+- CVE-2021-4045    
+- CVE-2022-1388    
+- CVE-2022-22947   
+- CVE-2022-22965   
+- CVE-2022-44877   
+- CVE-2023-1389      
+
+Host Indicators:
+- Console message (post-execution): Infected By Akiru
+- Busybox Probe: /bin/busybox Akiru
+
+Network Indicators:
+- User-Agents: TuxBot, r00ts3c-owned-you
+
+Encrypted Credential Table:
+- 1,496 entries (XOR 0xB4), imported from DDOS-ROOTSEC.
+- Top usernames: root (78.5%), admin, test, guest, user, CISCO, dreambox, sybase, tim, hbahk, hbabr, hbala, godrosi, andras, koot, sroot
+
+ADDITIONAL DETAILS:
+
+- The framework is statically linked (glibc + libsodium), compiled with GCC 14.2.0 (production) and GCC 11.4.0 (VT debug build), targeting 17 architectures. The source tree includes the Go CNC, MariaDB backend, Docker test networks, QEMU environments, and 254 automated DDoS benchmark reports from January 4-6, 2026.
+-Source code and documentation analysis shows the developer used an LLM to port exploit scripts, write C bot modules, and generate CNC Go code. 
+- Raw LLM chain-of-thought reasoning was left verbatim in Source files, including self-referential phrases like "If the user insists on all exploits.” 
+- The LLM used to develop it also hallucinated multiple times throughout the entire codebase.
+-Additionally, every C file carries an identical "educational and authorized security research only" disclaimer consistent with typical LLM safety training.
+  
+Development timeline:
+- 2025-01-03: Developer cloned MHDDoS from GitHub. 
+-- MHDDoS is a public DDoS toolkit the developer cloned Git log leaks the workstation hostname “newtuxdev.sevielw.digikalas[.]online” (Iranian CDN, since torn down).
+- 2025-08-06: Developer domain digikalas[.]online registered (Namecheap, Icelandic privacy, Cloudflare DNS).
+- 2026-01-04 to 01-06: 254 automated DDoS benchmark reports generated, indicating active botnet testing.
+- 2026-01-20: First TuxBot sample appears on VirusTotal.
+- 2026-03-05: CNC Control Panel at 209[.]182.237[.]133:2222 first seen on Xpanse (SSH-2.0-CNC-Control-Server).
+- 2026-04-22: 6 new samples detected in our telemetry (not on VT).
+
+REFERENCES:
+
+- QiAnXin XLab - AISURU Botnet Reports (2024-2025)
+- Cloudflare Radar - DDoS Threat Reports (2025-2026)
+- VirusTotal SHA-256: 71dfbb171eca4ef9d02ff630b56e5283bbef7b375d4dbe9e8c9531bef312fa8d
+
+
+
+
