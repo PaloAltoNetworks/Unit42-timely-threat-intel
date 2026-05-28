@@ -2,21 +2,21 @@
 
 AUTHOR(S):
 
-- Beliz Kaleli, Shehroze Farooqi, Nabeel Mohamed, Oleksii Alex Starov, Fang Liu
+- Beliz Kaleli, Shehroze Farooqi, Nabeel Mohamed, Oleksii Alex Starov, and Fang Liu
 
 NOTES:
 
-- A malicious website containing indirect prompt injection, attempts to trick AI agents into boosting its own SEO ranking. 
+- A malicious website containing indirect prompt injection attempts to trick AI agents into boosting its own SEO ranking. 
 - This website contains a link to a malicious Chrome extension.
 
 DETAILS:
 
-- We detected indirect prompt injection on dashboardsexcel[.]com. This site is posing as an Excel templates store. 
-- It also displays a banner to “Download Template PDF”. This banner contains a link, when clicked, it redirects to www.apps4download[.]com/printable-templates2?gad_source=5&gad_campaignid=23711119820&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO_zyBEKGQdpusCgYqOzxh9cas9brm7xQXRzBDv0ji0o6wlfrMvZ9HxoCsuUQAvD_BwE.
+- We detected indirect prompt injection on dashboardsexcel[.]com. This site is posing as an Excel template store. 
+- It also displays a banner to “Download Template PDF”. This banner contains a link, which, when clicked, redirects to www.apps4download[.]com/printable-templates2?gad_source=5&gad_campaignid=23711119820&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO_zyBEKGQdpusCgYqOzxh9cas9brm7xQXRzBDv0ji0o6wlfrMvZ9HxoCsuUQAvD_BwE.
 - In this redirect URL, when “Add to Chrome” button is clicked, it redirects to chromewebstore.google[.]com/detail/easy-online-templates/hkbkibopiobmhghfjhniplljakcjkhpp. 
--- This malicious highly-obfuscated extension is a sophisticated surveillance tool masquerading as a productivity tool. It does not provide any “templates” functionality as the name or extension description suggests.
--- Every time a user switch browser tabs or windows, this extension sends a user browsing information, including, tab URL, tab title, Window ID, and Event timestamp, to the endpoint https://fictive.easyonlinetemplates[.]net/hotel serving as a continuous tracking beacon.
-- This is a chrome extension called “Easy Online Templates”. The extension is by www.easyonlinetemplates[.]net.
+-- This malicious, highly obfuscated extension is a sophisticated surveillance tool masquerading as a productivity tool. It does not provide any “templates” functionality as the name or extension description suggests.
+-- Every time a user switches browser tabs or windows, this extension sends the user's browsing information, including tab URL, tab title, Window ID, and Event timestamp, to the endpoint https://fictive.easyonlinetemplates[.]net/hotel serving as a continuous tracking beacon.
+- This is a Chrome extension called “Easy Online Templates”. The extension is by www.easyonlinetemplates[.]net.
 - www.easyonlinetemplates[.]net contains a link (“Download template Free”) to app.shift[.]com/templates/1?utm_source=oh-pmax&utm_medium=&utm_campaign=22183079745&utm_term=&utm_content=&gad_source=5&gad_campaignid=22189495121&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO3Apy3cSxG8H4Z6FguOtE2XYYA9rCOAkTNuH6labmBOqNphdjWLIlhoC8zwQAvD_BwE. 
 - In this page, when “Accept & Download” is clicked, it downloads a likely malicious executable file named ​​Shift_wvclmh[.]exe. The executable has a Virus Total score of 8.
 
