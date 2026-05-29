@@ -1,8 +1,13 @@
-2026-05-28 (THURSDAY): TuxBot v3 Evolution (Akiru) Framework Analysis
+2026-05-28 (THURSDAY): TUXBOT V3 EVOLUTION (AKIRU) FRAMEWORK ANALYSIS
 
-AUTHOR(S):
+AUTHORS:
 
-- Chris Navarrete and Asher Davila Loranca
+- Chris Navarrete, Asher Davila Loranca
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/tuxbot-ugcPost-7465815669218013184-UAcT/
+- https://x.com/Unit42_Intel/status/2060050015553274345
 
 NOTES:
 
@@ -51,7 +56,7 @@ XOR Key Bug:
 - 58 table entries use XOR encryption (key 0xDEDEFB4F, effective 0xB4). 9 entries were encrypted with a mismatched key (0xDEDEFBAF, effective 0x54) from the offline tool, causing IRC C2, HTTP C2, and 4 exploit payloads to produce garbage at runtime. These features have never worked.
 
 AISURU/Keksec Relationship:
-- Dropper IP 185[.]10.68[.]127 is shared with Kaitori v3.9/Keksec.
+- Dropper IP 185.10.68[.]127 is shared with Kaitori v3.9/Keksec.
 - A VT sample (yamux Go binary) communicates with both AISURU IP 194[.]46.59[.]169 and the same dropper.
 - The jetross.com TLS cert links the CNC (Singapore) to the dropper (Iceland).
 - Developer domain digikalas[.]online resolves to Iranian CDN.
@@ -85,20 +90,20 @@ SHA256 Hashes (TuxBot Framework Compiled Malicious Binaries TuxBot, internal tel
 - 15c17dce89deccd5172285b2650de957918aa1157cde8e4633ae15dfe31f2711
 
 C2 Servers:
-- 209[.]182.237[.]133 (CNC, SSDNodes Singapore)
+- 209.182.237[.]133 (CNC, SSDNodes Singapore)
 -- Port 2222: SSH (SSH-2.0-CNC-Control-Server)
 -- Port 9999: Machine API (TCP JSON)
 -- Port 1999 or 31337: Bot protocol (encrypted TCP)
-- 185[.]10.68[.]127 (Dropper, FlokiNET Iceland)
+- 185.10.68[.]127 (Dropper, FlokiNET Iceland)
 -- Port 80: Payload downloads (http://.../bins/bot.<arch>)
 
 Related IPs (Keksec/Kaitori, not TuxBot directly):
-- 45[.]145.185[.]229 (Keksec dropper, /bins/keksec.mips)
-- 107[.]174.133[.]119 (Keksec dropper, Huawei exploit)
-- 194[.]46.59[.]169 (AISURU, yamux Go tool)
+- 45.145.185[.]229 (Keksec dropper, /bins/keksec.mips)
+- 107.174.133[.]119 (Keksec dropper, Huawei exploit)
+- 194.46.59[.]169 (AISURU, yamux Go tool)
 
 Dead/Historical:
-- 188[.]166.2[.]226 (Tsunami dropper, dead code, reassigned to Ubiquiti UISP. Blocking will affect legitimate services.)
+- 188.166.2[.]226 (Tsunami dropper, dead code, reassigned to Ubiquiti UISP. Blocking will affect legitimate services.)
 
 Domains:
 - jetross[.]com (TLS cert linking CNC to dropper)
@@ -159,7 +164,7 @@ Development timeline:
 - 2025-08-06: Developer domain digikalas[.]online registered (Namecheap, Icelandic privacy, Cloudflare DNS).
 - 2026-01-04 to 01-06: 254 automated DDoS benchmark reports generated, indicating active botnet testing.
 - 2026-01-20: First TuxBot sample appears on VirusTotal.
-- 2026-03-05: CNC Control Panel at 209[.]182.237[.]133:2222 first seen on Xpanse (SSH-2.0-CNC-Control-Server).
+- 2026-03-05: CNC Control Panel at 209.182.237[.]133:2222 first seen on Xpanse (SSH-2.0-CNC-Control-Server).
 - 2026-04-22: 6 new samples detected in our telemetry (not on VT).
 
 REFERENCES:
@@ -167,7 +172,5 @@ REFERENCES:
 - QiAnXin XLab - AISURU Botnet Reports (2024-2025)
 - Cloudflare Radar - DDoS Threat Reports (2025-2026)
 - VirusTotal SHA-256: 71dfbb171eca4ef9d02ff630b56e5283bbef7b375d4dbe9e8c9531bef312fa8d
-
-
 
 
