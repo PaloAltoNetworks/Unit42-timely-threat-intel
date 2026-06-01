@@ -1,13 +1,13 @@
-2026-05-28 (THURSDAY): Web-Based Indirect Prompt Injection To Push A Malicious Chrome Extension	
+2026-05-28 (THURSDAY): WEB-BASED INDIRECT PROMPT INJECTION PUSHES MALICIOUS CHROME EXTENSION
 
-AUTHOR(S):
+AUTHORS:
 
 - Beliz Kaleli, Shehroze Farooqi, Nabeel Mohamed, Oleksii Alex Starov, and Fang Liu
 
 REFERENCES:
 
-- LI: https://www.linkedin.com/feed/update/urn:li:ugcPost:7466239963433734144
-- X: https://twitter.com/Unit42_Intel/status/2060474330165731709
+- https://www.linkedin.com/posts/we-detected-indirect-prompt-injection-on-ugcPost-7466239963433734144-lREF/
+- https://x.com/Unit42_Intel/status/2060474330165731709
 
 NOTES:
 
