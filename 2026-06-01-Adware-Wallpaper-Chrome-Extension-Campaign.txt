@@ -1,0 +1,106 @@
+2026-06-01 (MONDAY) Adware Wallpaper Chrome Extension Campaign
+
+AUTHOR(S):
+
+Nabeel Mohamed, Shehroze Farooqi, Shresta Bellary Seetharam, Qinge Xie, Fang Liu and Oleksii Alex Starov
+
+
+NOTES:
+- We tracked 3 Chrome extension publishing accounts and identified 50+ wallpaper extensions that are used as adware. The three accounts are Ovkas, Gameograf and Kidswallpapers/Owhit. Gameograf extensions additionally have the high severity behavior of deleting browser IndexedDB and also injecting HTML code. 
+-- Note that IndexedDB is a built-in browser cache and deleting it is destructive as many web apps rely on it to store large files and support offline activity.
+- These extensions are involved in adware affiliate marketing and ad fraud where they generate ad impressions from users who never chose to visit and earn ad impressions from coerced and non-consensual traffic.
+- Owhit wallpaper extensions delete IndexedDB to force a re-download cycle of wallpaper videos it stores in IndexedDB. 
+- These extensions collectively have over 30K installs showing the scale of the adware operations. Only a handful of these extensions are currently removed from the Chrome Extension Store and the vast majority is currently active. 
+- These Chrome store extensions are further distributed via grayware websites such as owhit[.]com, ovkas[.]com and chromewallpaper[.]com. These websites are running behind bot protection to further evade detection by security crawlers.
+- While they provide a privacy policy, the policy does not cover many suspicious behaviors including forced affiliate redirection, churn tracking on uninstall, operator control shortcut link injection and IndexedDB deletion.
+- We previously identified that Owhit was involved in another adware/PUP campaign disguised as benign customized cursors. More information is available at https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-08-19-IOCs-for-Chrome-extensions-leading-to-adware-or-PUP.txt
+
+DETAILS:
+- Our analysis shows that Ovkas and Gameograf are highly likely to be the same operator with the same manifest author, the same redirect destination and the same affiliate infrastructure. Further, they both have identical code templates. Kidswallpapers/Owhit is likely a distinct operator with a similar code template.
+- All extensions register a chrome.runtime.onInstalled listener that opens affiliate-tracked URLs without user interactions.
+- All extensions call chrome.runtime.setUninstallURL() to ping the actor’s server on uninstall, enabling churn tracking and retargeting.
+- Gameograf adware extensions remotely inject HTML popups without any sanitization. This capability is later added in version 4.1.0 possibly to further avoid platform scrutiny.
+- In order to look compliant with policies, Gameograf/Ovkas listings show the “Google Chrome Affiliate Program Disclosure” but do not address the IndexedDB deletion or HTML injection.
+- These extensions are highly likely to be authored using an AI coding agent. We found evidence of prompt instruction echoes, agent call-site injection patterns, multi-run agent outputs and API hallucinations (instances where the AI generates non-existent code functions).
+
+INDICATORS: 
+Domain:
+gameograf[.]com
+ovkas[.]com
+chromewallpaper[.]com
+owhit[.]com
+
+Sample Chrome Extensions:
+enbiohidhjmepichhkjgbgppabjembml
+adiolfenpimdeonhngpkbjbjjcopdfdp
+dligcnabijlnmgbamdiakeoencoomaef
+fnfhdeimoegdjjpnmlpfjpchpmndamii
+cnlabipcnjebmibdelcindmhkkchndpd
+belplhjdnniinakggihimnikmhiijenk
+ljpapggfdnpbagfbfnlolopaiknkbbmb
+flomkgojkgpbholngecnpopgafijhenn
+imaibfagcdapbapmnepebaamfgjpdidk
+cgopijlpehalkmakdjmhjonljokilban
+laombeiddkmdfbnfobjgebnfaedefidp
+ekgffgmnoaclljkicakkmobeoeeahmac
+eeicldodfhmgcjedepfmmpdpibebgkbl
+mifhdbomjebcedjhoclccddgmmjhpkne
+mphkmheooambmkecalfljbkchadlfhap
+phpjgmopmomaokbddkjpnnffmchbnagh
+bbdejfjnpbdjbdnibpmiegbdfbngbahn
+ippdfgpdnmndlebdgggkgpapaffdcabp
+iccidfcfcknibmadeplfehdinbeghbej
+gljmgepjbkfkcgepikciaeiihgfbfljf
+bbbbneobfdbkipmlgpapfjabfggogdij
+nbmkfpfhpmajmnkihgkmbgbnalncdnna
+nipbcfdkdiccemcmnfeebgmlnejmhbpd
+jnnkcihkpoljaejgnmaohgbodpdmfmdg
+mmlpmfnhfgjpogjjleoklkfeipnnojgd
+nfpdlagnobaebggdhbflhiobfhondmdb
+abcidfelbbfbijdeilhlgmgejdbappaj
+iagfghcakcckojogakhmdeebmkkjldfb
+clddibaehbcaahnmhnjbnbkccbmghago
+kjhnajdlflnfmfdghcckbngdchajaime
+bdnlfekadefohaaphlndnnieaolmpaao
+gejcmgekakacmlccopnlhanpipkfggcn
+djlolemkfmghdipoalonefccpgjbfanc
+mjojolnflneijogfbcoficpkmldhamba
+mefpdeoonpdjecmnekooffdonpllblnb
+cpddjnopcpkpdhkhnimmgnniiglambdl
+kocbandikoadlapjnhpgbimaoncpnkpi
+hnhdhliichckphekkkgpopiicfdbcocc
+bfkaeaehpekfmfkbindbledlfcbammaa
+liimhladbmdgppodfomkkcppkfbkmjbm
+klgebnlgcgpinhblnheofececjjaaofd
+dhllmgbdfgblbeckhcidmbcamonplgmg
+ecbkfpnhjofeoimpihdlbcjcedjdllin
+oojlpfnmoijaiephcdakeggdbbfdbanb
+jeoonjgjpiepmdcmgcdnadamojoefbad
+pkadlokfbobblmiclilbgajkjcpaaopk
+dbfgidnodecgmmademfkaddkjidikobd
+oeaifghbbhjomcgbgpihadpbfnpidggi
+njggjookikiachbndaocbijjpddcijkf
+ndeeopioahgjcemhhbgdoednmaleeemp
+kjdbfkbkiepbabfjncinoeclenkcgbmf
+opdcfknedcfgiophhnojmnljpndojbom
+dbfgidnodecgmmademfkaddkjidikobd
+jneelgnlhodkmclkcnooopnfmamckbgf
+mjoehhmchapliffjeiopgilfhmphfpbp
+obdcmkbifgehdkjacmndbapoiiabnjlo
+ichbopbcihgldmgbgijfllfikfpeamlo
+ngnfdhfeccjahkpielcjbjebipckhoii
+lappfnpdgnphiodelgopbncadpoldica
+pnlahghdcgkecfkeeiekinacgmbdcabk
+cdfjefamdaghbhmlddgnfneonpjbbehp
+phcfjgnhnpfjhpghiacilpocpcdcgljm
+fipehnelbojemafmdmhdkphjnafdnfle
+fnfaggodhehejkigojefdehaffoneokd
+jbaghkaihalnmkknemcgjikkimiecgpn
+famoeaahdjkggighmjpagpjmcmbinkia
+ooepolkedgpkhojiihdjoajnjohciajl
+gpkgjopaiakcnokecmocecnbpghkkjhg
+pkmjadcejhbaahnlaooacmfkfflpkcic
+fipehnelbojemafmdmhdkphjnafdnfle
+
+
+
