@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Beliz Kaleli, Shehroze Farooqi, Nabeel Mohamed, Oleksii Alex Starov, and Fang Liu
 
+REFERENCES:
+
+- LI: https://www.linkedin.com/feed/update/urn:li:ugcPost:7466239963433734144
+- X: https://twitter.com/Unit42_Intel/status/2060474330165731709
+
 NOTES:
 
 - A malicious website containing indirect prompt injection attempts to trick AI agents into boosting its own SEO ranking. 
