@@ -1,11 +1,16 @@
-2026-06-01 (MONDAY) Adware Wallpaper Chrome Extension Campaign
+2026-06-01 (MONDAY) ADWARE WALLPAPER CHROME EXTENSION CAMPAIGN
 
-AUTHOR(S):
+AUTHORS:
 
-Nabeel Mohamed, Shehroze Farooqi, Shresta Bellary Seetharam, Qinge Xie, Fang Liu and Oleksii Alex Starov
+- Nabeel Mohamed, Shehroze Farooqi, Shresta Bellary Seetharam, Qinge Xie, Fang Liu and Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/adware-ugcPost-7467619566693576705-aZdJ/
+- https://x.com/Unit42_Intel/status/2061853927566381499
 
 NOTES:
+
 - We tracked 3 Chrome extension publishing accounts and identified 50+ wallpaper extensions that are used as adware. The three accounts are Ovkas, Gameograf and Kidswallpapers/Owhit. Gameograf extensions additionally have the high severity behavior of deleting browser IndexedDB and also injecting HTML code. 
 -- Note that IndexedDB is a built-in browser cache and deleting it is destructive as many web apps rely on it to store large files and support offline activity.
 - These extensions are involved in adware affiliate marketing and ad fraud where they generate ad impressions from users who never chose to visit and earn ad impressions from coerced and non-consensual traffic.
