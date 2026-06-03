@@ -1,0 +1,39 @@
+2026-06-03 (WEDNESDAY): PINK EXTORTION BRAND ACTIVITY (CL-CRI-1147)
+
+AUTHOR(S):
+
+- Richard Emerson, Cuong Dinh
+
+NOTES:
+
+- Unit 42 has identified a new extortion brand called Pink, tracked as cluster CL-CRI-1147, that leverages vishing for initial access for the purposes of extortion. CL-CRI-1147 is likely a Com-affiliated actor, with techniques similar to Bling Libra (ShinyHunters) and  CL-CRI-1116 (Blackfile/Redact).
+- According to posts on the Pink data leak site, the site went live on May 31, 2026, and already lists multiple victims with no reference to associations with prior groups.
+- Unit 42 has investigated multiple suspected Com-affiliated extortion incidents over the past few months. On June 1, 2026, an existing extortion negotiation that had never received a response, attributed to a likely Com-related cluster, received new communication from a threat actor via a free webmail account.
+- The actor provided a new qTox ID and a leak site associated with the Pink brand, but referenced exfiltrating almost identical information from the original extortion notice. The victim was given a 72-hour deadline to respond, a common time frame for these types of extortion notices.
+
+DETAILS:
+
+- The threat actor leverages vishing for initial access, impersonating internal IT personnel to convince a user to input credentials into a phishing site, allowing the actor to gain access to the victim's account and MFA.
+- After gaining access to the victim's account, the actor rapidly identifies and exfiltrates data from platforms like SharePoint and OneDrive, similar to other Com-affiliated groups.
+- Shortly afterward, the actor leverages a compromised victim account to send their initial extortion email as well as internal Teams messages.
+- The actor reuses second-level domains to target multiple organizations, and the third-level domain typically thematically represents the target. These domains have leveraged DDoS-Guard for hosting.
+
+INDICATORS:
+
+Phishing Domains:
+
+- passkeyadd[.]com
+- passkeydeploy[.]com
+- deploypasskey[.]com
+
+IP Addresses:
+
+- 185[.]178.208[.]153 (hosted phishing domains)
+- 172[.]93.100[.]252 (accessed compromised accounts)
+- 96[.]232.20[.]66 (residential proxy IP responsible for extortion email creation)
+
+User-agent Strings Observed During Exfiltration:
+
+- Microsoft.Graph.Client/5.62.0
+- python-requests/2.28.1
+- python-requests/2.33.1
