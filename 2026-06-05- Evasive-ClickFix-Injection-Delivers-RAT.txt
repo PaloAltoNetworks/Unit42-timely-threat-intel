@@ -1,0 +1,49 @@
+2026-06-05 (FRIDAY): Evasive ClickFix Injection Delivers a RAT Hidden in Image Files
+
+AUTHOR(S): 
+
+- Nabeel Mohamed, Billy Melicher, Oleksii Alex Starov, and Vishwa Thothathri
+
+NOTES:
+- We detected a multi-step ClickFix attack using multiple deceptive techniques including brand squatting, clipboard decoy, multi-stage executable payloads disguising as logs or images.
+- Appearing similar to the legitimate payment platform called lirnunex.com, the threat actor registered the domain lirunex[.]tech a few days ago and launched a highly evasive ClickFix attack with multi-stage payloads eventually leading to the delivery of a cross-platform RAT disguised as image files.
+- When a victim pastes what they believe is an SSL certificate path, the threat actor silently replaces it with malicious clipboard paste that uses “conhost --headless” to silently execute the first step acting as a two-stage dropper of the RAT. 
+- The website is cloaked for non-targets by showing the Swagger UI clone of the legitimate Lirunex payment gateway API. The cloaking logic is controlled at the server side.
+
+DETAILS:
+- Multiple deceptions are used to launch the attack: 
+– Lure page domain is a TLD squat of the legitimate trading platform lirunex.com and uses .tech TLD and api-eu3 subdomain to further mimic a fintech company.
+– Clipboard content is pasted while the victim is asked to select the SSL certificate
+– Clipboard paste has the decoy suffix lirunex_Api_EU3.pem after 250 spaces
+– The clipboard script uses conhost.ext –headless to execute the command silently
+– The first malicious payload is hidden in the remote file https://colafunfacts[.]net/log 
+– The second malicious payload is disguised as a Firefox binary: https://colafunfacts[.]net/firefox.zip
+– Python executables inside firefox.zip are named as image files (mev.png, USO.ico, USO.png)
+- The full capability set of the RAT includes browser-credential stealing, remote shell, live screen streaming, keylogger, file manager, and SSH tunneling. The RAT persists across reboots on cross platforms. It is also AV/EDR aware and has several anti-forensics mechanisms. Successive payloads are downloaded from the main C2 hxxp[:]//104.207.131[.]216[:]16443
+- We also detected the same clipboard injection in additional sites including similar financial themed sites aromi-fr[.]shop, aromi-fr[.]com, and api-eu3.convmasters[.]com
+
+IOCS:
+Domains/URLs:
+lirunex[.]tech
+aromi-fr[.]shop
+aromi-fr[.]com
+convmasters[.]com
+hxxps[:]//colafunfacts[.]net/log
+hxxps[:]//colafunfacts[.]net/firefox.zip
+hxxp[:]//104.207.131[.]216[:]16443
+hxxp[:]//188.166.20[.]222[:]8000
+hxxp[:]//95.179.240[.]32[:]9999/build
+
+
+Files:
+firefox.zip - The second stage RAT payload including the Python compiler and image files
+mev.png - Python dropper script disguising as a PNG image
+USO.ico - Compiled Python bytecode persistence install disguising Windows icon 
+USO.png - Cross-platform RAT in Python disguised as a PNG image
+
+SHAs:
+0bd04e6b054a45d642adb9338862f8253e94b83365a81f95e6a4fc740bac9c0c (firefox.zip)
+b1cd7e6f87ba5b6532df928277f0ecfed2b4345667835d64be27fd434cbbfc63 (mev.png)
+b18d6a77ed2693485dabb2d86fc28cb7946b5e3ecbd89f7656365de8474ad012 (USO.ico)
+01b33a2b65bff3c4f3ea686dd545ea4d4214605a7db27b11c5c931058b6f6fbe (USO.png)
+
