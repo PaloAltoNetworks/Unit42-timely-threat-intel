@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Nabeel Mohamed, Billy Melicher, Oleksii Alex Starov, and Vishwa Thothathri
 
+REFERENCES:
+
+Twitter: https://x.com/Unit42_Intel/status/2062945300382151027?s=20
+LinkedIn: https://www.linkedin.com/feed/update/urn:li:activity:7468710972619296768 
+
 NOTES:
 - We detected a multi-step ClickFix attack using multiple deceptive techniques including brand squatting, clipboard decoy, multi-stage executable payloads disguising as logs or images.
 - Appearing similar to the legitimate payment platform called lirnunex.com, the threat actor registered the domain lirunex[.]tech a few days ago and launched a highly evasive ClickFix attack with multi-stage payloads eventually leading to the delivery of a cross-platform RAT disguised as image files.
