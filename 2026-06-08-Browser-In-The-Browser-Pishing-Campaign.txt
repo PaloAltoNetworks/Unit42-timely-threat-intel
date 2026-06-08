@@ -1,0 +1,43 @@
+2026-06-08 (MONDAY): BROWSER-IN-THE-BROWSER PHISHING CAMPAIGN 	
+
+AUTHOR(S):
+
+- Beliz Kaleli, Gaurav Rane, Oleksii Alex Starov
+
+NOTES:
+
+- We detected a browser-in-the-browser phishing campaign involving at least 10 unique domains.
+- Attackers use browser-in-the-browser technique to steal credentials. In this method, they create a fake pop-up that looks like an actual browser popping up within their webpage but it is not an actual browser.
+
+DETAILS:
+
+- The fake browser pop-up shows a login form to steal credentials. It also contains a fake browser address bar with a crafted text that is made to look like an OAuth authorization URL of a legitimate identity provider.
+- The attackers use sophisticated methods to make the attack more believable:
+-- The fake pop-up is draggable, has refresh, minimize, back, close buttons.
+-- _0x1cebe2() detects Windows/Mac/Linux via navigator.userAgent + navigator.platform. _0x354d5b() detects Chrome/Firefox/Edge/Safari. The fake browser UI then applies matching CSS classes so the rendered fake window looks native to the victim's actual browser.
+-- The spoofed URL in the address bar is carefully constructed to look like a real OAuth flow.
+- The attackers use evasion techniques to evade detection:
+-- Console Method Hijacking (Anti-Debugging): All 7 console methods are overridden to prevent analysis via browser devtools: ['log','warn','info','error','debug','table','trace']
+-- Uses the Function('return (function(){}.constructor("return this")()') pattern to obtain the global object without using window directly, evading static analysis tools that scan for window.
+-- Text Fragmentation (Signature Bypass): Every visible keyword is split with empty <b> tags bearing random class names to break text-based detection: Ado<b class="405fe6"></b>be Acr<b class="8ebd5e"></b>obat Rea<b class="5249ba"></b>der Si<b class="aec0cb"></b>gn in req<b class="50010a"></b>uired. This defeats simple string matching on "Adobe Acrobat Reader", "Sign in required", etc.
+-- Bot/Scanner Redirect: If bot detection triggers, victims are redirected via href.li (a link anonymizer) to a legitimate Microsoft help page — making the URL appear benign to automated scanners.
+--- const phpConfig = {"random": "https://href[.]li/?https://en.wikibooks[.]org/wiki/Microsoft_Office/Logging_In_%26_Out", "debug": false}
+-- Sandboxed iframe: <iframe sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-pointer-lock"> Loads the actual credential harvester in a sandboxed iframe, separating the BitB shell from the payload.
+
+
+INDICATORS:
+
+DOMAINS USED IN THIS ACTIVITY:
+
+- generationyinternainteractiveagency[.]vu/ExCl-DoC-0TVVXFk837EI7UeNUh3vQ0SGX7Ec-RIXSPCDY6aiIpWbZKro5dnCsm8Jf3rVJN11VOe7Su_muvo8zBOol1srXcO56qdGu6gt7XSs1yZRVH1iLUZeMWGOQfbnyZ05ATnqNMlrdP7NRs2aYxenFKIChkP78SIE8aqXhq9alGTDlUUobxigpR4qALmpCAeOK720y5xTsJXZaJo/iQt5OUYSuuEmB
+- generationyinternainteractiveagency[.]vu/ExCl-DoC-0TVVXFk837EI7UeNUh3vQ0SGX7Ec-RIXSPCDY6aiIpWbZKro5dnCsm8Jf3rVJN11VOe7Su_muvo8zBOol1srXcO56qdGu6gt7XSs1yZRVH1iLUZeMWGOQfbnyZ05ATnqNMlrdP7NRs2aYxenFKIChkP78SIE8aqXhq9alGTDlUUobxigpR4qALmpCAeOK720y5xTsJXZaJo/ih9X91vwGimz
+- 360mpa[.]com
+- digital-owa-serverstreamconference[.]com
+- quiet-bush-d02b.mohsin-e46.workers[.]dev/?error=login_required&error_description=AADSTS50058:+A+silent+sign-in+request+was+sent+but+no+user+is+signed+in.+The+cookies+used+to+represent+the+user's+session+were+not+sent+in+the+request+to+Azure+AD.+This+can+happen+if+the+user+is+using+Internet+Explorer+or+Edge,+and+the+web+app+sending+the+silent+sign-in+request+is+in+different+IE+security+zone+than+the+Azure+AD+endpoint+(login.microsoftonline[.]com).+Trace+ID:+6d02a426-3d53-4916-bfd2-b2c442e54800+Correlation+ID:+31f4da2e-dad7-4947-9c20-642061b19b7d+Timestamp:+2026-02-26+09:24:28Z&error_uri=https://login.microsoftonline.com/error?code=50058&state=121333292915251315901313261326253133233219251791132624
+- c0pilotworkflow-cloudnortstationexclusivemobiletemplates[.]com
+- owa-dashboardtr38authpi0netw0rkpv5akl16sqjawprb[.]com
+- automateddocumentsharechannel.wasmer[.]app
+- transyn-payouts-lmctq56zoe1u7hp2[.]com
+- bucyrusinternationalit.silvercapital[.]cfd
+- view-docu-file-secure-project-collaboration.netscomd27[.]com
+
