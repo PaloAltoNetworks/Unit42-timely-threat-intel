@@ -4,6 +4,10 @@ AUTHOR(S):
 
 - Beliz Kaleli, Gaurav Rane, Oleksii Alex Starov
 
+REFERENCES:
+- X: https://twitter.com/Unit42_Intel/status/2064105988383252853
+- LI: https://www.linkedin.com/feed/update/urn:li:ugcPost:7469871641158774784
+
 NOTES:
 
 - We detected a browser-in-the-browser phishing campaign involving at least 10 unique domains.
