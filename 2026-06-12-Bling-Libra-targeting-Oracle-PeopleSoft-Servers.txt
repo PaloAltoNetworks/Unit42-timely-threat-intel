@@ -1,0 +1,44 @@
+2026-06-12 (THURSDAY): BLING LIBRA (SHINYHUNTERS) TARGETING ORACLE PEOPLESOFT SERVERS
+
+NOTES:
+
+- We are tracking the active targeting of Oracle PeopleSoft servers by Bling Libra (ShinyHunters). 
+- Our analysis reveals suspected exploitation of an RCE flaw CVE-2026-35273.
+- Our analysis also indidates primary targeting of the education sector since at least late May 2026.
+
+INDICATORS:
+
+IP ADDRESSES:
+
+- 45.135.232[.]140
+- 91.215.85[.]101
+- 108.174.202[.]99
+- 142.11.200[.]186
+- 142.11.200[.]187
+- 142.11.200[.]188
+- 142.11.200[.]189
+- 142.11.200[.]190
+- 176.120.22[.]24
+- 207.89.18[.]29
+
+DOMAINS:
+
+- azurenetfiles[.]net
+- bmwebhost[.]com
+- onlinepaymentterminal[.]com
+- paymentprocessterminal[.]com
+- techvertix[.]com
+
+DATA LEAK SITE URL:
+
+- shnyhntww34phqoa6dcgnvps2yu7dlwzmy5lkvejwjdo6z7bmgshzayd[.]onion
+
+SSH KEY:
+
+- 78166e8cd026f6f7fc612244e587c2565487f2635fc3d704987972ede619aef9
+
+SHA256 HASHES:
+
+- 9098906159e0e4c845eb918886fadc2723f2a321281b8003e471f09140321f91
+- c7e9332731b06644fc73e0046a2a89eaa59b09f54250e9bd622467187351711f
+- d65f14e5652a4330354826925dc56937334163656f24dd10f112c15bc7559de1
