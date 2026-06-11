@@ -4,7 +4,7 @@ NOTES:
 
 - We are tracking the active targeting of Oracle PeopleSoft servers by Bling Libra (ShinyHunters). 
 - Our analysis reveals suspected exploitation of an RCE flaw CVE-2026-35273.
-- Our analysis also indidates primary targeting of the education sector since at least late May 2026.
+- Our analysis also indicates primary targeting of the education sector since at least late May 2026.
 
 INDICATORS:
 
