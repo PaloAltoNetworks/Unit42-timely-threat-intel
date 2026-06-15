@@ -24,10 +24,6 @@ IP ADDRESSES:
 DOMAINS:
 
 - azurenetfiles[.]net
-- bmwebhost[.]com
-- onlinepaymentterminal[.]com
-- paymentprocessterminal[.]com
-- techvertix[.]com
 
 DATA LEAK SITE URL:
 
