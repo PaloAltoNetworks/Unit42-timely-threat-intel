@@ -2,12 +2,12 @@
 
 AUTHORS:
 
-- Nabeel Mohamed, Shehroze Farooqi, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Oleksii Alex Starov
+- Nabeel Mohamed, Shehroze Farooqi, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Alex Starov
 
 NOTES:
 
-- We detected 6 malicious extensions where some of them are trojanized versions of legitimate extensions.
-- The actor creates extensions in different product categories such as:
+- We detected 6 malicious extensions, where some of them are trojanized versions of legitimate extensions.
+- The actor creates extensions in different product categories, such as:
   -- ad blocking
   -- messaging privacy
   -- screen recording
