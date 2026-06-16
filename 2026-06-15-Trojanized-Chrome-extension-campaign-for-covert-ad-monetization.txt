@@ -1,0 +1,60 @@
+2026-06-15 (MONDAY): TROJANIZED CHROME EXTENSION CAMPAIGN FOR COVERT AD MONETIZATION 	
+
+AUTHORS:
+
+- Nabeel Mohamed, Shehroze Farooqi, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Oleksii Alex Starov
+
+NOTES:
+
+- We detected 6 malicious extensions where some of them are trojanized versions of legitimate extensions.
+- The actor creates extensions in different product categories such as:
+  -- ad blocking
+  -- messaging privacy
+  -- screen recording
+  -- music speed control
+  -- music volume control
+- These extensions provide sufficient functionality to lure users.
+  -- This happens while forcefully serving ads and performing click interception for monetization.
+- Collectively, there are 1092 installations as of June 2026.
+- A single threat actor published most of these extensions in the first week of June 2026.
+  -- This threat actor used the email addressramor9056@gmail[.]com and alias "Brainosia".
+
+DETAILS:
+
+- AdBlock Shield extension (ID: hkjofidiledehkcpidjbpadcccdladoh) 
+  -- This is a fork of the legitimate extension Adblock Unlimited.
+  -- Code analysis shows that 85% of the code is retained from the legitimate extension.
+  -- The threat actor replaced the branding and embedded its Brainosia ad payload 
+  -- This was republished in the Chrome Web Store.
+
+- These extensions also pose the secondary risk of data exfiltration:
+  -- User's public IP address
+  -- browser fingerprint, browsing context, etc.
+- These extensions also have the potential for payload upgrade to more invasive malware.
+- The first extension from this campaign was created on 2026-03-09.
+- The most recent extension we found was created on 2026-06-08.
+
+- Messaging Privacy extension (ID: fbbogpehachhpbjfladmccaejmfcjfja) 
+  -- This is a clone of the legitimate extension Privacy Blur.
+
+- Four other extensions in the campaign are not directly cloned from other legitimate extensions.
+- However, they all have the same injected ad scripts.
+
+INDICATORS:
+
+SIX CHROME EXTENSION IDS FROM THIS ACTIVITY:
+
+- chccnlplhpjmlgfneleoilcchcaijbae
+- ckofgokcbincglcbpojbkimgnpflbhia
+- fbbogpehachhpbjfladmccaejmfcjfja
+- glpabadbnjcohophnnbhonfpbkiljiof
+- hkjofidiledehkcpidjbpadcccdladoh
+- nkgfolilbhafgmakkdhlgidohpjboejm
+
+SHA256 HASH FOR AD INJECTION SCRIPT USED IN THESE EXTENSIONS:
+
+- 43ba54bb3b00fe4e35363a4a3eed4fb6b432c458e8dda0f6cfbe6bd5a13b48d8
+
+ROOT DOMAIN FOR AD SERVICE FROM THE AD INJECTION SCRIPT:
+
+- brainosia[.]com
