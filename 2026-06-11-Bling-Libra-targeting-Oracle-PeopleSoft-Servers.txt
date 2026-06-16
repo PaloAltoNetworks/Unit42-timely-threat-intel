@@ -1,5 +1,10 @@
 2026-06-11 (THURSDAY): BLING LIBRA (SHINYHUNTERS) TARGETING ORACLE PEOPLESOFT SERVERS
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/shinyhunters-share-7471278410099679232-AINn/
+- https://x.com/Unit42_Intel/status/2065512743466078245
+
 NOTES:
 
 - We are tracking the active targeting of Oracle PeopleSoft servers by Bling Libra (ShinyHunters). 
