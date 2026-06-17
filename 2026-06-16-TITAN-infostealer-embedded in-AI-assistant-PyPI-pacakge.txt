@@ -8,7 +8,7 @@ NOTES:
 
 - Disguised as an AI assistant, TITAN (formally "TITAN Advanced Tools v3.0") is a Python-based infostealer.
   -- This infostealer employs Optical Character Recognition (OCR) for continuous screen monitoring.
-  -- It exfiltrates captured screenshots to an attacker-managed Gemini API account. 
+  -- It exfiltrates captured screenshots to an attacker-managed Firebase account. 
 - Exfiltration uses HTTPS traffic to third-party cloud infrastructure at generativelanguage.googleapis[.]com. 
   -- Consequently, there are no custom C2 domains to block.
   -- The activity appears identical to legitimate Gemini API developer traffic. 
