@@ -22,7 +22,7 @@ NOTES:
   -- This happens while forcefully serving ads and performing click interception for monetization.
 - Collectively, there are 1092 installations as of June 2026.
 - A single threat actor published most of these extensions in the first week of June 2026.
-  -- This threat actor used the email addressramor9056@gmail[.]com and the alias "Brainosia".
+  -- This threat actor used the email address ramor9056@gmail[.]com and the alias "Brainosia".
 
 DETAILS:
 
