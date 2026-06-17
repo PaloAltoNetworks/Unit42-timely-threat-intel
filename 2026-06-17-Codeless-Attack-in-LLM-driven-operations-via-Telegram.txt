@@ -7,16 +7,16 @@ AUTHORS:
 NOTES:
 
 - An AI malware combines a Telegram bot with a public LLM API to create a fully codeless attack method:
-  -- The attacker types plaintext instructions in Telegram
-  -- The LLM translates the instructions into shell commands
-  -- And the victim executes the shell commands
-  -— No command-line knowledge is required
+  -- The attacker types plaintext instructions in Telegram.
+  -- The LLM translates the instructions into shell commands.
+  -- And the victim executes the shell commands.
+  -— No command-line knowledge is required.
 - Command receipt, shell output, and file exfiltration all flow through a single Telegram bot.
   -- This Telegram bot has no separate C2 or exfiltration infrastructure.
   -- All traffic is HTTPS to legitimate cloud APIs with no domain or IP address to block.
-- This work introduces an LLM translation layer that replaces shell syntax with plain text
+- This work introduces an LLM translation layer that replaces shell syntax with plain text.
   -- It is inspired by OpenClaw’s concept of using social media for remote instructions.
-  -— It completely eliminates the technical skill requirement for operators. 
+  -— It eliminates the technical skill requirement for operators. 
 - The in-channel exfiltration path is especially evasive: 
   -- Files stolen from the victim are returned to the attacker as Telegram document uploads.
   -- Traffic is indistinguishable from a user sharing a file attachment in chat.
@@ -45,7 +45,7 @@ PHASE 1: INITIAL BEACON AND HOST FINGERPRINTING
 PHASE 2: TELEGRAM BOT AS THE SOLE C2 CHANNEL
 
 - The implant polls the Telegram bot API every 5 seconds for new operator messages.
-  -- There is a 30 second-long poll timeout.
+  -- There is a 30-second-long poll timeout.
   -- Only messages from the hardcoded operator chat ID are accepted.
      --— This represents a minimal authentication gate.
   -- Shell output and exfiltrated files return through the same Telegram bot.
@@ -62,7 +62,7 @@ PHASE 3: LLM-POWERED NATURAL LANGUAGE COMMAND TRANSLATION
   -- The action token contains no explanation or markdown.
 - The LLM currently acts as a constrained translator limited to five fixed formats
   -- A trivial prompt change would remove those constraints
-  -- Removing constraints would allowing on-demand arbitrary code generation.
+  -- Removing constraints would allow on-demand arbitrary code generation.
   -- This would evade any static signature-based detection.
 
 PHASE 4: EXECUTION & IN-CHANNEL EXFILTRATION
