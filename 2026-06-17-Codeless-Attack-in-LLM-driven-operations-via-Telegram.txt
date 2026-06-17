@@ -6,12 +6,11 @@ AUTHORS:
 
 NOTES:
 
-- An AI malware combines a Telegram bot with a public LLM API to create a fully codeless C2 channel: 
+- An AI malware combines a Telegram bot with a public LLM API to create a fully codeless attack method:
   -- The attacker types plaintext instructions in Telegram
   -- The LLM translates the instructions into shell commands
   -- And the victim executes the shell commands
   -— No command-line knowledge is required
-
 - Command receipt, shell output, and file exfiltration all flow through a single Telegram bot.
   -- This Telegram bot has no separate C2 or exfiltration infrastructure.
   -- All traffic is HTTPS to legitimate cloud APIs with no domain or IP address to block.
