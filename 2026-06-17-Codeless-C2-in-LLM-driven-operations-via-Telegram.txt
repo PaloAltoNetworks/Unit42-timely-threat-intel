@@ -1,0 +1,104 @@
+2026-06-17 (WEDNESDAY): CODELESS C2: LLM-DRIVEN MALWARE OPERATIONS VIA TELEGRAM
+
+AUTHORS:
+
+- Jingwen Shi, Mark Lim, Ashutosh Chitwadgi, Tyler Halfpop
+
+NOTES:
+
+- An AI malware combines a Telegram bot with a public LLM API to create a fully codeless C2 channel: 
+  -- The attacker types plaintext instructions in Telegram
+  -- The LLM translates the instructions into shell commands
+  -- And the victim executes the shell commands
+  -— No command-line knowledge is required
+
+- Command receipt, shell output, and file exfiltration all flow through a single Telegram bot.
+  -- This Telegram bot has no separate C2 or exfiltration infrastructure.
+  -- All traffic is HTTPS to legitimate cloud APIs with no domain or IP address to block.
+- This work introduces an LLM translation layer that replaces shell syntax with plain text
+  -- It is inspired by OpenClaw’s concept of using social media for remote instructions.
+  -— It completely eliminates the technical skill requirement for operators. 
+- The in-channel exfiltration path is especially evasive: 
+  -- Files stolen from the victim are returned to the attacker as Telegram document uploads.
+  -- Traffic is indistinguishable from a user sharing a file attachment in chat.
+- On first execution, the implant beacons the victim's info to the attacker's Telegram chat.
+  -- This happens before any command is issued.
+  -- Information includes public IP address, hostname, OS and username.
+- Three credentials are hardcoded in plaintext: 
+  -- A Telegram bot token
+  -- An operator chat ID
+  -- An LLM service API key.
+-  As of June 8, 2026, the sample has zero detections across all VirusTotal engines (0/63).
+
+DETAILS:
+
+PHASE 1: INITIAL BEACON AND HOST FINGERPRINTING
+
+- On startup, the implant sends a host report to the attacker's Telegram bot
+  -- This happens before entering the C2 loop.
+  -- Data exfiltrated immediately: 
+     --- Public IP address (via external lookup)
+     --- OS name and version
+     --- Logged-in username
+     --- Hostname
+- This allows the attacker to gain full situational awareness before issuing any command.
+
+PHASE 2: TELEGRAM BOT AS THE SOLE C2 CHANNEL
+
+- The implant polls the Telegram bot API every 5 seconds for new operator messages.
+  -- There is a 30 second-long poll timeout.
+  -- Only messages from the hardcoded operator chat ID are accepted.
+     --— This represents a minimal authentication gate.
+  -- Shell output and exfiltrated files return through the same Telegram bot.
+     --- There is no secondary exfiltration channel.
+  -- All traffic is HTTPS to Telegram's cloud API
+  -- This makes the traffic indistinguishable from any legitimate Telegram client.
+
+PHASE 3: LLM-POWERED NATURAL LANGUAGE COMMAND TRANSLATION
+
+- Each operator message is forwarded to a public LLM API.
+- The API returns exactly one action token per operator message.
+  -- The action token is a shell command string or a built-in action.
+  -- Examples are DOWNLOAD_FILE, SCAN_NETWORK, or SCAN_PORTS.
+  -- The action token contains no explanation or markdown.
+- The LLM currently acts as a constrained translator limited to five fixed formats
+  -- A trivial prompt change would remove those constraints
+  -- Removing constraints would allowing on-demand arbitrary code generation.
+  -- This would evade any static signature-based detection.
+
+PHASE 4: EXECUTION & IN-CHANNEL EXFILTRATION
+
+- Shell commands run via PowerShell on Windows or bash on Linux and macOS.
+  -- Standard output or errors (stdout/stderr) are returned to the operator via Telegram.
+- File exfiltration uses Telegram's document upload API (up to 50 MB per file).
+— Traffic patterns are identical to a user sending a file in any Telegram conversation.
+- Network scanning parallelizes across all RFC 1918 (non-routable IP address) subnets. 
+  -- Other addresses include: Docker, APIPA, OpenVPN, iPhone hotspot and corporate VPN ranges.
+- This scanning has a 15-second thread join timeout to avoid blocking the C2 loop.
+
+
+INDICATORS:
+
+SHA256 HASH:
+
+- d85a5c2cf466d01e17110ee39ca456b1be0b6514e669d0095d1f77c84a8d98c1
+
+URLS:
+
+- hxxps[:]//api.groq[.]com/openai/v1/chat/completions - LLM API endpoint for natural language command translation
+- hxxps[:]//api.telegram[.]org/bot<token>/getUpdates - C2 command polling endpoint
+- hxxps[:]//api.telegram[.]org/bot<token>/sendMessage - Execution output and operator notification channel
+- hxxps[:]//api.telegram[.]org/bot<token>/sendDocument - In-channel file exfiltration endpoint
+- hxxps[:]//api.ipify[.]org - Public IP lookup on initial beacon
+
+URL NOTES:
+
+- While these URLs and URL patterns are indicators, they are not inherently malicious.
+- Traffic to the associated domains should not automatically be blocked based on this activity.
+
+ADDITIONAL INFORMATION:
+
+- Telegram Bot Token: 8768397278:AAEQxFzq38zqAqPOe0L9lPg78RdE-HedwMQ
+- Telegram Operator Chat ID: 963908231
+- Groq API Key: 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
+- LLM model: llama-3.1-8b-instant
