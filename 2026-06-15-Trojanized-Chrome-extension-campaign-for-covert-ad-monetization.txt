@@ -4,6 +4,11 @@ AUTHORS:
 
 - Nabeel Mohamed, Shehroze Farooqi, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/we-detected-a-malicious-browser-extension-ugcPost-7472789619147886592-HqWB/
+- https://x.com/Unit42_Intel/status/2067023964002541592
+
 NOTES:
 
 - We detected 6 malicious extensions, where some of them are trojanized versions of legitimate extensions.
