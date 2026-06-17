@@ -75,7 +75,6 @@ PHASE 4: EXECUTION & IN-CHANNEL EXFILTRATION
   -- Other addresses include: Docker, APIPA, OpenVPN, iPhone hotspot and corporate VPN ranges.
 - This scanning has a 15-second thread join timeout to avoid blocking the C2 loop.
 
-
 INDICATORS:
 
 SHA256 HASH:
