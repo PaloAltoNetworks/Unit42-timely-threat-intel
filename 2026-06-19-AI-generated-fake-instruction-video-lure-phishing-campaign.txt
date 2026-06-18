@@ -6,23 +6,23 @@ AUTHORS:
 
 NOTES:
 
-- We've detected an deepfake audio phishing campaign distributing AI-generated instructional videos.
+- We've detected a deepfake audio phishing campaign distributing AI-generated instructional videos.
 - These videos guide social media users through stealing their own session cookies:
   -- Victims instructed in a step-by-step process using the web browser's DevTools.
   -- Victims instructed to submit the data to an attacker-controlled endpoint. 
 - The video is hosted on a legitimate video translation infrastructure
   -- This tactic exploits trusted CDN domains to evade URL-based blocking. 
-- As of 2026-06-16. the campaign remains active with 800+ unique source URLs
+- As of 2026-06-16, the campaign remains active with 800+ unique source URLs
   -- These URLs are spread across 6 SaaS domains.
   -- These SaaS platforms are benign.
-  -- The attackers abuse them, violating the terms of services.
+  -- The attackers abuse them, violating the terms of service.
 - This is likely an evolution of our previously reported campaign by the same threat actor:
   -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-12-18-phishing-for-authentication-tokens.txt
-  -- Based on similarity of the attack infrastructure, attack chain and scam tactics.
+  -- Based on the similarity of the attack infrastructure, attack chain and scam tactics.
   -- This new campaign targets the same platform as the previous campaign.
   -- But with different lures such as an "Appeal Request" or "Verified badge."
   -- Lure pages for this campaign have moved from dedicated hosting to use SaaS platforms.
-  -- Has a similar AI voice generated video but slightly different instructions and new URLs.
+  -- Has a similar AI voice-generated video but slightly different instructions and new URLs.
 
 DETAILS:
 
@@ -30,10 +30,10 @@ ATTACK CHAIN:
 
 - Exposure: Victim encounters one of 800+ phishing URLs. 
 - Video Delivery: Video is served from a legitimate CDN, bypassing URL reputation filters.
-- Instructions: Deepfake audio voice instructs victim to: 
-   open the web browser →
-   go to page for a social media platform →
-   right-click → 
+- Instructions: Deepfake audio voice instructs the victim to: 
+   Open the web browser →
+   Go to page for a social media platform →
+   Right-click → 
    Inspect Element → 
    Application tab →
    Double-click Cookies → 
@@ -43,23 +43,23 @@ ATTACK CHAIN:
    Repeat for access cookie → 
    Click send
 - Cookie Exfiltration: Victim submits live session cookies to the attacker's collection server.
-  -- Data consists of user ID and an associated access token.
+  -- Data consists of a user ID and an associated access token.
   -- This is sufficient for full account takeover.
-- Persistence: Video instructs victim NOT to log out of the social media platform:
+- Persistence: Video instructs the victim NOT to log out of the social media platform:
   -- Instructed to remain logged in until the victim receives a verification email.
   -— This keeps the stolen session active.
-- Account Takeover: Attacker uses submitted cookies to authenticate as victim:
+- Account Takeover: Attacker uses submitted cookies to authenticate as the victim:
   -- The cookies are used for account hijacking, further phishing, financial fraud or sale.
 
 KEY SCAM TACTICS:
 
-- Authority through procedure — Maimics tone/pacing of a legitimate technical tutorial.
+- Authority through procedure — Mimics tone/pacing of a legitimate technical tutorial.
 - Platform exclusion of mobile — Reduces failed attempts and suspicion.
-- Trusted CDN abuse — Video CDN platform has clean domain reputation, evades URL filters.
+- Trusted CDN abuse — Video CDN platform has a clean domain reputation, evades URL filters.
 - Trusted SaaS abuse - These SaaS platforms carry a root domain trust that the attacker exploits.
 - Session persistence manipulation — "Do not log out" instruction extends attacker's access window.
 - False verification framing — "Verification email" provides a plausible cover story.
-- Technical obfuscation — Click-by-click navigation removes technical barrier for non-technical users.
+- Technical obfuscation — Click-by-click navigation removes the technical barrier for non-technical users.
 
 INDICATORS:
 
