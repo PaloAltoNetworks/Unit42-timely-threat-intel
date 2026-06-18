@@ -1,0 +1,201 @@
+2026-06-20 (SATURDAY): CLICKFIX CAMPAIGN DELIVERS MACOS INFOSTEALER VIA DMG
+
+AUTHORS:
+
+- Manbendra Satpathy, Bhargav Rathod, Shazan Khaja, Veronika Senderovych
+
+NOTES:
+
+- A new macOS ClickFix campaign uses a fake CAPTCHA page to trick a users into installing malware.
+- It instructs user into pasting a Terminal command that silently downloads and mounts a malicious DMG file.
+- The mounted DMG contains a self-signed information-stealer (.app bundle) that:
+  -- Asks for the user's password
+  -- Harvests browser/wallet/messaging/keychain data
+  -- Exfiltrates to two C2 servers
+  -- Establishes LaunchAgent persistence
+  -- Trojanizes Ledger Live and Trezor Suite
+
+DETAILS:
+
+- The infection chain begins by presenting a fake CAPTCHA page to the user.
+- The page instructs users to run a malicious command in the macOS Terminal.
+  -- This is often achieved by instructing the user to:
+     --- Open Spotlight search (Command ⌘ + Space).
+     --- Launch the Terminal application.
+     --- Copy/paste the malicious command directly into the shell prompt.
+- The command in the terminal spawns a new Bash shell instance (bash -c).
+- This executes a chained sequence of commands:
+  -- Generates a randomized temporary file inside the /tmp directory.
+     --- Appends a .dmg extension.
+     --- Saves the path as variable $f.
+  -- Invokes 'curl' with silent flags (-fsSL) to stealthily download the malicious payload.
+     --- Retrieved from svs-verificationdate[.]beer.
+     --- Saved into the temporary file.
+     --- This method suppresses visual progress and errors.
+  -- Uses 'hdiutil attach' with the -nobrowse flag to mount the disk image invisibly
+     --- Bypasses Finder and the Desktop.
+     --- Filters output with 'awk' to store the hidden volume path in variable $m.
+  -- Searches the hidden mount point for the first available .app or .pkg installer.
+     --- Uses the 'find' command.
+     --- Searches up to three directories deep.
+  -- If detected, it instantly launches the installer.
+     --- Uses the native macOS 'open' command to execute the malware.
+- When successful, the 'curl' command downloads the remote payload.
+  -- Saved to the file path: /tmp/s.01M0td.dmg.
+- The native macOS diskimages helper system framework is automatically triggered in the background.
+  -- This handles the invisible mounting of the disk image via a unique UUID handshake.
+- The remaining text parsing (awk, head) and directory search (find) commands are run in sequence. 
+  -- This isolates the hidden malware installer within the mounted volume.
+- The mounted DMG file presents as /Volumes/NNApp/NNApp.app
+  -- It contains a self-signed .app bundle with identifier com.utils.nnapp.
+- Our analysis revealed successful connections to svs-verificationdate[.]beer (178.16.52[.]101).
+
+PAYLOAD ANALYSIS (NNApp.app — info-stealer):
+
+- The sample is a 64-bit Mach-O executable written in C++ targeting macOS. 
+- It is an information stealer that:
+  -- Daemonizes itself
+  -- suppresses Terminal
+  -- Asks for the user's password using a fake System Preferences dialog
+- Execution & evasion:
+  -- Forks a child process and calls 'setsid' to detach from the controlling terminal
+  -- The child runs 'killall Terminal 2>/dev/null' via system() to close Terminal.
+  -- Embedded config is XOR-encrypted with an 8-byte rotating key.
+     -- 8-byte key value: a9048cf1c9d113b6
+     -- This key uss a right-rotation schedule per byte.
+- Decrypted config contains: 
+  -- Build identifier 123
+  -- Campaign 25
+  -- Build name noname3
+  -- Two C2 URLs
+  -- Target extensions (pdf, txt, rtf)
+  -- Social-engineering dialog strings.
+  -- All main-function string literals are individually XOR-encrypted with a 32-byte key:
+    --- 8111edf01ac6cb5c77e249d4e84fd92a85b5e89c2e2bef92fbe00b6f1cc2aa8e
+    --- The strings are decrypted inline via 128-bit SIMD XOR immediately before use
+- Staging:
+  -- Resolves home directory via getuid/getpwuid.
+  -- Creates hidden directory ~/.hlpr.
+  -- Writes ownership file "User Name.txt"
+  -- Writes output of system_profiler SPSoftwareDataType as "System Information.txt"
+- Credential phishing:
+  -- Runs 'osascript' to display a fake "System Preferences" dialog
+     --- Contains a hidden-answer field requesting the password to "configure system settings."
+  -- Validates the captured password via 'dscl . -authonly'
+     --- On failure, shows a second dialog claiming the app is "not supported on their Mac."
+- Browser theft (8 different Chromium-based browsers):
+  -- Targeted Chromium-based browsers are:
+     --- Arc
+     --- Brave
+     --- CocCoc
+     --- Google Chrome
+     --- Microsoft Edge
+     --- Opera
+     --- Vivaldi
+     --- Yandex
+  -- Steals the following info:
+     --- Cookies
+     --- Login data
+     --- Web data
+     --- System preferences
+     --- Yandex DBs (Ya Autofill Data, Ya Credit Cards, Ya Passman Data)
+  -- Decrypts Chrome Safe Storage via security find-generic-password 
+     --- e.g., Arc/Chrome/discord Safe Storage
+  -- Derives a 24-byte key with CCKeyDerivationPBKDF
+     --- PBKDF2-HMAC-SHA1, 1000 iterations, 20-byte salt
+  -- Then decrypts with CCCrypt 3DES-CBC + PKCS7.
+- Browser theft (5 different Firefox-based browsers):
+  -- Targeted Firefox-based browsers are:
+     --- LibreWolf
+     --- SeaMonkey
+     --- Tor Browser
+     --- Waterfox
+     --- Zen
+  -- Reads cookies.sqlite, formhistory.sqlite, logins.json from profile directories.
+  -- Collects 201 browser extension data directories 
+     --- From: Local Extension Settings, IndexedDB, MANIFEST
+     --- Targets: crypto wallet extensions
+- Cryptocurrency wallet theft (13 standalone apps):
+  -- Electrum
+  -- Electrum-LTC
+  -- Electron Cash
+  -- Exodus
+  -- Atomic Wallet
+  -- Wasabi Wallet
+  -- Bitcoin Core
+  -- Litecoin Core
+  -- DashCore
+  -- Guarda
+  -- Dogecoin
+  -- Binance
+  -- TonKeeper
+- Messaging theft:
+  -- Telegram (Telegram Desktop)
+  -- Discord (incl. keychain key via discord Safe Storage)
+- Additional collection:
+  -- Apple Notes (NoteStore.sqlite)
+  -- Safari cookies (Cookies.binarycookies)
+  -- macOS login keychain (login.keychain-db)
+  -- user documents matching pdf/txt/rtf
+- Exfiltration:
+  -- Compresses all data via 'ditto -c -k --sequesterRsrc' into a zip archive
+  -- Exfiltrates zip archive via 'curl --fail -X POST'
+  -- Sends to C2 server on endpoint /api/reports/upload with parameters user_id and build_tag.
+- Persistence:
+  -- Downloads agent from C2 /api/agent/download
+  -- chmod +x
+  -- clears xattrs (xattr -c)
+  -- installs LaunchAgent ~/Library/LaunchAgents/com.hlpr.agent.plist
+  -- loads via launchctl load
+- Supply-chain / wallet hijack:
+  -- Downloads trojanized bundles from C2 /api/download/app-bundle 
+  -- Replaces legitimate programs using  in /Applications via ditto -x -k
+     --- Ledger Live (ledger-wallet) 
+     --- Trezor Suite (trezor-suite)
+
+INDICATORS:
+
+IP ADDRESSES:
+
+- 178.16.52[.]101 (svs-verificationdate[.]beer)
+- 196.251.107[.]171 (C2 server)
+
+DOMAINS:
+
+- svs-verificationdate[.]beer
+- fewfwfwfwfwf[.]info (C2)
+
+URLS:
+
+- hxxp[:]//svs-verificationdate[.]beer/f0038a5f46720da5982b6984ceef10cf99359432e102b12a0b0657498d36f670
+- hxxps[:]//fewfwfwfwfwf[.]info (C2)
+- hxxp[:]//196.251.107[.]171:3000 (C2)
+
+SHA256 HASHES:
+
+- 25b6fc4f9c54a28ba7bfc4dfeafb62c99b59ea6f0d17679219b876b321965095 (s.01M0td.dmg)
+- 067ad6221b2224d5cdb64e51c5516132d820cf4d7edf9ec170643943e79c04b7 (NNApp.app — self-signed .app bundle; identifier com.utils.nnapp)
+- d6f479736ba55d3c4e895c4940d035cf772f3192fb8dc496f09a801aed16d970 (Mach-O payload, x64; identifier com.utils.nnapp)
+- 833008c03d40422192051584d829d730497108bef31751cceb0cc043dd96bbfb (Mach-O payload, ARM; identifier com.utils.nnapp)
+
+FILE / BUNDLE DETAILS:
+
+- File Name: s.01M0td.dmg
+- File Path: /private/tmp/s.01M0td.dmg
+- Mounted volume: /Volumes/NNApp/NNApp.app
+- Bundle Identifier: com.utils.nnapp
+
+HOST ARTIFACTS:
+
+- ~/.hlpr/ (staging directory)
+- ~/.hlpr/User Name.txt
+- ~/.hlpr/System Information.txt
+- ~/Library/LaunchAgents/com.hlpr.agent.plist (persistence)
+
+OTHER INFORMATION:
+
+- Config XOR key (8-byte, rotating): a9048cf1c9d113b6
+- String XOR key (32-byte): 8111edf01ac6cb5c77e249d4e84fd92a85b5e89c2e2bef92fbe00b6f1cc2aa8e
+- Build identifier: 123 | Campaign: 25 | Build name: noname3
+- C2 endpoints: /api/reports/upload, /api/agent/download, /api/download/app-bundle
+
