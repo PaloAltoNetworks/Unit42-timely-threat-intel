@@ -1,0 +1,113 @@
+2026-06-19 (FRIDAY): AI-GENERATED FAKE INSTRUCTION VIDEO LURE PHISHING CAMPAIGN 	
+
+AUTHORS:
+
+- Nabeel Mohamed, Lucas Hu, Billy Melicher, Alex Starov
+
+NOTES:
+
+- We've detected an deepfake audio phishing campaign distributing AI-generated instructional videos.
+- These videos guide social media users through stealing their own session cookies:
+  -- Victims instructed in a step-by-step process using the web browser's DevTools.
+  -- Victims instructed to submit the data to an attacker-controlled endpoint. 
+- The video is hosted on a legitimate video translation infrastructure
+  -- This tactic exploits trusted CDN domains to evade URL-based blocking. 
+- As of 2026-06-16. the campaign remains active with 800+ unique source URLs
+  -- These URLs are spread across 6 SaaS domains.
+  -- These SaaS platforms are benign.
+  -- The attackers abuse them, violating the terms of services.
+- This is likely an evolution of our previously reported campaign by the same threat actor:
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-12-18-phishing-for-authentication-tokens.txt
+  -- Based on similarity of the attack infrastructure, attack chain and scam tactics.
+  -- This new campaign targets the same platform as the previous campaign.
+  -- But with different lures such as an "Appeal Request" or "Verified badge."
+  -- Lure pages for this campaign have moved from dedicated hosting to use SaaS platforms.
+  -- Has a similar AI voice generated video but slightly different instructions and new URLs.
+
+DETAILS:
+
+ATTACK CHAIN:
+
+- Exposure: Victim encounters one of 800+ phishing URLs. 
+- Video Delivery: Video is served from a legitimate CDN, bypassing URL reputation filters.
+- Instructions: Deepfake audio voice instructs victim to: 
+   open the web browser →
+   go to page for a social media platform →
+   right-click → 
+   Inspect Element → 
+   Application tab →
+   Double-click Cookies → 
+   Triple-click user cookie value →
+   Copy →
+   Paste into form →
+   Repeat for access cookie → 
+   Click send
+- Cookie Exfiltration: Victim submits live session cookies to the attacker's collection server.
+  -- Data consists of user ID and an associated access token.
+  -- This is sufficient for full account takeover.
+- Persistence: Video instructs victim NOT to log out of the social media platform:
+  -- Instructed to remain logged in until the victim receives a verification email.
+  -— This keeps the stolen session active.
+- Account Takeover: Attacker uses submitted cookies to authenticate as victim:
+  -- The cookies are used for account hijacking, further phishing, financial fraud or sale.
+
+KEY SCAM TACTICS:
+
+- Authority through procedure — Maimics tone/pacing of a legitimate technical tutorial.
+- Platform exclusion of mobile — Reduces failed attempts and suspicion.
+- Trusted CDN abuse — Video CDN platform has clean domain reputation, evades URL filters.
+- Trusted SaaS abuse - These SaaS platforms carry a root domain trust that the attacker exploits.
+- Session persistence manipulation — "Do not log out" instruction extends attacker's access window.
+- False verification framing — "Verification email" provides a plausible cover story.
+- Technical obfuscation — Click-by-click navigation removes technical barrier for non-technical users.
+
+INDICATORS:
+
+EXAMPLE LURE PAGES:
+
+- hxxps[:]//2toapply-willforwhere.surge[.]sh
+- hxxps[:]//add-a-restrictions.surge[.]sh
+- hxxps[:]//appeal-for-monetisation-restricted.vercel[.]app
+- hxxps[:]//appeal-solve.pages[.]dev
+- hxxps[:]//applay-submission-panelo.surge[.]sh
+- hxxps[:]//apply-on-free-here.surge[.]sh
+- hxxps[:]//apply-tick-easy-getfree.surge[.]sh
+- hxxps[:]//applyit-blue-badge.surge[.]sh
+- hxxps[:]//azan-review.github[.]io/violation
+- hxxps[:]//azam-crush.github[.]io/subhan
+- hxxps[:]//buksh-alee.github[.]io/azan
+- hxxps[:]//come-review.github[.]io/subhan
+- hxxps[:]//community-team-now.surge[.]sh
+- hxxps[:]//fastfreeprogramunit3.surge[.]sh
+- hxxps[:]//form-review-application.surge[.]sh
+- hxxps[:]//get-fix-here-got.vercel[.]app
+- hxxps[:]//immediate-action-send-request.surge[.]sh
+- hxxps[:]//lifetime-freeblue-badge.surge[.]sh
+- hxxps[:]//monetization-under-request-support-on.surge[.]sh
+- hxxps[:]//nostop09.github[.]io/Hauruo
+- hxxps[:]//now-review-form-here.surge[.]sh
+- hxxps[:]//now-solve-issues.surge[.]sh
+- hxxps[:]//privacy-security.surge[.]sh
+- hxxps[:]//process-submission-complete.surge[.]sh
+- hxxps[:]//quick-review-submited.surge[.]sh
+- hxxps[:]//rajab-alee.github[.]io/azan
+- hxxps[:]//request-i-review.surge[.]sh
+- hxxps[:]//review-for-page-here.vercel[.]app
+- hxxps[:]//review-privacy-help-community-here.surge[.]sh
+- hxxps[:]//review-req-app-user-forms.surge[.]sh
+- hxxps[:]//review-submit-for-here.surge[.]sh
+- hxxps[:]//sadiqdev.pages[.]dev
+- hxxps[:]//shaid-alee.github[.]io/blue
+- hxxps[:]//solve-profile-issue-now-five.vercel[.]app
+- hxxps[:]//submit-your-info-here.netlify[.]app
+- hxxps[:]//suspended-account.netlify[.]app
+- hxxps[:]//team-revie.github[.]io/work
+
+DEEPFAKE VIDEO SHA256 HASH:
+
+- fc6a175c7f61a5c81875ca29a2c444d7a8f95506ddcdc0c59629f65e15911d83
+- Note: This not a malicious file, but an indicator from the campaign.
+
+DEEPFAKE VIDEO URL:
+
+- hxxps[:]//resource2.heygen[.]ai/video_translate/94087358030a4df8b20e73f1fba92ed5-en/720p.mp4
