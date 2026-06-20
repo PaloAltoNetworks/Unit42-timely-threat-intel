@@ -4,6 +4,11 @@ AUTHOR:
 
 - Reethika Ramesh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/phishing-ugcPost-7473435883170590721-C9Uh/
+- https://x.com/Unit42_Intel/status/2067670247448977508
+
 NOTES:
 
 - We found a large email phishing campaign impersonating popular retail stores
