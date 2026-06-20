@@ -1,4 +1,4 @@
-2026-06-20 (SATURDAY): CLICKFIX CAMPAIGN DELIVERS MACOS INFOSTEALER VIA DMG
+2026-06-20 (SATURDAY): LATEST MACOS CLICKFIX VARIANT INVISIBLY MOUNTS DMG IMAGE FOR MACOS INFOSTEALER THAT HIJACKS CRYPTOCURRENCY WALLET INFO
 
 AUTHORS:
 
@@ -6,14 +6,16 @@ AUTHORS:
 
 NOTES:
 
-- A new macOS ClickFix campaign uses a fake CAPTCHA page to trick a users into installing malware.
-- It instructs user into pasting a Terminal command that silently downloads and mounts a malicious DMG file.
+- A new macOS ClickFix campaign uses a fake CAPTCHA page to trick users into installing malware.
+- It instructs users to paste text into a Terminal command that silently downloads and mounts a malicious DMG file.
 - The mounted DMG contains a self-signed information-stealer (.app bundle) that:
   -- Asks for the user's password
   -- Harvests browser/wallet/messaging/keychain data
   -- Exfiltrates to two C2 servers
   -- Establishes LaunchAgent persistence
   -- Trojanizes Ledger Live and Trezor Suite
+- The stealer payload is assessed to belong to the AMOS (Atomic macOS Stealer) lineage, specifically the modern C++ Odyssey variant.
+  -— This assessment is based on the malware's staging directory, persistence module and crypto-wallet trojanization behavior.
 
 DETAILS:
 
@@ -52,7 +54,7 @@ DETAILS:
 
 PAYLOAD ANALYSIS (NNApp.app — info-stealer):
 
-- The sample is a 64-bit Mach-O executable written in C++ targeting macOS. 
+- The sample is a Universal Mac executable consisting of Intel and ARM64 architecture written in C++ targeting macOS.
 - It is an information stealer that:
   -- Daemonizes itself
   -- suppresses Terminal
