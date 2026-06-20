@@ -4,6 +4,11 @@ AUTHORS:
 
 - Nabeel Mohamed, Lucas Hu, Billy Melicher, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/llm-ugcPost-7473406958960775168-SNYw/
+- https://x.com/Unit42_Intel/status/2067641304671023285
+
 NOTES:
 
 - We've detected a deepfake audio phishing campaign distributing AI-generated instructional videos.
