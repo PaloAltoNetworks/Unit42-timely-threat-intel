@@ -4,6 +4,11 @@ AUTHORS:
 
 - Nabeel Mohamed, Lucas Hu, Billy Melicher, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/an-evolved-deepfake-video-campaign-is-distributing-ugcPost-7474874864839933953-4BJo/
+- https://x.com/Unit42_Intel/status/2069109249196609572
+
 NOTES:
 
 - We've detected a deepfake audio phishing campaign distributing AI-generated instructional videos.
