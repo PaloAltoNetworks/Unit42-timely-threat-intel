@@ -1,0 +1,77 @@
+2026-06-24 (WEDNESDAY): AFFILIATE MARKETING FRAUD VIA BRAND IMPERSONATION EXTENSION FARM	
+
+AUTHORS:
+
+- Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Alex Starov
+
+NOTES:
+
+- We detected 18 browser extensions impersonating consumer brands with squatting .shop domains. 
+- Upon installation, all extensions open the .shop domain in a new tab
+  -- The .shop domain redirects to another domain.
+  -- The domain presents a page citing that further action is required.
+  -- The page cites incompatibility issues and asks users to install a gaming-oriented browser.
+- The goal of these extensions is to monetize through affiliate marketing.
+
+DETAILS:
+
+- Some of these extensions were republished as a different version after they were taken down.
+  -- For example, mgnifjlpjmhihkmfjfbgjehfloockehi (version 1.2 of a plugin) was removed. 
+  -- The operator then published jcjnpcclnnjcdamcmhhicpfcjnokclpe (version 1.3 of the same plugin).
+- The "further action required" page has several characteristics typical of scam lures:
+  -- Artificial urgency used in questionable activity, including affiliate marketing fraud: 
+     --- Message/text examples: Action Required, Almost Done, One Last Step...
+  -- False browser incompatibility claims: 
+     --- Example: "Our current browser is not supported."
+     --- "This extension does not support your current browser"
+  -- Abuse of web push notification: 
+     --- When a user clicks the button to download the browser and continue.
+     --- Script from the button intercepts the click and executes a code.
+     --- This code deceptively grants permission to send push notifications. 
+  -- The "further action required" page also sets affiliate cookies for monetization.
+  -- The download link points to a suspicious affiliate tracking link created on low reputed TLD sbs.
+- Some of these extensions conduct questionable activity.
+  -- For example, one extension stores a copy of the browser history in the browser's local storage. 
+     --- This data is not currently exfiltrated.
+     --- However, <all_urls> + scripting permissions, that it currently has, enable a silent update.  
+     --- This allows the extension to begin transmitting it without requiring new permission grants.
+
+INDICATORS:
+
+18 EXTENSIONS ASSOCIATED WITH THIS ACTIVITY:
+
+- akacljehjekfjgedpgpdjbdnmfgacikj
+- bdjadhfeokpmjekfbbfclpbejdoepkag
+- cabinnjglmnadimaginbiafbkancbgio
+- cbbblelpjglcbpdnaidkfekleabgofgh
+- cmikjhfacingiiipjkmldcndpbnimdob
+- dgifbffblookmomalpfkfkldcgofhllp
+- gapcpoajcnhfpnlkgbfdhcofkjjgghfi
+- gkkgkahfnpmngjemamlepbnbgihadidn
+- hdbbmiepcfblbnadgmgbhbplffofgbng
+- hmkcidjcpomiegnklmplkimmbcbklglb
+- ieoofhgipagkhinhedjgmloejfoaglcf
+- imfidgcafoafgcjcfniemjmgembigodn
+- jcjnpcclnnjcdamcmhhicpfcjnokclpe
+- mgnifjlpjmhihkmfjfbgjehfloockehi
+- oinhkppjekojppojmpillbcahmgelnif
+- ombbgjgaipdokjladfdbilkjlcpogdik
+- oooajbapompagfednbkpmaicgpcdmlok
+- pogmledndpkjkliejlcdbgkfkoblickb
+
+ASSOCIATED .SHOP DOMAINS:
+
+- bextension-6124d[.]shop
+- broth-print-extension46[.]shop
+- caschekillerextension[.]shop
+- dee-extensonchorm464[.]shop
+- pecktvextensionchrome3[.]shop
+- phot-matchextensionchrome5[.]shop
+- picphotoedutir46[.]shop
+- snaitextension44[.]shop
+- word-extension946[.]shop
+
+EXAMPLE OF "FURTHER ACTION REQUIRED" PAGE & AFFILIATE LINK FROM THE BUTTON:
+
+- hxxps[:]//chromehubplugin[.]com
+- hxxps[:]//track.getbrowser[.]sbs/click?offer=j32aevgf9qxx&aff=6f5b784e-3dda-48d4-bca0-3deca218b53a&sub1=chromehubplugin.com
