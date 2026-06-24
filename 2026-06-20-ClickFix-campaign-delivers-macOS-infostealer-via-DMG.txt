@@ -4,6 +4,11 @@ AUTHORS:
 
 - Manbendra Satpathy, Bhargav Rathod, Shazan Khaja, Veronika Senderovych
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/the-latest-macos-clickfix-variant-invisibly-ugcPost-7475087272908996608-Txi8/
+- https://x.com/Unit42_Intel/status/2069321645924159505
+
 NOTES:
 
 - A new macOS ClickFix campaign uses a fake CAPTCHA page to trick users into installing malware.
