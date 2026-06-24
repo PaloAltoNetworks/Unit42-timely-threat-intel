@@ -29,7 +29,7 @@ DETAILS:
      --- Script from the button intercepts the click and executes a code.
      --- This code deceptively grants permission to send push notifications. 
   -- The "further action required" page also sets affiliate cookies for monetization.
-  -- The download link points to a suspicious affiliate tracking link created on low reputed TLD sbs.
+  -- The download link points to a suspicious affiliate tracking link created on a low-reputed TLD of ".sbs".
 - Some of these extensions conduct questionable activity.
   -- For example, one extension stores a copy of the browser history in the browser's local storage. 
      --- This data is not currently exfiltrated.
