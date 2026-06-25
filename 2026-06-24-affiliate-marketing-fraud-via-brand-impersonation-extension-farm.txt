@@ -66,17 +66,78 @@ INDICATORS:
 
 ASSOCIATED .SHOP DOMAINS:
 
-- bextension-6124d[.]shop
-- broth-print-extension46[.]shop
-- caschekillerextension[.]shop
-- dee-extensonchorm464[.]shop
-- pecktvextensionchrome3[.]shop
-- phot-matchextensionchrome5[.]shop
-- picphotoedutir46[.]shop
-- snaitextension44[.]shop
-- word-extension946[.]shop
+5d[.]downloadbrowserwithonlydownloader[.]shop
+5pxdownloadextension6[.]shop
+aioptimizerext4[.]shop
+ar-xextensioncoomment3[.]shop
+autoskipyoutubeext2[.]shop
+bextension-6124d[.]shop
+bootstgridextensionchrome6[.]shop
+broth-print-extension46[.]shop
+brwowserext54[.]shop
+cageifyextension[.]shop
+caschekillerextension[.]shop
+castplayerchromeextension3[.]shop
+customnetf-xextension53[.]shop
+dee-extensonchorm464[.]shop
+disablehtmlautoplay4[.]shop
+downloadbestbrowser[.]best
+downloadbrowserbest[.]shop
+downloadbrowserextension1[.]shop
+downloadbrowseronline[.]best
+downloadbrowserweb[.]online
+downloadbrowserwithonlydownloader[.]shop
+downloadotherbrowser[.]online
+downloadthebestbrowser[.]shop
+downloadytthumbnailsextensions[.]shop
+earsbassbostextension[.]shop
+extensionrequired[.]store
+extlivecolorpicker6[.]shop
+faceext8735[.]shop
+getfastbrowser[.]shop
+gmaps-darkmodeext4[.]shop
+howtoremovebanner[.]shop
+ibis-chromextension8[.]shop
+lighrtphotoeditor464[.]shop
+livestreamdownloaderextension5[.]shop
+nfhiddencategoriesext[.]shop
+pandextensionchrome64[.]shop
+par-extension64s[.]shop
+pecktvextensionchrome3[.]shop
+phot-matchextensionchrome5[.]shop
+photofixextension76[.]shop
+picphotoedutir46[.]shop
+pixl-chromextension34[.]shop
+playallbuttonytext[.]shop
+removeadsphoto64[.]shop
+reselutiontestextensionnow[.]shop
+salesextension-chrome64[.]shop
+saveallroesurcesext[.]shop
+scholdarkmode-extension54[.]shop
+sket-extension6464[.]shop
+snaitextension44[.]shop
+sortoftiktokextension3[.]shop
+soundboosterexetensin[.]shop
+streamext44s[.]shop
+subtitlesytextension7[.]shop
+systemonitorextensionchrome3[.]shop
+tabssaverextensionchrome6[.]shop
+tabsuspdenerchromext[.]shop
+thebestbrowser[.]shop
+tub-extension75f[.]shop
+udemy-darkmode-ext5[.]shop
+unlocklifetime[.]shop
+wiki-extensiondarkmode4[.]shop
+word-extension946[.]shop
+wpextension-chrome5[.]shop
+ytextensionautohd54[.]shop
+ytpopupplayeroutext4[.]shop
+ytscreenshot2[.]shop
+yttagsviewerext[.]shop
 
 EXAMPLE OF "FURTHER ACTION REQUIRED" PAGE & AFFILIATE LINK FROM THE BUTTON:
 
-- hxxps[:]//chromehubplugin[.]com
+chromehubplugin[.]com
+chromepluginhub[.]com
+pluginchrome[.]com
 - hxxps[:]//track.getbrowser[.]sbs/click?offer=j32aevgf9qxx&aff=6f5b784e-3dda-48d4-bca0-3deca218b53a&sub1=chromehubplugin.com
