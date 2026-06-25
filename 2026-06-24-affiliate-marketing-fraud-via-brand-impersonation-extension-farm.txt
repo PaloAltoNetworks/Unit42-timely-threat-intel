@@ -4,6 +4,11 @@ AUTHORS:
 
 - Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/we-identified-a-deceptive-browser-extension-ugcPost-7475939414871986176-JWYJ/
+- https://x.com/Unit42_Intel/status/2070173761010065756
+
 NOTES:
 
 - We detected 18 browser extensions impersonating consumer brands with squatting .shop domains. 
