@@ -12,7 +12,7 @@ NOTES:
 - The emails come from an authentication-passing mailer at adfluxi[.]com. 
 - Recipients click on links that redirect to decoy sites or fake "reward" pages.
   -- These URLs detect sandboxes and non-US visitors and route them to decoy sites.
-  -- But he URLs send real US visitors to fake "reward" pages. 
+  -- But the URLs send real US visitors to fake "reward" pages. 
 - Those pages harvest users' PII like full payment card details (PAN/CVV/expiry).
 - These pages exfiltrate the user data to a URL at hxxps[:]//gocellbel[.]com/api/orders. 
 - The pages are monetized via the operator's affiliate ID 1189. 
@@ -39,7 +39,7 @@ URLS:
 
 - hxxps[:]//storage.googleapis[.]com/id-us/index[.]html - 485-byte JS redirector stub → curll[.]us
 - hxxps[:]//storage.googleapis[.]com/id-eu/ - EU twin redirector bucket
-- hxxps[:]//gocellbel[.]com/api/orders - Card/PII POST/exfilration endpoint
+- hxxps[:]//gocellbel[.]com/api/orders - Card/PII POST/exfiltration endpoint
 - hxxps[:]//c7wbclk[.]com/?nid=2106 - Conversion postback
 
 IP ADDRESS:
