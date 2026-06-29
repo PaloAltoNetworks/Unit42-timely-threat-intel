@@ -1,0 +1,60 @@
+2026-06-25 (THURSDAY): KONGTUKE ACTIVITY DELIVERS HAVOC C2 VIA CLICKFIX AND ADVANCED EVASION TECHNIQUES
+
+AUTHORS:
+
+- Alex Payne, Jonny Westfall
+
+NOTES:
+- Observed a multi-stage execution chain initiated via browser-based ClickFix (Fake CAPTCHA/Verification social engineering) routing users to run a malicious msiexec command.
+- The execution chain aligns with Kongtuke activity and drops a payload attributed to Havoc C2.
+- The attack deploys a rogue installer disguised as "SPSS WinWrap Basic IDE 27" to obscure its malicious files in plain sight.
+
+DETAILS:
+- Initial Access: Users are induced to paste and execute an msiexec.exe command via the Windows Run dialog. 
+  -- This silently downloads the MSI package using the -Q flag and hides its deployment from the Windows "Add/Remove Programs" inventory by setting ARPSYSTEMCOMPONENT=1.
+
+- Proxy Sideloading: The clean, signed host binary WinWrapIDE.exe natively loads its standard runtime extension, wwide9.dll. 
+  -- The threat actors modified the import table of wwide9.dll to call the export activateLogBlend inside a malicious proxy loader DLL (FcHand.dll).
+
+- Window Cloaking: Upon execution, a thread inside Packet.dll runs a persistent window-suppression loop exactly 1,680 times. 
+  -- It actively monitors the desktop environment and targets any window handle matching its own Process ID (PID) with ShowWindow(hwnd, SW_HIDE), rendering the background execution invisible to the victim.
+
+- Sandbox Evasion: FcHand.dll enforces an intentional 62-second sleep delay to outlast the standard inspection timers of automated malware analysis sandboxes before starting system fingerprinting routines.
+
+- Memory Offset Evasion: Devart.Data.Linq.dll allocates a 4MB memory buffer via VirtualAlloc. 
+  -- To bypass heuristic memory scanners that inspect segment base addresses, the loader fills the entire buffer with high-entropy random data via BCryptGenRandom and writes the decrypted shellcode exactly 17,065 bytes into the block.
+
+- Callback Handoff: Rather than utilizing heavily monitored process injection APIs like CreateRemoteThread, the loader transfers execution to the shellcode by passing its offset pointer as an alternate callback argument to the native Windows localization API EnumTimeFormatsEx.
+
+- Custom Cryptography: The shellcode resolves dynamic APIs across 7 core system DLLs using a modified 64-bit FNV-1a hashing algorithm that reverses operations and integrates a loop index.
+  -- Internal strings are obfuscated using a Linear Congruential Generator (LCG) cipher.
+
+- PowerShell Execution & Stdin Redirection: Once executing, the shellcode spawns a cloaked powershell.exe session using a benign-looking command line that merely modifies console text encoding. 
+  -- It then redirects standard input (stdin) to feed the actual malicious scripts directly into the PowerShell process memory buffer, evading OS command-line auditing and bootstrapping the next stage.
+
+- Configuration Extraction: The operational Havoc C2 network configurations were successfully extracted directly from the decrypted stage-0 shellcode headers.
+
+- Payload Container Dependency: Statically recovered strings show a strict runtime dependency on an uninstalled, standalone 16.5MB high-entropy container file dropped to disk
+
+- Permissive Persistence: Long-term survival is established via a Windows Scheduled Task named "IBM SPSS WinWrap Basic IDE 27". 
+  -- The task executes 3 seconds after user logon under least privileges to bypass UAC prompts, has an infinite execution timeout (PT0S), and explicitly opens full control permissions to "Everyone" via its SDDL descriptor (D:(A;;FA;;;WD)) to prevent administrative tampering controls.
+
+INDICATORS:
+
+- Network Indicators:
+
+  -- hardware-id-cloud[.]us[.]com (Staging server hosting the malicious MSI installer package)
+  -- hxxp[:]//hardware-id-cloud[.]us[.]com/---To-Complete-Verification---PRESS-ENTER-or-OK%20-Q (Full URL hosting malicious MSI installer)
+  -- awsnetstat[.]com/45.227.255[.]75 (C2 server observed in post-exploitation and embedded within high-entropy payload)
+ 	 
+  
+- Host Indicators:
+
+  -- wwide9.dll (Hijacked dependency leveraged to implicitly load the malicious proxy loader)
+     --- SHA256 hash: 780df6caac0227c3a8c0e70417aa38cddc50e0aed61c76cc836f306809767894
+  -- FcHand.dll (Malicious loader proxy responsible for executing the anti-sandbox 62-second sleep)
+     --- SHA256 hash: c4cb401430c921daf604d4ff767a698431955eeae580e8bb28f287bd6384aa2d
+  -- Packet.dll (Stealth mechanism binary running a continuous loop to force-hide process windows via SW_HIDE)
+     --- SHA256 hash: b99db956f479e0390d83da3279ef1bb93a80db0eaf2b284491570dd8157684df
+  -- Devart.Data.Linq.dll (Evasion binary executing endpoint fingerprinting, memory allocation, and EnumTimeFormatsEx callback)
+     --- SHA256 hash: cc1023616fba7fc7585ae7872f6a6b77a84a8a461e585b95f01f9de2b703b433
