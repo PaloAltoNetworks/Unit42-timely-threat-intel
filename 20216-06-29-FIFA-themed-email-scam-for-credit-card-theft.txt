@@ -1,0 +1,47 @@
+2026-06-29 (MONDAY): FIFA-THEMED EMAIL SCAM FOR CREDIT CARD THEFT
+
+AUTHOR:
+
+- Amanda Tanner
+
+NOTES:
+
+- We have identified a phishing/scam campaign targeting personally identifiable information (PII)/payment card details.
+- This campaign takes advantage of the hype around the 2026 FIFA World Cup by using "Champion Reward" survey lures.
+- Of note, these email lures and associated web pages are not at all affiliated with FIFA.
+- The emails come from an authentication-passing mailer at adfluxi[.]com. 
+- Recipients click on links that redirect to decoy sites or fake "reward" pages.
+  -- These URLs detect sandboxes and non-US visitors and route them to decoy sites.
+  -- But he URLs send real US visitors to fake "reward" pages. 
+- Those pages harvest users' PII like full payment card details (PAN/CVV/expiry).
+- These pages exfiltrate the user data to a URL at hxxps[:]//gocellbel[.]com/api/orders. 
+- The pages are monetized via the operator's affiliate ID 1189. 
+- No malware or password phishing; the goal is PII and payment card theft.
+
+INDICATORS:
+
+DOMAINS:
+
+- adfluxi[.]com - Mailer (email sender)
+- c7wbclk[.]com - cost per action (CPA) conversion postback (?nid=2106)
+- curatedfindscorner[.]com - PII lead capture (vacuum)
+- curll[.]eu - EU twin tracker/redirector
+- curll[.]us - Open-tracking + geo/ASN cloaking redirector
+- gocellbel[.]com  - Card/PII exfiltration backend (/api/orders)
+- insighthepanel[.]com - 2nd CPA tracker (oho=t2.)
+- lokupatthstrs[.]com - Primary CPA smartlink
+- mail-n6b-at8.adfluxi[.]com - Sending subdomain
+- opinioncashzone[.]com	- CPA tracker (aff_id=1189)
+- surveysreswards[.]com (lifini.) - Survey-router
+- tryomnitecc[.]com - Card + PII harvesting (smartband)
+
+URLS:
+
+- hxxps[:]//storage.googleapis[.]com/id-us/index[.]html - 485-byte JS redirector stub → curll[.]us
+- hxxps[:]//storage.googleapis[.]com/id-eu/ - EU twin redirector bucket
+- hxxps[:]//gocellbel[.]com/api/orders - Card/PII POST/exfilration endpoint
+- hxxps[:]//c7wbclk[.]com/?nid=2106 - Conversion postback
+
+IP ADDRESS:
+
+- 20.38.0[.]172 - Sending IP address from the email headers
