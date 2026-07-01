@@ -1,0 +1,66 @@
+2026-07-01 (WEDNESDAY): UNAUTHORIZED STREAMING AND UNWANTED APPLICATION SITES TAKING ADVANTAGE OF FIFA WORLD CUP 2026
+
+AUTHORS:
+
+- Jimmy Chen, Reethika Ramesh, Moe Ghasemisharif
+
+NOTES:
+
+- Questionable sites are taking advantage of the popularity of the FIFA World Cup 2026.
+- These sites feature unauthorized streaming or distribute unwanted applications.
+- We found over 1,500 domains and URLs across 14 streaming operations. 
+- Techniques used for these sites include:
+  -- Mirror farms
+  -- Hosting on popular cloud-based platforms
+  -- A campaign pushing fake-VPN and APK lures through affiliate tracker chains
+
+DETAILS:
+
+- Multi-Sport Hosting: Many identified domains host various sports streaming links in violation of copyright protection, with FIFA World Cup coverage currently trending.
+- Crackstreams is the streaming platform with the largest footprint. 
+  -- We find alphabetic mirror-rotation patterns in the domain names (acrackstreams.* → bcrackstreams.* → ccrackstreams.* → vcrackstreams.*)
+  -- Persistence techniques involve load-balanced player farms such as: live1. through live16.crackstreams[.]me.
+- The sports-related VipRow service leverages cloud-hosting sites. 
+  -- It makes use of popular cloud platforms, and *.pages.dev buckets as serverless mirror infrastructure.
+  -- Alongside TLD rotation strategies: viprow[.]{co,me,my,nu,sx}
+- Services using the Buffstreams name also utilizes public-cloud services as mirrors.
+  -- These Buffstreams sites use domain names like: buffstreams1.bitbucket[.]io, www-buffstreams.bitbucket[.]io, buffstreamss-tv.s3.amazonaws[.]com.
+- Other streaming services taking advantage of the World Cup popularity include: Footybite, LiveTV typosquatting, JokerTVGuide and Stream2watch.
+- We found several domains to add to our previously published fifa_worldcup_scams campaign. 
+  -- These consist of Chinese-language webpages plus a fleet of 154.* and 154.91/92.* bare IP addresses serving a common scam landing template, all matching FIFA-themed seeds.
+  -- Several webpages distribute APK/EXE files impersonating Stremio. 
+  -- The associated domains include stremio-app[.]com, stremio-dl[.]com, stremio[.]watch, stremioguide[.]com, stremo[.]tv, and cloudflare-br-34-ionp.std.epremo-akam[.]com. 
+  -- These pages resemble the Stremio service’s download pages, and they have been observed to link to dropbox URLs to drop EXE files that do not match the original stremio setup files.
+- We found a set of pages that lure users to download a VPN to continue streaming. 
+  -- This leads users to download pages that are backed by affiliate-tracker chains. 
+  -- Includes highly-malicious sites: apkforgivesus[.]biz, app-rush[.]com/vpnupdate/, quickstream-app[.]com/preland/, aimbot[.]dev/download, vpn-explained[.]com/propeller/, 7imaya[.]site/ar/ etc. 
+
+INDICATORS:
+
+DOMAINS:
+
+- apkforgivesus[.]biz
+- cloudflare-br-34-ionp.std.epremo-akam[.]com
+- live-tv[.]sbs
+- livetv901[.]me
+- stremio-app[.]com
+- stremio-dl[.]com
+- stremio[.]watch
+- stremioguide[.]com
+- stremo[.]tv
+- vipleague[.]ws
+- worldcup2026live[.]xyz
+- worldcupstream[.]me
+
+URLS:
+
+- hxxps[:]//7imaya[.]site/ar
+- hxxps[:]//aimbot[.]dev/download
+- hxxps[:]//app-rush[.]com/vpnupdate/
+- hxxps[:]//buffsports[.]io/watch-2026-fifa-worldcup
+- hxxps[:]//buffstreamss-tv.s3.amazonaws[.]com/index.html
+- hxxps[:]//quickstream-app[.]com/preland/
+- hxxps[:]//vipleague-sx.storage.googleapis[.]com/index.html
+- hxxps[:]//vpn-explained[.]com/propeller/
+- hxxps[:]//watchfootballhighlights[.]com/schedules/2026-06-19
+- hxxps[:]//www.viprow[.]sx/world-cup/belgium-vs-egypt-online-stream-1
