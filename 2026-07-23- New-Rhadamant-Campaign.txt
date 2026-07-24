@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Jonny Westfall, Cameron Martin
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_rhadamanthys-infostealer-activity-7486492056039763968-UbMW/
+- https://x.com/Unit42_Intel/status/2080726419093454877
+
 NOTES:
 
 - Rhadamanthys seen following law enforcement takedown of website impersonating RingCentral.
