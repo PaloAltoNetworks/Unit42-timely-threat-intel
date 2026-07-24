@@ -3,6 +3,11 @@
 AUTHOR(S): 
 - Shawn He Shuang Beliz Kaleli Diva-Oriane Marty Nabeel Mohamed
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_four-evasion-techniques-deliver-stealthy-activity-7486530417232224256-TE4R/
+- https://x.com/Unit42_Intel/status/2080764800620003330
+
 NOTES:
 Four evasion techniques are currently being used in device code phishing campaigns.
 - CAPTCHA gates: Phishing pages require users to solve CAPTCHA before the device code appears. 
