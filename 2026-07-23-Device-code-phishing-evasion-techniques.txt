@@ -1,0 +1,76 @@
+2026-07-24 [FRIDAY]: Device code phishing evasion techniques 
+
+AUTHOR(S): 
+- Shawn He Shuang Beliz Kaleli Diva-Oriane Marty Nabeel Mohamed
+
+NOTES:
+Four evasion techniques are currently being used in device code phishing campaigns.
+- CAPTCHA gates: Phishing pages require users to solve CAPTCHA before the device code appears. 
+   - We have seen custom CAPTCHA and fake reCAPTCHA. This blocks automated URL scanners and mimics real Microsoft portals, increasing victim trust. 
+- Multi-step flows: Campaigns chain legitimate SaaS platforms as lure hops before the device code page. 
+   - We documented flows through multiple SaaS hosting platforms separating the initial link from the phishing content, evading URL reputation checks.
+- Blob URL delivery: A JavaScript payload constructs phishing HTML at runtime and delivers it via a browser blob URL (blob:https://[origin]/[uuid]). 
+   - The blob URL has no network existence, so blocklists and safe-browsing APIs cannot fetch or rate the content.   
+- Pages also used Cyrillic characters in place of Latin letters, zero-width spaces, and strings inside <bdi> tags to break content-based detection.
+
+DETAILS:
+CAPTCHA-gated device code pages
+- A CAPTCHA placed before the device code page blocks automated URL scanners, which cannot solve the challenge. 
+- It also signals legitimacy: real Microsoft portals use CAPTCHAs, priming victims to trust the page that follows. 
+- We have observed variants using custom-built CAPTCHA that superficially resembles a reCAPTCHA widget but has no server-side component. 
+- Code generation and validation are handled entirely in the browser: a random five-character string is displayed, the user's input is compared against it in JavaScript, and a correct answer redirects to the phishing page. 
+- Because validation never touches a server, there is no token to forge or API to query. 
+- While easily bypassed by any script reading the displayed code from the DOM, but that is not its purpose. 
+- It stops naive automated scanners that fetch URLs without rendering JavaScript or simulating user interaction, and it adds surface credibility — a visible security checkpoint before the sign-in page.
+
+Multi-step social engineering flows
+- Campaigns chain multiple steps through SaaS domains to pass reputation checks and appear as legitimate workflows. We documented several distinct patterns: 
+   - Smartsheet to blob-delivered phishing page. A shared Smartsheet form is the lure. The document link loads a page that constructs phishing HTML at runtime, converts it to a blob URL, and redirects the browser (more discussed below).
+   - Four-step chain: Polling.com, fake PDF viewer, fake reCAPTCHA (discussed above), and brand impersonation. A Polling.com survey link leads to a fake PDF viewer, then a fake reCAPTCHA on a second third-party domain, then an e-signature service-branded device code page with a Microsoft sign-in code pre-populated. Four steps across two third-party domains separate the lure URL from the device code.
+
+Blob URL delivery
+- An HTML constructor page, hosted on an intermediate CDN domain, uses inline JavaScript to deliver encrypted phishing HTML entirely within the browser at runtime through blob. 
+- The phishing HTML is AES-GCM encrypted; the page decrypts the payload using the browser's Web Crypto API, then calls new Blob([html], {type:'text/html;charset=utf-8'}) and URL.createObjectURL(blob) to produce a session-unique browser-internal address of the form blob:https://[origin]/[uuid] and navigates to it. 
+- No network request fetches the payload separately — the entire phishing page is contained in a single file.
+- The two layers defeat analysis at every stage. 
+- Encryption defeats static analysis of the constructor page — curl, regex scanning, and headless scraping without JS all terminate at ciphertext, revealing nothing about the brand being impersonated, the credential-harvesting flow, or the C2 address. 
+- The blob URL defeats network-layer analysis of the rendered page — it has no network existence, external requests return nothing, the UUID is session-unique, and no external system can retrieve or rate the content. 
+- An analyst must execute the constructor in a real browser to recover the phishing content, and even then the delivered page has no URL a blocklist or safe-browsing API can act on.
+
+Evasion in page source
+- Two source-level evasion techniques appeared across the sampled pages.
+   - The first replaced Latin letters with visually identical Cyrillic counterparts across eleven common characters (a, c, e, i, M, o, p, s, S, u, A). A reader sees normal text; a scanner searching for Latin-alphabet brand strings like "Microsoft account" finds nothing. On top of that, 93 invisible characters with no visual width were scattered between the visible letters, shattering any remaining substring match without affecting how the text looks on screen.
+   - The second injected random 6–14 character alphanumeric strings inside <bdi> tags throughout visible headings and paragraphs. Browsers render <bdi> as a transparent inline element, so the name of the brand displays correctly while the raw HTML reads as Ado<bdi>jdVpbcSH8WUZK</bdi>b<bdi>rUbrNs</bdi>e Acr.... because the junk strings are randomly generated per campaign, the technique also defeats static file-hash signatures.
+- The two techniques attack different layers. 
+- Cyrillic substitution and zero-width characters corrupt the character stream, defeating even tools that strip markup and read plain text. 
+- <bdi> injection corrupts the markup structure, defeating tools that scan raw HTML. 
+- A robust scanner needs both: a proper HTML parser to recover rendered text, and a Unicode confusable lookup before any string comparison.
+
+INDICATORS:
+- hxxps[://]uniqo[.]de/Ci9BX9
+- hxxps[://]m365[.]nexttrail[.]co[.]nl/Microsoft/
+- hxxps[://]app[.]polling[.]com/forms/a46c57fb-b7ef-463b-8920-146b20882a23/share
+- hxxps[://]rayallen[.]plastlsole[.]de/doc209339093/
+- hxxps[://]storage-document-folder-s3-document-id-2003949[.]b-cdn[.]net/folder/index%201%20(6%20)[.]html
+- hxxps[://]bridgehouse[.]co[.]nl/Docs/
+- hxxps[://]reviewdocumentandexecute[.]launchmint[.]us/lienwaivercheckcopyandinvoicespaid/
+- hxxps[://]dyscova[.]com/proposal-bid/docs/view[.]php?doc=default&t=1784131170
+- hxxps[://]m5c5-9juo-wfam[.]tmowbre-pacifiefc-ca-s-account[.]workers[.]dev
+- hxxps[://]corwins[.]nl/Documentss/
+- hxxps[://]app[.]smartsheet[.]com/b/form/019f487cd72f73bc91088e4636ba0138
+- hxxps[://]akxial[.]brookharbor[.]org/AkxialSystem/
+- hxxps[://]e657890765nmnbcvxbnbmnmmbvcxvbhxghjkg[.]com
+- hxxps[://]juciy[.]northmarko[.]nl/jucie/
+- hxxps[://]app[.]supademo[.]com/demo/cmrkpqzzy00f5xl0jxrzudz50
+- hxxps[://]prfesmgqqx[.]zh-app-jiebaoscore[.]com/l/ITp9TWPGdq8
+- hxxps[://]uvyiuoio[.]b-cdn[.]net/all1[.]html
+- hxxps[://]morningmate[.]com/publiclink/en_us/2c04b13082b05bf0af064909a70a1643
+- hxxps[://]1o5ehsjoea[.]craftedcommunication[.]de/l/enXvdS_8LAw
+- hxxps[://]ray-allen-manufacturing[.]feedbear[.]com/updates/ray-allen-manufacturing-fadcd8d9-4c45-46fd-baf0-c27a2d8edb9b
+- hxxps[://]yw9hbp4oi0[.]techreliably[.]de/l/A7oc23jy56M
+
+Delivering emails
+- E5b4f1f5e44905fb3f5790331cb4ac536bf881a9a2737518aa92cce30da01b2b
+- 0b7cf15aefa4a03729a0c736959c20aa4211df93a14e70259da109d669b94f56
+- 0fb5c0d0c2125ea26f128f51e5114e9163a18e81c6446a2f09eb65794f9a9dcf
+- 20fc0c65eedea0d960056c5edac42d6c517fd5b7c429dc2e58a5bdb4372e9a83
