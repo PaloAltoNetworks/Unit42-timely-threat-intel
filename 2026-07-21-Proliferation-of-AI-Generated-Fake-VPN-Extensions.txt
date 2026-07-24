@@ -1,5 +1,9 @@
 2026-07-21 (TUESDAY): Proliferation of AI-Generated Fake VPN Extensions
 
+REFERENCES:
+- LinkedIn: https://www.linkedin.com/feed/update/urn:li:ugcPost:7485449411649556481
+- X: https://twitter.com/Unit42_Intel/status/2079683777333260377
+
 Authors:
 
 Ravindu De Silva and Nabeel Mohamed 
