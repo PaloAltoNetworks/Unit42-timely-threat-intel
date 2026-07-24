@@ -1,6 +1,10 @@
 
 2026-07-22 (WEDNESDAY): RubyGems Cryptojacking Campaign — Trojanized Popular Gems with XMRig Miner
 
+REFERENCES:
+- LinkedIn: https://www.linkedin.com/feed/update/urn:li:ugcPost:7486180269885005825
+- X: https://twitter.com/Unit42_Intel/status/2080414652727459896
+
 AUTHOR(S):
 - Moe Ghasemisharif, Ruian Duan, Zhanhao Chen, Daiping Liu
 
