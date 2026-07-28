@@ -1,4 +1,4 @@
-2026-07-29 [WEDNESDAY]: Browser-as-proxy Extensions Disguised as Productivity Tools
+2026-07-29 [WEDNESDAY]: Risky Chrome Extensions Turn Browsers into Covert Web-Crawling Proxies
 
 Authors: Ravindu De Silva, Nabeel Mohamed and Oleksii Alex Starov
 
