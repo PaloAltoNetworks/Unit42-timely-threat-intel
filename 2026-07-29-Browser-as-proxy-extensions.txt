@@ -3,7 +3,7 @@
 Authors: Ravindu De Silva, Nabeel Mohamed and Oleksii Alex Starov
 
 NOTES:
-- We identified 15+ Chrome extensions disguised as diverse utility categories, game emulators, password managers, productivity tools, CSS inspectors, and markdown converters to turn your browser into a web crawling proxy. 
+- We identified 15+ risky Chrome extensions bundled as diverse utility categories, game emulators, password managers, productivity tools, CSS inspectors, and markdown converters to turn your browser into a web crawling proxy. 
 - These extensions embed an identical commercial web bandwidth-sharing SDK that:
    - Connects the user's browser to a 3rd party residential proxy network for  web scraping operations. 
    - Pays the extension owner for the crawling performed.
