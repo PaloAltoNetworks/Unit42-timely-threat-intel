@@ -7,9 +7,9 @@ NOTES:
 - These extensions embed an identical commercial web bandwidth-sharing SDK that:
    - Connects the user's browser to a 3rd party residential proxy network for  web scraping operations. 
    - Pays the extension owner for the crawling performed.
-   - Crawl pages by injecting a hidden iframe (m.credentialless != 0 : prevents the iframe from sending cookies of the visited page) on the pages that you visit (open browser tabs), convert them to markdown in the background then send to AWS hosted endpoints they have.
+   - Crawls pages by injecting a hidden, credentialless iframe into active browser tabs (blocking cookie transmissions). It converts page content to Markdown in the background and sends it to a remote cloud backend.
    - Receives remote crawl commands via a persistent WebSocket where the server is controlled by the SDK provider. 
-   - Exfiltrates scraped web content to five AWS Lambda endpoints controlled by the SDK provider.
+   - Forwards scraped web content to five cloud-hosted serverless backends controlled by the SDK developer.
 - Some of these extensions disclose the bandwidth-sharing SDK in their Chrome Web Store descriptions and disclose in the privacy policies in their SaaS websites. 
 -Upon installation, the third-party SDK prompts users to opt-in to the service. 
 - While the proxy and crawling features remain inactive if the user declines, some extensions frame this opt-in as necessary for 'uninterrupted service'. A notable example is InstaSkip(mdondgockboebafloibbhjofmoedmnnn) which embeds this SDK.
@@ -19,7 +19,7 @@ DETAILS:
 - All extensions use the same permission pattern to mostly justify SDK’s <all_urls> requirements while claiming a different stated purpose (Note that some extensions do need <all_urls> permission to support their functionality). For example: NES Emulator extension: There is no legitimate reason for <all_urls>
 - Nine extensions were published on the same date (2026-06-22), a batch-upload pattern consistent with some level of automation. For example, imaoedkofdaconheiolmmokmimlplaii and geipbnpjdpignhlbgpjjokiponedfpdm
 - All extensions connect to the exact same 5 Lambda URLs and WebSocket controlled by the SDK provider.
-- While these extensions provide the advertised functionality, they have a huge library to feature ratio. For example:
+- While these extensions provide the advertised functionality, they have a huge library-to-feature ratio. For example:
    - NetShift extension’s feature code is 6.5 KB and the SDK is 813KB (125:1)
    - FocusFlow extensions’s feature code is 5 KB and the SDK is 813KB (348:1)
 
