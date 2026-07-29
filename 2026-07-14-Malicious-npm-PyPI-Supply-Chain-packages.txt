@@ -1,0 +1,137 @@
+2026-07-14 (TUESDAY): MALICIOUS INFRASTRUCTURE DERIVED FROM NPM AND PYPI SUPPLY CHAIN PACKAGES
+
+AUTHORS:
+
+- Rui Zhao, Micah Yates
+
+NOTES:
+
+- We've identified a number of malicious packages across the npm and PyPI registries.
+- Like other publicly-available software repositories, criminals are known to abuse npm, PyPI and other registries. References include:
+  -- https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/
+  -- https://about.gitlab.com/blog/gitlab-discovers-widespread-npm-supply-chain-attack/
+  -- https://www.microsoft.com/en-us/security/blog/2026/05/29/33-malicious-npm-packages-abuse-dependency-confusion-profile-developer-environments/
+  -- https://unit42.paloaltonetworks.com/malicious-packages-in-pypi/
+  -- https://www.fortinet.com/blog/threat-research/malicious-packages-hidden-in-pypl
+  -- https://www.zscaler.com/blogs/security-research/malicious-pypi-packages-deliver-silentsync-rat
+- Most of the packages we've found remain live on public registries at time of publication
+- Attack types include: 
+  -- .env credential exfiltration
+  -- cryptocurrency wallet key theft
+  -- cross-platform clipboard hijacking
+  -- malicious MCP servers targeting AI/LLM developers
+  -- remote code execution droppers
+  -- a reverse shell with AnyDesk persistence
+  -- and a Discord account destroyer
+- All packages are detected by Palo Alto Networks WildFire
+- Cortex XDR and XSIAM provide behavioral detection for post-installation activity
+- These packages represent multiple distinct threat actors rather than a single coordinated campaign.
+- While some of these packages have been previously disclosed by other researchers, most are novel Unit 42 findings.
+
+INDICATORS:
+
+SHA256 HASHES FOR 47 MALICIOUS FILES EXTRACTED FROM THE PACKAGES:
+
+(Read: SHA256 hash  file name)
+
+- 0229f5ef3ce226a3e43d4e739da6914844cc22c7d0a38ba811c76e238b3bacf9  setup.py
+- 02b5185ea06d10ee9f1802e3db61d01b30733f79f6c89a7ee35fa0d9f84a1c38  dist/index.js
+- 060c0cb74a32b864e70da61865aae13be27e2482fb159db98d46c2e60bea4e16  info.js
+- 070e0029dd0ef8b4a3be20b306d565115e504d58c9a755424ac263a94c961c46  co.js
+- 0785e898bc03c8848068f60474dc16fe0d0451e548d760f38cb609c8cd35b176  guardian.py
+- 09c05aaf5b7af5d3ed42b0e2a6e77872fe81e2bb549f46441845e03ba2e63546  tests.py
+- 0fa2611df669880532f3c40a37065e4912ab18d20d185f05cb8a3d1735f9312a  main.js
+- 16f2592e5cc039960acf0c573a481c282769c13b6a22c2feb572382cb1e3c59c  setup.py
+- 270de95a3b5936657266eb219068e8d29f4455db0053981ab317673133a22098  __init__.py
+- 2a96a8340e2f0b04c348135a1bd55f2462e9795382c3d0f4007af5cf9678d42e  axios-check.js
+- 39eb32990a9107a4845733523f7507b29f0c628ddd498489768c269b96bea776  views.py
+- 3cc6cbcbe66d047d6a9ad88ea3322f5428811a270e2396c783b5e685f3bf22eb  createWallet.js
+- 3e8bd92ebf7824a05599f7fdeb4b84c94883ac95c3e50a9032beb7064fa1156a  g.js
+- 40b4d80807de59858ed5f0c2d3d0c6744efa0c6f2e1a81f8a5b4bfac14d1a01f  sp-api-workflow-mcp-server.mjs
+- 418bfbdf9d2c71e6d4b64ffc0f4bdf930daf7321abbc55788810b3b6e6c6e41d  index.js
+- 4ad6a34549b01e832a3b36cba8263833571fa86e2cd2ebf14df34d40f88bb133  common.js
+- 4cc9f23152057b685c4876b805959aae7f97de2c230896c2f186845761909a64  extract.js
+- 5215ccfe518e739bff36b59b63057ee24aed95ab70a1621798284c80fed009f4  index.js
+- 57d6642fa8b7b5a14e3a9b9e515268e5f6b269a72e24ca092bbc9188fb59220e  setup.py
+- 5db2c52b0ce0bfbc0fa3a00479e2fafe8efbe35a4c670d4bda98bd912cf3b2f5  postinstall.cjs
+- 691428f41b35ad6daaf373b5dc2710579f81c26c97d29dd78548b914e0fdaeab  index.js
+- 6928ac7cd7b67d0661ce3ffc5da2c5e8fa8c07c6c1622024b301c3b25a4bafbb  verazaa.js
+- 6f23a5d62410fac8d9fcda16e5278db10e58d9c71d9c41357ca208a95d3b35d0  core.py
+- 73def82b6c52b14bd664007f99f7f469efd809fe99bc5297a77d17674e75459d  tranpack.sh
+- 73ef41931e8ae8d7719e15f29ba66da33edf0855a6d7bf8acf7312fe88fce82e  crash.py
+- 74029fd758da333c05dbc9a577e4ecdddac69e5152f8a79474712b076502d207  index.js
+- 7f67b6f0e9cd88a7a3b33b7605e0a7d00e0e06f21e14dde7254eed704692502e  apigenerator.py
+- 7fe8a7a48dd7f7c8db49567e5d4130ff22064653b96c2dec227a951898f13ad8  setup.py
+- 816e222b6475fd2bb7ef5d5e06b8369ebaa2a92654071abfb96b00b7f5c97245  package.json
+- 8c1dcd6f6bec04582deef5875f106dd43c8448d61e15cdffdaccc933536e518b  dist/index.js
+- 8f053b3357fdc7232c8bb126c0f2da0ee50720d0b9169562a12c4a053742b71b  d.py
+- 8fff7fdf10316e6ec7c9f1ad23cf764594bb23295af39dcdc9ca629feecb6e06  __init__.py
+- 9e00ad4f372792d30854858eff569bcd4b0ea671105f197ac870d3fa73d3f03a  index.js
+- a5666532c367714568c5d112300e41d3c3fd6b8665c94f2bb98f5d74fc4d2d6c  index.js
+- acac2d9ab4534341cbb3190ddd50b5be9d9644c26fa98ef4da5e5fce755350fb  index.js
+- b7d30199d82450aeafda71d910c3c6471c75063cfa4f9b01f3a6c7019c19947a  setup.py
+- c2e9e6231d30d4dc30fa9b2eec300ff06695da6aa8ad685f04b18cf5bc3399a0  base-wallet.js
+- cadf9772c86dd2430cad78a9868871622a71a9a446c144243f3f1a4620fe97f5  package.json
+- d5b68484311e4039901d8a840c70d49e4332cf99181c747b08d86ddb5933fdad  index.js
+- edba6ad0048e6987c820d735e8a092db96314418a6abafd6a72b3edf1f1e72c5  cat.js
+- ee5b0dab58d16df64bda6fa14191288e3d261707554416ce2be02d0b60d78099  dist/index.js
+- ef7645257155714c80a8b2791af1c641dfc5162ff28164a7ab9d43f7d3c19eb3  post-install.js
+- f1e3c3d95b8a0dfdfa4931638ba55daf1ad2c873e4ed44eaa7daa9a3ecd24144  __init__.py
+- f43e624c36f3870c5702d5f05f2f46fc363d396dfcaadb11165c09d9b7fec85b  D1scordX.py
+- f6b359abe236cef88796983a3e83da055a493b62aa08a501cef4304f469b29d1  deamon.py
+- f7bfa8a9a1b138bfc5777c09ca428342dc7e0710d3a522f3b8a6da9b22a340cf  index.js
+- fe03bc5c77c745463bd5ccc178b4602b337a7c97c9b4151480fcbffe74ed25d4  settings.py
+
+14 EXAMPLES OF IP ADDRESSES FOR C2 SERVERS ASSOCIATED WITH THIS ACTIVITY:
+
+- 37.60.255[.]218
+- 45.9.148[.]93
+- 47.98.255[.]144
+- 64.176.198[.]19
+- 64.227.183[.]144
+- 90.189.217[.]244
+- 103.179.142[.]69
+- 103.179.142[.]105
+- 128.199.217[.]232
+- 135.181.241[.]80
+- 151.115.53[.]100
+- 157.173.114[.]28
+- 178.238.226[.]8
+- 212.2.237[.]74
+
+14 EXAMPLES OF DOMAINS ASSOCIATED WITH THIS ACTIVITY:
+
+- 855e-35-192-215-234.ngrok[.]io
+- archonseven[.]com
+- b2k4.notun[.]tech
+- cawray[.]site
+- contextfort[.]ai
+- edrukca[.]site
+- keywise[.]com[.]br
+- mainnet.unstoppableapi[.]xyz
+- newnz.seav[.]eu[.]org 
+- nppacks[.]com
+- saferw.serveo[.]net
+- server.saferpanichub[.]com
+- sterlingstfinancehub[.]com
+- strictly-adjusted-ewe.ngrok-free[.]app
+
+5 EXAMPLES OF ATTACKER-CONTROLLED TELEGRAM BOT TOKENS ASSOCIATED WITH THIS ACTIVITY:
+
+- 2048894410:AAEA-qdzvlQpZIxsUTFw-Ye4WnVlFF5Ox-I
+- 7846928428:AAHhjL2_BnC-SORNxpDmQHMgoxasy_mAKv4
+- 8037010008:AAGgPwRQb_mPP_m_ajJgA2TCZg3-EB_AxRM
+- 8246593007:AAGO_uv7m4VlN0fBXRTmzD4NTD5rC8WDiYA
+- 989543891:AAFLuBhY8AgGC_LXPcOv7TM8dT_prmQkSf0
+
+5 EXAMPLES OF ATTACKER CRYPTOCURRENCY WALLETS ASSOCIATED WITH THIS ACTIVITY:
+
+- BTC: bc1qs2mpls4p0f7fng073gy2rcdgjpf7la4eugpt6y
+- ETH/BSC/Ronin: 0x450c0E58Fc2ba03632d3F5780ad8C966648B6F18
+- SOL: DWBAmQLi9gP6mk7UfJfQGYTV1UPK32WekLTqg83q1mc5
+- XMR: 42zhAidVhP7QETk83JAspS59ASALSHFio44vmu6MdDCz15cSqtqsG4QVyzY8vTrjGrTEA6zMbWW6Yft1Ynz1xLfCN5FVbXf
+
+2 EXAMPLES OF DISCORD WEBHOOKS ASSOCIATED WITH THIS ACTIVITY:
+
+- hxxps[:]//discord[.]com/api/webhooks/1113576541528539256/dW-eiwYsFwaN2VAlJnYnx6GWSiRb6uz_xA6j2zAntbuElDEvVL5s7OTtVetJLCiATWyJ
+- hxxps[:]//discord[.]com/api/webhooks/1433690093175967776/M-6XGbPIpmhkkleZgRqn0CJH4Icm_71Gvi-bU_fO_ftvEX_l8EYuMejHDlAZif6Wh4pJ
