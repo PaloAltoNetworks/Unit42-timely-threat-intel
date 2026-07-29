@@ -2,7 +2,13 @@
 
 Authors: Ravindu De Silva, Nabeel Mohamed and Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_15-plus-risky-chrome-productivity-extensions-activity-7488295052327145473-ngQ2/
+- https://x.com/Unit42_Intel/status/2082529433525608618
+
 NOTES:
+
 - We identified 15+ risky Chrome extensions bundled as diverse utility categories, game emulators, password managers, productivity tools, CSS inspectors, and markdown converters to turn your browser into a web crawling proxy. 
 - These extensions embed an identical commercial web bandwidth-sharing SDK that:
    - Connects the user's browser to a 3rd party residential proxy network for  web scraping operations. 
