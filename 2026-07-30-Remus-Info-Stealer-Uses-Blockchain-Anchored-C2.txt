@@ -1,0 +1,366 @@
+2026-07-30 (THURSDAY): Remus Info-Stealer Uses Blockchain-Anchored C2 and Fake Cracked Software Lures 
+
+AUTHOR(S):
+
+- Dor Levy, Brian Janower
+
+
+NOTES:
+
+- We observed a trending campaign of the Remus Infostealer delivered through a shared "fake pirated software" SEO-poisoning network impersonating cracked productivity tools.
+- The lure is a fake "İndir - Full" (Turkish for "download") archive served from a malicious site, distributed alongside a catalogue of fake pirated games and cracked apps. The recurring Turkish-language lures suggest this campaign may be targeting Turkish users.
+- The malware injects into the user's running instances of popular Chromium-based web browsers via CREATE_REMOTE_THREAD to gain access to the browser vault.
+- Stolen data is exfiltrated over HTTP to freshly registered C2 domains, using a spoofed Host header impersonating a major technology vendor's domain to disguise the upload as legitimate diagnostic or telemetry traffic.
+- Remus implements distinct collection capabilities targeting leading gaming platforms, popular web browser credentials, clipboard, screenshots, FTP creds, and enterprise email client storage files, and resolves its C2 URL dynamically from an Ethereum smart contract.
+- Several of the delivery domains are open directories actively hosting malware, with fresh samples uploaded as recently as 2026-07-27.
+- While this campaign centers on the Remus Infostealer, we also identified samples of other infostealers staged in the same open directories, indicating shared distribution infrastructure across multiple malware families.
+
+
+DETAILS:
+
+Initial Access: SEO-Poisoned Malicious Site
+
+- The lure archive impersonates a cracked popular PDF reader tool and is downloaded from a malicious site.
+  - [Popular_PDF_Reader]_2023_İndir_-_Full_v2023....zip from hxxps[://]dwn[.]metaforgechain4[.]lol/g/zip/...
+  - The folder name uses the Turkish word "İndir" ("download"), the classic pirated-software SEO bait.
+- The domain is hosting a full warez storefront, not a single lure page. It serves a catalogue of fake cracked games and apps.
+  - Sample catalogue entries include heavily pirated titles: [Leading_FPS_Game]_WWII_İndir_-_Full_PC_Türkçe___MP....zip, [Classic_RTS_Game]_2_İndir_-_Full_Türkçe___Online_-_MP_PC.zip, [Popular_Football_Game]_2021_İndir_-_Full_Türkçe....zip, [Football_Simulator]_16_Türkçe_Yama_İndir....zip, [Game_Simulator]_v1.3.55_Legacy.zip.
+  - The cracked popular PDF reader tool archive is one tool on the same host.
+- The campaign is Turkish-language targeted. Filenames repeatedly carry İndir / Türkçe / Yama, indicating a TR-focused victim pool.
+
+Execution & Process Injection
+
+- Once the victim extracts the downloaded archived zip, and runs the primary executable, the malware initiates process injection (CREATE_REMOTE_THREAD) directly against active web browser processes. This grants it in process access to target and harvest stored credentials and sensitive secrets held within the browser vaults.
+- Directly following this injection activity, the payload manages its own outbound command-and-control (C2) communications by establishing connections to two newly registered external infrastructure hosts.
+
+Remus Collection Capabilities
+
+- The Remus Infostealer implements distinct collection capabilities targeting gaming platforms, browser credentials, and general system data. The tools and services listed below are part of what Remus targets, and not the full scope.
+- Gaming platform theft:
+  - Gaming platforms: harvests session cookies from the platform's local application data directories.
+  - Game storefronts: reads installation credentials by querying the registry keys associated with the storefront's software vendor for the installation path values.
+- Browser credential theft:
+  - Chromium-based browsers: reads OS-level encrypted master keys from the local state files to decrypt saved passwords.
+  - The stealer targets the default login data, web data, and history directories of the market's leading web browsers, retrieving the AES key necessary to unlock these secrets.
+  - Retrieves the native OS data protection API master key from the operating system's default application data protection paths.
+     - Grabbing this master key means the actor is not just stealing an encrypted blob, they can decrypt the saved secrets offline.
+- Password manager theft: targets local data directories of several password management applications.
+- Cryptocurrency focused browser extensions: targets local extension settings directories for specific wallet extension IDs indicating a focus on cryptocurrency-related extensions.
+- FTP credential theft: targets stored credentials from a variety of popular FTP client applications.
+- Clipboard theft: captures clipboard content via GetClipboardData.
+- Screenshots: takes screenshots using BitBlt on a hidden desktop created with CreateDesktopW.
+- Email storage enumeration and sandbox evasion:
+  - Enumerates enterprise email client local storage files (like PSTs) in the user's Documents folder.
+  - This also functions as a sandbox evasion check against commonly known honeypot filenames.
+- System reconnaissance:
+  - Collects username, computer name, and domain information via GetUserNameA and GetComputerNameA.
+  - Determines privilege level through token integrity checks.
+
+Command and Control: Ethereum Anchored Resolution and Shared HTTP C2
+
+- Remus resolves its C2 URL dynamically by querying an Ethereum smart contract.
+  - Contract address 0x999941b74F6bbc921D5174A5b29911562cd2D7CF.
+  - Queried through hxxps[://]ethereum-rpc[.]publicnode[.]com.
+- Stolen data is exfiltrated via HTTP POST to the resolved C2 URL.
+  - POST body format: access_token=<C2_URL>&debug=<encoded_data>.
+- Observed C2:
+  - fimmora[.]surf -> 165.227.123[.]79:6504.
+  - zelpx[.]garden -> 77.42.90[.]175:9895.
+  - tzpx[.]courses -> 167.99.78[.]100:4437.
+- The malware forges a Host header to impersonate legitimate traffic to a leading technology vendor, while the real destination is a C2 node hosted on a common cloud infrastructure provider.
+
+Multi-Family Staging
+
+- Although this campaign is focused on the Remus Infostealer, the open directories are not limited to a single malware family.
+  - Alongside the Remus samples, we identified samples belonging to other infostealer families staged in the same open directories.
+  - This indicates the delivery network is shared infrastructure used to distribute multiple, unrelated infostealers rather than a single-family operation, consistent with the "fake cracked software" distribution-as-a-service model.
+- Shared, rotating C2.
+  - 165.227.123[.]79 also hosts fasea[.]top, noevara[.]shop, dikdiy[.]xyz, fluokq[.]xyz, approe[.]shop, dolmaq[.]shop.
+  - 77.42.90[.]175 also hosts dreaub[.]top and pivotq[.]top, and zelpx[.]garden historically used a third node, 143.244.141[.]187.
+- One registration system.
+  - The C2 and sibling domains are bulk-registered in tight July-2026 windows on different TLDs (.surf .garden .top .shop .xyz), all with hashed/privacy WHOIS and reused nameservers (dyna-ns.net, dnsowl.com).
+  - Pronounceable 5-6 letter nonsense labels, registered days before use, short-lived.
+
+
+INDICATORS:
+
+DELIVERY DOMAINS (basedomain[1-10].lol pattern):
+
+- aethersyncmatrix1[.]lol
+- aethersyncmatrix2[.]lol
+- aethersyncmatrix3[.]lol
+- aethersyncmatrix4[.]lol
+- aethersyncmatrix5[.]lol
+- aethersyncmatrix6[.]lol
+- aethersyncmatrix7[.]lol
+- aethersyncmatrix8[.]lol
+- aethersyncmatrix9[.]lol
+- aethersyncmatrix10[.]lol
+- neuralorbitgrid1[.]lol
+- neuralorbitgrid2[.]lol
+- neuralorbitgrid3[.]lol
+- neuralorbitgrid4[.]lol
+- neuralorbitgrid5[.]lol
+- neuralorbitgrid6[.]lol
+- neuralorbitgrid7[.]lol
+- neuralorbitgrid8[.]lol
+- neuralorbitgrid9[.]lol
+- neuralorbitgrid10[.]lol
+- quantumbytehub1[.]lol
+- quantumbytehub2[.]lol
+- quantumbytehub3[.]lol
+- quantumbytehub4[.]lol
+- quantumbytehub5[.]lol
+- quantumbytehub6[.]lol
+- quantumbytehub7[.]lol
+- quantumbytehub8[.]lol
+- quantumbytehub9[.]lol
+- quantumbytehub10[.]lol
+- tensorforgegrid1[.]lol
+- tensorforgegrid2[.]lol
+- tensorforgegrid3[.]lol
+- tensorforgegrid4[.]lol
+- tensorforgegrid5[.]lol
+- tensorforgegrid6[.]lol
+- tensorforgegrid7[.]lol
+- tensorforgegrid8[.]lol
+- tensorforgegrid9[.]lol
+- tensorforgegrid10[.]lol
+- neuralcorepulse1[.]lol
+- neuralcorepulse2[.]lol
+- neuralcorepulse3[.]lol
+- neuralcorepulse4[.]lol
+- neuralcorepulse5[.]lol
+- neuralcorepulse6[.]lol
+- neuralcorepulse7[.]lol
+- neuralcorepulse8[.]lol
+- neuralcorepulse9[.]lol
+- neuralcorepulse10[.]lol
+- vectorquantnexus1[.]lol
+- vectorquantnexus2[.]lol
+- vectorquantnexus3[.]lol
+- vectorquantnexus4[.]lol
+- vectorquantnexus5[.]lol
+- vectorquantnexus6[.]lol
+- vectorquantnexus7[.]lol
+- vectorquantnexus8[.]lol
+- vectorquantnexus9[.]lol
+- vectorquantnexus10[.]lol
+- omnidataflow1[.]lol
+- omnidataflow2[.]lol
+- omnidataflow3[.]lol
+- omnidataflow4[.]lol
+- omnidataflow5[.]lol
+- omnidataflow6[.]lol
+- omnidataflow7[.]lol
+- omnidataflow8[.]lol
+- omnidataflow9[.]lol
+- omnidataflow10[.]lol
+- vertexpulsecore1[.]lol
+- vertexpulsecore2[.]lol
+- vertexpulsecore3[.]lol
+- vertexpulsecore4[.]lol
+- vertexpulsecore5[.]lol
+- vertexpulsecore6[.]lol
+- vertexpulsecore7[.]lol
+- vertexpulsecore8[.]lol
+- vertexpulsecore9[.]lol
+- vertexpulsecore10[.]lol
+- metaforgechain1[.]lol
+- metaforgechain2[.]lol
+- metaforgechain3[.]lol
+- metaforgechain4[.]lol
+- metaforgechain5[.]lol
+- metaforgechain6[.]lol
+- metaforgechain7[.]lol
+- metaforgechain8[.]lol
+- metaforgechain9[.]lol
+- metaforgechain10[.]lol
+- digitalwavehub1[.]lol
+- digitalwavehub2[.]lol
+- digitalwavehub3[.]lol
+- digitalwavehub4[.]lol
+- digitalwavehub5[.]lol
+- digitalwavehub6[.]lol
+- digitalwavehub7[.]lol
+- digitalwavehub8[.]lol
+- digitalwavehub9[.]lol
+- digitalwavehub10[.]lol
+- alphagridnexus1[.]lol
+- alphagridnexus2[.]lol
+- alphagridnexus3[.]lol
+- alphagridnexus4[.]lol
+- alphagridnexus5[.]lol
+- alphagridnexus6[.]lol
+- alphagridnexus7[.]lol
+- alphagridnexus8[.]lol
+- alphagridnexus9[.]lol
+- alphagridnexus10[.]lol
+- neurostreamlink1[.]lol
+- neurostreamlink2[.]lol
+- neurostreamlink3[.]lol
+- neurostreamlink4[.]lol
+- neurostreamlink5[.]lol
+- neurostreamlink6[.]lol
+- neurostreamlink7[.]lol
+- neurostreamlink8[.]lol
+- neurostreamlink9[.]lol
+- neurostreamlink10[.]lol
+- hypercorevector1[.]lol
+- hypercorevector2[.]lol
+- hypercorevector3[.]lol
+- hypercorevector4[.]lol
+- hypercorevector5[.]lol
+- hypercorevector6[.]lol
+- hypercorevector7[.]lol
+- hypercorevector8[.]lol
+- hypercorevector9[.]lol
+- hypercorevector10[.]lol
+- cryptomeshforge1[.]lol
+- cryptomeshforge2[.]lol
+- cryptomeshforge3[.]lol
+- cryptomeshforge4[.]lol
+- cryptomeshforge5[.]lol
+- cryptomeshforge6[.]lol
+- cryptomeshforge7[.]lol
+- cryptomeshforge8[.]lol
+- cryptomeshforge9[.]lol
+- cryptomeshforge10[.]lol
+- aetherfluxnode1[.]lol
+- aetherfluxnode2[.]lol
+- aetherfluxnode3[.]lol
+- aetherfluxnode4[.]lol
+- aetherfluxnode5[.]lol
+- aetherfluxnode6[.]lol
+- aetherfluxnode7[.]lol
+- aetherfluxnode8[.]lol
+- aetherfluxnode9[.]lol
+- aetherfluxnode10[.]lol
+- quantumpulsegrid1[.]lol
+- quantumpulsegrid2[.]lol
+- quantumpulsegrid3[.]lol
+- quantumpulsegrid4[.]lol
+- quantumpulsegrid5[.]lol
+- quantumpulsegrid6[.]lol
+- quantumpulsegrid7[.]lol
+- quantumpulsegrid8[.]lol
+- quantumpulsegrid9[.]lol
+- quantumpulsegrid10[.]lol
+- stellarnodegrid1[.]lol
+- stellarnodegrid2[.]lol
+- stellarnodegrid3[.]lol
+- stellarnodegrid4[.]lol
+- stellarnodegrid5[.]lol
+- stellarnodegrid6[.]lol
+- stellarnodegrid7[.]lol
+- stellarnodegrid8[.]lol
+- stellarnodegrid9[.]lol
+- stellarnodegrid10[.]lol
+- orbitmeshlink1[.]lol
+- orbitmeshlink2[.]lol
+- orbitmeshlink3[.]lol
+- orbitmeshlink4[.]lol
+- orbitmeshlink5[.]lol
+- orbitmeshlink6[.]lol
+- orbitmeshlink7[.]lol
+- orbitmeshlink8[.]lol
+- orbitmeshlink9[.]lol
+- orbitmeshlink10[.]lol
+- nexuswavecore1[.]lol
+- nexuswavecore2[.]lol
+- nexuswavecore3[.]lol
+- nexuswavecore4[.]lol
+- nexuswavecore5[.]lol
+- nexuswavecore6[.]lol
+- nexuswavecore7[.]lol
+- nexuswavecore8[.]lol
+- nexuswavecore9[.]lol
+- nexuswavecore10[.]lol
+- datapulseforge1[.]lol
+- datapulseforge2[.]lol
+- datapulseforge3[.]lol
+- datapulseforge4[.]lol
+- datapulseforge5[.]lol
+- datapulseforge6[.]lol
+- datapulseforge7[.]lol
+- datapulseforge8[.]lol
+- datapulseforge9[.]lol
+- datapulseforge10[.]lol
+- cyberdriftmatrix1[.]lol
+- cyberdriftmatrix2[.]lol
+- cyberdriftmatrix3[.]lol
+- cyberdriftmatrix4[.]lol
+- cyberdriftmatrix5[.]lol
+- cyberdriftmatrix6[.]lol
+- cyberdriftmatrix7[.]lol
+- cyberdriftmatrix8[.]lol
+- cyberdriftmatrix9[.]lol
+- cyberdriftmatrix10[.]lol
+- vectorquantforge1[.]lol
+- vectorquantforge2[.]lol
+- vectorquantforge3[.]lol
+- vectorquantforge4[.]lol
+- vectorquantforge5[.]lol
+- vectorquantforge6[.]lol
+- vectorquantforge7[.]lol
+- vectorquantforge8[.]lol
+- vectorquantforge9[.]lol
+- vectorquantforge10[.]lol
+- neuralcoreflux1[.]lol
+- neuralcoreflux2[.]lol
+- neuralcoreflux3[.]lol
+- neuralcoreflux4[.]lol
+- neuralcoreflux5[.]lol
+- neuralcoreflux6[.]lol
+- neuralcoreflux7[.]lol
+- neuralcoreflux8[.]lol
+- neuralcoreflux9[.]lol
+- neuralcoreflux10[.]lol
+
+
+NETWORK (C2):
+
+- fimmora[.]surf -> 165.227.123[.]79:6504
+- zelpx[.]garden -> 77.42.90[.]175:9895
+- tzpx[.]courses -> 167.99.78[.]100:4437
+- fightwa[.]biz -> 148.230.76[.]66:5902
+- chalx[.]live -> 147.135.84[.]14:5902
+- 143.244.141[.]187 (DigitalOcean, 3rd C2 node)
+- fasea[.]top (co-hosted C2 sibling domain)
+- noevara[.]shop (co-hosted C2 sibling domain)
+- dikdiy[.]xyz (co-hosted C2 sibling domain)
+- fluokq[.]xyz (co-hosted C2 sibling domain)
+- approe[.]shop (co-hosted C2 sibling domain)
+- dolmaq[.]shop (co-hosted C2 sibling domain)
+- dreaub[.]top (co-hosted C2 sibling domain)
+- pivotq[.]top (co-hosted C2 sibling domain)
+
+ETHEREUM SMART CONTRACT / RPC:
+
+- 0x999941b74F6bbc921D5174A5b29911562cd2D7CF (smart contract queried to resolve the C2 URL)
+- ethereum-rpc[.]publicnode[.]com (RPC endpoint used to query the contract)
+
+
+SHA256 HASHES:
+
+- f52809d57d816cf9ea7e95de64df46fcc1cf62d3da972c167497935b5eca74d7
+- 51bfb2f390653647b087d789ef1559c3fdf220c565a909f1eee4d593893420dd
+- 205fc66381b8e254508d40c693a1314c9fc2b94b8023b29483803c8b0e449c4d
+- da7935affcec91c317acf98b52eca551f2501b29ad502749e4c084492142c6eb
+- ece6e9395edb8935c993a2945ac196a614149d65f10212e912e4654981646e37
+- b29391ba505af508f2110f54f73b203e2710b8b6c8a8717005e5c7a4050630e1
+- 231123d03fa985bdb4edbcc45fafc8f4fb93f692b00f6f37df81435cd0ff1c7b
+- 35392a9849d7e9dfb4ee700a16700a94883fde859d57fdd891631bdbc6a75db0
+- 6aa279fe9991405963ddf7ab18116fcde85190c2639b830791fe903d90697dec
+- 7b092a35e70113f5165a653135cb3a7ca29312ceb0b4a874c160473d30830a60
+- 80965fa878946421e5778044fcb16bc523206eb8f3853c0f833e9dbb87fe24f1
+- 57c1b9fe23cd8220f39383c2ab5b392e8f1416cbf75e2668fc6426294abb818f
+- a84ab5bc2462fa6f673f22f59e759de458d4e561763af3be0bc3397564272347
+- e008c4e82cff39aa0f4c040944f8deeb80b06c50aab558e8b84e20c8ee453418
+- 44d8e760012d6f08e91fd59176e59a3e13326f8079cdcc6e3a43b30f040769b6
+- d9da446bbb8adcb72c5c086705d58a8dad9d9268606e86568b893d122384b5b3
+- 28c30dc88160f1fc44a5c11976f9de8da06be3c996d50ef76b0dbd032da210b6
+- 1a398687d1f626e71c3beec3b0bda9589415babbcdae6171293c097d3103472e
+- fb5a654149e5bdb09b1453fa7679e32826e81abbaa0114ca02b13be6408a5ee3
+
+
