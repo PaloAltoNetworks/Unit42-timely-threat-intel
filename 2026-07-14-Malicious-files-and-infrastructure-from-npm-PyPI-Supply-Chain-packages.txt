@@ -4,6 +4,11 @@ AUTHORS:
 
 - Rui Zhao, Micah Yates
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_unit42-timely-threat-intel2026-07-14-malicious-files-and-infrastructure-from-npm-pypi-supply-chain-packagestxt-activity-7488970743821529088-9Bfw/
+- https://x.com/Unit42_Intel/status/2083205050449473561
+
 NOTES:
 
 - We've identified a number of malicious packages across the npm and PyPI registries.
