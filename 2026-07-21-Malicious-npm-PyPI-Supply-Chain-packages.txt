@@ -1,0 +1,155 @@
+2026-07-21 (TUESDAY): FURTHER MALICIOUS INFRASTRUCTURE FROM NPM AND PYPI SUPPLY CHAIN PACKAGES
+
+AUTHORS:
+
+- Rui Zhao, Micah Yates
+
+NOTES:
+
+- We've identified further malicious packages across the npm and PyPI registries.
+- As previously noted, like other publicly-available software repositories, criminals have abused npm, PyPI and other registries. References:
+  -- https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/
+  -- https://about.gitlab.com/blog/gitlab-discovers-widespread-npm-supply-chain-attack/
+  -- https://www.microsoft.com/en-us/security/blog/2026/05/29/33-malicious-npm-packages-abuse-dependency-confusion-profile-developer-environments/
+  -- https://unit42.paloaltonetworks.com/malicious-packages-in-pypi/
+  -- https://www.fortinet.com/blog/threat-research/malicious-packages-hidden-in-pypi
+  -- https://www.zscaler.com/blogs/security-research/malicious-pypi-packages-deliver-silentsync-rat
+- Most of the packages we've found remain live on public registries at time of publication
+- Attack types include:
+  -- cloud credential exfiltration (Kubernetes service account tokens, SSH keys, AWS credentials, Ethereum keystores)
+  -- EtherHiding blockchain-based C2 droppers that resolve infrastructure from Ethereum mainnet smart contracts
+  -- Solana cryptocurrency wallet key theft via Telegram
+  -- .env file secret exfiltration
+  -- install-hook fetch-exec droppers with bundled mass-typosquat publishers
+  -- fake-CAPTCHA social engineering remote code execution
+  -- Discord token theft and GitHub Actions CI/CD credential exfiltration
+  -- dependency-confusion install-time callbacks
+- All packages are detected by Palo Alto Networks WildFire
+- Cortex XDR and XSIAM provide behavioral detection for post-installation activity
+- These packages represent multiple distinct threat actors rather than a single coordinated campaign.
+- While some of these packages have been previously disclosed by other researchers, most are novel Unit 42 findings.
+
+INDICATORS:
+
+SHA256 HASHES FOR 63 MALICIOUS FILES EXTRACTED FROM THE PACKAGES:
+
+- 00603c1e8a2b5d1cc784d9445cde895a9bb181a2dcf7e359075cee95b6986000  t.js
+- 0651bd1b290947ed14ea6d2e7ef75e91db7aaf7717896eb4e05cc4df2bb140b4  index.js
+- 07b4e3eadfa266d2f820a4a8815079bf64ceea2da21d11a6d8e386f2762b7e8d  jwczx9zc.cjs
+- 0bf932fb1491221c3e59b1af19f6c449627baef75aa0295e14a6b32388067c10  main.js
+- 1532e7b10e5ded485b1363a790c6f19c8e02ebcc61c9de8b249dc397127a1792  telegram_handler.py
+- 17a4ac2b96227ce72d5804707469dcf81764aed9f18c0bdb36763b5aecd87602  discord-csr.js
+- 17c9b15efe4dd7e40aa99537a5474c771a3792aee6a9e6d6b3be085400529925  package.json
+- 1af9b675f51b24eaacc0da50b69be4b2481733b945e68dcaa58737cbe0eb6730  has-global-action.ts
+- 1cb1347568c71423207210f3d0a5f0afd26b19f7b9d704b329a1c0a9e1ee4efd  install.js
+- 2a9b6cda1c717c09753f2f20877764181affa4f10fffc5bcb42507fbcab0840d  compat.js
+- 2b06cb0247c2ab4e71fd8029e024f084c0f788cb27739599779ed4485ff94349  6cc.js
+- 32beb863d627fd21d58524396e9bad7eec090cbc96a396791f2ad96d36b7e68f  _compat.py
+- 35a0db89eaf24ee35bf9b6cb0c257663dfbcbd1c43f685cb3ada9876cd105192  _compat.py
+- 388dba8d35e6aa8b25c31e1592cab0c08331e72fa85f251b551e68fa66c56c70  anyfox.pth
+- 54e68f50a189a5fc6628aba65e90051d437de068fb1565adf033bdff7591d2ac  logger.js
+- 56220404f72cf926050e97f4efcd06f92e51bbb1e09ca3d93db01c2324f57c49  package.json
+- 602c6f90a26ecb89a83fc6676a46639071adc5137340256c9abb0dae36201a30  _compat.py
+- 66047dc992c1f2270657cf3dac6e57f48eff31b19ebca4e518706eac41406686  index.js
+- 73f6de5b460d92d7b8e522821bc50ee20c7704d3046babc9294b78f60e12d0e9  main.py
+- 75538e0a6dfa583ded08e29856bacfd701461ce2c9f1f398c30b10dc53cbd5d4  selis.py
+- 76aeef3e598c2f4c44ee0f0cb6dcc1abdef7180f95b76a6643e6cc25dc555cf9  main.js
+- 7a430a658a4d845e1267eaa74eaf183f56f8355a399e108ba2fd51c914a0514d  signals.py
+- 7b6d90ee71a9dadf2bed35837355433c95a34a9d1d8e011e955d8ea6ec40a391  index.js
+- 7f1ad9f63300c5c5ca49c1981cbd59efac38891fb938874fcd619229a90f93fc  FAST.py
+- 7ffe8c5b7f04f1cfbb4aded672fb93df284d6f74d6512eaaca9d12b612ae078a  index.js
+- 807238de45e6c62fab5ac4e8b6f470d1098c328e508d289b031fe9f1900183ba  cli.py
+- 82457fa57fe2fd4b2aad08d2dd1b237f9b03f5273799db912093d1144a7405da  index.js
+- 8cceed1eec2ff5e313c783501dcb5e13fc7879976950bbdd99ae167a00f5001f  app.js
+- 8ef584bc23c59d20a3bb41c81df3e1c3cbc9d1002470219608561c15e069601f  package.json
+- 934e01ab7daaeceb938c09a601a75aa2a8f894c9fb9db83ad0bbcf825d421afe  _compat.py
+- 94187461170a966f79231d161e255a57763506f9150b235824594cd711b0442a  __init__.py
+- 9920b231897561ea7faac0436525c9d8d8d1cd9a15e00e75ac7aed2c8ba76158  index.js
+- 9c414c4ca012ba0d3b98d110ee646f3755a26a68e605632683ecdf91370e853f  te24xjoq.cjs
+- a4d4868beefc622424dc2d5851b09ec075647cdd947b180b7117c86e855f44e3  a.py
+- a5f9d6a65fb810356fa7ab7a9d04922c7d609f53e50a6ab04608224fa6446092  index.php
+- a8353943f565463a4872f1509b5e500ac3388869fe27447f0daa571d1a15ebf2  v3o93oil.cjs
+- a88c0f1eed18c10093b94789346ed83a1f0438ef66471e5cea553c76dac0cd0b  index.js
+- abfbdb06be8aba42ef429ac005e587ffa789fd1df5ef79239193b3d0c61d900e  Xzrr.py
+- acbecaac850530338b08c34264780d335ec07d8137279bbbf74b10fdef068a47  core.py
+- b1ad06749348338bd3aa4221d8d2c50d0ed691817666db57572ca2edb4cb9201  _config.py
+- b436227e6f2befc23d68da218544248f9eb7bd1ac19187dbbe1b1a1e71a76d0a  installer
+- b8a964834d0410ace3f5078f688405dd5e4ca26bd2197ea1153d2c26cdbe3e35  skpx.py
+- bfea8cd857c80b1089d5ba1eb03cf9ef8dd7f13986bfaf9c0d3f23bf7bdd261d  smpw.py
+- c32336de6d5116d0a39b8fa532c2b0775f5923029021c262712045d1da0c93f7  __init__.py
+- c54241961c1dfda649c3c812ef713570a147e095fa2816d2a36d32c9aab79308  index.js
+- c6e470ef9e783cf80e0a0bd6437a2f298f95ca218ce860a499d162abfafeec56  rum.js
+- ca0d355ec63189660b8dc58d03fcbd0d9be8e0f554adb2f8bb362b2649fc288f  e9pxuowu.cjs
+- cae4cf9b248d56b4e858217cfa72b56d2821d01354fb41e5dad9788c5f4adbac  index.js
+- cafd404467bc667b6a2e388ebf57ae5a2a3ce99a4aea82adf12abdd79636ab89  index.js
+- ce87c7e2141f709585db0c195228d5f619946d2c2530fabfd04f748104df5a03  index.js
+- d4431da00413db73dd088dcdb7f16edb6f18ef57598285e4c86965baa5df5cce  package.json
+- d668b30284f2725bc7d8ebcd4492f281d289c22aa3f4c704ca8dad9b623d8927  le0ogaz3.cjs
+- dc3ceae97c8cce25d1992f531fed9dd6c761a94c2754d4d980ab7b2bead34a44  six6.min.js
+- e2ee5cb567cd2769f1fa94f1bdff16c40cdf30341df08a3f1a101f488add5db2  index.js
+- ebb1280b8f933b80f6753ef3796e8afe0570e5ea29c7f535bc8c5f24fd279c4a  __init__.py
+- f03979b8a9dc60166dc3b741c580571e4f0b6ddadadefebb7172cbe400183c1d  index.js
+- f1a2ff1397651406250d4d5047dba0c7ef631880756aaae4aa50262f53f8ba86  index.js
+- f1ae0a68aa87f17a04262e1b873ad705a1bc96a2a62c8e97261a1b24709db8a4  oidc-utils.js
+- f8dedf84a32a8661a532e3904c503cb41c39cbda0dc3cbf59bcd94440df6ea77  common.js
+- f9fec19db5945a678eadb8f633afb9caff79d8c2bac9da494dea2456b5eaf9be  9moi3dcp.cjs
+- fad1f1c4347d788d694e35a3db1cfa9ca6580fc6b720aedbc1c0915ff1315e81  index.js
+- fe444cc0ac838e8a87e133f0deb77ba940867efe208eb23ada2bc29765ab7a56  index.js
+- ffb26b252a29331532b11196118274a44724a01e293073e78c68adf9902605cc  66o.js
+
+17 EXAMPLES OF IP ADDRESSES FOR C2 SERVERS ASSOCIATED WITH THIS ACTIVITY:
+
+- 13.233.154[.]103
+- 34.68.179[.]156
+- 38.98.105[.]139
+- 45.55.225[.]219
+- 46.202.135[.]52
+- 65.108.20[.]70
+- 88.99.167[.]151
+- 94.237.48[.]51
+- 103.179.142[.]69
+- 103.179.142[.]105
+- 104.41.128[.]30
+- 108.61.216[.]35
+- 144.172.91[.]84
+- 145.239.28[.]105
+- 151.247.22[.]13
+- 159.223.238[.]179
+- 185.158.107[.]189
+
+8 EXAMPLES OF DOMAINS ASSOCIATED WITH THIS ACTIVITY:
+
+- 1731[.]ml
+- api.langcoin[.]info
+- artifact.datdbs[.]com
+- iiilll.firebaseio[.]com
+- langcoin[.]info
+- scare[.]su
+- scrapio[.]app
+- skpx-9ac28-default-rtdb.firebaseio[.]com
+
+2 EXAMPLES OF ATTACKER-CONTROLLED ETHEREUM SMART CONTRACTS ASSOCIATED WITH THIS ACTIVITY:
+
+- 0x52221c293a21D8CA7AFD01Ac6bFAC7175D590A84
+- 0xa1b40044EBc2794f207D45143Bd82a1B86156c6b
+
+11 EXAMPLES OF ATTACKER-CONTROLLED TELEGRAM BOT TOKENS ASSOCIATED WITH THIS ACTIVITY:
+
+- 989543891:AAF37LnTjES5QkPcjOVyQ8ZlwzVKedqUm7Y
+- 1998266306:AAFfOoMrCRQ1xE9TlaWL86PoMk3dwkLQYyY
+- 5034779343:AAHt_Z1hti2WggHhw6QFGqyoyiLV78VHmZI
+- 7111592952:AAHPJXi5lhOz7FCCDDZZZnw0nI52yWx-RAo
+- 7298004124:AAHTut1E3NcQerFlctmPitgAfQhEOiSMoG8
+- 7362700517:AAHhd5e2I6klHScLsHozhhPUOkXUnUPHhwU
+- 7572248147:AAGy0Gh4q8xhhlWZi-5t-m5-GgVBR4_pBSY
+- 7970367707:AAES-y6CfCoQhgLEsHYsa0iCthtvNGrWers
+- 8009930877:AAEfkZ9vA0tkMdcTtDLUiyHmNvpHs-oqmOk
+- 8044267988:AAEH3iXvYA_XlkTdeK7oRxtwF1nlRXROuHw
+- 8254751539:AAG4CbXBlVvl7zMddiBCA1PGEd2VshKyWAE
+
+4 EXAMPLES OF DISCORD WEBHOOKS ASSOCIATED WITH THIS ACTIVITY:
+
+- hxxps[:]//discord[.]com/api/webhooks/826913797411045396/M1J0F8t7ngBLqWY1CEK3dDvCY4eN-YYLwhNkNKJj1MZKOKvwDViHgkqKGSa5TRjownWo
+- hxxps[:]//discord[.]com/api/webhooks/975467599787855922/QIxWGcLIm2kyNAuwSRKHToqzehP-coPVAZhtSkq71HesvzRxPdC811KaVehtPOb79xsk
+- hxxps[:]//discord[.]com/api/webhooks/1527809440084922462/e_qK6ciLgzhqVvoubai2JIfqZdP3u2BCBWAWqgk4wy4fM5IhZGVORtwpXN2JpZ__avWh
+- hxxps[:]//discord[.]com/api/webhooks/1527807036350398687/3sPFiOKr2BotMU2y3-ZRXkdosQ4zkoF_ZazcKCFXrMztR-Toducmm1L2xN7ezS3Vn806
