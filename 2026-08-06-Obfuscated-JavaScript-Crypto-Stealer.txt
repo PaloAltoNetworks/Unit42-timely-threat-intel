@@ -1,4 +1,4 @@
-2026-08-06 (Wednesday): Obfuscated JavaScript crypto Stealer is Being Distributed Through New NPM Packages
+2026-08-06 (THURSDAY): Obfuscated JavaScript crypto Stealer is Being Distributed Through New NPM Packages
 
 AUTHOR(S):
 
