@@ -1,0 +1,33 @@
+2026-08-06 (Wednesday): Obfuscated JavaScript crypto Stealer is Being Distributed Through New NPM Packages
+
+AUTHOR(S):
+
+- Vinny Adjibi, Billy Melicher, Shresta Bellary Seetharam, Stefan Springer
+
+NOTES:
+
+- We identified 10 NPM packages published between 2026-07-18 and 2026-07-22 that download an obfuscated crypto stealer and Remote-Access Trojan (RAT) from a remote server that conceals the malicious payload under a JSON object. 
+
+DETAILS:
+
+- After installation, the packages export a `getPlugin` function that constructs the URL from which the payload is downloaded as an obfuscated IIFE (Immediately Invoked Function Expression) JavaScript code embedded in a JSON object. The payload implements a crypto stealer and Remote-Access Trojan (RAT) that allows the attacker to execute arbitrary commands on the infected host. Upon installation, the script connects to a C2 server and exfiltrates:
+    - Browser saved credentials (Chrome, Brave, Opera, Yandex, Edge)
+    - Crypto wallet addresses from browser extension LevelDB stores
+    - Desktop wallet files (Exodus, Guarda, Electrum, Atomic)
+    - .env files from every mounted drive
+    - Files matching keywords (metamask, phantom, seed, hardhat.config.ts, …)
+    - Plaintext login data for the browser’s safe storage (Chrome or Brave) extracted from the MacOS/Linux keychain by running `security find-generic-password`
+    - Files/directories on demand from the C2 operator
+
+INDICATORS:
+- URLs (to download the payload)
+    - hxxps://31[.]97[.]137[.]157:45000
+    - hxxps://46[.]183[.]25[.]232:45000
+    - hxxps://bet[.]slotgambit[.]com
+- URL of the C2 server
+    - hxxps://46[.]183[.]25[.]232:45000
+- SHA256 of the JSON document containing the malicious payload:         
+    - 6d585d11236277c42bf3666192f89733b1d5595967f6434a2e1b6c9d8584a22c
+- SHA256 of the malicious payload
+    - f591ececf07aedf2f60dc9a362033b6f718799d5909ab38b6941a5296555532b
+
