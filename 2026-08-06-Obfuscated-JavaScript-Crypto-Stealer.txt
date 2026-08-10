@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Vinny Adjibi, Billy Melicher, Shresta Bellary Seetharam, Stefan Springer
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42_malicious-npm-packages-install-stealthy-js-activity-7491728921173032960-SHG5/
+- https://x.com/Unit42_Intel/status/2085963302014705795
+
 NOTES:
 
 - We identified 10 NPM packages published between 2026-07-18 and 2026-07-22 that download an obfuscated crypto stealer and Remote-Access Trojan (RAT) from a remote server that conceals the malicious payload under a JSON object. 
