@@ -1,0 +1,33 @@
+2026-08-12 (WEDNESDAY): Your Browser Isn't Supported: Chrome Extension Scareware Campaign Abusing an Affiliate Program
+
+
+Authors: Nabeel Mohamed Ravindu De Silva Oleksii Alex Starov Fang Liu
+
+NOTES:
+-One second after a user opens an extension, it shows the dialog box saying “Browser Not Supported” for this extension and requesting users to click and install a compatible browser.
+-Clicking on this install button calls downloadbrowserextension1[.]shop or brwowserext54[.]shop domains and which then redirects to a legitimate cost-per-install browser software affiliate program, which automatically downloads the browser executable. Upon investigation of the downloaded executable, we did not find any malicious content in it. Hence, the actor is abusing the affiliate marketing to monetize through these lure extensions.
+-3 of the 10 extensions provide functionality as advertised in their description, 2 of them provide partial functionality and the remaining 5 do not provide any useful functionality. 
+
+IOCs:
+- Domains:
+downloadbrowserextension1[.]shop
+brwowserext54[.]shop
+
+- Extension IDs:
+inaloihidlpgpafpapbogfmnfpgaogjo
+lbomijcgenhdkooejpjlgojpmajoppof
+bemkhlgiieopnabgnldhgffngmofbono
+enpengbjjblnkababjlblgjdhdgbcfep
+abbmpadpoejajogfkkjddnhkioaafpbg
+kldfaloiopnilogfhgihnjghfobbfikp
+ocedomenmjggbfiaanglfndmgklolcfe
+biomgcpapdpcmcgllomfljgpkeiebfjo
+nooibhbcglgbcoghllagknlcdoaiafhf
+cifonhnejnfijbkmclhakocbgfgkadcj
+
+- Example Affiliate Redirection URLs:
+hxxps://www.redacted-browser-name.com/computer/thanks?ni=eapgx&os=windows&utm_source=PWNgames&utm_medium=pa&utm_campaign=PWN_US_HVR_9396_WEB_3658&utm_id=7102f33864894005af8a65944154bcfa&edition=std-2
+https://www.redacted-browser-name.com/gx?utm_source=PWNgames&utm_medium=pa&utm_campaign=PWN_US_XVR_9373_WEB_1106&utm_id=6e2c175f7db948daae89fdf078318478&edition=std-2
+https://www.redacted-browser-name.com/gx?utm_source=PWNgames&utm_medium=pa&utm_campaign=PWN_US_UVR_9373_WEB_812&utm_id=7f6396b8ca1444f595b5030227086552&edition=std-2
+https://www.redacted-browser-name.com/gx?utm_source=PWNgames&utm_medium=pa&utm_campaign=PWN_US_XVR_9373_WEB_1046&utm_id=73ff6f76f1464820aa50beae549dd084&edition=std-2
+- Note: Real browser domain name is redacted as “redacted-browser-name”.
