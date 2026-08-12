@@ -1,0 +1,251 @@
+2026-08-11 (TUESDAY): CLICKFIX CAMPAIGN ABUSES MOZILLA FIREFOX BINARY FOR DLL SIDELOADING
+
+AUTHOR:
+
+- Ofek Lahiani
+
+NOTES:
+
+- In recent weeks, we have observed an increase in ClickFix social engineering activity across multiple customers. 
+- The campaign delivers KongTuke through DLL sideloading using legitimate signed Mozilla Firefox binaries.
+- The threat actor rotates lure domains while maintaining consistent payload infrastructure and tooling.
+- The malicious DLLs are written in Rust and masquerade as legitimate Mozilla Firefox components.
+- Three malicious DLLs have been identified: mozglue.dll (the initial loader), firefoxupdate.dll (a COM proxy persistence mechanism), and xul.dll (the primary C2 implant).
+- The malware uses a domain generation algorithm (DGA) combining infrastructure-themed and security-themed words with numeric suffixes and three TLDs (.com, .net, .lol) to construct C2 domains.
+- Post-infection C2 communication occurs over HTTPS with approximately 30-second beacon intervals.
+- We identified 128 unique samples of the malicious DLL variants associated with this campaign, including 54 mozglue.dll samples, 9 firefoxupdate.dll samples, and 56 xul.dll samples.
+
+DETAILS:
+
+ATTACK FLOW:
+
+- The victim visits a ClickFix lure website that displays a fake CAPTCHA or verification prompt.
+- The page instructs the user to press Win+R and paste a command into the Windows Run dialog.
+- The pasted command runs conhost.exe --headless to execute invisibly without displaying a console window.
+- cmd.exe runs curl with flags -skLo (silent, ignore SSL errors, follow redirects) to download a tar archive from the payload server.
+- The archive is extracted to %LOCALAPPDATA%\Mozilla\Firefox\Updates\ containing approximately 22 files masquerading as Mozilla Firefox components.
+- plugin-container.exe (a legitimate signed Mozilla Firefox binary) is executed from the staging directory.
+- A .local DLL redirection file (plugin-container.exe.local) forces Windows to load DLLs from the local directory instead of the system path.
+- The malicious mozglue.dll is sideloaded instead of the legitimate one (MITRE T1574.002 - DLL Side-Loading).
+- The malware establishes C2 communication over HTTPS with approximately 30-second beacon intervals.
+
+DLL SIDELOADING MECHANISM:
+
+- The attack abuses the Windows .local DLL redirection feature.
+- A file named plugin-container.exe.local is placed alongside the legitimate plugin-container.exe binary.
+- When plugin-container.exe loads, Windows checks for the .local redirection file and prioritizes loading DLLs from the application's local directory.
+- The malicious mozglue.dll is loaded instead of the legitimate Mozilla library.
+- The staging directory %LOCALAPPDATA%\Mozilla\Firefox\Updates\ contains approximately 22 files designed to mimic a legitimate Firefox installation.
+- Key files in the staging directory include:
+-- plugin-container.exe (legitimate signed Mozilla binary, used as the sideloading host)
+-- mozglue.dll (malicious DLL sideloaded by plugin-container.exe)
+-- plugin-container.exe.local (DLL redirection trigger file)
+-- firefoxupdate.dll (malicious COM proxy persistence DLL)
+
+POST-INFECTION ACTIVITY:
+
+- Once the malware successfully executes, it spawns a child process of plugin-container.exe to host the malicious activity.
+- The malware initiates a repeated automated discovery loop on the host using:
+  -- "cmd" /c "systeminfo /FO CSV"
+- A second co-loaded implant, xul.dll, serves as the primary C2 agent. It performs extensive host reconnaissance including SMBIOS fingerprinting and WMI enumeration.
+- The implant checks for over 30 sandbox and virtualization indicators including VBOX, QEMU, VMware, Hyper-V, Amazon EC2, Google Compute, ANY.RUN, Joe Sandbox, Hybrid Analysis, and Cuckoo.
+- It patches NtTraceControl in ntdll.dll to disable ETW tracing, preventing security monitoring from observing the implant's API calls.
+- The implant then begins beaconing to multiple C2 domains generated via a DGA over HTTPS with approximately 30-second intervals.
+
+MALWARE ANALYSIS - MOZGLUE.DLL:
+
+- The sample is a 64-bit DLL binary written in Rust targeting Windows operating systems.
+- The DLL masquerades as the legitimate Mozilla Firefox component mozglue.dll, exporting matching symbols and embedding spoofed version information for Firefox 139.0.2.0 from Mozilla Corporation.
+- On DLL_PROCESS_ATTACH, it checks XOR-obfuscated environment variables SUOMI_WO_WORK (key 0xCC) and SUOMI_AGENT (key 0x73) to route execution between three operational modes:
+-- Browser profile manipulation
+-- C2 agent communication
+-- A watchdog that spawns and monitors child processes under parent PID spoofing
+- The DLL hooks IAT entries for exit, _exit, and ExitProcess in the host process, redirecting them to an infinite SleepEx loop to prevent process termination.
+- It employs a domain generation algorithm using 25 infrastructure-themed and 24 security-themed words combined with three TLDs (.com, .net, .lol) to construct C2 domains.
+- The malware communicates via HTTP POST with JSON-formatted telemetry through dynamically loaded WinHTTP APIs.
+- Named mutexes suomi_com_guard_ and suomi_wd_guard_ prefixed to the computer name enforce single-instance execution.
+
+MALWARE ANALYSIS - FIREFOXUPDATE.DLL:
+
+- The sample is a 64-bit DLL binary written in Rust targeting Windows operating systems.
+- The DLL functions as a COM proxy stub whose exported DllGetClassObject function intercepts COM object instantiation.
+- It constructs the registry path Software\Classes\CLSID\{CLSID}\InProcServer32 under HKEY_LOCAL_MACHINE, reads the legitimate COM server DLL path, loads it via LoadLibraryW, and forwards the COM creation call to the real implementation.
+- The binary's PE version resource identifies it as firefoxupdate.dll described as "Mozilla Firefox Update Service" version 139.0.2.0 by "Mozilla Corporation."
+- The embedded Rust source path reveals the actual project name persist_stub, indicating this DLL serves as a persistence mechanism.
+
+MALWARE ANALYSIS - XUL.DLL:
+
+- The sample is a 64-bit DLL binary written in Rust targeting Windows operating systems.
+- The DLL masquerades as a Mozilla XUL library (xul.dll) and functions as a modular command-and-control implant.
+- The binary communicates with 9 domains generated via a domain generation algorithm over HTTPS port 443.
+- The DLL exports 7 functions styled after Mozilla XUL conventions: DllMain, XUL_Boot, XUL_Exec, XUL_Init, XUL_InitPlatform, XUL_Load, and xul_Configure.
+- The initial handshake is sent as a POST request to /agent/v2/handshake with Content-Type: application/octet-stream and User-Agent: curl/8.7.1.
+- Post-handshake communication uses BeaconRequest/BeaconResponse pairs carrying health summaries, task capacity reports, and session directives.
+- The implant collects extensive host reconnaissance data including system name, SMBIOS hash, domain membership, OS build string, architecture, integrity level, process ID, IP address, and SMBIOS product identifier.
+- It reads the SMBIOS firmware table via GetSystemFirmwareTable and parses detailed hardware information.
+- The binary performs sandbox and virtualization detection by checking SMBIOS product strings against over 30 indicators including VBOX, QEMU, VMware, Hyper-V, Amazon EC2, Google Compute, ANY.RUN, Joe Sandbox, Hybrid Analysis, and Cuckoo.
+- It disables ETW tracing by patching NtTraceControl in ntdll.dll, changing memory protection to PAGE_READWRITE, writing a patch, then restoring PAGE_EXECUTE_READ.
+- Task execution is driven by a WebAssembly runtime built on Wasmtime with the Cranelift code generator.
+- Seven built-in module types are referenced: mod-shell, mod-file, mod-cmd, mod-ps, mod-ss, mod-sleep, and mod-persist.
+- Task capabilities include shell command execution, file operations, PowerShell execution, screenshot capture, AMSI bypass, and persistence installation.
+
+INDICATORS:
+
+DOMAINS:
+
+- appcert9869[.]net
+- apihex6457[.]net
+- authhash3580[.]lol
+- authguard3329[.]com
+- cloudpass7138[.]lol
+- cloudupdate8155[.]com
+- coretask8067[.]com
+- datacast1282[.]com
+- edgesign6542[.]net
+- globalstore9455[.]lol
+- loginpass4171[.]lol
+- logintoken2318[.]net
+- microcrypt1987[.]com
+- netkey8407[.]lol
+- nodemetrics9095[.]com
+- nodetask5648[.]net
+- oosterhout[.]click
+- statrun3390[.]net
+- telepass2968[.]com
+
+
+SHA256 HASHES FOR FIREFOXUPDATE.DLL (9 VARIANTS):
+
+- 1da7efbbdf7c49193f00716c23ffc6aa7bf95cf7a0592d043b87273deed403d3
+- 28976e498642e6b9900e8738022cece9e54db410e6a6671b3e55e92d7bf96696
+- 40a03d714c66d3c75c43d568e9c69ef2d4fd295215762c16bf82bf463926f1b2
+- 6e58929ff4c95c819e20b3ab4b179cbda4f556fe12b3003b9ac6961e516c4a7a
+- afe4ad8a3ba51b12352a3b188e2c8aa0388aefca5c506d7f3ea7f16476841f1e
+- d2b39e52e1ebca82a3c0f2f45283cc11d983185cf7b63d636f23acbad971f4e4
+- d7b3cd0e88b3e12ed5044fbab8729d8e9894178ade7e60bb969fa410f2408529
+- f0f2f3d690255ff4fcd40253b49b6a3f1f327728bb8c98b8a040ecbef5118a5e
+- f9d378f5e6a0dbca15ae355190f58f66f2e33024a5216f9f0cc065f8c68a3cd0
+
+SHA256 HASHES FOR MOZGLUE.DLL (54 VARIANTS):
+
+- 0234f3afddedb16450e7f9c51ec55a3c935ce568806a7c1888aae048d44ae441
+- 0e0051287e704337fb9834706e194130de4b800f023501477919521abdd9a372
+- 10d5e027a45233ff37fcca1c0f4d0788d131bb0f7f2b9e6577d00e3ed0144b41
+- 1688a443eb441c5c824d8b71ef89e23222aa6a82d908ad05241a2702b25d1dfb
+- 19ebf9a37f53bf701ca99cd42e6cef4c0e3d702604bac259db359fb90e634f2f
+- 1b30f8365647b9d05c82f40d1becdc21f7348b17bc7dd1921d7db7351cf5113c
+- 1b7b3f1884ba49adaa96bde879ee5d76952659c3adfb4649d45ab10ab0aac673
+- 28d2a13c2c0c533fa040133319bbac72014bdbb50d50d8bf49fe26fcffe1ea73
+- 2c73a08a8cce265c3186f02c988f39eccdecea8bc102304e8913e6312fd1b8be
+- 33acf7b79c81cd3d24ceddd23f91488aa484794001e1325b4f36d0d51ff252d1
+- 3437aaf76e6a2d86ceff6f8f97b0268d515405416b32ae6708aa67c29aca6200
+- 3642cf0c279dea30171bd78564b15833f37aad953ae3e2e56a8d561e80e87c97
+- 36bf4d1f0b7dd37d2c17ae2decd642c4f1c9d76248b891537de678c3ab8a4dfe
+- 3ed67bfabc24e61177ac84f3159670b32a84d06bc9a561c7dd32ca021b7f84b3
+- 42971cd3786fb75abda634addaca83b1ffe7dadcfe637634a2dd07ac3b7eedb6
+- 43127d9efe415b6d0329a97a719f7f5eeda45a1a5def69c763d1ef3ab9a6ec95
+- 436f17eb5246432da1b848dc159df9f1067e6d52adc108f25b651280979e87d9
+- 49075bd5d9382369b66d4fad8c5482647d361d0250ccc1cb82b09ba455fc93ac
+- 495b05833f83e1b9b2b66b6d0cb4b1ba30792ab6896564a79fd873de40b2c40f
+- 52d34ab8e783ae72d7dd112087a04ffbeba8f7c793307cee7b0eb6af4fce8025
+- 57f0589bad69a5bb620cced9e83b1fb0710332990571ab2a0d7435e3ebb7763b
+- 5aa834962a21a5cee5fb9ce6895cc5050f8c26b3e4ed3501e5746b1b41877a6b
+- 62437c9dd9f67223a705213340ca67e34303428a52c4b0986af2ea3c563e4ded
+- 6a3abac4674286acb454e3423bcd3cd3fac0e6568edaac801cc820f3819f818c
+- 762351828e4411d636a2836655f89878306bee3d0222910017b30339d69d30bf
+- 7db9414d1fd40a55b9796fb95cd55aa6c284eef2392bcc7d4cdc37a3036d15d6
+- 877a7c73ee8c08db7d2b0c62fe6c253c65726433310f1b8a82528f5a8854daa1
+- 8a4772d3f51dcd8e7620153a0587ffb68e9e6e0391c6d2f87d1d4ce36c296d1d
+- 8b76e15e2d19a3b42f5a32d84dbfd52432fe19587a9228a6b7d4480c02eebeda
+- 8cd8ccfa53a0eb7eb667b0c2a32bdc821b58cc5f91bc3e2b11e298b8dc49d743
+- 975b5d9d7c08ff5401690d64a5dc18929e571b97fbca676749ecc9e6393754c1
+- 98b39b8851ae90aba6a77157aedc7fdd7618c80195ced06de2d9e130acce1853
+- 99cd699edcb762cc25cc3a4c31c429a9772fd2b1be4029372944e87e5c7e9ca9
+- 9f02b43df2715c3525002ecfd524b77c2e4098434467705865543c065b613700
+- ac5cb834877da84cee93ca9802e5280e822d85d083bcf5d1fef464b243f53c06
+- b2f8101166f30744e754e2773f5eeeff9074898d06796d8628ccc52aa7fdb8d2
+- b3825894e3ad20c6e5c374edddeaf9f3e0f431832c11fe1e450283cb2cbb0893
+- b67193c84e807fb958cf13d33c62be76c06bb1073ba105ce5f2b32d55db49996
+- b851222b211fc8c7a4fbe0e7f9fad7c19249a10960b66f63b4d21bae248cc40c
+- baffd080e8341f15372f91d7c1d6d3e45771c7166d955cda95edeb9a7ecaae71
+- cc0535ee561a750b1ab51fc661d8a836d3c8c91f0ddc4820a5a560460466fb53
+- d07b5e707bed378b2f47d87ba0c9ebb33f21cc36558ccf050583d26a739c5fdc
+- d50c16e1613a31d6a9fb6b79ad8f48abfdf9f0071fbf1b439dd8847a7924f216
+- db67096f70a4656b3616486bd7ab52f22bd5efe90b62f7c332472f26c7952282
+- dbe175f53ab84dd0bb15a67973aa9aa26299392f4388a927a043a60a4dacd455
+- e220cdfb485e601ea7c41e5643dae7519383923fe3643c5958f454f9034196a8
+- e8674b65cafed63da7ebd909dfb10a93c3de18e1b460c7a508173e6c315a936f
+- ec335926c09647775506d9d7931bf869272b94bd77b9123ac668ca0050432804
+- f539cd08a7d398f61886da7e07c5d08e9b286bba049eff1ad5f7f0b8a604030c
+- f61aa6f2f925900b119347aa8ea1a5fa15a13cd49686a3852a6f44396b0255f8
+- f949c9e9a1afd6b803ab40c29308056d2cb70da3e15bbb7312bc1d9cfd6f33a0
+- fc15406249efda3972416625cebab46be623e6eb9c144f2a1ac13535cc2ee974
+
+SHA256 HASHES FOR XUL.DLL (56 VARIANTS):
+
+- 056a5cdabf72199382313b0966490d18b7d002ab1638c194a1325d9aaf7ce5dd
+- 064190e0763f35bb09f6d958e74e8ec81f71d73c9c37c9d7b7bf5ad33b75272c
+- 06c14bde9b55bef9fb44fb5d69831ee8128cbc49b522561f753418f314db9b33
+- 07deee42951c53ff81881080a6c46f0986a461ba4f95cc7acbfe0c897054f651
+- 0d2e98966b556694a8e37cbb15fd80e234de6b69b86ef138c6b94b642361ef79
+- 11491daa43f5c67d8b04575904c41a8ef72c2ad1ae087d47ed632e739ebe9175
+- 144fb57167d377175adfef53701f799efdbd9025b7fcc1ac417e5e2c3808b195
+- 1980a537471f396648756cb0052e0316b0805f5cdcc7adf2fbe35c9ea8b0ddee
+- 23504c2440e6afccf4870edcae23dee9c0da1487deccb9daeca650a2143c965e
+- 256b9df18cfd3824b9fe902a3735ee7a6b37c570487a17e0700415891e266948
+- 2dc4cd857195e02522a9a4c666c69c263517ded672775911241bdcb39af36b5a
+- 2f342120d9d68248e6bc17fd9953e3af8e5a7858f4a18e802c858cc9c74a1b58
+- 30b7c0e3f7d166bd5dc93f41b8b568757721692eede27a79851425e501a9f904
+- 3bbb61effd38ce0dd6b3c36c44363a8de11a389eb67af8f16ddeab90ace5dddf
+- 40ee40aeccce6aead225d8fed2bed7380746fcdd4849d69687ddfa7f8836dbf7
+- 42aca36b928855c676d44c92538427cd69fbbda89d950ba677677a435a8497b5
+- 44be324a882540831d0a6e4c2f8428dfb83767070d698ec912939327d0153526
+- 455b1b2b1b69e01a36055c5af1ff279c3bd93e98ab9c39f2c6a94b57b373951c
+- 48ebb5877655eba88ea259ed3779a13f8ed9d5f27c8cd0b250c62674e0959745
+- 4b4c960bde89451af10ab75fd21593901d174e99cc03ce30b757c536dabe55ba
+- 4ef606fca13098762921f9d66499fb60c043bf990942d8054dd80365bf5ab782
+- 4f50c30b1ff2658ffd38f33895e6bfb822d8149ceca2e34416d252d0be4ed9d4
+- 52509442ddd3d7e4c808a0e95fba3429b04cc4f788319a909816fc3819de985e
+- 634b91d328ef3287c9916f0a5003eb326f0e358267a65aa0c26838f0667c9701
+- 666da8a2a1be6d93617a9f0d5dea5e848d68b97cce68d6c9360697355a8aa10c
+- 7a8c07ee3869f68ec91006e073b581358bd5df43e1a4c009d2dc64e87f138d7d
+- 837d58c74eabb57af392d0f5a6ee951002108990911f7cf46e4196601890d12a
+- 83ce22b18dbf947ac7ba134971fab753f4a4ecca85006784a9543adc46a2b69b
+- 8a9f995de70e8b23799685921a6e746f349b2ce4391ce5ece97c8727e3362a31
+- 8d07f47e8b7452be4fed0ceec709d5688f82a04e731481e1ad3d88cf100dbb71
+- 919a8705ca4948c9709b7bcc5e4d1ea6538c57fad0e2e2017989b85756d2b135
+- 93cf7719e664fd0c9507dd03059950f934b3e98d004677a1104fbd30a1b94047
+- a2d8696bb83ea30d2e7b8e8dff009459001c74eeabc12f92d19beb4210813efb
+- a6f242703a710fa30b3087193f4f595779a0594a4ba02b5055709baa0a69e1f7
+- a77e8d66cdd86e61cbea6772998e764be6078ec76c4c0b95f79a635815b18343
+- a9865f8d2976c403ce580ef392520f2ecc4701167638983cb70aaac8840f6c8f
+- aeabc537c6d2c3205496b75c26998e8594490c920ec92cf94d425065314a7654
+- b0ac32f1c4b1a1a961cc5a59237525c8bd70049046fabc9d47624985af26490e
+- b2cb64ebab2c6c3189504d8704e094f8e6f23eefd87d3569a86b5f40a176c6dd
+- bcff465edf2038824e88093d0473a7adf6765115632833036bfa2be9e455cdd5
+- bd3876fbe91d5d1557baf04230ff69f0c0697e07f78b78b6d110a7bd683c2abe
+- c15abedb5426e2417c8db34200169f95e6e1b468c9d6c345a0b4693bd3d52d78
+- c5b7edfdeb623b43c3a54b8b73d6ad07595582b9f1373a16ff712b171f8a0687
+- ca514ad9c634a88cac0d3803f77b12d5cdecad3e7fb8a227dc63176a2a01e8c6
+- cca32312abd37aa680b42c285fdc872b55f121aaf3ce0c475c281351ae8b35d5
+- d2045b8e693941c1997ccc36dd9fd139ab5793aa9c69960f2ffe77d57e777901
+- d4cae14f5010e6c3826692fdfaf80c4bc0e5448982d31c91968188f4fbbd86d6
+- da9dfbc674016ef7ea3f7a66784cff3a528588ecc7d3a4d5c4e50aec6118c61f
+- e17e08710ab074618c381c49adfe56a49d50e74fb11d591de3d834dcb36ce292
+- e4f50783b002310de4c8262beba9e9d2e995b196b3e8970f60b2e8bf545e5257
+- e5c4703fbffce38c1d123f2b5bca7f6ab8a02ef0026bc7124d73de7025e27f91
+- e8b9ecbfd99694bf745a78d13eee6d051d6c4803c84d3c162bed76690a83e742
+- eac1e3e085ccd5bb755a85037e106136abab59df404274cf662623fa4b457fed
+- f6cfd352f28e759210dca7cafdc25a388c2f53c9d54159fe109f8e4d602f4758
+- fb5a8f751726e3fc9e9d7707e38603242e776f9d7c3d68107ca28ab28ed49ad9
+- fcfbd0bdf05665f7a1e510e0ba0655f46cabca4b62d8f5208a5e1ad1564c85c0
+
+FILE PATHS:
+
+- %LOCALAPPDATA%\Mozilla\Firefox\Updates\firefoxupdate.dll
+- %LOCALAPPDATA%\Mozilla\Firefox\Updates\mozglue.dll
+- %LOCALAPPDATA%\Mozilla\Firefox\Updates\xul.dll
+- %LOCALAPPDATA%\Mozilla\Firefox\Updates\plugin-container.exe
+- %LOCALAPPDATA%\Mozilla\Firefox\Updates\plugin-container.exe.local
+
+
