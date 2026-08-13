@@ -1,7 +1,11 @@
 2026-08-12 (WEDNESDAY): Your Browser Isn't Supported: Chrome Extension Scareware Campaign Abusing an Affiliate Program
 
-
 Authors: Nabeel Mohamed Ravindu De Silva Oleksii Alex Starov Fang Liu
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/extensions-scareware-fraud-ugcPost-7493798551995568128-PJeM/
+- https://x.com/Unit42_Intel/status/2088032903401816225
 
 NOTES:
 -One second after a user opens an extension, it shows the dialog box saying “Browser Not Supported” for this extension and requesting users to click and install a compatible browser.
