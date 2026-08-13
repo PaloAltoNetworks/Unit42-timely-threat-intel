@@ -4,6 +4,11 @@ AUTHOR:
 
 - Ofek Lahiani
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/clickfix-ugcPost-7493400939765317633-We9K/
+- https://x.com/Unit42_Intel/status/2087635287623004428
+
 NOTES:
 
 - In recent weeks, we have observed an increase in ClickFix social engineering activity across multiple customers. 
