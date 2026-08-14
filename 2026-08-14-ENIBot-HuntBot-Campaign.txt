@@ -3,7 +3,7 @@
 
 AUTHORS:
 
-Zhanhao Chen Adrian Li Ruian Duan Moe Ghasemisharif Shuai Li Daiping Liu
+Zhanhao Chen, Adrian Li, Ruian Duan, Moe Ghasemisharif, Shuai Li and Daiping Liu
 
 DETAILS:
 
