@@ -12,14 +12,13 @@ NOTES:
   - Healthcare
   - High Technology
   - Hospitality
+  - Insurance
   - Manufacturing
   - Non-Profit
   - Pharma & Life Sciences 
   - Real Estate
   - Transportation & Logistics
   - Utilities & Energy
-  - Hospitality
-  - Pharma & Life Sciences
 - This is the first time we've encountered the use of a domain by the threat actors that was not newly created. 
 - Our analysis of Whois data shows that the domain was re-registered via NiceNIC on August 20, 2026 but initially created on March 5, 2023 using Porkbun as a registrar. 
 
@@ -30,7 +29,7 @@ BACKGROUND:
   - https://www.okta.com/blog/threat-intelligence/behind-the-scenes-of-a-vishing-operation/
   - https://www.okta.com/en-au/blog/threat-intelligence/vishing-actors-target-microsoft-entra-passkey-enrollment-/
 - We've also included other domains we believe are likely associated with broader activity linked to Com-affiliated threat actors and their associated extortion brands since Google's report published on August 6, 2026.
-- All of these domains were created using NiceNIC as a registrar and Cloudflare for name servers.
+- All of these domains were created using NiceNIC as a registrar and CloudFlare for name servers.
 
 INDICATORS:
 
