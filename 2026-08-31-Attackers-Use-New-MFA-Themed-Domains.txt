@@ -10,7 +10,7 @@ NOTES:
 
 
 - Unit 42 recently identified several MFA-themed domains that are likely associated with Com-affiliated threat actors based on known fingerprints.
-- Based on our analysis of all subdomains observed by date of publication of this report, we identified at least 7 organizations operating in the following industries that could be targeted by vishing attempts based on previously observed activity:
+- Based on our analysis of all subdomains observed by date of publication of this report, we identified at least 10 organizations operating in the following industries that could be targeted by vishing attempts based on previously observed activity:
   - Financial Services
   - Healthcare
   - Manufacturing
