@@ -1,0 +1,31 @@
+2026-08-31 (MONDAY): New MFA-Themed Subdomains Target Numerous Industries
+
+
+AUTHOR:
+
+
+Matt Brady
+
+
+NOTES:
+
+
+- Unit 42 recently identified several MFA-themed domains that are likely associated with Com-affiliated threat actors based on known fingerprints.
+- Based on our analysis of all subdomains observed by date of publication of this report, we identified at least 7 organizations operating in the following industries that could be targeted by vishing attempts based on previously observed activity:
+  - Financial Services
+  - Healthcare
+  - Manufacturing
+  - IT Services
+- All of these domains were created using NiceNIC as a registrar and Cloudflare for name servers.
+
+
+INDICATORS:
+
+
+FQDN - FIRST DATE OBSERVED:
+
+
+mfaoptions[.]com - 8/26/26
+mfa-options[.]com - 8/26/26
+mfaregister[.]com - 8/27/26
+register-mfa[.]com - 8/27/26
