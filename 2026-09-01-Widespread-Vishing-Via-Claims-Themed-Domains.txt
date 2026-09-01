@@ -1,0 +1,29 @@
+TTI Proposal: Widespread Vishing via Claims-Themed Domains 
+
+Author: 
+
+Matt Brady
+
+- Unit 42 is actively tracking infrastructure that is likely associated with Com-affiliated threat actors (including Bling Libra and CL-CRI-1116, along with their affiliated extortion brands) based on known fingerprints.
+
+- Based on our analysis of approximately 90 observed domains, we identified organizations operating in the following industries that could be targeted by vishing attempts based on previously observed activity:
+
+- Cryptocurrency
+- Financial Services
+- Healthcare
+- High Technology
+- Hospitality
+- Insurance
+- IT Services
+– Manufacturing
+– Media & Entertainment
+– Pharma & Life Sciences
+– Professional & Legal Services
+– Real Estate
+– Transportation & Logistics
+– Wholesale & Retail
+
+- The activity has been ongoing since at least June 2026. All of these domains were created using Dynadot as a registrar and CloudFlare for name servers. 
+- Each domain is specifically created for an intended target using one of the following criteria:
+   - Domain begins with "claims-" or ends with "-claims" using the .com TLD (example: claims-xyz[.]com or xyz[.]com)
+   - Domain uses the .claims TLD (example: xyz[.]claims)
