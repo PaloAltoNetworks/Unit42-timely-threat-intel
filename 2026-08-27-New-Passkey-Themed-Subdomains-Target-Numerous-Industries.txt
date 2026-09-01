@@ -4,6 +4,11 @@ AUTHOR:
 
 Matt Brady
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42-timely-threat-intel2026-08-27-new-passkey-themed-subdomains-target-numerous-industriestxt-share-7498831775683768320-Jrkk/
+- https://x.com/Unit42_Intel/status/2093066081980051798
+
 NOTES:
 
 - Unit 42 recently identified a domain (passkeyconnect[.]com) that is likely associated with Com-affiliated threat actors (including Bling Libra and CL-CRI-1116, along with their affiliated extortion brands) based on known fingerprints.
