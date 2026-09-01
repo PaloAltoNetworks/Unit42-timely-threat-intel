@@ -1,0 +1,63 @@
+2026-09-01 (TUESDAY): MyChart Branded Lures Hawking Free Medicare Kits to Phish Recipients PII and Payment Info
+
+AUTHOR(S):
+
+- Amanda Tanner
+
+NOTES:
+- Threat actors frequently abuse or subvert legitimate products for malicious purposes; this does not indicate that the product itself is flawed or compromised. Unit 42 has no evidence of any compromise or vulnerability within Epic's MyChart product related to this campaign.
+- A large-scale phishing campaign impersonates the MyChart healthcare portal to deceive users into claiming a fraudulent "Medicare Kit."
+- The emails rely on a sense of urgency, fake support ticket responses, and promises of high-value medical rewards in exchange for completing a brief survey.
+- The campaign operates primarily out of cloud service providers, utilizing highly randomized alphanumeric sender domains that consistently fail standard email authentication checks.
+- To bypass email gateways, the attackers employ Bayesian poisoning via hidden text blocks and misuse legitimate cloud services to host payloads and images. 
+- Users who click the embedded tracking links are routed through multiple redirector domains to credential harvesting or survey-scam landing pages designed to steal personal information.
+For more information on how to stay safe, visit https://mychart.org/staysafe.
+
+DETAILS:
+
+- The emails use a mix of urgency and reward-based lures, including fake "Medicare Kit" surveys, vague support ticket confirmations (Re: [Ticket#1170323]), and monthly prize giveaways.
+
+INDICATORS:
+
+- Sender Domains (From / Return-Path):
+7LFUV4JWVLFI29AG6V46KYCD8KDF[.]com
+- 9CXI7BCSDNVRBOZ387J36YBFH3UG[.]com
+- AKDXWOMNVVYHCAYIOB8VPJHRBMQ4[.]com
+- IZSSPLHWLH0QGOALAOUDLCHLMYZU[.]com
+- VL7PZQPKVIET4DDLNYVHIFF1IHHZ[.]com
+- ZFQAJJ105FIP5C5DB5KHPCJLPEHN[.]com
+dmrvWm1k9c8[.]com
+- adNCU.UMzrmAYxgu[.]com
+hzihGTdCrR[.]com
+OZzLfIv0eN[.]com
+- CMnGrRUZQT[.]com
+
+- Redirect, Payload, & Tracking Domains (URLs in Body):
+brightandnova[.]nl (Specifically subdomains like W4KauvnZOe9x, WpYHbGQbz2T6, ALUvtmhEyMP6, S3wYifepSNkH)
+4kmedia-market[.]com
+forwebspark[.]cc (Subdomain: qJ7O24xddyvc)
+nistries[.]com (Subdomains: epBmFbZ30D, yyUJSVaIqt, fHsLbBlEsA, rF6wIME6DO)
+rewardsvc[.]com (Subdomain: iBw1EC)
+storage.googleapis[.]com/rqabn94wvclg/0fdt2aqx.html (Hosted phish)
+
+- Email Addresses & Reply-To:
+
+Reply-To: reply-[nu_24]@in2.getdrip[.]com
+
+Reply-To: dFAMJtSw6@mail.dmrvWm1k9c8[.]com
+
+From: info@-----mail.dmrvWm1k9c8[.]com
+
+Observed Subject Lines:
+
+📝 Quick survey: Get your free Medicare Kit 🎁
+
+Your feedback matters: Free Medicare Kit inside
+
+Congratulations!
+
+Augest 2026 [MyChart] (Note the misspelling of August)
+
+Re: [Ticket#1170323]
+
+
