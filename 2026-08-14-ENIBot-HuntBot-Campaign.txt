@@ -1,9 +1,13 @@
 2026-08-14 (FRIDAY): ENIBot/HuntBot Campaign
 
-
 AUTHORS:
 
 Zhanhao Chen, Adrian Li, Ruian Duan, Moe Ghasemisharif, Shuai Li and Daiping Liu
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/since-march-2026-we-have-tracked-enibot-ugcPost-7494110622289170432-jLfw/
+- https://x.com/Unit42_Intel/status/2088344990107804123
 
 DETAILS:
 
