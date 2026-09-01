@@ -4,6 +4,11 @@ AUTHOR(S):
 
 - Amanda Tanner
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/mychart-branded-lures-hawking-free-medicare-ugcPost-7500609942098317313-CrZK/
+- https://x.com/Unit42_Intel/status/2094844326387789975
+
 NOTES:
 - Threat actors frequently abuse or subvert legitimate products for malicious purposes; this does not indicate that the product itself is flawed or compromised. Unit 42 has no evidence of any compromise or vulnerability within Epic's MyChart product related to this campaign.
 - A large-scale phishing campaign impersonates the MyChart healthcare portal to deceive users into claiming a fraudulent "Medicare Kit."
