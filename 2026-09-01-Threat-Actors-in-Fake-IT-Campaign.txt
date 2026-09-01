@@ -4,6 +4,11 @@ AUTHORS:
 
 * Ofek Lahiani, Raz Rubin
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/fake-it-support-campaign-delivers-a-malicious-ugcPost-7500675112766087169-FuzF/
+- https://x.com/Unit42_Intel/status/2094909461747966300
+
 NOTES:
 
 * A fake IT support (help-desk) campaign features threat actors socially engineers a target over Microsoft Teams, with the operator impersonating an "IT Technician" and convincing the target to grant remote control via a native remote assistance utility.
