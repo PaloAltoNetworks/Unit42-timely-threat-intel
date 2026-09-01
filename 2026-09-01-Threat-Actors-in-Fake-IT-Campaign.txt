@@ -1,0 +1,86 @@
+2026-09-01 (TUESDAY): Threat Actors in Fake IT Support Campaign Use Malicious MSI and DLL Sideloading to Deploy WMI-Launched Reverse Shell Over Local Port
+
+AUTHORS:
+
+* Ofek Lahiani, Raz Rubin
+
+NOTES:
+
+* A fake IT support (help-desk) campaign features threat actors socially engineers a target over Microsoft Teams, with the operator impersonating an "IT Technician" and convincing the target to grant remote control via a native remote assistance utility.
+* With remote access, the operator downloads and runs a malicious MSI installer hosted on an attacker-controlled Amazon S3 bucket.
+* The MSI drops a legitimate signed binary alongside a malicious DLL, which the signed binary loads from its own directory (DLL sideloading).
+* The sideloaded DLL beacons outbound over TLS to an AWS API Gateway (execute-api) endpoint used as C2, blending malicious traffic into a trusted cloud service.
+* The loader uses WMI to spawn a separate custom reverse shell agent, breaking the parent-child process chain to evade simple detection.
+* The reverse shell agent binds a listener on a local TCP port and bridges the external C2 to an interactive ConPTY cmd.exe shell, giving the operator hands-on-keyboard access.
+
+DETAILS:
+
+* Initial access is social engineering over Microsoft Teams external access, followed by Quick Assist (QuickAssist.exe) abuse for interactive remote control.
+* The operator downloads a malicious MSI (e.g., SE15724BW.msi, KB5094126.msi) from an attacker-controlled S3 bucket and executes it via msiexec.exe.
+* The MSI deploys a legitimate signed binary (e.g., FileZilla FTP Client filezilla.exe, Altap Salamander salamand.exe, or a trojanized Kodi/kodi.exe installer) together with a malicious vcruntime140.dll in the same directory.
+* The signed binary sideloads the unsigned vcruntime140.dll instead of the System32 copy. The DLL establishes the outbound C2 channel over HTTPS/TLS to an AWS API Gateway execute-api endpoint.
+* The loader uses WMI (Win32_Process create, surfaced as a WmiPrvSE.exe rare child process) to launch a custom reverse shell agent (File Transfer.exe/Module Agent.exe/SupportHost.exe).
+* Two-component relay design:
+-- The sideloaded DLL is the C2 relay: it holds the outbound TLS connection to the AWS API Gateway C2 and connects as a TCP client to the local port.
+-- The shell agent binds a TCP listener on the local port (localhost:9001), and on connection spawns a ConPTY pseudo-terminal attached to cmd.exe.
+-- The two components exchange data over the local port using a Type-Length-Value (TLV) protocol: Type 1 = stdin, Type 2 = stdout, Type 3 = window resize.
+
+* Only the signed binary touches the network; the shell agent communicates over localhost only, evading host firewalls that trust signed applications and network monitoring that watches for external connections.
+* Persistence is a Startup-folder shortcut (salamand.lnk) that relaunches the signed loader at logon.
+* Post-compromise, the operator runs interactive reconnaissance (whoami, ipconfig /all, net user /dom, dsregcmd /status) and enumerates cloud-synced document folders. 
+* The custom shell agent (File Transfer.exe) is a 64-bit C++ binary built on Boost.Asio and spdlog, enforces single-instance execution with a mutex, obfuscates strings with multiple XOR/subtraction schemes, and re-spawns itself with a --restarted flag to detach from the parent process.
+
+DETECTION OPPORTUNITIES:
+   * A signed application (e.g., salamand.exe) loading an unsigned vcruntime140.dll from its own directory rather than System32.
+   * Any non-system process binding a TCP listener on 127[.]0.0[.]1:9001.
+   * conhost.exe --headless (ConPTY) spawned by a non-terminal application.
+   * WmiPrvSE.exe spawning an unusual child process that then performs reconnaissance.
+   * A signed binary making outbound TLS connections to .execute-api..amazonaws.com while a child process holds a localhost listener.
+   * Process chain: msiexec.exe -> signed loader -> WmiPrvSE.exe -> shell agent -> whoami/ipconfig/net.
+   * Quick Assist (QuickAssist.exe) launched shortly after inbound Microsoft Teams external contact.
+
+INDICATORS:
+
+DOMAINS:
+
+   * 0q8jnro0za.execute-api.us-east-1.amazonaws[.]com (AWS API Gateway C2)
+   * qqcy5av2o2.execute-api.us-east-1.amazonaws[.]com (AWS API Gateway C2)
+   * l9iprxgup2.execute-api.us-east-1.amazonaws[.]com (AWS API Gateway C2)
+   * 9stbnu0f0a.execute-api.us-east-1.amazonaws[.]com (AWS API Gateway C2)
+   * software-download-usw1.s3.us-west-1.amazonaws[.]com (attacker-controlled S3 payload host)
+
+URLS:
+
+   * hxxps[:]//software-download-usw1.s3.us-west-1.amazonaws[.]com/SE15724BW.msi (malicious MSI download)
+
+SHA256 HASHES (malicious):
+
+   * 878567e4b6f4552f8f56f300c3a2af0fe9c7935686ee0e34ef5f632c81baa579 (trojanized Kodi MSI installer)
+   * 1423084a8aaa721627f9674fd4ba3679b27acdc7992001b91adb41f0457756b5 (trojanized Kodi MSI installer)
+   * 0112620b7fd940846bac876a9f8a148a7435d34fe0b596edf165325a81efb5b3 (vcruntime140.dll, sideloaded malicious DLL variant)
+   * 6b5a6817d6fce0348ac1f4ef38298b57a00c8a8c3f3ca39335ca06a7b861f1d0 (vcruntime140_1.dll, sideloaded malicious DLL variant)
+   * 3759aaaea1e9f6228e2701c415882f38ceb3e03b211e82600a6f31c68a4370ba (vcruntime140.dll, sideloaded malicious DLL variant)
+   * c1bbbac9f501712db13f276d88a17277284e3684b690b33abd3508ef56064860 (zlib1.dll,sideloaded malicious DLL)
+   * 74fdbe5d2a8b68a145cc79f75432fa8dd4dc71383040873929fca5f8a4f9229a (zlib1.dll,sideloaded malicious DLL)
+   * 26e3f1359ed228d9d4931b853f1bfc768c2ca22cb28b96c29380c040940c3a1f (zlib1.dll,sideloaded malicious DLL)
+   * 25b4cb9b9ff68487af37fb86b16b6e335d862821fa3749f860933c35013de509 (File Transfer.exe, custom reverse shell agent)
+   * 7499df565f74bd9d0ad69b1363217d57a65db7a9d4693e6e387b3841458477d7(SupportHost.exe, custom reverse shell agent)
+   * c44af51e75b2023376cf7fa2735d72f1c433d9dc58163dc298690731c80bc7f9 (Module Agent.exe, custom reverse shell agent)
+
+SHA256 HASHES (legitimate binaries abused for sideloading — context, not malicious):
+
+   * fef16f362aa405ab83fe7e7f34948c3b062df9d0701eb883f7834301562fe0ae (kodi.exe, trojanized Kodi package)
+   * 55bc7d960205ae3265a1bab47bbfa36a774dfe8e8eb4a80c2b78f625e758ba02 (salamand.exe, Altap Salamander)
+   * Ff5ee21e81a38b959d2f4cd275dbf7a778dc72fd0becfdde80ef3f619d0f8b8b (filezilla.exe, FileZilla FTP Client)
+
+FILENAMES:
+
+   * SE15724BW.msi, KB5094126.msi (malicious MSI installers)
+   * vcruntime140.dll, vcruntime140_1.dll,zlib1.dll (malicious sideloaded DLLs)
+   * File Transfer.exe, Module Agent.exe,SupportHost.exe (custom reverse shell agents)
+   * salamand.lnk (Startup-folder persistence shortcut)
+
+OTHER INFORMATION:
+
+   * Local relay listener: 127.0.0.1:9001 (TCP, TLV protocol bridging C2 to a ConPTY cmd.exe shell)
+   * Mutex: Global\ConsoleMutex
