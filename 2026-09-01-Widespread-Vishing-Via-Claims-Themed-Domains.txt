@@ -1,8 +1,15 @@
 2026-09-01(TUESDAY): Widespread Vishing via Claims-Themed Domains 
 
-Author: 
+AUTHOR:
 
-Matt Brady
+- Matt Brady
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42-timely-threat-intel2026-09-01-widespread-vishing-via-claims-themed-domainstxt-share-7501038764325027840-M_aO/
+- https://x.com/Unit42_Intel/status/2095273073716916702
+
+NOTES:
 
 - Unit 42 is actively tracking infrastructure that is likely associated with Com-affiliated threat actors (including Bling Libra and CL-CRI-1116, along with their affiliated extortion brands) based on known fingerprints.
 
