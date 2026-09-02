@@ -25,5 +25,5 @@ Matt Brady
 
 - The activity has been ongoing since at least June 2026. All of these domains were created using Dynadot as a registrar and CloudFlare for name servers. 
 - Each domain is specifically created for an intended target using one of the following criteria:
-   - Domain begins with "claims-" or ends with "-claims" using the .com TLD (example: claims-xyz[.]com or -claims[.]com)
+   - Domain begins with "claims-" or ends with "-claims" using the .com TLD (example: claims-xyz[.]com or xyz-claims[.]com)
    - Domain uses the .claims TLD (example: xyz[.]claims)
