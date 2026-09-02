@@ -42,7 +42,7 @@ DETECTION OPPORTUNITIES:
    * WmiPrvSE.exe spawning an unusual child process that then performs reconnaissance.
    * A signed binary making outbound TLS connections to .execute-api.amazonaws.com while a child process holds a localhost listener.
    * Process chain: msiexec.exe -> signed loader -> WmiPrvSE.exe -> shell agent -> whoami/ipconfig/net.
-   * Quick Assist (QuickAssist.exe) launched shortly after inbound Microsoft Teams external contact.
+   * QuickAssist.exe launched shortly after inbound Microsoft Teams external contact.
 
 INDICATORS:
 
