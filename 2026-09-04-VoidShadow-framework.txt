@@ -1,0 +1,47 @@
+2026-09-04 (FRIDAY): VOIDSHADOW: A MODULAR CROSS-PLATFORM IMPLANT FRAMEWORK
+
+AUTHOR:
+
+- David Lord
+
+NOTES:
+
+- Unit 42 has identified a framework called VoidShadow
+  -- This is a modular, cross-platform post-exploitation implant framework
+  -- We have so far discovered Linux and Windows samples
+- The framework provides:
+  -- Full remote control of a compromised host
+  -- Credential theft
+  -- Layered stealth and persistence, including userland and kernel-mode rootkits
+- VoidShadow agents run C2 communications over TLS, disguising beacons as trusted cloud and web traffic, such as
+  -— Microsoft Graph (e.g., /microsoft.graph.v1.Policy/Sync)
+  -- WordPress (e.g., wp-login.php, wp-admin/admin-ajax.php)
+  -- Google Cloud (e.g., /v1/projects/{project_id}/logs:write, /v1/projects/{project_id}/status)
+- Threat actors frequently mimic or subvert legitimate products and services for malicious purposes
+- Unit 42 has no evidence of any compromise or vulnerability within these products or services related to this threat
+
+INDICATORS:
+
+SHA-266 HASHES:
+
+- 033cdc85aec2ae5016c61134918860c6969761fdf95c55bb0d84c2e9c333c6a4 [Windows agent]
+- 06cf0995f4a03f26c4022efee5a4065cb1a67cc8461b1c248ead1341785f4536 [Windows side-load DLL]
+- 403a66a70d3af89374f762af3b0351a94cd52e74e839fecf6337b1ba0ef5389a [Linux dropper/installer]
+- 52c57b0de24ac1f4a7734e610ffa097c4c63a666d3a780e70adc182d4706b10b [Linux dropper/installer]
+- 546bf2c3aca9ed9829c22b19b598c4db058313bd66d72cfeddc27a49ca1e27cb [Linux dropper/installer]
+- deaa0a55a944682b27fd57a55b22978c478234eee93015fc0f2f06a4a1eb4e0f [Windows agent]
+
+IP ADDRESSES:
+
+- 47.76.221[.]103
+- 47.242.255[.]141
+- 8.148.241[.]46
+
+DOMAINS:
+
+- aliqopen[.]com
+- cloudapi-update[.]com
+- cloudops-api[.]com
+- dai2345[.]com
+- hk-cloudops-api[.]com
+- luoluo6[.]com
