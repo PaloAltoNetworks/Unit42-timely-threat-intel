@@ -1,0 +1,46 @@
+
+2026-09-09 (WEDNESDAY): Newly Observed Com Infrastructure
+
+
+AUTHOR:
+
+- Matt Brady
+
+
+NOTES:
+
+
+- Unit 42 continues to actively track infrastructure that is likely associated with Com-affiliated threat actors (including Bling Libra and CL-CRI-1116, along with their affiliated extortion brands) based on known fingerprints.
+- We’ve identified 17 FQDNs created since our last TTI post on this topic on August 28, 2026, including some that spoof known brands.
+- Based on our analysis of subdomains created off of these aforementioned FQDNs, we identified organizations operating in the following industries that could be targeted by vishing attempts based on previously observed activity:
+
+
+- Financial Services
+- High Technology
+- IT Services
+- Non-Profit
+- Professional & Legal Services
+- Transportation & Logistics
+- Wholesale & Retail
+
+
+FQDN - FIRST DATE OBSERVED:
+
+
+mailchimp-passkey[.]com - 8/28/26
+passkey-mailchimp[.]com - 8/29/26
+sg-passkey[.]com - 8/29/26
+sso-passkey[.]com - 8/29/26
+passkey-sendgrid[.]com - 8/29/26
+sendgridpasskey[.]com - 8/29/26
+passkeymailchimp[.]com - 8/29/26
+passkey-mfa[.]com - 9/2/26
+registermymfa[.]com - 9/2/26
+signinoptions[.]com - 9/2/26
+mfa-settings[.]com - 9/3/26
+ installpasskey[.]com - 9/5/26
+register-passkeys[.]com - 9/7/26
+deploypasskeys[.]com - 9/8/26
+mfa-registry[.]com - 9/8/26
+setupmysso[.]com - 9/8/26
+register-passkey[.]com - 9/8/26
