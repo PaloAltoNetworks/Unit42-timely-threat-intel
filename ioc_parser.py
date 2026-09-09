@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 SOURCE_FEED = "Palo Alto Networks Unit42 Threat Intel"
-FOLDER_PATH = Path('/Users/a0086597/Desktop/Python/IOC/Unit42-timely-threat-intel')
+FOLDER_PATH = Path('Desktop/Python/IOC/Unit42-timely-threat-intel')
 FILE_EXTENSIONS = r"exe|dll|ocx|sys|drv|cpl|xlsb|xlsm|xlsx|xls|docm|docx|doc|pptm|pptx|ppt|pdf|zip|rar|7z|gz|iso|img|dat|php|ps1|sh|bat|cmd|vbs|js|jse|wsf|hta|html|htm|txt|rtf|lnk|scr|msi|jar|apk|elf|bin"
 IOC_PATTERNS = {
     "url": r"""\b(?:https?|hxxps?)(?:://|\[:\]//|\[://\])[^\s"'<>),]+""",
