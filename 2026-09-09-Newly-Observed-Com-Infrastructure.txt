@@ -1,14 +1,11 @@
 
 2026-09-09 (WEDNESDAY): Newly Observed Com Infrastructure
 
-
 AUTHOR:
 
 - Matt Brady
 
-
 NOTES:
-
 
 - Unit 42 continues to actively track infrastructure that is likely associated with Com-affiliated threat actors (including Bling Libra and CL-CRI-1116, along with their affiliated extortion brands) based on known fingerprints.
 - We’ve identified 17 FQDNs created since our last TTI post on this topic on August 28, 2026, including some that spoof known brands.
@@ -23,9 +20,8 @@ NOTES:
 - Transportation & Logistics
 - Wholesale & Retail
 
-
+INDICATORS: 
 FQDN - FIRST DATE OBSERVED:
-
 
 mailchimp-passkey[.]com - 8/28/26
 passkey-mailchimp[.]com - 8/29/26
