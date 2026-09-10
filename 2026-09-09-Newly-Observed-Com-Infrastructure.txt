@@ -5,6 +5,11 @@ AUTHOR:
 
 - Matt Brady
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/unit42-timely-threat-intel2026-09-09-newly-observed-com-infrastructuretxt-share-7503505043313213441--BYy/
+- https://x.com/Unit42_Intel/status/2097739350347763931
+
 NOTES:
 
 - Unit 42 continues to actively track infrastructure that is likely associated with Com-affiliated threat actors (including Bling Libra and CL-CRI-1116, along with their affiliated extortion brands) based on known fingerprints.
