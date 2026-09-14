@@ -87,9 +87,10 @@ Stage 4: Command & Control (C2) Protocol
      4. Kill Switch: If the C2 responds with 0xF4, the malware executes an immediate Environment.Exit(1).
 
 INDICATORS:
+
 - 1e4246ed2050b7a6c711aae4732e8ec89d590dec860d16ecc86071339792135f (Powershell hash)
 - 41da18c32a2c759946acd9e2291e937b0777e19db6407126807f9af52374e3c0 (Embedded payload hash)
 - chunks[.]cdnsuicaches[.]com (Embedded in compromised site to deliver malicious JS)
-Mnl[.]ac (Clickfix domain)
+- Mnl[.]ac (Clickfix domain)
 - 45.74.7[.]27 (cdnsuicaches[.]com)
 - 23.227.198[.]199:443 (exfil)
