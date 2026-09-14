@@ -1,10 +1,16 @@
-
 2026-09-14 (MONDAY): Regional News Outlet Infected with Malicious JavaScript Delivering ClickFix Prompts Delivering Encrypted Stealc InfoStealer
 
-AUTHOR(S):
+AUTHORS:
+
 - Thomas Story and Jonny Westfall
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/clickfix-stealc-ugcPost-7505296843531042817-3MJw/
+- https://x.com/Unit42_Intel/status/2099531203762164075
+
 NOTES:
+
 - An independent regional news outlet has been compromised with malicious JavaScript delivering ClickFix social engineering prompts.
 - The final payload is an encrypted, compressed, and then ConfuserEx-encrypted Stealc binary.
 
@@ -18,13 +24,16 @@ DETAILS:
 - The configuration.ps1 script contains an encrypted, gzip-compressed payload that unpacks the stage 2 Stealc binary loaded into memory.
 
 Payload Analysis: Execution and Core Capabilities
+
 - The unpacked payload is a highly sophisticated, multi-stage threat utilizing PowerShell to reflectively load heavily obfuscated 32-bit .NET (C#) DLLs. 
 - Functioning as a modular command-and-control (C2) backdoor and information stealer, the malware is designed for prolonged, stealthy access.
 
 Stage 1: Loader Mechanisms & Evasion
+
 - The initial execution relies on two distinct PowerShell scripts responsible for decrypting, decompressing, and loading the primary .NET DLLs entirely in memory.
 
 Primary Loader Script
+
    - Evasion & Mutex: Generates a random GUID, sets it as the console window title, and hides the window using user32.dll!ShowWindowAsync. 
    - It establishes a named mutex, BOyBdSXJMJHWV, to prevent concurrent infections.
    - Payload Extraction & Decryption: A 463,276-character Base64 string is decoded and decrypted using AES-256-CBC (Key: 9422c81325a47a186e9a8e3841c497ba9e4d99d952ca4838e8e21b7b31427109, IV: c846272dc4af802ebcaa0d5753a67027).
@@ -36,6 +45,7 @@ Secondary Loader Script
 - Once Gzip-decompressed into a 471,040-byte .NET DLL, it is reflectively loaded and immediately exits its primary thread to operate entirely via injected processes.
 
 Stage 2: Payload Protections & Anti-Analysis
+
 - Before any user code executes, the module initializer (.cctor) triggers a multi-stage runtime protection sequence heavily armored with ConfuserEx (v1.0.0) and custom protections:
    - Constant and String Encryption: All operational strings are replaced with empty literals and resolved at runtime. 
    - A 15,104-byte constant pool is decrypted using a block XOR cipher and an xorshift PRNG seeded with 1627562570.
@@ -48,20 +58,24 @@ Stage 2: Payload Protections & Anti-Analysis
 - Dead Code Injection: Over 58 Func delegate fields and 100+ static methods consist of unreachable code guarded by impossible runtime conditions to bloat the binary and confuse analysis.
 
 Stage 3: Core Capabilities & Behavior
+
 - Process Injection Chain
 - The malware utilizes a highly evasive, multi-tier process injection strategy to mask its activity and interact with browser memory:
    - Primary Injection: The executing powershell.exe injects threads into csc.exe, chrome.exe, msedge.exe, and SearchIndexer.exe using NtAllocateVirtualMemoryRemote and NtSetContextThreadRemote.
    - Secondary Injection: The compromised SearchIndexer.exe acts as an intermediary, injecting an MZ-header PE payload into fresh instances of Chrome and Edge.
 
 Credential Theft
+
 - Once inside the browser memory spaces, the payload actively targets local credential and session token stores:
    - ...\Google\Chrome\User Data\Default\Login Data & \Network\Cookies
    - ...\Microsoft\Edge\User Data\Default\Login Data & \Network\Cookies
 
 Persistence
+
 - The malware establishes persistent execution by utilizing a WScript.Shell COM object to drop a shortcut file named h2dk2pdvpn0.lnk into the current user's Startup folder.
 
 Stage 4: Command & Control (C2) Protocol
+
 - The malware establishes HTTP POST communication using a custom, heavily armored binary protocol over HttpWebRequest.
    - Network Encryption: Plaintext payloads are wrapped in 16 to 64 bytes of randomized padding. 
    - A rolling XOR cipher encrypts the payload, where the key mutates progressively based on loop index and position.
@@ -72,7 +86,6 @@ Stage 4: Command & Control (C2) Protocol
      3. Execution: The malware pauses for 5,000ms, spawns a hidden cmd.exe process, writes the command to standard input, and reports the output to a secondary endpoint.
      4. Kill Switch: If the C2 responds with 0xF4, the malware executes an immediate Environment.Exit(1).
 
-
 INDICATORS:
 - 1e4246ed2050b7a6c711aae4732e8ec89d590dec860d16ecc86071339792135f (Powershell hash)
 - 41da18c32a2c759946acd9e2291e937b0777e19db6407126807f9af52374e3c0 (Embedded payload hash)
@@ -80,9 +93,3 @@ INDICATORS:
 Mnl[.]ac (Clickfix domain)
 - 45.74.7[.]27 (cdnsuicaches[.]com)
 - 23.227.198[.]199:443 (exfil)
-
-
-
-
-
-
