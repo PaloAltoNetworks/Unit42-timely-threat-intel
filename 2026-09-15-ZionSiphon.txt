@@ -1,9 +1,11 @@
+2026-09-15 (TUESDAY): ZionSiphon V4 -- A Rust Rewrite of the OT Sabotage Tool Targeting Israeli Water Infrastructure
 
+AUTHORS: Asher Davila, Doel Santos
 
-2026-09-15(TUESDAY): ZionSiphon V4 -- A Rust Rewrite of the OT Sabotage Tool Targeting Israeli Water Infrastructure
+REFEREBCES:
 
-AUTHOR(S): Asher Davila, Doel Santos
-
+- https://www.linkedin.com/posts/rust-desalination-ugcPost-7505723639871361025-opay/
+- https://x.com/Unit42_Intel/status/2099958019387703491
 
 NOTES:
 
@@ -41,93 +43,93 @@ INDICATORS
 
 SHA-256 Hashes (ZionSiphon, chronological):
 
-07c3bbe60d47240df7152f72beb98ea373d9600946860bad12f7bc617a5d6f5f (v1, 2025-06-29, .NET PE32, 102,400 bytes, 52/70 detection)
-592627c6d8f01519d9a88923db6fab9d65314ac0a9c43b2d75da8882995042b3 (v4, 2026-07-29, Rust PE32+ x64, 1,737,216 bytes, 18/70 detection)
+- 07c3bbe60d47240df7152f72beb98ea373d9600946860bad12f7bc617a5d6f5f (v1, 2025-06-29, .NET PE32, 102,400 bytes, 52/70 detection)
+- 592627c6d8f01519d9a88923db6fab9d65314ac0a9c43b2d75da8882995042b3 (v4, 2026-07-29, Rust PE32+ x64, 1,737,216 bytes, 18/70 detection)
 
 Build and Debug Artifacts (v4):
 
-PDB path: zionsiphon.pdb
-PDB GUID: DB7C9576-ABF2-4E26-8CF3-B7E1798C807D
-PDB age: 1
-Symbol-server signature: DB7C9576ABF24E268CF3B7E1798C807D1
-PE compile timestamp: 2026-07-26 15:55:21 UTC
-Build path: C:\Users\User-1\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\
-Cargo index hash: index.crates.io-1949cf8c6b5b557f
-Rust toolchain commit: 4a4ef493e3a1488c6e321570238084b38948f6db (Rust 1.94.0 stable)
-Source file: src\main.rs
-Log target: zionsiphon (env vars: RUST_LOG, RUST_LOG_STYLE)
-v1 MVID: 614A3FC7-EE46-4735-B926-DD7D29AB7096
+- PDB path: zionsiphon.pdb
+- PDB GUID: DB7C9576-ABF2-4E26-8CF3-B7E1798C807D
+- PDB age: 1
+- Symbol-server signature: DB7C9576ABF24E268CF3B7E1798C807D1
+- PE compile timestamp: 2026-07-26 15:55:21 UTC
+- Build path: C:\Users\User-1\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\
+- Cargo index hash: index.crates.io-1949cf8c6b5b557f
+- Rust toolchain commit: 4a4ef493e3a1488c6e321570238084b38948f6db (Rust 1.94.0 stable)
+- Source file: src\main.rs
+- Log target: zionsiphon (env vars: RUST_LOG, RUST_LOG_STYLE)
+- v1 MVID: 614A3FC7-EE46-4735-B926-DD7D29AB7096
 
 Crate-Version Fingerprint (v4, HIGH in combination):
 
-Unique-to-sample set: sysinfo-0.30.13 + jiff-0.2.35 + clap_builder-4.6.2 + anyhow-1.0.104
-Full crate list (31 crates): aho-corasick-1.1.4, anstream-1.0.0, anstyle-1.0.14, anstyle-parse-1.0.0, anyhow-1.0.104, base64-0.22.1, clap_builder-4.6.2, clap_lex-1.1.0, crossbeam-deque-0.8.7, crossbeam-epoch-0.9.20, env_filter-2.0.0, env_logger-0.11.11, hashbrown-0.16.1, jiff-0.2.35, jiff-core-0.1.0, memchr-2.8.3, mio-1.2.2, once_cell-1.21.4, parking_lot-0.12.5, parking_lot_core-0.9.12, rayon-1.12.0, rayon-core-1.13.0, regex-1.13.1, regex-automata-0.4.16, regex-syntax-0.8.11, rustc-demangle-0.1.26, strsim-0.11.1, sysinfo-0.30.13, tokio-1.53.1, walkdir-2.5.0, winapi-util-0.1.11, windows-core-0.52.0, windows-strings-0.1.0
+- Unique-to-sample set: sysinfo-0.30.13 + jiff-0.2.35 + clap_builder-4.6.2 + anyhow-1.0.104
+- Full crate list (31 crates): aho-corasick-1.1.4, anstream-1.0.0, anstyle-1.0.14, anstyle-parse-1.0.0, anyhow-1.0.104, base64-0.22.1, clap_builder-4.6.2, clap_lex-1.1.0, crossbeam-deque-0.8.7, crossbeam-epoch-0.9.20, env_filter-2.0.0, env_logger-0.11.11, hashbrown-0.16.1, jiff-0.2.35, jiff-core-0.1.0, memchr-2.8.3, mio-1.2.2, once_cell-1.21.4, parking_lot-0.12.5, parking_lot_core-0.9.12, rayon-1.12.0, rayon-core-1.13.0, regex-1.13.1, regex-automata-0.4.16, regex-syntax-0.8.11, rustc-demangle-0.1.26, strsim-0.11.1, sysinfo-0.30.13, tokio-1.53.1, walkdir-2.5.0, winapi-util-0.1.11, windows-core-0.52.0, windows-strings-0.1.0
 
 Actor Identifiers (self-claimed, not attribution):
 
-0xICS (v1 + v4, HIGH, previously reported by Darktrace)
-Telegram handle @rbinrs (v4 only)
+- 0xICS (v1 + v4, HIGH, previously reported by Darktrace)
+- Telegram handle @rbinrs (v4 only)
 
 Host Artifacts (HIGH):
 
-target_verify.log in %LOCALAPPDATA%\Temp (v1 + v4, survives self-delete, best host IOC)
-ReadMe.pdf.lnk / ReadMe.pdf (v4, USB propagation lure)
-SecurityApplication (v4)
-Event log clearing via wevtutil (v4)
+- target_verify.log in %LOCALAPPDATA%\Temp (v1 + v4, survives self-delete, best host IOC)
+- ReadMe.pdf.lnk / ReadMe.pdf (v4, USB propagation lure)
+- SecurityApplication (v4)
+- Event log clearing via wevtutil (v4)
 
 Self-Destruct Strings (version discriminator):
 
-v1: "Target not matched. Operation restricted to IL ranges. Self-destruct initiated."
-v4: "Target not matched. Operation restricted to IL indicators. Self-destruct initiated."
+- v1: "Target not matched. Operation restricted to IL ranges. Self-destruct initiated."
+- v4: "Target not matched. Operation restricted to IL indicators. Self-destruct initiated."
 
 Additional v4 Log Strings:
 
-"Country check failed (no target indicators) - initiating self-destruct"
-"Self-destruct completed. Log written to"
-"Cleared Windows event log:"
-"Target locale match: Hebrew (Israel)"
-"Target keyboard match: Hebrew"
-"Hostname match:"
-"SCADA directory match:"
-"OT config match:"
-"Discovered <N> OT device(s)"
-"No configuration files found; proceeding to network OT discovery"
+- "Country check failed (no target indicators) - initiating self-destruct"
+- "Self-destruct completed. Log written to"
+- "Cleared Windows event log:"
+- "Target locale match: Hebrew (Israel)"
+- "Target keyboard match: Hebrew"
+- "Hostname match:"
+- "SCADA directory match:"
+- "OT config match:"
+- "Discovered <N> OT device(s)"
+- "No configuration files found; proceeding to network OT discovery"
 
 Targeting Gate (v4, HIGH, structural):
 
-Check 1: GetUserDefaultUILanguage() compared against 0x40D (Hebrew/Israel) at 0x140008749
-Check 2: GetKeyboardLayout() compared against 0x40D at 0x140009a23
-Check 3: GetComputerNameExW() compared against hostname tokens: mekorot, ide, sorek, desal, water, hadera
-Check 4: SCADA directory presence (see SCADA Directories section below)
+- Check 1: GetUserDefaultUILanguage() compared against 0x40D (Hebrew/Israel) at 0x140008749
+- Check 2: GetKeyboardLayout() compared against 0x40D at 0x140009a23
+- Check 3: GetComputerNameExW() compared against hostname tokens: mekorot, ide, sorek, desal, water, hadera
+- Check 4: SCADA directory presence (see SCADA Directories section below)
 
 Facility name tokens (v4 second list): Mekorot, Sorek, Hadera, Ashdod, Palmachim, Shafdan, Eilat
 
-Byte pattern for locale/keyboard checks: FF 15 ?? ?? ?? ?? 0F B7 C0 3D 0D 04 00 00 0F 85
-Note: LOW confidence as a standalone signature. The cmp eax, 0x40D pattern matched 11 times in an unrelated Rust SQL linter (token ID collision).
+- Byte pattern for locale/keyboard checks: FF 15 ?? ?? ?? ?? 0F B7 C0 3D 0D 04 00 00 0F 85
+- Note: LOW confidence as a standalone signature. The cmp eax, 0x40D pattern matched 11 times in an unrelated Rust SQL linter (token ID collision).
 
-Fictional Configuration File Paths (HIGH, no legitimate software uses these):
+Fictional Configuration File Paths (HIGH, no legitimate software uses these): 
 
-C:\DesalConfig.ini
-C:\ROConfig.ini
-C:\WaterTreatment.ini
-C:\ChlorineControl.dat
-C:\RO_PumpSettings.ini
-C:\SalinityControl.ini
-C:\DesalSettings.conf
-C:\DesalFlowControl.dat
-C:\Program Files\Desalination\system.cfg
-C:\Program Files\[Software Company]\chlorine.cfg
-C:\Program Files\[OT product name]\ROsettings.ini
-C:\Program Files\[OT product name]\Desal\config.ini
-C:\Program Files\[OT product name]\system.conf
-C:\Program Files\DesalTech\
-C:\Program Files\Hydro Systems\
-C:\Program Files\RO Systems\
-C:\Program Files\Water Treatment\
+- C:\DesalConfig.ini
+- C:\ROConfig.ini
+- C:\WaterTreatment.ini
+- C:\ChlorineControl.dat
+- C:\RO_PumpSettings.ini
+- C:\SalinityControl.ini
+- C:\DesalSettings.conf
+- C:\DesalFlowControl.dat
+- C:\Program Files\Desalination\system.cfg
+- C:\Program Files\[Software Company]\chlorine.cfg
+- C:\Program Files\[OT product name]\ROsettings.ini
+- C:\Program Files\[OT product name]\Desal\config.ini
+- C:\Program Files\[OT product name]\system.conf
+- C:\Program Files\DesalTech\
+- C:\Program Files\Hydro Systems\
+- C:\Program Files\RO Systems\
+- C:\Program Files\Water Treatment\
 
-Filenames sought (v4): DesalConfig.ini, ROConfig.ini, DesalSettings.conf, system.cfg, WaterTreatment.ini, ChlorineControl.dat, RO_PumpSettings.ini, SalinityControl.ini, desal.ini, ro_system.cfg, chlorine.cfg, RO_Parameters.ini, ProcessConfig.ini, SCADAConfig.ini, PlantSettings.cfg
+- Filenames sought (v4): DesalConfig.ini, ROConfig.ini, DesalSettings.conf, system.cfg, WaterTreatment.ini, ChlorineControl.dat, RO_PumpSettings.ini, SalinityControl.ini, desal.ini, ro_system.cfg, chlorine.cfg, RO_Parameters.ini, ProcessConfig.ini, SCADAConfig.ini, PlantSettings.cfg
 
-Invented Device/Process Names (v4, fictional): DesalPLC, ROController, SchneiderRO, DamRO, ReverseOsmosis, WaterGenix, RO_Pump, ChlorineCtrl, WaterPLC, SeaWaterRO, BrineControl, OsmosisPLC, DesalMonitor, RO_Filter, ChlorineDose, RO_Membrane, DesalFlow, WaterTreat, SalinityCtrl, IDEControl, IDEScada, ROMMP
+- Invented Device/Process Names (v4, fictional): DesalPLC, ROController, SchneiderRO, DamRO, ReverseOsmosis, WaterGenix, RO_Pump, ChlorineCtrl, WaterPLC, SeaWaterRO, BrineControl, OsmosisPLC, DesalMonitor, RO_Filter, ChlorineDose, RO_Membrane, DesalFlow, WaterTreat, SalinityCtrl, IDEControl, IDEScada, ROMMP
 
 Sabotage INI Block (v4, injected with header "; === PROCESS PARAMETER OVERRIDE ==="):
 
@@ -168,34 +170,37 @@ CIP_Trigger_DeltaP_Bar=10.0
 
 Network Indicators:
 
-Connectivity check: 8[.]8[.]8[.]8 on port 80
-Bind/placeholder: 0[.]0[.]0[.]0 on port 0
-Modbus write frame: 01 06 <addr_hi> <addr_lo> <val_hi> <val_lo> (6 bytes, no MBAP header, no CRC, invalid as TCP and RTU)
-Modbus probe: 01 11 (2 bytes, FC 0x11 Report Server ID)
-First Modbus write value: 0x0352 (decimal 850)
-PLC models fingerprinted: S7-1200, M340, ControlLogix (aborts on unknown model)
-Protocol labels (scan only, DNP3 and S7): Modbus, DNP3, S7
+- Connectivity check: 8.8.8[.]8 on port 80
+- Bind/placeholder: 0.0.0[.]0 on port 0
+- Modbus write frame: 01 06 <addr_hi> <addr_lo> <val_hi> <val_lo> (6 bytes, no MBAP header, no CRC, invalid as TCP and RTU)
+- Modbus probe: 01 11 (2 bytes, FC 0x11 Report Server ID)
+- First Modbus write value: 0x0352 (decimal 850)
+- PLC models fingerprinted: S7-1200, M340, ControlLogix (aborts on unknown model)
+- Protocol labels (scan only, DNP3 and S7): Modbus, DNP3, S7
 
 No C2 infrastructure. Neither version contacts attacker-controlled servers.
 
 SCADA Directories and Processes Sought (false-positive on legitimate OT hosts, triage context only):
 
 Directories:
-[OT product name]\WinCC
-[OT product name]\STEP 7
-[OT product name]PCS 7
-[OT product name]\Automation
-[OT product name]\CitectSCADA
-[OT product name]\Unity Pro
-[OT product name]\Vijeo Designer
-[OT product name]
 
-[OT product name]\CitectSCADA
+- [OT product name]\WinCC
+- [OT product name]\STEP 7
+- [OT product name]PCS 7
+- [OT product name]\Automation
+- [OT product name]\CitectSCADA
+- [OT product name]\Unity Pro
+- [OT product name]\Vijeo Designer
+- [OT product name]
+- [OT product name]\CitectSCADA
+
 OPC Server
 
 Configuration files sought:
-citect.ini, citect.cfg, UnityPro.cfg, Project.stu, OSProject.mcp, ProjectConfiguration.ini
+
+- citect.ini, citect.cfg, UnityPro.cfg, Project.stu, OSProject.mcp, ProjectConfiguration.ini
 
 REFERENCES
-- For v1 of the malware:
-Darktrace: https://www.darktrace.com/blog/inside-zionsiphon-darktraces-analysis-of-ot-malware-targeting-israeli-water-systems, April 16, 2026 
+
+For v1 of the malware:
+- Darktrace: https://www.darktrace.com/blog/inside-zionsiphon-darktraces-analysis-of-ot-malware-targeting-israeli-water-systems, April 16, 2026 
