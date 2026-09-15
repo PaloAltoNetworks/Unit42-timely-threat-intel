@@ -1,0 +1,79 @@
+2026-09-15(TUESDAY): Neural Override - AI-Orchestrated RAT With SCADA Tasking
+
+AUTHOR(S): Asher Davila and Doel Santos
+
+
+NOTES:
+
+- We identified and analyzed Neural Override, a five-build Python RAT family controlled via Telegram and featuring an autonomous, LLM-driven attack-planning loop. 
+- The malware uses OpenRouter AI to analyze compromised systems and autonomously select attack actions, including ransomware, DDoS, credential theft, persistence, and SCADA tasking. 
+- All user-facing strings are in Ukrainian. As of 2026-08-27, both the Telegram bot (@Skibidi_16_bot) and the OpenRouter API key were active. 
+- The SCADA component calls an external module (scada_commander.py) that has not been found.
+
+
+DETAILS
+
+- The Python payload contained a Telegram bot token (7122631458:AAG9EWA4[REDACTED]) and a Telegram user ID (5841362765). 
+- This allowed the identification of a bot named @Skibidi_16_bot (display name "Pomoshnik", Russian for "Helper"), using a webhook pointing to a consumer bot-building service. 
+- The payload also contained a valid OpenRouter API key (sk-or-v1-d72076961[REDACTED]) providing access to 417 models on the free tier.
+- Five builds were identified by analyzing the Telegram bot token. 
+All share the same bot token and user ID. 
+- The OpenRouter key is absent from Build 1 and present from Build 2 onward, dating the addition of the LLM component to 2026-08-03.
+
+- Build 1 (2026-07-08, 58KB .pyc) is a basic bot with eight capabilities and no AI integration. 
+- Build 2 (2026-08-03, 56KB .pyc, neural_override_v3.py) introduces OpenRouter AI, the autopilot loop, and 11 additional capabilities, totaling 19. 
+- Builds 3 and 4 (2026-08-04) add 42 new functions within approximately 24 hours, increasing from version 3 to version 9 and expanding from 19 to 61 capabilities. 
+- Build 3 is the Python source, Build 4 the compiled version. 
+- Build 5 (2026-08-08, 54KB .pyc, neural_override_v3.py) is a deliberate rollback to the version 3 capability set.
+
+- The rapid version increase from v3 to v9 within 24 hours, with no intermediate versions, along with the way the code is written, strongly suggests AI-assisted code generation.
+
+The SCADA component comprises scada_attack() (which executes "python scada_commander.py --command shutdown"), grid_attack() (nmap Modbus scanning across 192.168.1[.]0/24), and infrastructure port scans targeting ports 502 and 20000. 
+- These tasks appear in the autonomous autopilot's action list, but inline OT/ICS protocol libraries and code (such as pymodbus or snap7) are absent, and we were unable to find scada_commander.py. 
+- The SCADA tasking is present only in builds 3 and 4; the version 3 rollback removes all SCADA references. 
+- No sixth family member or instance of the missing module was found.
+
+- The operator account was identified through passive Telegram Bot API queries using the recovered bot token. 
+- The account "@Xakmee", display name "XD", is linked to a two-subscriber channel @Vsom_Cheat_Crark_Meln with no visible posts. 
+- Searches across developer platforms, underground forums, gaming services, chat services, and general web sources returned no results for the operator account, channel, or bot. 
+- No specific target is hardcoded in any build: all nmap scans use the generic 192.168.1[.]0/24 subnet, API keys for internet scanning and social media services are empty strings, the BIOS infection URL is a placeholder, and the Monero payment address is truncated.
+
+- Organizations should monitor for outbound connections to api[.]telegram[.]org and openrouter[.]ai from workstations, engineering stations, or servers, particularly where both appear from the same host or from a Python process. 
+- Neither service has a legitimate role on most operational technology networks, and the pairing of a messaging API used for command and control with a large language model API used for attack planning is a strong behavioral indicator. 
+- On hosts, the SystemHelper persistence artifacts below provide direct detection opportunities, as does any process invoking scada_commander.py.
+
+INDICATORS
+
+- SHA256 Hashes (Neural Override family, chronological):
+
+7eb8b6b1b5934a5f1011320c27a25e30d69c76a8a338a42b74eeccb04080e06e (Build 1, 2026-07-08, .pyc, 8 capabilities, no AI)
+e7c63a717539e2c78a1600dbb69ce0c48d9707832c8a747e9d211a6a711b1cd9 (Build 2, 2026-08-03, .pyc, v3, adds OpenRouter AI, 19 capabilities)
+cee0bc699073dbcf97b68e05110a29503b844748bcd2492cbae0f6882a3775e0 (Build 3, 2026-08-04, .py source, v9.2/v9.3, 61 capabilities, 9/57 detections)
+fb9abe6285fc0152b35673b36a5fbf1893bf8592fac7e352357ab4bdeccd67f1 (Build 4, 2026-08-04, .pyc, compiled v9, 124KB, 61 capabilities)
+5138f443dfd519c77adcfc1f86821cd1821a558e3e2c5a09b9cc6aab84639657 (Build 5, 2026-08-08, .pyc, v3 regression, 19 capabilities)
+
+- Network Indicators:
+
+  Telegram Bot: @Skibidi_16_bot (Bot ID: 7122631458)
+  Telegram Bot Token: 7122631458:AAG9EWA4[REDACTED]
+  Telegram Operator CHAT_ID: 5841362765
+  Telegram Operator Account: @Xakmee (display name "XD")
+  Telegram Operator Channel: @Vsom_Cheat_Crark_Meln ("Neon_Mura_Vsom | Crack")
+  Telegram Webhook: manybot[.]io/webhook/7122631458/...
+  LLM Endpoint: openrouter[.]ai/api/v1/chat/completions
+  LLM API Key: sk-or-v1-d72076961[REDACTED]
+  LLM Account ID (OpenRouter key creator): user_3CD8sdjJ7nNeLOGEDUrLU8B52WF
+  LLM Model: openrouter/free (free tier)
+  Modbus Port Scan Target: 192[.]168[.]1[.]0/24 (generic, not targeted)
+
+- Host Indicators:
+
+  Persistence binary name: SystemHelper.py / SystemHelper.exe
+  Registry key: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\SystemHelper
+  Scheduled task: SystemHelper (login trigger)
+  Scheduled task: SystemHelperPeriodic (30-minute interval)
+  Windows service: SystemHelper
+  Startup folder: SystemHelper.py copied to shell:startup
+  System32 copy: SystemHelper.exe copied to C:\Windows\System32
+  USB spreading: autorun.inf -> SystemHelper.py
+  SCADA module invocation: python scada_commander.py --command shutdown
