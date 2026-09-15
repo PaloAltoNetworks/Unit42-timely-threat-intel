@@ -1,6 +1,6 @@
 
 
-2026-09-15(TUESDAY): ZIONSIPHON V4 -- A RUST REWRITE OF THE OT SABOTAGE TOOL TARGETING ISRAELI WATER INFRASTRUCTURE
+2026-09-15(TUESDAY): ZIONSIPHON V4 -- A Rust Rewrite of the OT Sabotage Tool Targeting Israeli Water Infrastructure
 
 AUTHOR(S): Asher Davila, Doel Santos
 
