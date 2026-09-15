@@ -1,6 +1,6 @@
-2026-09-15(TUESDAY): Neural Override - AI-Orchestrated RAT With SCADA Tasking
+2026-09-15 (TUESDAY): Neural Override - AI-Orchestrated RAT With SCADA Tasking
 
-AUTHOR(S): Asher Davila and Doel Santos
+AUTHORS: Asher Davila and Doel Santos
 
 
 NOTES:
