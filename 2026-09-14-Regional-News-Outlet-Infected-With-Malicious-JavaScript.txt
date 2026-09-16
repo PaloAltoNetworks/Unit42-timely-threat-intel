@@ -1,4 +1,4 @@
-2026-09-14 (MONDAY): Regional News Outlet Infected with Malicious JavaScript Delivering ClickFix Prompts Delivering Encrypted Stealc InfoStealer
+2026-09-14 (MONDAY): Regional News Outlet Infected with Malicious JavaScript Delivering ClickFix Prompts Delivering Encrypted Malware
 
 AUTHORS:
 
@@ -12,7 +12,7 @@ REFERENCES:
 NOTES:
 
 - An independent regional news outlet has been compromised with malicious JavaScript delivering ClickFix social engineering prompts.
-- The final payload is an encrypted, compressed, and then ConfuserEx-encrypted Stealc binary.
+- The final payload is an encrypted, compressed, and then ConfuserEx-encrypted binary.
 
 DETAILS:
 
@@ -21,7 +21,8 @@ DETAILS:
 - The JavaScript checks for a specific cookie (cookie-captcha-complete). If absent, it serves the ClickFix overlay and sets the cookie to prevent repeat execution.
 - The ClickFix social engineering overlay tricks the user into copying and running an obfuscated command via the Windows Run dialog (cmd.exe /c ...).
 - This command downloads a PowerShell script (configuration.ps1) from mnl[.]ac (149.255.35[.]135) and executes it by dynamically calling PowerShell (^W^h^E^r^E po*r*e*l.*e) and bypassing the execution policy.
-- The configuration.ps1 script contains an encrypted, gzip-compressed payload that unpacks the stage 2 Stealc binary loaded into memory.
+- The configuration.ps1 script contains an encrypted, gzip-compressed payload that unpacks the stage 2 binary loaded into memory.
+- While we have some indicators that StealC is assocaited with this infection chain, we have not yet confirmed.
 
 Payload Analysis: Execution and Core Capabilities
 
