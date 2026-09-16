@@ -2,7 +2,7 @@
 
 AUTHORS: Asher Davila, Doel Santos
 
-REFEREBCES:
+REFERENCES:
 
 - https://www.linkedin.com/posts/rust-desalination-ugcPost-7505723639871361025-opay/
 - https://x.com/Unit42_Intel/status/2099958019387703491
