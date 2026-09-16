@@ -22,7 +22,7 @@ DETAILS:
 - The ClickFix social engineering overlay tricks the user into copying and running an obfuscated command via the Windows Run dialog (cmd.exe /c ...).
 - This command downloads a PowerShell script (configuration.ps1) from mnl[.]ac (149.255.35[.]135) and executes it by dynamically calling PowerShell (^W^h^E^r^E po*r*e*l.*e) and bypassing the execution policy.
 - The configuration.ps1 script contains an encrypted, gzip-compressed payload that unpacks the stage 2 binary loaded into memory.
-- While we have some indicators that StealC is assocaited with this infection chain, we have not yet confirmed.
+- While we have some indicators that StealC is associated with this infection chain, we have not yet confirmed.
 
 Payload Analysis: Execution and Core Capabilities
 
