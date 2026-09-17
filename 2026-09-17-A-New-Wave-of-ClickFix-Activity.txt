@@ -32,12 +32,12 @@ INDICATORS:
 
 Examples of jsDelivr Payload URLs:
 
--c hxxps[:]//dn.jsdelivr[.]net/gh/kud-981/rt-3476@62fe780/kurt-38
+- hxxps[:]//cdn.jsdelivr[.]net/gh/kud-981/rt-3476@62fe780/kurt-38
 - hxxps[:]//cdn.jsdelivr[.]net/gh/kud-981/bunt@charred/error
 - hxxps[:]//cdn.jsdelivr[.]net/gh/kud-981/sandy-lumping-mandarin@a1fee8e/sys
 - hxxps[:]//cdn.jsdelivr[.]net/gh/zor-876/futures-import@04e2419/llm
-- hxxps[:]//dn.jsdelivr[.]net/gh/stroller-del/shrouded/growl
-- hxxps[:]//dn.jsdelivr[.]net/gh/stroller-del/slicing/doornail
+- hxxps[:]//cdn.jsdelivr[.]net/gh/stroller-del/shrouded/growl
+- hxxps[:]//cdn.jsdelivr[.]net/gh/stroller-del/slicing/doornail
 - hxxps[:]//cdn.jsdelivr[.]net/gh/marye4562/lauraja/lunt
 - hxxps[:]//cdn.jsdelivr[.]net/gh/Roody2643/3Gfd78Jhs9/87erKaske
 
