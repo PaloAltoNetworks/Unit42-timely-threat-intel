@@ -1,18 +1,25 @@
-2026-09-17(THURSDAY): A New Wave of ClickFix Activity Uses 350+ Compromised CMS Sites 
+2026-09-17 (Thursday): A New Wave of ClickFix Activity Uses 350+ Compromised CMS Sites 
 
+AUTHORS: 
 
-Authors: 
-- Nabeel Mohamed, Billy Melicher, and Oleksii Alex Starov 
+- Nabeel Mohamed, Billy Melicher, Oleksii Alex Starov 
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/a-sustained-clickfix-campaign-has-compromised-share-7506475580570198016-6er2/
+- https://x.com/Unit42_Intel/status/2100709910275096843
 
 NOTES:
+
 - We identified a new wave of ClickFix attacks compromising over 350 websites linked to a leading CMS platform. 
 - Most of these compromises are still active and we encourage security providers to update their IOCs (some of these IOCs have low VT scores at the moment and are likely not picked up by URL blocking services), and YARA signatures to block the ongoing attacks.
 The defining characteristic of this campaign is the deliberate abuse of jsDelivr, one of the internet’s most widely trusted open-source CDNs, as a payload staging server, combined with GitHub as the underlying payload store.
 - cdn.jsdelivr.net/gh/<user>/<repo>@<commit>/<file>. Because cdn.jsdelivr.net is a legitimate CDN that serves millions of open-source libraries daily, the download URL passes almost all domain-reputation filters and corporate proxy allowlists without inspection.
 
 DETAILS:
+
 Attack Chain:
+
 - Stage 1: Lure and clipboard injection: Victims reach one of 350+ compromised sites, where an injected JavaScript bundle renders a fake verification button. 
    - Clicking it silently writes a PowerShell command to the clipboard and instructs the victim to open PowerShell and paste.
 
@@ -21,23 +28,26 @@ Attack Chain:
 - Stage 3: Final Payload: A PE binary is served from dedicated WebDAV C2 domains. 
    - The dropper architecture matches techniques associated with infostealer campaigns targeting browser credentials, session cookies, and cryptocurrency wallets.
 
-IOCs:
-- Example jsDelivr Payload URLs:
-cdn.jsdelivr[.]net/gh/kud-981/rt-3476@62fe780/kurt-38
-cdn.jsdelivr[.]net/gh/kud-981/bunt@charred/error
-cdn.jsdelivr[.]net/gh/kud-981/sandy-lumping-mandarin@a1fee8e/sys
-cdn.jsdelivr[.]net/gh/zor-876/futures-import@04e2419/llm
-cdn.jsdelivr[.]net/gh/stroller-del/shrouded/growl
-cdn.jsdelivr[.]net/gh/stroller-del/slicing/doornail
-cdn.jsdelivr[.]net/gh/marye4562/lauraja/lunt
-cdn.jsdelivr[.]net/gh/Roody2643/3Gfd78Jhs9/87erKaske
+INDICATORS:
 
-- Example WebDAV C2 Hostnames:
-ry3ix78aj58e.eng-en--lipovive[.]com
-34fgt76ty4u5.eng-eng-cardioslim[.]com
-rbreudjsltof.eng-eng-aquaburn[.]us
+Examples of jsDelivr Payload URLs:
 
-- Example GitHub repos hosting malicious payloads:
-https://github[.]com/marye4562
-https://github[.]com/Roody2643
+-c hxxps[:]//dn.jsdelivr[.]net/gh/kud-981/rt-3476@62fe780/kurt-38
+- hxxps[:]//cdn.jsdelivr[.]net/gh/kud-981/bunt@charred/error
+- hxxps[:]//cdn.jsdelivr[.]net/gh/kud-981/sandy-lumping-mandarin@a1fee8e/sys
+- hxxps[:]//cdn.jsdelivr[.]net/gh/zor-876/futures-import@04e2419/llm
+- hxxps[:]//dn.jsdelivr[.]net/gh/stroller-del/shrouded/growl
+- hxxps[:]//dn.jsdelivr[.]net/gh/stroller-del/slicing/doornail
+- hxxps[:]//cdn.jsdelivr[.]net/gh/marye4562/lauraja/lunt
+- hxxps[:]//cdn.jsdelivr[.]net/gh/Roody2643/3Gfd78Jhs9/87erKaske
 
+Example WebDAV C2 Hostnames:
+
+- ry3ix78aj58e.eng-en--lipovive[.]com
+- 34fgt76ty4u5.eng-eng-cardioslim[.]com
+- rbreudjsltof.eng-eng-aquaburn[.]us
+
+Examples of GitHub repos hosting malicious payloads:
+
+- hxxps[:]//github[.]com/marye4562
+- hxxps[:]//github[.]com/Roody2643
