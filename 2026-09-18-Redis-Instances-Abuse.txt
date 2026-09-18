@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-Adrian Li Ruian Duan Zhanhao Chen and Daiping Liu
+Adrian Li Ruian Duan, Zhanhao Chen, and Daiping Liu
 
 DETAILS:
 
