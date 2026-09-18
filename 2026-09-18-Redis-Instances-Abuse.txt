@@ -4,6 +4,11 @@ AUTHORS:
 
 Adrian Li Ruian Duan, Zhanhao Chen, and Daiping Liu
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/we-documented-p2pinfect-in-2023-spreading-ugcPost-7506759710235066368-QAdU/
+- https://x.com/Unit42_Intel/status/2100994075180617753
+
 DETAILS:
 
 Technical Analysis
