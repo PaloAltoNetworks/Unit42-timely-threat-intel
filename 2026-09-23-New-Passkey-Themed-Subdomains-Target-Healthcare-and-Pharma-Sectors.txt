@@ -11,7 +11,5 @@ NOTES:
 
 
 INDICATORS:
-
 FQDN - FIRST DATE OBSERVED:
-
-my-passkeys[.]com - 9/16/26
+- my-passkeys[.]com - 9/16/26
