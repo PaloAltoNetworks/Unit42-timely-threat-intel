@@ -2,7 +2,8 @@
 
 AUTHOR:
 
-Matt Brady
+- Matt Brady
+
 NOTES:
 
  - Unit 42 recently identified two domains (add-mfa[.]com and myaccountapps[.]com) that are likely associated with Com-affiliated threat actors based on known fingerprints.
