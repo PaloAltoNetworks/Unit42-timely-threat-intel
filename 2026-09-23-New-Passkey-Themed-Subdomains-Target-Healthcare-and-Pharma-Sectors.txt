@@ -6,7 +6,7 @@ AUTHOR:
 
 NOTES:
 
--  Unit 42 recently identified a domain (my-passkeys[.]com) that is likely associated with Com-affiliated threat actors based on known fingerprints.
+- Unit 42 recently identified a domain (my-passkeys[.]com) that is likely associated with Com-affiliated threat actors based on known fingerprints.
 - We've identified at least two organizations operating within the healthcare and pharmaceutical sectors that could be targeted by vishing attacks based on the observed subdomains.
 
 
