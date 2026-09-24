@@ -4,6 +4,11 @@ Authors:
 
 Beliz Kaleli, Shehroze Farooqi, Nabeel Mohamed, and Oleksii Alex Starov
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/we-found-an-active-indirect-prompt-injection-ugcPost-7508538447855239168-nx-b/
+- https://x.com/Unit42_Intel/status/2102772829833818179
+
 NOTES:
 - Unit 42 is tracking an active campaign in which threat actors embed hidden indirect prompt injection payloads into popular advertiser landing pages to manipulate AI-powered ad policy review systems into auto-approving policy-violating ads.
 - The campaign is recently active, with 10 distinct landing page domains identified to date.
