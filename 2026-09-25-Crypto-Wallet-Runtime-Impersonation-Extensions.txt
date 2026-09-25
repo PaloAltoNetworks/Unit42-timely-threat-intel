@@ -1,0 +1,48 @@
+2026-09-25 (FRIDAY): Crypto Wallet Runtime Impersonation Extensions Disguised as Games 
+
+Authors:  Nabeel Mohamed Fang Liu Oleksii Alex Starov
+
+NOTES:
+- We identified a coordinated campaign of Chrome extensions disguised as small browser games. 
+- On installation, Chrome resolves the extension name through fragmented translation keys and installs the extension under the name of a legitimate crypto wallet (TronLink, Trust Wallet, or Ledger Wallet Extension), complete with the real wallet's favicon. 
+- The attackers likely designed the fragmentation to defeat regex-based string search.
+- Each extension calls a Vercel-hosted C2 server on every open. When maintenance=false, the game loads normally. 
+- When maintenance=true, the game is hidden and a fake wallet page is loaded into an iframe of the extension popup, a server-selected phishing payload the attacker can swap at any time without a new extension release.
+- Wallets impersonated include TronLink (majority of the extensions), and Trust Wallet.
+- All C2 domains hosted on the SaaS platform vercel.app and have the convention <game-word-1>-<game-word-2>-<gate-word>.vercel[.]app. 
+- For example, northbound-needle-bearing.vercel[.]app and mothlight-lantern-signal.vercel[.]app.
+- Telegram exfiltration channel lives in the loaded payload page, not in the extension. 
+- The bot token is 7491032856:AAF8kQz[REDACTED].
+
+DETAILS:
+- Name evasion technique: The manifest name field contains only __MSG_productNameMain____MSG_productNameSuffix__. 
+- The wallet name is hidden across 8+ duplicate-key variants in each _locales/*/messages.json file, assembled from placeholder fragments — defeating any string-search tool operating on the raw package.
+- The iframe URL is server-chosen at request time; the extension code only calls the gate endpoint and uses whatever URL the server returns. 
+- This means the phishing payload can be changed or swapped without publishing a new extension version. 
+- For the extension mljnindiomijojginkplkboekjiffmmf, the payload is wb-notes-web.vercel[.]app, which renders a fake TronLink wallet UI.
+
+IOCs:
+- C2 Domains:
+clock-seed-season-window.vercel[.]app
+quiet-courier-dispatch-map.vercel[.]app
+glass-orchard-bough-control.vercel[.]app
+paper-telescope-focus-desk.vercel[.]app
+pocket-loom-thread-archive.vercel[.]app
+northbound-needle-bearing.vercel[.]app
+mothlight-lantern-signal.vercel[.]app
+rain-thread-window-signal.vercel[.]app
+last-lighthouse-beacon-gate.vercel[.]app
+shadow-cabinet-umbra-gate.vercel[.]app
+
+- Impersonating Extensions:
+ckenjgcaloekhajcdjnldlpocmieiofi - Clock Seed - (1.8.2, 1.8.5)
+efjjkanncldkghieipncnailhjfijbga - Quiet Courier - (1.7.7, 1.7.9)
+jlmocnadfhnldkjbejclodcfaogkchgc - Glass Orchard - (1.3.8, 1.3.9)
+kbijponpecdogfceohhnjacneggaooom - Paper Telescope - (1.6.5, 1.6.7)
+mchceimbhojpoeogdnimlbopidfdfphk - Pocket Loom - (1.9.6, 1.9.8)
+mljnindiomijojginkplkboekjiffmmf - Northbound Needle - (1.4.3, 1.4.6) 
+plfnggnldoeckfclfpflbpnebfbkipcb - Mothlight - (1.1.9, 1.2.0)
+phedebkchfhnadinmggbaofgokabocck - Rain Thread - (1.5.10) 
+odpfjfhmkbhmodboeaogjdceledlihjp - Last Lighthouse - (1.1.5)
+dikdlhdpaagnffakomnelokacaekebio - Shadow Cabinet - (1.4.9)
+
