@@ -1,6 +1,6 @@
 2026-09-25 (FRIDAY): Crypto Wallet Runtime Impersonation Extensions Disguised as Games 
 
-Authors:  Nabeel Mohamed Fang Liu Oleksii Alex Starov
+Authors:  Nabeel Mohamed, Fang Liu, and Oleksii Alex Starov
 
 NOTES:
 - We identified a coordinated campaign of Chrome extensions disguised as small browser games. 
