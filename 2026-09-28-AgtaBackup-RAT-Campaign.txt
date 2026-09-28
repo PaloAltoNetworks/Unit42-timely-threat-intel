@@ -6,12 +6,13 @@ AUTHOR:
 
 CAMPAIGN NOTES:
 
-- We have identified a previously-undocumented multi-stage campaign delivering a custom .NET remote access trojan we've named "AgtaBackup RAT" 
-  -- This name is based on artifacts embedded in the malware:
-      --- Service name: AgtaBackupAgentSvc
-      --- Install directory: C:\Program Files\Agta Backup
-      --- MSI installer: AgtaBackupAgent.msi
-- This campaign begins with a landing page impersonating a popular video conferencing software.
+- We have identified a previously-undocumented multi-stage campaign delivering a custom .NET remote access trojan (RAT) named "Agta Backup" 
+- We currently track this malware as "AgtaBackup RAT."
+- This malware has already been noted by various sources, and its name is based on artifacts embedded in the malware:
+  -- Service name: AgtaBackupAgentSvc
+  -- Install directory: C:\Program Files\Agta Backup
+  -- MSI installer: AgtaBackupAgent.msi
+- This particular campaign begins with a landing page impersonating a popular video conferencing software.
    -- The page impersonates a Microsoft Store product listing.
    -- The page delivers a genuinely-signed remote monitoring and management (RMM) MSI installer.
       --- These include LogMeIn Resolve, ConnectWise ScreenConnect, or similar.
