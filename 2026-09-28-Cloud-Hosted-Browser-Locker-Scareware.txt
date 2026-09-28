@@ -4,6 +4,11 @@ AUTHORS:
 
 - Keerthiraj Nagaraj
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/scareware-ugcPost-7510367875422003200-QyEx/
+- https://x.com/Unit42_Intel/status/2104602263217979854
+
 NOTES:
 
 - Active tech-support-scam (TSS) / scareware campaign with two interchangeable opening lures: a fake "account disabled" popup impersonating a major social media platform, and (via a URL parameter) a fake "virus found" warning impersonating a major search engine. 
