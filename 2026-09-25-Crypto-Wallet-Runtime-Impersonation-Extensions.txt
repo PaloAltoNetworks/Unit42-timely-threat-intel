@@ -1,8 +1,16 @@
 2026-09-25 (FRIDAY): Crypto Wallet Runtime Impersonation Extensions Disguised as Games 
 
-Authors:  Nabeel Mohamed, Fang Liu, and Oleksii Alex Starov
+AUTHORS: 
+
+- Nabeel Mohamed, Fang Liu, and Oleksii Alex Starov
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/extensions-impersonates-ugcPost-7509354056285462528-PdMa/
+- https://x.com/Unit42_Intel/status/2103588402960466076
 
 NOTES:
+
 - We identified a coordinated campaign of Chrome extensions disguised as small browser games. 
 - On installation, Chrome resolves the extension name through fragmented translation keys and installs the extension under the name of a legitimate crypto wallet (TronLink, Trust Wallet, or Ledger Wallet Extension), complete with the real wallet's favicon. 
 - The attackers likely designed the fragmentation to defeat regex-based string search.
@@ -15,14 +23,17 @@ NOTES:
 - The bot token is 7491032856:AAF8kQz[REDACTED].
 
 DETAILS:
+
 - Name evasion technique: The manifest name field contains only __MSG_productNameMain____MSG_productNameSuffix__. 
 - The wallet name is hidden across 8+ duplicate-key variants in each _locales/*/messages.json file, assembled from placeholder fragments — defeating any string-search tool operating on the raw package.
 - The iframe URL is server-chosen at request time; the extension code only calls the gate endpoint and uses whatever URL the server returns. 
 - This means the phishing payload can be changed or swapped without publishing a new extension version. 
 - For the extension mljnindiomijojginkplkboekjiffmmf, the payload is wb-notes-web.vercel[.]app, which renders a fake TronLink wallet UI.
 
-IOCs:
-- C2 Domains:
+INDICATORS:
+
+C2 DOMAINS:
+
 clock-seed-season-window.vercel[.]app
 quiet-courier-dispatch-map.vercel[.]app
 glass-orchard-bough-control.vercel[.]app
@@ -34,7 +45,8 @@ rain-thread-window-signal.vercel[.]app
 last-lighthouse-beacon-gate.vercel[.]app
 shadow-cabinet-umbra-gate.vercel[.]app
 
-- Impersonating Extensions:
+EXTENSION IDENTIFIERS:
+
 ckenjgcaloekhajcdjnldlpocmieiofi - Clock Seed - (1.8.2, 1.8.5)
 efjjkanncldkghieipncnailhjfijbga - Quiet Courier - (1.7.7, 1.7.9)
 jlmocnadfhnldkjbejclodcfaogkchgc - Glass Orchard - (1.3.8, 1.3.9)
@@ -45,4 +57,3 @@ plfnggnldoeckfclfpflbpnebfbkipcb - Mothlight - (1.1.9, 1.2.0)
 phedebkchfhnadinmggbaofgokabocck - Rain Thread - (1.5.10) 
 odpfjfhmkbhmodboeaogjdceledlihjp - Last Lighthouse - (1.1.5)
 dikdlhdpaagnffakomnelokacaekebio - Shadow Cabinet - (1.4.9)
-
