@@ -4,6 +4,11 @@ AUTHOR:
 
 - Ofek Lahiani
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/agtabackup-ugcPost-7510436432973459457-te8v/
+- https://x.com/Unit42_Intel/status/2104670779971379292
+
 CAMPAIGN NOTES:
 
 - We have identified a previously-undocumented multi-stage campaign delivering a custom .NET remote access trojan (RAT) named "Agta Backup" 
