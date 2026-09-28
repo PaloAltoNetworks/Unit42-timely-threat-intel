@@ -1,0 +1,93 @@
+2026-09-28 (MONDAY): Cloud-Hosted Browser-Locker Scareware Campaign Using Social Media / Search Engine Lures to Deliver a Fake Antivirus Lockout, Likely via Malvertising
+
+AUTHORS:
+
+- Keerthiraj Nagaraj
+
+NOTES:
+
+- Active tech-support-scam (TSS) / scareware campaign with two interchangeable opening lures: a fake "account disabled" popup impersonating a major social media platform, and (via a URL parameter) a fake "virus found" warning impersonating a major search engine. 
+   - Both lures funnel into the same final stage: a fake full-browser lockout impersonating a well-known antivirus/security brand, pushing the same fraudulent vendor support hotline.
+- Delivered via malvertising: a related URL we collected carries paid social-media-advertising campaign parameters (ad/ad-set/campaign IDs, placement, and a click-tracking identifier), consistent with paid ad spend rather than spam or SEO.
+- Hosted on disposable public cloud object storage across at least 4 bucket URLs serving visually identical content.
+- A companion redirector, hitrelay[.]com, served the same lure. 
+- On our most recent check it fully redirects to the unrelated, legitimate blog.birdjournal[.]com — consistent with traffic cloaking rather than the domain being abandoned.
+- Both samples are HTTrack clones of a shared, parameterized template that toggles entry-lure personas via URL parameter while substituting deployment-specific page titles and support numbers. 
+- Live testing confirmed the secondary persona renders correctly and funnels into the identical lockout page and support hotline as the default lure, proving the kit natively supports multiple entry lures via a single shared template.
+- The page traps the browser via the Fullscreen API + navigator.keyboard.lock(), swallowing the Escape key — we had to kill the entire browser process to escape it.
+-The only obfuscated code on the page tries to fetch a toll-free number from a remote endpoint for per-campaign rotation, but the endpoint is a broken/placeholder path in every sample, always silently falling back to a hardcoded number.
+- A shared analytics-platform project ID is identical across both infrastructure eras (the hitrelay[.]com era and the cloud-bucket era) — the strongest evidence tying them to the same operator.
+- The template's code-comment style is stylistically consistent with LLM-assisted development.
+
+DETAILS:
+
+Delivery & Social Engineering Chain
+- Paid social malvertising (hitrelay[.]com) routes victims directly to disposable cloud storage buckets displaying raw storage URLs, relying on content spoofing rather than domain spoofing.
+- The page mocks a major social media platform's news feed with a modal on top: "We've Disabled Your Account ... you have 180 days to appeal." 
+- Both the "Appeal" and "Ignore" buttons—styled in platform-blue with a blinking CSS animation—trigger the identical trap handler, leaving no safe interaction path.
+- Any click triggers a 1-second black/white strobe overlay—annotated in source code to simulate "something just went wrong"—before forcing full-screen mode to display a mock OS security dashboard with X'd-out protections. This shared final lockout screen funnels both entry lures to the verbatim banner: "[Security Software] Has Disabled Your Computer. Please Contact [Vendor] Support To Unlock Your Computer. Toll Free +1(844)-449-0284"
+- A looping synthetic voice track repeats the same "call our support before your account is suspended" message we transcribed, warning the victim not to restart the computer.
+- The entire chain is strictly client-side—lacking login forms, credential fields, or server-side backends—monetizing entirely off-web through voice phishing (vishing), a simpler operational model than credential or payment card harvesting.
+
+Browser Lockout Mechanism
+- navigator.keyboard.lock() runs unconditionally at page load, combined with the Fullscreen API takeover — this is what defeats the browser's normal Escape-key exit and is why we had to kill the entire browser process to recover.
+- Right-click, F12, and Ctrl+U/C/S are all suppressed via keydown/contextmenu handlers, hindering both victims and analysts from inspecting the page.
+- The cursor is hidden on first click, reinforcing the "your computer is broken" illusion.
+
+Templated, Multi-Persona Kit
+- Both samples carry an identical HTTrack mirror comment pointing to the same origin path on a cloud application-hosting platform's default subdomain, dated Mon, 17 Mar 2025 — confirming both are clones of one shared template that has existed since at least that date.
+- Per-deployment values are swapped at clone time: the page <title> and the hardcoded fallback phone number both carry the toll-free number's last 4 digits (-0284 on the cloud-bucket sample, -5490 on the hitrelay sample).
+- A second entry-lure persona — a search-engine "virus found" warning — is built into the same template and toggled by a URL parameter (?tfn=). 
+- Live testing on the analyzed bucket confirmed the secondary persona renders as coded—swapping the title, message, warning-triangle icon, and "Remove Virus Now" button—and funnels to the same fake antivirus lockout screen and support hotline (+1(844)-449-0284) as the default lure, proving the kit natively supports interchangeable entry lures over a single shared lockout stage.
+- The obfuscated script contains a redundant persona trigger via the recipes parameter; however, referencing a non-existent DOM element causes a runtime error that leaves the phone-number field blank.- 
+- This points to two independent, slightly conflicting implementations of the same feature.
+- The older hitrelay-served sample hardcodes the "account disabled" date, whereas the newer cloud-bucket sample live-fetches the real date from timeapi[.]io to prevent staleness—a verifiable kit upgrade confirmed end-to-end against the zone.json crawl date.
+
+Obfuscated / Broken Remote Phone-Number Rotation
+- As the page's sole obfuscated component, this script employs standard javascript-obfuscator string-array and control-flow flattening while all other code ships in plain JavaScript, indicating deliberate protection targeted specifically at this mechanism.
+- Decoded, it fetches a relative, nonexistent path (okok), evidently intending to pull a rotating phone number from a remote endpoint. 
+- Because the path is relative, it resolves to a nonexistent object inside the same storage bucket — confirmed by the HAR capture returning HTTP 403 — so it always falls back to a hardcoded number in the same script.
+- Present byte-for-byte across both samples (differing only by fallback number), this identical logic fetches the literal placeholder path /okok before falling back to a hardcoded number—indicating an unwired "TFN rotation" feature scaffolded by a kit-builder tool.
+
+Possible AI-Assisted Development Indicators
+- A few patterns are unusually consistent with LLM-assisted authorship, present identically in both kit eras:
+   - Source comments document victim-facing psychology rather than technical mechanics—such as noting the strobe effect "scares the user with 'something just went wrong'"—an unusual documentation habit for human scam developers.
+   - Repeated // === Section Name === banner-style comments delimiting otherwise-unrelated blocks, and a comment in the older sample explicitly noting a feature it doesn't have relative to an implied later version — both recognizable LLM habits.
+   - Defensive coding disproportionate to the task: the persona-switch code null-checks every element and wraps itself in try/catch for a static page with no adversarial input to guard against.
+- None of this is proof by itself — a careful human developer could produce the same patterns — so we present it only as a plausible hypothesis, not a conclusion.
+
+Campaign Analytics & Malvertising Infrastructure
+- HAR capture analysis confirms active third-party tracking, including a web-analytics property (G-9G8F2VB3TS), a session-replay/heatmap project (xnfdqhwwjk), and an ad-network click-sync redirect.
+- This indicates active measurement of victim engagement, the same way a legitimate marketer would track ad performance.
+- An identical heatmap project ID across both infrastructure eras—differing only by a routine library build version bump—is the strongest evidence linking hitrelay[.]com and cloud-bucket campaigns to the same operator, as changing it would forfeit historical analytics.
+- hitrelay[.]com URL parameters contain full paid social ad metadata—including campaign/ad/ad-set IDs, placement, click tracking, and the name "Funny Post | CPR - Copy"—substantiating malvertising over spam or SEO.
+
+Hosting Infrastructure
+- Origin template: a default subdomain of a major cloud application-hosting platform, mirrored via HTTrack in March 2025 — this template has existed for well over a year at time of discovery.
+- Delivery layer 1 (earlier): hitrelay[.]com, a redirector (registered 2026-06-24, registrant redacted) flagged by 4 VT vendors. 
+- On our most recent check it fully redirects to the unrelated, legitimate blog.birdjournal[.]com — most consistent with cloaking rather than the domain being abandoned.
+- Delivery layer 2 (analyzed here): disposable public cloud object storage — at least 4 bucket URLs served visually matching content, though we code-reviewed only one. 
+- Its naming pattern (<hex>-0284-<hex>) differs from the other three (<hex>.6968.<hex>), possibly indicating separate build batches from the same tooling — unconfirmed, since we did not code-review those three.
+The crawl logs themselves are our analysis platform's own sandbox artifacts (a spoofed User-Agent, headless browser) — useful for dating the capture but not attacker infrastructure.
+
+INDICATORS:
+- Scareware Landing Pages (disposable cloud object storage):
+hxxps[://]s3[.]amazonaws[.]com/c5f9ef71c50a4167cb8f-0284-f6d7090720e550a/index[.]html
+hxxps[://]s3[.]amazonaws[.]com/0c78da1c05065b51b643[.]6968[.]915db60427d2322/index[.]html
+hxxps[://]s3[.]amazonaws[.]com/87ce534188112e580344[.]6968[.]54092510556e5b9/index[.]html
+hxxps[://]s3[.]amazonaws[.]com/3a9ef51f0efecf46a0f6[.]6968[.]0f7c3f127accc1b/index[.]html
+
+-Ad-Click Redirector:
+hxxps[://]hitrelay[.]com/cf/r/6a5e7506979a610012e46762?ad%5fid=120250355554170551%26adset%5fid=120250355553900551%26campaign%5fid=120250355550480551%26ad%5fname=Funny+Post+%7c+CPR+-+Ad%26adset%5fname=Funny+Post+%7c+CPR+-+Ad+Set%26campaign%5fname=Funny+Post+%7c+CPR+-+Copy%26source=fb%26placement=Facebook%5fDesktop%5fFeed%26utm%5fmedium=paid%26utm%5fsource=fb%26utm%5fid=120250355550480551%26utm%5fcontent=120250355554170551%26utm%5fterm=120250355553900551%26utm%5fcampaign=120250355550480551%26fbclid=IwY2xjawTMbcJleHRuA2FlbQEwAGFkaWQBqzcP3O2q92JyaWQRMUcyd2dHOEQza2NmYU14RDZzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeFRcj2I1kjqCL0covZQSPtwgWXzjG6IN5D7%5fKBZsHp-JGN0DslTcdHyN0k24%5faem%5f7LOjH7WqTDctqn93n9zZYw 
+DOM matched the scareware template on first observation (2026-07-21); as of our most recent check, this same tracked link fully redirects to hxxps[://]blog[.]birdjournal[.]com/ (legitimate, unrelated third-party site — likely a cloaking target, not part of the campaign)
+
+- Origin Template Host:
+main[.]d1sgde6tm4rzhv[.]amplifyapp[.]com/folder1/index[.]html — default subdomain on a major cloud application-hosting platform; HTTrack mirror timestamp Mon, 17 Mar 2025 18:34:33 GMT found embedded in every downstream clone
+
+- Fraudulent Support Numbers (vishing call-back targets):
++1 (844) 449-0284 — cloud-bucket-hosted sample (both lure personas)
++1 (844) 449-5490 — hitrelay[.]com-hosted sample
+
+-Shared Third-Party Tracking IDs (actor-linking pivots):
+Session-replay/heatmap analytics platform project ID: xnfdqhwwjk — identical across both samples
+Web-analytics platform property ID: G-9G8F2VB3TS
