@@ -302,6 +302,7 @@ FILE PATHS:
 - C:\Windows\SystemTemp\agta_task_*.xml (scheduled-task definition XMLs)
 - C:\Windows\Temp\agta-install.log (msiexec install log)
 - C:\Windows\Temp\AgtaBackupAgent.msi (RAT installer staging path)
+
 FILENAMES:
 
 - AgtaBackupAgent.msi (RAT installer)
