@@ -50,7 +50,7 @@ FURTHER INFORMATION:
 - The Web Store entries for these extensions often have friendly reviews
 - These extensions carry a dual identity: 
   -- The name and description of the simple app on the extension's Web Store page
-  -- An internal name and description of the fake cryptocurrency wallet 
+  -- The presentation of a fake cryptocurrency wallet when opened 
 - The toolbar action also blanks the popup (setPopup(""))
   -- This routes users to the side panel where the privileged iframe loads
 
