@@ -58,7 +58,7 @@ FURTHER INFORMATION:
 
 INDICATORS:
 
-C2 DOMAINS:
+INITIAL C2 DOMAINS:
 
 - base-5c5d3-default-rtdb.firebaseio[.]com
 - basebooksdatabase-default-rtdb.firebaseio[.]com
