@@ -22,6 +22,8 @@ DETAILS:
   -- Otherwise, the returned JSON data contains the URL for hxxps[:]//www.google[.]com
      --- This causes the extension to default to benign fallback activity
      --- The extension then behaves exactly as the described simple app
+- This JSON retrieval allows for swappable servers hosting the fake wallet content
+  -- This is likely a technique for functional resliance
 - This is similar to a previous campaign we posted about in September 2026 at 
   -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-09-25-Crypto-Wallet-Runtime-Impersonation-Extensions.txt
 
