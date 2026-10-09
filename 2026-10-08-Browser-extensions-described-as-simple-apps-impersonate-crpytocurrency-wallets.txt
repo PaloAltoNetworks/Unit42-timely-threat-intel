@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu
+- Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Bradley Duncan
 
 NOTES:
 
