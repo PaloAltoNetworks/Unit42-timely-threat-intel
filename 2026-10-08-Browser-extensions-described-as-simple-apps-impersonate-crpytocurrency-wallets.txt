@@ -1,0 +1,92 @@
+2026-10-08 (THURSDAY): CHROME EXTENSIONS DESCRIBED AS SIMPLE APPS IMPERSONATE CRYPTOCURRENCY WALLETS
+
+AUTHORS:
+
+- Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu
+
+NOTES:
+
+- We detected a cluster of 9 malicious Chrome extensions described as simple apps
+  -- Descriptions include a note-taking app, stopwatch, and a password generator
+  -- However, these extensions impersonate wallet apps that are designed to steal cryptocurrency data
+
+DETAILS:
+
+- After installation, each extension retrieves a JSON data from a rentable domain over HTTPS
+  -- Rentable domains are fully qualified domain names (FQDNs) from legitimate service providers
+     --- Subdomains of these FQDNs contain a descriptive string indicating a brand
+     --- The brand is usually for a company, product or service 
+  -- These HTTPS requests are URLs that end in the following format: 
+     /fx-prefs/fx-prefs-<slug>-<hex>.json
+  -- The returned JSON data contains the URL for the follow-up server to impersonate a cryptocurrency wallet extension
+  -- Otherwise, the returned JSON data contains the URL for hxxps[:]//www.google[.]com
+     --- This causes the extension to default to benign fallback activity
+     --- The extension then behaves exactly as the described simple app
+- This is similar to a previous campaign we posted about in September 2026 at 
+  -- https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-09-25-Crypto-Wallet-Runtime-Impersonation-Extensions.txt
+
+WALLET STEALING CAPABILITIES:
+
+- These extensions are not limited to stealing online wallet seed-phrases
+- They are also designed to steal information from hardware wallets
+  -- Hardware wallets contain the keys needed for cryptocurrency transactions
+- The extension's side-panel iframe 'allow' attributes grant access to:
+  -- 'fullscreen' - for screenshots of user's desktop
+  -- 'clipboard-read' and 'clipboard-write' - read/write access to the user's clipboard
+  -- 'usb' - USB connections through WebUSB API
+  -- 'bluetooth' - bluetooth connection through Web bluetooth API
+  -- 'hid' - Human Interface Device (HID) connections through WebHID API
+  -- 'serial' - serial port through Web Serial API
+- This enables interception of data from hardware wallets via the appropriate API
+- It also enables cryptocurrency address-swapping in a user's clipboard
+- This is a higher-impact activity than online-only cryptocurrency wallet theft
+
+FURTHER INFORMATION:
+
+- Rentable domains for initial C2 activity are likely used to bypass URL-reputation scanning
+  -- Detection requires behavioral analysis of the fetch: open/iframe flow
+- Every extension is Manifest V3, with only storage and sidePanel permissions
+  -- The extensions have zero host permissions
+- The Web Store entries for these extensions often have friendly reviews
+- These extensions carry a dual identity: 
+  -- The name and description of the simple app on the extension's Web Store page
+  -- An internal name and description of the fake cryptocurrency wallet 
+- The toolbar action also blanks the popup (setPopup(""))
+  -- This routes users to the side panel where the privileged iframe loads
+
+INDICATORS:
+
+C2 DOMAINS:
+
+- base-5c5d3-default-rtdb.firebaseio[.]com
+- basebooksdatabase-default-rtdb.firebaseio[.]com
+- basepad-8cf0e-default-rtdb.firebaseio[.]com
+- baseplaning-default-rtdb.firebaseio[.]com
+- robinhoodbudget-default-rtdb.firebaseio[.]com
+- robinstopwatch-default-rtdb.firebaseio[.]com
+- tokenimproject-default-rtdb.firebaseio[.]com
+- tokenimextenstion-91922-default-rtdb[.]firebaseio.com
+- zenfocusextension-default-rtdb.firebaseio[.]com
+
+DOMAINS FOR FAKE CRYPTOCURRENCY WALLET CONTENT:
+
+- base-web3-wallet-extension.pages[.]dev
+- chromeextenstooedoxu74428.pages[.]dev
+- edgeextenstion9827611.pages[.]dev
+- extenstionrobin8771252628.pages[.]dev
+- nomiextenstionw9716222.pages.dev
+- vaultextenstionchrome981822.pages[.]dev
+- zenextensionchrom198723.pages[.]dev
+
+MALICIOUS EXTENSION IDENTIFIERS:
+
+- bbljaeojdeehoihejgmdjgjmnnolgdbm
+- dnbfneandcjphnkgcjkdkphmaoajiojh
+- gbafgofiefjephjoodfphmojinnfiada
+- jfegcjipmnolppcnpgpmfogkmooelibl
+- knamebhlnelgjefbmjngodcgiknhmnhk
+- mdbhibcfeakbnlfbmfedjppfkenpklne
+- mkiebookdgphpeehoaaohajdcjohcfmb
+- nhjjepfbhpdhehdeiolbnjembodcgaee
+- ombjdobdekonhhipddhpcpdfflmdakfe
+
