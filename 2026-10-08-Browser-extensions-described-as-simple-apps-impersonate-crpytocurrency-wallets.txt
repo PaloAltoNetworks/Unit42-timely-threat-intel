@@ -4,6 +4,11 @@ AUTHORS:
 
 - Nabeel Mohamed, Qinge Xie, Shresta Bellary Seetharam, Fang Liu, Bradley Duncan
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/we-discovered-9-malicious-browser-extensions-ugcPost-7514338151012696064-421L/
+- https://x.com/Unit42_Intel/status/2108572465622286452
+
 NOTES:
 
 - We detected a cluster of 9 malicious Chrome extensions described as simple apps
