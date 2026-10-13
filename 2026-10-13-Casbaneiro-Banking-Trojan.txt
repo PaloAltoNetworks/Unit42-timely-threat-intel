@@ -95,6 +95,7 @@ Host artefacts:
 - HKCU\Software\Google\Chrome\PreferenceMACs\Default\extensions.settings - Registry value deleted by the extension to suppress Chrome's tamper detection.
 
 Other:
+
 - xdrivewin[.]com/key/<name>.zip - Extension archive delivery path on the delivery domain listed above.
 - xdrivewin[.]com/nf2/?cid=<victim email> - Phishing landing path on the same domain; the victim's email address is encoded in the cid parameter.
 - /api/sites, /api/custom_html_for_auto_injection?url=, /api/limpar, /api/telegram/mute, /sounds/notification.mp3 - Paths exposed consistently across the operator panels listed above; usable together as a scan signature for panel hosts.
