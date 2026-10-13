@@ -1,0 +1,109 @@
+2026-10-13 (Tuesday): Casbaneiro Banking Trojan Paired With Malicious Chromium Extension and Delivered via Abused Remote Access Tooling
+
+AUTHORS:
+
+- Anikait Panigrahi, Abhiram Patiballa, Saide Sheikh Guy Weiner
+
+NOTES:
+
+- We observed the Casbaneiro banking trojan family (also tracked as Metamorfo and Ponteiro) delivered alongside a malicious Chromium extension, with infrastructure for both still live at the time of writing.
+- Initial access came from a phishing email that led the user to install a client for an abused trial tenant of a legitimate remote-access product, which the operators then used to run PowerShell directly on the host.
+- The chain deploys two parallel components: a Delphi payload side-loaded through a legitimately signed installer utility, and a malicious Chromium extension side-loaded into the victim's browser.
+- The Chromium extension resolves its command-and-control server from a plain-text file hosted on an attacker domain, then maintains a WebSocket channel for screenshot capture, cookie theft, form-field capture including passwords, and operator-driven HTML overlay injection.
+- The extension is controlled through an operator web panel that the operators themselves brand "Painel Gangster". We first saw the name in an operator panel data file submitted to a public malware repository in September 2025, then confirmed it on live panel hosts, including the WebSocket C2 contacted in this intrusion.
+- The side-load abuses a signed Caphyon Advanced Installer component (VmLauncher.exe), which is made to load a malicious DLL named zlibai.dll that masquerades as the zlib compression library.
+- The extension's operator panel data shows a target list of roughly 65 Portuguese and Brazilian banking portals, 11 cryptocurrency exchanges, several webmail providers and typosquatted webmail hostnames.
+
+DETAILS:
+
+- A phishing email directs the victim to install a client for a legitimate remote-monitoring and management product from an attacker-registered trial tenant of that vendor's cloud service. The client installs as a Windows service, giving persistent interactive access.
+- From that session the operators launch PowerShell, which retrieves an archive containing an unpacked Chromium extension from a public file-sharing service, and separately retrieves a signed installer utility together with a malicious DLL from an attacker-controlled web server.
+- The DLL is renamed to match the import expectations of the signed utility and placed alongside it. When the utility runs, Windows search-order resolution loads the malicious DLL instead of a legitimate library.
+- The malicious DLL is Delphi-compiled and exports a set of decoy zlib-style functions that satisfy the host binary's import table while performing no real compression work. During process attach it patches the host executable's entry point in memory, redirecting execution into its own handler.
+- That handler hides the host application window, then enters a loop that checks for network connectivity, decrypts a command string using a custom XOR routine driven by a 150-byte key table, and executes it. The string-encryption scheme is characteristic of this family.
+- Separately, the browser is launched with a command line pointing at the extracted extension directory. The extension manifest is Manifest V3 and requests storage, tabs, webNavigation, scripting, activeTab and cookies, with content scripts matching all URLs in all frames. It declares no public key and no update URL, so it is side-load only and never passes through the Chrome Web Store.
+- On startup the extension fetches a plain-text file from an operator domain. The response supplies the active WebSocket endpoint. The client generates a 10-character uppercase identifier and maintains the session with periodic pings.
+- Server-to-client commands include screenshot capture, cookie retrieval, HTML payload injection and removal of injected HTML. Client-to-server messages include screenshot data, cookie data, tab listings, monitored-site-visited events and captured input data.
+- A companion content script registers a listener on form fields across every page. When a field loses focus it captures the page URL, the field name, the field value and a timestamp, and relays them to the service worker for exfiltration. Password fields are captured unconditionally.
+- Injected overlays are fetched per-URL from an operator endpoint and rendered using predictable DOM element identifiers, which gives defenders a reliable hunting artefact in browser telemetry.
+- An earlier build of the extension also rewrote navigation targets using the Chrome webNavigation API for phishing redirection. That code was removed in later builds, though the permission remains declared in the manifest.
+- Earlier builds contain Portuguese-language function names and user-facing error strings. Later builds were translated to English, the version numbering was reset, and internal filenames moved from numeric to semantic — changes consistent with a deliberate effort to frustrate clustering.
+- The "Painel Gangster" operator panels run Node.js Express behind nginx and expose a consistent set of API paths for client management, overlay configuration, screenshot and cookie retrieval, and notification muting via a messaging-platform integration. Some panels are CDN-fronted; others are reachable directly.
+- TLS certificates for the extension's resolver domain are wildcard-only and rotate on a roughly two-to-three-month cadence between two issuers, Google Trust Services (WE1) and Sectigo. The earliest was issued on 2025-05-26, the day the domain was registered, and the most recent on 2026-09-16. Related actor domains add Let's Encrypt as a third issuer. Rotating across multiple certificate authorities defeats hunting rules keyed to a single issuer.
+- The extension platform and the Delphi payload use separate command-and-control infrastructure on different providers, consistent with deliberate compartmentalisation of delivery, panel and C2 functions.
+
+INDICATORS:
+
+Domains:
+
+- n1.youconnectedssl[.]digital - Dead-drop resolver serving the current WebSocket C2 address.
+- updatehostingfree[.]top - Previous-generation resolver domain.
+- euromasterx[.]com - Delivery host for the signed utility and the malicious DLL.
+- xdrivewin[.]com - Extension archive delivery and phishing landing infrastructure.
+- uixfilepdfview[.]top - Chrome extension package delivery domain.
+- locuralocuralocuraloocura[.]top - Phishing delivery domain serving victim-keyed links.
+- arneighti[.]com - Phishing overlay landing domain referenced by the operator panel.
+- knowledgerknolle[.]com - CDN-fronted operator panel domain.
+- learnflourishspace[.]com - CDN-fronted operator panel domain.
+- zytherostudio[.]com - CDN-fronted operator panel domain.
+
+IP Addresses:
+
+- 216.203.21[.]119 - WebSocket C2 and operator panel contacted by the extension in the observed intrusion.
+- 190.2.184[.]201 - Delphi banking trojan C2, observed on ports 8082 and 8398.
+- 216.203.20[.]116 - Operator panel adjacent to the C2 above, confirmed active September 2026.
+- 65.38.121[.]128 - Long-running operator panel and WebSocket C2, confirmed active September 2026.
+- 134.209.200[.]162 - Operator panel, confirmed active September 2026.
+- 142.93.109[.]181 - Operator panel, confirmed active September 2026.
+- 45.76.69[.]213 - Operator panel, confirmed active September 2026.
+- 45.61.136[.]99 - Operator panel that also hosted actor panel domains, confirmed active September 2026.
+
+URLs:
+
+- hxxps://n1.youconnectedssl[.]digital/pt.txt - Dead-drop config file returning the live WebSocket C2 address.
+- hxxps://updatehostingfree[.]top/w.txt - Previous-generation dead-drop config file, same role.
+- hxxps://euromasterx[.]com/kayaba/2.dll - Malicious DLL download, renamed to zlibai.dll on the host.
+- hxxps://euromasterx[.]com/good/VmLauncher.exe - Signed Caphyon utility used as the side-load host.
+
+Payloads:
+
+- d180a1978cd547f8aa4c387f951c720f0b2ff9641a45a8153994a8f29cfdf610 - zlibai.dll - masqueraded DLL staged for side-loading; packed Delphi payload, name mimics the zlib compression library.
+- 6cdf132ee130b4cec889e39e06b07559fb4119c61a62d48c03cf357f66eb8900 - zlibai.dll loader component - Delphi loader exporting decoy unz* zlib functions to satisfy the host import table; performs entry-point patching.
+- 14ee8767d04ea427a3fa09a3c5913e21c6e60f055b8e5bdc8e270e3feb7c3e36 - Secondary DLL observed during dynamic analysis of the above.
+- c14c25792af4e1552b54b4fe0aca6e405ed052b4ba4af67a439bfdad5b3919ed - EXTENSAO2.0.0D.crx - packaged Chrome extension delivering the toolkit.
+- 36f7a35c3e811fc1f66836297bc7a5d1dcc8443e7873a6369fb6d5e99351d26a - background.js - Chromium extension service worker, current build (v1.0.4).
+- d2ae1aca06c35bd3b80f33754394aad246f81bde8040d78122c90be72753c648 - background.js - Chromium extension service worker (v1.0.3).
+- 91b9e6fc3e4e95626c725cf309ecd7c5de750a8e77fd9a91af51db33176509da - 7482874728.js - earlier extension build (v3.0.0DST) with navigation-hijack capability.
+- 06354cd12cb57cd2c461f4f7dfbab68864e5dd2500a9da6bdc67d8b672fb0bbf - 7482874728.js - earlier extension build (v3.0.0DST), paired automated release.
+- f91e37f4951dfd606c0faf9b77aa4e640f735a92319f10e572941e647a9b991d - boss.zip - extension delivery archive.
+- b6b3e02ca585f52289206f057f0b9f0f58ad519c23471f2a03cafb69b2c8cf00 - st.zip - extension delivery archive.
+- f4f4c0cfeee5492ed2bedee11747aebf734cb46bcd5a06fe9afd326906179fd1 - st.zip - extension delivery archive, earlier variant.
+- 8751a7f6a2e7abc8de41b94fcc25406efe347a2942ade15c5fb975b8e6375479 - st.zip - extension delivery archive, earliest variant.
+- 52d6cca1a8d0b06367aa82338fa47c0c6b046dd1b90195773b39ae5123754b24 - c.zip - extension delivery archive.
+- 44240e23989532ede8003f809d3db830de4752566d1a36e239a69e565e213e1d - c.zip - extension delivery archive, earlier variant.
+
+Host artefacts:
+
+- C:\Docstar\zlibai.dll - Masqueraded DLL staging path observed alongside the signed host binary.
+- C:\Docstar\VmLauncher.exe - Signed Caphyon Advanced Installer VM Launcher used as the side-load host.
+- C:\Backup11\ptpt.zip - Extension archive staging path.
+- C:\chrome\background.js - Extracted extension service worker on disk.
+- C:\chrome\content_script.js - Extracted extension content script on disk.
+- C:\chrome\manifest.json - Extracted extension manifest on disk.
+- chrome.exe --load-extension=C:\chrome - Side-load command line observed at execution.
+- HKLM\SYSTEM\ControlSet001\Services\ScreenConnect Client (<16-hex-char instance ID>) - Service registered by the abused remote-access client.
+- HKCU\Software\Google\Chrome\PreferenceMACs\Default\extensions.settings - Registry value deleted by the extension to suppress Chrome's tamper detection.
+
+Other:
+- xdrivewin[.]com/key/<name>.zip - Extension archive delivery path on the delivery domain listed above.
+- xdrivewin[.]com/nf2/?cid=<victim email> - Phishing landing path on the same domain; the victim's email address is encoded in the cid parameter.
+- /api/sites, /api/custom_html_for_auto_injection?url=, /api/limpar, /api/telegram/mute, /sounds/notification.mp3 - Paths exposed consistently across the operator panels listed above; usable together as a scan signature for panel hosts.
+- b3a4d98b2258ae935924207c6727f32bd60a6c38f6ea0dfeb0ab9c86763ea7bd - Chrome extension permission hash shared across the whole family.
+- 6232b958294770b6ab92247eb321a63117ce7c70 - SHA1 thumbprint of the current wildcard TLS certificate for the resolver domain (Google Trust Services WE1).
+- __ext_injected_overlay_wrapper_id_ - DOM element ID prefix created when an overlay is injected.
+- __ext_injected_style_id_ - DOM element ID prefix for the injected overlay stylesheet.
+- extbtn_submit - Element ID of the submit control on injected overlays.
+- Painel Gangster - Operator panel body text; operator self-branding, usable as a scan signature.
+- TCP 773 - Non-standard operator admin port observed on two panel hosts.
+- ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789 - Client ID charset; 10-character uppercase identifiers excluding zero.
+- mGDTlTSNGuSCOqGdaulGUKOHgvQlJOtOlhjtxSeXhHPXIUXACcSWvUxMXQvHtCpUPUnksTtaybyvrLqpjaobSeWEUujlvTXFhAsetdvJhyLdFjUKjdcwpmIGOVJGEtnQwwRcaPJxspryLMPrhGPxob - 150-byte XOR key table used by the Delphi loader; characteristic of this family.
