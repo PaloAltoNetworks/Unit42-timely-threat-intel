@@ -60,10 +60,10 @@ IP Addresses:
 
 URLs:
 
-- hxxps://n1.youconnectedssl[.]digital/pt.txt - Dead-drop config file returning the live WebSocket C2 address.
-- hxxps://updatehostingfree[.]top/w.txt - Previous-generation dead-drop config file, same role.
-- hxxps://euromasterx[.]com/kayaba/2.dll - Malicious DLL download, renamed to zlibai.dll on the host.
-- hxxps://euromasterx[.]com/good/VmLauncher.exe - Signed Caphyon utility used as the side-load host.
+- hxxps[:]//n1.youconnectedssl[.]digital/pt.txt - Dead-drop config file returning the live WebSocket C2 address.
+- hxxps[:]//updatehostingfree[.]top/w.txt - Previous-generation dead-drop config file, same role.
+- hxxps[:]//euromasterx[.]com/kayaba/2.dll - Malicious DLL download, renamed to zlibai.dll on the host.
+- hxxps[:]//euromasterx[.]com/good/VmLauncher.exe - Signed Caphyon utility used as the side-load host.
 
 Payloads:
 
