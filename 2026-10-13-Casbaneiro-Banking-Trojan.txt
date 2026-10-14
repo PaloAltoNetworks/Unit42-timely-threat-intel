@@ -2,7 +2,7 @@
 
 AUTHORS:
 
-- Anikait Panigrahi, Abhiram Patiballa, Saide Sheikh Guy Weiner
+- Anikait Panigrahi, Abhiram Patiballa, Saide Sheikh, Guy Weiner
 
 NOTES:
 
