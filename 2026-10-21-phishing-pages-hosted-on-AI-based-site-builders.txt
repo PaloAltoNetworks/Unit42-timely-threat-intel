@@ -1,0 +1,86 @@
+2026-10-21 (Wednesday): Phishing pages hosted on AI-based site builders
+
+AUTHORS:
+
+- Shawn He Shuang, Keerthiraj Nagaraj
+
+NOTES:
+
+- We've noted numerous phishing pages hosted on AI-based site builders
+- These pages almost always have a DOM hash that no other host shares
+  -- Therefore, DOM-hash signatures miss them
+- Most such pages still carry the builder's own marker in their markup
+  -- We can hunt for it together with other common phishing indicators
+- Pages hosted on AI-based site builders more often use a modern JavaScript shell
+- They also more often contain code that sends form data to popular chat apps
+
+DETAILS:
+
+- Unique DOM hash:
+  -- These pages have an exact DOM hash that no other host shares 
+     --- This is for almost every phishing page hosted on an AI-based site builder
+     --- We found a rate of 1.00 distinct hashes per host on AI-based site builders
+     --- Versus a rate of 0.27 on non-AI-based site builders, like pages.dev
+  -- The consequences are: 
+     --- A hash rule built from one page matches only that page
+     --- Copies of one kit look like separate sites
+         ---- On one builder, 74% of hosts fall into same-layout groups of 5 or more
+         ---- And the largest is 71 hosts of one phishing kit that impersonates banks
+     --- Defenders need other signals: 
+         ---- A normalized-page hash
+         ---- Screenshot similarity
+         ---- Or the builder's own marker
+
+- Modern JS framework: Next.js or Vite/React shell: 
+  -- 26.2% of pages hosted on AI-based site builders versus 3.2% of pages from non-AI-based builders
+  -- Likely reasons:
+     --- The builder generates that stack by default
+     --- One platform's pages are 99% Next.js
+     --- The others load hashed Vite bundles
+  -- Component libraries make a polished brand look-alike login quick to produce
+  -- A client-rendered page serves a near-empty shell
+    --- Scanners that read only raw HTML may find few indicators
+    --- This was not tested
+
+- Chat-app sink (Telegram’s 'sendMessage' or Discord webhook in page code):
+  -- 29.0% of AI-based builder pages against 15.9% of non-AI-based builder pages
+  -- Likely reasons:
+     --- A front-end page has no server
+     --- So the browser posts the typed credentials straight to the bot
+  -- The attacker gets each submission at once in a chat
+
+INDICATORS OF ACTIVITY:
+
+- hxxps[:]//alltijjarieywaffabnnk.lovable[.]app
+- hxxps[:]//attwebupdate4085j483hj392.framer[.]ai
+- hxxps[:]//banknagar-info.netlify[.]app
+- hxxps[:]//binance-support-pro.lovable[.]app
+- hxxps[:]//bitkey-cloud-wallet.created[.]app
+- hxxps[:]//bnidirectbnilogin.netlify[.]app
+- hxxps[:]//brazil-documento-brazil-documento.framer[.]ai
+- hxxps[:]//bybit-logi-auth.created[.]app
+- hxxps[:]//coenbase-pro-secure.created[.]app
+- hxxps[:]//cred-agric.netlify[.]app
+- hxxps[:]//credi-pc--jonfervera4.replit[.]app
+- hxxps[:]//desenrola-aprovado.lovable[.]app
+- hxxps[:]//frabjous-druid-8cf591.netlify[.]app
+- hxxps[:]//freerobox2434w.netlify[.]app
+- hxxps[:]//hh6515.craftum[.]io
+- hxxps[:]//kucoin-home.created[.]app
+- hxxps[:]//minimal-centered-car-23p0.bolt[.]host
+- hxxps[:]//myjunoupdatenow.framer[.]website
+- hxxps[:]//mytalktalkbroadbandteam.framer[.]website
+- hxxps[:]//qill.netlify[.]app
+- hxxps[:]//regal-specukam.netlify[.]app
+- hxxps[:]//seashell-owl-632549.hostingersite[.]com
+- hxxps[:]//secure-server-hub--no-replysignin.replit[.]app
+- hxxps[:]//security-server-landing-page--009wq.replit[.]app
+- hxxps[:]//security-server-page--lizma150.replit[.]app
+- hxxps[:]//security-server-page--mhamiltonhunter.replit[.]app
+- hxxps[:]//shy84cy2cpklpedzwvshy84cy2cpklpedzwv-fidelty-com.replit[.]app
+- hxxps[:]//site-pearl-portal-23f1.surge[.]sh
+- hxxps[:]//square-coin-cloud.created[.]app
+- hxxps[:]//subtle-belekoy-f2a734.netlify[.]app
+- hxxps[:]//trust-guide-hero.lovable[.]app
+- hxxps[:]//vinte-setup.bolt[.]host
+- hxxps[:]//zoom-web3-longma-7ac728.netlify[.]app
