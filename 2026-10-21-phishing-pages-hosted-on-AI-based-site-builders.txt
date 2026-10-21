@@ -1,4 +1,4 @@
-2026-10-21 (Wednesday): Phishing Pages Hosted on AI-based Site Builders: Unique DOM Hashes, Builder Markers, Modern Stack and Chat-App Exfiltration
+2026-10-21 (Wednesday): Phishing Pages Hosted on AI-based Site Builders
 
 AUTHORS:
 
