@@ -30,6 +30,7 @@ Phishing Domains:
 - passkeyadd[.]com
 - passkeydeploy[.]com
 - deploypasskey[.]com
+- setpasskey[.]com
 
 IP Addresses:
 
