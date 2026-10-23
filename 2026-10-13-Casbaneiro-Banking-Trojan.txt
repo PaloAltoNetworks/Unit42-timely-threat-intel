@@ -4,6 +4,11 @@ AUTHORS:
 
 - Anikait Panigrahi, Abhiram Patiballa, Saide Sheikh, Guy Weiner
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/casbaneiro-screenconnect-ugcPost-7516197660333228032-ctl2/
+- https://x.com/Unit42_Intel/status/2110431971088253318
+
 NOTES:
 
 - We observed the Casbaneiro banking trojan family (also tracked as Metamorfo and Ponteiro) delivered alongside a malicious Chromium extension, with infrastructure for both still live at the time of writing.
