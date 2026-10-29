@@ -1,0 +1,90 @@
+2026-10-29 (Thursday): Phishing emails distribute Zecurit Agent RMM
+
+AUTHORS:
+
+- Muhammet Algan, Shazan Khaja
+
+NOTES:
+
+- An ongoing phishing campaign is impersonating document sharing services to distribute Zecurit Agent
+  -- The associated emails pose as notifications, event invitations or document-sharing messages
+  -- Zecurit Agent is commercially available remote monitoring and management (RMM) tool
+  -- These attackers are abusing this commercially available RMM tool
+  -- Attacks present an installer for Zecurit Agent as a legitimate file or document to open
+  -- Once installed, Zecurit Agent allows attackers to control the host remotely using normal RMM features
+- These installers use lure-themed file names, such as:
+  -- Docusign.exe
+  -- documentpdf.exe
+  -- Evite.exe
+  -- ViewDoc.exe
+- The installers have the same code signing certificate as any legitimate Zecurit Agent installer
+  -- The name of this x509 certificate is: ZECURIT TECHNOLOGIES PRIVATE LIMITED
+
+DETAILS:
+
+- Recipients click a link in the email
+- The link leads to:
+  -- A direct download of the malware
+  -- A lure page on attacker-controlled infrastructure
+- The attacker-controller infrastructure returns the Zecurit Agent installer
+- Observed patterns in the URLs mimicking the document sharing include:
+  -- Installer download paths: 
+     --- /DocS/files/
+     --- /Ddcu/
+  -- Fake "activate/download" pages and fake invitation pages:
+     -- /access/
+     -- download_invitee.php
+- At least one installer was delivered through an R2 storage bucket (r2.dev)
+- The payloads are Inno Setup installers for the Zecurit Agent
+  -- They silently install a Zecurit MSI file
+  -- Then they run ZecuritAgentRegister.exe to enroll the agent
+- RMM functions of Zecurit Agent include:
+  -- Remote control
+  -- Screen capture
+  -- Remote command execution
+- Code-signing certificate: 
+  -- Name: ZECURIT TECHNOLOGIES PRIVATE LIMITED
+  -- SHA-1 thumbprint: 6D9ED879ADC48C1B0EBA4058A5C6511A5DD07C63
+- Indicators to hunt for on an infected host include:
+  -- The folder: C:\Program Files\Zecurit\
+  -- A registry key at: HKLM\SOFTWARE\Zecurit\Agent
+  -- Running processes for Zecurit* Windows services
+     --- For example, ZecuritAgentService.exe
+  -- Files with names like:
+     --- ZecuritAgentInstaller.msi
+     --- ZecuritAgentRegister.exe
+     --- InstallUninstallApp.exe
+  -- Agent traffic contacting legitimate Zecurit vendor domains
+     --- For example, app.zecurit[.]com and dms.zecurit[.]com
+     --- Check this traffic against your list of approved RMM tools
+
+INDICATORS:
+
+- Example of SHA-256 hashes for Zecurit Agent installers used in this campaign:
+ 
+  -- SHA-256 hash: d7bae1209fea304403d8eb6f042ea0b9b84be14ef7e29ab9f9c9c079e8d1f1c7
+  -- File name: Docusign.exe
+
+  -- SHA-256 hash: 24387787c0789f0b8ff02102273a8edef5888c420be15bfae103250ce7aa8b49
+  -- File name: documentpdf.exe
+
+  -- SHA-256 hash: 8585921fd9bb23f8dcd12e0d637d43aee6597793038e1ac53dcbe18516024649
+  -- File name: Evite.exe
+
+  -- SHA-256 hash: 65f1731d5cdcc169c36d3690196f3a7c60922d85c620d172cc607c8d7eb96566
+  -- File name: ViewDoc.exe
+
+- Examples of URLs used to deliver the installers:
+
+  -- hxxps[:]//insightzen[.]vu/access/
+  -- hxxps[:]//insightzen[.]vu/download_invitee.php
+  -- hxxps[:]//pink.importpersonal[.]net/Ddcu/
+  -- hxxps[:]//pink.importpersonal[.]net/DocS/files/Docusign.exe
+  -- hxxps[:]//yorix[.]click/activate/download.html
+  -- hxxps[:]//yorix[.]click/activate/installer/documentpdf.exe
+
+- Domains associated with this activity:
+
+  -- insightzen[.]vu
+  -- pink.importpersonal[.]net
+  -- yorix[.]click
