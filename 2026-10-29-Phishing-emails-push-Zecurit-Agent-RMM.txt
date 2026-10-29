@@ -8,7 +8,7 @@ NOTES:
 
 - An ongoing phishing campaign is impersonating document sharing services to distribute Zecurit Agent
   -- The associated emails pose as notifications, event invitations or document-sharing messages
-  -- Zecurit Agent is commercially available remote monitoring and management (RMM) tool
+  -- Zecurit Agent is a commercially available remote monitoring and management (RMM) tool
   -- These attackers are abusing this commercially available RMM tool
   -- Attacks present an installer for Zecurit Agent as a legitimate file or document to open
   -- Once installed, Zecurit Agent allows attackers to control the host remotely using normal RMM features
@@ -17,7 +17,7 @@ NOTES:
   -- documentpdf.exe
   -- Evite.exe
   -- ViewDoc.exe
-- The installers have the same code signing certificate as any legitimate Zecurit Agent installer
+- The installers have the same code-signing certificate as any legitimate Zecurit Agent installer
   -- The name of this x509 certificate is: ZECURIT TECHNOLOGIES PRIVATE LIMITED
 
 DETAILS:
@@ -26,7 +26,7 @@ DETAILS:
 - The link leads to:
   -- A direct download of the malware
   -- A lure page on attacker-controlled infrastructure
-- The attacker-controller infrastructure returns the Zecurit Agent installer
+- The attacker-controlled infrastructure returns the Zecurit Agent installer
 - Observed patterns in the URLs mimicking the document sharing include:
   -- Installer download paths: 
      --- /DocS/files/
