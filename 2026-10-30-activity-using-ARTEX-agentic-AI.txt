@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- We have observed intrusion attempts against multiple organizations that we assess used ARTEX, or an ARTEX-derived framework
+- We have observed intrusion activity against multiple organizations that we assess used ARTEX, or an ARTEX-derived framework
   -- ARTEX is an openly published, autonomous, multi-agent AI penetration-testing framework released in July 2026
   -- It was moved to closed source on 08 October, after it had been forked more than 12,000 times
   -- A planner agent backed by a commercial or open-weight large language model (LLM) chooses each next step
