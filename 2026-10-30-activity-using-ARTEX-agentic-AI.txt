@@ -1,0 +1,194 @@
+2026-10-30 (Friday): ARTEX Agentic AI Framework Used to Abuse Exposed APIs and Probe Identity Providers
+
+AUTHORS:
+
+- Ben Magee, Will Cates
+
+NOTES:
+
+- We have observed intrusion attempts against multiple organizations that we assess used ARTEX, or an ARTEX-derived framework
+  -- ARTEX is an openly published, autonomous, multi-agent AI penetration-testing framework released in July 2026
+  -- It was moved to closed source on 08 October, after it had been forked more than 12,000 times
+  -- A planner agent backed by a commercial or open-weight large language model (LLM) chooses each next step
+  -- Worker agents run conventional tools (e.g., nmap, nuclei, httpx, curl, ffuf) and feed results back into a shared graph of assets and findings
+  -- Other vendors have tied ARTEX to several unrelated threat groups, so ARTEX use alone does not identify a specific actor
+- Observed activity spanned 24 September 2026 to 27 October 2026 and is ongoing
+- Each intrusion followed the same playbook:
+  -- Map the target application by harvesting JavaScript source maps, bundles, runtime configuration and OpenAPI specifications
+  -- Probe identity providers and their OAuth flows
+  -- Fall back to exposed API surface when identity attacks fail
+- Successful outcomes we observed:
+  -- Self-registration of accounts in a production web application, followed by reads of ~50 MB of API data
+  -- Bulk approval and user record changes accepted from those self-registered accounts
+  -- Multiple unauthenticated write operations accepted by a development API's document store, each confirmed by an immediate read-back
+- The behavior goes beyond conventional scanners and is consistent with an LLM planner reasoning over results:
+  -- Inference-paced request bursts
+  -- Spec-driven targeting within seconds of download
+  -- Self correction from API validation errors
+  -- Semantic route guessing
+  -- Goal verification after each successful action
+- We did not observe direct evidence of the specific LLM in use; the assessment is behavioral
+
+DETAILS:
+
+ATTACK FLOW:
+
+- Stage 1 - Broad reconnaissance:
+  -- Perimeter scanning of public IP ranges
+  -- Content discovery with ffuf (thousands of requests from one source)
+  -- Listing of publicly accessible S3 buckets
+  -- More than 700 denied attempts against internal applications behind a cloud provider's Identity-Aware Proxy (IAP), including:
+     --- A popular project management system, using standard exploit-recon paths such as /rest/api/2/serverInfo and /login.action
+     --- Message-queue admin consoles
+     --- Kubernetes-hosted dev/qa/prd services
+     --- Cloud storage buckets
+  -- Internal hostnames were enumerated across environment naming conventions (dev, dev2, pt, qa, sit, prd)
+     --- This is consistent with an agent extrapolating from observed naming patterns
+- Stage 2 - Application mapping:
+  -- JavaScript bundles and source maps (/bundle.js, /bundle.js.map) downloaded from production, development and UAT environments
+  -- Public OpenAPI specifications retrieved (/openapi.json, /docs, /redoc)
+  -- Runtime configuration harvested (runtime-config.json, app-config.json, password-policy endpoints)
+  -- Unauthenticated configuration endpoints queried (e.g., an cloud provider's configuration route returning data without sign-in)
+- Stage 3 - Identity provider probing:
+  -- Login as a randomly generated, nonexistent user to baseline the error response, followed one second later by a login as "admin"
+  -- OAuth authorize requests with unregistered redirect URIs across a high number of application client IDs
+     --- These were rejected with illegal_redirect_uri_enhanced
+  -- An authorization request to a cloud provider's identity management platform redirecting to an external test domain
+  -- Password spray
+  -- Account-recovery abuse:
+     --- Password-reset requests accepted (no reset completed)
+     --- Password-reset pre-auth, OTP and MFA-profile endpoints probed on consumer identity services
+  -- No successful IdP account compromise was observed
+- Stage 4 - Pivot to exposed API surface:
+  -- In one case, API exploitation began two minutes after the final failed authorization attempt
+     --- This matches the published ARTEX pattern of falling back to API surface when identity attacks fail
+- Stage 5a - Business-logic abuse (production web application):
+  -- Successful self-registrations (HTTP 201) in about 40 minutes
+  -- Authenticated reads of user, role, approval, terms, taxonomy and contact data
+  -- Requests for predictable record identifiers (999999995, 999999, 0) to test access controls
+  -- Administrative and data functions in a second application reached without signing in
+- Stage 5b - Unauthenticated API writes (development API):
+  -- Public OpenAPI spec downloaded; collections created (HTTP 201); every spec-defined write endpoint called within three seconds
+  -- Insert attempts failed (HTTP 422/500)
+  -- The agent re-downloaded the spec twice; writes succeeded 38 seconds later
+     --- 8x PUT update-documents
+     --- 3x PUT batch-update-documents
+  -- Each write was followed by a GET read-back within one to two seconds
+  -- Two short windows of HTTP 403 responses did not stop the activity; successful writes resumed within seconds
+  -- Three additional sources later replayed the same request sequence without success
+
+INDICATORS OF AI-DRIVEN (LLM AGENT) OPERATION:
+
+- Think-then-act cadence:
+  -- Bursts of 1-14 requests at about one per second
+  -- Separated by regular 25-31 second pauses
+  -- This is consistent with waiting on model inference between steps, not a scanner running at a fixed rate
+- Spec-driven targeting:
+  -- Only routes defined in the harvested OpenAPI document were called, starting two seconds after download, with no route brute-forcing
+  -- Source-map routes were downloaded before the internal API routes they reference were called
+- Error-driven self-correction:
+  -- HTTP 422 validation responses describe the expected request fields
+  -- The agent re-read the specification and corrected its payloads until writes succeeded
+- Semantic route guessing:
+  -- After 36 rejections on one route, the agent tried a small set of meaningful variants instead of a wordlist:
+     --- Trailing slash
+     --- Unversioned path
+     --- /api/v2/
+     --- Shortened path
+- Goal verification:
+  -- An immediate read-back followed every successful write
+- Adaptation to blocking:
+  -- HTTP 403 responses caused a pause and a change of approach, then the activity resumed
+- Generated canary and placeholder values, reused across organizations:
+  -- zz_no_such_user_9f3a@<victim domain>
+  -- zzq.nonexistent9x7@<victim domain>
+  -- precheck.not-a-user@example[.]invalid
+  -- /zzzrandom12345
+  -- S3 object keys nonexistent-i3185 and zz-no-such-key-1a2b3c.html
+  -- Placeholder IDs test123, 0000000000, 999999
+- Self-describing user agents:
+  -- "Mozilla/5.0 (security-testing; authorized)"
+  -- "Mozilla/5.0 (Windows NT 10.0; Win64; x64) recon-audit"
+
+INFRASTRUCTURE AND TOOLING:
+
+- One source server returns an HTTP header naming the framework:
+  -- Server: nginx/1.28.3 (Ubuntu)
+  -- WWW-Authenticate: Basic realm="ARTEX"
+- A second IP address active in the same intrusion was linked to that server by:
+  -- Identical user-agent strings
+  -- OAuth requests to the same client IDs
+  -- Start time 18 minutes after the primary source
+  -- It shares a /24 with a third scanning IP
+- Source IP addresses in different intrusions were linked by a shared AI gateway platform (see ARTEX AND SUB2API below)
+- A single source mixed:
+  -- curl/8.18.0
+  -- python-requests/2.32.5
+  -- Python-urllib
+  -- Fuzz Faster U Fool v2.1.0-dev (ffuf)
+  -- Rotating browser user agents (Chrome 126/127)
+- Other impersonation signals:
+  -- Missing Accept-Language header
+  -- Outdated Chrome 126 user agent
+  -- Missing client hints
+  -- Cloud IaaS origin
+
+ARTEX AND SUB2API:
+
+- The server returning Basic realm="ARTEX" (31.40.205[.]155) also runs a Sub2API ("Subscription to API Conversion Platform") gateway on TCP port 8080
+- The same Sub2API platform is exposed on 173.254.220[.]78, a source of reconnaissance traffic in a separate intrusion
+  -- This is the only infrastructure overlap we observed between intrusions at different organizations
+- Sub2API is an AI API gateway that converts LLM subscription access into API endpoints that other tools can call
+- Because Sub2API runs on the same hosts that sent ARTEX traffic, we assess it likely supplies LLM access to the framework's planner agent
+  -- This would let operators run the agent on converted or resold subscription access instead of directly billed, attributable API keys
+  -- This assessment is based on co-location; we have not observed traffic between the two services
+- The domains lanmao666[.]com and lanmao666[.]xyz host a related, multi-tenant AI/LLM gateway surface
+  -- 103.100.158[.]103 has hosted a lanmao666[.]com subdomain
+  -- Subdomains follow tenant-by-region and model-by-name patterns (e.g., gpt4, gpt5 and per-country endpoints)
+  -- Additional subdomains expose AI workflow (Flowise) and analytics (Apache Superset) applications
+- We have not determined whether the lanmao666 service is run by the ARTEX operators or is a third-party service they use
+
+DETECTION OPPORTUNITIES:
+
+- Requests for *.js.map, /openapi.json, /docs or /redoc followed within seconds by calls to non-public API routes from the same source
+- Self-registration events followed by bulk export/bulk approval/user administration API calls from the same session
+- Identity-provider logins for usernames beginning with "zz", or containing "nonexistent" / "not-a-user", followed within seconds by "admin" or other privileged usernames
+- OAuth authorization failures with illegal_redirect_uri_enhanced across multiple client IDs from a single source
+- Web or API requests with user agents containing "security-testing; authorized", "recon-audit" or "Fuzz Faster U Fool"
+- Request bursts separated by regular ~25-30 second pauses from a single source against an API
+- Write requests (PUT/POST/PATCH) followed by a GET read-back of the same resource within one to two seconds
+- Internet scanning for servers returning WWW-Authenticate: Basic realm="ARTEX"
+
+INDICATORS:
+
+IP addresses assessed as ARTEX activity:
+
+- 31.40.205[.]155 (serves Basic realm="ARTEX" and a Sub2API gateway on TCP port 8080; primary source of account self-registration, API data access, source-map harvesting and identity-provider probing)
+- 173.254.220[.]78 (serves the same Sub2API gateway; source of consumer site reconnaissance, configuration harvesting, account recovery probing and hundreds of denied IAP requests)
+- 103.100.158[.]103 (Monitor only - shared user agents and client IDs with 31.40.205[.]155; scanning and OAuth probing; has hosted a lanmao666[.]com subdomain)
+- 152.233.51[.]12 (Monitor only - source of probing and the unauthenticated API writes)
+
+Domains:
+
+lanmao666[.](xyz|com) - Hosts AI/LLM gateway surface; multiple LLM-related subdomains. Pivot for IP addresses serving ARTEX-derived framework infrastructure.
+
+HTTP response header on ARTEX infrastructure:
+
+- WWW-Authenticate: Basic realm="ARTEX"
+
+Canary / placeholder values:
+
+- zz_no_such_user_9f3a
+- zzq.nonexistent9x7
+- precheck.not-a-user@example[.]invalid
+- zzzrandom12345
+- nonexistent-i3185
+- zz-no-such-key-1a2b3c.html
+
+ADDITIONAL RESOURCES:
+
+https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/
+https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+https://www.zscaler.com/blogs/security-research/inside-global-ai-assisted-hacking-campaign
+https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors
+https://qz.com/artex-ai-tool-japan-cyberattacks-companies-102126
