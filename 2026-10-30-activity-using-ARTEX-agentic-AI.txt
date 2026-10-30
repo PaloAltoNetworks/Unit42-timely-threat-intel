@@ -161,18 +161,18 @@ DETECTION OPPORTUNITIES:
 
 INDICATORS:
 
-IP addresses assessed as ARTEX activity:
+IP addresses assessed as ARTEX activity (Note: Not all ARTEX activity is inherently malicious, so these are indicators without needing to be blocked):
 
 - 31.40.205[.]155 (serves Basic realm="ARTEX" and a Sub2API gateway on TCP port 8080; primary source of account self-registration, API data access, source-map harvesting and identity-provider probing)
 - 173.254.220[.]78 (serves the same Sub2API gateway; source of consumer site reconnaissance, configuration harvesting, account recovery probing and hundreds of denied IAP requests)
 - 103.100.158[.]103 (Monitor only - shared user agents and client IDs with 31.40.205[.]155; scanning and OAuth probing; has hosted a lanmao666[.]com subdomain)
 - 152.233.51[.]12 (Monitor only - source of probing and the unauthenticated API writes)
 
-Domains:
+Domains (Note: Not all ARTEX activity is inherently malicious, so these are indicators without needing to be blocked):
 
 lanmao666[.](xyz|com) - Hosts AI/LLM gateway surface; multiple LLM-related subdomains. Pivot for IP addresses serving ARTEX-derived framework infrastructure.
 
-HTTP response header on ARTEX infrastructure:
+HTTP response header on ARTEX infrastructure  (Note: Not all ARTEX activity is inherently malicious, so this is an indicators without needing to be blocked):
 
 - WWW-Authenticate: Basic realm="ARTEX"
 
