@@ -6,7 +6,7 @@ AUTHORS:
 
 NOTES:
 
-- An ongoing phishing campaign is impersonating document sharing services to distribute Zecurit Agent
+- An ongoing phishing campaign is impersonating document-sharing services to distribute Zecurit Agent
   -- The associated emails pose as notifications, event invitations or document-sharing messages
   -- Zecurit Agent is a commercially available remote monitoring and management (RMM) tool
   -- These attackers are abusing this commercially available RMM tool
