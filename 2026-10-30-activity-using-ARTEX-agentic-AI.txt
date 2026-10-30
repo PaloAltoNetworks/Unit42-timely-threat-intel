@@ -24,7 +24,7 @@ NOTES:
 - The behavior goes beyond conventional scanners and is consistent with an LLM planner reasoning over results:
   -- Inference-paced request bursts
   -- Spec-driven targeting within seconds of download
-  -- Self correction from API validation errors
+  -- Self-correction from API validation errors
   -- Semantic route guessing
   -- Goal verification after each successful action
 - We did not observe direct evidence of the specific LLM in use; the assessment is behavioral
@@ -48,9 +48,9 @@ ATTACK FLOW:
   -- JavaScript bundles and source maps (/bundle.js, /bundle.js.map) downloaded from production, development and UAT environments
   -- Public OpenAPI specifications retrieved (/openapi.json, /docs, /redoc)
   -- Runtime configuration harvested (runtime-config.json, app-config.json, password-policy endpoints)
-  -- Unauthenticated configuration endpoints queried (e.g., an cloud provider's configuration route returning data without sign-in)
+  -- Unauthenticated configuration endpoints queried (e.g., a cloud provider's configuration route returning data without sign-in)
 - Stage 3 - Identity provider probing:
-  -- Login as a randomly generated, nonexistent user to baseline the error response, followed one second later by a login as "admin"
+  -- Log in as a randomly generated, nonexistent user to baseline the error response, followed one second later by a login as "admin"
   -- OAuth authorize requests with unregistered redirect URIs across a high number of application client IDs
      --- These were rejected with illegal_redirect_uri_enhanced
   -- An authorization request to a cloud provider's identity management platform redirecting to an external test domain
@@ -176,7 +176,7 @@ HTTP response header on ARTEX infrastructure:
 
 - WWW-Authenticate: Basic realm="ARTEX"
 
-Canary / placeholder values:
+Canary/placeholder values:
 
 - zz_no_such_user_9f3a
 - zzq.nonexistent9x7
