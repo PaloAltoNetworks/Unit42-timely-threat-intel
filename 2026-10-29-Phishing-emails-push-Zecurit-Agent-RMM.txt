@@ -4,6 +4,11 @@ AUTHORS:
 
 - Muhammet Algan, Shazan Khaja
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/phishing-zecurit-ugcPost-7522031599916371968-qFwg/
+- https://x.com/Unit42_Intel/status/2116265918867070977
+
 NOTES:
 
 - An ongoing phishing campaign is impersonating document-sharing services to distribute Zecurit Agent
