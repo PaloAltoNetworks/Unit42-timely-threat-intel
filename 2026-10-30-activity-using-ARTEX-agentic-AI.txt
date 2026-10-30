@@ -172,7 +172,7 @@ Domains (Note: Not all ARTEX activity is inherently malicious, so these are indi
 
 lanmao666[.](xyz|com) - Hosts AI/LLM gateway surface; multiple LLM-related subdomains. Pivot for IP addresses serving ARTEX-derived framework infrastructure.
 
-HTTP response header on ARTEX infrastructure  (Note: Not all ARTEX activity is inherently malicious, so this is an indicators without needing to be blocked):
+HTTP response header on ARTEX infrastructure  (Note: Not all ARTEX activity is inherently malicious, so this is an indicator without needing to be blocked):
 
 - WWW-Authenticate: Basic realm="ARTEX"
 
