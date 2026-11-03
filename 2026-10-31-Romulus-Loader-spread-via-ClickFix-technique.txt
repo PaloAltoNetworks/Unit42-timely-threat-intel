@@ -1,0 +1,393 @@
+2026-10-31 (Saturday): Romulus Loader Spread via ClickFix Technique
+
+AUTHORS:
+
+- Abhiram Patiballa, Saide Sheikh
+
+NOTES:
+
+- We observed a cluster of IP addresses and URLs associated with Romulus Loader malware
+  -- These were part of a ClickFix campaign to spread malware
+  -- The infrastructure was still live at the time of writing
+- The initial delivery vector includes: 
+  -- Malicious ads on compromised websites
+  -- Custom GPT pages
+- They ask the user to copy a malicious command and run it via Windows Run Dialog box
+- The PowerShell command line contains the malicious IP address in decimal format
+  -- This is likely an attempt to bypass detection rules which rely on standard IP address formatting
+- The initial payload downloaded from the malicious IP address is an MSI installer
+  -- The installer contains three stages of obfuscated payloads stored in the MSI's Binary table
+- Subsequent stages involve VBScript Custom Actions
+  -- These decode and execute embedded PowerShell loaders
+  -- They use dual-layer numeric encoding and a byte-sampling steganographic algorithm
+  -- The process extracts hidden PE executables from MSI binary table entries
+- The malware persists through the RunOnce registry key
+- The malware communicates with its C2 server at scridea[.]com/nfront.php over HTTPS
+  -- The traffic uses a spoofed Chrome/Vivaldi user-agent string
+  -- The  with retry logic and named pipe inter-process communication
+- The same URL request to the C2 server for a new file would return a file with a different SHA-256 hash
+
+ADDITIONAL DETAILS:
+
+- A malicious custom GPT or a compromised website with malicious ads directs the victim to:
+  -- copy-paste a PowerShell command
+  -- The command is designed to retrieve and run an MSI installer file
+  -- The potential victim is asked to run the command in a Run dialog window (Win + R)
+- The VBScript uses a custom action and queries the binary table to extract encoded PowerShell payload:
+  -- The PowerShell file is written a <random>.ps1 file in the %TEMP% directory
+  -- The file is executed with "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden" switches 
+  -- The PowerShell file is deleted after execution
+- The script accepts an MSI file path from the first command-line argument
+- The script opens the specified MSI database and executes an SQL query to retrieve a binary stream from the MSI Binary table
+- The extracted byte array is parsed as a PE file and loaded via [Reflection.Assembly]::Load()
+- The loaded PE contains an encrypted shellcode payload in its data section
+  -- The PE decrypts the shellcode using AES-256-CBC via the CryptoAPI and executes it later
+- The decrypted shellcode performs host reconnaissance by:
+  -- Querying the host's location via la egitimate service at ipinfo[.]io
+  -- Collecting system fingerprinting data including volume serial number 
+  -- Retrieving device information via WMI and COM interfaces
+- It also exfiltrates the collected data as a base64-encoded POST request to:
+ -- hxxps[:]//scridea[.]com/nfront.php 
+ -- This uses WinHTTP with the following User-Agent string:
+    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Vivaldi/5.3.2679.68
+- The unpacked PE contains stack-constructed string references to:
+  -- AmsiScanString
+  -- AmsiScanBuffer
+  -- appbound
+  -- dpapi
+  -- explorer.exe
+  -- LdrLoadDll
+  -- msiexec
+  -- powershell
+  -- Roaming\\
+  -- RuntimeBroker.exe
+  -- \\System32\\Amsi.dll
+  -- \\SysWOW64\\explorer.exe
+  -- \\.\\pipe
+- These strings are present in:
+  -- The code sections of the unpacked PE and reference AMSI bypass
+  -- Named pipe construction
+  -- Credential or browser data access paths
+- Additionally the PE
+ -- Implements 10 process injection techniques selectable by a runtime configuration value
+ -- Performs AMSI bypass by patching AmsiScanString and AmsiScanBuffer in a suspended RuntimeBroker.exe process
+    --- The process injection dispatcher implements 10 distinct techniques selected by a configuration value:
+    --- The associated technique IDs are 0, 1, 2, 10, 11, 14, 16, 17, 18 and 20
+    --- The default target process is %SystemRoot%\explorer.exe
+    --- Techniques 0 through 2 perform process hollowing by:
+        ---- Calling NtCreateUserProcess with a suspended creation flag
+        ---- Mapping a new section into the target process
+        ---- Applying relocation fixups
+        ---- Then resuming the main thread
+
+ADDITIONAL FINDINGS:
+
+- We pivoted on the Romulus Loader C2 panel hosted at 151.240.151[.]223
+  -- The results revealed the site hosted several different MSI payloads and PowerShell scripts
+  -- These appear to be spread via ClickFix social engineering technique
+- Pivoting on the SHA-256 hash of the C2 login panel page revealed:
+  -- Multiple other IP addresses with similar infrastructure related to Romulus Loader
+- The hash of the MSI Installer binary even when requested from the same URL is different every time
+- In addition to hosting MSI installers, these IP addresses for Romulus Loader also hosted:
+  -- Many PowerShell scripts which target the /app/ path of each IP addresses
+- For example:
+  -- The URL jasimebeltran[.]design/1 returned a PS script
+   -- Decoding the scripts reveals a the decimal encoded PowerShell command like:
+      --- hxxp[:]//2549127012/app/222a8c21d35e/ExpertCopyFilesIntoMultipleFoldersLite.msi
+- The above MSI installer masquerades as legitimate software 
+  -- But it contains malicious DLLs which which are side-loaded loaded into memory
+  -- These side-loaded DLLS attempt to execute malicious shellcode
+- The IP address at 2549127012 (151.240.151[.]100)is another Romulus Loader webpage
+
+INDICATORS:
+
+EXAMPLES OF URLS FOR THE INITIAL LURE:
+
+Note: Neither of these URLs are currently online:
+
+- hxxps[:]//chatgpt[.]com/g/g-6abc09fdfb9081918c1ad488786899ef-plus-5-6/c/6abc7d73-0600-83e8-8679-9881ca9cd82c
+- hxxps[:]//sites.google[.]com/view/antibot172881
+
+EXAMPLES OF SHA-256 HASHES:
+
+- 253d24c32887aa47244e2a14573dd54a2e458d9d5746a0e9eac4acbd216618d7 - 3574378_1_-setup.msi
+- 4455bd9fe82371d5f462c724df2005ea75083adbc7025014276acc0c21aa761b - VBScript stager
+- ee044381cf31255c115e8407a1fdf6168faf8df60cb4c6c71995979844a8b0ed - PowerShell script
+- 1fa8d8fe397706f55fe93ace8a4e19ae06d52d5affa078e7d9d9b56ac205a38a - PE decrypted via Shellcode
+- 89d65c3f0ed12be636d12d548e0ef17b3ad9699faca240871454b13090d60a31 - login page from 151.240.151[.]223
+
+DOMAINS: 
+
+- Note: None of the IP addresses resolved from these domains are currently active:
+
+- 26-1167[.]com
+- cloubflare[.]net
+- coloperia[.]ru
+- de.lkjasdhf[.]sbs
+- havelbeenpwned[.]net
+- jasminebeltran[.]design
+- towerrush[.]cam
+- www.ifyvhody[.]top
+
+IP ADDRESSES:
+
+- Note: None of these IP addresses are currently active:
+
+- 2.27.248[.]127
+- 23.94.145[.]88
+- 23.94.145[.]115
+- 23.94.145[.]201
+- 23.94.145[.]224
+- 23.94.145[.]229
+- 86.109.75[.]7
+- 86.109.75[.]12
+- 91.92.43[.]242
+- 93.152.224[.]118
+- 96.62.224[.]81
+- 151.240.151[.]223
+- 167.148.201[.]191
+- 167.148.201[.]224
+
+EXAMPLE OF URLS FROM ONE OF THE LOGIN PANEL SERVERS (151.240.151[.]223):
+
+- Note: None of these URLs and their associated IP address are currently active:
+
+- hxxps[:]//151.240.151[.]223/1
+- hxxps[:]//151.240.151[.]223/2
+- hxxps[:]//151.240.151[.]223/3
+- hxxps[:]//151.240.151[.]223/13
+- hxxps[:]//151.240.151[.]223/14
+- hxxps[:]//151.240.151[.]223/31
+- hxxps[:]//151.240.151[.]223/123
+- hxxps[:]//151.240.151[.]223/151
+- hxxps[:]//151.240.151[.]223/161
+- hxxps[:]//151.240.151[.]223/333
+- hxxps[:]//151.240.151[.]223/555
+- hxxps[:]//151.240.151[.]223/558
+- hxxps[:]//151.240.151[.]223/560
+- hxxps[:]//151.240.151[.]223/561
+- hxxps[:]//151.240.151[.]223/564
+- hxxps[:]//151.240.151[.]223/569
+- hxxps[:]//151.240.151[.]223/570
+- hxxps[:]//151.240.151[.]223/571
+- hxxps[:]//151.240.151[.]223/575
+- hxxps[:]//151.240.151[.]223/576
+- hxxps[:]//151.240.151[.]223/578
+- hxxps[:]//151.240.151[.]223/588
+- hxxps[:]//151.240.151[.]223/590
+- hxxps[:]//151.240.151[.]223/592
+- hxxps[:]//151.240.151[.]223/593
+- hxxps[:]//151.240.151[.]223/595
+- hxxps[:]//151.240.151[.]223/599
+- hxxps[:]//151.240.151[.]223/600
+- hxxps[:]//151.240.151[.]223/601
+- hxxps[:]//151.240.151[.]223/604
+- hxxps[:]//151.240.151[.]223/606
+- hxxps[:]//151.240.151[.]223/607
+- hxxps[:]//151.240.151[.]223/609
+- hxxps[:]//151.240.151[.]223/610
+- hxxps[:]//151.240.151[.]223/611
+- hxxps[:]//151.240.151[.]223/614
+- hxxps[:]//151.240.151[.]223/615
+- hxxps[:]//151.240.151[.]223/617
+- hxxps[:]//151.240.151[.]223/620
+- hxxps[:]//151.240.151[.]223/623
+- hxxps[:]//151.240.151[.]223/627
+- hxxps[:]//151.240.151[.]223/628
+- hxxps[:]//151.240.151[.]223/629
+- hxxps[:]//151.240.151[.]223/631
+- hxxps[:]//151.240.151[.]223/636
+- hxxps[:]//151.240.151[.]223/651
+- hxxps[:]//151.240.151[.]223/654
+- hxxps[:]//151.240.151[.]223/655
+- hxxps[:]//151.240.151[.]223/657
+- hxxps[:]//151.240.151[.]223/658
+- hxxps[:]//151.240.151[.]223/660
+- hxxps[:]//151.240.151[.]223/662
+- hxxps[:]//151.240.151[.]223/663
+- hxxps[:]//151.240.151[.]223/1000
+- hxxps[:]//151.240.151[.]223/1001
+- hxxps[:]//151.240.151[.]223/1009
+- hxxps[:]//151.240.151[.]223/1022
+- hxxps[:]//151.240.151[.]223/1024
+- hxxps[:]//151.240.151[.]223/1111
+- hxxps[:]//151.240.151[.]223/1166
+- hxxps[:]//151.240.151[.]223/1168
+- hxxps[:]//151.240.151[.]223/1169
+- hxxps[:]//151.240.151[.]223/1173
+- hxxps[:]//151.240.151[.]223/1178
+- hxxps[:]//151.240.151[.]223/1179
+- hxxps[:]//151.240.151[.]223/1187
+- hxxps[:]//151.240.151[.]223/1188
+- hxxps[:]//151.240.151[.]223/1189
+- hxxps[:]//151.240.151[.]223/1191
+- hxxps[:]//151.240.151[.]223/1193
+- hxxps[:]//151.240.151[.]223/1203
+- hxxps[:]//151.240.151[.]223/1204
+- hxxps[:]//151.240.151[.]223/1205
+- hxxps[:]//151.240.151[.]223/1208
+- hxxps[:]//151.240.151[.]223/1210
+- hxxps[:]//151.240.151[.]223/1211
+- hxxps[:]//151.240.151[.]223/1212
+- hxxps[:]//151.240.151[.]223/1213
+- hxxps[:]//151.240.151[.]223/1214
+- hxxps[:]//151.240.151[.]223/1215
+- hxxps[:]//151.240.151[.]223/1216
+- hxxps[:]//151.240.151[.]223/1217
+- hxxps[:]//151.240.151[.]223/1218
+- hxxps[:]//151.240.151[.]223/1221
+- hxxps[:]//151.240.151[.]223/1222
+- hxxps[:]//151.240.151[.]223/1224
+- hxxps[:]//151.240.151[.]223/1225
+- hxxps[:]//151.240.151[.]223/1229
+- hxxps[:]//151.240.151[.]223/1230
+- hxxps[:]//151.240.151[.]223/1234
+- hxxps[:]//151.240.151[.]223/1237
+- hxxps[:]//151.240.151[.]223/1244
+- hxxps[:]//151.240.151[.]223/1250
+- hxxps[:]//151.240.151[.]223/1261
+- hxxps[:]//151.240.151[.]223/1263
+- hxxps[:]//151.240.151[.]223/1273
+- hxxps[:]//151.240.151[.]223/1277
+- hxxps[:]//151.240.151[.]223/1278
+- hxxps[:]//151.240.151[.]223/1280
+- hxxps[:]//151.240.151[.]223/1283
+- hxxps[:]//151.240.151[.]223/1291
+- hxxps[:]//151.240.151[.]223/1298
+- hxxps[:]//151.240.151[.]223/1312
+- hxxps[:]//151.240.151[.]223/1313
+- hxxps[:]//151.240.151[.]223/1320
+- hxxps[:]//151.240.151[.]223/1324
+- hxxps[:]//151.240.151[.]223/1332
+- hxxps[:]//151.240.151[.]223/1341
+- hxxps[:]//151.240.151[.]223/1349
+- hxxps[:]//151.240.151[.]223/1350
+- hxxps[:]//151.240.151[.]223/1354
+- hxxps[:]//151.240.151[.]223/1358
+- hxxps[:]//151.240.151[.]223/1366
+- hxxps[:]//151.240.151[.]223/1369
+- hxxps[:]//151.240.151[.]223/1371
+- hxxps[:]//151.240.151[.]223/1372
+- hxxps[:]//151.240.151[.]223/1373
+- hxxps[:]//151.240.151[.]223/1379
+- hxxps[:]//151.240.151[.]223/1383
+- hxxps[:]//151.240.151[.]223/1399
+- hxxps[:]//151.240.151[.]223/1400
+- hxxps[:]//151.240.151[.]223/1405
+- hxxps[:]//151.240.151[.]223/1480
+- hxxps[:]//151.240.151[.]223/1489
+- hxxps[:]//151.240.151[.]223/1493
+- hxxps[:]//151.240.151[.]223/1498
+- hxxps[:]//151.240.151[.]223/1500
+- hxxps[:]//151.240.151[.]223/1548
+- hxxps[:]//151.240.151[.]223/1572
+- hxxps[:]//151.240.151[.]223/1585
+- hxxps[:]//151.240.151[.]223/1590
+- hxxps[:]//151.240.151[.]223/1593
+- hxxps[:]//151.240.151[.]223/1594
+- hxxps[:]//151.240.151[.]223/1595
+- hxxps[:]//151.240.151[.]223/1596
+- hxxps[:]//151.240.151[.]223/1650
+- hxxps[:]//151.240.151[.]223/1676
+- hxxps[:]//151.240.151[.]223/1694
+- hxxps[:]//151.240.151[.]223/1698
+- hxxps[:]//151.240.151[.]223/1702
+- hxxps[:]//151.240.151[.]223/1703
+- hxxps[:]//151.240.151[.]223/1704
+- hxxps[:]//151.240.151[.]223/1705
+- hxxps[:]//151.240.151[.]223/1706
+- hxxps[:]//151.240.151[.]223/1707
+- hxxps[:]//151.240.151[.]223/1717
+- hxxps[:]//151.240.151[.]223/1720
+- hxxps[:]//151.240.151[.]223/1736
+- hxxps[:]//151.240.151[.]223/1747
+- hxxps[:]//151.240.151[.]223/1756
+- hxxps[:]//151.240.151[.]223/1757
+- hxxps[:]//151.240.151[.]223/1762
+- hxxps[:]//151.240.151[.]223/1771
+- hxxps[:]//151.240.151[.]223/1779
+- hxxps[:]//151.240.151[.]223/1794
+- hxxps[:]//151.240.151[.]223/1809
+- hxxps[:]//151.240.151[.]223/1814
+- hxxps[:]//151.240.151[.]223/1816
+- hxxps[:]//151.240.151[.]223/1825
+- hxxps[:]//151.240.151[.]223/1897
+- hxxps[:]//151.240.151[.]223/1928
+- hxxps[:]//151.240.151[.]223/1951
+- hxxps[:]//151.240.151[.]223/1955
+- hxxps[:]//151.240.151[.]223/1960
+- hxxps[:]//151.240.151[.]223/1969
+- hxxps[:]//151.240.151[.]223/1970
+- hxxps[:]//151.240.151[.]223/1990
+- hxxps[:]//151.240.151[.]223/1991
+- hxxps[:]//151.240.151[.]223/1992
+- hxxps[:]//151.240.151[.]223/1993
+- hxxps[:]//151.240.151[.]223/1994
+- hxxps[:]//151.240.151[.]223/1995
+- hxxps[:]//151.240.151[.]223/1996
+- hxxps[:]//151.240.151[.]223/1997
+- hxxps[:]//151.240.151[.]223/1998
+- hxxps[:]//151.240.151[.]223/1999
+- hxxps[:]//151.240.151[.]223/2000
+- hxxps[:]//151.240.151[.]223/2001
+- hxxps[:]//151.240.151[.]223/2002
+- hxxps[:]//151.240.151[.]223/2003
+- hxxps[:]//151.240.151[.]223/2004
+- hxxps[:]//151.240.151[.]223/2005
+- hxxps[:]//151.240.151[.]223/2006
+- hxxps[:]//151.240.151[.]223/2007
+- hxxps[:]//151.240.151[.]223/2008
+- hxxps[:]//151.240.151[.]223/2009
+- hxxps[:]//151.240.151[.]223/2010
+- hxxps[:]//151.240.151[.]223/2011
+- hxxps[:]//151.240.151[.]223/2012
+- hxxps[:]//151.240.151[.]223/2013
+- hxxps[:]//151.240.151[.]223/2014
+- hxxps[:]//151.240.151[.]223/2015
+- hxxps[:]//151.240.151[.]223/2016
+- hxxps[:]//151.240.151[.]223/2017
+- hxxps[:]//151.240.151[.]223/2018
+- hxxps[:]//151.240.151[.]223/2019
+- hxxps[:]//151.240.151[.]223/2020
+- hxxps[:]//151.240.151[.]223/2073
+- hxxps[:]//151.240.151[.]223/2112
+- hxxps[:]//151.240.151[.]223/2126
+- hxxps[:]//151.240.151[.]223/2139
+- hxxps[:]//151.240.151[.]223/2201
+- hxxps[:]//151.240.151[.]223/2222
+- hxxps[:]//151.240.151[.]223/2257
+- hxxps[:]//151.240.151[.]223/3000
+- hxxps[:]//151.240.151[.]223/3333
+- hxxps[:]//151.240.151[.]223/4006
+- hxxps[:]//151.240.151[.]223/4128
+- hxxps[:]//151.240.151[.]223/4200
+- hxxps[:]//151.240.151[.]223/4321
+- hxxps[:]//151.240.151[.]223/4444
+- hxxps[:]//151.240.151[.]223/5150
+- hxxps[:]//151.240.151[.]223/5252
+- hxxps[:]//151.240.151[.]223/5555
+- hxxps[:]//151.240.151[.]223/5683
+- hxxps[:]//151.240.151[.]223/6666
+- hxxps[:]//151.240.151[.]223/6969
+- hxxps[:]//151.240.151[.]223/7007
+- hxxps[:]//151.240.151[.]223/7777
+- hxxps[:]//151.240.151[.]223/10668
+- hxxps[:]//151.240.151[.]223/11111
+- hxxps[:]//151.240.151[.]223/12321
+- hxxps[:]//151.240.151[.]223/12345
+- hxxps[:]//151.240.151[.]223/13579
+- hxxps[:]//151.240.151[.]223/14430
+- hxxps[:]//151.240.151[.]223/22222
+- hxxps[:]//151.240.151[.]223/32297
+- hxxps[:]//151.240.151[.]223/33333
+- hxxps[:]//151.240.151[.]223/44444
+- hxxps[:]//151.240.151[.]223/53993
+- hxxps[:]//151.240.151[.]223/54321
+- hxxps[:]//151.240.151[.]223/55555
+- hxxps[:]//151.240.151[.]223/66666
+- hxxps[:]//151.240.151[.]223/77777
+- hxxps[:]//151.240.151[.]223/80486
+- hxxps[:]//151.240.151[.]223/88888
+- hxxps[:]//151.240.151[.]223/90210
+- hxxps[:]//151.240.151[.]223/92072
+- hxxps[:]//151.240.151[.]223/99999
