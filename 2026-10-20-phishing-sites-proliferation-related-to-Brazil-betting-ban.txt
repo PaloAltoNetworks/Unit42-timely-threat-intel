@@ -2,23 +2,28 @@
 
 AUTHORS:
 
-- Reethika Ramesh, Daiping Liu
+- Reethika Ramesh, Daiping Liu\
+
+REFERENCES:
+
+- https://www.linkedin.com/posts/brazils-betting-ban-on-2026-10-05-triggered-ugcPost-7523802777593114627-sSUk/
+- https://x.com/Unit42_Intel/status/2118037105041416253
 
 NOTES:
 
 - We discovered a growth of typo-squatting and phishing domains related to Brazil betting sites
   -- We started with a list of betting brands previously associated with blocking in Brazil
-  -- We found the latest ban led to a increase in lookalike, phishing and mirroring activities
+  -- We found the latest ban led to an increase in lookalike, phishing and mirroring activities
 - The domain names observed in this list employ:
   -- Cybersquatting techniques
   -- TLD rotation
   -- Addition of suffixes consisting of strings or numbers
-- Interestingly, most domains registered during the week of the ban have parked content\
+- Interestingly, most domains registered during the week of the ban have parked content
   -- These are potentially opportunistic registrations
 - Similar domains that were registered in July–September, 2026
   -- These have clone portals of betting sites
   -- They also have Google Play-like pages pushing Android APK downloads
-- Site advertising "BullsBet Casino" are active from a cluster of related domains
+- Sites advertising "BullsBet Casino" are active from a cluster of related domains
   -- Several of these domains were registered around the date of the ban
   -- They are currently serving gambling landing pages that lure users with safety language 
   -- Clicking on links on these sites redirects users to other pages
