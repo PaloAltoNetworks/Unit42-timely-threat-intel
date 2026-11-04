@@ -4,7 +4,6 @@ AUTHORS:
 
 - Shawn He Shuang, Keerthiraj Nagaraj
 
-
 NOTES:
 
 - We are tracking three phishing campaigns with 1,740 detections from May 2026 to October 2026
