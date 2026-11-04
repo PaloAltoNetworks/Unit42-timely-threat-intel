@@ -1,0 +1,160 @@
+2026-11-04 (Wednesday): Three Phishing Campaigns Using Graphics-Based Lures
+
+AUTHORS:
+
+- Shawn He Shuang, Keerthiraj Nagaraj
+
+
+NOTES:
+
+- We are tracking three phishing campaigns with 1,740 detections from May 2026 to October 2026
+  -- These campaigns eliminate crafted HTML lure text from the Document Object Model (DOM)
+  -- Instead, they deliver brand prompts, bank receipts and session-hijacking QR codes as:
+     --- Uploaded images
+     --- HTML5 canvas drawings
+     --- SVG vector paths
+- Campaign 1: Single-Image Preview Lures Abusing Popular Online Collaboration Platform
+  -- 1,188 total detections across the six-month window:
+     --- 178 in May 2026
+     --- 231 in June 2026
+     --- 274 in July 2026
+     --- 153 in August 2026
+     --- 196 in September 2026
+     --- 156 in October 2026
+- Campaign 2: HTML5 Canvas-Painted PDF Document and Receipt Lures
+  -- 361 total detections across the six-month window:
+     --- 42 in May 2026
+     --- 37 in June 2026
+     --- 56 in July 2026
+     --- 52 in August 2026
+     --- 86 in September 2026
+     --- 88 in October 2026
+- Campaign 3: Vector SVG Coordinate-Grid QR-Code Lures
+  -- 191 total detections across the six-month window:
+     --- 20 in May 2026
+     --- 54 in June 2026
+     --- 34 in July 2026
+     --- 22 in August 2026
+     --- 29 in September 2026
+     --- 32 in October 2026
+
+DETAILS:
+
+- Campaign 1 technical analysis: 
+  -- Single-image preview wrapper lures
+  -- Lure behavior and victim view:
+     --- Victims open a drawing preview link 
+         ---- Link displays an online retailer's account verification card 
+         ---- The card has a yellow 'Continue Verification' button under a randomized document title
+  -- DOM and preview image delivery mechanics:
+     --- The 83,214-byte top-frame DOM contains:
+         ---- 0 visible words
+         ---- 0 input tags
+         ---- 0 canvas tags
+         ---- 1 empty 1.4 KB SVG wrapper
+     --- The DOM does not have text or form elements inside the HTML markup
+     --- Instead, the page fetches the entire verification card as a 1200x630 preview image
+         ---- From a popular cloud services providr URL
+         ---- The URL parameter is: =w1200-h630-p
+     --- The DOM renders the image inside the preview container
+         ---- This method does not expose any lure words in the DOM
+
+- Campaign 2 technical analysis:
+  -- Fake PDF.js viewer painting blurred bank transfer receipts on HTML5 canvas 
+  -- DOM and script execution mechanics:
+     --- The 18,666-byte HTML document
+         ---- Sets meta robots="noindex, nofollow, noarchive" and referrer="no-referrer"
+         ---- Loads custom PDF.js stylesheets (vendor/pdfjs/web/pdf_viewer.css and styles.css)
+         ---- Dynamically injects ES modules download-dialog.mjs and app.mjs
+              ----- Done via document.createElement('script') with script.type = 'module'
+     --- Inside div#viewer-container > div.document-preview-frame > div#pdf-viewer.pdfViewer:
+         ---- The kit renders a blurred interbank wire transfer receipt 
+              ----- Rendered onto a 974x1260 HTML5 canvas element (1,227,240 square pixels, role="presentation") 
+              ----- Paired with a second hidden canvas (canvas.hiddenCanvasElement) 
+              ----- Overlaid with a trigger button (button.preview-eye[data-open-download])
+     --- Clicking button.preview-eye or button#open-file:
+         ---- Calls showModal() on native HTML5 dialog#password-dialog
+              ----- Contains
+                    ------ Form#password-form
+                    ------ Input#pdf-password[type="password"][autocomplete="off"][required]
+              ----- This is done to harvest credentials under the pretext of:
+                    ------ Inlocking an encrypted PDF
+                    ------ Opening dialog#app-download-dialog to deliver a mobile payload
+                           ------- Contains a#download-app
+
+- Campaign 3 technical analysis: 
+
+  -- Vector SVG defs/use coordinate-grid QR-code session-hijacking lures (perehod[.]website):
+  -- DOM and SVG coordinate-grid mechanics:
+     --- The 322,322-byte DOM is a SvelteKit application (__sveltekit_3hl3a)
+         ---- This imports:
+              ----- /_app/immutable/entry/start.CP8bQY5P.js
+              ----- /_app/immutable/entry/app.BHnh9mMq.js
+         ---- It then registers /service-worker.js under a trustedTypes.createPolicy
+              ----- This is a 'sveltekit-trusted-types', ... policy 
+         ---- It registers the policy while impersonating the MAX Messenger web login
+              ----- Sign in to MAX via QR code
+     --- The DOM contains:
+         ---- 0 img tags
+         ---- 0 canvas tags
+         ---- 0 input tags
+         ---- only 27 visible words
+         ---- 6 SVG elements totaling 315,960 bytes, including:
+              ----- A 251,859-byte hidden icon sprite svg#max-icons-sprite 
+              ----- A 62,532-byte QR code SVG file 
+                    ------- With viewBox="0 0 4059 4059" and width="220px" height="220px").
+     --- This DOM does not embed a standard QR image or painting a canvas
+     --- Instead, the 62,532-byte QR SVG file defines 11 modular vector shapes inside defs:
+         ---- rect#rect-0 of size 100x100
+         ---- path#empty-0
+         ---- path#b-0
+         ---- path#r-0
+         ---- path#l-0
+         ---- path#t-0
+         ---- path#lt-0
+         ---- path#lb-0
+         ---- path#rb-0
+         ---- path#rt-0
+         ---- finder pattern #point-0
+     --- The SVG file also constructs the QR matrix
+         ---- It does this through hundreds of g[transform="translate(X,Y)"] > use[xlink:href="#..."] coordinate instances
+              ----- These instances are across the 4059x4059 grid
+              ----- They overlay the hotlinked center logo via clip-path="url(#logo-mask-0)"
+
+INDICATORS:
+
+- Campaign 1 phishing URLs (single-image preview lures):
+
+  -- hxxps[:]//docs.google[.]com/drawings/d/1PkpYjKXZjijUIdTtGzC3gKAGrWM3SjTq89FJ6OZ9ULg/preview?JggAl
+  -- hxxps[:]//docs.google[.]com/drawings/d/1c8Beah-y6ykV4egbSfLqakuNr7rjk-etkS0Ee7ksdXY/preview?ZIB95
+  -- hxxps[:]//docs.google[.]com/drawings/d/1pUWFVJkJJpoYqky3hzHMEMjb0bkAYM0NlgvxZYj4wik/preview?BcHpH
+  -- hxxps[:]//docs.google[.]com/drawings/d/1Lk8u8kvrgxHgjfoHl1NWcKp8sad3fCy4KcXzwLTEMyU/preview?uqrMX
+  -- hxxps[:]//docs.google[.]com/drawings/d/1d-rGOT7crc2txZ7vE_9xgsXXZNnIhbcaVbeH20YFNbI/preview
+  -- hxxps[:]//docs.google[.]com/drawings/d/1ufGqPEuWZK1uV__uSDP4gK84vgXJH3BTYw6WjIlbou0/preview?TNfEP
+  -- hxxps[:]//docs.google[.]com/drawings/d/1PjyZt0ZxiDFRo-FcrG5yB6bxeCyGfqHKqiIyUKidABI/preview?gbu6F
+  -- hxxps[:]//docs.google[.]com/drawings/d/1TrpKcBwrCxukLb1ajrMpkVhXjrr8N2exw-8Mv_AsYSw/preview
+
+- Campaign 2 phishing URLs (HTML5 canvas-painted document, receipt, and login lures):
+
+  -- hxxps[:]//visualizadordepdf[.]com
+  -- hxxps[:]//faq-log-trezor-io.pages[.]dev
+  -- hxxps[:]//io-trezorstrtt.pages[.]dev/index.php?route=checkout/checkout
+  -- hxxps[:]//jjenimi.pages[.]dev/index.php?route=checkout/checkout
+  -- hxxps[:]//telegram-6q70dzzf.pages[.]dev
+  -- hxxps[:]//htxx-lgon.pages[.]dev
+  -- hxxps[:]//pub-434abe86553e4c99b30d1c3be588c762.r2[.]dev/f1nanc1al-sh33tsv2.3.html?centre=
+  -- hxxps[:]//profound-bubblegum-158420.netlify[.]app/ingreso.html
+  -- hxxps[:]//proviweb-d8764.firebaseapp[.]com
+  -- hxxps[:]//www.ky8032162[.]cc/index.html?shareName=www.ky804234[.]cc
+
+- Campaign 3 phishing URLs (Vector SVG path and QR-code login lures):
+
+  -- hxxps[:]//perehod[.]website
+  -- hxxps[:]//verdepy-online.firebaseapp[.]com/cbmob/personas/index.html
+  -- hxxps[:]//moltravi-zekun39471628.vercel[.]app
+  -- hxxps[:]//submid-cotact136336.vercel[.]app
+  -- hxxps[:]//spark-login.vercel[.]app
+  -- hxxps[:]//solflare-mnemonic-to-keystore.pages[.]dev
+  -- hxxps[:]//comcast-account.gitbook[.]io/comcast-account-docs
+  -- hxxps[:]//gmininilogenix.gitbook[.]io/us/
+  -- hxxps[:]//pub-fc87556782e141d88f0d4c70cc8e88ef.r2[.]dev/OfficialDocumentHandling.html
