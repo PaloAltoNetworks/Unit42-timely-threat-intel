@@ -4,6 +4,11 @@ AUTHORS:
 
 - Shawn He Shuang, Keerthiraj Nagaraj
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/phishing-canvas-svg-ugcPost-7524200382730838016-OII5/
+- https://x.com/Unit42_Intel/status/2118434702390333624
+
 NOTES:
 
 - We are tracking three phishing campaigns with 1,740 detections from May 2026 to October 2026
