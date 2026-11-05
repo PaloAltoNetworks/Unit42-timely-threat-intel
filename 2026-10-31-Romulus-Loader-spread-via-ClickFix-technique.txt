@@ -4,6 +4,11 @@ AUTHORS:
 
 - Abhiram Patiballa, Saide Sheikh
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/clickfix-romulusloader-ugcPost-7523914253888712704-VsMg/
+- https://x.com/Unit42_Intel/status/2118148556888416723
+
 NOTES:
 
 - We observed a cluster of IP addresses and URLs associated with Romulus Loader malware
