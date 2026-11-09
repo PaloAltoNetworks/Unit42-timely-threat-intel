@@ -1,0 +1,69 @@
+2026-11-05 (Thursday): Site Impersonating RØDECaster Distributes Santa Stealer
+
+AUTHORS:
+
+- Somil Tyagi, Alex Payne
+
+NOTES:
+
+- We observed search engine results directing users to a fraudulent website impersonating RØDECaster software to distribute Santa Stealer malware.
+- Victims searching for "rodecaster software" were directed to newly registered domain rodecaster[.]net.
+- This site distributes a zip archive containing a Windows executable named RODECaster_App_WIN.exe.
+- The executable is a Node.js runtime compiled into a standalone Windows binary via the pkg bundler, embedding obfuscated Santa Stealer (@Santagrabber) code.
+- The malware extracts stored credentials, cookies, and autofill data from 24 Chromium and Firefox browsers, captures cryptocurrency wallets, extracts and injects Discord client sessions, and downloads a secondary payload.
+
+DETAILS:
+
+- Infection Vector & Lure:
+  -- The threat actor leveraged search engine results for "rodecaster software" to direct users to rodecaster[.]net, a recently registered domain impersonating the RØDE software site.
+  -- The site served a ZIP archive (RODECaster_App_WIN.zip) containing the malicious PE RODECaster_App_WIN.exe.
+
+- Binary Characteristics & Obfuscation:
+  -- 64-bit Windows PE compiled with MSVC 19.29.30145 embedding Node.js v18.5.0 with the V8 engine using pkg.
+  -- Gzip-compressed payload (offset 37574656) and prelude script (offset 58330330).
+  -- Employs a three-stage string obfuscation scheme (5,655 base64 rotation array, shuffle key 571979, index offset 332 shift).
+  -- Implements control-flow flattening, anti-debugging checks (detecting toString() and RegExp prototype tampering), and mutex lockfile creation (%LOCALAPPDATA%\Temp\__santa_stealer_mutex__.lck).
+  -- Anti-re-execution environment variables set: __santa_elevated, __santaRun, and __santa_started.
+
+- Credential & Data Harvesting:
+  -- Targets 24 Chromium-based browsers (Chrome, Edge, Brave, Opera, Opera GX, Vivaldi, Yandex, etc.) targeting Login Data, Cookies, Web Data, and Local State SQLite databases.
+  -- Decrypts DPAPI-protected AES-256-GCM (v10 prefix) and ChaCha20-Poly1305 (v20 prefix via libsodium); utilizes CNG APIs (NCryptOpenStorageProvider, NCryptOpenKey, NCryptDecrypt) under administrative privileges.
+  -- Extracts Firefox credentials using nss3.dll bindings (NSS_Init, PK11SDR_Decrypt) from logins.json, cookies.sqlite, and formhistory.sqlite.
+  -- Extracts session cookies and authentication tokens for Instagram (sessionid), Roblox (.ROBLOSECURITY), and Tellonym (auth/authorization).
+  -- Collects cryptocurrency wallet directories for Exodus and Phantom.
+  -- Executes PowerShell via child_process.execSync utilizing System.Windows.Forms.Screen.AllScreens to capture screenshots saved to %TEMP%\screen_<index>.png.
+  -- Resolves victim public IP address using api.ipify[.]org or ipv4.icanhazip[.]com.
+
+- Discord Token Theft & Persistent Client Injection:
+  -- Scans %APPDATA% directories across four Discord flavors (\discord\, \discordcanary\, \discordptb\, \discorddevelopment\) for plaintext and dQw4w9WgXcQ: encrypted LevelDB tokens.
+  -- Injects a persistent JavaScript hook into Discord Electron app.asar modules to intercept session.webRequest events (targeting /auth/login, /auth/register, /mfa/totp, /mfa/codes-verification, /users/@me).
+  -- Intercepts Braintree (PayPal) and Stripe payment API requests, as well as WebSocket QR code authentication flows (wss[:]//remote-auth-gateway.discord[.]gg/*).
+  -- Harvests Nitro status, billing profiles, badges, and friend relationships via Discord APIs.
+
+- Exfiltration & Staged Secondary Payload:
+  -- Primary exfiltration via Discord webhook embed messages branded Santa Stealer | @Santagrabber.
+  -- Secondary/duplicate webhook exfiltration to cafebabe[.]cc.
+  -- Large archives (log.zip) uploaded to legitimate services catbox[.]moe (/user/api.php) and gofile[.]io (/uploadFile).
+  -- Checks __cheat_launched__ before downloading and executing a secondary payload from hxxps[:]//cheatscan[.]club/xyzallahuakbar1337.exe.
+
+
+INDICATORS:
+
+- Domains:
+  -- rodecaster[.]net (Malware Distribution / Brand Impersonation)
+  -- cheatscan[.]club (Payload Delivery / Secondary Stage Hosting)
+  -- cafebabe[.]cc (Command and Control / Exfiltration Proxy)
+
+- URLs:
+  -- hxxps[:]//rodecaster[.]net/downloads/RODECaster_App_WIN.zip (Malware Delivery)
+  -- hxxps[:]//cheatscan[.]club/xyzallahuakbar1337.exe (Secondary Payload Delivery)
+  -- hxxps[:]//cafebabe[.]cc/api/webhooks/ (Command and Control / Exfiltration Proxy)
+
+- SHA-256 Hashes:
+  -- c6077b57eb197b6d4fcc4f04693985378f8a4d990cc4e81777bf16420a28b855 (RODECaster_App_WIN.exe)
+  -- 503f2291a1200ac7af427f48c43bfc3ad82864c4dfbc85c70daa937ef73bdf87 (xyzallahuakbar1337.exe)
+
+- File Paths & Forensic Artifacts:
+  -- %LOCALAPPDATA%\Temp\__santa_stealer_mutex__.lck
+
+
