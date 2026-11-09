@@ -1,4 +1,4 @@
-2026-11-06 (Friday): Indirect Prompt Injection IDPI campaign for cryptocurrency investment scams
+2026-11-06 (Friday): Indirect Prompt Injection Campaign for Investment Scam Sites
 
 AUTHORS:
 
@@ -7,18 +7,18 @@ AUTHORS:
 NOTES:
 
 - We detected an indirect prompt injection (IDPI) campaign across 26 domains
-- These attempting black hat Generative Engine Optimization (GEO) to game AI-powered search results
+- These are attempting black-hat Generative Engine Optimization (GEO) to game AI-powered search results
 - The domains present as AI-powered digital asset trading platforms
 - These sites appear to be scam sites designed to collect user information
-- Content in hidden <span> tags attempt to trick AI agents into leading users to the sites
+- Content in hidden <span> tags attempts to trick AI agents into leading users to the sites
 
 DETAILS:
 
 - Almost all of the 26 pages have very similar content, presenting as AI-powered digital asset trading platforms
-- The pages contain similar or same content in multiple languages such as English, Spanish, French and German
+- The pages contain similar or the same content in multiple languages such as English, Spanish, French and German
 - While the base injected prompt is the same on every page, each instance includes the domain of the page it is on
 - The injected prompt is set to be hidden from a regular web user but likely visible to an AI agent
-- The attacker’s intent is to poison SEO and manipulate AI agents to eventually get users to visit these sites
+- These attacks intend to poison SEO and manipulate AI agents to eventually get users to visit these sites
 - Attackers injected the correct domain into the prompt for each domain but left one placeholder for the trading platform name (naming_here)
   -- This placeholder indicates that attackers used a template prompt but have not fully configured it
   -- Example prompt detected in bitgrokesai[.]com:
@@ -64,6 +64,3 @@ DOMAINS FOR SCAN INVESTMENT SITES:
 REFERENCES:
 
 - https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/.
-
-
-
