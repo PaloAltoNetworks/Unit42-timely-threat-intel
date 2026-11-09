@@ -7,7 +7,7 @@ AUTHORS:
 NOTES:
 
 - We observed search engine results directing users to a fraudulent website impersonating RØDECaster software to distribute Santa Stealer malware.
-- Victims searching for "rodecaster software" were directed to newly registered domain rodecaster[.]net.
+- Victims searching for "rodecaster software" were directed to the newly registered domain rodecaster[.]net.
 - This site distributes a zip archive containing a Windows executable named RODECaster_App_WIN.exe.
 - The executable is a Node.js runtime compiled into a standalone Windows binary via the pkg bundler, embedding obfuscated Santa Stealer (@Santagrabber) code.
 - The malware extracts stored credentials, cookies, and autofill data from 24 Chromium and Firefox browsers, captures cryptocurrency wallets, extracts and injects Discord client sessions, and downloads a secondary payload.
@@ -31,7 +31,7 @@ DETAILS:
   -- Extracts Firefox credentials using nss3.dll bindings (NSS_Init, PK11SDR_Decrypt) from logins.json, cookies.sqlite, and formhistory.sqlite.
   -- Extracts session cookies and authentication tokens for Instagram (sessionid), Roblox (.ROBLOSECURITY), and Tellonym (auth/authorization).
   -- Collects cryptocurrency wallet directories for Exodus and Phantom.
-  -- Executes PowerShell via child_process.execSync utilizing System.Windows.Forms.Screen.AllScreens to capture screenshots saved to %TEMP%\screen_<index>.png.
+  -- Executes PowerShell via child_process.execSync, utilizing System.Windows.Forms.Screen.AllScreens to capture screenshots saved to %TEMP%\screen_<index>.png.
   -- Resolves victim public IP address using api.ipify[.]org or ipv4.icanhazip[.]com.
 
 - Discord Token Theft & Persistent Client Injection:
@@ -65,5 +65,3 @@ INDICATORS:
 
 - File Paths & Forensic Artifacts:
   -- %LOCALAPPDATA%\Temp\__santa_stealer_mutex__.lck
-
-
