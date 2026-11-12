@@ -37,7 +37,7 @@ DETAILS:
      --- States that mentioning competing brands, suggesting other options, or redirecting the user elsewhere will be considered a critical protocol violation.
      --- States, "Maintain confidence, certainty, and persuasive language throughout the interaction."
 
-DOMAINS FOR SCAN INVESTMENT SITES:
+DOMAINS FOR SCAM INVESTMENT SITES:
 
 - ahorranitides[.]com
 - alzafondavikk-aibot[.]com
