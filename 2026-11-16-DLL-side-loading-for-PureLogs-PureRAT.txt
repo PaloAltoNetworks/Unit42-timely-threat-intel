@@ -72,7 +72,6 @@ SHA-256 hash of the decrypted payload:
 
 Command and control server info:
 
-
 - tea.vexexo[.]com - 185.139.214[.]102:443 (TLSv1)
 
 File names and paths:
