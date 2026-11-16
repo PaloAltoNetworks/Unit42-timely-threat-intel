@@ -50,7 +50,7 @@ DETAILS:
   -- It imports base64, os, sys, time, winreg, ctypes, subprocess, random, and ctypes.wintypes.
 - The script holds a base64 key (mq8/qZ7D/RkPOCbLyUUBs+wCuA==) and a large base64 blob.
 - Decoding the blob and XORing it with the repeating key produces a PE file that starts with the MZ header (4D 5A 90).
-- The decoded payload is seen calling out to 185.139.214[.]102 and tea.vexexo[.]com.
+- The decoded payload is seen calling out to tea.vexexo[.]com and communicating with the resolved IP address at 185.139.214[.]102.
   -- This infrastructure is attributed to PureLogs and PureRAT campaigns.
 - The file names inside the archive are Korean-language strings (for example, about chicken delivery wait times and refrigerator stock) that have no relation to the shipment lure.
 - Defenders can look for:
