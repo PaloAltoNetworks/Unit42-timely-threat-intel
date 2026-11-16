@@ -1,4 +1,4 @@
-2026-11-16: ZIP Archive Contains Package Using DLL Side-Loading and Python Loader for PureLogs/PureRAT
+2026-11-16 (Monday): ZIP Archive Contains Package Using DLL Side-Loading and Python Loader for PureLogs/PureRAT
 
 AUTHORS:
 
