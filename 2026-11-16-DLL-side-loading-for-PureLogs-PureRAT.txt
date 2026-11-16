@@ -57,8 +57,8 @@ DETAILS:
   -- Python running as  a file named MicrosoftEdgeUpdate.exe from the C:\Users\Public directory. 
     --- The real Edge updater is not installed there.
   -- A signed EXE running from a Downloads folder and loading krpt.dll from the same folder.
-  - cmd.exe launched by that executable with start "" "document.pdf" and an archive with a .png file extension that takes a -p password argument.
-  - A Python -c one-liner that XORs bytes read from a file with a .pdf extension and passes the result to exec().
+  -- cmd.exe launched by that executable with start "" "document.pdf" and an archive with a .png file extension that takes a -p password argument.
+  -- A Python -c one-liner that XORs bytes read from a file with a .pdf extension and passes the result to exec().
 
 INDICATORS:
 
