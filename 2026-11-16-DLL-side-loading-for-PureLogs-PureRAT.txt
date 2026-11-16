@@ -1,0 +1,91 @@
+2026-11-16: ZIP Package Uses DLL Side-Loading and Python Loader for PureLogs/PureRAT
+
+AUTHORS:
+
+- Shazan Khaja, Muhammet Algan
+
+NOTES:
+
+- Unit 42 observed a multi-stage delivery chain on 2026-10-21 that starts with a ZIP file named Shipment_Condition_And_Check_mp4.zip, which a user downloaded.
+- This zip archive contains a package that uses DLL side-loading for malware.
+  -- The ZIP contains a legitimate, validly signed executable (original name wpspdf.exe) renamed Shipment_Condition_And_Check_mp4.exe.
+  -- This side-loads an attacker-supplied malicious DLL named krpt.dll.
+- The Kingsoft executable is common in many environments, so its signature and hash do not indicate malicious activity on their own.
+- Once krpt.dll loads, the chain:
+  -- Opens a decoy PDF
+  -- Extracts a password-protected archive with a WinRAR command-line binary disguised as a .png file
+  -- Starts a Python runtime renamed MicrosoftEdgeUpdate.exe from the C:\Users\Public directory.
+- The Python runtime XOR-decodes a file with a .pdf extension into a heavily obfuscated Python script. 
+  -- That script decodes a final PE payload with a base64 and XOR routine.
+- The decoded payload calls to tea.vexexo[.]com, which resolves to 185.139.214[.]102
+  -- The traffic to 185.139.214[.]102:443 is TLSv1.
+  -- This is infrastructure attributed to PureLogs and PureRAT campaigns.
+
+DETAILS:
+
+- Timeline (UTC, 2026-10-21):
+  -- 03:02:53 UTC: Windows Explorer wrote krpt.dll to disk, which matches the user extracting the ZIP. 
+  -- 03:03:06 UTC: The renamed legitimate executable started.
+  -- 03:03:07 UTC: and loaded krpt.dll about one second later. 
+  -- 03:03:09 UTC: The DLL is loaded and the WinRAR extraction started.
+- The ZIP extracts to a nested folder with the same name, Shipment_Condition_And_Check_mp4, inside the user's Downloads folder.
+- The inner folder holds the renamed executable, krpt.dll and a subfolder named "x" with the decoy and payload files.
+- The executable is a legitimate 32-bit EXE file 
+- The EXE loads krpt.dll from its own folder, and the chain then continues through a 32-bit cmd.exe.
+- What the command does:
+  -- cd x && start "" "document.pdf" opens a decoy PDF in a PDF Reader so the user sees a normal document.
+  -- QK_참외_냉장고재고현황_2019.png is not an image. 
+  -- It is the signed WinRAR command-line binary named with a .png file extension. 
+  -- The WinRAR binary extracts the password-protected archive named OP_2023년_치킨뼈분석표_그냥요.dat into the C:\Users\Public directory. 
+     --- The extracted content is a Python runtime in the MicrosoftEdgeUpdate subfolder.
+  -- MicrosoftEdgeUpdate.exe is not a Microsoft file.
+    --- It is actually a Python interpreter renamed to look like the Microsoft Edge updater. 
+  -- The Python interpreter runs the -c one-liner.
+  -- The one-liner:
+    --- Reads QK_2021년_치킨배달대기시간_됩니까.pdf as raw bytes
+    --- XORs the raw bytes with the 20-byte repeating key d9301f099d9dd27cc9a1c190e40719cfaff77f65
+    --- Runs the result with exec()
+    --- The file with the .pdf extension is therefore an encoded Python script, not a PDF document.
+- The decoded second-stage script uses arithmetic expressions (XOR, shifts, additions) in place of plain constants and randomized identifier names.
+  -- It imports base64, os, sys, time, winreg, ctypes, subprocess, random and ctypes.wintypes.
+- The script holds a base64 key (mq8/qZ7D/RkPOCbLyUUBs+wCuA==) and a large base64 blob.
+- Decoding the blob and XORing it with the repeating key produces a PE file that starts with the MZ header (4D 5A 90).
+- The decoded payload is seen calling out to 185.139.214[.]102 and tea.vexexo[.]com.
+  -- This infrastructure is attributed to PureLogs and PureRAT campaigns.
+- The file names inside the archive are Korean-language strings (for example, about chicken delivery wait times and refrigerator stock) that have no relation to the shipment lure.
+- Defenders can look for:
+  -- Python running as  a file named MicrosoftEdgeUpdate.exe from the C:\Users\Public direcotry. 
+    --- The real Edge updater is not installed there.
+  -- A signed EXE running from a Downloads folder and loading krpt.dll from the same folder.
+  - cmd.exe launched by that executable with start "" "document.pdf" and a .png file that takes a -p password argument.
+  - A Python -c one-liner that XORs bytes read from a file with a .pdf extension and passes the result to exec().
+
+INDICATORS:
+
+SHA-256 hash of the side-loaded DLL:
+
+- 7453f86a9b36a0067b37cf00627ae6195b9eeee9e64a58653a80069eae7bd6fa (krpt.dll)
+
+SHA-256 hash of the decrypted payload:
+
+- 91ca4a96289fae34fb441a41d836e9a61ba8d2cfe6a12a8d345c521a4ddeebd3
+
+Command and control server info:
+
+
+- tea.vexexo[.]com - 185.139.214[.]102:443 (TLSv1)
+
+File names and paths:
+
+- Shipment_Condition_And_Check_mp4.zip
+- Shipment_Condition_And_Check_mp4\Shipment_Condition_And_Check_mp4\krpt.dll
+- x\QK_참외_냉장고재고현황_2019.png (WinRAR command-line binary)
+- OP_2023년_치킨뼈분석표_그냥요.dat (password-protected archive)
+- QK_2021년_치킨배달대기시간_됩니까.pdf (XOR-encoded Python script)
+- C:\Users\Public\MicrosoftEdgeUpdate\MicrosoftEdgeUpdate.exe (renamed Python interpreter)
+
+Other indicators:
+
+- Archive password: Q8vSrgVhuATe2S5FyubuEDUkFUnaYR8PzzU663RgBbtRPujyDADfm
+- XOR key for the encoded data file with the .pdf extension (hex): d9301f099d9dd27cc9a1c190e40719cfaff77f65
+- XOR key for the final payload (base64): mq8/qZ7D/RkPOCbLyUUBs+wCuA==
