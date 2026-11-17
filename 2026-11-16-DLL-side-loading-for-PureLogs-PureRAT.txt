@@ -59,7 +59,7 @@ DETAILS:
   -- This infrastructure is attributed to PureLogs and PureRAT campaigns.
 - The file names inside the archive are Korean-language strings (for example, about chicken delivery wait times and refrigerator stock) that have no relation to the shipment lure.
 - Defenders can look for:
-  -- Python running as  a file named MicrosoftEdgeUpdate.exe from the C:\Users\Public directory. 
+  -- Python running as a file named MicrosoftEdgeUpdate.exe from the C:\Users\Public directory. 
     --- The real Edge updater is not installed there.
   -- A signed EXE running from a Downloads folder and loading krpt.dll from the same folder.
   -- cmd.exe launched by that executable with start "" "document.pdf" and an archive with a .png file extension that takes a -p password argument.
