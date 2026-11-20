@@ -10,7 +10,7 @@ NOTES:
 - The attackers are abusing legitimate Remote Monitoring and Management (RMM) software.
   -- The payload is a legitimate, vendor-built remote-management installer: ScreenConnect cloud instances (17 distinct) on most pages, a FleetDeck agent on one page and one look-alike ScreenConnect host. Antivirus sees a trusted admin tool, and the victim only has to run the downloaded file.
 - One kit, two hosting clusters. 
-  -- Cluster A: 25 pages on 5 workers[.]dev accounts, one RMM instance and one   Telegram bot for all of them.
+  -- Cluster A: 25 pages on 5 workers[.]dev accounts, one RMM instance and one Telegram bot for all of them.
   -- Cluster B: 24 pages on attacker-registered domains and third-party sites, with 16 RMM instances and 11 Telegram bots. The clusters share the template and a hard-coded trap host, but no instance, bot or chat ID; whether one actor runs both is not proven.
 - Every page tells an operator about each visitor through a Telegram bot (IP, city, ISP, screen size, user agent) and hides from scanners: crawlers, headless browsers and cloud IPs get a fake "scheduled maintenance" page whose button starts a CPU and memory exhaustion loop.
 - Only the FleetDeck installer was captured by our crawler; it hashes identically to a sample downloaded separately in an isolated VM (SHA256 5393b2ec...a074b). It installs a Windows service. ScreenConnect installers were not captured, so the remote-access claim for those pages rests on the product's function, not on a captured binary.
@@ -19,7 +19,7 @@ DETAILS:
 
 - Attack Chain
   1. Lure page loads. The victim reaches a page (delivery route unknown: no email or ad parameters captured) that shows a browser window drawn inside the real tab, with an address bar showing a popular PDF vendor's download URL. Window chrome adapts to the visitor's browser. Non-Windows visitors see "Windows Computer Required".
-  2. Silent installer download. On DOMContentLoaded a hidden <a download> is clicked and the browser fetches the RMM installer from hxxps[://]<instance>.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.<exe|msi>?e=Access&y=Guest&c=<group>. A code comment left in the template reads "Auto-download file on page load (sample URL) ... Change this URL to your file".
+  2. Silent installer download. On DOMContentLoaded, a hidden <a download> is clicked and the browser fetches the RMM installer from hxxps[://]<instance>.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.<exe|msi>?e=Access&y=Guest&c=<group>. A code comment left in the template reads "Auto-download file on page load (sample URL) ... Change this URL to your file".
   3. Social engineering to execute. The page shows a progress bar and tells the victim to open Downloads and double-click pdf_Reader_en_install.msi. That name differs from the real downloaded name (ScreenConnect.ClientSetup.*): the page relies on any fresh installer being run.
   4. Operator alert. The page calls ipapi[.]co/json and posts the visitor details to the Telegram Bot API, in a message titled New Visitor Alert - MSI Page, so the operator learns who just arrived and can time the connection.
   5. Remote access. The installer is pre-bound to the operator's tenant (e=Access builds the unattended-access client; the c= fields carry the operator's group label). Once run, the machine registers to the operator's tenant (product function; not captured in our data).
@@ -43,7 +43,7 @@ Collection / Operator Alerting -- T1102.002, T1082 -- Visitor details sent to Te
 Two Clusters, One Kit
 
 - Shared: identical page template (same title, fake address string, lure file name, kit comments, dead sub-requests such as /m/js/utils.js and /config_recaptcha_public.php) and an identical hard-coded host fragment, JFWWI7GrPozJiIEC0tMv.codesphsere[.]ru/WZhZ, present in all 12 page DOMs we sampled from both clusters. The variable is unused in the saved pages, so it shows common code rather than a common operator.
-- Different: no RMM instance, Telegram bot or chat ID is shared between clusters.
+- Different: no RMM instance; Telegram bot or chat ID is shared between clusters.
 - Cluster A: 25 pages, 5 Workers accounts (8, 7, 6, 3 and 1 pages), 1 RMM instance, 1 bot. The group label in the installer URL changed between waves (Nov 1-7 and Nov 12-13).
 - Cluster B: 24 pages (8 pages on 7 attacker-registered domains, 15 on third-party sites, 1 on Vercel). It is not 24 isolated deployments: one RMM instance is used on 3 sites and another on 2 sites with the same bot, so a few operators appear to control several sites each.
 - Reading: a reused kit (sold, leaked or shared) with at least two operator tracks; same actor not proven (Figure 2).
@@ -63,7 +63,7 @@ Infrastructure
 Detection Notes
 
 - External visibility: of the 24 cluster-B pages, 21 were later flagged by outside feeds. None of the 25 Workers pages were flagged externally when we checked.
-- Defenders: block the full URLs below (for third-party sites the path, not the domain), inventory which ScreenConnect/FleetDeck tenants your organisation uses and alert on other tenants, and hunt for a browser-side ipapi.co lookup followed by a POST to api.telegram[.]org. Report tenants to ConnectWise and FleetDeck, bots to Telegram.
+- Defenders: block the full URLs below (for third-party sites, the path, not the domain), inventory which ScreenConnect/FleetDeck tenants your organisation uses and alert on other tenants, and hunt for a browser-side ipapi.co lookup followed by a POST to api.telegram[.]org. Report tenants to ConnectWise and FleetDeck, bots to Telegram.
 
 INDICATORS:
 
@@ -165,7 +165,7 @@ Telegram bot IDs (visitor-alert bots, 12):
 - 838434567 (cluster A, all 25 pages)
 - Cluster B: 8620954408, 5660230854, 8974391751, 8911045419, 8702662005, 9055413891, 9182586604, 8353198007, 8843158975, 8330489200, 7628097141
 - Endpoint: hxxps[://]api.telegram[.]org/bot<id>:<token>/sendMessage ; 
-  --message text starts `New Visitor Alert - MSI Page`
+  -- message text starts `New Visitor Alert - MSI Page`
 
 Attacker-controlled domains (WHOIS creation date; hosting IPs from passive DNS):
 
