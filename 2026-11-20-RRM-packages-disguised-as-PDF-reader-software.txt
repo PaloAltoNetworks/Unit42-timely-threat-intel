@@ -1,0 +1,181 @@
+2026-11-20 (Friday): Fake PDF-Reader Download Uses Browser-in-the-Browser Window to Deliver Packages Abusing RMM Software
+
+AUTHOR: 
+
+- Keerthiraj Nagaraj
+
+NOTES:
+
+- Active campaign, 49 pages seen 2026-11-01 to 2026-11-14, all built from one page template: a ~2.1-2.5 MB inline page titled PDF Viewer that renders a fake browser-in-the-browser (BitB) window with a spoofed address bar and "Download and launch your PDF Reader software" steps.
+- The attackers are abusing legitimate Remote Monitoring and Management (RMM) software.
+  -- The payload is a legitimate, vendor-built remote-management installer: ScreenConnect cloud instances (17 distinct) on most pages, a FleetDeck agent on one page and one look-alike ScreenConnect host. Antivirus sees a trusted admin tool, and the victim only has to run the downloaded file.
+- One kit, two hosting clusters. 
+  -- Cluster A: 25 pages on 5 workers[.]dev accounts, one RMM instance and one   Telegram bot for all of them.
+  -- Cluster B: 24 pages on attacker-registered domains and third-party sites, with 16 RMM instances and 11 Telegram bots. The clusters share the template and a hard-coded trap host, but no instance, bot or chat ID; whether one actor runs both is not proven.
+- Every page tells an operator about each visitor through a Telegram bot (IP, city, ISP, screen size, user agent) and hides from scanners: crawlers, headless browsers and cloud IPs get a fake "scheduled maintenance" page whose button starts a CPU and memory exhaustion loop.
+- Only the FleetDeck installer was captured by our crawler; it hashes identically to a sample downloaded separately in an isolated VM (SHA256 5393b2ec...a074b). It installs a Windows service. ScreenConnect installers were not captured, so the remote-access claim for those pages rests on the product's function, not on a captured binary.
+
+DETAILS:
+
+- Attack Chain
+  1. Lure page loads. The victim reaches a page (delivery route unknown: no email or ad parameters captured) that shows a browser window drawn inside the real tab, with an address bar showing a popular PDF vendor's download URL. Window chrome adapts to the visitor's browser. Non-Windows visitors see "Windows Computer Required".
+  2. Silent installer download. On DOMContentLoaded a hidden <a download> is clicked and the browser fetches the RMM installer from hxxps[://]<instance>.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.<exe|msi>?e=Access&y=Guest&c=<group>. A code comment left in the template reads "Auto-download file on page load (sample URL) ... Change this URL to your file".
+  3. Social engineering to execute. The page shows a progress bar and tells the victim to open Downloads and double-click pdf_Reader_en_install.msi. That name differs from the real downloaded name (ScreenConnect.ClientSetup.*): the page relies on any fresh installer being run.
+  4. Operator alert. The page calls ipapi[.]co/json and posts the visitor details to the Telegram Bot API, in a message titled New Visitor Alert - MSI Page, so the operator learns who just arrived and can time the connection.
+  5. Remote access. The installer is pre-bound to the operator's tenant (e=Access builds the unattended-access client; the c= fields carry the operator's group label). Once run, the machine registers to the operator's tenant (product function; not captured in our data).
+
+Tactics (MITRE ATT&CK)
+
+Read: Tactic -- ID -- Observation
+
+Resource Development -- T1583.001, T1583.006, T1584.001 -- wprkers[.]dev accounts with scripted three-word subdomains; domains registered 2026-09 to 2026-11 across several registrars and hosts; third-party sites on shared hosting
+
+Initial Access / Social Engineering -- T1566.002, T1189 -- Browser-in-the-browser lure with a spoofed vendor URL; window style follows the visitor's browser
+
+Execution -- T1204.002 -- Silent auto-download on load; victim told to run pdf_Reader_en_install.msi
+
+Defense Evasion -- T1497.001, T1027 -- Windows-only gate; source-protection script (right-click and DevTools blocking, self-removing script tags); crawler/headless/cloud-IP list diverted to a fake maintenance page with a CPU/memory exhaustion button; light obfuscation (atob, reversed strings)
+
+Command and Control -- T1219 -- Legitimate signed RMM clients bound to operator tenants (ScreenConnect e=Access, FleetDeck agent)
+
+Collection / Operator Alerting -- T1102.002, T1082 -- Visitor details sent to Telegram bots after an ipapi.co lookup; 12 bots in total
+
+Two Clusters, One Kit
+
+- Shared: identical page template (same title, fake address string, lure file name, kit comments, dead sub-requests such as /m/js/utils.js and /config_recaptcha_public.php) and an identical hard-coded host fragment, JFWWI7GrPozJiIEC0tMv.codesphsere[.]ru/WZhZ, present in all 12 page DOMs we sampled from both clusters. The variable is unused in the saved pages, so it shows common code rather than a common operator.
+- Different: no RMM instance, Telegram bot or chat ID is shared between clusters.
+- Cluster A: 25 pages, 5 Workers accounts (8, 7, 6, 3 and 1 pages), 1 RMM instance, 1 bot. The group label in the installer URL changed between waves (Nov 1-7 and Nov 12-13).
+- Cluster B: 24 pages (8 pages on 7 attacker-registered domains, 15 on third-party sites, 1 on Vercel). It is not 24 isolated deployments: one RMM instance is used on 3 sites and another on 2 sites with the same bot, so a few operators appear to control several sites each.
+- Reading: a reused kit (sold, leaked or shared) with at least two operator tracks; same actor not proven (Figure 2).
+
+RMM Software Abuse
+
+- ScreenConnect: 17 distinct cloud instances, each used as the source of the installer. The tenant behind the Workers pages answers with the stock ScreenConnect guest page, vendor-hosted, with no company branding, still live on 2026-11-17; this alone is not proof of abuse. We could not tell whether tenants are attacker-created trials or hijacked real tenants.
+- FleetDeck: one page. The crawler recorded lure page (200) -> agent.fleetdeck[.]io/8iXft6dXyVjkehwKi9qwgs?win (302) -> agentinstall.fleetdeck[.]io/fleetdeck-agent-8iXft6dXyVjkehwKi9qwgs.exe (200, 4,391,192 bytes, Figure 4). Static strings show it is the FleetDeck Agent installer and installs fleetdeck_agent_svc.exe as a service. The enrollment token appears only in the URL and file name, not inside the binary, so it presumably selects the tenant at install time (inference). 24 VirusTotal engines flag the file at first submission, mostly with RemoteAdmin/PUA labels, so it reads as an unwanted remote-admin tool, not a custom implant.
+- Look-alike host: one page fetches a ScreenConnect client from app.cosscon[.]site, a domain registered 2026-11-04, the day the page was seen.
+
+Infrastructure
+
+- Attacker-registered domains: files-reader-view[.]com (2026-11-07,), darksupport[.]shop (2026-11-11), docprivates[.]shop (2026-10-02), fitarno[.]cloud (2026-09-10), creenlines[.]site (2026-10-30), scalvesonixands[.]site (2026-11-02), betweenhea[.]click (2026-04-16, hosting changed four times since April). Let's Encrypt certificates were issued the same day as registration for three of them.
+- Third-party sites: kit dropped into a sub-path of 15 domains of mixed age. Six of them, plus one attacker domain, sit on one hosting provider. Five of the 15 domains were registered in 2026 and one was re-registered on 2026-10-30 and hosts the kit on a subdomain, so some may be attacker-built rather than hacked; we do not claim an intrusion vector.
+- Every page hotlinks a vendor logo from a software-review site and a Copilot icon from microsoft[.]ai; these are huntable.
+
+Detection Notes
+
+- External visibility: of the 24 cluster-B pages, 21 were later flagged by outside feeds. None of the 25 Workers pages were flagged externally when we checked.
+- Defenders: block the full URLs below (for third-party sites the path, not the domain), inventory which ScreenConnect/FleetDeck tenants your organisation uses and alert on other tenants, and hunt for a browser-side ipapi.co lookup followed by a POST to api.telegram[.]org. Report tenants to ConnectWise and FleetDeck, bots to Telegram.
+
+INDICATORS:
+
+All URLs were assessed as phishing/malware delivery by our analysis pipeline. ScreenConnect and FleetDeck vendor domains are legitimate services abused by operators: block the specific tenant URLs, not the vendor domains.
+
+Lure pages using workers[.]dev (cluster A, 25 URLs):
+
+- hxxps[://]black-rain-8d5a.consumerslpg.workers[.]dev/
+- hxxps[://]blue-queen-f21d.consumerslpg.workers[.]dev/
+- hxxps[://]blue-smoke-be47.j-comito.workers[.]dev/
+- hxxps[://]bold-mountain-4fe5.consumerslpg.workers[.]dev/
+- hxxps[://]crimson-hall-43bb.idomnich.workers[.]dev/
+- hxxps[://]delicate-moon-8f30.idomnich.workers[.]dev/
+- hxxps[://]divine-credit-3faa.j-comito.workers[.]dev/
+- hxxps[://]dry-fog-8ca6.idomnich.workers[.]dev/
+- hxxps[://]fancy-glade-cc53.j-comito.workers[.]dev/
+- hxxps[://]jolly-butterfly-d6f8.sibylch.workers[.]dev/
+- hxxps[://]lucky-leaf-e508.john-53d.workers[.]dev/
+- hxxps[://]misty-leaf-6de5.j-comito.workers[.]dev/
+- hxxps[://]mute-pond-c48c.consumerslpg.workers[.]dev/
+- hxxps[://]nameless-lake-291d.idomnich.workers[.]dev/
+- hxxps[://]plain-recipe-fa54.idomnich.workers[.]dev/
+- hxxps[://]quiet-star-74c2.consumerslpg.workers[.]dev/
+- hxxps[://]quiet-tooth-ee53.sibylch.workers[.]dev/
+- hxxps[://]rapid-bar-edb1.consumerslpg.workers[.]dev/
+- hxxps[://]round-recipe-56e9.j-comito.workers[.]dev/
+- hxxps[://]silent-fog-5aad.consumerslpg.workers[.]dev/
+- hxxps[://]silent-leaf-a27e.j-comito.workers[.]dev/
+- hxxps[://]small-unit-3c59.consumerslpg.workers[.]dev/
+- hxxps[://]super-voice-6b8c.idomnich.workers[.]dev/
+- hxxps[://]wandering-dust-5eba.sibylch.workers[.]dev/
+- hxxps[://]wild-bread-1be0.j-comito.workers[.]dev/
+
+Lure pages, attacker-registered domains (cluster B, 8 URLs):
+
+- hxxps[://]betweenhea[.]click/slick/slick.html
+- hxxps[://]creenlines[.]site/open/Quote.html
+- hxxps[://]darksupport[.]shop/file/Adobe.html
+- hxxps[://]docprivates[.]shop
+- hxxps[://]files-reader-view[.]com/pdf/108203s49/
+- hxxps[://]fitarno[.]cloud/PDFEditor/Products/Download/2umxqy9x3nj9e0trdvrxwjjfpcv543gnd83/
+- hxxps[://]fitarno[.]cloud/Products/PDFViewer/Download/fff80199c97d9f6086ef3bd57f4aea5b49348375/
+- hxxps[://]scalvesonixands[.]site/v/
+
+Lure pages on third-party sites (cluster B, 16 URLs incl. one Vercel host; block the path, not the domain):
+
+- hxxps[://]4xdconsulting[.]com//Adobe.com/Securedfile/AdobeReader.html
+- hxxps[://]aau.wxe.mybluehostin[.]me/adobe/adobe.html
+- hxxps[://]alliceteaspot[.]com/secure/Adobe_Installer.html
+- hxxps[://]bluemountainmarble[.]com/Fastest/Lab.html
+- hxxps[://]buyandsellaz[.]net/access/Adobe_Installer.html
+- hxxps[://]flamesnowcrate.mypi[.]co/secure/Adobe_Installer.html
+- hxxps[://]legacyknights.bf-nak[.]com/acrobat/Adobe_Installer.html
+- hxxps[://]lifemechanicinstitute[.]com/vv/
+- hxxps[://]lon.thunderrbayroof[.]com/?p=9nnlwlwgbo
+- hxxps[://]oriaind[.]com/pp/post.html
+- hxxps[://]prowessequity[.]com/cgi/
+- hxxps[://]vb.kariboumedia[.]com/qa/index.html
+- hxxps[://]wnep.vercel[.]app
+- hxxps[://]www.chartingtoday[.]com/ab/
+- hxxps[://]www.homecleaning[.]co[.]in/vb/adb89.html
+- hxxps[://]www.saiyaarafashion[.]com/sdf/optimumhealthcare.html
+
+RMM installer URLs fetched by the pages (tenant-specific; c= group labels trimmed):
+
+- hxxps[://]agent[.]fleetdeck[.]io/8iXft6dXyVjkehwKi9qwgs?win
+- hxxps[://]agentinstall[.]fleetdeck[.]io/fleetdeck-agent-8iXft6dXyVjkehwKi9qwgs[.]exe
+- hxxps[://]app[.]cosscon[.]site/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest&c=AGARO
+- hxxps[://]covenantkidsacademy.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=avw1
+- hxxps[://]davisislandspharmacy.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=realtorfl%20llc
+- hxxps[://]deliveryman.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest
+- hxxps[://]gvtc5.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=HEART01
+- hxxps[://]homeinstead.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=winnr
+- hxxps[://]kgfunding1.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest
+- hxxps[://]kiasacandheating.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest
+- hxxps[://]martystrophies.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=0000
+- hxxps[://]martystrophies.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=A
+- hxxps[://]martystrophies.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=aa
+- hxxps[://]miamidermlaser.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=Heavy%20Machines%20Inc
+- hxxps[://]miamidermlaser.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=UptimeYards
+- hxxps[://]pattsgroups.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest&c=best
+- hxxps[://]roadrunner33.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest
+- hxxps[://]stephensoilco.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=west
+- hxxps[://]student113.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&c=Bright%20H
+- hxxps[://]terrace-realty.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest
+- hxxps[://]transhow-cn.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest&c=checkpoint
+- hxxps[://]uptick.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest
+- hxxps[://]wesleyschool.screenconnect[.]com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest
+
+File hash (FleetDeck Agent installer):
+
+- SHA256 5393b2ec35dfe452392a60688b941796fddcb14c9b5df2a0db6b726f1bca074b
+  -- MD5 3735499b797eee6ceaeb07d1e04baf00
+  -- SHA1 f80fb987c4f894e3eb58bdc5b7ddd6bd58e4effc; 
+  -- 4,391,192 bytes; 24 VirusTotal detections at first submission
+
+Telegram bot IDs (visitor-alert bots, 12):
+
+- 838434567 (cluster A, all 25 pages)
+- Cluster B: 8620954408, 5660230854, 8974391751, 8911045419, 8702662005, 9055413891, 9182586604, 8353198007, 8843158975, 8330489200, 7628097141
+- Endpoint: hxxps[://]api.telegram[.]org/bot<id>:<token>/sendMessage ; 
+  --message text starts `New Visitor Alert - MSI Page`
+
+Attacker-controlled domains (WHOIS creation date; hosting IPs from passive DNS):
+
+- *.<account>.workers[.]dev (consumerslpg, j-comito, idomnich, sibylch, john-53d)
+- betweenhea[.]click (registered 2026-04-16)
+- codesphsere[.]ru (registered 2024-11-20; the WHOIS expiry date has passed), hard-coded in the template as JFWWI7GrPozJiIEC0tMv[.]codesphsere[.]ru/WZhZ
+- cosscon[.]site (registered 2026-11-04), look-alike RMM host
+- creenlines[.]site (registered 2026-10-30)
+- darksupport[.]shop (registered 2026-11-11)
+- docprivates[.]shop (registered 2026-10-02)
+- files-reader-view[.]com (registered 2026-11-07)
+- fitarno[.]cloud (registered 2026-09-10)
+- scalvesonixands[.]site (registered 2026-11-02)
