@@ -1,4 +1,4 @@
-2026-11-20 (Friday): Fake PDF-Reader Download Uses Browser-in-the-Browser Window to Deliver Packages Abusing RMM Software
+2026-11-20 (Friday): Fake PDF Reader Download Uses Browser-in-the-Browser Window to Deliver Packages Abusing RMM Software
 
 AUTHOR: 
 
