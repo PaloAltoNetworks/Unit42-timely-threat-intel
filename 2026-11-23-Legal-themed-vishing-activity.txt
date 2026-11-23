@@ -1,0 +1,33 @@
+2026-11-23 (Monday): Widespread Vishing via Legal-Themed Domains
+
+AUTHOR:
+
+- Matt Brady
+
+NOTES:
+
+- The activity has been ongoing since at least October 2026.
+- Many of the domains were created using NiceNIC as a registrar
+  -- These have Cloudflare for name servers
+  -- However, we have observed other providers used for both categories.
+- Each domain is specifically created for an intended target using one of the following criteria:
+  -- Domain begins with "legal-" or ends with "-legal" using the .com TLD
+  -- example: legal-xyz[.]com or xyz-legal[.]com).
+
+- We analyzed more than 70 observed domains
+- The results revealed targeted organizations operating in different industries
+- Based on previously observed activity, the following industries could be targeted by vishing attempts:
+
+  –- Cryptocurrency
+  –- Financial Services
+  –- Healthcare
+  –- High Technology
+  –- Hospitality
+  –- Media & Entertainment
+  –- Pharma & Life Sciences
+  –- Professional & Legal Services
+  –- Transportation & Logistics
+  –- Utilities & Energy
+  –- Wholesale & Retail
+
+Nexus review: 3ec826cf-8807-403e-8797-6e5b1cf18802
