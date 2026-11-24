@@ -1,0 +1,41 @@
+2026-11-23 (Monday): OAuth Misuse
+
+AUTHORS: 
+
+- Beliz Kaleli, Diva-Oriane Marty, Shawn He Shuang, Billy Melicher, Oleksii Alex Starov
+
+NOTES:
+
+- We discuss OAuth misuse in our blog "The Current Landscape of OAuth Attacks" at:
+  -- https://unit42.paloaltonetworks.com/current-landscape-oauth-attacks/ 
+
+- Full OAuth authorization URL: 
+  -- hxxps[:]//accounts.google[.]com/o/oauth2/v2/auth?client_id=
+     787141854297-otfqv8p1t7ocpm1sc9r6qr9d45jklfea.apps.googleusercontent[.]com&
+     redirect_uri=hxxps[:]//fsaremodeling.com/sw/jvfgher45rvbhdf.html&
+     response_type=code&scope=openid email profile&access_type=offline&prompt=none
+- Due to the existence of prompt=none parameter, visiting this OAuth URL silently redirects to the compromised page without showing any consent prompt, which automatically redirects to the attacker-controlled _wildcard_.therameniers[.]com domain.
+
+- The redirect domain (fsaremodeling[.]com) was registered on 2026-09-16 
+  -- Seems to be a legitimate company with an active Instagram account.
+- Redirect chain leads to a CAPTCHA page
+  -- Solving captcha shows a “View Files” phishing lure. 
+- Clicking on “View Files” leads to an automated download of a malicious executable. (VT score = 22)
+
+INDICATORS:
+
+Legitimate site with redirect:
+
+- hxxps[:]//fsaremodeling[.]com/sw/jvfgher45rvbhdf.html
+
+URLs in the remaining redirect chain:
+
+- hxxps[:]//uniformesgadane.com[.]br/sw/nhus3r50.html
+- hxxps[:]//_wildcard].therameniers[.]com/drwcdg3bnklafdbfsgsrggtdjukjfuuvd4v75cfxgc56c5f4s32vbiojfs8u/kacfIUBgrds3u/captcha.php
+- hxxps[:]//_wildcard_.therameniers[.]com/drwcdg3bnklafdbfsgsrggtdjukjfuuvd4v75cfxgc56c5f4s32vbiojfs8u/kacfIUBgrds3u/index.php
+
+SHA-256 hash for malicious file: 
+
+- 45e1792d302e729ad59e37382eedfffd44bd69ca625c396015ac3471391990af
+
+Malicious OAuth App ID: 787141854297-otfqv8p1t7ocpm1sc9r6qr9d45jklfea.apps.googleusercontent.com
