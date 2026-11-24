@@ -19,7 +19,7 @@ NOTES:
 - The redirect domain (fsaremodeling[.]com) was registered on 2026-09-16 
   -- Seems to be a legitimate company with an active Instagram account.
 - Redirect chain leads to a CAPTCHA page
-  -- Solving captcha shows a “View Files” phishing lure. 
+  -- Solving CAPTCHA shows a “View Files” phishing lure. 
 - Clicking on “View Files” leads to an automated download of a malicious executable. (VT score = 22)
 
 INDICATORS:
