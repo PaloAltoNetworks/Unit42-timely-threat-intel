@@ -1,0 +1,104 @@
+2026-11-19: Fake "Gateway Verification" ClickFix Lure Delivers ACR Stealer Hidden in a PNG Image
+
+
+AUTHORS:
+
+- Vishnu K, Harish Madhavan J U, Madhav Harikumar, Manbendra Satpathy, Vinayak R, Vinoth Kumar C, Shazan Khaja, Abhiram Patiballa
+
+
+NOTES:
+
+
+- A ClickFix-style fake "Gateway Verification" page tricks the user into pasting a command into PowerShell.
+- The command runs MSHTA against an HTA dropper hidden inside a fake Microsoft MSIX package.
+- The HTA creates a scheduled task that disables AMSI utilizing PowerShell and downloads a secondary obfuscated PowerShell loader
+- The loader downloads a PNG image (named .jpg) and extracts a PowerShell injector hidden in its pixel data via steganographic techniques.
+- The injector loads the final payload into memory: ACR Stealer, disguised as Realtek "RtkAudioService.exe".
+- ACR Stealer targets saved browser passwords and cookies from about 70 browsers, browser-extension data, crypto-wallet seed phrases, Steam and Thunderbird. It also takes screenshots.
+- The decoded payload is seen calling out to store.flexroutegk[.]cc over HTTPS.
+- The server regenerates the /230 and /lHYXT files for each download, so their hashes vary.
+
+
+DETAILS:
+
+- A fake "Gateway Verification" phishing page lures the user into pasting a command into PowerShell.
+- The command runs the built-in LOLBin mshta.exe against hxxps://146395[.]xyz/230, prints a fake "Challenge Response ID: 612827", and sends a curl tracking ping to 78606797[.]xyz whose response is discarded (-o NUL).
+- hxxps://146395[.]xyz/230 returns a ZIP of a genuine-looking MicrosoftStartFeedPackage_1.1.200.0 MSIX bundle with an HTA appended, so scanners see a Microsoft package while mshta runs the HTA.
+- The HTA's hex encoded VBScript registers scheduled task "serviceanu" (plus 3 random letters if the name is taken) through the Schedule.Service COM object and runs under current logged on user context with an obfuscated PowerShell commandline.
+  -- This PowerShell escapes constrained language mode by re-running in a new runspace and collects system information (OS, Domain, CPU, etc.).
+  -- It decrypts its strings with RC4 key r8mP4TnruusTg3Zg and disables AMSI
+  -- It forces TLS 1.2, accepts any certificate and downloads hxxps://146395[.]xyz/lHYXT with a Chrome 130 User-Agent.
+- The download is piped into PowerShell, goes through layers of obfuscation and results in a download URL hxxps://146395[.]xyz/init-block-la.jpg. The User-Agent is Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0
+- The ".jpg" is actually a PNG image of random-looking noise, with code hidden in the blue value of every 2nd pixel on every 2nd row.
+  -- The loader reads 548,167 hidden bytes, XORs them with "mdwD@Ny9ec!BUYYWUHNgbKcmsgi*Os@E", gunzips them into a PowerShell injector and runs it with iex (Invoke-Expression).
+  -- The injector calls Windows functions through Microsoft.Win32.UnsafeNativeMethods and dynamic delegates, avoiding Add-Type and P/Invoke.
+  -- It XOR-decrypts the byte array with key 997d18207366377598cbccb1392b2574 and gunzips it into the ACR Stealer.
+- The ACR Stealer exhibits the following capabilities:
+  -- In 32-bit PowerShell it runs the stealer in-process (VirtualAlloc, CreateThread); in 64-bit PowerShell it injects into a hidden cmd.exe instance (VirtualAllocEx, WriteProcessMemory, CreateRemoteThread).
+  -- Poses as Realtek RtkAudioService.exe with a fake manifest, 200+ decoy audio-driver phrases and a zeroed compile timestamp.
+  -- Header jumps to a 1,024-byte reflective loader at offset 0xDA000, so it runs from memory without being written to disk.
+  -- Has no import table, resolves Windows functions by PEB walk and hashed export names, bypasses NTDLL hooks with 6 indirect-syscall stubs and decrypts strings with 6 DWORD-based routines.
+  -- Employs anti-debugging checks (ProcessDebugPort, ProcessDebugFlags, timing checks), enables SeDebugPrivilege and injects into a suspended notepad.exe.
+  -- Probes application paths for ~70 browsers and launches headless Firefox with a custom profile “C:\Users\Public\.ff_tmp” and a background MS Edge instance to unlock saved passwords, cookies and App-Bound-encrypted Chrome/Edge keys.
+  -- Reads browser SQLite and JSON password stores and extension storage, finds crypto-wallet seed phrases with the BIP-39 word list, and takes Steam and Thunderbird data.
+  -- Takes screenshots, fingerprints MachineGuid, keyboard layouts, processes, firmware tables and network adapters, and creates registry key HKCU\Software\32B38C8471B1DEBC3702B01D48E67BC4.
+  -- Persists as %APPDATA%\helpersettings32.exe through scheduled task "helpersettings32.exe", registered with powershell.exe -NoProfile -ExecutionPolicy Bypass -Enc, and drops a randomly named EXE under %TEMP%.
+  -- Calls out to store.flexroutegk[.]cc over HTTPS on port 443 using Schannel TLS, with a beacon loop and a fallback domain generation algorithm (DGA).
+
+INDICATORS:
+
+SHA-256 hashes:
+
+- 91aca0a9f9bcfac07da4d0e56fba9573c26e89fc418dde1a57051fd56bfb4d43 (MSIX dropper from /230; regenerated per download)
+- d5571c8898d58efffdfe5efda67f11c337a951dd173d0c50ebcffb48712e05e0 (obfuscated loader from /lHYXT; regenerated per download)
+- 797c945d01fd2cd96a5c0619a271314919414bec66f662167fda8b5f48c25b42 (decoded scheduled-task PowerShell script)
+- 8ab8840a5e6ec83fa8a683450da5c24831feefbdff64dc375a43e3ed17e67a81 (init-block-la.jpg, PNG carrying the injector)
+- ec27f98b0d699b8bb3cc3761a5248030b9da7b1733ee7c769202b0aaa13123b7 (PowerShell injector extracted from the image)
+- fa9e9dab893f4ae0e493c897fc81a5f8eb87d2f79d88cb9db1bf093f4661e434 (decoded ACR Stealer payload)
+
+Delivery infrastructure:
+
+- 146395[.]xyz (behind Cloudflare)
+- hxxps://146395[.]xyz/230
+- hxxps://146395[.]xyz/lHYXT
+- hxxps://146395[.]xyz/init-block-la.jpg
+- 78606797[.]xyz
+- hxxps://78606797[.]xyz/p/43mzq1c6sfxdr/?_pb=1&zoneid=41941
+
+Command and control:
+
+- store.flexroutegk[.]cc
+- flexroutegk[.]cc (parent domain)
+
+File names and paths:
+
+- MicrosoftStartFeedPackage_1.1.200.0_*.msix (decoy package carrying the HTA)
+- init-block-la.jpg (PNG carrying the PowerShell injector)
+- C:\Windows\System32\Tasks\serviceanu* (scheduled task file)
+- %APPDATA%\helpersettings32.exe (ACR Stealer persistence copy)
+- C:\Users\Public\.ff_tmp (headless Firefox profile)
+- RtkAudioService.exe (ACR Stealer payload with fake Realtek name)
+
+Registry read operations by ACR Stealer:
+
+- HKLM\SOFTWARE\Microsoft\Cryptography\MachineGuid
+- HKLM\SOFTWARE\WOW6432Node\Valve\Steam
+- HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Domain
+- HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+- HKU\<SID>\Keyboard Layout\Preload
+- HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\<browser>.exe
+- HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\App Paths\<browser>.exe
+- HKU\<SID>\Software\Microsoft\Windows\CurrentVersion\App Paths\<browser>.exe
+
+Other indicators:
+
+- Lure text: Gateway Verification - Challenge Response ID: 612827
+- AMSI bypass value: AmsiUtils.amsiContext set to 0x41414141
+- Environment variable on child PowerShell: COMPlus_ReadyToRun=0
+- RC4 keys (scheduled-task PowerShell): r8mP4TnruusTg3Zg, BWKeeexgbrW9aD0R
+- Loader XOR key prefix: AMSI_RESULT_NOT_DETECTED
+- Image XOR key: mdwD@Ny9ec!BUYYWUHNgbKcmsgi*Os@E
+- Injector XOR key (hex): 997d18207366377598cbccb1392b2574
+- ACR Stealer string-decoder constants: 0x7FEB352D, 0x84222325
+- User-Agent (scheduled-task PowerShell): Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
+- User-Agent (image download): Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0
