@@ -1,0 +1,149 @@
+2026-11-25 (Wednesday): Fake Crypto-Exchange "Vote to List Token" Page Uses Fabricated Social Proof to Funnel Visitors Into a Wallet-Drainer Connect Flow
+
+AUTHOR:
+
+- Keerthiraj Nagaraj
+
+NOTES:
+
+- Active campaign, 56 pages seen 2026-11-21 18:59 UTC to 2026-11-23 12:53 UTC, spread across ~36 pages[.]dev preview subdomains in 6 distinct projects. Hosting is disposable: each wave of pages uses a new random-prefixed preview subdomain of the same Pages project, so blocking one URL does not block the next.
+- The page imitates a major cryptocurrency exchange's "community vote" flow for listing a new token. A visitor is invited to paste a Solana mint or an EVM (0x...) contract address; the page then renders a generic token card (no real name, just "Unknown token (ERC-20)") with a hardcoded, scripted ballot: a YES/NO percentage split and a "Recent activity" feed of masked wallet addresses "voting," both of which advance on their own as the page sits open. Nothing on the page reflects a real vote.
+- The "vote" is a wallet-drainer connect flow, not informational content. The "Vote YES — list on the exchange" and "Vote NO" buttons open a hosted wallet-connect modal (iframe at node-endpoint[.]pages[.]dev) built on a Reown-style widget, which here only speaks to Solana wallets (Phantom, Solflare, Jupiter). Approving the resulting prompt is a disguised asset-transfer approval, not a vote: config flags in the loader control a spoofed prompt and a hidden flag that suppresses the wallet's "estimated changes" simulation warning, so the victim does not see the real transfer being proposed. We did not observe a completed drain in our crawl (the crawler does not hold a funded wallet), so the transfer outcome is based on the kit's code, not a captured loss.
+- One operator, disposable fronts. All 10 pages we inspected in depth share byte-identical loader code (same SHA-256), the same drainer backend domain, and the same Telegram alert channel ID — only the pages[.]dev hostname changes between waves. Because the code is byte-identical, the destination wallet hard-coded in it is also identical across all 10: a single address collects for every instance we checked, not a per-page value. A single address recurs on 16+ of the 56 URLs (/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7). We checked it on-chain (2026-11-24): it is not a deployed contract on Ethereum (plain unused account, confirmed via a block explorer), and it does not resolve to a known token on Ethereum, Base, Polygon or Arbitrum (CoinGecko), nor does it have a trading pair on any chain DexScreener covers (matching the page's own "No EVM pair found" message). So this does not look like promotion of a real, tradeable token; the address is more likely a fixed, reused placeholder baked into this batch of pages than a sign of organic "community interest" in an actual memecoin.
+- The drainer only connects to Solana wallets (Phantom, Solflare, Jupiter) — it cannot drain an EVM wallet at all, even though the page accepts and displays an EVM (0x...) contract address for the "token" being voted on. That part of the page is a chain-agnostic lookup/display feature only; the wallet-connect and signing code we reviewed has no Ethereum/EVM logic anywhere. So the hard-coded destination wallet, which is in Solana's address format, is the kit's one real (if idle) payout address, not a placeholder waiting for a separate EVM field. On-chain lookup (2026-11-24) shows this address has a zero balance and has never had any on-chain activity — it does not exist as an active account — so it is not where any stolen funds from this campaign have actually landed; it reads as unused, not as evidence the kit is misconfigured.
+- The kit is a packaged, reusable drainer widget, not bespoke code. Its UI elements and internal messaging are consistently namespaced "kiwi" throughout (e.g. a widget container, an iframe wrapper, a backdrop overlay, a mobile sheet, and a postMessage source tag all carry a "kiwi"/"kiwi-pro" prefix), the kind of consistent internal branding a commercial or widely shared drainer-as-a-service product would carry. Combined with byte-identical code across every sampled page and builder-style instructional comments addressed to an end operator (e.g. a flag commented "always keep true," a field labeled "your split wallet"), this reads as a configurable kit deployed by an operator, not something written specifically for this campaign.
+Every page fingerprints the visitor (IP, geo, browser) via ipapi.co and ipwho.is, then posts a "visit" event to the operator's backend — AES-GCM encrypted client-side before it leaves the browser, which is unusual effort for a page that claims to be informational.
+
+DETAILS:
+
+Attack Chain
+
+- Lure page loads. The victim reaches a page styled as a sub-page of a major cryptocurrency exchange ("Vote to list," logo, nav bar match the real exchange's site) and is prompted to paste a Solana mint or 0x contract address to see its "listing status."
+- Fabricated social proof. The page shows a token card with a scripted YES/NO ballot (commonly 80-85% YES) and a "Recent activity" feed of masked addresses casting votes in real time, framed as community interest feeding the exchange's supposed "internal listing review queue." None of this reflects a real exchange process.
+- "Connect" opens the drainer. The Vote buttons trigger a wallet-connect modal hosted on a separate domain (node-endpoint[.]pages[.]dev), loaded as an iframe so the victim's wallet extension sees a connection request from what looks like the voting page.
+- Approval disguised as a vote or claim. The connected wallet is asked to sign an approval; the kit's configuration spoofs the prompt text and suppresses the wallet's simulation/estimated-change warning, so the approval does not read as a fund transfer.
+- Funds routed to an operator wallet; operator alerted. Executing the signature transfers victim holdings to a fixed destination address specified within the configuration. Across every inspected sample, this embedded wallet parameter remains unchanged due to the byte-identical script, routing drained funds to a unified destination rather than per-domain endpoints (notably, the static parameter utilizes Solana formatting despite the bait soliciting EVM details). Concurrently, initial visitor fingerprinting triggers an encrypted visit notification dispatched to an operator-controlled Telegram bot for real-time tracking.
+
+Tactics (MITRE ATT&CK)
+
+Tactic -- ID -- Observation
+- Resource Development -- T1583.001 -- Disposable pages[.]dev preview subdomains (~36 across 6 projects), rotated every few pages
+- Initial Access / Social Engineering -- T1566.002 -- Brand-impersonation lure (major cryptocurrency exchange) with fabricated vote counts and a live fake-activity feed to manufacture urgency
+- Execution / Defense Evasion -- T1204.002, T1027 -- Wallet-approval prompt spoofed as a vote/claim; wallet simulation warning suppressed via a config flag
+- Collection -- T1082, T1217 (analogue: fingerprinting) -- Visitor IP/geo lookup (ipapi.co, ipwho.is) before any wallet interaction
+- Command and Control -- T1071.001, T1573 -- AES-GCM-encrypted JSON payloads posted to a drainer backend; Telegram bot for operator alerts
+- Impact -- T1565 (analogue: financial) -- Wallet-approval signature intended to transfer assets to an operator-controlled address
+
+Infrastructure
+
+- Lure hosting: pages[.]dev, 6 projects, each generating random hex-prefixed preview subdomains; 56 URLs observed across ~36 distinct hostnames in under 48 hours.
+- Drainer backend: walletadapter-cdn-cloud[.]com — serves the wallet-connect redirect config, receives AES-GCM-encrypted visit/connect telemetry (/notify-visit, /okxdmnendpt).
+- Wallet-connect modal: node-endpoint[.]pages[.]dev — fixed iframe URL embedded on every lure page, independent of the lure's own hostname.
+- Alert channel: one Telegram chat ID shared by all 10 sampled pages.
+- Promoted token: one ERC-20 contract address recurs on 16+ URLs via a /token?ca= parameter; the rest serve a generic "paste an address" landing page.
+
+Detection Notes
+
+- Our analysis pipeline flagged all 56 pages. The earliest pages in the run (Nov 21) had not yet been flagged by any other detection vendor at crawl time; corroboration for the full run is still forming given the short (under 48h) observation window.
+- Defenders: treat any "vote to list" or "claim listing reward" page that asks you to connect a wallet as a drainer front, regardless of branding; wallet users should always read what a signature approves, not just click through, and should distrust any page suppressing the wallet's own warnings. Report the pages[.]dev projects and the Telegram bot.
+
+INDICATORS:
+
+- All URLs were assessed as phishing by our analysis pipeline. pages[.]dev URLs, the Telegram API and the third-party geolocation services are legitimate services abused by the operator: block the specific hostnames and projects, not the vendor domains.
+
+Lure pages on pages[.]dev URLs, Project family A (17 URLs):
+
+- hxxps[:]//1ab6-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//22c9-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//26b3-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//34eb-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//5bb3-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//5cfc-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//612d-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//7233-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//7614-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//7b52-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//85d5-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//9455-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//coinbase-listing-677f-bdde[.]pages[.]dev
+- hxxps[:]//d26a-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//d4f8-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//ec66-coinbase-listing-677f[.]pages[.]dev
+- hxxps[:]//f78a-coinbase-listing-677f[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+
+Lure pages on pages[.]dev URLs, Project family B (30 URLs):
+
+- hxxps[:]//9cb0-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//0b7a-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//0b7a-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//1865-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//29f2-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//363d-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//363d-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//4611-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//49bb-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//49bb-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//4d32-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//4d32-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//540e-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//540e-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//5e1d-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//626f-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//626f-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//6281-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//67ec-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//8314-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//94f3-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//b085-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//b085-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//b3b0-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//b3b0-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//c89b-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//d676-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//d676-colnbase-listings-4f65[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//e767-colnbase-listings-4f65[.]pages[.]dev
+- hxxps[:]//fbbf-colnbase-listings-4f65[.]pages[.]dev
+
+Lure pages on pages[.]dev URLs, Project family C (2 related project names, 6 URLs):
+
+- hxxps[:]//54e9-18fd-cb-listings[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//612f-ad9c-cb-listings[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//7e22-18fd-cb-listings[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//bfbe-18fd-cb-listings[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//d126-ad9c-cb-listings[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+- hxxps[:]//dc3a-ad9c-cb-listings[.]pages[.]dev/token?ca=0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+
+Lure pages on pages[.]dev URLs, Project family D (3 URLs):
+
+- hxxps[:]//850d-fa8e-5133-c0inbase-list[.]pages[.]dev
+- hxxps[:]//bbf8-fa8e-5133-c0inbase-list[.]pages[.]dev
+- hxxps[:]//edde-fa8e-5133-c0inbase-list[.]pages[.]dev
+
+Drainer backend:
+
+- hxxps[:]//walletadapter-cdn-cloud[.]com (endpoints: /notify-visit, /okxdmnendpt)
+
+Wallet-connect modal (Reown-style widget, iframe on every lure page):
+
+- hxxps[:]//node-endpoint[.]pages[.]dev
+
+Drainer kit identifier (consistent internal namespace throughout the loader script's DOM elements and messaging):
+
+- "kiwi-widget", "kiwi-pro-loader", "kiwi-pro-iframe", "kiwi-backdrop", "kiwi-mobile-sheet"
+
+Address repeated via the /token?ca= parameter (not a deployed contract on Ethereum; not found on Ethereum, Base, Polygon or Arbitrum; no DEX trading pair found on any chain — likely a reused placeholder, not a real token):
+
+- 0x2DaB4483dAF71A7B5eE8B115D3B4D58C7071b6A7
+
+Hard-coded destination wallet (Solana format; the drainer only connects Solana wallets, so this is the kit's real payout address, not a placeholder; same address in every sampled instance; the kit's own source comment labels it "your split wallet"; on-chain lookup 2026-11-24 shows zero balance and no transaction history, i.e. this address has never been used):
+
+- JBAvYWojQffZYGaMypiUk7CygSpJoXTdrViTmjSUuiVe
+
+Operator Telegram alert channel ID:
+
+- -5483712683
+
+Visitor fingerprinting APIs (third-party, abused for recon, not malicious themselves):
+
+- ipapi[.]co
+- ipwho[.]is
