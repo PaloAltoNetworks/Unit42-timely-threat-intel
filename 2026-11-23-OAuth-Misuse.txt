@@ -6,8 +6,8 @@ AUTHORS:
 
 REFERENCES:
 
-- 
-- 
+- https://www.linkedin.com/posts/we-detected-a-malicious-oauth-phishing-url-ugcPost-7531131549430349824-zcv_/
+- https://x.com/Unit42_Intel/status/2125365867491770863
 
 NOTES:
 
