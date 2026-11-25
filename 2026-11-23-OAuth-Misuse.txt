@@ -4,6 +4,11 @@ AUTHORS:
 
 - Beliz Kaleli, Diva-Oriane Marty, Shawn He Shuang, Billy Melicher, Oleksii Alex Starov
 
+REFERENCES:
+
+- 
+- 
+
 NOTES:
 
 - We discuss OAuth misuse in our blog "The Current Landscape of OAuth Attacks" at:
