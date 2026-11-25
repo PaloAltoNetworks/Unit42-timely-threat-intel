@@ -5,9 +5,12 @@ AUTHORS:
 
 - Vishnu K, Harish Madhavan J U, Madhav Harikumar, Manbendra Satpathy, Vinayak R, Vinoth Kumar C, Shazan Khaja, Abhiram Patiballa
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/clickfix-ugcPost-7531155970580742144-y41a/
+- https://x.com/Unit42_Intel/status/2125390290487816590
 
 NOTES:
-
 
 - A ClickFix-style fake "Gateway Verification" page tricks the user into pasting a command into PowerShell.
 - The command runs MSHTA against an HTA dropper hidden inside a fake Microsoft MSIX package.
@@ -17,7 +20,6 @@ NOTES:
 - ACR Stealer targets saved browser passwords and cookies from about 70 browsers, browser-extension data, crypto-wallet seed phrases, Steam and Thunderbird. It also takes screenshots.
 - The decoded payload is seen calling out to store.flexroutegk[.]cc over HTTPS.
 - The server regenerates the /230 and /lHYXT files for each download, so their hashes vary.
-
 
 DETAILS:
 
