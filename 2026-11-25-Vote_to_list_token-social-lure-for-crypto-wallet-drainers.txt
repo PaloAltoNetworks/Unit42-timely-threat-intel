@@ -4,6 +4,11 @@ AUTHOR:
 
 - Keerthiraj Nagaraj
 
+REFERENCES:
+
+- https://www.linkedin.com/posts/fake-crypto-exchange-vote-to-list-token-ugcPost-7531511555935637505-tk5S/
+- https://x.com/Unit42_Intel/status/2125745874139492764
+
 NOTES:
 
 - Active campaign, 56 pages seen 2026-11-21 18:59 UTC to 2026-11-23 12:53 UTC, spread across ~36 pages[.]dev preview subdomains in 6 distinct projects. Hosting is disposable: each wave of pages uses a new random-prefixed preview subdomain of the same Pages project, so blocking one URL does not block the next.
